@@ -1,0 +1,235 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1490" height="1016" viewBox="10 -66 1490 1016" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="arr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#555"/></marker></defs>
+<rect x="10" y="-66" width="1490" height="1016" fill="#FFFFFF"/>
+<text x="40" y="-36" font-size="18" font-weight="700" fill="#222">KNIME workflow v2: BeyondTheRoadToll_DataPrep_v2</text>
+<text x="40" y="-18" font-size="11.5" fill="#555">28 nodes, 28 connections. Redrawn from workflow.knime and each node's settings.xml (positions as on the KNIME canvas).</text>
+<rect x="40" y="110" width="260" height="170" fill="#DDEBF7" stroke="#5B9BD5" stroke-width="4"/>
+<text x="49" y="129" font-size="12.5" font-weight="700" fill="#222">A. Load + filter (R1, R2)</text>
+<rect x="360" y="110" width="130" height="170" fill="#FFF2CC" stroke="#ED7D31" stroke-width="4"/>
+<text x="369" y="129" font-size="12.5" font-weight="700" fill="#222">B. Clean (R5)</text>
+<rect x="520" y="20" width="430" height="160" fill="#E2F0D9" stroke="#70AD47" stroke-width="4"/>
+<text x="529" y="39" font-size="12.5" font-weight="700" fill="#222">D. Idea 1: road toll vs injury toll</text>
+<rect x="520" y="210" width="430" height="160" fill="#F4DDEE" stroke="#B45FA0" stroke-width="4"/>
+<text x="529" y="229" font-size="12.5" font-weight="700" fill="#222">E. Idea 2: older riders</text>
+<rect x="520" y="400" width="690" height="245" fill="#FCE4D6" stroke="#C55A11" stroke-width="4"/>
+<text x="529" y="419" font-size="12.5" font-weight="700" fill="#222">F. Idea 3: severity (pedestrians suffer worst)</text>
+<rect x="520" y="660" width="950" height="230" fill="#DEEBF7" stroke="#2E75B6" stroke-width="4"/>
+<text x="529" y="679" font-size="12.5" font-weight="700" fill="#222">G. Idea 4: lockdown test (April 2020, cyclists)</text>
+<path d="M116,206.0 L236,206.0" fill="none" stroke="#555" stroke-width="1.3" marker-end="url(#arr)"/>
+<path d="M276,206.0 L396,206.0" fill="none" stroke="#555" stroke-width="1.3" marker-end="url(#arr)"/>
+<path d="M436,200.66666666666666 L496.0,200.66666666666666 L496.0,306.0 L556,306.0" fill="none" stroke="#555" stroke-width="1.3" marker-end="url(#arr)"/>
+<path d="M436,200.66666666666666 L496.0,200.66666666666666 L496.0,116.0 L556,116.0" fill="none" stroke="#555" stroke-width="1.3" marker-end="url(#arr)"/>
+<path d="M596,116.0 L716,116.0" fill="none" stroke="#555" stroke-width="1.3" marker-end="url(#arr)"/>
+<path d="M756,116.0 L876,116.0" fill="none" stroke="#555" stroke-width="1.3" marker-end="url(#arr)"/>
+<path d="M596,306.0 L716,306.0" fill="none" stroke="#555" stroke-width="1.3" marker-end="url(#arr)"/>
+<path d="M756,306.0 L876,306.0" fill="none" stroke="#555" stroke-width="1.3" marker-end="url(#arr)"/>
+<path d="M436,200.66666666666666 L496.0,200.66666666666666 L496.0,486.0 L556,486.0" fill="none" stroke="#555" stroke-width="1.3" marker-end="url(#arr)"/>
+<path d="M596,486.0 L686,486.0" fill="none" stroke="#555" stroke-width="1.3" marker-end="url(#arr)"/>
+<path d="M726,486.0 L816,486.0" fill="none" stroke="#555" stroke-width="1.3" marker-end="url(#arr)"/>
+<path d="M856,486.0 L946,486.0" fill="none" stroke="#555" stroke-width="1.3" marker-end="url(#arr)"/>
+<path d="M436,200.66666666666666 L496.0,200.66666666666666 L496.0,586.0 L556,586.0" fill="none" stroke="#555" stroke-width="1.3" marker-end="url(#arr)"/>
+<path d="M596,586.0 L686,586.0" fill="none" stroke="#555" stroke-width="1.3" marker-end="url(#arr)"/>
+<path d="M726,586.0 L816,586.0" fill="none" stroke="#555" stroke-width="1.3" marker-end="url(#arr)"/>
+<path d="M856,586.0 L946,586.0" fill="none" stroke="#555" stroke-width="1.3" marker-end="url(#arr)"/>
+<path d="M986,586.0 L1076,586.0" fill="none" stroke="#555" stroke-width="1.3" marker-end="url(#arr)"/>
+<path d="M436,200.66666666666666 L496.0,200.66666666666666 L496.0,726.0 L556,726.0" fill="none" stroke="#555" stroke-width="1.3" marker-end="url(#arr)"/>
+<path d="M596,726.0 L686,726.0" fill="none" stroke="#555" stroke-width="1.3" marker-end="url(#arr)"/>
+<path d="M726,726.0 L816,726.0" fill="none" stroke="#555" stroke-width="1.3" marker-end="url(#arr)"/>
+<path d="M856,718.0 L901.0,718.0 L901.0,720.6666666666666 L946,720.6666666666666" fill="none" stroke="#555" stroke-width="1.3" marker-end="url(#arr)"/>
+<path d="M856,734.0 L901.0,734.0 L901.0,731.3333333333334 L946,731.3333333333334" fill="none" stroke="#555" stroke-width="1.3" marker-end="url(#arr)"/>
+<path d="M986,726.0 L1076,726.0" fill="none" stroke="#555" stroke-width="1.3" marker-end="url(#arr)"/>
+<path d="M1116,720.6666666666666 L1161.0,720.6666666666666 L1161.0,726.0 L1206,726.0" fill="none" stroke="#555" stroke-width="1.3" marker-end="url(#arr)"/>
+<path d="M1246,726.0 L1336,726.0" fill="none" stroke="#555" stroke-width="1.3" marker-end="url(#arr)"/>
+<path d="M436,200.66666666666666 L496.0,200.66666666666666 L496.0,826.0 L556,826.0" fill="none" stroke="#555" stroke-width="1.3" marker-end="url(#arr)"/>
+<path d="M596,826.0 L686,826.0" fill="none" stroke="#555" stroke-width="1.3" marker-end="url(#arr)"/>
+<path d="M726,826.0 L816,826.0" fill="none" stroke="#555" stroke-width="1.3" marker-end="url(#arr)"/>
+<rect x="80" y="190" width="32" height="32" rx="5" fill="#F0A04B" stroke="#333" stroke-width="1.2"/>
+<text x="96.0" y="210.0" font-size="10" font-weight="700" text-anchor="middle" fill="#222">#1</text>
+<rect x="112" y="203.5" width="4" height="5" fill="#333"/>
+<text x="96.0" y="183" font-size="10.5" font-weight="700" text-anchor="middle" fill="#222">Excel Reader</text>
+<text x="96.0" y="235" font-size="10" text-anchor="middle" fill="#333">A1 Read BITRE raw tab</text>
+<text x="96.0" y="247" font-size="10" text-anchor="middle" fill="#333">(R1)</text>
+<rect x="240" y="190" width="32" height="32" rx="5" fill="#FFE47A" stroke="#333" stroke-width="1.2"/>
+<text x="256.0" y="210.0" font-size="10" font-weight="700" text-anchor="middle" fill="#222">#2</text>
+<rect x="236" y="203.5" width="4" height="5" fill="#333"/>
+<rect x="272" y="203.5" width="4" height="5" fill="#333"/>
+<text x="256.0" y="183" font-size="10.5" font-weight="700" text-anchor="middle" fill="#222">Row Filter</text>
+<text x="256.0" y="235" font-size="10" text-anchor="middle" fill="#333">A2 Traffic only (R2)</text>
+<rect x="400" y="190" width="32" height="32" rx="5" fill="#FFE47A" stroke="#333" stroke-width="1.2"/>
+<text x="416.0" y="210.0" font-size="10" font-weight="700" text-anchor="middle" fill="#222">#3</text>
+<rect x="396" y="203.5" width="4" height="5" fill="#333"/>
+<rect x="432" y="198.16666666666666" width="4" height="5" fill="#333"/>
+<rect x="432" y="208.83333333333334" width="4" height="5" fill="#333"/>
+<text x="416.0" y="183" font-size="10.5" font-weight="700" text-anchor="middle" fill="#222">Missing Value</text>
+<text x="416.0" y="235" font-size="10" text-anchor="middle" fill="#333">B1 Missing → 0 (R5)</text>
+<rect x="560" y="100" width="32" height="32" rx="5" fill="#FFE47A" stroke="#333" stroke-width="1.2"/>
+<text x="576.0" y="120.0" font-size="10" font-weight="700" text-anchor="middle" fill="#222">#4</text>
+<rect x="556" y="113.5" width="4" height="5" fill="#333"/>
+<rect x="592" y="113.5" width="4" height="5" fill="#333"/>
+<text x="576.0" y="93" font-size="10.5" font-weight="700" text-anchor="middle" fill="#222">GroupBy</text>
+<text x="576.0" y="145" font-size="10" text-anchor="middle" fill="#333">D1 Hospitalisations</text>
+<text x="576.0" y="157" font-size="10" text-anchor="middle" fill="#333">per year (R3)</text>
+<rect x="720" y="100" width="32" height="32" rx="5" fill="#FFE47A" stroke="#333" stroke-width="1.2"/>
+<text x="736.0" y="120.0" font-size="10" font-weight="700" text-anchor="middle" fill="#222">#5</text>
+<rect x="716" y="113.5" width="4" height="5" fill="#333"/>
+<rect x="752" y="113.5" width="4" height="5" fill="#333"/>
+<text x="736.0" y="93" font-size="10.5" font-weight="700" text-anchor="middle" fill="#222">Math Formula</text>
+<text x="736.0" y="145" font-size="10" text-anchor="middle" fill="#333">D2 Index 2011 = 100</text>
+<rect x="880" y="100" width="32" height="32" rx="5" fill="#E2564B" stroke="#333" stroke-width="1.2"/>
+<text x="896.0" y="120.0" font-size="10" font-weight="700" text-anchor="middle" fill="#222">#6</text>
+<rect x="876" y="113.5" width="4" height="5" fill="#333"/>
+<text x="896.0" y="93" font-size="10.5" font-weight="700" text-anchor="middle" fill="#222">CSV Writer</text>
+<text x="896.0" y="145" font-size="10" text-anchor="middle" fill="#333">D3 Write Idea 1 check</text>
+<rect x="560" y="290" width="32" height="32" rx="5" fill="#FFE47A" stroke="#333" stroke-width="1.2"/>
+<text x="576.0" y="310.0" font-size="10" font-weight="700" text-anchor="middle" fill="#222">#7</text>
+<rect x="556" y="303.5" width="4" height="5" fill="#333"/>
+<rect x="592" y="303.5" width="4" height="5" fill="#333"/>
+<text x="576.0" y="283" font-size="10.5" font-weight="700" text-anchor="middle" fill="#222">GroupBy</text>
+<text x="576.0" y="335" font-size="10" text-anchor="middle" fill="#333">E1 By road user × age</text>
+<text x="576.0" y="347" font-size="10" text-anchor="middle" fill="#333">× year</text>
+<rect x="720" y="290" width="32" height="32" rx="5" fill="#FFE47A" stroke="#333" stroke-width="1.2"/>
+<text x="736.0" y="310.0" font-size="10" font-weight="700" text-anchor="middle" fill="#222">#8</text>
+<rect x="716" y="303.5" width="4" height="5" fill="#333"/>
+<rect x="752" y="303.5" width="4" height="5" fill="#333"/>
+<text x="736.0" y="283" font-size="10.5" font-weight="700" text-anchor="middle" fill="#222">Row Filter</text>
+<text x="736.0" y="335" font-size="10" text-anchor="middle" fill="#333">E2 Pedal cyclist</text>
+<text x="736.0" y="347" font-size="10" text-anchor="middle" fill="#333">65–74</text>
+<rect x="880" y="290" width="32" height="32" rx="5" fill="#E2564B" stroke="#333" stroke-width="1.2"/>
+<text x="896.0" y="310.0" font-size="10" font-weight="700" text-anchor="middle" fill="#222">#9</text>
+<rect x="876" y="303.5" width="4" height="5" fill="#333"/>
+<text x="896.0" y="283" font-size="10.5" font-weight="700" text-anchor="middle" fill="#222">CSV Writer</text>
+<text x="896.0" y="335" font-size="10" text-anchor="middle" fill="#333">E3 Write Idea 2 check</text>
+<rect x="560" y="470" width="32" height="32" rx="5" fill="#FFE47A" stroke="#333" stroke-width="1.2"/>
+<text x="576.0" y="490.0" font-size="10" font-weight="700" text-anchor="middle" fill="#222">#10</text>
+<rect x="556" y="483.5" width="4" height="5" fill="#333"/>
+<rect x="592" y="483.5" width="4" height="5" fill="#333"/>
+<text x="576.0" y="463" font-size="10.5" font-weight="700" text-anchor="middle" fill="#222">Row Filter</text>
+<text x="576.0" y="515" font-size="10" text-anchor="middle" fill="#333">F1a Years 2011–2019</text>
+<rect x="690" y="470" width="32" height="32" rx="5" fill="#FFE47A" stroke="#333" stroke-width="1.2"/>
+<text x="706.0" y="490.0" font-size="10" font-weight="700" text-anchor="middle" fill="#222">#11</text>
+<rect x="686" y="483.5" width="4" height="5" fill="#333"/>
+<rect x="722" y="483.5" width="4" height="5" fill="#333"/>
+<text x="706.0" y="463" font-size="10.5" font-weight="700" text-anchor="middle" fill="#222">GroupBy</text>
+<text x="706.0" y="515" font-size="10" text-anchor="middle" fill="#333">F1b Cases + deaths by</text>
+<text x="706.0" y="527" font-size="10" text-anchor="middle" fill="#333">road user</text>
+<rect x="820" y="470" width="32" height="32" rx="5" fill="#FFE47A" stroke="#333" stroke-width="1.2"/>
+<text x="836.0" y="490.0" font-size="10" font-weight="700" text-anchor="middle" fill="#222">#12</text>
+<rect x="816" y="483.5" width="4" height="5" fill="#333"/>
+<rect x="852" y="483.5" width="4" height="5" fill="#333"/>
+<text x="836.0" y="463" font-size="10.5" font-weight="700" text-anchor="middle" fill="#222">Math Formula</text>
+<text x="836.0" y="515" font-size="10" text-anchor="middle" fill="#333">F1c Died per 1,000</text>
+<text x="836.0" y="527" font-size="10" text-anchor="middle" fill="#333">cases</text>
+<rect x="950" y="470" width="32" height="32" rx="5" fill="#E2564B" stroke="#333" stroke-width="1.2"/>
+<text x="966.0" y="490.0" font-size="10" font-weight="700" text-anchor="middle" fill="#222">#13</text>
+<rect x="946" y="483.5" width="4" height="5" fill="#333"/>
+<text x="966.0" y="463" font-size="10.5" font-weight="700" text-anchor="middle" fill="#222">CSV Writer</text>
+<text x="966.0" y="515" font-size="10" text-anchor="middle" fill="#333">F1d Write severity</text>
+<text x="966.0" y="527" font-size="10" text-anchor="middle" fill="#333">check</text>
+<rect x="560" y="570" width="32" height="32" rx="5" fill="#FFE47A" stroke="#333" stroke-width="1.2"/>
+<text x="576.0" y="590.0" font-size="10" font-weight="700" text-anchor="middle" fill="#222">#14</text>
+<rect x="556" y="583.5" width="4" height="5" fill="#333"/>
+<rect x="592" y="583.5" width="4" height="5" fill="#333"/>
+<text x="576.0" y="563" font-size="10.5" font-weight="700" text-anchor="middle" fill="#222">Row Filter</text>
+<text x="576.0" y="615" font-size="10" text-anchor="middle" fill="#333">F2a Years 2016–2021</text>
+<rect x="690" y="570" width="32" height="32" rx="5" fill="#FFE47A" stroke="#333" stroke-width="1.2"/>
+<text x="706.0" y="590.0" font-size="10" font-weight="700" text-anchor="middle" fill="#222">#15</text>
+<rect x="686" y="583.5" width="4" height="5" fill="#333"/>
+<rect x="722" y="583.5" width="4" height="5" fill="#333"/>
+<text x="706.0" y="563" font-size="10.5" font-weight="700" text-anchor="middle" fill="#222">GroupBy</text>
+<text x="706.0" y="615" font-size="10" text-anchor="middle" fill="#333">F2b Cases + bed days</text>
+<text x="706.0" y="627" font-size="10" text-anchor="middle" fill="#333">by road user</text>
+<rect x="820" y="570" width="32" height="32" rx="5" fill="#FFE47A" stroke="#333" stroke-width="1.2"/>
+<text x="836.0" y="590.0" font-size="10" font-weight="700" text-anchor="middle" fill="#222">#16</text>
+<rect x="816" y="583.5" width="4" height="5" fill="#333"/>
+<rect x="852" y="583.5" width="4" height="5" fill="#333"/>
+<text x="836.0" y="563" font-size="10.5" font-weight="700" text-anchor="middle" fill="#222">Math Formula</text>
+<text x="836.0" y="615" font-size="10" text-anchor="middle" fill="#333">F2c Share of cases %</text>
+<rect x="950" y="570" width="32" height="32" rx="5" fill="#FFE47A" stroke="#333" stroke-width="1.2"/>
+<text x="966.0" y="590.0" font-size="10" font-weight="700" text-anchor="middle" fill="#222">#17</text>
+<rect x="946" y="583.5" width="4" height="5" fill="#333"/>
+<rect x="982" y="583.5" width="4" height="5" fill="#333"/>
+<text x="966.0" y="563" font-size="10.5" font-weight="700" text-anchor="middle" fill="#222">Math Formula</text>
+<text x="966.0" y="615" font-size="10" text-anchor="middle" fill="#333">F2d Share of bed days</text>
+<text x="966.0" y="627" font-size="10" text-anchor="middle" fill="#333">%</text>
+<rect x="1080" y="570" width="32" height="32" rx="5" fill="#E2564B" stroke="#333" stroke-width="1.2"/>
+<text x="1096.0" y="590.0" font-size="10" font-weight="700" text-anchor="middle" fill="#222">#18</text>
+<rect x="1076" y="583.5" width="4" height="5" fill="#333"/>
+<text x="1096.0" y="563" font-size="10.5" font-weight="700" text-anchor="middle" fill="#222">CSV Writer</text>
+<text x="1096.0" y="615" font-size="10" text-anchor="middle" fill="#333">F2e Write burden</text>
+<text x="1096.0" y="627" font-size="10" text-anchor="middle" fill="#333">check</text>
+<rect x="560" y="710" width="32" height="32" rx="5" fill="#FFE47A" stroke="#333" stroke-width="1.2"/>
+<text x="576.0" y="730.0" font-size="10" font-weight="700" text-anchor="middle" fill="#222">#19</text>
+<rect x="556" y="723.5" width="4" height="5" fill="#333"/>
+<rect x="592" y="723.5" width="4" height="5" fill="#333"/>
+<text x="576.0" y="703" font-size="10.5" font-weight="700" text-anchor="middle" fill="#222">Row Filter</text>
+<text x="576.0" y="755" font-size="10" text-anchor="middle" fill="#333">G1a April, 2019–2020</text>
+<rect x="690" y="710" width="32" height="32" rx="5" fill="#FFE47A" stroke="#333" stroke-width="1.2"/>
+<text x="706.0" y="730.0" font-size="10" font-weight="700" text-anchor="middle" fill="#222">#20</text>
+<rect x="686" y="723.5" width="4" height="5" fill="#333"/>
+<rect x="722" y="723.5" width="4" height="5" fill="#333"/>
+<text x="706.0" y="703" font-size="10.5" font-weight="700" text-anchor="middle" fill="#222">GroupBy</text>
+<text x="706.0" y="755" font-size="10" text-anchor="middle" fill="#333">G1b Hospitalisations</text>
+<text x="706.0" y="767" font-size="10" text-anchor="middle" fill="#333">by road user × year</text>
+<rect x="820" y="710" width="32" height="32" rx="5" fill="#FFE47A" stroke="#333" stroke-width="1.2"/>
+<text x="836.0" y="730.0" font-size="10" font-weight="700" text-anchor="middle" fill="#222">#21</text>
+<rect x="816" y="723.5" width="4" height="5" fill="#333"/>
+<rect x="852" y="715.5" width="4" height="5" fill="#333"/>
+<rect x="852" y="723.5" width="4" height="5" fill="#333"/>
+<rect x="852" y="731.5" width="4" height="5" fill="#333"/>
+<text x="836.0" y="703" font-size="10.5" font-weight="700" text-anchor="middle" fill="#222">Pivot</text>
+<text x="836.0" y="755" font-size="10" text-anchor="middle" fill="#333">G1c Years side by</text>
+<text x="836.0" y="767" font-size="10" text-anchor="middle" fill="#333">side</text>
+<rect x="950" y="710" width="32" height="32" rx="5" fill="#FFE47A" stroke="#333" stroke-width="1.2"/>
+<text x="966.0" y="730.0" font-size="10" font-weight="700" text-anchor="middle" fill="#222">#22</text>
+<rect x="946" y="718.1666666666666" width="4" height="5" fill="#333"/>
+<rect x="946" y="728.8333333333334" width="4" height="5" fill="#333"/>
+<rect x="982" y="723.5" width="4" height="5" fill="#333"/>
+<text x="966.0" y="703" font-size="10.5" font-weight="700" text-anchor="middle" fill="#222">Concatenate</text>
+<text x="966.0" y="755" font-size="10" text-anchor="middle" fill="#333">G1d Append total row</text>
+<rect x="1080" y="710" width="32" height="32" rx="5" fill="#FFE47A" stroke="#333" stroke-width="1.2"/>
+<text x="1096.0" y="730.0" font-size="10" font-weight="700" text-anchor="middle" fill="#222">#23</text>
+<rect x="1076" y="723.5" width="4" height="5" fill="#333"/>
+<rect x="1112" y="718.1666666666666" width="4" height="5" fill="#333"/>
+<rect x="1112" y="728.8333333333334" width="4" height="5" fill="#333"/>
+<text x="1096.0" y="703" font-size="10.5" font-weight="700" text-anchor="middle" fill="#222">Missing Value</text>
+<text x="1096.0" y="755" font-size="10" text-anchor="middle" fill="#333">G1e Label total row</text>
+<rect x="1210" y="710" width="32" height="32" rx="5" fill="#FFE47A" stroke="#333" stroke-width="1.2"/>
+<text x="1226.0" y="730.0" font-size="10" font-weight="700" text-anchor="middle" fill="#222">#24</text>
+<rect x="1206" y="723.5" width="4" height="5" fill="#333"/>
+<rect x="1242" y="723.5" width="4" height="5" fill="#333"/>
+<text x="1226.0" y="703" font-size="10.5" font-weight="700" text-anchor="middle" fill="#222">Math Formula</text>
+<text x="1226.0" y="755" font-size="10" text-anchor="middle" fill="#333">G1f % change</text>
+<text x="1226.0" y="767" font-size="10" text-anchor="middle" fill="#333">2019→2020</text>
+<rect x="1340" y="710" width="32" height="32" rx="5" fill="#E2564B" stroke="#333" stroke-width="1.2"/>
+<text x="1356.0" y="730.0" font-size="10" font-weight="700" text-anchor="middle" fill="#222">#25</text>
+<rect x="1336" y="723.5" width="4" height="5" fill="#333"/>
+<text x="1356.0" y="703" font-size="10.5" font-weight="700" text-anchor="middle" fill="#222">CSV Writer</text>
+<text x="1356.0" y="755" font-size="10" text-anchor="middle" fill="#333">G1g Write April check</text>
+<rect x="560" y="810" width="32" height="32" rx="5" fill="#FFE47A" stroke="#333" stroke-width="1.2"/>
+<text x="576.0" y="830.0" font-size="10" font-weight="700" text-anchor="middle" fill="#222">#26</text>
+<rect x="556" y="823.5" width="4" height="5" fill="#333"/>
+<rect x="592" y="823.5" width="4" height="5" fill="#333"/>
+<text x="576.0" y="803" font-size="10.5" font-weight="700" text-anchor="middle" fill="#222">Row Filter</text>
+<text x="576.0" y="855" font-size="10" text-anchor="middle" fill="#333">G2a Pedal cyclists</text>
+<text x="576.0" y="867" font-size="10" text-anchor="middle" fill="#333">only</text>
+<rect x="690" y="810" width="32" height="32" rx="5" fill="#FFE47A" stroke="#333" stroke-width="1.2"/>
+<text x="706.0" y="830.0" font-size="10" font-weight="700" text-anchor="middle" fill="#222">#27</text>
+<rect x="686" y="823.5" width="4" height="5" fill="#333"/>
+<rect x="722" y="823.5" width="4" height="5" fill="#333"/>
+<text x="706.0" y="803" font-size="10.5" font-weight="700" text-anchor="middle" fill="#222">GroupBy</text>
+<text x="706.0" y="855" font-size="10" text-anchor="middle" fill="#333">G2b Hospitalisations</text>
+<text x="706.0" y="867" font-size="10" text-anchor="middle" fill="#333">per year</text>
+<rect x="820" y="810" width="32" height="32" rx="5" fill="#E2564B" stroke="#333" stroke-width="1.2"/>
+<text x="836.0" y="830.0" font-size="10" font-weight="700" text-anchor="middle" fill="#222">#28</text>
+<rect x="816" y="823.5" width="4" height="5" fill="#333"/>
+<text x="836.0" y="803" font-size="10.5" font-weight="700" text-anchor="middle" fill="#222">CSV Writer</text>
+<text x="836.0" y="855" font-size="10" text-anchor="middle" fill="#333">G2c Write cyclist</text>
+<text x="836.0" y="867" font-size="10" text-anchor="middle" fill="#333">annual check</text>
+<rect x="40" y="922" width="12" height="12" rx="2" fill="#F0A04B" stroke="#333"/>
+<text x="57" y="932" font-size="11" fill="#333">Source (reader)</text>
+<rect x="175" y="922" width="12" height="12" rx="2" fill="#FFE47A" stroke="#333"/>
+<text x="192" y="932" font-size="11" fill="#333">Manipulator</text>
+<rect x="282" y="922" width="12" height="12" rx="2" fill="#E2564B" stroke="#333"/>
+<text x="299" y="932" font-size="11" fill="#333">Sink (writer)</text>
+<text x="413" y="932" font-size="11" fill="#555">Node label under each box = rule ID. Arrows = data-table connections (Pivot port 3 = pivot totals).</text>
+</svg>

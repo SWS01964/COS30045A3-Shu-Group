@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beyond the Road Toll — Week 11 Design Checkpoint</title>
+<style>
+  :root{
+    --bg:#faf8f3; --ink:#1c2230; --ink2:#434a5a; --muted:#646b78; --rule:#d9d4c8;
+    --accent:#b8470f; --accent-ink:#8f3406; --accent-soft:#f4d8c5; --blue:#1f5f99; --blue-soft:#cfe0ef;
+    --serif:Georgia,"Iowan Old Style","Palatino Linotype",Palatin,"Times New Roman",serif;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{background:#171a21;color:var(--ink);font-family:var(--serif)}
+  #deck{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+  .slide{display:none;position:relative;width:min(1280px,96vw);aspect-ratio:16/9;background:var(--bg);padding:72px 88px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+  .slide.active{display:block}
+  .kicker{font-family:var(--sans);font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);font-weight:700;margin:0 0 18px}
+  h1{font-size:64px;line-height:1.04;margin:0 0 22px;font-weight:700;letter-spacing:-.01em}
+  h2{font-size:42px;line-height:1.1;margin:0 0 26px;font-weight:700;letter-spacing:-.005em}
+  .lede{font-size:24px;line-height:1.45;color:var(--ink2);max-width:960px}
+  .sub{font-family:var(--sans);font-size:20px;color:var(--muted);margin-top:26px}
+  ul{margin:0;padding:0;list-style:none}
+  li{font-size:24px;line-height:1.5;margin:0 0 14px;padding-left:34px;position:relative;color:var(--ink2)}
+  li:before{content:"";position:absolute;left:0;top:15px;width:14px;height:14px;border-radius:50%;background:var(--accent)}
+  li.blue:before{background:var(--blue)}
+  .big{font-family:var(--sans);font-weight:700;font-variant-numeric:tabular-nums;color:var(--ink)}
+  .num{display:inline-block;font-family:var(--sans);font-weight:700;font-variant-numeric:tabular-nums;color:var(--accent);font-size:74px;line-height:1;margin-right:10px}
+  .num.blue{color:var(--blue)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;height:100%}
+  .cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .card{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:24px;font-family:var(--sans)}
+  .card h3{font-family:var(--sans);font-size:18px;margin:0 0 10px;color:var(--ink)}
+  .card p{font-size:17px;color:var(--ink2);margin:0}
+  .foot{position:absolute;left:88px;right:88px;bottom:34px;display:flex;justify-content:space-between;font-family:var(--sans);font-size:14px;color:var(--muted)}
+  .note{position:absolute;left:88px;right:88px;bottom:34px;font-family:var(--sans);font-size:15px;color:var(--accent-ink);background:var(--accent-soft);border-left:4px solid var(--accent);padding:10px 16px;border-radius:0 8px 8px 0}
+  .check{color:var(--blue);font-weight:700}
+  img.full{width:100%;height:auto;border:1px solid var(--rule);border-radius:8px;background:#fff}
+  .right{margin-left:auto}
+  .mini{width:100%;height:auto}
+  .hint{position:fixed;bottom:14px;right:18px;color:#8b93a3;font-family:var(--sans);font-size:12px}
+  @page{size:1280px 720px;margin:0}
+  @media print{
+    body{background:#fff}
+    #deck{position:static;display:block}
+    .slide{display:block;width:1280px;height:720px;page-break-after:always;box-shadow:none;margin:0}
+    .slide:last-child{page-break-after:auto}
+    .hint{display:none}
+  }
+</style>
+</head>
+<body>
+<div id="deck">
+
+  <!-- 1 title -->
+  <section class="slide active">
+    <p class="kicker">COS30045 Data Visualisation &middot; Week 11 design checkpoint</p>
+    <h1>Beyond the Road Toll</h1>
+    <p class="lede">Hospitalised road-crash injuries in Australia, 2011&ndash;2021. A two-chapter data story on why deaths fall while serious injuries don&rsquo;t &mdash; and who is being hurt most.</p>
+    <p class="sub">Team [names] &middot; presenting: [your name]</p>
+    <div class="foot"><span>Week 11</span><span>Stand Up 2</span></div>
+  </section>
+
+  <!-- 2 progress -->
+  <section class="slide">
+    <p class="kicker">Where we are</p>
+    <h2>Stand Up 1 was the <i>what</i>. Today is the <i>how</i>.</h2>
+    <ul>
+      <li><span class="check">&#10003;</span> Working <span class="big">D3</span> prototype &mdash; four custom charts, one story</li>
+      <li><span class="check">&#10003;</span> Data validated against <span class="big">BITRE&rsquo;s published tables</span> (national, road-user, age, remoteness match exactly)</li>
+      <li><span class="check">&#10003;</span> <span class="big">86,140</span> traffic rows processed &rarr; six clean CSVs</li>
+      <li><span class="check">&#10003;</span> Two chapters written, caveats built into the story</li>
+    </ul>
+    <p class="note">This week is about the <b>design decisions</b> behind the build &mdash; visualisation, interaction, website, and the coding plan.</p>
+    <div class="foot"><span>2</span></div>
+  </section>
+
+  <!-- 3 claim 1 -->
+  <section class="slide">
+    <div class="grid2">
+      <div>
+        <p class="kicker">Claim 1</p>
+        <h2>The road toll is falling. The injury toll isn&rsquo;t.</h2>
+        <p class="lede" style="font-size:22px">
+          <span class="num">39,505</span> hospitalised in 2021 &mdash; about 108 people a day.<br><br>
+          <span class="num" style="font-size:56px">35</span> hospitalised for every road death (up from 27).<br><br>
+          Road deaths <b>&minus;11.5%</b>, hospitalisations <b>+16%</b>. Per person, the hospitalisation rate barely moved.
+        </p>
+      </div>
+      <div>
+        <svg viewBox="0 0 520 360" class="mini" role="img" aria-label="Indexed line chart 2011=100: hospitalisations rise to 116, road deaths fall to 88">
+          <line x1="50" y1="30" x2="50" y2="290" stroke="#434a5a" stroke-width="1.5"/>
+          <line x1="50" y1="290" x2="490" y2="290" stroke="#434a5a" stroke-width="1.5"/>
+          <line x1="50" y1="150" x2="490" y2="150" stroke="#d9d4c8" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <text x="44" y="154" text-anchor="end" font-size="15" fill="#646b78" font-family="system-ui">100</text>
+          <path d="M50 150 C120 150 160 128 210 118 S340 82 490 74" fill="none" stroke="#b8470f" stroke-width="4"/>
+          <path d="M50 150 C120 150 180 176 240 196 S380 232 490 240" fill="none" stroke="#1f5f99" stroke-width="4"/>
+          <text x="496" y="70" text-anchor="end" font-size="19" font-weight="700" fill="#b8470f" font-family="system-ui">hospitalised 116</text>
+          <text x="496" y="250" text-anchor="end" font-size="19" font-weight="700" fill="#1f5f99" font-family="system-ui">deaths 88</text>
+          <text x="490" y="330" text-anchor="end" font-size="15" fill="#646b78" font-family="system-ui">2011 = 100 &rarr; 2021</text>
+        </svg>
+        <p class="sub" style="font-size:16px">Indexed to a common base &mdash; the <i>gap</i> between the lines is the story.</p>
+      </div>
+    </div>
+    <div class="foot"><span>3</span></div>
+  </section>
+
+  <!-- 4 claim 2 -->
+  <section class="slide">
+    <div class="grid2">
+      <div>
+        <p class="kicker">Claim 2</p>
+        <h2>Cycling injuries more than doubled among over-65s.</h2>
+        <p class="lede" style="font-size:22px">
+          Pedal cyclists <b>65&ndash;74</b>: <span class="num" style="font-size:56px">+138%</span><br>
+          aged <b>75+</b>: <span class="num" style="font-size:56px">+142%</span><br><br>
+          Even per person, still <b>+78%</b> and <b>+92%</b>. Ageing explains part &mdash; not most.
+        </p>
+      </div>
+      <div>
+        <svg viewBox="0 0 520 360" class="mini" role="img" aria-label="Heatmap of change by road user and age; the hottest cells are older cyclists and motorcyclists">
+          <g font-family="system-ui" font-size="14" fill="#434a5a">
+            <text x="120" y="18" text-anchor="middle">17–25</text><text x="205" y="18" text-anchor="middle">40–64</text><text x="305" y="18" text-anchor="middle">65+</text>
+          </g>
+          <g font-family="system-ui" font-size="15" fill="#434a5a">
+            <text x="78" y="68" text-anchor="end">car driver</text>
+            <text x="78" y="128" text-anchor="end">motorcyclist</text>
+            <text x="78" y="188" text-anchor="end">pedal cyclist</text>
+            <text x="78" y="248" text-anchor="end">pedestrian</text>
+          </g>
+          <g font-family="system-ui" font-size="15" font-weight="700">
+            <rect x="100" y="40" width="70" height="44" fill="#efece4"/><rect x="175" y="40" width="70" height="44" fill="#f4d8c5"/><rect x="250" y="40" width="120" height="44" fill="#c96a3a"/>
+            <rect x="100" y="100" width="70" height="44" fill="#f4d8c5"/><rect x="175" y="100" width="70" height="44" fill="#d98b4f"/><rect x="250" y="100" width="120" height="44" fill="#b8470f"/>
+            <rect x="100" y="160" width="70" height="44" fill="#c96a3a"/><rect x="175" y="160" width="70" height="44" fill="#b8470f"/><rect x="250" y="160" width="120" height="44" fill="#8f3406"/>
+            <rect x="100" y="220" width="70" height="44" fill="#1f5f99"/><rect x="175" y="220" width="70" height="44" fill="#1f5f99"/><rect x="250" y="220" width="120" height="44" fill="#cfe0ef"/>
+          </g>
+          <text x="310" y="68" text-anchor="middle" fill="#fff" font-size="18" font-weight="700" font-family="system-ui">+105%</text>
+          <text x="310" y="188" text-anchor="middle" fill="#fff" font-size="18" font-weight="700" font-family="system-ui">+142%</text>
+          <rect x="250" y="160" width="120" height="44" fill="none" stroke="#1c2230" stroke-width="3"/>
+          <text x="250" y="296" font-size="15" fill="#646b78" font-family="system-ui">blue = fall &nbsp;&middot;&nbsp; orange = rise &nbsp;&middot;&nbsp; outlined = selected</text>
+        </svg>
+        <p class="sub" style="font-size:16px">Road user &times; age, 3-year averages. Click a cell to see that group&rsquo;s yearly trend.</p>
+      </div>
+    </div>
+    <div class="foot"><span>4</span></div>
+  </section>
+
+  <!-- 5 visualisation design -->
+  <section class="slide">
+    <p class="kicker">Visualisation design</p>
+    <h2>One chart per claim &mdash; chosen, not defaulted to.</h2>
+    <div class="cols3">
+      <div class="card"><h3>Unit chart</h3><p>Makes an abstract ratio human: one dark dot = one death among ~35 hospitalised.</p></div>
+      <div class="card"><h3>Indexed line</h3><p>Compares three series of different size on 2011 = 100, so the <i>gap</i> is legible.</p></div>
+      <div class="card"><h3>Heatmap + panels</h3><p>Two categorical dimensions; aligned severity panels share one age axis.</p></div>
+    </div>
+    <ul style="margin-top:34px">
+      <li class="blue"><b>Rejected:</b> pie (not part-to-whole), dual axis (misleading), radar, small multiples (too tall on mobile).</li>
+      <li class="blue"><b>3-year averages</b> over single years &mdash; so &ldquo;more than doubled&rdquo; is defensible.</li>
+      <li class="blue"><b>Log-ratio colour</b> &mdash; halving and doubling read as equal-and-opposite.</li>
+    </ul>
+    <div class="foot"><span>5</span></div>
+  </section>
+
+  <!-- 6 interaction design -->
+  <section class="slide">
+    <p class="kicker">Interaction design</p>
+    <h2>Five goals: orient, compare, personalise, drill down, inspect.</h2>
+    <div class="grid2" style="grid-template-columns:1.1fr .9fr">
+      <ul>
+        <li><b>Find yourself</b> &rarr; select road user + age, read a plain-language sentence.</li>
+        <li><b>Drill down</b> &rarr; click a cell for that group&rsquo;s yearly trend.</li>
+        <li><b>Compare</b> &rarr; Counts / Per person toggles on both chapters.</li>
+        <li><b>Inspect</b> &rarr; hover/focus tooltips; a data table behind every chart.</li>
+        <li><b>Parity</b> &rarr; keyboard (arrows, Enter/Space), touch, and reduced motion.</li>
+      </ul>
+      <div class="card"><h3>State model</h3><p>default &rarr; hovered &rarr; selected &rarr; mode (counts/per person) &rarr; low-count (hatched) &rarr; resized. Selection survives a mode change; nothing important is hover-only.</p></div>
+    </div>
+    <div class="foot"><span>6</span></div>
+  </section>
+
+  <!-- 7 website design -->
+  <section class="slide">
+    <p class="kicker">Website design</p>
+    <div class="grid2">
+      <div>
+        <h2>A newspaper page, not a dashboard.</h2>
+        <ul>
+          <li><b>No nav</b> &mdash; the story is the navigation; one anchor to methods.</li>
+          <li><b>760px</b> prose, <b>980px</b> figures; serif body, sans labels.</li>
+          <li><b>Orange = rise, blue = fall</b> on a warm paper background.</li>
+          <li>Mobile-first at 375px; tables scroll, not the page.</li>
+          <li>Semantic HTML, keyboard, reduced motion, colour-blind-safe.</li>
+        </ul>
+      </div>
+      <div><img class="full" src="../../report/figures/standup2/P4_wireframe_mobile.svg" alt="mobile wireframe"></div>
+    </div>
+    <div class="foot"><span>7</span></div>
+  </section>
+
+  <!-- 8 prototype evolution -->
+  <section class="slide">
+    <p class="kicker">Prototype</p>
+    <h2>Concept &rarr; wireframe &rarr; build.</h2>
+    <img class="full" src="../../report/figures/standup2/P8_evolution.svg" alt="design evolution">
+    <p class="sub" style="font-size:17px">What changed in the build: 3-year averages, a log-ratio scale, and &ldquo;tripled&rdquo; corrected to &ldquo;more than doubled&rdquo;.</p>
+    <div class="foot"><span>8</span></div>
+  </section>
+
+  <!-- 9 coding plan -->
+  <section class="slide">
+    <p class="kicker">Coding plan</p>
+    <h2>Six CSVs &rarr; four chart modules, one set of shared constants.</h2>
+    <div class="cols3">
+      <div class="card"><h3>Data &rarr; charts</h3><p>6 clean CSVs feed a unit chart, indexed lines, heatmap + trend, and severity panels. Prose numbers are <i>computed from the same data</i>.</p></div>
+      <div class="card"><h3>Shared constants</h3><p>CSS colour tokens, breakpoints (600/560/479), 2011 = 100 index, log-ratio scale (&minus;60%&hellip;+150%).</p></div>
+      <div class="card"><h3>QA + deploy</h3><p><code>node --check</code>; headless render at 375/768/1280; keyboard + reduced-motion walkthrough; copy <code>website/</code> to Mercury.</p></div>
+    </div>
+    <p class="note"><b>Remaining (next, not done):</b> team/GitHub/licence placeholders, downloadable CSV, usability testing, Mercury deployment. Phase 2 (counterparty severity, COVID, equity) is a documented backlog.</p>
+    <div class="foot"><span>9</span></div>
+  </section>
+
+  <!-- 10 next steps -->
+  <section class="slide">
+    <p class="kicker">Next steps &amp; asks</p>
+    <h2>What&rsquo;s next, honestly.</h2>
+    <ul>
+      <li><b>Usability evaluation</b> &mdash; 5&ndash;6 Sam-like participants, three tasks, SUS. <i>(final submission, not yet run)</i></li>
+      <li><b>Design-process write-up</b> and <b>Mercury deployment</b>.</li>
+      <li><b>Phase 2</b> &mdash; counterparty severity, COVID, equity (First Nations data still has a validation gap).</li>
+    </ul>
+    <p class="note"><b>Asks:</b> any feedback on the chart choices or the &ldquo;find yourself&rdquo; flow before we freeze the design?</p>
+    <div class="foot"><span>10</span></div>
+  </section>
+
+  <!-- 11 backup -->
+  <section class="slide">
+    <p class="kicker">Backup</p>
+    <h2>Validation, caveats, sources.</h2>
+    <ul style="font-size:21px">
+      <li class="blue"><b>Validation:</b> national, road-user, age and remoteness totals match BITRE exactly; 18 PASS / 9 FAIL (all explained), 0 unexplained.</li>
+      <li class="blue"><b>Caveats:</b> Vic 2012 + NSW 2017 counting changes (rise understated); bed days 2016&ndash;21 only; deaths 2011&ndash;19 only; counts are not rates.</li>
+      <li class="blue"><b>Sources:</b> BITRE hospitalised injury data; ABS ERP; BITRE ARDD.</li>
+    </ul>
+    <div class="foot"><span>11</span></div>
+  </section>
+
+</div>
+<div class="hint">&larr; &rarr; to move &middot; print to PDF</div>
+<script>
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  let i = parseInt(location.hash.slice(1),10); if(isNaN(i)||i<1||i>slides.length) i=0; else i--;
+  function show(n){ slides.forEach(s=>s.classList.remove('active')); i=(n+slides.length)%slides.length; slides[i].classList.add('active'); history.replaceState(null,'','#'+(i+1)); }
+  document.addEventListener('keydown', e => {
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown') show(i+1);
+    else if(e.key==='ArrowLeft'||e.key==='PageUp') show(i-1);
+    else if(e.key==='Home') show(0); else if(e.key==='End') show(slides.length-1);
+  });
+  document.addEventListener('click', e => { if(e.clientX > innerWidth*0.5) show(i+1); else show(i-1); });
+  show(i);
+</script>
+</body>
+</html>

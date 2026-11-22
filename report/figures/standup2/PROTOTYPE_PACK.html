@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beyond the Road Toll — Prototype Pack (Week 11)</title>
+<style>
+  :root{color-scheme:light}
+  *{box-sizing:border-box}
+  body{margin:0;background:#faf8f3;color:#1c2230;font-family:Georgia,serif;font-size:15px;line-height:1.6}
+  .page{max-width:980px;margin:0 auto;padding:48px 32px}
+  h1{font-size:34px;line-height:1.15;margin:0 0 6px}
+  .sub{font-family:system-ui,sans-serif;color:#646b78;font-size:15px;margin:0 0 40px}
+  figure{margin:0 0 56px;page-break-inside:avoid;break-inside:avoid}
+  img{display:block;width:100%;height:auto;border:1px solid #d9d4c8;background:#fff;border-radius:6px}
+  figcaption{margin-top:10px;font-family:system-ui,sans-serif;font-size:13.5px;color:#434a5a}
+  figcaption b{color:#1c2230}
+  .src{color:#8796a8;font-size:12.5px}
+  @media print{
+    body{background:#fff}
+    .page{max-width:none;padding:0}
+    figure{page-break-after:always;break-after:page}
+    figure:last-child{page-break-after:auto;break-after:auto}
+    img{max-height:88vh;width:auto;max-width:100%;margin:0 auto}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>Beyond the Road Toll — Prototype pack</h1>
+  <p class="sub">Week 11 design checkpoint. Figures P1–P8: concept → wireframe → high-fidelity build → interaction states. Print to PDF for a single document.</p>
+
+  <figure><img src="P1_concept.svg" alt="P1 concept sketches"><figcaption><b>P1 — Concept sketches.</b> Three rough ideas drawn before any code: (a) the two-chapter scroll narrative, (b) an indexed line with two series diverging from 2011 = 100, and (c) a road-user × age heatmap with the "hot" older-cyclist cell circled. <span class="src">Redrawn from the ASCII sketches in CLAUDE_CONTEXT/FOCUS_2_IDEAS.md.</span></figcaption></figure>
+
+  <figure><img src="P2_wireframe_desktop.svg" alt="P2 desktop wireframe"><figcaption><b>P2 — Low-fidelity wireframe: overall page (desktop).</b> Masthead, Chapter 1 (prose + unit chart + prose + indexed line chart), Chapter 2 (prose + heatmap), About, footer. Prose 760px, figures 980px, 16px gutters.</figcaption></figure>
+
+  <figure><img src="P3_wireframe_chapters.svg" alt="P3 chapter figure wireframes"><figcaption><b>P3 — Wireframe detail: Chapter 1 and Chapter 2 figures.</b> Placement of the Counts/Per-person toggle, the "Find yourself" selectors, the sentence callout, the colour legend, the linked trend block, and the three severity panels.</figcaption></figure>
+
+  <figure><img src="P4_wireframe_mobile.svg" alt="P4 mobile wireframe"><figcaption><b>P4 — Low-fidelity wireframe: mobile (375px).</b> Single stacked column; charts reflow for the narrow width; heatmap age labels stack; data tables scroll inside their container.</figcaption></figure>
+
+  <figure><img src="P5_desktop_full.png" alt="P5 desktop build"><figcaption><b>P5 — High-fidelity build: desktop.</b> Headless-Chrome full-page capture of the live site at 1280px — the unit chart, indexed lines with annotations, the heatmap with finder and trend, and the severity panels.</figcaption></figure>
+
+  <figure><img src="P6_mobile_full.png" alt="P6 mobile build"><figcaption><b>P6 — High-fidelity build: mobile.</b> Headless-Chrome full-page capture at 375px (device-emulation width), confirming the stacked layout with no horizontal page scroll.</figcaption></figure>
+
+  <figure><img src="P7_states.svg" alt="P7 interaction states"><figcaption><b>P7 — Interaction-state strip.</b> Five heatmap states — default selection, hover/focus tooltip, click → linked yearly trend, per-person mode, and the low-count hatch rule — with the colour/hatch key.</figcaption></figure>
+
+  <figure><img src="P8_evolution.svg" alt="P8 design evolution"><figcaption><b>P8 — Design evolution.</b> The indexed line chart and the heatmap from concept sketch, to wireframe, to the shipped D3 chart — showing where the log-ratio colour and the 3-year-average encoding were added.</figcaption></figure>
+</div>
+</body>
+</html>

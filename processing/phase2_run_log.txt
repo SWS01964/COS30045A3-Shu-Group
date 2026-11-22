@@ -1,0 +1,141 @@
+Loaded traffic_national_monthly_clean.csv: 86,140 rows x 15 cols
+
+== Reconciliation ==
+  [PASS] Annual hospitalisations 2011 = 34,033  got 34,033
+  [PASS] Annual hospitalisations 2021 = 39,505  got 39,505
+  [PASS] All 11 years equal Phase 1 idea1_national_annual.csv  max abs diff 0
+  [PASS] Raw workbook vs clean CSV: hosp, cases, died, bed days, died bed days by year (55 cells)  max abs diff 0; raw Traffic rows 86,140
+  [PASS] Raw workbook vs clean CSV: road user x year hospitalisations  132 cells
+  [PASS] Monthly cells sum to annual totals  
+  [PASS] Phase 1 idea2_age_severity reproduces (avg stay + died/1000, 7 ages)  75+ stay 11.1 / died 28.1
+  [PASS] Canonical died/1,000 2011-19 (5 road users)  Pedestrian 21.8; Car passenger 7.3; Car driver 5.8; Motorcyclist 4.1; Pedal cyclist 1.9
+  [PASS] Canonical 2016-21 shares (cases_incl_died vs bed_days)  Pedestrian 6.6% vs 13.1%; Pedal cyclist 19.0% vs 11.1%; Motorcyclist 22.2% vs 25.0%
+  [INFO] on the Hospitalisations column instead, pedestrians are 6.5% of 2016-21 cases (6.6% uses cases_incl_died)
+  [INFO] legacy pooled 2011-21 (superseded): pedestrian 19.3, car driver 4.9, cyclist 1.6; train 48.7 (14.5 days), heavy vehicle/bus 17.3 (8.4 days)
+  [PASS] Legacy pooled HANDOFF figures reproduce (19.3/4.9/1.6; train 48.7, 14.5 days; heavy 17.3, 8.4 days)  explains the gap vs the 2011-19 figures
+  [PASS] April 2019 = 3,488 and April 2020 = 2,357  3,488 / 2,357 (-32.4%)
+  [PASS] Cyclists 2019 = 7,302 and 2020 = 8,332  +14.1%
+  [PASS] Cyclists June 2020 = 683 / June 2019 = 453 reproduce on Count of cases (cases_incl_died); Hospitalisations gives 682 / 453 -> publish 682  got 682 / 453; cases_incl_died 683 / 453
+
+== Idea 3: Not every crash is equal ==
+  wrote data/clean/idea3_burden_share.csv  shape=(12, 8)
+  Car driver     cases  33.6%  bed days  30.4%  ratio 0.91
+  Car passenger  cases  12.4%  bed days  12.0%  ratio 0.96
+  Motorcyclist   cases  22.2%  bed days  25.0%  ratio 1.13
+  Pedal cyclist  cases  19.0%  bed days  11.1%  ratio 0.59
+  Pedestrian     cases   6.6%  bed days  13.1%  ratio 2.0
+  wrote data/clean/idea3_severity_roaduser.csv  shape=(14, 19)
+  Car driver       died/1000   5.8 [5.4-6.3] n=110,163 d=644  stay 4.7 (all cases 4.7)
+  Car passenger    died/1000   7.3 [6.5-8.1] n=44,727 d=325  stay 5.0 (all cases 5.1)
+  Motorcyclist     died/1000   4.1 [3.6-4.6] n=75,061 d=306  stay 5.9 (all cases 5.9)
+  Pedal cyclist    died/1000   1.9 [1.6-2.3] n=58,981 d=114  stay 3.1 (all cases 3.1)
+  Pedestrian       died/1000  21.8 [20.1-23.7] n=24,633 d=538  stay 10.5 (all cases 10.5)
+  Other road users died/1000   5.2 [4.3-6.3] n=21,889 d=114  stay 7.0 (all cases 7.0)
+  All road users   died/1000   6.1 [5.8-6.4] n=335,454 d=2041  stay 5.2 (all cases 5.2)
+  pedestrian vs car driver died ratio: 3.8x; vs cyclist 11.5x
+  wrote data/clean/idea3_severity_roaduser_age.csv  shape=(35, 17)
+  road user x age: 7 of 35 cells flagged for mortality, 1 for stay
+  wrote data/clean/idea3_severity_counterparty.csv  shape=(58, 18)
+  Train                                  died/1000  57.2 [ok] n=    297 d=  17  stay 18.5 [ok]
+  Heavy transport vehicle or bus         died/1000  20.4 [ok] n= 10,055 d= 205  stay 9.2 [ok]
+  Other non-motor vehicle                died/1000  10.7 [low_deaths] n=    563 d=   6  stay 5.7 [ok]
+  Fixed or stationary object             died/1000   8.9 [ok] n= 47,755 d= 424  stay 6.9 [ok]
+  Car, pick-up truck or van              died/1000   7.2 [ok] n=139,816 d=1010  stay 5.4 [ok]
+  2- or 3- wheeled motor vehicle         died/1000   5.7 [ok] n=  2,298 d=  13  stay 6.0 [ok]
+  Pedestrian or animal                   died/1000   5.1 [ok] n=  3,884 d=  20  stay 4.7 [ok]
+  Non-collision transport accident       died/1000   2.7 [ok] n= 87,031 d= 239  stay 3.9 [ok]
+  Pedal cycle                            died/1000   2.5 [low_deaths] n=  3,538 d=   9  stay 3.7 [ok]
+  Other and unspecified transport accide died/1000   2.4 [ok] n= 40,217 d=  98  stay 4.6 [ok]
+  Pedestrians by counterparty:
+    Train                                  died/1000 125.0 [ok] n=   112 d=  14 share 0.4%  stay 25.8
+    Heavy transport vehicle or bus         died/1000  52.7 [ok] n= 1,081 d=  57 share 4.0%  stay 21.8
+    Other non-motor vehicle                died/1000  39.6 [low_deaths] n=   101 d=   4 share 0.4%  stay 8.4
+    Pedestrian or animal                   died/1000  26.5 [low_deaths] n=   113 d=   3 share 0.6%  stay 9.5
+    Car, pick-up truck or van              died/1000  20.5 [ok] n=21,583 d= 442 share 87.8%  stay 10.1
+    2- or 3- wheeled motor vehicle         died/1000  15.9 [low_deaths] n=   504 d=   8 share 2.0%  stay 11.2
+    Other and unspecified transport accide died/1000   8.9 [low_deaths] n=   677 d=   6 share 2.8%  stay 8.3
+    Pedal cycle                            died/1000   8.7 [low_deaths] n=   462 d=   4 share 1.9%  stay 6.6
+  wrote data/clean/idea3_older_pedestrians.csv  shape=(20, 20)
+  Pedestrian Under 65 died/1000  13.7 [12.2-15.5] d=260  stay 8.5  share cases 77.1% bed days 62.5%
+  Pedestrian 65-74    died/1000  30.8 [24.6-38.5] d=73  stay 15.6  share cases 10.2% bed days 15.0%
+  Pedestrian 75+      died/1000  61.3 [53.7-69.9] d=205  stay 19.2  share cases 12.7% bed days 22.4%
+  Pedestrian 65+      died/1000  48.6 [43.4-54.5] d=278  stay 17.6  share cases 22.9% bed days 37.5%
+  Pedestrian All ages died/1000  21.8 [20.1-23.7] d=538  stay 10.5  share cases 100.0% bed days 100.0%
+  75+ pedestrians vs all 75+ road users: died 61.3 vs 28.1; stay 19.2 vs 11.1
+  wrote data/clean/idea3_older_pedestrians_annual.csv  shape=(55, 6)
+  Pedestrian 65-74    per 100k: 2011 13.8  2019 12.5  2021 9.9  (count 232 -> 240)
+  Pedestrian 75+      per 100k: 2011 25.2  2019 19.9  2021 14.7  (count 355 -> 278)
+  Pedestrian Under 65 per 100k: 2011 11.3  2019 9.8  2021 8.5  (count 2167 -> 1816)
+
+== Idea 4: The lockdown test ==
+  wrote data/clean/idea4_monthly_2019_2021.csv  shape=(252, 6)
+  wrote data/clean/idea4_baseline_band.csv  shape=(84, 15)
+  All road users: 2020 months above 2015-19 range ['Sep', 'Nov', 'Dec']; below range ['Jan', 'Mar', 'Apr', 'May']
+  Pedal cyclist: 2020 months above 2015-19 range ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']; below range ['Jan', 'Mar']
+  April all: 2020 2,357 vs 2019 3,488 (-32.4%), vs 2015-19 mean 3,357.0 (-29.8%), range 3,166-3,488
+  lowest month 2011-2021 (all road users): (2020, 4) = 2,357; 2nd lowest (2013, 2) = 2,553
+  largest year-on-year monthly fall 2012-2021: (2020, 4) -32.4%
+  cyclists Apr: 2020 773 vs 2019 667 (+15.9%), vs 2015-19 mean 630.2 (+22.7%), max 668; vs trend-adjusted 691.1 (+11.9%)
+  cyclists May: 2020 740 vs 2019 592 (+25.0%), vs 2015-19 mean 568.2 (+30.2%), max 592; vs trend-adjusted 623.3 (+18.7%)
+  cyclists Jun: 2020 682 vs 2019 453 (+50.6%), vs 2015-19 mean 467.6 (+45.9%), max 510; vs trend-adjusted 513.4 (+32.8%)
+  cyclists: biggest 2020 excess over baseline mean = Jun (+45.9%); highest 2020 count = Oct 830
+  cyclists Jan-Mar: 2020 1,907 vs 2019 2,115 (-9.8%); vs 2015-19 mean 2,004 (-4.8%)
+  cyclists Apr-Dec: 2020 6,425 vs 2019 5,187 (+23.9%); vs 2015-19 mean 4,988 (+28.8%)
+  wrote data/clean/idea4_cyclist_trend.csv  shape=(11, 15)
+  cyclist trend 2011-19 slope +225.9/yr; residual SD 238
+  2019: actual 7,302 vs trend 7,444.4 (PI95 6,783.8-8,105.0) resid -142.4 (-1.9%) outside PI: False; alt fits 2012-19 7,382.8 / 2015-19 7,236.8
+  2020: actual 8,332 vs trend 7,670.3 (PI95 6,974.7-8,365.9) resid +661.7 (+8.6%) outside PI: False; alt fits 2012-19 7,582.4 / 2015-19 7,359.5
+  2021: actual 8,163 vs trend 7,896.2 (PI95 7,160.0-8,632.3) resid +266.8 (+3.4%) outside PI: False; alt fits 2012-19 7,781.9 / 2015-19 7,482.2
+  2020 vs 2015-19 fit: expected 7,359.5 PI95 6,843.2-7,875.8; outside: True
+  cyclists Apr-Dec 2020 vs trend-adjusted monthly expectation: 9 of 9 months above; total 6,425 vs 5,472 (+17.4%)
+  wrote data/clean/idea4_roaduser_change_2020.csv  shape=(42, 8)
+  road user change 2020: year vs 2019 | vs 2015-19 mean | vs trend | April vs 2019 | April vs mean
+    All road users    -4.8% |   -2.6% |   -8.3% |  -32.4% |  -29.8%  (39,866 -> 37,966)
+    Car driver        -9.4% |   -7.0% |  -14.4% |  -42.9% |  -38.9%  (13,482 -> 12,217)
+    Car passenger    -12.9% |  -14.3% |  -16.2% |  -52.7% |  -54.9%  (4,989 -> 4,344)
+    Motorcyclist      -2.7% |   +0.7% |   -4.8% |  -37.5% |  -37.0%  (8,924 -> 8,684)
+    Pedal cyclist    +14.1% |  +19.2% |   +8.6% |  +15.9% |  +22.7%  (7,302 -> 8,332)
+    Pedestrian       -22.5% |  -21.9% |  -21.7% |  -59.8% |  -54.5%  (2,713 -> 2,103)
+    Other road users   -6.9% |   -6.7% |   -7.2% |  -34.8% |  -32.7%  (2,456 -> 2,286)
+  wrote data/clean/idea4_cyclist_age_2020.csv  shape=(7, 11)
+  cyclists 0-7      203 ->   258 (+27.1%), share of rise 5.3% (share of 2019 cases 2.8%)
+  cyclists 8-16    1041 ->  1348 (+29.5%), share of rise 29.8% (share of 2019 cases 14.3%)
+  cyclists 17-25    731 ->   768 (+5.1%), share of rise 3.6% (share of 2019 cases 10.0%)
+  cyclists 26-39   1589 ->  1681 (+5.8%), share of rise 8.9% (share of 2019 cases 21.8%)
+  cyclists 40-64   2995 ->  3331 (+11.2%), share of rise 32.6% (share of 2019 cases 41.0%)
+  cyclists 65-74    565 ->   693 (+22.7%), share of rise 12.4% (share of 2019 cases 7.7%)
+  cyclists 75+      178 ->   253 (+42.1%), share of rise 7.3% (share of 2019 cases 2.4%)
+  wrote data/clean/idea4_state_cyclists_2020.csv  shape=(16, 11)
+  ACT  Jan-Jun: 120 -> 99 (-17.5%), share of national rise -7.7%
+  NSW  Jan-Jun: 886 -> 963 (+8.7%), share of national rise 28.3%
+  NT   Jan-Jun: 43 -> 58 (+34.9%), share of national rise 5.5% [small base]
+  Qld  Jan-Jun: 753 -> 847 (+12.5%), share of national rise 34.6%
+  SA   Jan-Jun: 289 -> 304 (+5.2%), share of national rise 5.5%
+  Tas  Jan-Jun: 67 -> 57 (-14.9%), share of national rise -3.7% [small base]
+  Vic  Jan-Jun: 1205 -> 1226 (+1.7%), share of national rise 7.7%
+  WA   Jan-Jun: 370 -> 451 (+21.9%), share of national rise 29.8%
+  ACT  Jul-Dec: 98 -> 124 (+26.5%), share of national rise 3.3% [small base]
+  NSW  Jul-Dec: 792 -> 987 (+24.6%), share of national rise 24.7%
+  NT   Jul-Dec: 41 -> 50 (+22.0%), share of national rise 1.1% [small base]
+  Qld  Jul-Dec: 778 -> 837 (+7.6%), share of national rise 7.5%
+  SA   Jul-Dec: 237 -> 289 (+21.9%), share of national rise 6.6%
+  Tas  Jul-Dec: 54 -> 76 (+40.7%), share of national rise 2.8% [small base]
+  Vic  Jul-Dec: 1010 -> 1419 (+40.5%), share of national rise 51.8%
+  WA   Jul-Dec: 365 -> 383 (+4.9%), share of national rise 2.3%
+  states with a rise: {'Jan-Jun': 6, 'Jul-Dec': 8} of 8
+
+== Figures ==
+  wrote processing/eda_figures/phase2/idea3_burden_share.png
+  wrote processing/eda_figures/phase2/idea3_severity_roaduser.png
+  wrote processing/eda_figures/phase2/idea3_severity_roaduser_age.png
+  wrote processing/eda_figures/phase2/idea3_severity_counterparty.png
+  wrote processing/eda_figures/phase2/idea3_older_pedestrians.png
+  wrote processing/eda_figures/phase2/idea3_older_pedestrians_annual.png
+  wrote processing/eda_figures/phase2/idea4_monthly_2019_2021.png
+  wrote processing/eda_figures/phase2/idea4_baseline_band.png
+  wrote processing/eda_figures/phase2/idea4_cyclist_trend.png
+  wrote processing/eda_figures/phase2/idea4_roaduser_change_2020.png
+  wrote processing/eda_figures/phase2/idea4_cyclist_age_2020.png
+  wrote processing/eda_figures/phase2/idea4_state_cyclists_2020.png
+
+Reconciliation: 13 PASS, 0 FAIL. Key numbers: 100 -> processing/phase2_key_numbers.csv

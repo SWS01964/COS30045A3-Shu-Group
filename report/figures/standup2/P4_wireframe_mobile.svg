@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1500" font-family="system-ui,-apple-system,sans-serif">
+  <rect width="900" height="1500" fill="#faf8f3"/>
+  <text x="40" y="50" font-size="34" font-weight="700" fill="#1c2230">P4 — Low-fidelity wireframe: mobile (375px frame)</text>
+  <text x="40" y="84" font-size="20" fill="#646b78">Stacked single column; charts reflow for the narrow width; tables scroll inside their container.</text>
+
+  <!-- phone frame -->
+  <rect x="240" y="110" width="380" height="1350" rx="24" fill="#ffffff" stroke="#1c2230" stroke-width="3"/>
+  <rect x="254" y="124" width="352" height="1322" rx="16" fill="#faf8f3"/>
+
+  <g font-size="14" fill="#646b78">
+    <!-- masthead -->
+    <rect x="268" y="140" width="324" height="120" rx="6" fill="#ece8dc" stroke="#8796a8"/>
+    <rect x="282" y="152" width="120" height="12" fill="#d9d4c8"/>
+    <rect x="282" y="176" width="200" height="30" fill="#c8c2b4"/>
+    <rect x="282" y="216" width="260" height="10" fill="#d9d4c8"/>
+    <text x="274" y="285" fill="#434a5a">Chapter 1</text>
+    <rect x="268" y="292" width="324" height="60" rx="6" fill="#ece8dc" stroke="#8796a8"/>
+    <rect x="282" y="302" width="290" height="10" fill="#d9d4c8"/>
+    <rect x="282" y="320" width="260" height="10" fill="#d9d4c8"/>
+    <rect x="282" y="338" width="230" height="10" fill="#d9d4c8"/>
+
+    <rect x="268" y="360" width="324" height="150" rx="6" fill="#ffffff" stroke="#8796a8"/>
+    <text x="430" y="440" text-anchor="middle" font-size="15" fill="#8796a8">unit chart (12 cols)</text>
+    <text x="274" y="530" fill="#434a5a">Fig 1 — one death : N</text>
+
+    <rect x="268" y="540" width="324" height="180" rx="6" fill="#ffffff" stroke="#8796a8"/>
+    <rect x="282" y="552" width="150" height="26" rx="13" fill="#d9d4c8" stroke="#8796a8"/>
+    <text x="430" y="650" text-anchor="middle" font-size="15" fill="#8796a8">lines (labels stacked)</text>
+    <text x="274" y="735" fill="#434a5a">Fig 2 — indexed lines + toggle</text>
+
+    <text x="274" y="770" fill="#434a5a">Chapter 2</text>
+    <rect x="268" y="778" width="324" height="44" rx="6" fill="#ece8dc" stroke="#8796a8"/>
+
+    <rect x="268" y="830" width="324" height="90" rx="6" fill="#ffffff" stroke="#8796a8"/>
+    <text x="430" y="872" text-anchor="middle" font-size="14" fill="#8796a8">find yourself (stacked selects)</text>
+    <text x="430" y="892" text-anchor="middle" font-size="14" fill="#8796a8">sentence callout</text>
+
+    <rect x="268" y="928" width="324" height="170" rx="6" fill="#ffffff" stroke="#8796a8"/>
+    <text x="430" y="1018" text-anchor="middle" font-size="15" fill="#8796a8">heatmap (age labels stacked)</text>
+    <text x="274" y="1112" fill="#434a5a">Fig 3 — heatmap + trend</text>
+
+    <rect x="268" y="1120" width="324" height="150" rx="6" fill="#ffffff" stroke="#8796a8"/>
+    <text x="430" y="1200" text-anchor="middle" font-size="15" fill="#8796a8">severity panels (stacked)</text>
+    <text x="274" y="1285" fill="#434a5a">Fig 4 — severity</text>
+
+    <rect x="268" y="1294" width="324" height="110" rx="6" fill="#ece8dc" stroke="#8796a8"/>
+    <text x="430" y="1340" text-anchor="middle" font-size="14" fill="#646b78">About this data</text>
+    <text x="430" y="1360" text-anchor="middle" font-size="14" fill="#646b78">tables scroll →</text>
+  </g>
+  <text x="660" y="200" font-size="16" fill="#646b78">375px wide</text>
+</svg>

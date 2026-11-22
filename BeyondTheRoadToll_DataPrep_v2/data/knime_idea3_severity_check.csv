@@ -1,0 +1,13 @@
+"Road user","Sum(Count of cases)","Sum(Died_cases)","died_per_1000"
+"Bus occupant",2260,18,7.964601769911504
+"Car driver",110163,644,5.845882918947378
+"Car passenger",44727,325,7.266304469336196
+"Car unknown position",7429,41,5.518912370440167
+"Heavy transport driver",3835,16,4.172099087353325
+"Heavy transport passenger",450,1,2.2222222222222223
+"Heavy transport unknown position",371,3,8.086253369272237
+"Motorcyclist",75061,306,4.076684296771959
+"Other or unknown",5183,20,3.8587690526721974
+"Pedal cyclist",58981,114,1.9328258252657635
+"Pedestrian",24633,538,21.840620306093452
+"Pick-up truck or van occupant",2361,15,6.353240152477763

@@ -1,0 +1,30 @@
+check,scope,result,explained,detail
+National annual total vs T1,national,PASS,,(11 yrs x 1 cols)
+Road user x year vs T2,national,PASS,,(11 yrs x 13 cols)
+Age group x year vs T3,national,PASS,,(11 yrs x 9 cols)
+Remoteness x year vs T4,national,PASS,,(11 yrs x 5 cols)
+cases_incl_died == hospitalisations + died_cases (all rows),national,PASS,,
+State x year (cases excl. died) vs state T1,state,PASS,,(11 yrs x 8 cols)
+Sum of 8 states vs T1 'Australia' column,state,INFO,,gap 470-997 cases/yr: T1 Australia includes residents with unknown/other state
+Block by_road_user state x year vs state T2 totals,state,FAIL,shortfall confined to group-years containing n.p. cells,"(40 of 88 group-years differ, max shortfall 37; published totals include the n.p. cells, tidy export leaves them empty)"
+Block by_age state x year vs state T4 totals,state,FAIL,shortfall confined to group-years containing n.p. cells,"(26 of 88 group-years differ, max shortfall 55; published totals include the n.p. cells, tidy export leaves them empty)"
+Block by_counterparty state x year vs state T5 totals,state,PASS,,(11 yrs x 8 groups; suppressed rows: 0)
+Block by_sex state x year vs state T1,state,FAIL,block has only Male/Female; cases with unknown sex (~15 nationally in 11 yrs) are not in this block,(max shortfall 3 cases per state-year)
+Block by_road_user state x year vs state T1,state,FAIL,n.p. cells are missing from the tidy sums,(max shortfall 37; suppressed rows 185)
+Block by_age state x year vs state T1,state,FAIL,n.p. cells are missing from the tidy sums,(max shortfall 55; suppressed rows 80)
+Block by_counterparty state x year vs state T1,state,PASS,,(max shortfall 0; suppressed rows 0)
+Block by_age status x year vs FN T1,first_nations,FAIL,shortfall only in years containing n.p. cells,(max shortfall 2576; years differing 2014-2014; suppressed rows 4)
+Block by_road_user status x year vs FN T1,first_nations,FAIL,shortfall only in years containing n.p. cells,(max shortfall 811; years differing 2011-2021; suppressed rows 62)
+Block by_age_2 status x year vs FN T1,first_nations,FAIL,shortfall only in years containing n.p. cells,(max shortfall 2576; years differing 2014-2014; suppressed rows 4)
+Block by_remoteness status x year vs FN T1,first_nations,FAIL,block excludes cases with unknown remoteness (see FN T4 check),(max shortfall 1110; years differing 2011-2021; suppressed rows 0)
+Block by_counterparty status x year vs FN T1,first_nations,PASS,,(suppressed rows: 0)
+Block by_road_user status x year vs FN T2 totals,first_nations,PASS,,(11 yrs x 2 groups; suppressed rows: 62)
+Block by_age status x year vs FN T3 totals,first_nations,PASS,,(11 yrs x 2 groups; suppressed rows: 4)
+Block by_remoteness status x year vs FN T4 totals,first_nations,PASS,,(11 yrs x 2 groups; suppressed rows: 0)
+Block by_counterparty status x year vs FN T5 totals,first_nations,PASS,,(11 yrs x 2 groups; suppressed rows: 0)
+FN block 1 vs block 3 (both 'by age'),first_nations,INFO,,IDENTICAL (exact duplicate)
+R7: (Bed days - Died_bed_days) is the pairing consistent with state/FN files,bed days,PASS,,mean gap state 0.26pp vs 0.67pp; FN 0.60pp vs 1.23pp; excl-died closer in 18/20 file-years
+"2011 total = 34,033 and 2021 = 39,505",sanity,PASS,,
+Heatmap Pedal cyclist 65-74 ~ +212%,sanity,PASS,,(got 212.1)
+Heatmap Pedal cyclist 75+ ~ +228%,sanity,PASS,,(got 227.6)
+Heatmap Motorcyclist 65-74 ~ +150%,sanity,PASS,,(got 149.7)

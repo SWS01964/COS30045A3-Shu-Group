@@ -1,0 +1,60 @@
+section,figure,knime,python,expected,result
+v1 D,Hospitalisations 2011,34033.0,34033.0,34033,PASS
+v1 D,Hospitalisations 2021,39505.0,39505.0,39505,PASS
+v1 D,All 11 years equal (max abs diff),0.0,0.0,0,PASS
+v1 E,"Pedal cyclists 65-74, 2011",240.0,240.0,240,PASS
+v1 E,"Pedal cyclists 65-74, 2021",749.0,749.0,749,PASS
+F1,"Pedestrian died per 1,000 (2011-19)",21.8,21.8,21.8,PASS
+F1,Pedestrian cases 2011-19,24633.0,24633.0,,PASS
+F1,Pedestrian deaths 2011-19,538.0,538.0,538,PASS
+F1,"Car passenger died per 1,000 (2011-19)",7.3,7.3,7.3,PASS
+F1,Car passenger cases 2011-19,44727.0,44727.0,,PASS
+F1,Car passenger deaths 2011-19,325.0,325.0,,PASS
+F1,"Car driver died per 1,000 (2011-19)",5.8,5.8,5.8,PASS
+F1,Car driver cases 2011-19,110163.0,110163.0,,PASS
+F1,Car driver deaths 2011-19,644.0,644.0,,PASS
+F1,"Motorcyclist died per 1,000 (2011-19)",4.1,4.1,4.1,PASS
+F1,Motorcyclist cases 2011-19,75061.0,75061.0,,PASS
+F1,Motorcyclist deaths 2011-19,306.0,306.0,,PASS
+F1,"Pedal cyclist died per 1,000 (2011-19)",1.9,1.9,1.9,PASS
+F1,Pedal cyclist cases 2011-19,58981.0,58981.0,,PASS
+F1,Pedal cyclist deaths 2011-19,114.0,114.0,,PASS
+F1,Total deaths 2011-19 (sum of column),2041.0,2041.0,2041,PASS
+F1,Total cases 2011-19 (sum of column),335454.0,335454.0,335454,PASS
+F1,"All road users died per 1,000",6.1,6.1,6.1,PASS
+F2,Pedestrian share of cases % (2016-21),6.6,6.6,6.6,PASS
+F2,Pedestrian share of bed days % (2016-21),13.1,13.1,13.1,PASS
+F2,Car passenger share of cases % (2016-21),12.4,12.4,,PASS
+F2,Car passenger share of bed days % (2016-21),12.0,12.0,,PASS
+F2,Car driver share of cases % (2016-21),33.6,33.6,33.6,PASS
+F2,Car driver share of bed days % (2016-21),30.4,30.4,30.4,PASS
+F2,Motorcyclist share of cases % (2016-21),22.2,22.2,22.2,PASS
+F2,Motorcyclist share of bed days % (2016-21),25.0,25.0,25.0,PASS
+F2,Pedal cyclist share of cases % (2016-21),19.0,19.0,19.0,PASS
+F2,Pedal cyclist share of bed days % (2016-21),11.1,11.1,11.1,PASS
+F2,Total cases 2016-21 (sum of column),236178.0,236178.0,236178,PASS
+F2,Total bed days 2016-21 (sum of column),1236107.0,1236107.0,1236107,PASS
+F2,Shares sum to 100,100.0,100.0,100.0,PASS
+G1,All road users April 2019,3488.0,3488.0,3488,PASS
+G1,All road users April 2020,2357.0,2357.0,2357,PASS
+G1,All road users % change,-32.4,-32.4,-32.4,PASS
+G1,Total row = sum of road-user rows (2019),3488.0,3488.0,3488,PASS
+G1,Total row = sum of road-user rows (2020),2357.0,2357.0,2357,PASS
+G1,Pedestrian April % change,-59.8,-59.8,-59.8,PASS
+G1,Pedestrian April 2019 count,264.0,264.0,,PASS
+G1,Pedestrian April 2020 count,106.0,106.0,,PASS
+G1,Car passenger April % change,-52.7,-52.7,-52.7,PASS
+G1,Car passenger April 2019 count,431.0,431.0,,PASS
+G1,Car passenger April 2020 count,204.0,204.0,,PASS
+G1,Car driver April % change,-42.9,-42.9,-42.9,PASS
+G1,Car driver April 2019 count,1117.0,1117.0,,PASS
+G1,Car driver April 2020 count,638.0,638.0,,PASS
+G1,Motorcyclist April % change,-37.5,-37.5,-37.5,PASS
+G1,Motorcyclist April 2019 count,805.0,805.0,,PASS
+G1,Motorcyclist April 2020 count,503.0,503.0,,PASS
+G1,Pedal cyclist April % change,15.9,15.9,15.9,PASS
+G1,Pedal cyclist April 2019 count,667.0,667.0,,PASS
+G1,Pedal cyclist April 2020 count,773.0,773.0,,PASS
+G2,Pedal cyclists 2019,7302.0,7302.0,7302,PASS
+G2,Pedal cyclists 2020,8332.0,8332.0,8332,PASS
+G2,All 11 years equal (max abs diff),0.0,0.0,0,PASS

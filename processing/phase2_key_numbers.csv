@@ -1,0 +1,101 @@
+idea,key_id,value,unit,period,source_csv,note
+3,ped_share_cases,6.6,% of cases,2016-21,idea3_burden_share.csv,
+3,ped_share_bed_days,13.1,% of bed days,2016-21,idea3_burden_share.csv,
+3,ped_bed_to_case_ratio,2.0,x,2016-21,idea3_burden_share.csv,
+3,ped_died_per_1000,21.8,"per 1,000 cases",2011-19,idea3_severity_roaduser.csv,"538 deaths / 24,633 cases"
+3,ped_avg_stay,10.5,days,2016-21,idea3_severity_roaduser.csv,
+3,driver_died_per_1000,5.8,"per 1,000 cases",2011-19,idea3_severity_roaduser.csv,"644 deaths / 110,163 cases"
+3,driver_avg_stay,4.7,days,2016-21,idea3_severity_roaduser.csv,
+3,cyclist_died_per_1000,1.9,"per 1,000 cases",2011-19,idea3_severity_roaduser.csv,"114 deaths / 58,981 cases"
+3,cyclist_avg_stay,3.1,days,2016-21,idea3_severity_roaduser.csv,
+3,moto_died_per_1000,4.1,"per 1,000 cases",2011-19,idea3_severity_roaduser.csv,"306 deaths / 75,061 cases"
+3,moto_avg_stay,5.9,days,2016-21,idea3_severity_roaduser.csv,
+3,passenger_died_per_1000,7.3,"per 1,000 cases",2011-19,idea3_severity_roaduser.csv,"325 deaths / 44,727 cases"
+3,passenger_avg_stay,5.0,days,2016-21,idea3_severity_roaduser.csv,
+3,all_died_per_1000,6.1,"per 1,000 cases",2011-19,idea3_severity_roaduser.csv,"2041 deaths / 335,454 cases"
+3,all_avg_stay,5.2,days,2016-21,idea3_severity_roaduser.csv,
+3,ped_vs_driver_died_ratio,3.8,x,2011-19,idea3_severity_roaduser.csv,
+3,ped_deaths_share,26.4,% of in-hospital deaths,2011-19,idea3_severity_roaduser.csv,
+3,ped_cases_share_2011_19,7.3,% of cases,2011-19,idea3_severity_roaduser.csv,
+3,cp_train_died_per_1000,57.2,"per 1,000 cases",2011-19,idea3_severity_counterparty.csv,17 deaths / 297; flag ok
+3,cp_train_avg_stay,18.5,days,2016-21,idea3_severity_counterparty.csv,180 hospitalisations
+3,cp_heavy_died_per_1000,20.4,"per 1,000 cases",2011-19,idea3_severity_counterparty.csv,"205 deaths / 10,055; flag ok"
+3,cp_heavy_avg_stay,9.2,days,2016-21,idea3_severity_counterparty.csv,"6,418 hospitalisations"
+3,cp_car_died_per_1000,7.2,"per 1,000 cases",2011-19,idea3_severity_counterparty.csv,"1010 deaths / 139,816; flag ok"
+3,cp_car_avg_stay,5.4,days,2016-21,idea3_severity_counterparty.csv,"98,291 hospitalisations"
+3,cp_fixed_died_per_1000,8.9,"per 1,000 cases",2011-19,idea3_severity_counterparty.csv,"424 deaths / 47,755; flag ok"
+3,cp_fixed_avg_stay,6.9,days,2016-21,idea3_severity_counterparty.csv,"33,407 hospitalisations"
+3,cp_noncollision_died_per_1000,2.7,"per 1,000 cases",2011-19,idea3_severity_counterparty.csv,"239 deaths / 87,031; flag ok"
+3,cp_noncollision_avg_stay,3.9,days,2016-21,idea3_severity_counterparty.csv,"62,041 hospitalisations"
+3,ped_hit_by_car_died_per_1000,20.5,"per 1,000 cases",2011-19,idea3_severity_counterparty.csv,"442 deaths / 21,583; flag ok"
+3,ped_hit_by_heavy_died_per_1000,52.7,"per 1,000 cases",2011-19,idea3_severity_counterparty.csv,"57 deaths / 1,081; flag ok"
+3,ped_hit_by_car_share,87.8,% of pedestrian cases,2016-21,idea3_severity_counterparty.csv,
+3,ped_65p_died_per_1000,48.6,"per 1,000 cases",2011-19,idea3_older_pedestrians.csv,"278 deaths / 5,715 cases"
+3,ped_65p_avg_stay,17.6,days,2016-21,idea3_older_pedestrians.csv,
+3,ped_65p_share_cases,22.9,% of pedestrian cases,2016-21,idea3_older_pedestrians.csv,
+3,ped_65p_share_bed_days,37.5,% of pedestrian bed days,2016-21,idea3_older_pedestrians.csv,
+3,ped_65p_share_deaths,51.7,% of pedestrian in-hospital deaths,2011-19,idea3_older_pedestrians.csv,
+3,ped_75p_died_per_1000,61.3,"per 1,000 cases",2011-19,idea3_older_pedestrians.csv,"205 deaths / 3,344 cases"
+3,ped_75p_avg_stay,19.2,days,2016-21,idea3_older_pedestrians.csv,
+3,ped_75p_share_cases,12.7,% of pedestrian cases,2016-21,idea3_older_pedestrians.csv,
+3,ped_75p_share_bed_days,22.4,% of pedestrian bed days,2016-21,idea3_older_pedestrians.csv,
+3,ped_75p_share_deaths,38.1,% of pedestrian in-hospital deaths,2011-19,idea3_older_pedestrians.csv,
+3,ped_65_74_died_per_1000,30.8,"per 1,000 cases",2011-19,idea3_older_pedestrians.csv,"73 deaths / 2,371 cases"
+3,ped_65_74_avg_stay,15.6,days,2016-21,idea3_older_pedestrians.csv,
+3,ped_65_74_share_cases,10.2,% of pedestrian cases,2016-21,idea3_older_pedestrians.csv,
+3,ped_65_74_share_bed_days,15.0,% of pedestrian bed days,2016-21,idea3_older_pedestrians.csv,
+3,ped_65_74_share_deaths,13.6,% of pedestrian in-hospital deaths,2011-19,idea3_older_pedestrians.csv,
+3,ped_u65_died_per_1000,13.7,"per 1,000 cases",2011-19,idea3_older_pedestrians.csv,"260 deaths / 18,918 cases"
+3,ped_u65_avg_stay,8.5,days,2016-21,idea3_older_pedestrians.csv,
+3,ped_u65_share_cases,77.1,% of pedestrian cases,2016-21,idea3_older_pedestrians.csv,
+3,ped_u65_share_bed_days,62.5,% of pedestrian bed days,2016-21,idea3_older_pedestrians.csv,
+3,ped_u65_share_deaths,48.3,% of pedestrian in-hospital deaths,2011-19,idea3_older_pedestrians.csv,
+3,all_75p_died_per_1000,28.1,"per 1,000 cases",2011-19,idea3_older_pedestrians.csv,
+3,ped_65-74_per100k_2019,12.5,per 100k population,2019,idea3_older_pedestrians_annual.csv,
+3,ped_75+_per100k_2019,19.9,per 100k population,2019,idea3_older_pedestrians_annual.csv,
+3,ped_Under 65_per100k_2019,9.8,per 100k population,2019,idea3_older_pedestrians_annual.csv,
+4,april_2020_all,2357,hospitalisations,Apr 2020,idea4_baseline_band.csv,
+4,april_2019_all,3488,hospitalisations,Apr 2019,idea4_baseline_band.csv,
+4,april_pct_vs_2019,-32.4,%,Apr 2020 vs Apr 2019,idea4_baseline_band.csv,
+4,april_baseline_mean,3357.0,hospitalisations,Apr 2015-19 mean,idea4_baseline_band.csv,
+4,april_pct_vs_baseline,-29.8,%,Apr 2020 vs Apr 2015-19 mean,idea4_baseline_band.csv,
+4,april_2020_lowest_month,2020-04,lowest month 2011-21,2011-21,idea4_monthly_2019_2021.csv,"2,357; next lowest (2013, 2) 2,553"
+4,cyc_june_2020,682,hospitalisations,Jun 2020,idea4_baseline_band.csv,
+4,cyc_june_2019,453,hospitalisations,Jun 2019,idea4_baseline_band.csv,
+4,cyc_june_pct_vs_2019,50.6,%,Jun 2020 vs Jun 2019,idea4_baseline_band.csv,
+4,cyc_june_pct_vs_baseline,45.9,%,Jun 2020 vs Jun 2015-19 mean,idea4_baseline_band.csv,
+4,cyc_peak_excess_month,Jun,month,2020,idea4_baseline_band.csv,+45.9% vs 2015-19 mean
+4,cyc_jan_mar_pct_vs_2019,-9.8,%,Jan-Mar 2020 vs 2019,idea4_monthly_2019_2021.csv,"1,907 vs 2,115"
+4,cyc_apr_dec_pct_vs_2019,23.9,%,Apr-Dec 2020 vs 2019,idea4_monthly_2019_2021.csv,"6,425 vs 5,187"
+4,cyc_2019,7302,hospitalisations,2019,idea4_cyclist_trend.csv,
+4,cyc_2020,8332,hospitalisations,2020,idea4_cyclist_trend.csv,
+4,cyc_pct_2019_2020,14.1,%,2020 vs 2019,idea4_cyclist_trend.csv,
+4,cyc_trend_expected_2020,7670.3,hospitalisations,2020 (2011-19 OLS),idea4_cyclist_trend.csv,PI95 6974.7-8365.9
+4,cyc_excess_vs_trend,661.7,hospitalisations,2020,idea4_cyclist_trend.csv,+8.6%; outside PI95 = False
+4,cyc_excess_vs_trend_2015_19_fit,972.5,hospitalisations,2020,idea4_cyclist_trend.csv,+13.2% (sensitivity)
+4,cyc_2015_19_fit_pi95,6843.2-7875.8,hospitalisations,2020,idea4_cyclist_trend.csv,outside = True
+4,cyc_apr_dec_vs_trend_adjusted,17.4,%,Apr-Dec 2020,idea4_baseline_band.csv,"6,425 vs 5,472 expected; 9/9 months above"
+4,cyc_months_above_2015_19_max,9,of 9 months,Apr-Dec 2020,idea4_baseline_band.csv,
+4,cyc_2021_vs_trend,3.4,%,2021,idea4_cyclist_trend.csv,
+4,all_pct_2020_vs_2019,-4.8,%,2020 vs 2019,idea4_roaduser_change_2020.csv,"39,866 -> 37,966"
+4,all_april_pct_vs_2019,-32.4,%,Apr 2020 vs Apr 2019,idea4_roaduser_change_2020.csv,
+4,ped_pct_2020_vs_2019,-22.5,%,2020 vs 2019,idea4_roaduser_change_2020.csv,"2,713 -> 2,103"
+4,ped_april_pct_vs_2019,-59.8,%,Apr 2020 vs Apr 2019,idea4_roaduser_change_2020.csv,
+4,driver_pct_2020_vs_2019,-9.4,%,2020 vs 2019,idea4_roaduser_change_2020.csv,"13,482 -> 12,217"
+4,driver_april_pct_vs_2019,-42.9,%,Apr 2020 vs Apr 2019,idea4_roaduser_change_2020.csv,
+4,passenger_pct_2020_vs_2019,-12.9,%,2020 vs 2019,idea4_roaduser_change_2020.csv,"4,989 -> 4,344"
+4,passenger_april_pct_vs_2019,-52.7,%,Apr 2020 vs Apr 2019,idea4_roaduser_change_2020.csv,
+4,moto_pct_2020_vs_2019,-2.7,%,2020 vs 2019,idea4_roaduser_change_2020.csv,"8,924 -> 8,684"
+4,moto_april_pct_vs_2019,-37.5,%,Apr 2020 vs Apr 2019,idea4_roaduser_change_2020.csv,
+4,cyc_pct_2020_vs_2019,14.1,%,2020 vs 2019,idea4_roaduser_change_2020.csv,"7,302 -> 8,332"
+4,cyc_april_pct_vs_2019,15.9,%,Apr 2020 vs Apr 2019,idea4_roaduser_change_2020.csv,
+4,cyc_rise_top_age,40-64,age band,2019->2020,idea4_cyclist_age_2020.csv,32.6% of the rise; +11.2%
+4,cyc_8-16_pct_2019_2020,29.5,%,2020 vs 2019,idea4_cyclist_age_2020.csv,1041 -> 1348
+4,cyc_40-64_pct_2019_2020,11.2,%,2020 vs 2019,idea4_cyclist_age_2020.csv,2995 -> 3331
+4,cyc_65-74_pct_2019_2020,22.7,%,2020 vs 2019,idea4_cyclist_age_2020.csv,565 -> 693
+4,state_rise_count_Jan-Jun,6,of 8 states,Jan-Jun 2020 vs Jan-Jun 2019,idea4_state_cyclists_2020.csv,ACT -18%; NSW +9%; NT +35%; Qld +12%; SA +5%; Tas -15%; Vic +2%; WA +22%
+4,state_vic_share_of_rise_Jan-Jun,7.7,% of rise,Jan-Jun,idea4_state_cyclists_2020.csv,
+4,state_qld_share_of_rise_Jan-Jun,34.6,% of rise,Jan-Jun,idea4_state_cyclists_2020.csv,
+4,state_rise_count_Jul-Dec,8,of 8 states,Jul-Dec 2020 vs Jul-Dec 2019,idea4_state_cyclists_2020.csv,ACT +26%; NSW +25%; NT +22%; Qld +8%; SA +22%; Tas +41%; Vic +40%; WA +5%
+4,state_vic_share_of_rise_Jul-Dec,51.8,% of rise,Jul-Dec,idea4_state_cyclists_2020.csv,
+4,state_qld_share_of_rise_Jul-Dec,7.5,% of rise,Jul-Dec,idea4_state_cyclists_2020.csv,

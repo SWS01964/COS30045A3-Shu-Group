@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1500" font-family="system-ui,-apple-system,sans-serif">
+  <rect width="1600" height="1500" fill="#faf8f3"/>
+  <text x="60" y="60" font-size="40" font-weight="700" fill="#1c2230">P2 — Low-fidelity wireframe: overall page (desktop)</text>
+  <text x="60" y="98" font-size="22" fill="#646b78">Greyscale boxes show structure only. Prose column ~760px, figures ~980px wide, both centred with 16px gutters.</text>
+
+  <!-- content column guides -->
+  <line x1="310" y1="130" x2="310" y2="1460" stroke="#e7e3d8" stroke-width="1"/>
+  <line x1="1290" y1="130" x2="1290" y2="1460" stroke="#e7e3d8" stroke-width="1"/>
+  <text x="320" y="150" font-size="16" fill="#b0b5bd">980px wide (figures)</text>
+  <line x1="420" y1="130" x2="420" y2="1460" stroke="#e7e3d8" stroke-width="1"/>
+  <line x1="1180" y1="130" x2="1180" y2="1460" stroke="#e7e3d8" stroke-width="1"/>
+  <text x="430" y="150" font-size="16" fill="#b0b5bd">760px (prose)</text>
+
+  <!-- masthead -->
+  <g>
+    <rect x="420" y="170" width="760" height="150" rx="6" fill="#ece8dc" stroke="#8796a8"/>
+    <rect x="440" y="190" width="220" height="18" fill="#d9d4c8"/>
+    <rect x="440" y="222" width="560" height="46" fill="#c8c2b4"/>
+    <rect x="440" y="282" width="420" height="16" fill="#d9d4c8"/>
+    <text x="420" y="340" font-size="20" fill="#646b78">masthead — kicker / title / standfirst</text>
+  </g>
+
+  <!-- chapter 1 -->
+  <g>
+    <text x="420" y="400" font-size="26" font-weight="700" fill="#1c2230">Chapter 1</text>
+    <rect x="420" y="415" width="760" height="60" rx="6" fill="#ece8dc" stroke="#8796a8"/>
+    <rect x="440" y="430" width="700" height="14" fill="#d9d4c8"/>
+    <rect x="440" y="452" width="620" height="14" fill="#d9d4c8"/>
+    <text x="420" y="500" font-size="20" fill="#646b78">prose — claim 1 in words (numbers auto-filled from data)</text>
+
+    <!-- figure 1 -->
+    <rect x="310" y="520" width="980" height="240" rx="6" fill="#ffffff" stroke="#8796a8"/>
+    <rect x="330" y="540" width="360" height="20" fill="#d9d4c8"/>
+    <rect x="330" y="570" width="920" height="150" fill="#ece8dc" stroke="#c8c2b4"/>
+    <text x="800" y="650" text-anchor="middle" font-size="22" fill="#8796a8">unit chart (dots)</text>
+    <text x="330" y="745" font-size="18" fill="#646b78">source note</text>
+    <text x="310" y="790" font-size="20" fill="#646b78">Figure 1 — one death : N hospitalised</text>
+
+    <rect x="420" y="815" width="760" height="40" rx="6" fill="#ece8dc" stroke="#8796a8"/>
+    <rect x="440" y="827" width="680" height="14" fill="#d9d4c8"/>
+    <text x="420" y="880" font-size="20" fill="#646b78">prose — "deaths and hospitalisations are different sizes…"</text>
+
+    <!-- figure 2 -->
+    <rect x="310" y="900" width="980" height="300" rx="6" fill="#ffffff" stroke="#8796a8"/>
+    <rect x="330" y="920" width="360" height="20" fill="#d9d4c8"/>
+    <rect x="330" y="952" width="180" height="34" rx="17" fill="#d9d4c8" stroke="#8796a8"/>
+    <text x="420" y="974" text-anchor="middle" font-size="16" fill="#434a5a">Counts | Per person</text>
+    <rect x="330" y="1000" width="920" height="160" fill="#ece8dc" stroke="#c8c2b4"/>
+    <text x="790" y="1085" text-anchor="middle" font-size="22" fill="#8796a8">indexed line chart (2011 = 100)</text>
+    <text x="310" y="1230" font-size="20" fill="#646b78">Figure 2 — indexed lines + toggle</text>
+  </g>
+
+  <!-- chapter 2 -->
+  <g>
+    <text x="420" y="1300" font-size="26" font-weight="700" fill="#1c2230">Chapter 2</text>
+    <rect x="420" y="1315" width="760" height="50" rx="6" fill="#ece8dc" stroke="#8796a8"/>
+    <rect x="440" y="1328" width="720" height="14" fill="#d9d4c8"/>
+    <rect x="440" y="1350" width="600" height="14" fill="#d9d4c8"/>
+    <rect x="310" y="1390" width="980" height="60" rx="6" fill="#ffffff" stroke="#8796a8"/>
+    <text x="800" y="1427" text-anchor="middle" font-size="20" fill="#8796a8">Figure 3 — heatmap + finder + trend  (continued in P3)</text>
+  </g>
+</svg>

@@ -1,0 +1,14 @@
+check,result,detail
+"Annual hospitalisations 2011 = 34,033",PASS,"got 34,033"
+"Annual hospitalisations 2021 = 39,505",PASS,"got 39,505"
+All 11 years equal Phase 1 idea1_national_annual.csv,PASS,max abs diff 0
+"Raw workbook vs clean CSV: hosp, cases, died, bed days, died bed days by year (55 cells)",PASS,"max abs diff 0; raw Traffic rows 86,140"
+Raw workbook vs clean CSV: road user x year hospitalisations,PASS,132 cells
+Monthly cells sum to annual totals,PASS,
+"Phase 1 idea2_age_severity reproduces (avg stay + died/1000, 7 ages)",PASS,75+ stay 11.1 / died 28.1
+"Canonical died/1,000 2011-19 (5 road users)",PASS,Pedestrian 21.8; Car passenger 7.3; Car driver 5.8; Motorcyclist 4.1; Pedal cyclist 1.9
+Canonical 2016-21 shares (cases_incl_died vs bed_days),PASS,Pedestrian 6.6% vs 13.1%; Pedal cyclist 19.0% vs 11.1%; Motorcyclist 22.2% vs 25.0%
+"Legacy pooled HANDOFF figures reproduce (19.3/4.9/1.6; train 48.7, 14.5 days; heavy 17.3, 8.4 days)",PASS,explains the gap vs the 2011-19 figures
+"April 2019 = 3,488 and April 2020 = 2,357",PASS,"3,488 / 2,357 (-32.4%)"
+"Cyclists 2019 = 7,302 and 2020 = 8,332",PASS,+14.1%
+Cyclists June 2020 = 683 / June 2019 = 453 reproduce on Count of cases (cases_incl_died); Hospitalisations gives 682 / 453 -> publish 682,PASS,got 682 / 453; cases_incl_died 683 / 453

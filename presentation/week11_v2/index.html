@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beyond the Road Toll — Week 11 Stand Up 2 (v2, four chapters)</title>
+<style>
+  :root{
+    --bg:#faf8f3; --ink:#1c2230; --ink2:#434a5a; --muted:#646b78; --rule:#d9d4c8;
+    --accent:#b8470f; --accent-ink:#8f3406; --accent-soft:#f4d8c5; --blue:#1f5f99; --blue-soft:#cfe0ef;
+    --serif:Georgia,"Iowan Old Style","Palatino Linotype",Palatin,"Times New Roman",serif;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{background:#171a21;color:var(--ink);font-family:var(--serif)}
+  #deck{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+  .slide{display:none;position:relative;width:min(1280px,96vw);aspect-ratio:16/9;background:var(--bg);padding:52px 64px 60px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+  .slide.active{display:block}
+  .kicker{font-family:var(--sans);font-size:16px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);font-weight:700;margin:0 0 12px}
+  .kicker .new{background:var(--accent);color:#fff;padding:2px 8px;border-radius:4px;margin-left:10px;letter-spacing:.08em}
+  h1{font-size:68px;line-height:1.04;margin:0 0 24px;font-weight:700;letter-spacing:-.01em}
+  h2{font-size:40px;line-height:1.1;margin:0 0 20px;font-weight:700;letter-spacing:-.005em}
+  h2.t2{font-size:38px}
+  .lede{font-size:26px;line-height:1.45;color:var(--ink2);max-width:1000px}
+  .sub{font-family:var(--sans);font-size:22px;color:var(--muted);margin-top:22px}
+  ul{margin:0;padding:0;list-style:none}
+  li{font-size:23px;line-height:1.4;margin:0 0 12px;padding-left:32px;position:relative;color:var(--ink2)}
+  li:before{content:"";position:absolute;left:0;top:13px;width:13px;height:13px;border-radius:50%;background:var(--accent)}
+  li.blue:before{background:var(--blue)}
+  li b{color:var(--ink)}
+  .big{font-family:var(--sans);font-weight:700;font-variant-numeric:tabular-nums;color:var(--ink)}
+  .num{display:block;font-family:var(--sans);font-weight:700;font-variant-numeric:tabular-nums;color:var(--accent);font-size:58px;line-height:1}
+  .num.blue{color:var(--blue)}
+  .stat{margin:0 0 20px;font-family:var(--sans)}
+  .stat p{margin:6px 0 0;font-size:22px;line-height:1.3;color:var(--ink2)}
+  .split{display:grid;grid-template-columns:400px 1fr;gap:36px;align-items:center}
+  .lg li{font-size:27px;margin-bottom:20px;padding-left:36px}
+  .lg li:before{top:15px}
+  .split.r{grid-template-columns:1fr 400px}
+  .shot{display:block;width:100%;height:auto;border:1px solid var(--rule);border-radius:8px;background:#fff}
+  .cap{font-family:var(--sans);font-size:17px;color:var(--muted);margin:8px 0 0}
+  .cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .cols2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+  .card{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:22px 24px;font-family:var(--sans)}
+  .card h3{font-family:var(--sans);font-size:24px;margin:0 0 10px;color:var(--ink)}
+  .card p{font-size:22px;line-height:1.35;color:var(--ink2);margin:0}
+  .card .was{color:var(--accent-ink);font-weight:700}
+  .foot{position:absolute;left:64px;right:64px;bottom:22px;display:flex;justify-content:space-between;font-family:var(--sans);font-size:14px;color:var(--muted)}
+  .note{position:absolute;left:64px;right:64px;bottom:44px;font-family:var(--sans);font-size:20px;line-height:1.35;color:var(--accent-ink);background:var(--accent-soft);border-left:4px solid var(--accent);padding:10px 16px;border-radius:0 8px 8px 0}
+  .note.flow{position:static;margin-top:18px}
+  .check{color:var(--blue);font-weight:700}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 16px}
+  .chip{font-family:var(--sans);font-size:22px;background:#fff;border:1px solid var(--rule);border-radius:999px;padding:6px 16px;color:var(--ink2)}
+  .flowrow{display:flex;align-items:stretch;gap:0}
+  .fbox{flex:1;background:#fff;border:1px solid var(--rule);border-radius:10px;padding:14px 16px;font-family:var(--sans)}
+  .fbox b{display:block;font-size:22px;color:var(--ink);margin-bottom:4px}
+  .fbox span{font-size:20px;line-height:1.3;color:var(--ink2)}
+  .arrow{width:34px;display:flex;align-items:center;justify-content:center;font-size:30px;color:var(--accent);font-family:var(--sans)}
+  .phones{display:flex;gap:16px;align-items:flex-start}
+  .gal{display:grid;gap:14px}
+  .gal figure{margin:0}
+  .gal img{width:100%;border:1px solid var(--rule);border-radius:6px;background:#fff;display:block}
+  .gal figcaption{font-family:var(--sans);font-size:16px;color:var(--muted);margin-top:4px}
+  .crop{object-fit:cover;object-position:top}
+  code{font-family:Menlo,Consolas,monospace;font-size:.85em;background:#efece4;padding:1px 6px;border-radius:4px}
+  .hint{position:fixed;bottom:14px;right:18px;color:#8b93a3;font-family:var(--sans);font-size:12px}
+  @page{size:1280px 720px;margin:0}
+  @media print{
+    html,body{height:auto}
+    body{background:#fff}
+    #deck{position:static;display:block}
+    .slide{display:block;width:1280px;height:720px;aspect-ratio:auto;page-break-after:always;break-after:page;box-shadow:none;margin:0}
+    .slide:last-child{page-break-after:auto;break-after:auto}
+    .hint{display:none}
+  }
+</style>
+</head>
+<body>
+<div id="deck">
+
+  <!-- 1 title -->
+  <section class="slide active" style="padding-top:120px">
+    <p class="kicker">COS30045 Data Visualisation &middot; Week 11 &middot; Stand Up 2 (updated)</p>
+    <h1>Beyond the Road Toll</h1>
+    <p class="lede">Hospitalised road-crash injuries in Australia, 2011&ndash;2021. Four chapters: why deaths fall while serious injuries don&rsquo;t, who is hurt worst, and what lockdown did to the roads.</p>
+    <p class="sub">Team [names] &middot; presenting: [your name]</p>
+  </section>
+
+  <!-- 2 where we are -->
+  <section class="slide">
+    <p class="kicker">Where we are</p>
+    <h2>Stand Up 1 was the <i>what</i>. Today is the <i>how</i> &mdash; and the story grew from two chapters to four.</h2>
+    <ul class="lg" style="margin-top:34px">
+      <li><span class="check">&#10003;</span> Working <span class="big">D3</span> site: <span class="big">11</span> custom charts, four chapters and a closing section</li>
+      <li><span class="check">&#10003;</span> <span class="big">86,140</span> traffic rows cleaned in Python; <span class="big">16</span> CSVs feed the site</li>
+      <li><span class="check">&#10003;</span> <b>New:</b> Chapter 3 (severity) and Chapter 4 (the lockdown test)</li>
+      <li><span class="check">&#10003;</span> Checked twice: Python reconciliation <span class="big">13/13</span> PASS; KNIME matches on <span class="big">59/59</span></li>
+    </ul>
+    <p class="note">Today: the <b>design decisions</b> &mdash; visualisation, interaction, website and pipeline &mdash; with the new chapters as the worked examples.</p>
+  </section>
+
+  <!-- 3 Sam + map -->
+  <section class="slide">
+    <p class="kicker">The reader and the map</p>
+    <h2 class="t2">Sam asks three questions. Four chapters answer them.</h2>
+    <div class="split" style="grid-template-columns:420px 1fr;gap:32px">
+      <div class="card">
+        <h3>Sam, 52, outer Brisbane</h3>
+        <p>Drives to work. Started riding on weekends in 2020. Parents in their late seventies still walk to the shops. Reads on a phone, in short sittings.</p>
+        <p style="margin-top:14px"><b>1.</b> Is it getting safer?<br><b>2.</b> Are people like me, or my parents, more at risk?<br><b>3.</b> What should I take away?</p>
+      </div>
+      <div>
+        <div class="card" style="margin-bottom:18px;padding:18px 22px"><h3 style="margin:0;font-size:25px">1 &middot; The hidden road toll <span style="font-weight:400;color:var(--muted)">&rarr; Q1</span></h3></div>
+        <div class="card" style="margin-bottom:18px;padding:18px 22px"><h3 style="margin:0;font-size:25px">2 &middot; Road injury is getting older <span style="font-weight:400;color:var(--muted)">&rarr; Q2</span></h3></div>
+        <div class="card" style="margin-bottom:18px;padding:18px 22px;border-color:var(--accent)"><h3 style="margin:0;font-size:25px">3 &middot; Not every crash is equal <span class="new" style="font-size:14px;background:var(--accent);color:#fff;border-radius:4px;padding:2px 7px">NEW</span> <span style="font-weight:400;color:var(--muted)">&rarr; Q2 (parents)</span></h3></div>
+        <div class="card" style="margin-bottom:18px;padding:18px 22px;border-color:var(--accent)"><h3 style="margin:0;font-size:25px">4 &middot; The lockdown test <span class="new" style="font-size:14px;background:var(--accent);color:#fff;border-radius:4px;padding:2px 7px">NEW</span> <span style="font-weight:400;color:var(--muted)">&rarr; Q2 (Sam&rsquo;s riding)</span></h3></div>
+        <div class="card" style="padding:18px 22px"><h3 style="margin:0;font-size:25px">Closing &middot; What to take away <span style="font-weight:400;color:var(--muted)">&rarr; Q3</span></h3></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 ch1 -->
+  <section class="slide">
+    <p class="kicker">Chapter 1 &middot; built</p>
+    <h2>The road toll is falling. The injury toll isn&rsquo;t.</h2>
+    <div class="split">
+      <div>
+        <div class="stat"><span class="num">39,505</span><p>admitted in 2021, about 108 a day</p></div>
+        <div class="stat"><span class="num">35</span><p>admitted for every road death (27 in 2011)</p></div>
+        <div class="stat"><span class="num blue">&minus;11.5%</span><p>road deaths since 2011; admissions <b>+16%</b></p></div>
+      </div>
+      <div>
+        <img class="shot" src="img/ch1_unit.png" alt="Unit chart: one road death against 27 admissions in 2011 and 35 in 2021">
+        <p class="cap">Site, Chapter 1. Per person the hospitalisation rate barely moved: about 152 to 154 per 100,000.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 ch2 -->
+  <section class="slide">
+    <p class="kicker">Chapter 2 &middot; built</p>
+    <h2>Cycling injuries have more than doubled among over-65s.</h2>
+    <div class="split">
+      <div>
+        <div class="stat"><span class="num">+138%</span><p>cyclists aged 65&ndash;74 (3-year averages)</p></div>
+        <div class="stat"><span class="num">+142%</span><p>cyclists aged 75 and over</p></div>
+        <div class="stat"><span class="num blue">+78%</span><p>and <b>+92%</b> per person, after population growth</p></div>
+      </div>
+      <div>
+        <img class="shot" style="height:430px;width:auto;margin:0 auto" src="img/ch2_heat.png" alt="Heatmap of change by road user and age band">
+        <p class="cap">Site, Chapter 2: road user by age, % change 2011&ndash;13 to 2019&ndash;21. Ageing explains part, not most.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 ch3 burden -->
+  <section class="slide">
+    <p class="kicker">Chapter 3 &middot; severity<span class="new">NEW</span></p>
+    <h2 class="t2">Pedestrians are 1 in 14 of the injured, but 1 in 4 of those who die in hospital</h2>
+    <div class="split" style="grid-template-columns:420px 1fr">
+      <div>
+        <div class="stat"><span class="num">7.3% &rarr; 26.4%</span><p>of admissions vs of in-hospital deaths, 2011&ndash;19 (538 of 2,041)</p></div>
+        <div class="stat"><span class="num">22</span><p>died per 1,000 admitted pedestrians. Car drivers 6, cyclists 2</p></div>
+      </div>
+      <div>
+        <img class="shot" src="img/ch3a_deaths.png" alt="Chart 3A, deaths in hospital step: pedestrians 7.3% of admissions and 26.4% of deaths">
+        <p class="cap">Site, chart 3A, &ldquo;Deaths in hospital&rdquo; step. Counts, not risk per trip: no data on how far people walk.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 ch3 older -->
+  <section class="slide">
+    <p class="kicker">Chapter 3 &middot; severity<span class="new">NEW</span></p>
+    <h2 class="t2">Older pedestrians are hurt less often, but far worse</h2>
+    <div class="split" style="grid-template-columns:420px 1fr">
+      <div>
+        <div class="stat"><span class="num">61</span><p>in 1,000 pedestrians aged 75+ died in hospital (28 for all road users that age)</p></div>
+        <div class="stat"><span class="num">19 days</span><p>average stay for survivors aged 75+, against 11</p></div>
+        <div class="stat"><span class="num blue">52%</span><p>of pedestrian in-hospital deaths are aged 65+, but 23% of injured pedestrians</p></div>
+      </div>
+      <div>
+        <img class="shot" src="img/ch3b_agedots.png" alt="Chart 3B: died in hospital per 1,000 by age band, pedestrians vs all road users">
+        <p class="cap">Site, chart 3B, with 95% interval whiskers. Per 1,000 <i>admitted</i>, not per head of population.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 ch4 trough -->
+  <section class="slide">
+    <p class="kicker">Chapter 4 &middot; the lockdown test<span class="new">NEW</span></p>
+    <h2 class="t2">In the month Australia locked down, crash admissions fell by a third. Cyclist admissions rose.</h2>
+    <div class="split" style="grid-template-columns:400px 1fr">
+      <div>
+        <div class="stat"><span class="num">2,357</span><p>admitted in April 2020, the lowest month of 2011&ndash;2021</p></div>
+        <div class="stat"><span class="num blue">&minus;32%</span><p>against April 2019 (3,488)</p></div>
+        <div class="stat" style="margin-bottom:0"><p>Falls by road user: pedestrians <b>&minus;60%</b>, passengers <b>&minus;53%</b>, drivers <b>&minus;43%</b>, motorcyclists <b>&minus;38%</b></p></div>
+      </div>
+      <div>
+        <img class="shot" src="img/ch4a_all.png" alt="Chart 4A, all road users: April 2020 trough below the 2015-19 band">
+        <p class="cap">Site, chart 4A. Grey band = 2015&ndash;19 range. We say &ldquo;locked down&rdquo;, not &ldquo;roads emptied&rdquo;: no traffic counts.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 ch4 exception -->
+  <section class="slide">
+    <p class="kicker">Chapter 4 &middot; the exception<span class="new">NEW</span></p>
+    <h2 class="t2">Every road user went to hospital less in April 2020, except cyclists</h2>
+    <div class="split" style="grid-template-columns:400px 1fr">
+      <div>
+        <div class="stat"><span class="num">+16%</span><p>cyclists in April 2020, against &minus;32% for everyone</p></div>
+        <div class="stat"><span class="num">682</span><p>cyclists in June 2020, up from 453 in June 2019</p></div>
+        <div class="stat"><span class="num blue">+14%</span><p>whole year: 7,302 to 8,332. Pedestrians &minus;22%, drivers &minus;9%</p></div>
+      </div>
+      <div>
+        <img class="shot" src="img/ch4b_div.png" alt="Chart 4B: percent change April 2020 vs April 2019 by road user">
+        <p class="cap">Site, chart 4B: five bars left, one right.</p>
+        <p style="font-family:var(--sans);font-size:22px;line-height:1.35;color:var(--ink2);margin:14px 0 0"><b>Children rode too:</b> cyclists aged 8&ndash;16 went from 1,041 to 1,348 admissions (+29.5%).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 ch4 trend -->
+  <section class="slide">
+    <p class="kicker">Chapter 4 &middot; the trend test<span class="new">NEW</span></p>
+    <h2 class="t2">Was it lockdown, or the trend? Cyclist injuries were already rising</h2>
+    <div class="split" style="grid-template-columns:1fr 450px;gap:28px">
+      <div>
+        <ul>
+          <li>The 2011&ndash;19 trend predicts <b>7,670</b> cyclist admissions for 2020; the real figure was <b>8,332</b>.</li>
+          <li><b>+662</b> above trend: inside the 95% band, so within normal year-to-year variation.</li>
+          <li>Month by month it is clearer: <b>all 9 months</b>, April to December, beat every 2015&ndash;19 year.</li>
+          <li>Likely <b>more riders</b>, not riskier riding. This data cannot prove it: no trip counts.</li>
+        </ul>
+      </div>
+      <div>
+        <img class="shot" src="img/ch4c_trend.png" alt="Chart 4C: annual cyclist admissions with 2011-19 trend and 95% band">
+        <p class="cap">Site, chart 4C. Sensitivity: a 2015&ndash;19 fit puts 2020 +973 above trend, outside its band.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 honesty -->
+  <section class="slide">
+    <p class="kicker">Editorial honesty</p>
+    <h2>Three things we corrected before publishing.</h2>
+    <div class="cols3">
+      <div class="card"><h3>&ldquo;Roads emptied&rdquo;</h3><p><span class="was">Dropped.</span> There is no traffic-volume series. We say &ldquo;when Australia locked down&rdquo;.</p></div>
+      <div class="card"><h3>&ldquo;More likely to be hit&rdquo;</h3><p><span class="was">Not said.</span> Older pedestrians&rsquo; per-person admission rate fell. What worsens is the outcome.</p></div>
+      <div class="card"><h3>Train collisions</h3><p><span class="was">Revised</span> 48.7 &rarr; 57.2 per 1,000 (17 deaths in 297 cases). The old figure pooled years with missing death records.</p></div>
+    </div>
+    <ul class="lg" style="margin-top:28px">
+      <li class="blue"><b>Caveats printed on the page:</b> counts are not rates; deaths in hospital 2011&ndash;19 only; bed days 2016&ndash;21 only.</li>
+      <li class="blue">Vic (2012) and NSW (2017) counting changes lower counts. Most road deaths happen at the scene and are not in this data.</li>
+    </ul>
+  </section>
+
+  <!-- 12 visualisation design -->
+  <section class="slide">
+    <p class="kicker">Visualisation design</p>
+    <h2>The chart says the finding before you read the data.</h2>
+    <div class="split r" style="grid-template-columns:1fr 600px">
+      <ul>
+        <li><b>Finding-first titles:</b> &ldquo;Pedestrians take up twice their share of hospital beds&rdquo;</li>
+        <li><b>Direct labels</b> on the bars. No legend to decode.</li>
+        <li><b>One highlight</b> (orange) on grey context. Blue only for falls.</li>
+        <li><b>A notes line</b> under every chart: source, period, limits.</li>
+        <li><b>Rejected:</b> pies, dual axes, radar. Low-count cells are hatched or withheld, never guessed.</li>
+      </ul>
+      <div>
+        <img class="shot" src="img/ch3a_bed.png" alt="Chart 3A, bed days step">
+        <p class="cap">Chart 3A, &ldquo;Bed days&rdquo; step: grey = admissions, orange = the harm measure.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13 interaction design -->
+  <section class="slide">
+    <p class="kicker">Interaction design</p>
+    <h2>Few controls, each one answers a question.</h2>
+    <div class="split r" style="grid-template-columns:1fr 560px">
+      <ul>
+        <li><b>Steppers:</b> Admissions &rarr; Bed days &rarr; Deaths (3A); All road users &rarr; Cyclists (4A, the axis rescales and says so).</li>
+        <li><b>Toggles:</b> Died per 1,000 / Average stay (3B); counts / per person (Ch 1&ndash;2).</li>
+        <li><b>Find yourself:</b> pick road user and age, read one plain sentence.</li>
+        <li><b>Keyboard and touch:</b> arrow keys, tap tooltips; nothing is hover-only. A data table sits behind every chart.</li>
+        <li><b>Reduced motion</b> respected: same content, no animation.</li>
+      </ul>
+      <div>
+        <img class="shot" src="img/ch4a_cyc.png" alt="Chart 4A Cyclists view with the segmented switch">
+        <p class="cap">Chart 4A after the switch to &ldquo;Cyclists&rdquo;.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14 website design -->
+  <section class="slide">
+    <p class="kicker">Website design</p>
+    <h2>A newspaper page, not a dashboard.</h2>
+    <div class="chips">
+      <span class="chip">Masthead</span><span class="chip">Key-points boxes</span><span class="chip">Pull stats</span><span class="chip">Sticky chapter bar</span><span class="chip">Methods box</span><span class="chip">Dark mode</span><span class="chip">Works at 375 px</span>
+    </div>
+    <div class="phones" style="margin-top:6px;align-items:flex-end">
+      <figure style="margin:0"><img class="shot" style="height:350px;width:auto" src="img/site_desktop_top.png" alt="Desktop: masthead, chapter bar, headline, lede graphic"><p class="cap">Desktop, 1280 px</p></figure>
+      <figure style="margin:0"><img class="shot" style="height:350px;width:auto" src="img/site_375_top.png" alt="Phone, 375 px"><p class="cap">Phone, 375 px</p></figure>
+      <figure style="margin:0"><img class="shot" style="height:350px;width:auto" src="img/site_375_dark_burden.png" alt="Phone, dark mode"><p class="cap">Phone, dark mode</p></figure>
+    </div>
+  </section>
+
+  <!-- 15 pipeline -->
+  <section class="slide">
+    <p class="kicker">Data pipeline</p>
+    <h2>Every number on the page comes from one traceable path.</h2>
+    <div class="flowrow">
+      <div class="fbox"><b>BITRE workbook</b><span>117,919 raw rows</span></div><div class="arrow">&rarr;</div>
+      <div class="fbox"><b>clean_data.py</b><span>Traffic only: 86,140 rows</span></div><div class="arrow">&rarr;</div>
+      <div class="fbox"><b>phase2_ideas.py</b><span>rates, flags, trend</span></div><div class="arrow">&rarr;</div>
+      <div class="fbox"><b>16 CSVs</b><span>copied to the site</span></div><div class="arrow">&rarr;</div>
+      <div class="fbox"><b>D3 charts</b><span>prose filled from data</span></div>
+    </div>
+    <ul class="lg" style="margin-top:34px">
+      <li class="blue">National totals match BITRE&rsquo;s published tables exactly (Phase 1).</li>
+      <li class="blue"><b>Phase 2: 13/13</b> reconciliation checks PASS, including 538 of 2,041 deaths and April 3,488 &rarr; 2,357.</li>
+      <li class="blue"><b>100</b> quotable numbers, each tied to a source CSV; <b>102/102</b> prose numbers filled from the data (<code>data-fill</code>).</li>
+      <li class="blue">Low-count rates are blanked in <code>_publish</code> columns; the charts only read those.</li>
+    </ul>
+  </section>
+
+  <!-- 16 KNIME -->
+  <section class="slide">
+    <p class="kicker">KNIME v2</p>
+    <h2>A second tool, redoing the sums from the raw workbook.</h2>
+    <div class="split r" style="grid-template-columns:1fr 440px;align-items:center">
+      <div><img class="shot" style="max-height:500px;width:auto;max-width:100%;margin:0 auto" src="img/knime_v2_workflow.png" alt="KNIME v2 workflow with branches D to G"></div>
+      <div>
+        <div class="stat"><span class="num">28</span><p>nodes: v1&rsquo;s 9 plus Idea 3 and Idea 4 branches</p></div>
+        <div class="stat"><span class="num blue">59/59</span><p>checks match the Python outputs</p></div>
+        <div class="stat" style="margin-bottom:0"><p>KNIME checks Python; it does not feed the site. Portable <code>.knwf</code>.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 17 code 1 -->
+  <section class="slide">
+    <p class="kicker">Code &middot; Python</p>
+    <h2>The rule is in the code: no rate without enough cases.</h2>
+    <img class="shot" style="width:1040px;margin:0 auto" src="img/deck_died_per_1000.png" alt="phase2_ideas.py: died per 1,000, interval and low-count flags">
+    <p class="cap" style="font-size:19px;text-align:center"><code>processing/phase2_ideas.py</code> lines 56, 208&ndash;214, 217&ndash;218: flag below 100 cases or 10 deaths; only flagged-ok values reach the <code>_publish</code> column.</p>
+  </section>
+
+  <!-- 18 code 2 -->
+  <section class="slide">
+    <p class="kicker">Code &middot; D3</p>
+    <h2>One small module per chart; the view switch just redraws.</h2>
+    <img class="shot" style="width:900px;margin:0 auto" src="img/deck_lockdown.png" alt="lockdown.js: band, lines and view switch">
+    <p class="cap" style="font-size:19px;text-align:center"><code>website/js/charts/lockdown.js</code> lines 49&ndash;50 and 97&ndash;105: the 2015&ndash;19 band, and the All / Cyclists switch.</p>
+  </section>
+
+  <!-- 19 next -->
+  <section class="slide">
+    <p class="kicker">What&rsquo;s next, honestly</p>
+    <h2>What is not done yet.</h2>
+    <ul class="lg">
+      <li><b>Usability testing</b> with Sam-like users: think-aloud, task success, SUS. <i>Not yet run.</i></li>
+      <li><b>Mercury deployment</b> and the design-process write-up.</li>
+      <li><b>Team names</b>, GitHub link and licence: still <code>[names]</code> placeholders.</li>
+      <li><b>Chapter 5 (equity) deferred:</b> First Nations tables do not reconcile with national totals by more than suppressed cells explain, so we will not publish it.</li>
+    </ul>
+    <p class="note"><b>Ask:</b> does the Chapter 3 headline read as a claim you would trust? Anything unclear in Chapter 4&rsquo;s trend caveat?</p>
+  </section>
+
+  <!-- 20 backup -->
+  <section class="slide">
+    <p class="kicker">Backup</p>
+    <h2>Sources and methods.</h2>
+    <ul class="lg" style="font-size:25px">
+      <li class="blue"><b>Sources:</b> BITRE hospitalised injury data (Sept 2023); ABS estimated resident population; BITRE Australian Road Deaths Database (CC BY 3.0 AU).</li>
+      <li class="blue"><b>Windows:</b> deaths in hospital 2011&ndash;19 (2020&ndash;21 incomplete); bed days and stays 2016&ndash;21 (method changed July 2015).</li>
+      <li class="blue"><b>Flags:</b> rates shown only with at least 100 cases and 10 deaths; 95% Wilson intervals.</li>
+      <li class="blue"><b>Breaks:</b> Vic 2012 and NSW 2017 narrow counts, so rises are probably understated. State and residence, not crash location.</li>
+      <li class="blue"><b>Trend:</b> straight line on 2011&ndash;19, 95% prediction interval; no exposure data (km, trips).</li>
+    </ul>
+  </section>
+
+  <!-- 21 appendix A -->
+  <section class="slide">
+    <p class="kicker">Appendix A &middot; chart states</p>
+    <div class="gal" style="grid-template-columns:1fr 1fr;grid-template-rows:auto auto;margin-top:6px">
+      <figure><img class="crop" style="height:240px" src="img/ch3a_deaths.png" alt=""><figcaption>3A, Deaths in hospital step</figcaption></figure>
+      <figure><img class="crop" style="height:240px" src="img/ch3b_stay.png" alt=""><figcaption>3B, Average stay toggle</figcaption></figure>
+      <figure><img class="crop" style="height:240px" src="img/site_dark_lockdown.png" alt=""><figcaption>4A, dark mode</figcaption></figure>
+      <figure><img style="height:240px;object-fit:contain" src="img/ch4c_trend.png" alt=""><figcaption>4C, annual trend and 95% band</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- 22 appendix B -->
+  <section class="slide">
+    <p class="kicker">Appendix B &middot; phone, 375 px</p>
+    <div class="phones" style="gap:20px;margin-top:6px;align-items:flex-start">
+      <figure style="margin:0"><img class="shot" style="height:400px;width:auto" src="img/site_375_top.png" alt=""><p class="cap">Top, light</p></figure>
+      <figure style="margin:0"><img class="shot" style="height:400px;width:auto" src="img/site_375_burden.png" alt=""><p class="cap">3A, light</p></figure>
+      <figure style="margin:0"><img class="shot" style="height:400px;width:auto" src="img/site_375_dark_burden.png" alt=""><p class="cap">3A, dark</p></figure>
+      <figure style="margin:0"><img class="shot" style="height:400px;width:auto" src="img/site_375_lockdown_cyc.png" alt=""><p class="cap">4A, Cyclists</p></figure>
+      <figure style="margin:0"><img class="shot" style="height:400px;width:auto" src="img/site_375_dark_lockdown.png" alt=""><p class="cap">4A, dark</p></figure>
+    </div>
+  </section>
+
+  <!-- 23 appendix C -->
+  <section class="slide">
+    <p class="kicker">Appendix C &middot; exploratory figures (Phase 2)</p>
+    <div class="gal" style="grid-template-columns:1fr 1fr 1fr;margin-top:6px">
+      <figure><img style="height:200px;object-fit:contain" src="img/eda_idea3_severity_roaduser.png" alt=""><figcaption>Died per 1,000 by road user</figcaption></figure>
+      <figure><img style="height:200px;object-fit:contain" src="img/eda_idea3_older_pedestrians.png" alt=""><figcaption>Older pedestrians: death rate and stay</figcaption></figure>
+      <figure><img style="height:200px;object-fit:contain" src="img/eda_idea3_severity_counterparty.png" alt=""><figcaption>By counterparty, flagged cells</figcaption></figure>
+      <figure><img style="height:200px;object-fit:contain" src="img/eda_idea4_roaduser_change_2020.png" alt=""><figcaption>2020 change by road user</figcaption></figure>
+      <figure><img style="height:200px;object-fit:contain" src="img/eda_idea4_cyclist_age_2020.png" alt=""><figcaption>Cyclists by age, 2019 to 2020</figcaption></figure>
+      <figure><img style="height:200px;object-fit:contain" src="img/eda_idea4_state_cyclists_2020.png" alt=""><figcaption>Cyclists by state, half-year</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- 24 appendix D -->
+  <section class="slide">
+    <p class="kicker">Appendix D &middot; more code</p>
+    <div class="gal" style="grid-template-columns:1fr 1fr;margin-top:6px">
+      <figure><img class="crop" style="height:240px" src="img/phase2_trend_test.png" alt=""><figcaption><code>phase2_ideas.py</code> 383&ndash;400, 492&ndash;512: 2020 trend test</figcaption></figure>
+      <figure><img class="crop" style="height:240px" src="img/burden_js_stepper.png" alt=""><figcaption><code>burden.js</code>: the three-way stepper</figcaption></figure>
+      <figure><img class="crop" style="height:240px" src="img/main_js_data_loading.png" alt=""><figcaption><code>main.js</code>: data loading and <code>data-fill</code></figcaption></figure>
+      <figure><img class="crop" style="height:240px" src="img/style_css_tokens.png" alt=""><figcaption><code>style.css</code>: design tokens</figcaption></figure>
+    </div>
+  </section>
+
+</div>
+<div class="hint">&larr; &rarr; to move &middot; print to PDF</div>
+<script>
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  slides.forEach((s, k) => {
+    if (!s.querySelector('.foot')) { const f = document.createElement('div'); f.className = 'foot'; f.innerHTML = '<span>' + (k + 1) + '</span><span>Beyond the Road Toll &middot; Stand Up 2</span>'; s.appendChild(f); }
+  });
+  let i = parseInt(location.hash.slice(1),10); if(isNaN(i)||i<1||i>slides.length) i=0; else i--;
+  function show(n){ slides.forEach(s=>s.classList.remove('active')); i=(n+slides.length)%slides.length; slides[i].classList.add('active'); history.replaceState(null,'','#'+(i+1)); }
+  document.addEventListener('keydown', e => {
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown') show(i+1);
+    else if(e.key==='ArrowLeft'||e.key==='PageUp') show(i-1);
+    else if(e.key==='Home') show(0); else if(e.key==='End') show(slides.length-1);
+  });
+  document.addEventListener('click', e => { if(e.clientX > innerWidth*0.5) show(i+1); else show(i-1); });
+  show(i);
+</script>
+</body>
+</html>
