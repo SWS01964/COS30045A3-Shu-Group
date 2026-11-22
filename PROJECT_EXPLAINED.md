@@ -331,7 +331,7 @@ Useful as evidence for the design-process and data-processing sections of the fi
 
 ## 12. What is still to do
 
-1. **Team names and the GitHub link.** Replace `[Team names]`, `[names]` and `YOUR-ORG/YOUR-REPO` in `website/index.html` and both Week 11 decks, then reprint the PDFs.
+1. **Confirm the licence, then reprint the PDFs.** Team names are now "Shu" everywhere; the presenter-name and GitHub-URL placeholders were removed rather than filled. Confirm the BITRE licence version, then reprint the PDFs.
 2. **Usability evaluation**, required by the brief:
    - think-aloud sessions with 5–6 people like Sam;
    - tasks such as "find how injuries changed for your age and road-user type" and "which group stays longest in hospital?";

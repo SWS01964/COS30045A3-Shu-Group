@@ -5,7 +5,7 @@ Open `index.html` in a browser; use left/right arrows (or click right/left half)
 ---
 
 **Slide 1 — Title (15s).**
-"Good morning/afternoon. I'm [name], from [team]. This is *Beyond the Road Toll* — our Week 11 design checkpoint. It's a data story about hospitalised road-crash injuries in Australia from 2011 to 2021, answering two questions: is it getting safer, and is that true for everyone."
+"Good morning/afternoon. I'm from team Shu. This is *Beyond the Road Toll* — our Week 11 design checkpoint. It's a data story about hospitalised road-crash injuries in Australia from 2011 to 2021, answering two questions: is it getting safer, and is that true for everyone."
 
 **Slide 2 — Where we are (30s).**
 "At Stand Up 1 we showed *what* our story is: two claims and who it's for. Both are now built as a working D3 prototype, and the data is checked against BITRE's own published tables, which match exactly. Today is about *how*: the design decisions behind the visualisation, interaction and website, and our plan for the rest of the code."

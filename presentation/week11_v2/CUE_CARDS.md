@@ -8,7 +8,7 @@ Fallback: the v1 deck is untouched in `presentation/week11/`.
 
 **1. Title**
 - Point: a four-chapter data story on hospitalised road-crash injuries, 2011-2021.
-- Say: your name and team ([names] placeholders stay until filled in).
+- Say: your name and team (Shu).
 - Q: Why "beyond the road toll"? A: Deaths get the attention; hospital admissions are the bigger, quieter burden.
 
 **2. Where we are**

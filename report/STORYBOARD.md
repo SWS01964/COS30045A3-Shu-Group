@@ -17,7 +17,7 @@ Chapters 1 and 2 are already built. Chapters 3 and 4 are new, and so is the clos
 **Kicker:** Road safety · Data investigation
 **Headline:** Beyond the road toll
 **Standfirst:** Fewer Australians are dying on the roads. The number being seriously hurt hasn't fallen. We went through a decade of hospital records to find out who is being hurt, and how badly.
-**Byline/date:** By [Team names] · Published 23 November 2026
+**Byline/date:** By Shu · Published 23 November 2026
 **Lede graphic:** the existing unit chart: for every road death in 2021, 35 people were admitted to hospital.
 
 ---
