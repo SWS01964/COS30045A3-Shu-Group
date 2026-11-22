@@ -3,3 +3,4 @@
 .metadata/
 __pycache__/
 *.pyc
+.knimeLock

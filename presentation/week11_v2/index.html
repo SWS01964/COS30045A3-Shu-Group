@@ -93,9 +93,9 @@
     <h2>Stand Up 1 was the <i>what</i>. Today is the <i>how</i> &mdash; and the story grew from two chapters to four.</h2>
     <ul class="lg" style="margin-top:34px">
       <li><span class="check">&#10003;</span> Working <span class="big">D3</span> site: <span class="big">11</span> custom charts, four chapters and a closing section</li>
-      <li><span class="check">&#10003;</span> <span class="big">86,140</span> traffic rows cleaned in Python; <span class="big">16</span> CSVs feed the site</li>
+      <li><span class="check">&#10003;</span> <span class="big">86,140</span> traffic rows cleaned in Python <i>or</i> KNIME; <span class="big">16</span> CSVs feed the site</li>
       <li><span class="check">&#10003;</span> <b>New:</b> Chapter 3 (severity) and Chapter 4 (the lockdown test)</li>
-      <li><span class="check">&#10003;</span> Checked twice: Python reconciliation <span class="big">13/13</span> PASS; KNIME matches on <span class="big">59/59</span></li>
+      <li><span class="check">&#10003;</span> Checked twice: Python reconciliation <span class="big">13/13</span> PASS; KNIME output identical on <span class="big">136/136</span></li>
     </ul>
     <p class="note">Today: the <b>design decisions</b> &mdash; visualisation, interaction, website and pipeline &mdash; with the new chapters as the worked examples.</p>
   </section>
@@ -312,7 +312,7 @@
   <!-- 15 pipeline -->
   <section class="slide">
     <p class="kicker">Data pipeline</p>
-    <h2>Every number on the page comes from one traceable path.</h2>
+    <h2>Every number on the page traces back to the raw workbook.</h2>
     <div class="flowrow">
       <div class="fbox"><b>BITRE workbook</b><span>117,919 raw rows</span></div><div class="arrow">&rarr;</div>
       <div class="fbox"><b>clean_data.py</b><span>Traffic only: 86,140 rows</span></div><div class="arrow">&rarr;</div>
@@ -321,23 +321,24 @@
       <div class="fbox"><b>D3 charts</b><span>prose filled from data</span></div>
     </div>
     <ul class="lg" style="margin-top:34px">
-      <li class="blue">National totals match BITRE&rsquo;s published tables exactly (Phase 1).</li>
-      <li class="blue"><b>Phase 2: 13/13</b> reconciliation checks PASS, including 538 of 2,041 deaths and April 3,488 &rarr; 2,357.</li>
-      <li class="blue"><b>100</b> quotable numbers, each tied to a source CSV; <b>102/102</b> prose numbers filled from the data (<code>data-fill</code>).</li>
-      <li class="blue">Low-count rates are blanked in <code>_publish</code> columns; the charts only read those.</li>
+      <li class="blue"><b>Or KNIME v3:</b> the same <b>34</b> CSVs, no Python, <b>136/136</b> identical.</li>
+      <li class="blue">National totals match BITRE&rsquo;s published tables exactly.</li>
+      <li class="blue"><b>13/13</b> Phase 2 reconciliation checks PASS.</li>
+      <li class="blue"><b>102/102</b> prose numbers filled from the data (<code>data-fill</code>).</li>
+      <li class="blue">Low-count rates blanked in <code>_publish</code> columns.</li>
     </ul>
   </section>
 
   <!-- 16 KNIME -->
   <section class="slide">
-    <p class="kicker">KNIME v2</p>
-    <h2>A second tool, redoing the sums from the raw workbook.</h2>
+    <p class="kicker">KNIME v3</p>
+    <h2>The whole Python pipeline, rebuilt in KNIME.</h2>
     <div class="split r" style="grid-template-columns:1fr 440px;align-items:center">
-      <div><img class="shot" style="max-height:500px;width:auto;max-width:100%;margin:0 auto" src="img/knime_v2_workflow.png" alt="KNIME v2 workflow with branches D to G"></div>
+      <div><img class="shot" style="max-height:500px;width:auto;max-width:100%;margin:0 auto" src="img/knime_v3_workflow.png" alt="KNIME v3 workflow: 575 nodes in five groups, from raw workbooks to 34 CSV writers"></div>
       <div>
-        <div class="stat"><span class="num">28</span><p>nodes: v1&rsquo;s 9 plus Idea 3 and Idea 4 branches</p></div>
-        <div class="stat"><span class="num blue">59/59</span><p>checks match the Python outputs</p></div>
-        <div class="stat" style="margin-bottom:0"><p>KNIME checks Python; it does not feed the site. Portable <code>.knwf</code>.</p></div>
+        <div class="stat"><span class="num">34</span><p>CSVs written, including all 16 the site reads</p></div>
+        <div class="stat"><span class="num blue">136/136</span><p>checks identical to Python (columns, rows, values)</p></div>
+        <div class="stat" style="margin-bottom:0"><p><b>575</b> standard nodes, no Python or script nodes. Either pipeline can feed the site. Portable <code>.knwf</code>.</p></div>
       </div>
     </div>
   </section>

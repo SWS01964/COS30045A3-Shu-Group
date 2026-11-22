@@ -272,3 +272,58 @@ python processing/knime/render_workflow.py BeyondTheRoadToll_DataPrep_v2 report/
 11. **macOS `.DS_Store`** files creep into folders opened in Finder. Exclude them from the zip.
 12. **The GUI cannot be screenshotted by a script**, so the slide diagram is redrawn by `render_workflow.py` from the workflow files. It shows positions, names, labels, ports and annotations, not KNIME's real icons or traffic lights.
 13. **Road-user naming**: the raw sheet has 12 road users (no "N/A" among Traffic rows). Python groups 7 of them as "Other road users". KNIME keeps all 12 rows, and validation compares the 5 main road users plus the totals.
+
+---
+
+# Part 2: v3 (KNIME replaces the three Python data scripts)
+
+Status (2026-11-23): `BeyondTheRoadToll_DataPrep_v3/` (575 nodes, 34 CSV Writers, standard nodes only, **no scripting nodes**) reproduces **every CSV** written to `data/clean/` by `processing/clean_data.py` (16 files), `processing/supplementary_data.py` (6) and `processing/phase2_ideas.py` (12). Headless run: "Workflow executed sucessfully". `validate_v3.py`: **34 of 34 files PASS, 136 of 136 checks PASS** (columns, row count and values per file); all 16 website CSVs (those in `processing/sync_website_data.sh`) PASS. v1 and v2 are untouched.
+
+## v3 files
+
+| What | Path |
+|---|---|
+| Workflow folder (portable, saved unexecuted) | `BeyondTheRoadToll_DataPrep_v3/` (raw inputs in `data/`: the 3 BITRE workbooks, ABS ERP csv, ARDD csv) |
+| Package | `processing/knime/BeyondTheRoadToll_DataPrep_v3.knwf` (about 9 MB) |
+| Generator | `processing/knime/build_v3.py` + `build_v3_part2.py` (supplementary), `build_v3_part3.py` (Idea 3), `build_v3_part4.py` (Idea 4), library `v3lib.py` |
+| Headless runner | `processing/knime/run_v3.sh <scratch dir>` (builds into the scratch dir, runs, then kills the lingering JVM) |
+| Validator / result | `processing/knime/validate_v3.py` / `processing/knime/v3_validation.csv` (file, check, result, detail, website, source) |
+| Diagram | `report/figures/knime/knime_v3_workflow.{svg,png}` |
+
+## Branches (node groups on the canvas)
+
+- **A. Load + clean national (R1 to R6)**: Excel Reader (`raw`) > Row Filter `Cause of injury = Traffic` (R2) > Missing Value (R5: Count of cases, Died_cases, Died_bed_days -> 0) > Column Renamer (R3: Count of cases -> `cases_incl_died`, Hospitalisations = `hospitalisations`) > 6 String Manipulation (R4: `strip`, plus a `regexReplace` to `Unknown` for remoteness, age_group, sex) > Rule Engine `month_num` (R4) > Math Formula `bed_days_excl_died = bed_days - died_bed_days` (R7) > Rule Engine `series_break` (R6) > Column Filter + Column Resorter > Sorter > CSV Writer `traffic_national_monthly_clean`. The Resorter output is the table **T** every later branch uses.
+- **B. National tables**: `idea1_national_annual` (GroupBy + index via `COL_SUM` of the 2011 value), `idea1_national_monthly` (GroupBy + date built with Number to String and String Manipulation), `idea2_roaduser_age_annual` (filters, GroupBy, complete grid = three distinct-value GroupBys + two Cross Joiners + left Joiner + Missing Value 0), `idea2_heatmap_change` (Pivot over years, Column Renamer, Math Formula, Rule Engine for blank percent when base = 0 and `low_count` < 30 (R9)), `idea2_age_severity` (2016-21 bed days (R7) and 2011-19 deaths (R8), Joiner, Math Formula).
+- **C. Block parsing (R11)**: 10 Excel Readers, each reads one column range of the side-by-side sheet (header in row 2, `skip empty rows`), Column Filter drops `cause of injury`, Column Renamer to the short names, String Manipulation (trim + Unknown) where a column is age, sex or remoteness; blocks with `n.p.` cells get a Rule Engine `suppressed` flag then String to Number (`n.p.` -> missing, fail_on_error off); blocks without `n.p.` get a Constant Value `suppressed = False`; CSV Writer. Five `state_by_*` + five `first_nations_by_*` files.
+- **D. Supplementary**: CSV Reader (ABS ERP) > Row Filter (MEASURE 1, SEX 3, REGION AUS, quarter Q2) > year text to integer; `supp_population_annual` (AGE = TOT), `supp_population_age` (single years 0 to 100 into 7 bands with a Rule Engine, GroupBy), `supp_road_deaths_annual` (CSV Reader on ARDD, years 2011-21, GroupBy Count), `idea1_rates` (two Joiners onto the KNIME `idea1_national_annual`, Math Formula), `idea1_index_long` (three series, Concatenate), `idea2_age_population_change` (Pivot, Math Formula).
+- **E. Idea 3 and Idea 4**: a data cube (GroupBy by road-user group x road user x age x counterparty x year) feeds everything. **Idea 3**: `idea3_burden_share`; one *severity engine* (all severity tables are stacked with `scope`, `k1`, `k2` keys, then a single chain of Row Filter 2011-19 / 2016-21, GroupBy, outer Joiner, Missing Value 0, Math Formula for died per 1,000, Wilson 95% interval (z = 1.96), average stay, Rule Engine flags (P4)) and four outputs split from it: `idea3_severity_roaduser`, `_roaduser_age`, `_counterparty`, `idea3_older_pedestrians`; `idea3_older_pedestrians_annual` joins pedestrian counts to the KNIME ERP table. **Idea 4**: monthly cube, `idea4_monthly_2019_2021`, closed-form OLS in Math Formula (GroupBy of sums, then slope, intercept, residual SD; fits 2011-19, 2012-19, 2015-19) for `idea4_cyclist_trend` (95% prediction interval with t = 2.365 / 3.182) and the 2020 trend forecast, `idea4_baseline_band`, `idea4_roaduser_change_2020` (six comparisons stacked), `idea4_cyclist_age_2020`, and `idea4_state_cyclists_2020` (from the KNIME `state_by_road_user` table).
+
+Chaining mirrors the Python: B uses T; D uses B's annual table; E uses T, D's population-by-age table and C's `state_by_road_user` table. No branch reads a Python CSV.
+
+Node counts: Math Formula 132, Constant Value Column 68, Row Filter 58, GroupBy 47, Column Renamer 43, Column Filter 43, CSV Writer 34, Rule Engine 33, Concatenate 28, Column Resorter 20, Joiner 17, String Manipulation 15, Excel Reader 11, Pivot 8, String to Number 7, Missing Value 3, Cross Joiner 3, Number to String 2, CSV Reader 2, Sorter 1.
+
+## How to run and validate
+
+```bash
+SCR=/tmp/knime_v3_test                                  # any scratch folder, never the project folder
+processing/knime/run_v3.sh "$SCR"                       # prints "Workflow executed sucessfully"
+python processing/knime/validate_v3.py "$SCR/BeyondTheRoadToll_DataPrep_v3/data"   # needs pandas; exit code 1 on any FAIL
+```
+Or run the packaged workflow as in sections 6 and 9 (GUI import / `-workflowDir`). Regenerate the folder with `python processing/knime/build_v3.py BeyondTheRoadToll_DataPrep_v3`, then package as in section 8 (use the v3 names) and redraw with `render_workflow.py` (section 10).
+
+## v3 settings notes and pitfalls (new)
+
+1. **Math Formula "append_column" is inverted**: `append_column=true` means *replace* an existing column; `false` means append a new column named in `replaced_column`. Rule Engine and String Manipulation behave differently: Rule Engine `append-column=true` appends; String Manipulation `append_column=true` replaces (same inversion as Math Formula).
+2. **Column Resorter** (webui node) stores its list under the key `ColumnOrder` (string array). Column Filter keeps the input order, so use Column Filter then Column Resorter to pick and order columns.
+3. **GroupBy cannot hold two aggregators on the same column** (the second is silently dropped); copy the column with Math Formula first (see `hmin`/`hmax` in the baseline band). There is no `Count(x)` surprise in this workflow because counts use `Sum` of a constant column `one`.
+4. **String Manipulation `join` needs strings**: integers must go through Number to String first (use Math Formula with `convert_to_int` to make a clean integer copy, otherwise you get `2011.0`). The length function is `length(...)`, not `strLen`. `max(a, b)` does not exist in Math Formula; use `if(a > b, a, b)`.
+5. **Header trailing spaces** (`state or territory `) are trimmed by the Excel Reader, so the renamer must use the trimmed name.
+6. **Excel Reader range**: `sheet_area=PARTIAL`, `read_from_column/read_to_column` letters, `read_from_row=2` with `column_names_row_number=2` (the title row 1 would otherwise appear as a data row).
+7. **Headless JVM lingers** after "Workflow executed sucessfully"; `run_v3.sh` kills only the batch process for its scratch folder.
+
+## Caveats (what v3 does not do)
+
+- Row order of the KNIME CSVs is not the Python order (only `traffic_national_monthly_clean` is sorted); the validator sorts both sides. Numbers are doubles written without trailing `.0`, so integer columns look the same but the type is not preserved. Booleans are the strings `True` / `False`.
+- R4 trimming is applied to the national text columns and to the categorical column that the Unknown mapping touches in each block; other block text columns are not trimmed (the data contain no leading or trailing spaces). For blocks without any `n.p.` cell the `suppressed` column is a constant `False`.
+- Rounding uses `round(x*10)/10`-style formulas (half up); Python rounds half to even. All 34 files agree to within 1e-6 on the current data, but an exact tie would differ.
+- Constants copied from the Python: z = 1.96 (Wilson), t = 2.365 / 3.182 (prediction intervals), forecast point x = 2020, year windows. Not reproduced: R10 validation tables (`validation_results.csv`), `phase2_validation.csv`, `phase2_key_numbers.csv`, `processing/EDA_REPORT.md`, and all PNG figures (`fsave`, `eda_figures.py`).

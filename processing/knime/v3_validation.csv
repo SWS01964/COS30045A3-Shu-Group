@@ -1,0 +1,137 @@
+file,check,result,detail,website,source
+traffic_national_monthly_clean.csv,exists,PASS,,no,clean_data.py
+traffic_national_monthly_clean.csv,columns,PASS,"15 columns, same names and order",no,clean_data.py
+traffic_national_monthly_clean.csv,rows,PASS,86140 rows,no,clean_data.py
+traffic_national_monthly_clean.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),no,clean_data.py
+idea1_national_annual.csv,exists,PASS,,no,clean_data.py
+idea1_national_annual.csv,columns,PASS,"7 columns, same names and order",no,clean_data.py
+idea1_national_annual.csv,rows,PASS,11 rows,no,clean_data.py
+idea1_national_annual.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),no,clean_data.py
+idea1_national_monthly.csv,exists,PASS,,no,clean_data.py
+idea1_national_monthly.csv,columns,PASS,"4 columns, same names and order",no,clean_data.py
+idea1_national_monthly.csv,rows,PASS,132 rows,no,clean_data.py
+idea1_national_monthly.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),no,clean_data.py
+idea2_roaduser_age_annual.csv,exists,PASS,,yes,clean_data.py
+idea2_roaduser_age_annual.csv,columns,PASS,"4 columns, same names and order",yes,clean_data.py
+idea2_roaduser_age_annual.csv,rows,PASS,385 rows,yes,clean_data.py
+idea2_roaduser_age_annual.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),yes,clean_data.py
+idea2_heatmap_change.csv,exists,PASS,,yes,clean_data.py
+idea2_heatmap_change.csv,columns,PASS,"10 columns, same names and order",yes,clean_data.py
+idea2_heatmap_change.csv,rows,PASS,35 rows,yes,clean_data.py
+idea2_heatmap_change.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),yes,clean_data.py
+idea2_age_severity.csv,exists,PASS,,yes,clean_data.py
+idea2_age_severity.csv,columns,PASS,"7 columns, same names and order",yes,clean_data.py
+idea2_age_severity.csv,rows,PASS,7 rows,yes,clean_data.py
+idea2_age_severity.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),yes,clean_data.py
+state_by_state.csv,exists,PASS,,no,clean_data.py
+state_by_state.csv,columns,PASS,"6 columns, same names and order",no,clean_data.py
+state_by_state.csv,rows,PASS,176 rows,no,clean_data.py
+state_by_state.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),no,clean_data.py
+state_by_road_user.csv,exists,PASS,,no,clean_data.py
+state_by_road_user.csv,columns,PASS,"7 columns, same names and order",no,clean_data.py
+state_by_road_user.csv,rows,PASS,1371 rows,no,clean_data.py
+state_by_road_user.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),no,clean_data.py
+state_by_sex.csv,exists,PASS,,no,clean_data.py
+state_by_sex.csv,columns,PASS,"7 columns, same names and order",no,clean_data.py
+state_by_sex.csv,rows,PASS,352 rows,no,clean_data.py
+state_by_sex.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),no,clean_data.py
+state_by_age.csv,exists,PASS,,no,clean_data.py
+state_by_age.csv,columns,PASS,"7 columns, same names and order",no,clean_data.py
+state_by_age.csv,rows,PASS,1232 rows,no,clean_data.py
+state_by_age.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),no,clean_data.py
+state_by_counterparty.csv,exists,PASS,,no,clean_data.py
+state_by_counterparty.csv,columns,PASS,"7 columns, same names and order",no,clean_data.py
+state_by_counterparty.csv,rows,PASS,704 rows,no,clean_data.py
+state_by_counterparty.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),no,clean_data.py
+first_nations_by_age.csv,exists,PASS,,no,clean_data.py
+first_nations_by_age.csv,columns,PASS,"7 columns, same names and order",no,clean_data.py
+first_nations_by_age.csv,rows,PASS,264 rows,no,clean_data.py
+first_nations_by_age.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),no,clean_data.py
+first_nations_by_road_user.csv,exists,PASS,,no,clean_data.py
+first_nations_by_road_user.csv,columns,PASS,"7 columns, same names and order",no,clean_data.py
+first_nations_by_road_user.csv,rows,PASS,351 rows,no,clean_data.py
+first_nations_by_road_user.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),no,clean_data.py
+first_nations_by_age_2.csv,exists,PASS,,no,clean_data.py
+first_nations_by_age_2.csv,columns,PASS,"7 columns, same names and order",no,clean_data.py
+first_nations_by_age_2.csv,rows,PASS,264 rows,no,clean_data.py
+first_nations_by_age_2.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),no,clean_data.py
+first_nations_by_remoteness.csv,exists,PASS,,no,clean_data.py
+first_nations_by_remoteness.csv,columns,PASS,"7 columns, same names and order",no,clean_data.py
+first_nations_by_remoteness.csv,rows,PASS,132 rows,no,clean_data.py
+first_nations_by_remoteness.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),no,clean_data.py
+first_nations_by_counterparty.csv,exists,PASS,,no,clean_data.py
+first_nations_by_counterparty.csv,columns,PASS,"7 columns, same names and order",no,clean_data.py
+first_nations_by_counterparty.csv,rows,PASS,176 rows,no,clean_data.py
+first_nations_by_counterparty.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),no,clean_data.py
+supp_population_annual.csv,exists,PASS,,no,supplementary_data.py
+supp_population_annual.csv,columns,PASS,"3 columns, same names and order",no,supplementary_data.py
+supp_population_annual.csv,rows,PASS,11 rows,no,supplementary_data.py
+supp_population_annual.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),no,supplementary_data.py
+supp_population_age.csv,exists,PASS,,no,supplementary_data.py
+supp_population_age.csv,columns,PASS,"3 columns, same names and order",no,supplementary_data.py
+supp_population_age.csv,rows,PASS,77 rows,no,supplementary_data.py
+supp_population_age.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),no,supplementary_data.py
+supp_road_deaths_annual.csv,exists,PASS,,no,supplementary_data.py
+supp_road_deaths_annual.csv,columns,PASS,"3 columns, same names and order",no,supplementary_data.py
+supp_road_deaths_annual.csv,rows,PASS,11 rows,no,supplementary_data.py
+supp_road_deaths_annual.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),no,supplementary_data.py
+idea1_rates.csv,exists,PASS,,yes,supplementary_data.py
+idea1_rates.csv,columns,PASS,"8 columns, same names and order",yes,supplementary_data.py
+idea1_rates.csv,rows,PASS,11 rows,yes,supplementary_data.py
+idea1_rates.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),yes,supplementary_data.py
+idea1_index_long.csv,exists,PASS,,yes,supplementary_data.py
+idea1_index_long.csv,columns,PASS,"4 columns, same names and order",yes,supplementary_data.py
+idea1_index_long.csv,rows,PASS,33 rows,yes,supplementary_data.py
+idea1_index_long.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),yes,supplementary_data.py
+idea2_age_population_change.csv,exists,PASS,,yes,supplementary_data.py
+idea2_age_population_change.csv,columns,PASS,"7 columns, same names and order",yes,supplementary_data.py
+idea2_age_population_change.csv,rows,PASS,7 rows,yes,supplementary_data.py
+idea2_age_population_change.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),yes,supplementary_data.py
+idea3_burden_share.csv,exists,PASS,,yes,phase2_ideas.py
+idea3_burden_share.csv,columns,PASS,"8 columns, same names and order",yes,phase2_ideas.py
+idea3_burden_share.csv,rows,PASS,12 rows,yes,phase2_ideas.py
+idea3_burden_share.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),yes,phase2_ideas.py
+idea3_severity_roaduser.csv,exists,PASS,,yes,phase2_ideas.py
+idea3_severity_roaduser.csv,columns,PASS,"19 columns, same names and order",yes,phase2_ideas.py
+idea3_severity_roaduser.csv,rows,PASS,14 rows,yes,phase2_ideas.py
+idea3_severity_roaduser.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),yes,phase2_ideas.py
+idea3_severity_roaduser_age.csv,exists,PASS,,no,phase2_ideas.py
+idea3_severity_roaduser_age.csv,columns,PASS,"17 columns, same names and order",no,phase2_ideas.py
+idea3_severity_roaduser_age.csv,rows,PASS,35 rows,no,phase2_ideas.py
+idea3_severity_roaduser_age.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),no,phase2_ideas.py
+idea3_severity_counterparty.csv,exists,PASS,,yes,phase2_ideas.py
+idea3_severity_counterparty.csv,columns,PASS,"18 columns, same names and order",yes,phase2_ideas.py
+idea3_severity_counterparty.csv,rows,PASS,58 rows,yes,phase2_ideas.py
+idea3_severity_counterparty.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),yes,phase2_ideas.py
+idea3_older_pedestrians.csv,exists,PASS,,yes,phase2_ideas.py
+idea3_older_pedestrians.csv,columns,PASS,"20 columns, same names and order",yes,phase2_ideas.py
+idea3_older_pedestrians.csv,rows,PASS,20 rows,yes,phase2_ideas.py
+idea3_older_pedestrians.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),yes,phase2_ideas.py
+idea3_older_pedestrians_annual.csv,exists,PASS,,no,phase2_ideas.py
+idea3_older_pedestrians_annual.csv,columns,PASS,"6 columns, same names and order",no,phase2_ideas.py
+idea3_older_pedestrians_annual.csv,rows,PASS,55 rows,no,phase2_ideas.py
+idea3_older_pedestrians_annual.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),no,phase2_ideas.py
+idea4_monthly_2019_2021.csv,exists,PASS,,yes,phase2_ideas.py
+idea4_monthly_2019_2021.csv,columns,PASS,"6 columns, same names and order",yes,phase2_ideas.py
+idea4_monthly_2019_2021.csv,rows,PASS,252 rows,yes,phase2_ideas.py
+idea4_monthly_2019_2021.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),yes,phase2_ideas.py
+idea4_baseline_band.csv,exists,PASS,,yes,phase2_ideas.py
+idea4_baseline_band.csv,columns,PASS,"15 columns, same names and order",yes,phase2_ideas.py
+idea4_baseline_band.csv,rows,PASS,84 rows,yes,phase2_ideas.py
+idea4_baseline_band.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),yes,phase2_ideas.py
+idea4_cyclist_trend.csv,exists,PASS,,yes,phase2_ideas.py
+idea4_cyclist_trend.csv,columns,PASS,"15 columns, same names and order",yes,phase2_ideas.py
+idea4_cyclist_trend.csv,rows,PASS,11 rows,yes,phase2_ideas.py
+idea4_cyclist_trend.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),yes,phase2_ideas.py
+idea4_roaduser_change_2020.csv,exists,PASS,,yes,phase2_ideas.py
+idea4_roaduser_change_2020.csv,columns,PASS,"8 columns, same names and order",yes,phase2_ideas.py
+idea4_roaduser_change_2020.csv,rows,PASS,42 rows,yes,phase2_ideas.py
+idea4_roaduser_change_2020.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),yes,phase2_ideas.py
+idea4_cyclist_age_2020.csv,exists,PASS,,yes,phase2_ideas.py
+idea4_cyclist_age_2020.csv,columns,PASS,"11 columns, same names and order",yes,phase2_ideas.py
+idea4_cyclist_age_2020.csv,rows,PASS,7 rows,yes,phase2_ideas.py
+idea4_cyclist_age_2020.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),yes,phase2_ideas.py
+idea4_state_cyclists_2020.csv,exists,PASS,,yes,phase2_ideas.py
+idea4_state_cyclists_2020.csv,columns,PASS,"11 columns, same names and order",yes,phase2_ideas.py
+idea4_state_cyclists_2020.csv,rows,PASS,16 rows,yes,phase2_ideas.py
+idea4_state_cyclists_2020.csv,values,PASS,all cells equal after sorting (numbers within 1e-6),yes,phase2_ideas.py

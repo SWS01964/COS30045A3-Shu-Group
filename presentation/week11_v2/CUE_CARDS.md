@@ -13,7 +13,7 @@ Fallback: the v1 deck is untouched in `presentation/week11/`.
 
 **2. Where we are**
 - Point: Stand Up 1 was the what; today is the how; the story grew from two chapters to four.
-- Numbers: 11 charts; 86,140 traffic rows; 13/13 and 59/59 checks.
+- Numbers: 11 charts; 86,140 traffic rows; 13/13 Python checks; KNIME identical on 136/136.
 - Q: What is new since last time? A: Chapter 3 (severity, pedestrians) and Chapter 4 (the lockdown test), plus a closing section.
 
 **3. Sam and the map**
@@ -85,11 +85,13 @@ Fallback: the v1 deck is untouched in `presentation/week11/`.
 - Point: one traceable path from the BITRE workbook to the page.
 - Numbers: 117,919 raw rows; 86,140 traffic rows; 16 CSVs; 13/13 reconciliation PASS; 100 quotable numbers; 102/102 prose numbers filled.
 - Q: How do you know the prose matches the charts? A: The prose numbers are filled from the same CSVs the charts read.
+- Q: Do you need Python? A: No. KNIME v3 produces the same 34 CSVs (136/136 checks identical), so either pipeline can build the site.
 
-**16. KNIME v2**
-- Point: a second tool recomputes the headline numbers from the raw workbook.
-- Numbers: 28 nodes; 59/59 checks match Python.
-- Q: Does KNIME feed the site? A: No. It is an independent check on the Python pipeline.
+**16. KNIME v3**
+- Point: the whole Python pipeline (clean_data.py + supplementary_data.py + phase2_ideas.py) rebuilt in KNIME; its CSVs can replace the Python outputs.
+- Numbers: 575 nodes, 34 CSV writers; all 16 website CSVs; 136/136 checks identical (same columns and order, same rows, values equal after sorting).
+- Q: Any Python inside KNIME? A: No. Standard nodes only (Row Filter, GroupBy, Math Formula, Rule Engine, Joiner, Pivot).
+- Q: Any differences? A: KNIME doesn't keep row order, so files are compared after sorting. It doesn't make the EDA charts; the site draws its own in D3.
 
 **17. Code: Python**
 - Point: the rule "no rate without enough cases" lives in the code.
