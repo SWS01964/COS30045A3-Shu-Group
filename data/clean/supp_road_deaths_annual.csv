@@ -1,4 +1,4 @@
-year,road_deaths,source_id
+"year","road_deaths","source_id"
 2011,1277,"BITRE ARDD ardd_fatalities.csv (Oct 2023), rows by Year"
 2012,1300,"BITRE ARDD ardd_fatalities.csv (Oct 2023), rows by Year"
 2013,1186,"BITRE ARDD ardd_fatalities.csv (Oct 2023), rows by Year"
