@@ -1,0 +1,18 @@
+.DS_Store
+**/.DS_Store
+.metadata/
+__pycache__/
+*.pyc
+.knimeLock
+
+# ---- Internal (keep local; the deliverable is website/ + report/ only) ----
+/PROJECT_EXPLAINED.md
+/PERMISSION_TEST.md
+/requirement.md
+/CLAUDE_CONTEXT/
+/processing/
+/presentation/
+/Datas/
+/data/
+/BeyondTheRoadToll_DataPrep_v5/
+/Example Workflows/

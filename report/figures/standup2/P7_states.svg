@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1500" font-family="system-ui,-apple-system,sans-serif">
+  <rect width="1600" height="1500" fill="#faf8f3"/>
+  <text x="60" y="60" font-size="40" font-weight="700" fill="#1c2230">P7 — Interaction-state strip</text>
+  <text x="60" y="98" font-size="22" fill="#646b78">Five states of the heatmap, from default through selection, mode change and the low-count rule.</text>
+
+  <!-- helper: a small heatmap cell grid -->
+  <defs>
+    <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="7" height="7" fill="#e4e1d8"/><line x1="0" y1="0" x2="0" y2="7" stroke="#a0a5ae" stroke-width="2"/>
+    </pattern>
+  </defs>
+
+  <!-- Panel 1: default -->
+  <g transform="translate(60,140)">
+    <rect width="280" height="300" fill="#ffffff" stroke="#d9d4c8" stroke-width="2" rx="10"/>
+    <text x="140" y="40" text-anchor="middle" font-size="22" font-weight="700" fill="#1c2230">1 · default</text>
+    <g transform="translate(30,70)">
+      <rect x="0" y="0" width="54" height="54" fill="#cfe0ef"/><rect x="58" y="0" width="54" height="54" fill="#cfe0ef"/>
+      <rect x="116" y="0" width="54" height="54" fill="#efece4"/><rect x="174" y="0" width="54" height="54" fill="#f4d8c5"/>
+      <rect x="0" y="58" width="54" height="54" fill="#efece4"/><rect x="58" y="58" width="54" height="54" fill="#f4d8c5"/>
+      <rect x="116" y="58" width="54" height="54" fill="#b8470f"/><rect x="174" y="58" width="54" height="54" fill="#d98b4f"/>
+      <rect x="0" y="116" width="54" height="54" fill="#d98b4f"/><rect x="58" y="116" width="54" height="54" fill="#b8470f"/>
+      <rect x="116" y="116" width="54" height="54" fill="#8f3406"/><rect x="174" y="116" width="54" height="54" fill="#8f3406"/>
+      <text x="27" y="32" text-anchor="middle" font-size="14" font-weight="700" fill="#1c2230">-20%</text>
+      <text x="143" y="90" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">+138%</text>
+      <rect x="116" y="58" width="54" height="54" fill="none" stroke="#1c2230" stroke-width="3.5"/>
+    </g>
+    <text x="140" y="266" text-anchor="middle" font-size="16" fill="#646b78">pedal cyclist 65–74 pre-selected</text>
+    <text x="140" y="288" text-anchor="middle" font-size="15" fill="#8796a8">outline = selected cell</text>
+  </g>
+
+  <!-- Panel 2: hover tooltip -->
+  <g transform="translate(380,140)">
+    <rect width="280" height="300" fill="#ffffff" stroke="#d9d4c8" stroke-width="2" rx="10"/>
+    <text x="140" y="40" text-anchor="middle" font-size="22" font-weight="700" fill="#1c2230">2 · hover / focus</text>
+    <g transform="translate(30,70)">
+      <rect x="0" y="0" width="54" height="54" fill="#cfe0ef"/><rect x="58" y="0" width="54" height="54" fill="#cfe0ef"/>
+      <rect x="116" y="0" width="54" height="54" fill="#efece4"/><rect x="174" y="0" width="54" height="54" fill="#f4d8c5"/>
+      <rect x="0" y="58" width="54" height="54" fill="#efece4"/><rect x="58" y="58" width="54" height="54" fill="#f4d8c5"/>
+      <rect x="116" y="58" width="54" height="54" fill="#b8470f"/><rect x="174" y="58" width="54" height="54" fill="#d98b4f"/>
+      <rect x="0" y="116" width="54" height="54" fill="#d98b4f"/><rect x="58" y="116" width="54" height="54" fill="#b8470f"/>
+      <rect x="116" y="116" width="54" height="54" fill="#8f3406"/><rect x="174" y="116" width="54" height="54" fill="#8f3406"/>
+      <rect x="116" y="58" width="54" height="54" fill="none" stroke="#1c2230" stroke-width="3.5"/>
+    </g>
+    <g transform="translate(140,250)">
+      <rect x="-92" y="0" width="184" height="76" rx="8" fill="#1c2230"/>
+      <text x="-78" y="24" font-size="14" font-weight="700" fill="#fff">Pedal cyclists, 65–74</text>
+      <text x="-78" y="44" font-size="13" fill="#cfd2d8">Change in number: +138%</text>
+      <text x="-78" y="62" font-size="13" fill="#cfd2d8">Per person: +78%</text>
+    </g>
+    <text x="140" y="140" text-anchor="middle" font-size="15" fill="#646b78">tooltip shows 3-yr, single-yr,</text>
+    <text x="140" y="158" text-anchor="middle" font-size="15" fill="#646b78">population and per-person</text>
+  </g>
+
+  <!-- Panel 3: selected + trend -->
+  <g transform="translate(700,140)">
+    <rect width="280" height="300" fill="#ffffff" stroke="#d9d4c8" stroke-width="2" rx="10"/>
+    <text x="140" y="40" text-anchor="middle" font-size="22" font-weight="700" fill="#1c2230">3 · selected → trend</text>
+    <g transform="translate(30,70)">
+      <rect x="0" y="0" width="54" height="54" fill="#cfe0ef"/><rect x="58" y="0" width="54" height="54" fill="#cfe0ef"/>
+      <rect x="116" y="0" width="54" height="54" fill="#efece4"/><rect x="174" y="0" width="54" height="54" fill="#f4d8c5"/>
+      <rect x="0" y="58" width="54" height="54" fill="#efece4"/><rect x="58" y="58" width="54" height="54" fill="#f4d8c5"/>
+      <rect x="116" y="58" width="54" height="54" fill="#b8470f"/><rect x="174" y="58" width="54" height="54" fill="#d98b4f"/>
+      <rect x="0" y="116" width="54" height="54" fill="#d98b4f"/><rect x="58" y="116" width="54" height="54" fill="#b8470f"/>
+      <rect x="116" y="116" width="54" height="54" fill="#8f3406"/><rect x="174" y="116" width="54" height="54" fill="#8f3406"/>
+      <rect x="58" y="58" width="54" height="54" fill="none" stroke="#1c2230" stroke-width="3.5"/>
+      <rect x="58" y="58" width="54" height="54" fill="none" stroke="#b8470f" stroke-width="2" stroke-dasharray="4 3"/>
+    </g>
+    <text x="140" y="266" text-anchor="middle" font-size="16" fill="#646b78">click a cell → yearly trend below</text>
+    <path d="M40 300 L110 282 L160 292 L200 268 L240 250" fill="none" stroke="#b8470f" stroke-width="3"/>
+  </g>
+
+  <!-- Panel 4: per-person mode -->
+  <g transform="translate(1020,140)">
+    <rect width="280" height="300" fill="#ffffff" stroke="#d9d4c8" stroke-width="2" rx="10"/>
+    <text x="140" y="40" text-anchor="middle" font-size="22" font-weight="700" fill="#1c2230">4 · per-person mode</text>
+    <g transform="translate(30,70)">
+      <rect x="0" y="0" width="54" height="54" fill="#d9d4c8"/><rect x="58" y="0" width="54" height="54" fill="#d9d4c8"/>
+      <rect x="116" y="0" width="54" height="54" fill="#efece4"/><rect x="174" y="0" width="54" height="54" fill="#f4d8c5"/>
+      <rect x="0" y="58" width="54" height="54" fill="#efece4"/><rect x="58" y="58" width="54" height="54" fill="#f4d8c5"/>
+      <rect x="116" y="58" width="54" height="54" fill="#c96a3a"/><rect x="174" y="58" width="54" height="54" fill="#d98b4f"/>
+      <rect x="0" y="116" width="54" height="54" fill="#d98b4f"/><rect x="58" y="116" width="54" height="54" fill="#c96a3a"/>
+      <rect x="116" y="116" width="54" height="54" fill="#8f3406"/><rect x="174" y="116" width="54" height="54" fill="#8f3406"/>
+      <text x="143" y="90" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">+78%</text>
+      <rect x="116" y="58" width="54" height="54" fill="none" stroke="#1c2230" stroke-width="3.5"/>
+    </g>
+    <text x="140" y="266" text-anchor="middle" font-size="16" fill="#646b78">toggle re-colours cells by per-person</text>
+    <text x="140" y="288" text-anchor="middle" font-size="15" fill="#8796a8">"more than doubled" → "+78%"</text>
+  </g>
+
+  <!-- Panel 5: low count -->
+  <g transform="translate(1340,140)">
+    <rect width="280" height="300" fill="#ffffff" stroke="#d9d4c8" stroke-width="2" rx="10"/>
+    <text x="140" y="40" text-anchor="middle" font-size="22" font-weight="700" fill="#1c2230">5 · low-count rule</text>
+    <g transform="translate(30,70)">
+      <rect x="0" y="0" width="54" height="54" fill="#cfe0ef"/><rect x="58" y="0" width="54" height="54" fill="#cfe0ef"/>
+      <rect x="116" y="0" width="54" height="54" fill="#efece4"/><rect x="174" y="0" width="54" height="54" fill="#f4d8c5"/>
+      <rect x="0" y="58" width="54" height="54" fill="#efece4"/><rect x="58" y="58" width="54" height="54" fill="#f4d8c5"/>
+      <rect x="116" y="58" width="54" height="54" fill="#b8470f"/><rect x="174" y="58" width="54" height="54" fill="#d98b4f"/>
+      <rect x="0" y="116" width="54" height="54" fill="#d98b4f"/><rect x="58" y="116" width="54" height="54" fill="url(#hatch)" stroke="#a0a5ae"/>
+      <rect x="116" y="116" width="54" height="54" fill="#8f3406"/><rect x="174" y="116" width="54" height="54" fill="#8f3406"/>
+    </g>
+    <text x="140" y="266" text-anchor="middle" font-size="16" fill="#646b78">hatched grey = too few cases</text>
+    <text x="140" y="288" text-anchor="middle" font-size="15" fill="#8796a8">sentence reports raw counts, not %</text>
+  </g>
+
+  <!-- legend strip -->
+  <g transform="translate(60,470)">
+    <text x="0" y="0" font-size="24" font-weight="700" fill="#1c2230">Colour and hatch key</text>
+    <rect x="0" y="20" width="460" height="22" rx="3" fill="url(#grad)"/>
+    <defs>
+      <linearGradient id="grad"><stop offset="0" stop-color="#1f5f99"/><stop offset=".5" stop-color="#efece4"/><stop offset="1" stop-color="#b8470f"/></linearGradient>
+    </defs>
+    <text x="0" y="58" font-size="16" fill="#1f5f99">−60% (halved)</text>
+    <text x="170" y="58" font-size="16" fill="#646b78" text-anchor="middle">0 (no change)</text>
+    <text x="340" y="58" font-size="16" fill="#b8470f" text-anchor="end">+150% (doubled+)</text>
+    <rect x="0" y="78" width="22" height="16" fill="url(#hatch)" stroke="#a0a5ae"/>
+    <text x="30" y="91" font-size="16" fill="#646b78">= too few cases (&lt; ~30 in a compared year)</text>
+  </g>
+
+  <text x="60" y="640" font-size="22" fill="#646b78">Also: unit chart animates in on load (skipped under reduced motion); line chart shows a crosshair + tooltip on hover, and steps</text>
+  <text x="60" y="668" font-size="22" fill="#646b78">year-by-year with the left/right arrow keys; Escape dismisses any tooltip.</text>
+</svg>

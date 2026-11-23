@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" font-family="system-ui,-apple-system,sans-serif">
+  <rect width="1600" height="900" fill="#faf8f3"/>
+  <text x="60" y="60" font-size="40" font-weight="700" fill="#1c2230">P8 — Design evolution: concept → wireframe → build</text>
+  <text x="60" y="98" font-size="22" fill="#646b78">The indexed line and the heatmap from first sketch to the shipped D3 chart. (See P5/P6 for the full build.)</text>
+
+  <!-- Row 1: indexed line -->
+  <g transform="translate(60,130)">
+    <text x="0" y="0" font-size="26" font-weight="700" fill="#1c2230">The indexed line chart</text>
+    <rect x="0" y="14" width="460" height="300" fill="#ffffff" stroke="#d9d4c8" rx="10"/>
+    <text x="230" y="50" text-anchor="middle" font-size="18" fill="#646b78">concept (P1b)</text>
+    <g transform="translate(60,80) scale(0.85)">
+      <line x1="0" y1="180" x2="0" y2="0" stroke="#1c2230" stroke-width="2"/>
+      <line x1="0" y1="180" x2="260" y2="180" stroke="#1c2230" stroke-width="2"/>
+      <path d="M0 180 C 40 180 60 160 90 150 S 160 90 260 80" fill="none" stroke="#b8470f" stroke-width="5"/>
+      <path d="M0 180 C 40 180 70 205 110 220 S 200 240 260 245" fill="none" stroke="#1f5f99" stroke-width="5"/>
+    </g>
+    <text x="230" y="296" text-anchor="middle" font-size="16" fill="#8796a8">two lines diverging from 100</text>
+
+    <rect x="500" y="14" width="460" height="300" fill="#ffffff" stroke="#d9d4c8" rx="10"/>
+    <text x="730" y="50" text-anchor="middle" font-size="18" fill="#646b78">wireframe (P3)</text>
+    <g transform="translate(560,80)">
+      <rect width="360" height="40" rx="20" fill="#d9d4c8" stroke="#8796a8"/>
+      <rect x="0" y="56" width="360" height="180" fill="#ece8dc" stroke="#c8c2b4"/>
+      <text x="180" y="150" text-anchor="middle" font-size="20" fill="#8796a8">line chart region</text>
+    </g>
+    <text x="730" y="296" text-anchor="middle" font-size="16" fill="#8796a8">chart + toggle + source</text>
+
+    <rect x="1000" y="14" width="460" height="300" fill="#ffffff" stroke="#d9d4c8" rx="10"/>
+    <text x="1230" y="50" text-anchor="middle" font-size="18" fill="#646b78">build (P5 detail)</text>
+    <rect x="1060" y="80" width="340" height="200" fill="#ece8dc" stroke="#c8c2b4"/>
+    <text x="1230" y="175" text-anchor="middle" font-size="20" fill="#1c2230">indexed lines + direct labels</text>
+    <text x="1230" y="200" text-anchor="middle" font-size="16" fill="#646b78">+ grey NSW band + Victoria/COVID marks</text>
+    <text x="1230" y="296" text-anchor="middle" font-size="16" fill="#8796a8">annotations + counts/per-person toggle</text>
+  </g>
+
+  <!-- Row 2: heatmap -->
+  <g transform="translate(60,470)">
+    <text x="0" y="0" font-size="26" font-weight="700" fill="#1c2230">The heatmap</text>
+    <rect x="0" y="14" width="460" height="300" fill="#ffffff" stroke="#d9d4c8" rx="10"/>
+    <text x="230" y="50" text-anchor="middle" font-size="18" fill="#646b78">concept (P1c)</text>
+    <g transform="translate(90,80)">
+      <g fill="#efece4"><rect x="0" y="0" width="60" height="45"/><rect x="64" y="0" width="60" height="45"/><rect x="128" y="0" width="60" height="45"/><rect x="192" y="0" width="90" height="45"/>
+      <rect x="0" y="49" width="60" height="45"/><rect x="64" y="49" width="60" height="45"/><rect x="128" y="49" width="60" height="45"/><rect x="192" y="49" width="90" height="45"/>
+      <rect x="0" y="98" width="60" height="45"/><rect x="64" y="98" width="60" height="45"/><rect x="128" y="98" width="60" height="45"/><rect x="192" y="98" width="90" height="45"/></g>
+      <rect x="192" y="49" width="90" height="45" fill="#b8470f"/>
+      <ellipse cx="237" cy="71" rx="58" ry="50" fill="none" stroke="#1c2230" stroke-width="3" stroke-dasharray="7 5"/>
+    </g>
+    <text x="230" y="296" text-anchor="middle" font-size="16" fill="#8796a8">grid + circled "hot cell"</text>
+
+    <rect x="500" y="14" width="460" height="300" fill="#ffffff" stroke="#d9d4c8" rx="10"/>
+    <text x="730" y="50" text-anchor="middle" font-size="18" fill="#646b78">wireframe (P3)</text>
+    <g transform="translate(560,80)">
+      <rect width="360" height="24" rx="12" fill="#d9d4c8" stroke="#8796a8"/>
+      <rect y="34" width="360" height="24" fill="#f4d8c5" stroke="#b8470f"/>
+      <rect y="68" width="360" height="150" fill="#ece8dc" stroke="#c8c2b4"/>
+      <text x="180" y="148" text-anchor="middle" font-size="18" fill="#8796a8">grid + legend + trend</text>
+    </g>
+    <text x="730" y="296" text-anchor="middle" font-size="16" fill="#8796a8">toggle + finder + sentence + grid + trend</text>
+
+    <rect x="1000" y="14" width="460" height="300" fill="#ffffff" stroke="#d9d4c8" rx="10"/>
+    <text x="1230" y="50" text-anchor="middle" font-size="18" fill="#646b78">build (P5 detail)</text>
+    <g transform="translate(1080,80)">
+      <rect width="300" height="22" rx="11" fill="#d9d4c8" stroke="#8796a8"/>
+      <rect y="32" width="300" height="22" fill="#f4d8c5" stroke="#b8470f"/>
+      <rect y="64" width="300" height="120" fill="#ece8dc" stroke="#c8c2b4"/>
+      <text x="150" y="120" text-anchor="middle" font-size="17" fill="#1c2230">log-ratio colour grid</text>
+    </g>
+    <text x="1230" y="296" text-anchor="middle" font-size="16" fill="#8796a8">log-ratio colour; 3-yr avg primary</text>
+  </g>
+</svg>

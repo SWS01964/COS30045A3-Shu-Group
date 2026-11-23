@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" font-family="system-ui,-apple-system,sans-serif">
+  <rect width="1600" height="900" fill="#faf8f3"/>
+  <text x="60" y="70" font-size="40" font-weight="700" fill="#1c2230">P1 — Concept sketches (before any code)</text>
+  <text x="60" y="110" font-size="24" fill="#646b78">Rough ideas drawn while narrowing the story: a scroll narrative, an indexed line, and a "find the hot cell" heatmap.</text>
+
+  <!-- Panel A: story flow -->
+  <g transform="translate(60,160)">
+    <rect width="420" height="680" fill="#ffffff" stroke="#d9d4c8" stroke-width="2" rx="10"/>
+    <text x="210" y="40" text-anchor="middle" font-size="26" font-weight="700" fill="#1c2230">(a) Story flow</text>
+    <rect x="60" y="70" width="300" height="60" rx="6" fill="#ece8dc" stroke="#8796a8"/>
+    <text x="210" y="107" text-anchor="middle" font-size="20" fill="#434a5a">Masthead — "Beyond the road toll"</text>
+    <line x1="210" y1="130" x2="210" y2="165" stroke="#646b78" stroke-width="2"/>
+    <rect x="40" y="165" width="340" height="120" rx="6" fill="#f4d8c5" stroke="#b8470f"/>
+    <text x="210" y="205" text-anchor="middle" font-size="20" font-weight="700" fill="#8f3406">Claim 1: deaths fell, injuries didn't</text>
+    <text x="210" y="235" text-anchor="middle" font-size="17" fill="#8f3406">chart: one dot per person</text>
+    <text x="210" y="262" text-anchor="middle" font-size="17" fill="#8f3406">chart: indexed lines</text>
+    <line x1="210" y1="285" x2="210" y2="320" stroke="#646b78" stroke-width="2"/>
+    <rect x="40" y="320" width="340" height="120" rx="6" fill="#cfe0ef" stroke="#1f5f99"/>
+    <text x="210" y="360" text-anchor="middle" font-size="20" font-weight="700" fill="#1f5f99">Claim 2: older riders hurt more</text>
+    <text x="210" y="390" text-anchor="middle" font-size="17" fill="#1f5f99">chart: heatmap + trend</text>
+    <text x="210" y="417" text-anchor="middle" font-size="17" fill="#1f5f99">chart: severity panels</text>
+    <line x1="210" y1="440" x2="210" y2="475" stroke="#646b78" stroke-width="2"/>
+    <rect x="60" y="475" width="300" height="70" rx="6" fill="#ece8dc" stroke="#8796a8"/>
+    <text x="210" y="505" text-anchor="middle" font-size="18" fill="#434a5a">About this data / methods</text>
+    <text x="210" y="528" text-anchor="middle" font-size="15" fill="#646b78">(caveats, sources)</text>
+    <path d="M 60 610 q 180 -14 360 0" fill="none" stroke="#646b78" stroke-width="2" stroke-dasharray="6 6"/>
+    <text x="210" y="650" text-anchor="middle" font-size="17" fill="#646b78">scroll ↓ (no nav — the story navigates)</text>
+  </g>
+
+  <!-- Panel B: indexed lines -->
+  <g transform="translate(540,160)">
+    <rect width="470" height="680" fill="#ffffff" stroke="#d9d4c8" stroke-width="2" rx="10"/>
+    <text x="235" y="40" text-anchor="middle" font-size="26" font-weight="700" fill="#1c2230">(b) Indexed line</text>
+    <line x1="70" y1="120" x2="70" y2="560" stroke="#1c2230" stroke-width="2"/>
+    <line x1="70" y1="560" x2="420" y2="560" stroke="#1c2230" stroke-width="2"/>
+    <text x="40" y="130" text-anchor="end" font-size="16" fill="#646b78">120</text>
+    <text x="40" y="350" text-anchor="end" font-size="16" fill="#646b78">100</text>
+    <text x="40" y="565" text-anchor="end" font-size="16" fill="#646b78">80</text>
+    <line x1="70" y1="350" x2="420" y2="350" stroke="#d9d4c8" stroke-width="1.5" stroke-dasharray="4 4"/>
+    <path d="M70 350 C 130 350, 150 330, 200 320 S 300 240, 420 232" fill="none" stroke="#b8470f" stroke-width="4"/>
+    <path d="M70 350 C 130 350, 160 380, 220 400 S 330 428, 420 432" fill="none" stroke="#1f5f99" stroke-width="4"/>
+    <text x="420" y="222" text-anchor="end" font-size="18" font-weight="700" fill="#b8470f">hospitalised ↑</text>
+    <text x="420" y="452" text-anchor="end" font-size="18" font-weight="700" fill="#1f5f99">deaths ↓</text>
+    <text x="245" y="605" text-anchor="middle" font-size="16" fill="#646b78">year 2011 → 2021</text>
+    <text x="235" y="650" text-anchor="middle" font-size="17" fill="#1c2230">"set everything to 100 in 2011;</text>
+    <text x="235" y="676" text-anchor="middle" font-size="17" fill="#1c2230">the gap between the lines is the story"</text>
+  </g>
+
+  <!-- Panel C: heatmap -->
+  <g transform="translate(1070,160)">
+    <rect width="470" height="680" fill="#ffffff" stroke="#d9d4c8" stroke-width="2" rx="10"/>
+    <text x="235" y="40" text-anchor="middle" font-size="26" font-weight="700" fill="#1c2230">(c) Heatmap idea</text>
+    <g transform="translate(95,90)">
+      <text x="0" y="0" font-size="17" fill="#434a5a">age →</text>
+      <g font-size="15" fill="#434a5a">
+        <text x="60" y="30">0–16</text><text x="135" y="30">17–25</text><text x="215" y="30">26–39</text>
+        <text x="285" y="30">40–64</text><text x="360" y="30">65+</text>
+      </g>
+      <text x="-20" y="60" font-size="15" fill="#434a5a">car driver</text>
+      <text x="-20" y="105" font-size="15" fill="#434a5a">motorcyclist</text>
+      <text x="-20" y="150" font-size="15" fill="#434a5a">cyclist</text>
+      <text x="-20" y="195" font-size="15" fill="#434a5a">pedestrian</text>
+      <g stroke="#d9d4c8">
+        <line x1="0" y1="38" x2="420" y2="38"/><line x1="0" y1="83" x2="420" y2="83"/>
+        <line x1="0" y1="128" x2="420" y2="128"/><line x1="0" y1="173" x2="420" y2="173"/><line x1="0" y1="218" x2="420" y2="218"/>
+      </g>
+      <g fill="#efece4">
+        <rect x="0" y="38" width="75" height="45"/><rect x="75" y="38" width="75" height="45"/><rect x="150" y="38" width="75" height="45"/><rect x="225" y="38" width="75" height="45"/><rect x="300" y="38" width="120" height="45"/>
+        <rect x="0" y="83" width="75" height="45"/><rect x="75" y="83" width="75" height="45"/><rect x="150" y="83" width="75" height="45"/><rect x="225" y="83" width="75" height="45"/><rect x="300" y="83" width="120" height="45"/>
+        <rect x="0" y="128" width="75" height="45"/><rect x="75" y="128" width="75" height="45"/><rect x="150" y="128" width="75" height="45"/><rect x="225" y="128" width="75" height="45"/><rect x="300" y="128" width="120" height="45"/>
+        <rect x="0" y="173" width="75" height="45"/><rect x="75" y="173" width="75" height="45"/><rect x="150" y="173" width="75" height="45"/><rect x="225" y="173" width="75" height="45"/><rect x="300" y="173" width="120" height="45"/>
+      </g>
+      <rect x="300" y="128" width="120" height="45" fill="#b8470f"/>
+      <rect x="300" y="83" width="120" height="45" fill="#d98b4f"/>
+      <rect x="0" y="173" width="75" height="45" fill="#1f5f99"/>
+      <rect x="75" y="173" width="75" height="45" fill="#6f9cc4"/>
+      <text x="360" y="156" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">hot</text>
+      <ellipse cx="360" cy="130" rx="70" ry="62" fill="none" stroke="#1c2230" stroke-width="3" stroke-dasharray="7 5"/>
+    </g>
+    <text x="235" y="350" text-anchor="middle" font-size="17" fill="#1c2230">"two hot cells = older cyclists and</text>
+    <text x="235" y="376" text-anchor="middle" font-size="17" fill="#1c2230">older motorcyclists — let Sam find them"</text>
+  </g>
+</svg>
