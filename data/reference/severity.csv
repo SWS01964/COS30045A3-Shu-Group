@@ -1,0 +1,281 @@
+view,road_user,category,cases_1119,died_1119,hosp_1621,beds_1621,died_per_1000,ci_low,ci_high,avg_stay,publish_rate,publish_stay
+age,Bus occupant,0-7,38,0,13,21,0.0,0.0,91.8,1.6,FALSE,FALSE
+age,Bus occupant,17-25,188,1,121,399,5.3,0.9,29.5,3.3,FALSE,TRUE
+age,Bus occupant,26-39,264,0,165,390,0.0,0.0,14.3,2.4,FALSE,TRUE
+age,Bus occupant,40-64,670,4,422,1866,6.0,2.3,15.2,4.4,FALSE,TRUE
+age,Bus occupant,65-74,349,3,224,1510,8.6,2.9,25.0,6.7,FALSE,TRUE
+age,Bus occupant,75+,653,10,385,3107,15.3,8.3,28.0,8.1,TRUE,TRUE
+age,Bus occupant,8-16,98,0,62,98,0.0,0.0,37.7,1.6,FALSE,FALSE
+age,Bus occupant,All ages,2260,18,1392,7391,8.0,5.0,12.6,5.3,TRUE,TRUE
+age,Car driver,0-7,29,0,30,145,0.0,0.0,117.0,4.8,FALSE,FALSE
+age,Car driver,17-25,27061,106,19176,69401,3.9,3.2,4.7,3.6,TRUE,TRUE
+age,Car driver,26-39,28525,94,20883,78964,3.3,2.7,4.0,3.8,TRUE,TRUE
+age,Car driver,40-64,34773,144,24612,112624,4.1,3.5,4.9,4.6,TRUE,TRUE
+age,Car driver,65-74,9184,68,6717,43998,7.4,5.8,9.4,6.6,TRUE,TRUE
+age,Car driver,75+,10063,229,7308,67602,22.8,20.0,25.9,9.3,TRUE,TRUE
+age,Car driver,8-16,528,3,356,1580,5.7,1.9,16.6,4.4,FALSE,TRUE
+age,Car driver,All ages,110163,644,79082,374314,5.8,5.4,6.3,4.7,TRUE,TRUE
+age,Car passenger,0-7,2864,21,1902,6956,7.3,4.8,11.2,3.7,TRUE,TRUE
+age,Car passenger,17-25,12398,66,8027,36993,5.3,4.2,6.8,4.6,TRUE,TRUE
+age,Car passenger,26-39,8098,34,5351,22811,4.2,3.0,5.9,4.3,TRUE,TRUE
+age,Car passenger,40-64,8710,33,5631,27932,3.8,2.7,5.3,5.0,TRUE,TRUE
+age,Car passenger,65-74,3205,27,2102,15429,8.4,5.8,12.2,7.3,TRUE,TRUE
+age,Car passenger,75+,3961,107,2583,23759,27.0,22.4,32.5,9.2,TRUE,TRUE
+age,Car passenger,8-16,5491,37,3643,13501,6.7,4.9,9.3,3.7,TRUE,TRUE
+age,Car passenger,All ages,44727,325,29239,147381,7.3,6.5,8.1,5.0,TRUE,TRUE
+age,Car unknown position,0-7,132,2,79,570,15.2,4.2,53.6,7.2,FALSE,FALSE
+age,Car unknown position,17-25,1779,8,1062,6751,4.5,2.3,8.8,6.4,FALSE,TRUE
+age,Car unknown position,26-39,1921,12,1279,6449,6.2,3.6,10.9,5.0,TRUE,TRUE
+age,Car unknown position,40-64,2215,5,1455,10050,2.3,1.0,5.3,6.9,FALSE,TRUE
+age,Car unknown position,65-74,529,3,353,5993,5.7,1.9,16.5,17.0,FALSE,TRUE
+age,Car unknown position,75+,586,7,331,7988,11.9,5.8,24.5,24.1,FALSE,TRUE
+age,Car unknown position,8-16,267,4,135,309,15.0,5.8,37.9,2.3,FALSE,TRUE
+age,Car unknown position,All ages,7429,41,4694,38110,5.5,4.1,7.5,8.1,TRUE,TRUE
+age,Heavy transport driver,17-25,304,2,205,899,6.6,1.8,23.7,4.4,FALSE,TRUE
+age,Heavy transport driver,26-39,978,3,633,3668,3.1,1.0,9.0,5.8,FALSE,TRUE
+age,Heavy transport driver,40-64,2313,10,1469,10440,4.3,2.4,7.9,7.1,TRUE,TRUE
+age,Heavy transport driver,65-74,210,0,170,1186,0.0,0.0,18.0,7.0,FALSE,TRUE
+age,Heavy transport driver,75+,28,1,29,177,35.7,6.3,177.1,6.1,FALSE,FALSE
+age,Heavy transport driver,8-16,2,0,1,1,0.0,0.0,657.6,1.0,FALSE,FALSE
+age,Heavy transport driver,All ages,3835,16,2507,16371,4.2,2.6,6.8,6.5,TRUE,TRUE
+age,Heavy transport passenger,0-7,12,0,9,24,0.0,0.0,242.5,2.7,FALSE,FALSE
+age,Heavy transport passenger,17-25,93,0,62,195,0.0,0.0,39.7,3.1,FALSE,FALSE
+age,Heavy transport passenger,26-39,102,0,74,253,0.0,0.0,36.3,3.4,FALSE,FALSE
+age,Heavy transport passenger,40-64,159,0,108,730,0.0,0.0,23.6,6.8,FALSE,TRUE
+age,Heavy transport passenger,65-74,32,1,26,266,31.3,5.5,157.4,10.2,FALSE,FALSE
+age,Heavy transport passenger,75+,23,0,21,157,0.0,0.0,143.1,7.5,FALSE,FALSE
+age,Heavy transport passenger,8-16,29,0,16,35,0.0,0.0,117.0,2.2,FALSE,FALSE
+age,Heavy transport passenger,All ages,450,1,316,1660,2.2,0.4,12.5,5.3,FALSE,TRUE
+age,Heavy transport unknown position,0-7,0,0,1,1,,,,1.0,FALSE,FALSE
+age,Heavy transport unknown position,17-25,39,0,29,172,0.0,0.0,89.7,5.9,FALSE,FALSE
+age,Heavy transport unknown position,26-39,71,0,60,209,0.0,0.0,51.3,3.5,FALSE,FALSE
+age,Heavy transport unknown position,40-64,222,3,129,1512,13.5,4.6,39.0,11.7,FALSE,TRUE
+age,Heavy transport unknown position,65-74,28,0,18,51,0.0,0.0,120.6,2.8,FALSE,FALSE
+age,Heavy transport unknown position,75+,4,0,2,78,0.0,0.0,489.9,39.0,FALSE,FALSE
+age,Heavy transport unknown position,8-16,7,0,2,2,0.0,0.0,354.3,1.0,FALSE,FALSE
+age,Heavy transport unknown position,All ages,371,3,241,2025,8.1,2.8,23.5,8.4,FALSE,TRUE
+age,Motorcyclist,0-7,314,0,198,535,0.0,0.0,12.1,2.7,FALSE,TRUE
+age,Motorcyclist,17-25,18941,58,12634,58598,3.1,2.4,4.0,4.6,TRUE,TRUE
+age,Motorcyclist,26-39,21413,81,14894,80392,3.8,3.0,4.7,5.4,TRUE,TRUE
+age,Motorcyclist,40-64,27284,126,19148,133008,4.6,3.9,5.5,6.9,TRUE,TRUE
+age,Motorcyclist,65-74,2344,23,2114,20271,9.8,6.5,14.7,9.6,TRUE,TRUE
+age,Motorcyclist,75+,711,13,572,7483,18.3,10.7,31.0,13.1,TRUE,TRUE
+age,Motorcyclist,8-16,4054,5,2819,8289,1.2,0.5,2.9,2.9,FALSE,TRUE
+age,Motorcyclist,All ages,75061,306,52379,308576,4.1,3.6,4.6,5.9,TRUE,TRUE
+age,Other or unknown,0-7,140,0,78,141,0.0,0.0,26.7,1.8,FALSE,FALSE
+age,Other or unknown,17-25,1016,5,712,3552,4.9,2.1,11.5,5.0,FALSE,TRUE
+age,Other or unknown,26-39,1128,1,830,3446,0.9,0.2,5.0,4.2,FALSE,TRUE
+age,Other or unknown,40-64,1762,5,1217,7324,2.8,1.2,6.6,6.0,FALSE,TRUE
+age,Other or unknown,65-74,409,2,310,3547,4.9,1.3,17.7,11.4,FALSE,TRUE
+age,Other or unknown,75+,467,7,288,6509,15.0,7.3,30.6,22.6,FALSE,TRUE
+age,Other or unknown,8-16,260,0,191,742,0.0,0.0,14.6,3.9,FALSE,TRUE
+age,Other or unknown,All ages,5183,20,3626,25261,3.9,2.5,6.0,7.0,TRUE,TRUE
+age,Other or unknown,Missing,1,0,0,0,0.0,0.0,793.5,,FALSE,FALSE
+age,Pedal cyclist,0-7,1824,2,1254,1882,1.1,0.3,4.0,1.5,FALSE,TRUE
+age,Pedal cyclist,17-25,6640,8,4439,9355,1.2,0.6,2.4,2.1,FALSE,TRUE
+age,Pedal cyclist,26-39,13523,11,9463,22195,0.8,0.5,1.5,2.3,TRUE,TRUE
+age,Pedal cyclist,40-64,23689,49,18314,63204,2.1,1.6,2.7,3.5,TRUE,TRUE
+age,Pedal cyclist,65-74,3694,21,3483,19761,5.7,3.7,8.7,5.7,TRUE,TRUE
+age,Pedal cyclist,75+,1263,17,1215,8913,13.5,8.4,21.5,7.3,TRUE,TRUE
+age,Pedal cyclist,8-16,8348,6,6568,11935,0.7,0.3,1.6,1.8,FALSE,TRUE
+age,Pedal cyclist,All ages,58981,114,44736,137245,1.9,1.6,2.3,3.1,TRUE,TRUE
+age,Pedestrian,0-7,1247,20,740,3074,16.0,10.4,24.6,4.2,TRUE,TRUE
+age,Pedestrian,17-25,4199,63,2399,18173,15.0,11.7,19.1,7.6,TRUE,TRUE
+age,Pedestrian,26-39,4541,49,2909,24188,10.8,8.2,14.2,8.3,TRUE,TRUE
+age,Pedestrian,40-64,6228,110,4095,48533,17.7,14.7,21.2,11.9,TRUE,TRUE
+age,Pedestrian,65-74,2371,73,1552,24193,30.8,24.6,38.5,15.6,TRUE,TRUE
+age,Pedestrian,75+,3344,205,1871,35899,61.3,53.7,69.9,19.2,TRUE,TRUE
+age,Pedestrian,8-16,2703,18,1702,6949,6.7,4.2,10.5,4.1,TRUE,TRUE
+age,Pedestrian,All ages,24633,538,15268,161009,21.8,20.1,23.7,10.5,TRUE,TRUE
+age,Pick-up truck or van occupant,0-7,29,0,21,32,0.0,0.0,117.0,1.5,FALSE,FALSE
+age,Pick-up truck or van occupant,17-25,607,4,468,2646,6.6,2.6,16.8,5.7,FALSE,TRUE
+age,Pick-up truck or van occupant,26-39,592,1,420,2709,1.7,0.3,9.5,6.5,FALSE,TRUE
+age,Pick-up truck or van occupant,40-64,833,8,597,3612,9.6,4.9,18.8,6.1,FALSE,TRUE
+age,Pick-up truck or van occupant,65-74,141,1,126,1140,7.1,1.3,39.1,9.0,FALSE,TRUE
+age,Pick-up truck or van occupant,75+,81,0,59,598,0.0,0.0,45.3,10.1,FALSE,FALSE
+age,Pick-up truck or van occupant,8-16,78,1,58,131,12.8,2.3,69.1,2.3,FALSE,FALSE
+age,Pick-up truck or van occupant,All ages,2361,15,1749,10868,6.4,3.9,10.5,6.2,TRUE,TRUE
+age,All road users,0-7,6629,45,4325,13381,6.8,5.1,9.1,3.1,TRUE,TRUE
+age,All road users,17-25,73265,321,49334,207134,4.4,3.9,4.9,4.2,TRUE,TRUE
+age,All road users,26-39,81156,286,56961,245674,3.5,3.1,4.0,4.3,TRUE,TRUE
+age,All road users,40-64,108858,497,77197,420835,4.6,4.2,5.0,5.5,TRUE,TRUE
+age,All road users,65-74,22496,222,17195,137345,9.9,8.7,11.2,8.0,TRUE,TRUE
+age,All road users,75+,21184,596,14664,162270,28.1,26.0,30.4,11.1,TRUE,TRUE
+age,All road users,8-16,21865,74,15553,43572,3.4,2.7,4.2,2.8,TRUE,TRUE
+age,All road users,All ages,335454,2041,235229,1230211,6.1,5.8,6.4,5.2,TRUE,TRUE
+age,All road users,Missing,1,0,0,0,0.0,0.0,793.5,,FALSE,FALSE
+counterparty,Bus occupant,2- or 3- wheeled motor vehicle,1,0,1,1,0.0,0.0,793.5,1.0,FALSE,FALSE
+counterparty,Bus occupant,"Car, pick-up truck or van",359,5,234,867,13.9,6.0,32.2,3.7,FALSE,TRUE
+counterparty,Bus occupant,Fixed or stationary object,134,0,76,500,0.0,0.0,27.9,6.6,FALSE,FALSE
+counterparty,Bus occupant,Heavy transport vehicle or bus,116,1,67,611,8.6,1.5,47.2,9.1,FALSE,FALSE
+counterparty,Bus occupant,Non-collision transport accident,1420,10,910,4724,7.0,3.8,12.9,5.2,TRUE,TRUE
+counterparty,Bus occupant,Other and unspecified transport accidents,198,1,93,662,5.1,0.9,28.0,7.1,FALSE,FALSE
+counterparty,Bus occupant,Pedestrian or animal,21,1,6,20,47.6,8.5,226.7,3.3,FALSE,FALSE
+counterparty,Bus occupant,Train,11,0,5,6,0.0,0.0,258.8,1.2,FALSE,FALSE
+counterparty,Car driver,2- or 3- wheeled motor vehicle,208,0,147,604,0.0,0.0,18.1,4.1,FALSE,TRUE
+counterparty,Car driver,"Car, pick-up truck or van",59697,224,44332,160839,3.8,3.3,4.3,3.6,TRUE,TRUE
+counterparty,Car driver,Fixed or stationary object,26845,253,18614,125599,9.4,8.3,10.7,6.7,TRUE,TRUE
+counterparty,Car driver,Heavy transport vehicle or bus,4908,81,3250,21558,16.5,13.3,20.5,6.6,TRUE,TRUE
+counterparty,Car driver,Non-collision transport accident,15976,71,10993,57146,4.4,3.5,5.6,5.2,TRUE,TRUE
+counterparty,Car driver,Other and unspecified transport accidents,1354,8,906,4958,5.9,3.0,11.6,5.5,FALSE,TRUE
+counterparty,Car driver,Other non-motor vehicle,178,2,143,914,11.2,3.1,40.0,6.4,FALSE,TRUE
+counterparty,Car driver,Pedal cycle,49,0,28,83,0.0,0.0,72.7,3.0,FALSE,FALSE
+counterparty,Car driver,Pedestrian or animal,855,2,611,2144,2.3,0.6,8.5,3.5,FALSE,TRUE
+counterparty,Car driver,Train,93,3,58,469,32.3,11.0,90.6,8.1,FALSE,FALSE
+counterparty,Car passenger,2- or 3- wheeled motor vehicle,56,1,38,169,17.9,3.2,94.5,4.4,FALSE,FALSE
+counterparty,Car passenger,"Car, pick-up truck or van",23143,130,15369,64868,5.6,4.7,6.7,4.2,TRUE,TRUE
+counterparty,Car passenger,Fixed or stationary object,9277,86,6069,39287,9.3,7.5,11.4,6.5,TRUE,TRUE
+counterparty,Car passenger,Heavy transport vehicle or bus,1694,32,1073,7482,18.9,13.4,26.5,7.0,TRUE,TRUE
+counterparty,Car passenger,Non-collision transport accident,9290,69,5961,31042,7.4,5.9,9.4,5.2,TRUE,TRUE
+counterparty,Car passenger,Other and unspecified transport accidents,729,5,400,2434,6.9,2.9,16.0,6.1,FALSE,TRUE
+counterparty,Car passenger,Other non-motor vehicle,62,0,53,137,0.0,0.0,58.3,2.6,FALSE,FALSE
+counterparty,Car passenger,Pedal cycle,11,0,3,3,0.0,0.0,258.8,1.0,FALSE,FALSE
+counterparty,Car passenger,Pedestrian or animal,428,2,251,1016,4.7,1.3,16.9,4.0,FALSE,TRUE
+counterparty,Car passenger,Train,37,0,22,943,0.0,0.0,94.1,42.9,FALSE,FALSE
+counterparty,Car unknown position,2- or 3- wheeled motor vehicle,2,0,2,47,0.0,0.0,657.6,23.5,FALSE,FALSE
+counterparty,Car unknown position,"Car, pick-up truck or van",1108,9,725,6449,8.1,4.3,15.4,8.9,FALSE,TRUE
+counterparty,Car unknown position,Fixed or stationary object,315,2,161,3444,6.3,1.7,22.9,21.4,FALSE,TRUE
+counterparty,Car unknown position,Heavy transport vehicle or bus,77,1,51,991,13.0,2.3,70.0,19.4,FALSE,FALSE
+counterparty,Car unknown position,Non-collision transport accident,631,5,339,2887,7.9,3.4,18.4,8.5,FALSE,TRUE
+counterparty,Car unknown position,Other and unspecified transport accidents,5251,24,3397,24038,4.6,3.1,6.8,7.1,TRUE,TRUE
+counterparty,Car unknown position,Other non-motor vehicle,4,0,3,34,0.0,0.0,489.9,11.3,FALSE,FALSE
+counterparty,Car unknown position,Pedal cycle,3,0,0,0,0.0,0.0,561.5,,FALSE,FALSE
+counterparty,Car unknown position,Pedestrian or animal,34,0,13,162,0.0,0.0,101.5,12.5,FALSE,FALSE
+counterparty,Car unknown position,Train,4,0,3,58,0.0,0.0,489.9,19.3,FALSE,FALSE
+counterparty,Heavy transport driver,2- or 3- wheeled motor vehicle,4,0,1,5,0.0,0.0,489.9,5.0,FALSE,FALSE
+counterparty,Heavy transport driver,"Car, pick-up truck or van",551,2,402,1722,3.6,1.0,13.1,4.3,FALSE,TRUE
+counterparty,Heavy transport driver,Fixed or stationary object,554,3,373,3215,5.4,1.8,15.8,8.6,FALSE,TRUE
+counterparty,Heavy transport driver,Heavy transport vehicle or bus,550,3,364,3128,5.5,1.9,15.9,8.6,FALSE,TRUE
+counterparty,Heavy transport driver,Non-collision transport accident,2103,8,1321,7960,3.8,1.9,7.5,6.0,FALSE,TRUE
+counterparty,Heavy transport driver,Other and unspecified transport accidents,29,0,18,108,0.0,0.0,117.0,6.0,FALSE,FALSE
+counterparty,Heavy transport driver,Other non-motor vehicle,8,0,5,51,0.0,0.0,324.4,10.2,FALSE,FALSE
+counterparty,Heavy transport driver,Pedal cycle,1,0,0,0,0.0,0.0,793.5,,FALSE,FALSE
+counterparty,Heavy transport driver,Pedestrian or animal,25,0,16,172,0.0,0.0,133.2,10.8,FALSE,FALSE
+counterparty,Heavy transport driver,Train,10,0,7,10,0.0,0.0,277.5,1.4,FALSE,FALSE
+counterparty,Heavy transport passenger,2- or 3- wheeled motor vehicle,1,0,0,45,0.0,0.0,793.5,,FALSE,FALSE
+counterparty,Heavy transport passenger,"Car, pick-up truck or van",70,0,43,179,0.0,0.0,52.0,4.2,FALSE,FALSE
+counterparty,Heavy transport passenger,Fixed or stationary object,51,0,34,183,0.0,0.0,70.0,5.4,FALSE,FALSE
+counterparty,Heavy transport passenger,Heavy transport vehicle or bus,67,0,43,213,0.0,0.0,54.2,5.0,FALSE,FALSE
+counterparty,Heavy transport passenger,Non-collision transport accident,252,1,191,1029,4.0,0.7,22.1,5.4,FALSE,TRUE
+counterparty,Heavy transport passenger,Other and unspecified transport accidents,4,0,2,2,0.0,0.0,489.9,1.0,FALSE,FALSE
+counterparty,Heavy transport passenger,Other non-motor vehicle,1,0,1,7,0.0,0.0,793.5,7.0,FALSE,FALSE
+counterparty,Heavy transport passenger,Pedestrian or animal,3,0,2,2,0.0,0.0,561.5,1.0,FALSE,FALSE
+counterparty,Heavy transport passenger,Train,1,0,0,0,0.0,0.0,793.5,,FALSE,FALSE
+counterparty,Heavy transport unknown position,"Car, pick-up truck or van",7,1,5,190,142.9,25.7,513.1,38.0,FALSE,FALSE
+counterparty,Heavy transport unknown position,Fixed or stationary object,5,0,2,35,0.0,0.0,434.5,17.5,FALSE,FALSE
+counterparty,Heavy transport unknown position,Heavy transport vehicle or bus,16,0,9,17,0.0,0.0,193.6,1.9,FALSE,FALSE
+counterparty,Heavy transport unknown position,Non-collision transport accident,154,1,106,478,6.5,1.1,35.9,4.5,FALSE,TRUE
+counterparty,Heavy transport unknown position,Other and unspecified transport accidents,180,1,117,1290,5.6,1.0,30.8,11.0,FALSE,TRUE
+counterparty,Heavy transport unknown position,Other non-motor vehicle,1,0,1,1,0.0,0.0,793.5,1.0,FALSE,FALSE
+counterparty,Heavy transport unknown position,Pedal cycle,1,0,0,0,0.0,0.0,793.5,,FALSE,FALSE
+counterparty,Heavy transport unknown position,Pedestrian or animal,7,0,1,14,0.0,0.0,354.3,14.0,FALSE,FALSE
+counterparty,Motorcyclist,2- or 3- wheeled motor vehicle,1381,3,1078,5238,2.2,0.7,6.4,4.9,FALSE,TRUE
+counterparty,Motorcyclist,"Car, pick-up truck or van",19497,137,13821,118250,7.0,5.9,8.3,8.6,TRUE,TRUE
+counterparty,Motorcyclist,Fixed or stationary object,6871,70,5112,45456,10.2,8.1,12.9,8.9,TRUE,TRUE
+counterparty,Motorcyclist,Heavy transport vehicle or bus,792,12,500,8327,15.2,8.7,26.3,16.7,TRUE,TRUE
+counterparty,Motorcyclist,Non-collision transport accident,30439,46,21725,83467,1.5,1.1,2.0,3.8,TRUE,TRUE
+counterparty,Motorcyclist,Other and unspecified transport accidents,14144,29,8751,40656,2.1,1.4,2.9,4.6,TRUE,TRUE
+counterparty,Motorcyclist,Other non-motor vehicle,91,0,64,409,0.0,0.0,40.5,6.4,FALSE,FALSE
+counterparty,Motorcyclist,Pedal cycle,92,1,86,658,10.9,1.9,59.0,7.7,FALSE,FALSE
+counterparty,Motorcyclist,Pedestrian or animal,1745,8,1236,6061,4.6,2.3,9.0,4.9,FALSE,TRUE
+counterparty,Motorcyclist,Train,9,0,6,54,0.0,0.0,299.2,9.0,FALSE,FALSE
+counterparty,Other or unknown,2- or 3- wheeled motor vehicle,7,0,5,145,0.0,0.0,354.3,29.0,FALSE,FALSE
+counterparty,Other or unknown,"Car, pick-up truck or van",64,1,31,405,15.6,2.8,83.3,13.1,FALSE,FALSE
+counterparty,Other or unknown,Fixed or stationary object,12,1,14,212,83.3,14.9,353.9,15.1,FALSE,FALSE
+counterparty,Other or unknown,Heavy transport vehicle or bus,2,0,1,1,0.0,0.0,657.6,1.0,FALSE,FALSE
+counterparty,Other or unknown,Non-collision transport accident,70,1,40,280,14.3,2.5,76.6,7.0,FALSE,FALSE
+counterparty,Other or unknown,Other and unspecified transport accidents,4991,17,3502,24024,3.4,2.1,5.4,6.9,TRUE,TRUE
+counterparty,Other or unknown,Other non-motor vehicle,29,0,29,184,0.0,0.0,117.0,6.3,FALSE,FALSE
+counterparty,Other or unknown,Pedal cycle,0,0,1,1,,,,1.0,FALSE,FALSE
+counterparty,Other or unknown,Pedestrian or animal,7,0,3,9,0.0,0.0,354.3,3.0,FALSE,FALSE
+counterparty,Other or unknown,Train,1,0,0,0,0.0,0.0,793.5,,FALSE,FALSE
+counterparty,Pedal cyclist,2- or 3- wheeled motor vehicle,131,1,95,396,7.6,1.3,42.0,4.2,FALSE,FALSE
+counterparty,Pedal cyclist,"Car, pick-up truck or van",13006,56,9338,40595,4.3,3.3,5.6,4.3,TRUE,TRUE
+counterparty,Pedal cyclist,Fixed or stationary object,3246,5,2636,9794,1.5,0.7,3.6,3.7,FALSE,TRUE
+counterparty,Pedal cyclist,Heavy transport vehicle or bus,549,14,327,2686,25.5,15.2,42.3,8.2,TRUE,TRUE
+counterparty,Pedal cyclist,Non-collision transport accident,25887,24,19851,51231,0.9,0.6,1.4,2.6,TRUE,TRUE
+counterparty,Pedal cyclist,Other and unspecified transport accidents,12527,6,9760,23048,0.5,0.2,1.0,2.4,FALSE,TRUE
+counterparty,Pedal cyclist,Other non-motor vehicle,83,0,66,159,0.0,0.0,44.2,2.4,FALSE,FALSE
+counterparty,Pedal cyclist,Pedal cycle,2918,4,2141,6854,1.4,0.5,3.5,3.2,FALSE,TRUE
+counterparty,Pedal cyclist,Pedestrian or animal,620,4,510,2330,6.5,2.5,16.5,4.6,FALSE,TRUE
+counterparty,Pedal cyclist,Train,14,0,12,152,0.0,0.0,215.3,12.7,FALSE,FALSE
+counterparty,Pedestrian,2- or 3- wheeled motor vehicle,504,8,306,3419,15.9,8.1,31.0,11.2,FALSE,TRUE
+counterparty,Pedestrian,"Car, pick-up truck or van",21583,442,13425,136104,20.5,18.7,22.5,10.1,TRUE,TRUE
+counterparty,Pedestrian,Heavy transport vehicle or bus,1081,57,594,12940,52.7,40.9,67.7,21.8,TRUE,TRUE
+counterparty,Pedestrian,Other and unspecified transport accidents,677,6,437,3645,8.9,4.1,19.2,8.3,FALSE,TRUE
+counterparty,Pedestrian,Other non-motor vehicle,101,4,64,535,39.6,15.5,97.4,8.4,FALSE,FALSE
+counterparty,Pedestrian,Pedal cycle,462,4,295,1942,8.7,3.4,22.0,6.6,FALSE,TRUE
+counterparty,Pedestrian,Pedestrian or animal,113,3,84,798,26.5,9.1,75.2,9.5,FALSE,FALSE
+counterparty,Pedestrian,Train,112,14,63,1626,125.0,75.9,198.9,25.8,TRUE,FALSE
+counterparty,Pick-up truck or van occupant,2- or 3- wheeled motor vehicle,3,0,3,7,0.0,0.0,561.5,2.3,FALSE,FALSE
+counterparty,Pick-up truck or van occupant,"Car, pick-up truck or van",731,3,566,3123,4.1,1.4,12.0,5.5,FALSE,TRUE
+counterparty,Pick-up truck or van occupant,Fixed or stationary object,445,4,316,2392,9.0,3.5,22.9,7.6,FALSE,TRUE
+counterparty,Pick-up truck or van occupant,Heavy transport vehicle or bus,203,4,139,1120,19.7,7.7,49.6,8.1,FALSE,TRUE
+counterparty,Pick-up truck or van occupant,Non-collision transport accident,809,3,604,3518,3.7,1.3,10.8,5.8,FALSE,TRUE
+counterparty,Pick-up truck or van occupant,Other and unspecified transport accidents,133,1,93,589,7.5,1.3,41.4,6.3,FALSE,FALSE
+counterparty,Pick-up truck or van occupant,Other non-motor vehicle,5,0,2,18,0.0,0.0,434.5,9.0,FALSE,FALSE
+counterparty,Pick-up truck or van occupant,Pedal cycle,1,0,1,1,0.0,0.0,793.5,1.0,FALSE,FALSE
+counterparty,Pick-up truck or van occupant,Pedestrian or animal,26,0,21,93,0.0,0.0,128.7,4.4,FALSE,FALSE
+counterparty,Pick-up truck or van occupant,Train,5,0,4,7,0.0,0.0,434.5,1.8,FALSE,FALSE
+counterparty,All road users,2- or 3- wheeled motor vehicle,2298,13,1676,10076,5.7,3.3,9.7,6.0,TRUE,TRUE
+counterparty,All road users,"Car, pick-up truck or van",139816,1010,98291,533591,7.2,6.8,7.7,5.4,TRUE,TRUE
+counterparty,All road users,Fixed or stationary object,47755,424,33407,230117,8.9,8.1,9.8,6.9,TRUE,TRUE
+counterparty,All road users,Heavy transport vehicle or bus,10055,205,6418,59074,20.4,17.8,23.3,9.2,TRUE,TRUE
+counterparty,All road users,Non-collision transport accident,87031,239,62041,243762,2.7,2.4,3.1,3.9,TRUE,TRUE
+counterparty,All road users,Other and unspecified transport accidents,40217,98,27476,125454,2.4,2.0,3.0,4.6,TRUE,TRUE
+counterparty,All road users,Other non-motor vehicle,563,6,431,2449,10.7,4.9,23.1,5.7,FALSE,TRUE
+counterparty,All road users,Pedal cycle,3538,9,2555,9542,2.5,1.3,4.8,3.7,FALSE,TRUE
+counterparty,All road users,Pedestrian or animal,3884,20,2754,12821,5.1,3.3,7.9,4.7,TRUE,TRUE
+counterparty,All road users,Train,297,17,180,3325,57.2,36.0,89.7,18.5,TRUE,TRUE
+remoteness,Bus occupant,Major Cities,1744,11,1087,5478,6.3,3.5,11.3,5.0,TRUE,TRUE
+remoteness,Bus occupant,Missing,116,2,61,259,17.2,4.7,60.7,4.2,FALSE,FALSE
+remoteness,Bus occupant,Regional,368,5,222,1564,13.6,5.8,31.4,7.0,FALSE,TRUE
+remoteness,Bus occupant,Remote,32,0,22,90,0.0,0.0,107.2,4.1,FALSE,FALSE
+remoteness,Car driver,Major Cities,71636,324,51768,209750,4.5,4.1,5.0,4.1,TRUE,TRUE
+remoteness,Car driver,Missing,1853,21,1330,6275,11.3,7.4,17.3,4.7,TRUE,TRUE
+remoteness,Car driver,Regional,33794,285,23970,146120,8.4,7.5,9.5,6.1,TRUE,TRUE
+remoteness,Car driver,Remote,2880,14,2014,12169,4.9,2.9,8.1,6.0,TRUE,TRUE
+remoteness,Car passenger,Major Cities,27206,172,17837,81173,6.3,5.4,7.3,4.6,TRUE,TRUE
+remoteness,Car passenger,Missing,1903,14,1153,6167,7.4,4.4,12.3,5.3,TRUE,TRUE
+remoteness,Car passenger,Regional,13335,117,8797,52410,8.8,7.3,10.5,6.0,TRUE,TRUE
+remoteness,Car passenger,Remote,2283,22,1452,7631,9.6,6.4,14.5,5.3,TRUE,TRUE
+remoteness,Car unknown position,Major Cities,4249,22,2844,20952,5.2,3.4,7.8,7.4,TRUE,TRUE
+remoteness,Car unknown position,Missing,172,5,90,932,29.1,12.5,66.2,10.4,FALSE,FALSE
+remoteness,Car unknown position,Regional,2546,11,1548,14621,4.3,2.4,7.7,9.4,TRUE,TRUE
+remoteness,Car unknown position,Remote,462,3,212,1605,6.5,2.2,18.9,7.6,FALSE,TRUE
+remoteness,Heavy transport driver,Major Cities,1695,5,1156,7066,2.9,1.3,6.9,6.1,FALSE,TRUE
+remoteness,Heavy transport driver,Missing,45,1,32,265,22.2,3.9,115.7,8.3,FALSE,FALSE
+remoteness,Heavy transport driver,Regional,1940,8,1226,8640,4.1,2.1,8.1,7.0,FALSE,TRUE
+remoteness,Heavy transport driver,Remote,155,2,93,400,12.9,3.5,45.8,4.3,FALSE,FALSE
+remoteness,Heavy transport passenger,Major Cities,238,0,182,1055,0.0,0.0,15.9,5.8,FALSE,TRUE
+remoteness,Heavy transport passenger,Missing,15,0,8,68,0.0,0.0,203.9,8.5,FALSE,FALSE
+remoteness,Heavy transport passenger,Regional,182,1,118,455,5.5,1.0,30.5,3.9,FALSE,TRUE
+remoteness,Heavy transport passenger,Remote,15,0,8,82,0.0,0.0,203.9,10.3,FALSE,FALSE
+remoteness,Heavy transport unknown position,Major Cities,185,2,117,1330,10.8,3.0,38.6,11.4,FALSE,TRUE
+remoteness,Heavy transport unknown position,Missing,5,0,6,46,0.0,0.0,434.5,7.7,FALSE,FALSE
+remoteness,Heavy transport unknown position,Regional,160,1,102,612,6.3,1.1,34.5,6.0,FALSE,TRUE
+remoteness,Heavy transport unknown position,Remote,21,0,16,37,0.0,0.0,154.6,2.3,FALSE,FALSE
+remoteness,Motorcyclist,Major Cities,46912,189,32911,198798,4.0,3.5,4.6,6.0,TRUE,TRUE
+remoteness,Motorcyclist,Missing,1150,14,1010,5033,12.2,7.3,20.3,5.0,TRUE,TRUE
+remoteness,Motorcyclist,Regional,24365,97,16775,96964,4.0,3.3,4.9,5.8,TRUE,TRUE
+remoteness,Motorcyclist,Remote,2634,6,1683,7781,2.3,1.0,5.0,4.6,FALSE,TRUE
+remoteness,Other or unknown,Major Cities,2974,8,2147,14335,2.7,1.4,5.3,6.7,FALSE,TRUE
+remoteness,Other or unknown,Missing,88,3,55,527,34.1,11.7,95.5,9.6,FALSE,FALSE
+remoteness,Other or unknown,Regional,1793,8,1253,9108,4.5,2.3,8.8,7.3,FALSE,TRUE
+remoteness,Other or unknown,Remote,328,1,171,1291,3.0,0.5,17.1,7.5,FALSE,TRUE
+remoteness,Pedal cyclist,Major Cities,44793,78,34306,101398,1.7,1.4,2.2,3.0,TRUE,TRUE
+remoteness,Pedal cyclist,Missing,1220,3,1050,2891,2.5,0.8,7.2,2.8,FALSE,TRUE
+remoteness,Pedal cyclist,Regional,12095,31,8813,31499,2.6,1.8,3.6,3.6,TRUE,TRUE
+remoteness,Pedal cyclist,Remote,873,2,567,1457,2.3,0.6,8.3,2.6,FALSE,TRUE
+remoteness,Pedestrian,Major Cities,18592,405,11418,123503,21.8,19.8,24.0,10.8,TRUE,TRUE
+remoteness,Pedestrian,Missing,839,37,557,4682,44.1,32.2,60.2,8.4,TRUE,TRUE
+remoteness,Pedestrian,Regional,4487,88,2840,29220,19.6,15.9,24.1,10.3,TRUE,TRUE
+remoteness,Pedestrian,Remote,715,8,453,3604,11.2,5.7,21.9,8.0,FALSE,TRUE
+remoteness,Pick-up truck or van occupant,Major Cities,1198,6,853,5263,5.0,2.3,10.9,6.2,FALSE,TRUE
+remoteness,Pick-up truck or van occupant,Missing,83,0,53,429,0.0,0.0,44.2,8.1,FALSE,FALSE
+remoteness,Pick-up truck or van occupant,Regional,953,9,751,4664,9.4,5.0,17.9,6.2,FALSE,TRUE
+remoteness,Pick-up truck or van occupant,Remote,127,0,92,512,0.0,0.0,29.4,5.6,FALSE,FALSE
+remoteness,All road users,Major Cities,221422,1222,156626,770101,5.5,5.2,5.8,4.9,TRUE,TRUE
+remoteness,All road users,Missing,7489,100,5405,27574,13.4,11.0,16.2,5.1,TRUE,TRUE
+remoteness,All road users,Regional,96018,661,66415,395877,6.9,6.4,7.4,6.0,TRUE,TRUE
+remoteness,All road users,Remote,10525,58,6783,36659,5.5,4.3,7.1,5.4,TRUE,TRUE
