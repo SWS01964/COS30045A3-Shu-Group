@@ -17,6 +17,13 @@
      Viz.announce(text)                  the page's single polite live region (status messages)
      Viz.a11y.watch(chartHost)           keeps a .fig-chart's role/aria-hidden consistent (see below)
      Viz.placeholder(figEl, id)          temporary chart placeholder (chapter agents delete the call)
+     Viz.bus(initialState)               tiny shared state for one board's two linked panels:
+                                           bus.get()               -> shallow copy of the state
+                                           bus.set(patch, source)  -> merges patch; listeners fire only if a value changed (===)
+                                           bus.on(fn)              -> fn(state, changedKeys[], source); returns an unsubscribe function
+                                         source is a free string ('panel-a', 'controls', 'init'...) so a listener can ignore its own changes.
+     Viz.flash(panelEl)                  adds .is-linked-flash to a panel for 600ms (the receiving panel's title flashes);
+                                         a no-op under prefers-reduced-motion. Call it when ANOTHER panel changed this one.
 */
 (function () {
   'use strict';
@@ -539,6 +546,56 @@
       });
     });
     details.setAttribute('data-rows', String((rows || []).length));
+  };
+
+  /* -------------------------------------------------------------------- bus */
+  /* Viz.bus(initial) -> { get, set(patch, source), on(fn) }
+     One bus per board. Listeners get (state copy, changedKeys, source) and only when at
+     least one key's value really changed (===). A listener may call set() (re-entrant sets
+     are delivered after the current round, in order), but must not loop on its own change. */
+  Viz.bus = function (initialState) {
+    var state = {}, k, listeners = [], queue = [], busy = false;
+    for (k in (initialState || {})) if (Object.prototype.hasOwnProperty.call(initialState, k)) state[k] = initialState[k];
+    function copy() { var c = {}, key; for (key in state) c[key] = state[key]; return c; }
+    function deliver(changed, source) {
+      listeners.slice().forEach(function (fn) {
+        try { fn(copy(), changed.slice(), source); }
+        catch (e) { console.error('[bus] listener failed', e); }
+      });
+    }
+    return {
+      get: copy,
+      set: function (patch, source) {
+        var changed = [], key;
+        for (key in (patch || {})) {
+          if (Object.prototype.hasOwnProperty.call(patch, key) && state[key] !== patch[key]) {
+            state[key] = patch[key];
+            changed.push(key);
+          }
+        }
+        if (!changed.length) return;
+        queue.push([changed, source]);
+        if (busy) return;
+        busy = true;
+        try { while (queue.length) { var q = queue.shift(); deliver(q[0], q[1]); } }
+        finally { busy = false; }
+      },
+      on: function (fn) {
+        listeners.push(fn);
+        return function () { var i = listeners.indexOf(fn); if (i >= 0) listeners.splice(i, 1); };
+      }
+    };
+  };
+
+  /* -------------------------------------------------------------------- flash */
+  /* Link feedback: the receiving panel's title gets a 600ms background flash (see components.css). */
+  Viz.flash = function (panelEl) {
+    if (!panelEl || Viz.reducedMotion()) return;
+    panelEl.classList.remove('is-linked-flash');
+    void panelEl.offsetWidth; /* restart the animation if it is already running */
+    panelEl.classList.add('is-linked-flash');
+    clearTimeout(panelEl.__flashTimer);
+    panelEl.__flashTimer = setTimeout(function () { panelEl.classList.remove('is-linked-flash'); }, 600);
   };
 
   /* -------------------------------------------------------------- placeholder */

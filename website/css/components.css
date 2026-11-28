@@ -1,47 +1,21 @@
-/* components.css (orchestrator-owned): figure block, controls, tooltip,
-   details/table. Chapter-specific styling goes in css/chN.css. */
+/* components.css (orchestrator-owned): link flash, controls (segmented, select), tooltip,
+   details/table (inside .board-data). Chapter-specific styling goes in css/chN.css. */
 
-/* ---- figure block ---- */
-.fig {
-  margin: var(--fig-gap) 0;
-  font-family: var(--font-sans);
+/* ---- link feedback: the receiving panel's title flashes for 600ms (Viz.flash) ---- */
+@keyframes linked-flash {
+  0%   { background-color: color-mix(in srgb, var(--rise) 28%, transparent); }
+  100% { background-color: transparent; }
 }
-.fig-title {
-  font-size: 1.2rem;
-  line-height: 1.2;
-  margin: 0 0 12px;
-  text-wrap: balance;
-}
-@media (min-width: 600px) { .fig-title { font-size: 1.35rem; } }
-
-.fig-chart {
-  position: relative;
-  width: 100%;
-  min-height: 120px;
-  font-size: 13px;
-}
-.fig-chart svg { display: block; max-width: 100%; overflow: visible; }
-.fig-chart text { font-family: var(--font-sans); fill: var(--ink); }
-.fig-chart .axis text { font-size: 12px; fill: var(--muted); }
-.fig-chart .axis line, .fig-chart .axis path { stroke: var(--rule); }
-.fig-chart .placeholder-frame { fill: var(--surface); stroke: var(--rule); stroke-dasharray: 4 4; }
-
-.fig-notes {
-  font-size: var(--fs-note);
-  line-height: 1.5;
-  color: var(--muted);
-  margin: 12px 0 0;
+.panel.is-linked-flash .panel-title { animation: linked-flash 600ms ease-out; }
+@media (prefers-reduced-motion: reduce) {
+  .panel.is-linked-flash .panel-title { animation: none; }
 }
 
 /* ---- controls ---- */
-.fig-controls {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px 16px;
-  margin: 0 0 16px;
+.fig-controls, .explore-controls {
   font-size: var(--fs-ui);
 }
+.ctl-group { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
 .ctl-label { color: var(--muted); }
 
 .seg {
@@ -68,7 +42,7 @@
   transition: background-color calc(var(--dur) / 2), color calc(var(--dur) / 2);
 }
 .seg button:last-child { border-right: 0; }
-.seg button:hover { background: var(--surface); }
+.seg button:hover { background: var(--board-tint); }
 .seg button[aria-pressed="true"] {
   background: var(--ink);
   color: var(--paper);
@@ -76,7 +50,7 @@
 }
 .seg button:focus-visible { outline-offset: -3px; }
 
-.fig-controls select {
+.explore-controls select {
   min-height: var(--tap);
   padding: 0 32px 0 12px;
   font: inherit;
@@ -111,8 +85,8 @@
 .viz-tooltip strong { font-weight: 700; }
 
 /* ---- details / table ---- */
-.fig-data { margin-top: 12px; font-size: var(--fs-note); }
-.fig-data summary {
+.board-data { margin-top: 12px; font-size: var(--fs-note); }
+.board-data summary {
   display: inline-flex;
   align-items: center;
   min-height: var(--tap);
@@ -120,30 +94,32 @@
   color: var(--fall);
   font-weight: 600;
 }
-.fig-data summary:hover { text-decoration: underline; }
+.board-data summary:hover { text-decoration: underline; }
+.board-tables { display: grid; gap: 16px; }
+.board-tables > * { min-width: 0; }
 .table-wrap {
   max-height: 360px;
   overflow: auto;
   border: 1px solid var(--rule);
   margin-top: 4px;
 }
-.fig-data table {
+.board-data table {
   border-collapse: collapse;
   width: 100%;
   font-variant-numeric: tabular-nums;
   font-size: 13px;
 }
-.fig-data caption { text-align: left; padding: 6px 8px; color: var(--muted); }
-.fig-data th, .fig-data td {
+.board-data caption { text-align: left; padding: 6px 8px; color: var(--muted); }
+.board-data th, .board-data td {
   padding: 6px 10px;
   text-align: right;
   border-bottom: 1px solid var(--rule);
   white-space: nowrap;
 }
-.fig-data th:first-child, .fig-data td:first-child { text-align: left; }
-.fig-data thead th {
+.board-data th:first-child, .board-data td:first-child { text-align: left; }
+.board-data thead th {
   position: sticky; top: 0;
   background: var(--surface);
   font-weight: 700;
 }
-.fig-data td.is-text, .fig-data th.is-text { text-align: left; }
+.board-data td.is-text, .board-data th.is-text { text-align: left; }

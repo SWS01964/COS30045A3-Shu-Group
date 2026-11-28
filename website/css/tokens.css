@@ -13,7 +13,9 @@
   --accent2: #7a4fa3;   /* Chapter 5: First Nations (non-Indigenous = --context) */
   /* supporting tokens */
   --rule: #d9d5c9;
-  --surface: #f2efe6;   /* boxes: What to know, methods */
+  --surface: #f2efe6;   /* boxes: Explore bar, methods */
+  --board-tint: #f2efe6; /* even boards (full-bleed band) */
+  --panel: #ffffff;     /* chart panel cards */
   --focus: #1a4f86;
   --tip-bg: #1c2230;
   --tip-ink: #faf8f3;
@@ -30,6 +32,7 @@
   --u: 8px;
   --gutter: 16px;
   --fig-gap: 40px;      /* space above and below figures */
+  --board-w: 1200px;    /* board inner max width */
   --col: 680px;
   --fig-w: 1040px;
   --nav-h: 52px;
@@ -51,6 +54,8 @@
     --accent2: #dcc0ff;   /* lighter than --context (1.7:1) so First Nations vs non-Indigenous differ in lightness, not only dash/shape; 11:1 on paper */
     --rule: #323945;
     --surface: #1c2028;
+    --board-tint: #181c23;
+    --panel: #1c2028;
     --focus: #8ec1f0;
     --tip-bg: #ece9e1;
     --tip-ink: #14171d;

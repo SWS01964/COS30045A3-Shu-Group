@@ -66,6 +66,7 @@
   reg('hosp_2021', function (d) { return int(y1(d, 2021).hosp); });                  /* 39,505 */
   reg('deaths_2021', function (d) { return int(y1(d, 2021).road_deaths); });          /* 1,130 */
   reg('per_death_2021', function (d) { return int(y1(d, 2021).hosp_per_death); });    /* 35 */
+  reg('c1_per_death_2011', function (d) { return int(y1(d, 2011).hosp_per_death); });  /* 27 */
   reg('per_day_2021', function (d) { return int(y1(d, 2021).hosp / 365); });          /* 108 */
   reg('deaths_chg', function (d) { return pct((y1(d, 2021).road_deaths / y1(d, 2011).road_deaths - 1) * 100, 1); }); /* 11.5% */
   reg('hosp_chg', function (d) { return pct((y1(d, 2021).hosp / y1(d, 2011).hosp - 1) * 100); });                  /* 16% */
@@ -79,7 +80,17 @@
   reg('cyc_65_74_pp', function (d) { return pct(perPerson(c2(d, 'Pedal cyclist', '65-74'))); }); /* 78% */
   reg('cyc_75_pp', function (d) { return pct(perPerson(c2(d, 'Pedal cyclist', '75+'))); });      /* 92% */
 
+  /* motorcyclists, per-person change in 3-year averages (rate_change_3yr, as in the file) */
+  reg('c2_moto65_pp', function (d) { return pct(c2(d, 'Motorcyclist', '65-74').rate_change_3yr); });  /* 64% */
+  reg('c2_moto75_pp', function (d) { return pct(c2(d, 'Motorcyclist', '75+').rate_change_3yr); });    /* 62% */
+  /* panel B default title: cyclists aged 65-74, yearly admissions */
+  reg('c2_cyc65_2011', function (d) { return int(c2(d, 'Pedal cyclist', '65-74')[2011]); });          /* 240 */
+  reg('c2_cyc65_2021', function (d) { return int(c2(d, 'Pedal cyclist', '65-74')[2021]); });          /* 749 */
+
   /* ================= Chapter 3 ================= */
+  /* panel A default title (deaths view), whole percentages */
+  reg('c3_ped_adm_pct0', function (d) { return pct(share(d, 'age', 'Pedestrian', 'All ages', 'cases_1119')); });  /* 7% */
+  reg('c3_ped_died_pct0', function (d) { return pct(share(d, 'age', 'Pedestrian', 'All ages', 'died_1119')); });  /* 26% */
   reg('ped_adm_share_1119', function (d) { return pct(share(d, 'age', 'Pedestrian', 'All ages', 'cases_1119'), 1); }); /* 7.3% */
   reg('ped_died_share_1119', function (d) { return pct(share(d, 'age', 'Pedestrian', 'All ages', 'died_1119'), 1); }); /* 26.4% */
   reg('ped_one_in_adm', function (d) { return int(100 / share(d, 'age', 'Pedestrian', 'All ages', 'cases_1119')); });  /* 14 */
@@ -209,6 +220,14 @@
   reg('ni_stay_remote', function (d) { return dp(prof(d, 'remoteness', NI, 'Remote').avg_stay, 1); });       /* 4.9 */
   reg('fn_stay_major', function (d) { return dp(prof(d, 'remoteness', FN, 'Major Cities').avg_stay, 1); });  /* 5.1 */
   reg('ni_stay_major', function (d) { return dp(prof(d, 'remoteness', NI, 'Major Cities').avg_stay, 1); });  /* 4.9 */
+  /* within-group remote share: Remote / (Major Cities + Regional + Remote) of the group's own remoteness rows */
+  function remoteWithin(d, st) {
+    var rows = d.ch5_first_nations_profile.filter(function (r) { return r.view === 'remoteness' && r.status === st; });
+    var tot = rows.reduce(function (a, r) { return a + r.hosp; }, 0);
+    return find(rows, { category: 'Remote' }).hosp / tot * 100;
+  }
+  reg('c5_fn_remote_within', function (d) { return pct(remoteWithin(d, FN)); });        /* 24% (2767 / 11539) */
+  reg('c5_ni_remote_within', function (d) { return pct(remoteWithin(d, NI), 1); });     /* 1.8% (3949 / 215229) */
   function remTotal(d, st) {
     return d.ch5_first_nations_profile.filter(function (r) { return r.view === 'remoteness' && r.status === st; })
       .reduce(function (a, r) { return a + r.hosp; }, 0);
