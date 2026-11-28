@@ -1,0 +1,750 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="6547" viewBox="0 0 1280 6547" font-family="-apple-system,'Helvetica Neue',Helvetica,Arial,sans-serif" role="img" aria-label="Wireframe: whole page overview (desktop 1280px)"><title>Wireframe: whole page overview (desktop 1280px)</title><defs><marker id="ar" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto-start-reverse"><path d="M1,1 L7,4 L1,7" fill="none" stroke="#55544f" stroke-width="1.2"/></marker><pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#55544f" stroke-width="1.4"/></pattern><clipPath id="ph"><rect x="0" y="0" width="1280" height="6546.8"/></clipPath></defs><rect width="1280" height="6546.8" fill="#fff"/><rect x="0" y="0" width="1280" height="6546.8" fill="#faf9f6" stroke="#9a9892"/><line x1="300" y1="0" x2="300" y2="6546.8" stroke="#bcd" stroke-width="1" stroke-dasharray="3 5"/><line x1="980" y1="0" x2="980" y2="6546.8" stroke="#bcd" stroke-width="1" stroke-dasharray="3 5"/><line x1="120" y1="0" x2="120" y2="6546.8" stroke="#dcd" stroke-width="1" stroke-dasharray="1 6"/><line x1="1160" y1="0" x2="1160" y2="6546.8" stroke="#dcd" stroke-width="1" stroke-dasharray="1 6"/><g clip-path="url(#ph)"><rect x="0.0" y="0.0" width="1280.0" height="44.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="300.0" y="28.0" font-size="16" fill="#222" font-weight="800" text-anchor="start">Beyond the Road Toll</text>
+<text x="980.0" y="28.0" font-size="11" fill="#6b7280" font-weight="700" text-anchor="end" letter-spacing="1">DATA INVESTIGATION</text>
+<rect x="0.0" y="44.0" width="1280.0" height="40.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="300.0" y="69.0" font-size="14" fill="#0a64d6" font-weight="500" text-anchor="start">1 Road toll</text>
+<text x="393.6" y="69.0" font-size="14" fill="#6b7280" font-weight="400" text-anchor="start">·</text>
+<text x="411.6" y="69.0" font-size="14" fill="#0a64d6" font-weight="500" text-anchor="start">2 Older</text>
+<text x="474.8" y="69.0" font-size="14" fill="#6b7280" font-weight="400" text-anchor="start">·</text>
+<text x="492.8" y="69.0" font-size="14" fill="#0a64d6" font-weight="500" text-anchor="start">3 Severity</text>
+<text x="578.8" y="69.0" font-size="14" fill="#6b7280" font-weight="400" text-anchor="start">·</text>
+<text x="596.8" y="69.0" font-size="14" fill="#0a64d6" font-weight="500" text-anchor="start">4 Lockdown</text>
+<text x="682.8" y="69.0" font-size="14" fill="#6b7280" font-weight="400" text-anchor="start">·</text>
+<text x="700.8" y="69.0" font-size="14" fill="#0a64d6" font-weight="500" text-anchor="start">5 Equity</text>
+<text x="771.6" y="69.0" font-size="14" fill="#6b7280" font-weight="400" text-anchor="start">·</text>
+<text x="789.6" y="69.0" font-size="14" fill="#0a64d6" font-weight="500" text-anchor="start">Methods</text>
+<text x="300.0" y="124.0" font-size="11" fill="#6b7280" font-weight="700" text-anchor="start" letter-spacing="1.5">ROAD SAFETY  ·  DATA INVESTIGATION</text>
+<text x="300.0" y="200.0" font-size="60" fill="#222" font-weight="800" text-anchor="start">Beyond the road</text>
+<text x="300.0" y="266.0" font-size="60" fill="#222" font-weight="800" text-anchor="start">toll</text>
+<text x="300.0" y="302.0" font-size="20" fill="#55544f" font-weight="400" text-anchor="start">Fewer Australians are dying on the roads. The number being</text>
+<text x="300.0" y="330.0" font-size="20" fill="#55544f" font-weight="400" text-anchor="start">seriously hurt hasn't fallen. We went through a decade of</text>
+<text x="300.0" y="358.0" font-size="20" fill="#55544f" font-weight="400" text-anchor="start">hospital records to find out who is being hurt, and how badly.</text>
+<text x="300.0" y="386.0" font-size="12" fill="#6b7280" font-weight="400" text-anchor="start">By Shu · Published 23 November 2026</text>
+<line x1="120.0" y1="420.0" x2="1160.0" y2="420.0" stroke="#55544f" stroke-width="1" marker-start="url(#ar)" marker-end="url(#ar)"/>
+<rect x="550.3" y="411.0" width="179.4" height="18.0" rx="0" fill="#faf9f6" />
+<text x="640.0" y="424.0" font-size="11" fill="#55544f" font-weight="600" text-anchor="middle">figure breaks out to 1040px</text>
+<rect x="114.0" y="428.0" width="1052.0" height="10.0" rx="0" fill="none" />
+<text x="120.0" y="442.0" font-size="11" fill="#6b7280" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">fig-1b</text>
+<text x="1160.0" y="442.0" font-size="11" fill="#6b7280" font-weight="400" text-anchor="end" font-family="ui-monospace,Menlo,monospace">ch1_trend.csv</text>
+<text x="120.0" y="478.0" font-size="22" fill="#222" font-weight="700" text-anchor="start">For every road death in 2021, 35 people were admitted to hospital</text>
+<rect x="120.0" y="495.5" width="1040.0" height="200.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="128.0" y="507.5" font-size="9.5" fill="#9a9892" font-weight="500" text-anchor="start" font-family="ui-monospace,Menlo,monospace">div.fig-chart  role="img"  aria-label = one-sentence summary</text>
+<text x="640.0" y="531.5" font-size="11" fill="#55544f" font-weight="500" text-anchor="middle">36 squares: 1 died (dark), 35 admitted to hospital (2021)</text>
+<rect x="244.0" y="543.5" width="35.2" height="35.2" rx="2" fill="#55544f" />
+<rect x="288.0" y="543.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="332.0" y="543.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="376.0" y="543.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="420.0" y="543.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="464.0" y="543.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="508.0" y="543.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="552.0" y="543.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="596.0" y="543.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="640.0" y="543.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="684.0" y="543.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="728.0" y="543.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="772.0" y="543.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="816.0" y="543.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="860.0" y="543.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="904.0" y="543.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="948.0" y="543.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="992.0" y="543.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="244.0" y="587.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="288.0" y="587.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="332.0" y="587.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="376.0" y="587.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="420.0" y="587.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="464.0" y="587.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="508.0" y="587.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="552.0" y="587.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="596.0" y="587.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="640.0" y="587.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="684.0" y="587.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="728.0" y="587.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="772.0" y="587.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="816.0" y="587.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="860.0" y="587.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="904.0" y="587.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="948.0" y="587.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<rect x="992.0" y="587.5" width="35.2" height="35.2" rx="2" fill="#cfcdc7" />
+<text x="292.0" y="567.7" font-size="11" fill="#55544f" font-weight="600" text-anchor="start">1 road death</text>
+<text x="120.0" y="717.5" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">Notes: Source: BITRE hospitalised injury data and ARDD fatalities, 2021 (39,505 admitted; 1,130 road deaths).</text>
+<rect x="120.0" y="729.0" width="1040.0" height="36.0" rx="4" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="134.0" y="752.0" font-size="13.5" fill="#0a64d6" font-weight="600" text-anchor="start">▸  Show the numbers</text>
+<text x="1148.0" y="751.0" font-size="10" fill="#9a9892" font-weight="500" text-anchor="end" font-family="ui-monospace,Menlo,monospace">details &gt; table</text>
+<text x="300.0" y="833.0" font-size="11.5" fill="#6b7280" font-weight="800" text-anchor="start" letter-spacing="2">CHAPTER 1</text>
+<text x="300.0" y="871.0" font-size="26" fill="#222" font-weight="800" text-anchor="start">The road toll is falling. The injury toll</text>
+<text x="300.0" y="902.2" font-size="26" fill="#222" font-weight="800" text-anchor="start">isn't.</text>
+<rect x="300.0" y="915.4" width="680.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="928.4" width="476.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="945.4" width="680.0" height="63.2" rx="0" fill="#e7e6e1" />
+<rect x="300.0" y="945.4" width="4.0" height="63.2" rx="0" fill="#55544f" />
+<text x="314.0" y="959.4" font-size="9.5" fill="#55544f" font-weight="800" text-anchor="start" letter-spacing="1.2">WHAT TO KNOW</text>
+<rect x="314.0" y="969.4" width="544.0" height="5.0" rx="2" fill="#cfcdc7" />
+<rect x="314.0" y="982.4" width="544.0" height="5.0" rx="2" fill="#cfcdc7" />
+<rect x="314.0" y="995.4" width="544.0" height="5.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="1022.6" width="680.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="1034.6" width="408.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="120.0" y="1064.6" width="1040.0" height="0.0" rx="0" fill="none" />
+<text x="120.0" y="1075.6" font-size="10.5" fill="#6b7280" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">fig-1a</text>
+<text x="120.0" y="1095.6" font-size="15" fill="#222" font-weight="700" text-anchor="start">The road toll is falling. The injury toll isn't.</text>
+<rect x="120.0" y="1101.6" width="174.0" height="20.0" rx="10" fill="#fff" stroke="#0a64d6" stroke-width="1.2" />
+<text x="129.0" y="1115.6" font-size="11" fill="#0a64d6" font-weight="600" text-anchor="start">Show: Counts | Per 100,000</text>
+<rect x="120.0" y="1126.6" width="1040.0" height="96.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<line x1="162.0" y1="1140.6" x2="1146.0" y2="1140.6" stroke="#e7e6e1" stroke-width="1" />
+<line x1="162.0" y1="1167.6" x2="1146.0" y2="1167.6" stroke="#e7e6e1" stroke-width="1" />
+<line x1="162.0" y1="1194.6" x2="1146.0" y2="1194.6" stroke="#e7e6e1" stroke-width="1" />
+<rect x="260.4" y="1140.6" width="54.1" height="54.0" rx="0" fill="#ddd9cc" />
+<rect x="752.4" y="1140.6" width="54.1" height="54.0" rx="0" fill="#ddd9cc" />
+<polyline points="162.0,1170.6 260.4,1168.2 358.8,1170.6 457.2,1169.4 555.6,1167.0 654.0,1163.4 752.4,1161.0 850.8,1156.2 949.2,1156.2 1047.6,1151.4 1146.0,1151.4" fill="none" stroke="#55544f" stroke-width="3" stroke-linejoin="round"/>
+<polyline points="162.0,1170.6 260.4,1173.0 358.8,1176.6 457.2,1175.4 555.6,1179.0 654.0,1180.2 752.4,1180.2 850.8,1181.4 949.2,1179.0 1047.6,1183.8 1146.0,1184.4" fill="none" stroke="#444" stroke-width="2.5" stroke-dasharray="6 3" stroke-linejoin="round"/>
+<polyline points="162.0,1170.6 260.4,1169.4 358.8,1167.6 457.2,1165.8 555.6,1164.0 654.0,1162.2 752.4,1160.4 850.8,1158.6 949.2,1156.8 1047.6,1155.0 1146.0,1153.2" fill="none" stroke="#9a9892" stroke-width="2" stroke-dasharray="1 4" stroke-linejoin="round"/>
+<rect x="120.0" y="1228.6" width="832.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="120.0" y="1239.6" width="520.0" height="6.0" rx="2" fill="#cfcdc7" />
+<text x="120.0" y="1262.6" font-size="11" fill="#0a64d6" font-weight="600" text-anchor="start">▸ Show the numbers</text>
+<rect x="300.0" y="1278.6" width="680.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="1290.6" width="408.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="100.0" y="809.0" width="1080.0" height="503.6" rx="6" fill="none" stroke="#9a9892" stroke-width="1" stroke-dasharray="6 4" />
+<rect x="110.0" y="802.0" width="92.0" height="16.0" rx="3" fill="#e7e6e1" stroke="#9a9892" stroke-width="1" />
+<text x="116.0" y="814.0" font-size="10" fill="#55544f" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">section#ch1</text>
+<text x="300.0" y="1370.6" font-size="11.5" fill="#6b7280" font-weight="800" text-anchor="start" letter-spacing="2">CHAPTER 2</text>
+<text x="300.0" y="1408.6" font-size="26" fill="#222" font-weight="800" text-anchor="start">Cycling injuries have more than doubled among</text>
+<text x="300.0" y="1439.8" font-size="26" fill="#222" font-weight="800" text-anchor="start">over-65s.</text>
+<rect x="300.0" y="1453.0" width="680.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="1466.0" width="476.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="1483.0" width="680.0" height="48.8" rx="0" fill="#e7e6e1" />
+<rect x="300.0" y="1483.0" width="4.0" height="48.8" rx="0" fill="#55544f" />
+<text x="314.0" y="1497.0" font-size="9.5" fill="#55544f" font-weight="800" text-anchor="start" letter-spacing="1.2">WHAT TO KNOW</text>
+<rect x="314.0" y="1507.0" width="544.0" height="5.0" rx="2" fill="#cfcdc7" />
+<rect x="314.0" y="1520.0" width="544.0" height="5.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="1545.8" width="680.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="1557.8" width="408.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="120.0" y="1587.8" width="1040.0" height="0.0" rx="0" fill="none" />
+<text x="120.0" y="1598.8" font-size="10.5" fill="#6b7280" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">fig-2a</text>
+<text x="120.0" y="1618.8" font-size="15" fill="#222" font-weight="700" text-anchor="start">Cyclists aged 65 and over: the biggest rise of any group</text>
+<rect x="120.0" y="1624.8" width="186.0" height="20.0" rx="10" fill="#fff" stroke="#0a64d6" stroke-width="1.2" />
+<text x="129.0" y="1638.8" font-size="11" fill="#0a64d6" font-weight="600" text-anchor="start">I travel by: Pedal cyclist v</text>
+<rect x="314.0" y="1624.8" width="120.0" height="20.0" rx="10" fill="#fff" stroke="#0a64d6" stroke-width="1.2" />
+<text x="323.0" y="1638.8" font-size="11" fill="#0a64d6" font-weight="600" text-anchor="start">I'm aged: 65-74 v</text>
+<rect x="442.0" y="1624.8" width="168.0" height="20.0" rx="10" fill="#fff" stroke="#0a64d6" stroke-width="1.2" />
+<text x="451.0" y="1638.8" font-size="11" fill="#0a64d6" font-weight="600" text-anchor="start">Show: Counts | Per person</text>
+<rect x="120.0" y="1649.8" width="1040.0" height="96.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="286.6" y="1666.8" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">0-7</text>
+<text x="419.7" y="1666.8" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">8-16</text>
+<text x="552.9" y="1666.8" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">17-25</text>
+<text x="686.0" y="1666.8" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">26-39</text>
+<text x="819.1" y="1666.8" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">40-64</text>
+<text x="952.3" y="1666.8" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">65-74</text>
+<text x="1085.4" y="1666.8" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">75+</text>
+<text x="214.0" y="1682.6" font-size="11" fill="#55544f" font-weight="400" text-anchor="end">Pedestrian</text>
+<rect x="221.0" y="1672.8" width="131.1" height="11.6" rx="0" fill="#eeeee9" />
+<rect x="221.0" y="1672.8" width="131.1" height="11.6" rx="0" fill="url(#hatch)" opacity="0.35"/>
+<rect x="354.1" y="1672.8" width="131.1" height="11.6" rx="0" fill="#eeeee9" />
+<rect x="354.1" y="1672.8" width="131.1" height="11.6" rx="0" fill="url(#hatch)" opacity="0.35"/>
+<rect x="487.3" y="1672.8" width="131.1" height="11.6" rx="0" fill="#dddcd6" />
+<rect x="620.4" y="1672.8" width="131.1" height="11.6" rx="0" fill="#dddcd6" />
+<rect x="753.6" y="1672.8" width="131.1" height="11.6" rx="0" fill="#dddcd6" />
+<rect x="886.7" y="1672.8" width="131.1" height="11.6" rx="0" fill="#c4c2bb" />
+<rect x="1019.9" y="1672.8" width="131.1" height="11.6" rx="0" fill="#c4c2bb" />
+<text x="214.0" y="1696.2" font-size="11" fill="#55544f" font-weight="400" text-anchor="end">Pedal cyclist</text>
+<rect x="221.0" y="1686.4" width="131.1" height="11.6" rx="0" fill="#dddcd6" />
+<rect x="221.0" y="1686.4" width="131.1" height="11.6" rx="0" fill="url(#hatch)" opacity="0.35"/>
+<rect x="354.1" y="1686.4" width="131.1" height="11.6" rx="0" fill="#c4c2bb" />
+<rect x="487.3" y="1686.4" width="131.1" height="11.6" rx="0" fill="#dddcd6" />
+<rect x="620.4" y="1686.4" width="131.1" height="11.6" rx="0" fill="#c4c2bb" />
+<rect x="753.6" y="1686.4" width="131.1" height="11.6" rx="0" fill="#c4c2bb" />
+<rect x="886.7" y="1686.4" width="131.1" height="11.6" rx="0" fill="#6c6b66" />
+<rect x="1019.9" y="1686.4" width="131.1" height="11.6" rx="0" fill="#6c6b66" />
+<text x="214.0" y="1709.8" font-size="11" fill="#55544f" font-weight="400" text-anchor="end">Motorcyclist</text>
+<rect x="221.0" y="1700.0" width="131.1" height="11.6" rx="0" fill="#eeeee9" />
+<rect x="221.0" y="1700.0" width="131.1" height="11.6" rx="0" fill="url(#hatch)" opacity="0.35"/>
+<rect x="354.1" y="1700.0" width="131.1" height="11.6" rx="0" fill="#eeeee9" />
+<rect x="487.3" y="1700.0" width="131.1" height="11.6" rx="0" fill="#dddcd6" />
+<rect x="620.4" y="1700.0" width="131.1" height="11.6" rx="0" fill="#dddcd6" />
+<rect x="753.6" y="1700.0" width="131.1" height="11.6" rx="0" fill="#dddcd6" />
+<rect x="886.7" y="1700.0" width="131.1" height="11.6" rx="0" fill="#c4c2bb" />
+<rect x="1019.9" y="1700.0" width="131.1" height="11.6" rx="0" fill="#c4c2bb" />
+<text x="214.0" y="1723.4" font-size="11" fill="#55544f" font-weight="400" text-anchor="end">Car driver</text>
+<rect x="221.0" y="1713.6" width="131.1" height="11.6" rx="0" fill="#eeeee9" />
+<rect x="354.1" y="1713.6" width="131.1" height="11.6" rx="0" fill="#eeeee9" />
+<rect x="487.3" y="1713.6" width="131.1" height="11.6" rx="0" fill="#eeeee9" />
+<rect x="620.4" y="1713.6" width="131.1" height="11.6" rx="0" fill="#eeeee9" />
+<rect x="753.6" y="1713.6" width="131.1" height="11.6" rx="0" fill="#dddcd6" />
+<rect x="886.7" y="1713.6" width="131.1" height="11.6" rx="0" fill="#dddcd6" />
+<rect x="1019.9" y="1713.6" width="131.1" height="11.6" rx="0" fill="#c4c2bb" />
+<text x="214.0" y="1737.0" font-size="11" fill="#55544f" font-weight="400" text-anchor="end">Car passenger</text>
+<rect x="221.0" y="1727.2" width="131.1" height="11.6" rx="0" fill="#eeeee9" />
+<rect x="221.0" y="1727.2" width="131.1" height="11.6" rx="0" fill="url(#hatch)" opacity="0.35"/>
+<rect x="354.1" y="1727.2" width="131.1" height="11.6" rx="0" fill="#eeeee9" />
+<rect x="487.3" y="1727.2" width="131.1" height="11.6" rx="0" fill="#eeeee9" />
+<rect x="620.4" y="1727.2" width="131.1" height="11.6" rx="0" fill="#eeeee9" />
+<rect x="753.6" y="1727.2" width="131.1" height="11.6" rx="0" fill="#eeeee9" />
+<rect x="886.7" y="1727.2" width="131.1" height="11.6" rx="0" fill="#dddcd6" />
+<rect x="1019.9" y="1727.2" width="131.1" height="11.6" rx="0" fill="#dddcd6" />
+<rect x="885.7" y="1685.4" width="133.1" height="13.6" rx="0" fill="none" stroke="#222" stroke-width="2.5" />
+<rect x="120.0" y="1751.8" width="832.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="120.0" y="1762.8" width="520.0" height="6.0" rx="2" fill="#cfcdc7" />
+<text x="120.0" y="1785.8" font-size="11" fill="#0a64d6" font-weight="600" text-anchor="start">▸ Show the numbers</text>
+<rect x="300.0" y="1801.8" width="680.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="1813.8" width="408.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="120.0" y="1843.8" width="1040.0" height="0.0" rx="0" fill="none" />
+<text x="120.0" y="1854.8" font-size="10.5" fill="#6b7280" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">fig-2b</text>
+<text x="120.0" y="1874.8" font-size="15" fill="#222" font-weight="700" text-anchor="start">Older patients stay longer in hospital and are more likely to die</text>
+<rect x="120.0" y="1883.8" width="1040.0" height="96.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="162.0" y="1899.8" font-size="10" fill="#55544f" font-weight="600" text-anchor="start">Admissions</text>
+<text x="494.7" y="1899.8" font-size="10" fill="#55544f" font-weight="600" text-anchor="start">Avg stay (days)</text>
+<text x="827.3" y="1899.8" font-size="10" fill="#55544f" font-weight="600" text-anchor="start">Died per 1,000</text>
+<text x="157.0" y="1920.2" font-size="10" fill="#55544f" font-weight="400" text-anchor="end">0-7</text>
+<rect x="162.0" y="1913.6" width="64.9" height="5.3" rx="0" fill="#9a9892" />
+<rect x="494.7" y="1913.6" width="97.4" height="5.3" rx="0" fill="#9a9892" />
+<rect x="827.3" y="1913.6" width="13.0" height="5.3" rx="0" fill="#55544f" />
+<text x="157.0" y="1929.1" font-size="10" fill="#55544f" font-weight="400" text-anchor="end">8-16</text>
+<rect x="162.0" y="1922.4" width="146.1" height="5.3" rx="0" fill="#9a9892" />
+<rect x="494.7" y="1922.4" width="123.4" height="5.3" rx="0" fill="#9a9892" />
+<rect x="827.3" y="1922.4" width="19.5" height="5.3" rx="0" fill="#55544f" />
+<text x="157.0" y="1937.9" font-size="10" fill="#55544f" font-weight="400" text-anchor="end">17-25</text>
+<rect x="162.0" y="1931.3" width="227.3" height="5.3" rx="0" fill="#9a9892" />
+<rect x="494.7" y="1931.3" width="146.1" height="5.3" rx="0" fill="#9a9892" />
+<rect x="827.3" y="1931.3" width="32.5" height="5.3" rx="0" fill="#55544f" />
+<text x="157.0" y="1946.8" font-size="10" fill="#55544f" font-weight="400" text-anchor="end">26-39</text>
+<rect x="162.0" y="1940.1" width="276.0" height="5.3" rx="0" fill="#9a9892" />
+<rect x="494.7" y="1940.1" width="162.3" height="5.3" rx="0" fill="#9a9892" />
+<rect x="827.3" y="1940.1" width="45.5" height="5.3" rx="0" fill="#55544f" />
+<text x="157.0" y="1955.7" font-size="10" fill="#55544f" font-weight="400" text-anchor="end">40-64</text>
+<rect x="162.0" y="1949.0" width="324.7" height="5.3" rx="0" fill="#9a9892" />
+<rect x="494.7" y="1949.0" width="188.3" height="5.3" rx="0" fill="#9a9892" />
+<rect x="827.3" y="1949.0" width="77.9" height="5.3" rx="0" fill="#55544f" />
+<text x="157.0" y="1964.5" font-size="10" fill="#55544f" font-weight="400" text-anchor="end">65-74</text>
+<rect x="162.0" y="1957.9" width="178.6" height="5.3" rx="0" fill="#9a9892" />
+<rect x="494.7" y="1957.9" width="243.5" height="5.3" rx="0" fill="#9a9892" />
+<rect x="827.3" y="1957.9" width="178.6" height="5.3" rx="0" fill="#55544f" />
+<text x="157.0" y="1973.4" font-size="10" fill="#55544f" font-weight="400" text-anchor="end">75+</text>
+<rect x="162.0" y="1966.7" width="129.9" height="5.3" rx="0" fill="#9a9892" />
+<rect x="494.7" y="1966.7" width="324.7" height="5.3" rx="0" fill="#9a9892" />
+<rect x="827.3" y="1966.7" width="324.7" height="5.3" rx="0" fill="#55544f" />
+<line x1="162.0" y1="1907.8" x2="162.0" y2="1973.8" stroke="#9a9892" stroke-width="1" />
+<rect x="120.0" y="1985.8" width="832.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="120.0" y="1996.8" width="520.0" height="6.0" rx="2" fill="#cfcdc7" />
+<text x="120.0" y="2019.8" font-size="11" fill="#0a64d6" font-weight="600" text-anchor="start">▸ Show the numbers</text>
+<rect x="300.0" y="2035.8" width="680.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="2047.8" width="408.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="100.0" y="1346.6" width="1080.0" height="723.2" rx="6" fill="none" stroke="#9a9892" stroke-width="1" stroke-dasharray="6 4" />
+<rect x="110.0" y="1339.6" width="92.0" height="16.0" rx="3" fill="#e7e6e1" stroke="#9a9892" stroke-width="1" />
+<text x="116.0" y="1351.6" font-size="10" fill="#55544f" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">section#ch2</text>
+<text x="300.0" y="2127.8" font-size="11.5" fill="#6b7280" font-weight="800" text-anchor="start" letter-spacing="2">CHAPTER 3</text>
+<text x="300.0" y="2165.8" font-size="26" fill="#222" font-weight="800" text-anchor="start">Pedestrians are 1 in 14 of the injured, but 1</text>
+<text x="300.0" y="2197.0" font-size="26" fill="#222" font-weight="800" text-anchor="start">in 4 of those who die in hospital</text>
+<rect x="300.0" y="2210.2" width="680.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="2223.2" width="476.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="2240.2" width="680.0" height="63.2" rx="0" fill="#e7e6e1" />
+<rect x="300.0" y="2240.2" width="4.0" height="63.2" rx="0" fill="#55544f" />
+<text x="314.0" y="2254.2" font-size="9.5" fill="#55544f" font-weight="800" text-anchor="start" letter-spacing="1.2">WHAT TO KNOW</text>
+<rect x="314.0" y="2264.2" width="544.0" height="5.0" rx="2" fill="#cfcdc7" />
+<rect x="314.0" y="2277.2" width="544.0" height="5.0" rx="2" fill="#cfcdc7" />
+<rect x="314.0" y="2290.2" width="544.0" height="5.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="2317.4" width="680.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="2329.4" width="408.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="120.0" y="2359.4" width="1040.0" height="0.0" rx="0" fill="none" />
+<text x="120.0" y="2370.4" font-size="10.5" fill="#6b7280" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">fig-3a</text>
+<text x="120.0" y="2390.4" font-size="15" fill="#222" font-weight="700" text-anchor="start">Pedestrians take up twice their share of hospital beds</text>
+<rect x="120.0" y="2396.4" width="360.0" height="20.0" rx="10" fill="#fff" stroke="#0a64d6" stroke-width="1.2" />
+<text x="129.0" y="2410.4" font-size="11" fill="#0a64d6" font-weight="600" text-anchor="start">Measure: 1 Admissions | 2 Bed days | 3 Deaths in hospital</text>
+<rect x="120.0" y="2421.4" width="1040.0" height="96.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="232.0" y="2439.8" font-size="12" fill="#55544f" font-weight="400" text-anchor="end">Car driver</text>
+<rect x="238.0" y="2429.4" width="874.0" height="5.4" rx="0" fill="#cfcdc7" />
+<rect x="238.0" y="2436.8" width="839.0" height="5.4" rx="0" fill="#55544f" />
+<text x="1116.0" y="2433.8" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="1081.0" y="2442.2" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="232.0" y="2456.6" font-size="12" fill="#55544f" font-weight="400" text-anchor="end">Motorcyclist</text>
+<rect x="238.0" y="2446.2" width="611.8" height="5.4" rx="0" fill="#cfcdc7" />
+<rect x="238.0" y="2453.6" width="576.8" height="5.4" rx="0" fill="#55544f" />
+<text x="853.8" y="2450.6" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="818.8" y="2459.0" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="232.0" y="2473.4" font-size="12" fill="#55544f" font-weight="400" text-anchor="end">Pedal cyclist</text>
+<rect x="238.0" y="2463.0" width="480.7" height="5.4" rx="0" fill="#cfcdc7" />
+<rect x="238.0" y="2470.4" width="332.1" height="5.4" rx="0" fill="#55544f" />
+<text x="722.7" y="2467.4" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="574.1" y="2475.8" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="232.0" y="2490.2" font-size="12" fill="#55544f" font-weight="400" text-anchor="end">Car passenger</text>
+<rect x="238.0" y="2479.8" width="349.6" height="5.4" rx="0" fill="#cfcdc7" />
+<rect x="238.0" y="2487.2" width="314.6" height="5.4" rx="0" fill="#55544f" />
+<text x="591.6" y="2484.2" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="556.6" y="2492.6" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="232.0" y="2507.0" font-size="12" fill="#55544f" font-weight="400" text-anchor="end">Pedestrian</text>
+<rect x="238.0" y="2496.6" width="279.7" height="5.4" rx="0" fill="#cfcdc7" />
+<rect x="238.0" y="2504.0" width="559.4" height="5.4" rx="0" fill="#55544f" />
+<text x="521.7" y="2501.0" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="801.4" y="2509.4" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<line x1="238.0" y1="2427.4" x2="238.0" y2="2511.4" stroke="#9a9892" stroke-width="1" />
+<text x="1148.0" y="2491.0" font-size="11.5" fill="#222" font-weight="600" text-anchor="end" font-style="italic">6.5% of admissions, 13.1% of bed days</text>
+<rect x="120.0" y="2523.4" width="832.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="120.0" y="2534.4" width="520.0" height="6.0" rx="2" fill="#cfcdc7" />
+<text x="120.0" y="2557.4" font-size="11" fill="#0a64d6" font-weight="600" text-anchor="start">▸ Show the numbers</text>
+<rect x="300.0" y="2573.4" width="680.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="2585.4" width="408.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="120.0" y="2615.4" width="1040.0" height="0.0" rx="0" fill="none" />
+<text x="120.0" y="2626.4" font-size="10.5" fill="#6b7280" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">fig-3b</text>
+<text x="120.0" y="2646.4" font-size="15" fill="#222" font-weight="700" text-anchor="start">For pedestrians over 75, one admission in 16 ends in death</text>
+<rect x="120.0" y="2652.4" width="228.0" height="20.0" rx="10" fill="#fff" stroke="#0a64d6" stroke-width="1.2" />
+<text x="129.0" y="2666.4" font-size="11" fill="#0a64d6" font-weight="600" text-anchor="start">Show: Died per 1,000 | Average stay</text>
+<rect x="120.0" y="2677.4" width="1040.0" height="96.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<line x1="168.0" y1="2688.0" x2="1132.0" y2="2688.0" stroke="#e7e6e1" stroke-width="1" />
+<text x="162.0" y="2692.0" font-size="10" fill="#55544f" font-weight="400" text-anchor="end">0-7</text>
+<circle cx="198.4" cy="2688.0" r="5" fill="#fff" stroke="#9a9892" stroke-width="2"/>
+<line x1="198.4" y1="2688.0" x2="259.3" y2="2688.0" stroke="#55544f" stroke-width="2" />
+<circle cx="228.9" cy="2688.0" r="5.5" fill="#55544f"/>
+<line x1="168.0" y1="2697.1" x2="1132.0" y2="2697.1" stroke="#e7e6e1" stroke-width="1" />
+<text x="162.0" y="2701.1" font-size="10" fill="#55544f" font-weight="400" text-anchor="end">8-16</text>
+<circle cx="208.6" cy="2697.1" r="5" fill="#fff" stroke="#9a9892" stroke-width="2"/>
+<line x1="198.4" y1="2697.1" x2="299.9" y2="2697.1" stroke="#55544f" stroke-width="2" />
+<circle cx="249.2" cy="2697.1" r="5.5" fill="#55544f"/>
+<line x1="168.0" y1="2706.3" x2="1132.0" y2="2706.3" stroke="#e7e6e1" stroke-width="1" />
+<text x="162.0" y="2710.3" font-size="10" fill="#55544f" font-weight="400" text-anchor="end">17-25</text>
+<circle cx="228.9" cy="2706.3" r="5" fill="#fff" stroke="#9a9892" stroke-width="2"/>
+<line x1="239.0" y1="2706.3" x2="340.5" y2="2706.3" stroke="#55544f" stroke-width="2" />
+<circle cx="289.8" cy="2706.3" r="5.5" fill="#55544f"/>
+<line x1="168.0" y1="2715.4" x2="1132.0" y2="2715.4" stroke="#e7e6e1" stroke-width="1" />
+<text x="162.0" y="2719.4" font-size="10" fill="#55544f" font-weight="400" text-anchor="end">26-39</text>
+<circle cx="249.2" cy="2715.4" r="5" fill="#fff" stroke="#9a9892" stroke-width="2"/>
+<line x1="269.5" y1="2715.4" x2="350.7" y2="2715.4" stroke="#55544f" stroke-width="2" />
+<circle cx="310.1" cy="2715.4" r="5.5" fill="#55544f"/>
+<line x1="168.0" y1="2724.5" x2="1132.0" y2="2724.5" stroke="#e7e6e1" stroke-width="1" />
+<text x="162.0" y="2728.5" font-size="10" fill="#55544f" font-weight="400" text-anchor="end">40-64</text>
+<circle cx="269.5" cy="2724.5" r="5" fill="#fff" stroke="#9a9892" stroke-width="2"/>
+<line x1="340.5" y1="2724.5" x2="442.0" y2="2724.5" stroke="#55544f" stroke-width="2" />
+<circle cx="391.2" cy="2724.5" r="5.5" fill="#55544f"/>
+<line x1="168.0" y1="2733.7" x2="1132.0" y2="2733.7" stroke="#e7e6e1" stroke-width="1" />
+<text x="162.0" y="2737.7" font-size="10" fill="#55544f" font-weight="400" text-anchor="end">65-74</text>
+<circle cx="310.1" cy="2733.7" r="5" fill="#fff" stroke="#9a9892" stroke-width="2"/>
+<line x1="431.8" y1="2733.7" x2="614.5" y2="2733.7" stroke="#55544f" stroke-width="2" />
+<circle cx="523.2" cy="2733.7" r="5.5" fill="#55544f"/>
+<line x1="168.0" y1="2742.8" x2="1132.0" y2="2742.8" stroke="#e7e6e1" stroke-width="1" />
+<text x="162.0" y="2746.8" font-size="10" fill="#55544f" font-weight="400" text-anchor="end">75+</text>
+<circle cx="452.1" cy="2742.8" r="5" fill="#fff" stroke="#9a9892" stroke-width="2"/>
+<line x1="644.9" y1="2742.8" x2="929.1" y2="2742.8" stroke="#55544f" stroke-width="2" />
+<circle cx="787.0" cy="2742.8" r="5.5" fill="#55544f"/>
+<text x="168.0" y="2765.4" font-size="10" fill="#55544f" font-weight="600" text-anchor="start">open dot: all road users  |  dark dot + whisker: pedestrians</text>
+<text x="1148.0" y="2730.8" font-size="10.5" fill="#222" font-weight="600" text-anchor="end" font-style="italic">61 in 1,000 aged 75+</text>
+<rect x="120.0" y="2779.4" width="832.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="120.0" y="2790.4" width="520.0" height="6.0" rx="2" fill="#cfcdc7" />
+<text x="120.0" y="2813.4" font-size="11" fill="#0a64d6" font-weight="600" text-anchor="start">▸ Show the numbers</text>
+<rect x="300.0" y="2829.4" width="680.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="2841.4" width="408.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="120.0" y="2871.4" width="1040.0" height="0.0" rx="0" fill="none" />
+<text x="120.0" y="2882.4" font-size="10.5" fill="#6b7280" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">fig-3c</text>
+<text x="120.0" y="2902.4" font-size="15" fill="#222" font-weight="700" text-anchor="start">Apart from rare train collisions, a heavy vehicle or bus is the deadliest thing to be hit by</text>
+<rect x="120.0" y="2908.4" width="222.0" height="20.0" rx="10" fill="#fff" stroke="#0a64d6" stroke-width="1.2" />
+<text x="129.0" y="2922.4" font-size="11" fill="#0a64d6" font-weight="600" text-anchor="start">Show: All road users | Pedestrians</text>
+<rect x="120.0" y="2933.4" width="1040.0" height="96.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="232.0" y="2951.8" font-size="12" fill="#55544f" font-weight="400" text-anchor="end">Train  [rare]</text>
+<line x1="238.0" y1="2947.8" x2="1132.0" y2="2947.8" stroke="#e7e6e1" stroke-width="1" />
+<circle cx="630.0" cy="2947.8" r="5" fill="#fff" stroke="#9a9892" stroke-width="2"/>
+<circle cx="1097.6" cy="2947.8" r="5.5" fill="#55544f"/>
+<text x="232.0" y="2968.6" font-size="12" fill="#55544f" font-weight="400" text-anchor="end">Heavy vehicle or bus</text>
+<line x1="238.0" y1="2964.6" x2="1132.0" y2="2964.6" stroke="#e7e6e1" stroke-width="1" />
+<circle cx="375.5" cy="2964.6" r="5" fill="#fff" stroke="#9a9892" stroke-width="2"/>
+<circle cx="602.5" cy="2964.6" r="5.5" fill="#55544f"/>
+<text x="232.0" y="2985.4" font-size="12" fill="#55544f" font-weight="400" text-anchor="end">(other published rows)</text>
+<line x1="238.0" y1="2981.4" x2="1132.0" y2="2981.4" stroke="#e7e6e1" stroke-width="1" />
+<circle cx="334.3" cy="2981.4" r="5" fill="#fff" stroke="#9a9892" stroke-width="2"/>
+<circle cx="444.3" cy="2981.4" r="5.5" fill="#55544f"/>
+<text x="232.0" y="3002.2" font-size="12" fill="#55544f" font-weight="400" text-anchor="end">(other published rows)</text>
+<line x1="238.0" y1="2998.2" x2="1132.0" y2="2998.2" stroke="#e7e6e1" stroke-width="1" />
+<circle cx="306.8" cy="2998.2" r="5" fill="#fff" stroke="#9a9892" stroke-width="2"/>
+<circle cx="361.8" cy="2998.2" r="5.5" fill="#55544f"/>
+<text x="232.0" y="3019.0" font-size="12" fill="#55544f" font-weight="400" text-anchor="end">(other published rows)</text>
+<line x1="238.0" y1="3015.0" x2="1132.0" y2="3015.0" stroke="#e7e6e1" stroke-width="1" />
+<circle cx="279.3" cy="3015.0" r="5" fill="#fff" stroke="#9a9892" stroke-width="2"/>
+<rect x="242.0" y="2943.4" width="38.0" height="14.0" rx="7" fill="#fff" stroke="#55544f" stroke-width="1" />
+<text x="261.0" y="2953.9" font-size="9" fill="#55544f" font-weight="600" text-anchor="middle">rare</text>
+<text x="1148.0" y="3021.4" font-size="10" fill="#55544f" font-weight="600" text-anchor="end">open: all road users | dark: pedestrians</text>
+<rect x="120.0" y="3035.4" width="832.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="120.0" y="3046.4" width="520.0" height="6.0" rx="2" fill="#cfcdc7" />
+<text x="120.0" y="3069.4" font-size="11" fill="#0a64d6" font-weight="600" text-anchor="start">▸ Show the numbers</text>
+<rect x="300.0" y="3085.4" width="680.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="3097.4" width="408.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="3119.4" width="680.0" height="26.0" rx="0" fill="none" stroke="#9a9892" stroke-width="1" stroke-dasharray="4 3" />
+<text x="310.0" y="3136.4" font-size="10" fill="#6b7280" font-weight="600" text-anchor="start" font-style="italic">chapter caveat</text>
+<rect x="100.0" y="2103.8" width="1080.0" height="1053.6" rx="6" fill="none" stroke="#9a9892" stroke-width="1" stroke-dasharray="6 4" />
+<rect x="110.0" y="2096.8" width="92.0" height="16.0" rx="3" fill="#e7e6e1" stroke="#9a9892" stroke-width="1" />
+<text x="116.0" y="2108.8" font-size="10" fill="#55544f" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">section#ch3</text>
+<text x="300.0" y="3215.4" font-size="11.5" fill="#6b7280" font-weight="800" text-anchor="start" letter-spacing="2">CHAPTER 4</text>
+<text x="300.0" y="3253.4" font-size="26" fill="#222" font-weight="800" text-anchor="start">In the month Australia locked down, crash</text>
+<text x="300.0" y="3284.6" font-size="26" fill="#222" font-weight="800" text-anchor="start">admissions fell by a third. Cyclist</text>
+<text x="300.0" y="3315.8" font-size="26" fill="#222" font-weight="800" text-anchor="start">admissions rose.</text>
+<rect x="300.0" y="3329.0" width="680.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="3342.0" width="476.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="3359.0" width="680.0" height="63.2" rx="0" fill="#e7e6e1" />
+<rect x="300.0" y="3359.0" width="4.0" height="63.2" rx="0" fill="#55544f" />
+<text x="314.0" y="3373.0" font-size="9.5" fill="#55544f" font-weight="800" text-anchor="start" letter-spacing="1.2">WHAT TO KNOW</text>
+<rect x="314.0" y="3383.0" width="544.0" height="5.0" rx="2" fill="#cfcdc7" />
+<rect x="314.0" y="3396.0" width="544.0" height="5.0" rx="2" fill="#cfcdc7" />
+<rect x="314.0" y="3409.0" width="544.0" height="5.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="3436.2" width="680.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="3448.2" width="408.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="120.0" y="3478.2" width="1040.0" height="0.0" rx="0" fill="none" />
+<text x="120.0" y="3489.2" font-size="10.5" fill="#6b7280" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">fig-4a</text>
+<text x="120.0" y="3509.2" font-size="15" fill="#222" font-weight="700" text-anchor="start">April 2020: a third fewer crash admissions</text>
+<rect x="120.0" y="3515.2" width="204.0" height="20.0" rx="10" fill="#fff" stroke="#0a64d6" stroke-width="1.2" />
+<text x="129.0" y="3529.2" font-size="11" fill="#0a64d6" font-weight="600" text-anchor="start">Show: All road users | Cyclists</text>
+<rect x="120.0" y="3540.2" width="1040.0" height="96.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<line x1="158.0" y1="3554.2" x2="1146.0" y2="3554.2" stroke="#e7e6e1" stroke-width="1" />
+<line x1="158.0" y1="3581.2" x2="1146.0" y2="3581.2" stroke="#e7e6e1" stroke-width="1" />
+<line x1="158.0" y1="3608.2" x2="1146.0" y2="3608.2" stroke="#e7e6e1" stroke-width="1" />
+<polygon points="158.0,3566.3 247.8,3567.7 337.6,3565.0 427.5,3566.3 517.3,3567.7 607.1,3569.0 696.9,3567.7 786.7,3566.3 876.5,3566.3 966.4,3565.0 1056.2,3566.3 1146.0,3563.6 1146.0,3578.5 1056.2,3581.2 966.4,3579.8 876.5,3581.2 786.7,3581.2 696.9,3582.5 607.1,3583.9 517.3,3582.5 427.5,3581.2 337.6,3579.8 247.8,3582.5 158.0,3581.2" fill="#e1ddcf" stroke="none"/>
+<polyline points="158.0,3573.8 247.8,3575.1 337.6,3572.4 427.5,3573.8 517.3,3575.1 607.1,3576.5 696.9,3575.1 786.7,3573.8 876.5,3573.8 966.4,3572.4 1056.2,3573.8 1146.0,3571.1" fill="none" stroke="#9a9892" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="158.0,3573.1 247.8,3574.4 337.6,3573.1 427.5,3571.7 517.3,3573.1 607.1,3574.4 696.9,3573.1 786.7,3572.4 876.5,3571.7 966.4,3571.1 1056.2,3572.4 1146.0,3570.4" fill="none" stroke="#cfcdc7" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="158.0,3574.4 247.8,3573.1 337.6,3581.2 427.5,3592.0 517.3,3583.9 607.1,3575.8 696.9,3566.3 786.7,3565.0 876.5,3563.6 966.4,3562.3 1056.2,3565.0 1146.0,3563.6" fill="none" stroke="#222" stroke-width="3.2" stroke-linejoin="round"/>
+<circle cx="427.5" cy="3592.0" r="4.5" fill="#222"/>
+<text x="158.0" y="3623.2" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">J</text>
+<text x="247.8" y="3623.2" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">F</text>
+<text x="337.6" y="3623.2" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">M</text>
+<text x="427.5" y="3623.2" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">A</text>
+<text x="517.3" y="3623.2" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">M</text>
+<text x="607.1" y="3623.2" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">J</text>
+<text x="696.9" y="3623.2" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">J</text>
+<text x="786.7" y="3623.2" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">A</text>
+<text x="876.5" y="3623.2" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">S</text>
+<text x="966.4" y="3623.2" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">O</text>
+<text x="1056.2" y="3623.2" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">N</text>
+<text x="1146.0" y="3623.2" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">D</text>
+<rect x="120.0" y="3642.2" width="832.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="120.0" y="3653.2" width="520.0" height="6.0" rx="2" fill="#cfcdc7" />
+<text x="120.0" y="3676.2" font-size="11" fill="#0a64d6" font-weight="600" text-anchor="start">▸ Show the numbers</text>
+<rect x="300.0" y="3692.2" width="680.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="3704.2" width="408.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="120.0" y="3734.2" width="1040.0" height="0.0" rx="0" fill="none" />
+<text x="120.0" y="3745.2" font-size="10.5" fill="#6b7280" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">fig-4b</text>
+<text x="120.0" y="3765.2" font-size="15" fill="#222" font-weight="700" text-anchor="start">Every road user went to hospital less in April 2020, except cyclists</text>
+<rect x="120.0" y="3774.2" width="1040.0" height="96.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<line x1="858.9" y1="3780.2" x2="858.9" y2="3864.2" stroke="#55544f" stroke-width="1.5" />
+<text x="230.0" y="3791.2" font-size="12" fill="#55544f" font-weight="400" text-anchor="end">Pedestrian</text>
+<rect x="518.1" y="3783.0" width="340.8" height="8.4" rx="0" fill="#cfcdc7" />
+<text x="514.1" y="3791.2" font-size="10" fill="#55544f" font-weight="600" text-anchor="end">-60%</text>
+<text x="230.0" y="3805.2" font-size="12" fill="#55544f" font-weight="400" text-anchor="end">Car passenger</text>
+<rect x="557.9" y="3797.0" width="301.0" height="8.4" rx="0" fill="#cfcdc7" />
+<text x="553.9" y="3805.2" font-size="10" fill="#55544f" font-weight="600" text-anchor="end">-53%</text>
+<text x="230.0" y="3819.2" font-size="12" fill="#55544f" font-weight="400" text-anchor="end">Car driver</text>
+<rect x="614.7" y="3811.0" width="244.2" height="8.4" rx="0" fill="#cfcdc7" />
+<text x="610.7" y="3819.2" font-size="10" fill="#55544f" font-weight="600" text-anchor="end">-43%</text>
+<text x="230.0" y="3833.2" font-size="12" fill="#55544f" font-weight="400" text-anchor="end">Motorcyclist</text>
+<rect x="643.1" y="3825.0" width="215.8" height="8.4" rx="0" fill="#cfcdc7" />
+<text x="639.1" y="3833.2" font-size="10" fill="#55544f" font-weight="600" text-anchor="end">-38%</text>
+<text x="230.0" y="3847.2" font-size="12" fill="#55544f" font-weight="400" text-anchor="end">Pedal cyclist</text>
+<rect x="858.9" y="3839.0" width="90.9" height="8.4" rx="0" fill="#55544f" />
+<text x="953.7" y="3847.2" font-size="10" fill="#55544f" font-weight="600" text-anchor="start">+16%</text>
+<text x="230.0" y="3861.2" font-size="12" fill="#55544f" font-weight="400" text-anchor="end">All road users</text>
+<rect x="677.1" y="3853.0" width="181.7" height="8.4" rx="0" fill="#fff" stroke="#55544f" stroke-width="1.2" stroke-dasharray="4 3" />
+<text x="673.1" y="3861.2" font-size="10" fill="#55544f" font-weight="600" text-anchor="end">-32%</text>
+<text x="854.9" y="3866.2" font-size="9" fill="#222" font-weight="400" text-anchor="start"></text>
+<rect x="120.0" y="3876.2" width="832.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="120.0" y="3887.2" width="520.0" height="6.0" rx="2" fill="#cfcdc7" />
+<text x="120.0" y="3910.2" font-size="11" fill="#0a64d6" font-weight="600" text-anchor="start">▸ Show the numbers</text>
+<rect x="300.0" y="3926.2" width="680.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="3938.2" width="408.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="120.0" y="3968.2" width="1040.0" height="0.0" rx="0" fill="none" />
+<text x="120.0" y="3979.2" font-size="10.5" fill="#6b7280" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">fig-4c</text>
+<text x="120.0" y="3999.2" font-size="15" fill="#222" font-weight="700" text-anchor="start">Cyclist injuries were already rising. 2020 added to it.</text>
+<rect x="120.0" y="4008.2" width="1040.0" height="96.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<line x1="162.0" y1="4036.2" x2="1142.0" y2="4036.2" stroke="#e7e6e1" stroke-width="1" />
+<line x1="162.0" y1="4056.2" x2="1142.0" y2="4056.2" stroke="#e7e6e1" stroke-width="1" />
+<line x1="162.0" y1="4076.2" x2="1142.0" y2="4076.2" stroke="#e7e6e1" stroke-width="1" />
+<polyline points="162.0,4070.5 260.0,4068.6 358.0,4066.7 456.0,4064.8 554.0,4061.9 652.0,4060.0 750.0,4057.2 848.0,4054.3 946.0,4054.3 1044.0,4044.8 1142.0,4041.9" fill="none" stroke="#55544f" stroke-width="2" stroke-linejoin="round"/>
+<circle cx="162.0" cy="4070.5" r="3.5" fill="#55544f"/>
+<circle cx="260.0" cy="4068.6" r="3.5" fill="#55544f"/>
+<circle cx="358.0" cy="4066.7" r="3.5" fill="#55544f"/>
+<circle cx="456.0" cy="4064.8" r="3.5" fill="#55544f"/>
+<circle cx="554.0" cy="4061.9" r="3.5" fill="#55544f"/>
+<circle cx="652.0" cy="4060.0" r="3.5" fill="#55544f"/>
+<circle cx="750.0" cy="4057.2" r="3.5" fill="#55544f"/>
+<circle cx="848.0" cy="4054.3" r="3.5" fill="#55544f"/>
+<circle cx="946.0" cy="4054.3" r="3.5" fill="#55544f"/>
+<circle cx="1044.0" cy="4044.8" r="3.5" fill="#222"/>
+<circle cx="1142.0" cy="4041.9" r="3.5" fill="#55544f"/>
+<polyline points="946.0,4054.3 1044.0,4051.6" fill="none" stroke="#55544f" stroke-width="2" stroke-dasharray="5 3" stroke-linejoin="round"/>
+<rect x="120.0" y="4110.2" width="832.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="120.0" y="4121.2" width="520.0" height="6.0" rx="2" fill="#cfcdc7" />
+<text x="120.0" y="4144.2" font-size="11" fill="#0a64d6" font-weight="600" text-anchor="start">▸ Show the numbers</text>
+<rect x="300.0" y="4160.2" width="680.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="4172.2" width="408.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="4194.2" width="680.0" height="26.0" rx="0" fill="none" stroke="#9a9892" stroke-width="1" stroke-dasharray="4 3" />
+<text x="310.0" y="4211.2" font-size="10" fill="#6b7280" font-weight="600" text-anchor="start" font-style="italic">chapter caveat</text>
+<rect x="120.0" y="4240.2" width="1040.0" height="0.0" rx="0" fill="none" />
+<text x="120.0" y="4251.2" font-size="10.5" fill="#6b7280" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">fig-4d</text>
+<text x="120.0" y="4271.2" font-size="15" fill="#222" font-weight="700" text-anchor="start">Victoria had the largest rise in cyclist admissions in July-December 2020</text>
+<rect x="120.0" y="4280.2" width="1040.0" height="96.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="134.0" y="4298.2" font-size="10" fill="#55544f" font-weight="600" text-anchor="start">State</text>
+<text x="198.0" y="4298.2" font-size="10" fill="#55544f" font-weight="600" text-anchor="start">Jul-Dec 2019 | 2020 | change</text>
+<line x1="128.0" y1="4306.2" x2="1152.0" y2="4306.2" stroke="#e7e6e1" stroke-width="1" />
+<text x="134.0" y="4315.5" font-size="11" fill="#55544f" font-weight="600" text-anchor="start">Vic</text>
+<rect x="198.0" y="4309.4" width="747.2" height="4.3" rx="0" fill="#55544f" />
+<line x1="128.0" y1="4316.9" x2="1152.0" y2="4316.9" stroke="#e7e6e1" stroke-width="1" />
+<text x="134.0" y="4326.2" font-size="11" fill="#55544f" font-weight="400" text-anchor="start">NSW</text>
+<rect x="198.0" y="4320.1" width="298.9" height="4.3" rx="0" fill="#cfcdc7" />
+<line x1="128.0" y1="4327.5" x2="1152.0" y2="4327.5" stroke="#e7e6e1" stroke-width="1" />
+<text x="134.0" y="4336.9" font-size="11" fill="#55544f" font-weight="400" text-anchor="start">Qld</text>
+<rect x="198.0" y="4330.7" width="261.5" height="4.3" rx="0" fill="#cfcdc7" />
+<line x1="128.0" y1="4338.2" x2="1152.0" y2="4338.2" stroke="#e7e6e1" stroke-width="1" />
+<text x="134.0" y="4347.5" font-size="11" fill="#55544f" font-weight="400" text-anchor="start">WA</text>
+<rect x="198.0" y="4341.4" width="164.4" height="4.3" rx="0" fill="#cfcdc7" />
+<line x1="128.0" y1="4348.9" x2="1152.0" y2="4348.9" stroke="#e7e6e1" stroke-width="1" />
+<text x="134.0" y="4358.2" font-size="11" fill="#55544f" font-weight="400" text-anchor="start">SA</text>
+<rect x="198.0" y="4352.1" width="104.6" height="4.3" rx="0" fill="#cfcdc7" />
+<line x1="128.0" y1="4359.5" x2="1152.0" y2="4359.5" stroke="#e7e6e1" stroke-width="1" />
+<text x="134.0" y="4368.9" font-size="11" fill="#55544f" font-weight="400" text-anchor="start">Tas</text>
+<rect x="198.0" y="4362.7" width="44.8" height="4.3" rx="0" fill="#cfcdc7" />
+<text x="1148.0" y="4326.2" font-size="10.5" fill="#222" font-weight="600" text-anchor="end" font-style="italic">Vic: 1,419 vs 1,010 (+409)</text>
+<rect x="120.0" y="4382.2" width="832.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="120.0" y="4393.2" width="520.0" height="6.0" rx="2" fill="#cfcdc7" />
+<text x="120.0" y="4416.2" font-size="11" fill="#0a64d6" font-weight="600" text-anchor="start">▸ Show the numbers</text>
+<rect x="100.0" y="3191.4" width="1080.0" height="1240.8" rx="6" fill="none" stroke="#9a9892" stroke-width="1" stroke-dasharray="6 4" />
+<rect x="110.0" y="3184.4" width="92.0" height="16.0" rx="3" fill="#e7e6e1" stroke="#9a9892" stroke-width="1" />
+<text x="116.0" y="3196.4" font-size="10" fill="#55544f" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">section#ch4</text>
+<text x="300.0" y="4490.2" font-size="11.5" fill="#6b7280" font-weight="800" text-anchor="start" letter-spacing="2">CHAPTER 5</text>
+<text x="300.0" y="4528.2" font-size="26" fill="#222" font-weight="800" text-anchor="start">In 2011 First Nations Australians were</text>
+<text x="300.0" y="4559.4" font-size="26" fill="#222" font-weight="800" text-anchor="start">hospitalised after road crashes at about the</text>
+<text x="300.0" y="4590.6" font-size="26" fill="#222" font-weight="800" text-anchor="start">same rate as everyone else. By 2021 the rate</text>
+<text x="300.0" y="4621.8" font-size="26" fill="#222" font-weight="800" text-anchor="start">was half as high again.</text>
+<rect x="300.0" y="4635.0" width="680.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="4648.0" width="476.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="4665.0" width="680.0" height="63.2" rx="0" fill="#e7e6e1" />
+<rect x="300.0" y="4665.0" width="4.0" height="63.2" rx="0" fill="#55544f" />
+<text x="314.0" y="4679.0" font-size="9.5" fill="#55544f" font-weight="800" text-anchor="start" letter-spacing="1.2">WHAT TO KNOW</text>
+<rect x="314.0" y="4689.0" width="544.0" height="5.0" rx="2" fill="#cfcdc7" />
+<rect x="314.0" y="4702.0" width="544.0" height="5.0" rx="2" fill="#cfcdc7" />
+<rect x="314.0" y="4715.0" width="544.0" height="5.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="4742.2" width="680.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="4754.2" width="408.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="120.0" y="4784.2" width="1040.0" height="0.0" rx="0" fill="none" />
+<text x="120.0" y="4795.2" font-size="10.5" fill="#6b7280" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">fig-5a</text>
+<text x="120.0" y="4815.2" font-size="15" fill="#222" font-weight="700" text-anchor="start">First Nations hospitalisations nearly doubled; everyone else's rose 15%</text>
+<rect x="120.0" y="4821.2" width="234.0" height="20.0" rx="10" fill="#fff" stroke="#0a64d6" stroke-width="1.2" />
+<text x="129.0" y="4835.2" font-size="11" fill="#0a64d6" font-weight="600" text-anchor="start">Show: Index 2011 = 100 | Per 100,000</text>
+<rect x="120.0" y="4846.2" width="1040.0" height="96.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<line x1="162.0" y1="4862.2" x2="1146.0" y2="4862.2" stroke="#e7e6e1" stroke-width="1" />
+<line x1="162.0" y1="4889.2" x2="1146.0" y2="4889.2" stroke="#e7e6e1" stroke-width="1" />
+<line x1="162.0" y1="4916.2" x2="1146.0" y2="4916.2" stroke="#e7e6e1" stroke-width="1" />
+<polyline points="162.0,4907.9 260.4,4904.6 358.8,4899.6 457.2,4893.4 555.6,4888.0 654.0,4883.0 752.4,4879.6 850.8,4876.7 949.2,4874.7 1047.6,4871.3 1146.0,4870.5" fill="none" stroke="#55544f" stroke-width="3.2" stroke-linejoin="round"/>
+<polyline points="162.0,4907.9 260.4,4907.5 358.8,4907.1 457.2,4906.6 555.6,4906.2 654.0,4905.8 752.4,4905.0 850.8,4904.2 949.2,4903.3 1047.6,4902.5 1146.0,4901.7" fill="none" stroke="#9a9892" stroke-width="2.5" stroke-linejoin="round"/>
+<rect x="120.0" y="4948.2" width="832.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="120.0" y="4959.2" width="520.0" height="6.0" rx="2" fill="#cfcdc7" />
+<text x="120.0" y="4982.2" font-size="11" fill="#0a64d6" font-weight="600" text-anchor="start">▸ Show the numbers</text>
+<rect x="300.0" y="4998.2" width="680.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="5010.2" width="408.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="120.0" y="5040.2" width="1040.0" height="0.0" rx="0" fill="none" />
+<text x="120.0" y="5051.2" font-size="10.5" fill="#6b7280" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">fig-5b</text>
+<text x="120.0" y="5071.2" font-size="15" fill="#222" font-weight="700" text-anchor="start">Pedestrians are a bigger share of First Nations road-crash hospitalisations: 11% against 6%</text>
+<rect x="120.0" y="5080.2" width="1040.0" height="96.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="232.0" y="5095.4" font-size="12" fill="#55544f" font-weight="400" text-anchor="end">Car</text>
+<rect x="238.0" y="5087.1" width="874.0" height="3.4" rx="0" fill="#cfcdc7" />
+<rect x="238.0" y="5092.4" width="874.0" height="3.4" rx="0" fill="#55544f" />
+<text x="1116.0" y="5089.4" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="1116.0" y="5095.8" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="232.0" y="5105.9" font-size="12" fill="#55544f" font-weight="400" text-anchor="end">Motorcycle</text>
+<rect x="238.0" y="5097.6" width="244.7" height="3.4" rx="0" fill="#cfcdc7" />
+<rect x="238.0" y="5102.9" width="262.2" height="3.4" rx="0" fill="#55544f" />
+<text x="486.7" y="5099.9" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="504.2" y="5106.3" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="232.0" y="5116.4" font-size="12" fill="#55544f" font-weight="400" text-anchor="end">Pedestrian</text>
+<rect x="238.0" y="5108.1" width="174.8" height="3.4" rx="0" fill="#cfcdc7" />
+<rect x="238.0" y="5113.4" width="192.3" height="3.4" rx="0" fill="#55544f" />
+<text x="416.8" y="5110.4" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="434.3" y="5116.8" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="232.0" y="5126.9" font-size="12" fill="#55544f" font-weight="400" text-anchor="end">Pedal cyclist</text>
+<rect x="238.0" y="5118.6" width="314.6" height="3.4" rx="0" fill="#cfcdc7" />
+<rect x="238.0" y="5123.9" width="174.8" height="3.4" rx="0" fill="#55544f" />
+<text x="556.6" y="5120.9" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="416.8" y="5127.3" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="232.0" y="5137.4" font-size="12" fill="#55544f" font-weight="400" text-anchor="end">Pick-up or van</text>
+<rect x="238.0" y="5129.1" width="104.9" height="3.4" rx="0" fill="#cfcdc7" />
+<rect x="238.0" y="5134.4" width="122.4" height="3.4" rx="0" fill="#55544f" />
+<text x="346.9" y="5131.4" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="364.4" y="5137.8" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="232.0" y="5147.9" font-size="12" fill="#55544f" font-weight="400" text-anchor="end">Heavy transport</text>
+<rect x="238.0" y="5139.6" width="69.9" height="3.4" rx="0" fill="#cfcdc7" />
+<rect x="238.0" y="5144.9" width="87.4" height="3.4" rx="0" fill="#55544f" />
+<text x="311.9" y="5141.9" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="329.4" y="5148.3" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="232.0" y="5158.4" font-size="12" fill="#55544f" font-weight="400" text-anchor="end">Bus</text>
+<rect x="238.0" y="5150.1" width="35.0" height="3.4" rx="0" fill="#cfcdc7" />
+<rect x="238.0" y="5155.4" width="43.7" height="3.4" rx="0" fill="#55544f" />
+<text x="277.0" y="5152.4" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="285.7" y="5158.8" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="232.0" y="5168.9" font-size="12" fill="#55544f" font-weight="400" text-anchor="end">Other</text>
+<rect x="238.0" y="5160.6" width="52.4" height="3.4" rx="0" fill="#cfcdc7" />
+<rect x="238.0" y="5165.9" width="69.9" height="3.4" rx="0" fill="#55544f" />
+<text x="294.4" y="5162.9" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="311.9" y="5169.3" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<line x1="238.0" y1="5086.2" x2="238.0" y2="5170.2" stroke="#9a9892" stroke-width="1" />
+<text x="1148.0" y="5100.4" font-size="11.5" fill="#222" font-weight="600" text-anchor="end" font-style="italic">11.0% vs 6.3%</text>
+<rect x="120.0" y="5182.2" width="832.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="120.0" y="5193.2" width="520.0" height="6.0" rx="2" fill="#cfcdc7" />
+<text x="120.0" y="5216.2" font-size="11" fill="#0a64d6" font-weight="600" text-anchor="start">▸ Show the numbers</text>
+<rect x="300.0" y="5232.2" width="680.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="5244.2" width="408.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="120.0" y="5274.2" width="1040.0" height="0.0" rx="0" fill="none" />
+<text x="120.0" y="5285.2" font-size="10.5" fill="#6b7280" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">fig-5c</text>
+<text x="120.0" y="5305.2" font-size="15" fill="#222" font-weight="700" text-anchor="start">In remote areas, First Nations people are 41% of those hospitalised after road crashes</text>
+<rect x="120.0" y="5311.2" width="174.0" height="20.0" rx="10" fill="#fff" stroke="#0a64d6" stroke-width="1.2" />
+<text x="129.0" y="5325.2" font-size="11" fill="#0a64d6" font-weight="600" text-anchor="start">Show: Share | Average stay</text>
+<rect x="120.0" y="5336.2" width="1040.0" height="96.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="128.0" y="5352.2" font-size="10" fill="#6b7280" font-weight="600" text-anchor="start">view A: share (default)</text>
+<text x="192.0" y="5375.2" font-size="11" fill="#55544f" font-weight="400" text-anchor="end">Major Cities</text>
+<rect x="198.0" y="5366.8" width="23.4" height="8.8" rx="0" fill="#cfcdc7" />
+<text x="225.4" y="5375.2" font-size="9.5" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="192.0" y="5397.2" font-size="11" fill="#55544f" font-weight="400" text-anchor="end">Regional</text>
+<rect x="198.0" y="5388.8" width="54.6" height="8.8" rx="0" fill="#cfcdc7" />
+<text x="256.6" y="5397.2" font-size="9.5" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="192.0" y="5419.2" font-size="11" fill="#55544f" font-weight="400" text-anchor="end">Remote</text>
+<rect x="198.0" y="5410.8" width="319.8" height="8.8" rx="0" fill="#55544f" />
+<text x="521.8" y="5419.2" font-size="9.5" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="652.0" y="5352.2" font-size="10" fill="#6b7280" font-weight="600" text-anchor="start">view B: average stay (after toggle)</text>
+<text x="716.0" y="5375.2" font-size="11" fill="#55544f" font-weight="400" text-anchor="end">Major Cities</text>
+<line x1="722.0" y1="5371.2" x2="1132.0" y2="5371.2" stroke="#cfcdc7" stroke-width="1.5" />
+<circle cx="922.0" cy="5371.2" r="5" fill="#fff" stroke="#9a9892" stroke-width="2"/>
+<circle cx="922.0" cy="5371.2" r="5.5" fill="#55544f"/>
+<text x="716.0" y="5397.2" font-size="11" fill="#55544f" font-weight="400" text-anchor="end">Regional</text>
+<line x1="722.0" y1="5393.2" x2="1132.0" y2="5393.2" stroke="#cfcdc7" stroke-width="1.5" />
+<circle cx="922.0" cy="5393.2" r="5" fill="#fff" stroke="#9a9892" stroke-width="2"/>
+<circle cx="930.0" cy="5393.2" r="5.5" fill="#55544f"/>
+<text x="716.0" y="5419.2" font-size="11" fill="#55544f" font-weight="400" text-anchor="end">Remote</text>
+<line x1="722.0" y1="5415.2" x2="1132.0" y2="5415.2" stroke="#cfcdc7" stroke-width="1.5" />
+<circle cx="930.0" cy="5415.2" r="5" fill="#fff" stroke="#9a9892" stroke-width="2"/>
+<circle cx="986.0" cy="5415.2" r="5.5" fill="#55544f"/>
+<rect x="120.0" y="5438.2" width="832.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="120.0" y="5449.2" width="520.0" height="6.0" rx="2" fill="#cfcdc7" />
+<text x="120.0" y="5472.2" font-size="11" fill="#0a64d6" font-weight="600" text-anchor="start">▸ Show the numbers</text>
+<rect x="300.0" y="5488.2" width="680.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="5500.2" width="408.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="5522.2" width="680.0" height="26.0" rx="0" fill="none" stroke="#9a9892" stroke-width="1" stroke-dasharray="4 3" />
+<text x="310.0" y="5539.2" font-size="10" fill="#6b7280" font-weight="600" text-anchor="start" font-style="italic">chapter caveat</text>
+<rect x="100.0" y="4466.2" width="1080.0" height="1094.0" rx="6" fill="none" stroke="#9a9892" stroke-width="1" stroke-dasharray="6 4" />
+<rect x="110.0" y="4459.2" width="92.0" height="16.0" rx="3" fill="#e7e6e1" stroke="#9a9892" stroke-width="1" />
+<text x="116.0" y="4471.2" font-size="10" fill="#55544f" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">section#ch5</text>
+<text x="300.0" y="5612.2" font-size="22" fill="#222" font-weight="800" text-anchor="start">What to take away</text>
+<text x="300.0" y="5643.2" font-size="17" fill="#222" font-weight="700" text-anchor="start">The road toll isn't the whole story.</text>
+<rect x="300.0" y="5652.3" width="680.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="5664.3" width="476.0" height="6.0" rx="2" fill="#cfcdc7" />
+<text x="300.0" y="5701.3" font-size="17" fill="#222" font-weight="700" text-anchor="start">If you ride, you're part of a growing group.</text>
+<rect x="300.0" y="5710.4" width="680.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="5722.4" width="476.0" height="6.0" rx="2" fill="#cfcdc7" />
+<text x="300.0" y="5759.4" font-size="17" fill="#222" font-weight="700" text-anchor="start">If your parents walk, the danger isn't how often they're hit but</text>
+<text x="300.0" y="5781.5" font-size="17" fill="#222" font-weight="700" text-anchor="start">what happens when they are.</text>
+<rect x="300.0" y="5790.6" width="680.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="5802.6" width="476.0" height="6.0" rx="2" fill="#cfcdc7" />
+<text x="300.0" y="5839.6" font-size="17" fill="#222" font-weight="700" text-anchor="start">The roads are not equally safe for everyone, and counts alone hide</text>
+<text x="300.0" y="5861.7" font-size="17" fill="#222" font-weight="700" text-anchor="start">it.</text>
+<rect x="300.0" y="5870.8" width="680.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="5882.8" width="476.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="5912.8" width="680.0" height="170.0" rx="0" fill="#e7e6e1" stroke="#cfcdc7" stroke-width="1" />
+<text x="314.0" y="5936.8" font-size="16" fill="#222" font-weight="800" text-anchor="start">Methods and limitations</text>
+<text x="314.0" y="5964.8" font-size="12" fill="#55544f" font-weight="700" text-anchor="start">Sources</text>
+<rect x="400.0" y="5957.8" width="560.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="400.0" y="5970.8" width="460.0" height="6.0" rx="2" fill="#cfcdc7" />
+<text x="314.0" y="6004.8" font-size="12" fill="#55544f" font-weight="700" text-anchor="start">Rules</text>
+<rect x="400.0" y="5997.8" width="560.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="400.0" y="6010.8" width="460.0" height="6.0" rx="2" fill="#cfcdc7" />
+<text x="314.0" y="6044.8" font-size="12" fill="#55544f" font-weight="700" text-anchor="start">Processing</text>
+<rect x="400.0" y="6037.8" width="560.0" height="6.0" rx="2" fill="#cfcdc7" />
+<rect x="400.0" y="6050.8" width="460.0" height="6.0" rx="2" fill="#cfcdc7" />
+<text x="300.0" y="6138.8" font-size="22" fill="#222" font-weight="800" text-anchor="start">Download the data</text>
+<text x="300.0" y="6166.8" font-size="12.5" fill="#0a64d6" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">ch1_trend.csv</text>
+<rect x="550.0" y="6160.8" width="430.0" height="6.0" rx="2" fill="#cfcdc7" />
+<line x1="300.0" y1="6178.8" x2="980.0" y2="6178.8" stroke="#e7e6e1" stroke-width="1" />
+<text x="300.0" y="6198.8" font-size="12.5" fill="#0a64d6" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">ch2_age_roaduser.csv</text>
+<rect x="550.0" y="6192.8" width="430.0" height="6.0" rx="2" fill="#cfcdc7" />
+<line x1="300.0" y1="6210.8" x2="980.0" y2="6210.8" stroke="#e7e6e1" stroke-width="1" />
+<text x="300.0" y="6230.8" font-size="12.5" fill="#0a64d6" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">severity.csv</text>
+<rect x="550.0" y="6224.8" width="430.0" height="6.0" rx="2" fill="#cfcdc7" />
+<line x1="300.0" y1="6242.8" x2="980.0" y2="6242.8" stroke="#e7e6e1" stroke-width="1" />
+<text x="300.0" y="6262.8" font-size="12.5" fill="#0a64d6" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">ch4_monthly.csv</text>
+<rect x="550.0" y="6256.8" width="430.0" height="6.0" rx="2" fill="#cfcdc7" />
+<line x1="300.0" y1="6274.8" x2="980.0" y2="6274.8" stroke="#e7e6e1" stroke-width="1" />
+<text x="300.0" y="6294.8" font-size="12.5" fill="#0a64d6" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">ch4_state_cyclists.csv</text>
+<rect x="550.0" y="6288.8" width="430.0" height="6.0" rx="2" fill="#cfcdc7" />
+<line x1="300.0" y1="6306.8" x2="980.0" y2="6306.8" stroke="#e7e6e1" stroke-width="1" />
+<text x="300.0" y="6326.8" font-size="12.5" fill="#0a64d6" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">ch5_first_nations_trend.csv</text>
+<rect x="550.0" y="6320.8" width="430.0" height="6.0" rx="2" fill="#cfcdc7" />
+<line x1="300.0" y1="6338.8" x2="980.0" y2="6338.8" stroke="#e7e6e1" stroke-width="1" />
+<text x="300.0" y="6358.8" font-size="12.5" fill="#0a64d6" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">ch5_first_nations_profile.csv</text>
+<rect x="550.0" y="6352.8" width="430.0" height="6.0" rx="2" fill="#cfcdc7" />
+<line x1="300.0" y1="6370.8" x2="980.0" y2="6370.8" stroke="#e7e6e1" stroke-width="1" />
+<rect x="0.0" y="6406.8" width="1280.0" height="90.0" rx="0" fill="#55544f" />
+<text x="300.0" y="6440.8" font-size="14" fill="#fff" font-weight="600" text-anchor="start">Team Shu · COS30045 Data Visualisation · Swinburne · 2026</text>
+<text x="300.0" y="6464.8" font-size="12" fill="#ddd" font-weight="400" text-anchor="start">Data: BITRE, ABS, ARDD</text></g>
+<line x1="282.0" y1="15.0" x2="296.0" y2="15.0" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="282" cy="15.0" r="2" fill="#444"/>
+<text x="24.0" y="21.0" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Masthead: small site name + "Data</text>
+<text x="24.0" y="37.0" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">investigation" kicker.</text>
+<line x1="282.0" y1="55.0" x2="296.0" y2="55.0" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="282" cy="55.0" r="2" fill="#444"/>
+<text x="24.0" y="61.0" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Sticky chapter nav (stays pinned on</text>
+<text x="24.0" y="77.0" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">scroll); current chapter underlined.</text>
+<text x="24.0" y="93.0" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Links jump to section#ch1..ch5 and</text>
+<text x="24.0" y="109.0" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Methods.</text>
+<line x1="282.0" y1="147.0" x2="296.0" y2="147.0" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="282" cy="147.0" r="2" fill="#444"/>
+<text x="24.0" y="153.0" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Hero: kicker, headline (heavy sans),</text>
+<text x="24.0" y="169.0" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">standfirst, byline, then the lede</text>
+<text x="24.0" y="185.0" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">figure.</text>
+<line x1="112.0" y1="502.5" x2="119.0" y2="502.5" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="112" cy="502.5" r="2" fill="#444"/>
+<text x="10.0" y="506.5" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">No control here:</text>
+<text x="10.0" y="520.5" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">the figure is</text>
+<text x="10.0" y="534.5" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">read, not</text>
+<text x="10.0" y="548.5" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">operated.</text>
+<line x1="1161.0" y1="502.5" x2="1168.0" y2="502.5" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="1168" cy="502.5" r="2" fill="#444"/>
+<text x="1170.0" y="506.5" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Lede figure: one</text>
+<text x="1170.0" y="520.5" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">number the reader</text>
+<text x="1170.0" y="534.5" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">keeps.</text>
+<line x1="1161.0" y1="712.5" x2="1168.0" y2="712.5" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="1168" cy="712.5" r="2" fill="#444"/>
+<text x="1170.0" y="716.5" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Notes line</text>
+<text x="1170.0" y="730.5" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">directly under</text>
+<text x="1170.0" y="744.5" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">the chart: caveat</text>
+<text x="1170.0" y="758.5" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">+ source +</text>
+<text x="1170.0" y="772.5" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">period.</text>
+<line x1="112.0" y1="736.0" x2="119.0" y2="736.0" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="112" cy="736.0" r="2" fill="#444"/>
+<text x="10.0" y="740.0" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Every figure has</text>
+<text x="10.0" y="754.0" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">a data table in</text>
+<text x="10.0" y="768.0" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">&lt;details&gt; as a</text>
+<text x="10.0" y="782.0" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">text alternative.</text>
+<line x1="282.0" y1="852.0" x2="296.0" y2="852.0" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="282" cy="852.0" r="2" fill="#444"/>
+<text x="24.0" y="858.0" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Chapter 1: label, headline,</text>
+<text x="24.0" y="874.0" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">standfirst, What to know, beats.</text>
+<line x1="282.0" y1="1389.6" x2="296.0" y2="1389.6" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="282" cy="1389.6" r="2" fill="#444"/>
+<text x="24.0" y="1395.6" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Chapter 2: label, headline,</text>
+<text x="24.0" y="1411.6" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">standfirst, What to know, beats.</text>
+<line x1="282.0" y1="2146.8" x2="296.0" y2="2146.8" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="282" cy="2146.8" r="2" fill="#444"/>
+<text x="24.0" y="2152.8" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Chapter 3: label, headline,</text>
+<text x="24.0" y="2168.8" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">standfirst, What to know, beats.</text>
+<line x1="282.0" y1="3234.4" x2="296.0" y2="3234.4" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="282" cy="3234.4" r="2" fill="#444"/>
+<text x="24.0" y="3240.4" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Chapter 4: label, headline,</text>
+<text x="24.0" y="3256.4" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">standfirst, What to know, beats.</text>
+<line x1="282.0" y1="4509.2" x2="296.0" y2="4509.2" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="282" cy="4509.2" r="2" fill="#444"/>
+<text x="24.0" y="4515.2" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Chapter 5: label, headline,</text>
+<text x="24.0" y="4531.2" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">standfirst, What to know, beats.</text>
+<line x1="282.0" y1="5607.2" x2="296.0" y2="5607.2" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="282" cy="5607.2" r="2" fill="#444"/>
+<text x="24.0" y="5613.2" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Closing: "What to take away", 4</text>
+<text x="24.0" y="5629.2" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">short paragraphs, no chart.</text>
+<line x1="282.0" y1="5923.8" x2="296.0" y2="5923.8" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="282" cy="5923.8" r="2" fill="#444"/>
+<text x="24.0" y="5929.8" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Methods and limitations box:</text>
+<text x="24.0" y="5945.8" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">sources, rules, processing. Plain</text>
+<text x="24.0" y="5961.8" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">language, no chart.</text>
+<line x1="282.0" y1="6127.8" x2="296.0" y2="6127.8" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="282" cy="6127.8" r="2" fill="#444"/>
+<text x="24.0" y="6133.8" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Download the data: links to the 7</text>
+<text x="24.0" y="6149.8" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">CSVs, each with a one-line</text>
+<text x="24.0" y="6165.8" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">description.</text>
+<line x1="282.0" y1="6421.8" x2="296.0" y2="6421.8" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="282" cy="6421.8" r="2" fill="#444"/>
+<text x="24.0" y="6427.8" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Footer: team + unit line, credits</text>
+<text x="24.0" y="6443.8" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">line (BITRE, ABS, ARDD).</text><text x="12" y="6532.8" font-size="11" fill="#6b7280" font-style="italic">Low-fidelity wireframe: chart shapes are illustrative, not data.</text></svg>

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="1052" viewBox="0 0 440 1052" font-family="-apple-system,'Helvetica Neue',Helvetica,Arial,sans-serif" role="img" aria-label="Storyboard frame 2: Ch1 Counts vs rates"><title>Storyboard frame 2: Ch1 Counts vs rates</title><rect width="440" height="1052" fill="#fff"/><clipPath id="ph2"><rect x="0" y="0" width="400" height="760"/></clipPath><g transform="translate(20,20)"><rect width="400" height="760" fill="#faf9f6" stroke="#9a9892" stroke-width="1.5" rx="18"/><g clip-path="url(#ph2)"><rect x="0" y="0" width="400" height="40" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="14" y="26" font-size="15" fill="#222" font-weight="800" text-anchor="start" >Beyond the Road Toll</text>
+<text x="386" y="25" font-size="10" fill="#6b7280" font-weight="700" text-anchor="end" letter-spacing="1">DATA INVESTIGATION</text>
+<rect x="0" y="40" width="400" height="44" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<rect x="10" y="48" width="99" height="28" rx="14" fill="#0a64d6" stroke="#0a64d6" stroke-width="1.5" />
+<text x="59.5" y="67" font-size="12" fill="#fff" font-weight="600" text-anchor="middle" >1 Road toll</text>
+<rect x="116" y="48" width="71" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="151.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >2 Older</text>
+<rect x="194" y="48" width="92" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="240.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >3 Severity</text>
+<rect x="293" y="48" width="92" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="339.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >4 Lockdown</text>
+<rect x="392" y="48" width="78" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="431.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >5 Equity</text>
+<rect x="477" y="48" width="71" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="512.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >Methods</text>
+<text x="14" y="112" font-size="11" fill="#6b7280" font-weight="800" text-anchor="start" letter-spacing="2">CHAPTER 1</text>
+<text x="14" y="140" font-size="21" fill="#222" font-weight="800" text-anchor="start" >The road toll is falling.</text>
+<text x="14" y="165" font-size="21" fill="#222" font-weight="800" text-anchor="start" >The injury toll isn't.</text>
+<text x="14" y="190" font-size="10" fill="#6b7280" font-weight="400" text-anchor="start" font-family="Menlo,monospace">fig-1a</text>
+<text x="386" y="190" font-size="10" fill="#6b7280" font-weight="400" text-anchor="end" font-family="Menlo,monospace">ch1_trend.csv</text>
+<text x="14" y="214" font-size="11" fill="#6b7280" font-weight="700" text-anchor="start" >Show</text>
+<rect x="14.0" y="222" width="186.0" height="38" rx="0" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="107.0" y="246" font-size="12" fill="#0a64d6" font-weight="700" text-anchor="middle" >Counts</text>
+<rect x="200.0" y="222" width="186.0" height="38" rx="0" fill="#0a64d6" stroke="#0a64d6" stroke-width="1.5" />
+<text x="293.0" y="246" font-size="12" fill="#fff" font-weight="700" text-anchor="middle" >Per 100,000</text>
+<rect x="14" y="272" width="372" height="250" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="24" y="290" font-size="10" fill="#6b7280" font-weight="400" text-anchor="start" >2011 = 100</text>
+<line x1="40" y1="420" x2="380" y2="420" stroke="#cfcdc7" stroke-width="1" stroke-dasharray="3 3" />
+<path d="M50,420 L120,408 L200,395 L290,380 L370,360" fill="none" stroke="#cfcdc7" stroke-width="2" stroke-dasharray="5 4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="250" y="352" font-size="9.5" fill="#9a9892" font-weight="400" text-anchor="start" font-style="italic">counts (before tap)</text>
+<path d="M50,420 L120,418 L200,421 L290,420 L370,419" fill="none" stroke="#55544f" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="300" y="408" font-size="11" fill="#222" font-weight="800" text-anchor="end" >Hospitalised</text>
+<path d="M50,420 L120,426 L200,432 L290,436 L370,440" fill="none" stroke="#55544f" stroke-width="2" stroke-dasharray="6 4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="374" y="457" font-size="11" fill="#222" font-weight="800" text-anchor="end" >Road deaths</text>
+<text x="24" y="508" font-size="10" fill="#6b7280" font-weight="400" text-anchor="start" >2011</text>
+<text x="376" y="508" font-size="10" fill="#6b7280" font-weight="400" text-anchor="end" >2021</text>
+<rect x="14" y="540" width="372" height="70" rx="0" fill="#e7e6e1" stroke="none" stroke-width="1" />
+<rect x="14" y="540" width="4" height="70" rx="0" fill="#55544f" stroke="none" stroke-width="1" />
+<text x="28" y="562" font-size="10" fill="#55544f" font-weight="800" text-anchor="start" letter-spacing="1.5">READ-OUT</text>
+<text x="28" y="584" font-size="15" fill="#222" font-weight="800" text-anchor="start" >152.3 to 153.8 per 100,000</text>
+<text x="28" y="602" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" >Per person, the rate has barely moved.</text>
+<text x="14" y="640" font-size="10.5" fill="#6b7280" font-weight="400" text-anchor="start" >Notes: Per-person rates use ABS population at 30 June.</text>
+<rect x="14" y="656" width="372" height="40" rx="4" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="26" y="680" font-size="12" fill="#0a64d6" font-weight="700" text-anchor="start" >&gt; Show the numbers</text>
+<circle cx="300" cy="241" r="22" fill="#e8590c" fill-opacity="0.18" stroke="#e8590c" stroke-width="2" stroke-dasharray="4 3"/>
+<circle cx="300" cy="241" r="9" fill="#e8590c"/>
+<path d="M304,245 L316,271 L322,265 L316,261 L328,257 L308,243 Z" fill="#fff" stroke="#e8590c" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="274" y="213" font-size="11" fill="#e8590c" font-weight="800" text-anchor="start" >tap</text>
+<rect x="60" y="712" width="270" height="32" rx="12" fill="#fff" stroke="#e8590c" stroke-width="2" />
+<circle cx="40" cy="700" r="4" fill="#fff" stroke="#e8590c" stroke-width="2"/><circle cx="60.0" cy="706.0" r="6" fill="#fff" stroke="#e8590c" stroke-width="2"/>
+<text x="195.0" y="734" font-size="13" fill="#e8590c" font-weight="700" text-anchor="middle" font-style="italic">"So per person, not much changed?"</text>
+</g><rect width="400" height="760" fill="none" stroke="#9a9892" stroke-width="3" rx="18"/></g>
+<rect x="20" y="800" width="400" height="232" rx="6" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<rect x="20" y="800" width="400" height="30" rx="6" fill="#222" stroke="none" stroke-width="1" />
+<rect x="20" y="820" width="400" height="10" rx="0" fill="#222" stroke="none" stroke-width="1" />
+<text x="34" y="821" font-size="12" fill="#fff" font-weight="800" text-anchor="start" letter-spacing="0.5">FRAME 2  |  Ch1 Counts vs rates</text>
+<text x="34" y="852" font-size="9" fill="#e8590c" font-weight="800" text-anchor="start" letter-spacing="1">USER ACTION</text>
+<text x="150" y="852" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Taps 'Per 100,000' in the Counts / Per</text>
+<text x="150" y="867" font-size="12" fill="#222" font-weight="400" text-anchor="start" >100,000 toggle above fig-1a.</text>
+<text x="34" y="899" font-size="9" fill="#0a64d6" font-weight="800" text-anchor="start" letter-spacing="1">SYSTEM RESPONSE</text>
+<text x="150" y="899" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Lines re-index to 2011 = 100 per head; the</text>
+<text x="150" y="914" font-size="12" fill="#222" font-weight="400" text-anchor="start" >rising count line flattens and a read-out</text>
+<text x="150" y="929" font-size="12" fill="#222" font-weight="400" text-anchor="start" >says 152.3 to 153.8 per 100,000.</text>
+<text x="34" y="961" font-size="9" fill="#222" font-weight="800" text-anchor="start" letter-spacing="1">SAM LEARNS</text>
+<text x="150" y="961" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Deaths fell, but per person the injury</text>
+<text x="150" y="976" font-size="12" fill="#222" font-weight="400" text-anchor="start" >rate has barely moved: it is not getting</text>
+<text x="150" y="991" font-size="12" fill="#222" font-weight="400" text-anchor="start" >safer.</text>
+</svg>

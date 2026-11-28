@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="1052" viewBox="0 0 440 1052" font-family="-apple-system,'Helvetica Neue',Helvetica,Arial,sans-serif" role="img" aria-label="Storyboard frame 8: Close and verify"><title>Storyboard frame 8: Close and verify</title><rect width="440" height="1052" fill="#fff"/><clipPath id="ph8"><rect x="0" y="0" width="400" height="760"/></clipPath><g transform="translate(20,20)"><rect width="400" height="760" fill="#faf9f6" stroke="#9a9892" stroke-width="1.5" rx="18"/><g clip-path="url(#ph8)"><rect x="0" y="0" width="400" height="40" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="14" y="26" font-size="15" fill="#222" font-weight="800" text-anchor="start" >Beyond the Road Toll</text>
+<text x="386" y="25" font-size="10" fill="#6b7280" font-weight="700" text-anchor="end" letter-spacing="1">DATA INVESTIGATION</text>
+<rect x="0" y="40" width="400" height="44" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<rect x="10" y="48" width="99" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="59.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >1 Road toll</text>
+<rect x="116" y="48" width="71" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="151.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >2 Older</text>
+<rect x="194" y="48" width="92" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="240.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >3 Severity</text>
+<rect x="293" y="48" width="92" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="339.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >4 Lockdown</text>
+<rect x="392" y="48" width="78" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="431.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >5 Equity</text>
+<rect x="477" y="48" width="71" height="28" rx="14" fill="#0a64d6" stroke="#0a64d6" stroke-width="1.5" />
+<text x="512.5" y="67" font-size="12" fill="#fff" font-weight="600" text-anchor="middle" >Methods</text>
+<text x="14" y="114" font-size="21" fill="#222" font-weight="800" text-anchor="start" >What to take away</text>
+<text x="14" y="140" font-size="12.5" fill="#222" font-weight="700" text-anchor="start" >The road toll isn't the whole story.</text>
+<text x="14" y="159" font-size="12.5" fill="#222" font-weight="700" text-anchor="start" >If you ride, you're part of a growing group.</text>
+<text x="14" y="178" font-size="12.5" fill="#222" font-weight="700" text-anchor="start" >If your parents walk, it's what happens after.</text>
+<text x="14" y="197" font-size="12.5" fill="#222" font-weight="700" text-anchor="start" >The roads are not equally safe for everyone.</text>
+<text x="14" y="238" font-size="10" fill="#6b7280" font-weight="400" text-anchor="start" font-family="Menlo,monospace">fig-1a</text>
+<text x="386" y="238" font-size="10" fill="#6b7280" font-weight="400" text-anchor="end" font-family="Menlo,monospace">ch1_trend.csv</text>
+<rect x="14" y="248" width="372" height="170" rx="4" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="26" y="272" font-size="12.5" fill="#0a64d6" font-weight="700" text-anchor="start" >v Show the numbers</text>
+<text x="26" y="298" font-size="10.5" fill="#55544f" font-weight="800" text-anchor="start" >Year</text>
+<text x="100" y="298" font-size="10.5" fill="#55544f" font-weight="800" text-anchor="start" >Hospitalised</text>
+<text x="230" y="298" font-size="10.5" fill="#55544f" font-weight="800" text-anchor="start" >Road deaths</text>
+<line x1="26" y1="304" x2="374" y2="304" stroke="#cfcdc7" stroke-width="1" />
+<text x="26" y="322" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >2011</text>
+<text x="100" y="322" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >34,033</text>
+<text x="230" y="322" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >1,277</text>
+<text x="26" y="344" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >...</text>
+<text x="100" y="344" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >...</text>
+<text x="230" y="344" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >...</text>
+<text x="26" y="366" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >2021</text>
+<text x="100" y="366" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >39,505</text>
+<text x="230" y="366" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >1,130</text>
+<text x="26" y="396" font-size="10" fill="#6b7280" font-weight="400" text-anchor="start" font-style="italic">Scrolls sideways if wide; same data as the chart.</text>
+<circle cx="200" cy="262" r="22" fill="#e8590c" fill-opacity="0.18" stroke="#e8590c" stroke-width="2" stroke-dasharray="4 3"/>
+<circle cx="200" cy="262" r="9" fill="#e8590c"/>
+<path d="M204,266 L216,292 L222,286 L216,282 L228,278 L208,264 Z" fill="#fff" stroke="#e8590c" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="174" y="234" font-size="11" fill="#e8590c" font-weight="800" text-anchor="start" >tap</text>
+<rect x="14" y="438" width="372" height="230" rx="0" fill="#e7e6e1" stroke="none" stroke-width="1" />
+<rect x="14" y="438" width="372" height="2" rx="0" fill="#55544f" stroke="none" stroke-width="1" />
+<text x="26" y="462" font-size="14" fill="#222" font-weight="800" text-anchor="start" >Methods and limitations</text>
+<text x="26" y="486" font-size="9.5" fill="#55544f" font-weight="800" text-anchor="start" letter-spacing="1.5">SOURCES</text>
+<text x="26" y="504" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >BITRE hospitalised injury data (Sept 2023);</text>
+<text x="26" y="520" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >ABS estimated resident population;</text>
+<text x="26" y="536" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >BITRE Australian Road Deaths Database.</text>
+<text x="26" y="566" font-size="9.5" fill="#55544f" font-weight="800" text-anchor="start" letter-spacing="1.5">RULES</text>
+<text x="26" y="584" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >Counts are not rates.</text>
+<text x="26" y="600" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >Victoria (2012) and NSW (2017) counting</text>
+<text x="26" y="616" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >changes lower later counts.</text>
+<text x="26" y="632" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >No exposure data (trips, distance).</text>
+<circle cx="330" cy="454" r="22" fill="#e8590c" fill-opacity="0.18" stroke="#e8590c" stroke-width="2" stroke-dasharray="4 3"/>
+<circle cx="330" cy="454" r="9" fill="#e8590c"/>
+<path d="M334,458 L346,484 L352,478 L346,474 L358,470 L338,456 Z" fill="#fff" stroke="#e8590c" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="40" y="690" width="320" height="32" rx="12" fill="#fff" stroke="#e8590c" stroke-width="2" />
+<circle cx="70" cy="680" r="4" fill="#fff" stroke="#e8590c" stroke-width="2"/><circle cx="65.0" cy="685.0" r="6" fill="#fff" stroke="#e8590c" stroke-width="2"/>
+<text x="200.0" y="712" font-size="13" fill="#e8590c" font-weight="700" text-anchor="middle" font-style="italic">"Where does this come from? Let me check."</text>
+</g><rect width="400" height="760" fill="none" stroke="#9a9892" stroke-width="3" rx="18"/></g>
+<rect x="20" y="800" width="400" height="232" rx="6" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<rect x="20" y="800" width="400" height="30" rx="6" fill="#222" stroke="none" stroke-width="1" />
+<rect x="20" y="820" width="400" height="10" rx="0" fill="#222" stroke="none" stroke-width="1" />
+<text x="34" y="821" font-size="12" fill="#fff" font-weight="800" text-anchor="start" letter-spacing="0.5">FRAME 8  |  Close and verify</text>
+<text x="34" y="852" font-size="9" fill="#e8590c" font-weight="800" text-anchor="start" letter-spacing="1">USER ACTION</text>
+<text x="150" y="852" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Opens 'Show the numbers' under a figure,</text>
+<text x="150" y="867" font-size="12" fill="#222" font-weight="400" text-anchor="start" >then reads the Methods and limitations</text>
+<text x="150" y="882" font-size="12" fill="#222" font-weight="400" text-anchor="start" >box.</text>
+<text x="34" y="914" font-size="9" fill="#0a64d6" font-weight="800" text-anchor="start" letter-spacing="1">SYSTEM RESPONSE</text>
+<text x="150" y="914" font-size="12" fill="#222" font-weight="400" text-anchor="start" >A text table with the chart's data</text>
+<text x="150" y="929" font-size="12" fill="#222" font-weight="400" text-anchor="start" >expands; the methods panel lists sources,</text>
+<text x="150" y="944" font-size="12" fill="#222" font-weight="400" text-anchor="start" >rules and limitations.</text>
+<text x="34" y="976" font-size="9" fill="#222" font-weight="800" text-anchor="start" letter-spacing="1">SAM LEARNS</text>
+<text x="150" y="976" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Sam can check the source (BITRE, ABS) and</text>
+<text x="150" y="991" font-size="12" fill="#222" font-weight="400" text-anchor="start" >knows the limits before sharing the story.</text>
+</svg>

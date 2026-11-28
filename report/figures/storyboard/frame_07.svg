@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="1052" viewBox="0 0 440 1052" font-family="-apple-system,'Helvetica Neue',Helvetica,Arial,sans-serif" role="img" aria-label="Storyboard frame 7: Ch5 Index vs rate"><title>Storyboard frame 7: Ch5 Index vs rate</title><rect width="440" height="1052" fill="#fff"/><clipPath id="ph7"><rect x="0" y="0" width="400" height="760"/></clipPath><g transform="translate(20,20)"><rect width="400" height="760" fill="#faf9f6" stroke="#9a9892" stroke-width="1.5" rx="18"/><g clip-path="url(#ph7)"><rect x="0" y="0" width="400" height="40" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="14" y="26" font-size="15" fill="#222" font-weight="800" text-anchor="start" >Beyond the Road Toll</text>
+<text x="386" y="25" font-size="10" fill="#6b7280" font-weight="700" text-anchor="end" letter-spacing="1">DATA INVESTIGATION</text>
+<rect x="0" y="40" width="400" height="44" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<rect x="10" y="48" width="99" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="59.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >1 Road toll</text>
+<rect x="116" y="48" width="71" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="151.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >2 Older</text>
+<rect x="194" y="48" width="92" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="240.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >3 Severity</text>
+<rect x="293" y="48" width="92" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="339.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >4 Lockdown</text>
+<rect x="392" y="48" width="78" height="28" rx="14" fill="#0a64d6" stroke="#0a64d6" stroke-width="1.5" />
+<text x="431.0" y="67" font-size="12" fill="#fff" font-weight="600" text-anchor="middle" >5 Equity</text>
+<rect x="477" y="48" width="71" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="512.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >Methods</text>
+<text x="14" y="112" font-size="11" fill="#6b7280" font-weight="800" text-anchor="start" letter-spacing="2">CHAPTER 5</text>
+<text x="14" y="140" font-size="21" fill="#222" font-weight="800" text-anchor="start" >In 2011 First Nations Australians</text>
+<text x="14" y="165" font-size="21" fill="#222" font-weight="800" text-anchor="start" >were hospitalised at about the same</text>
+<text x="14" y="190" font-size="21" fill="#222" font-weight="800" text-anchor="start" >rate. By 2021: half as high again.</text>
+<text x="14" y="216" font-size="10" fill="#6b7280" font-weight="400" text-anchor="start" font-family="Menlo,monospace">fig-5a</text>
+<text x="386" y="216" font-size="10" fill="#6b7280" font-weight="400" text-anchor="end" font-family="Menlo,monospace">ch5_*.csv</text>
+<rect x="14.0" y="226" width="186.0" height="38" rx="0" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="107.0" y="250" font-size="12" fill="#0a64d6" font-weight="700" text-anchor="middle" >Hospitalisations (2011=100)</text>
+<rect x="200.0" y="226" width="186.0" height="38" rx="0" fill="#0a64d6" stroke="#0a64d6" stroke-width="1.5" />
+<text x="293.0" y="250" font-size="12" fill="#fff" font-weight="700" text-anchor="middle" >Per 100,000 people</text>
+<circle cx="300" cy="245" r="22" fill="#e8590c" fill-opacity="0.18" stroke="#e8590c" stroke-width="2" stroke-dasharray="4 3"/>
+<circle cx="300" cy="245" r="9" fill="#e8590c"/>
+<path d="M304,249 L316,275 L322,269 L316,265 L328,261 L308,247 Z" fill="#fff" stroke="#e8590c" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="274" y="217" font-size="11" fill="#e8590c" font-weight="800" text-anchor="start" >tap</text>
+<rect x="14" y="278" width="372" height="230" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<path d="M50,440 L120,435 L200,420 L280,360 L350,320" fill="none" stroke="#222" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="340" y="300" font-size="11" fill="#222" font-weight="800" text-anchor="end" >First Nations 226</text>
+<path d="M50,442 L120,440 L200,441 L280,440 L350,441" fill="none" stroke="#55544f" stroke-width="2.5" stroke-dasharray="6 4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="356" y="462" font-size="11" fill="#55544f" font-weight="800" text-anchor="end" >Everyone else 149</text>
+<text x="50" y="430" font-size="11" fill="#222" font-weight="800" text-anchor="start" >145</text>
+<line x1="350" y1="324" x2="350" y2="438" stroke="#e8590c" stroke-width="2" />
+<text x="332" y="386" font-size="11" fill="#e8590c" font-weight="800" text-anchor="end" >the gap</text>
+<text x="24" y="498" font-size="10" fill="#6b7280" font-weight="400" text-anchor="start" >2011</text>
+<text x="376" y="498" font-size="10" fill="#6b7280" font-weight="400" text-anchor="end" >2021</text>
+<rect x="14" y="522" width="372" height="76" rx="4" fill="#fff" stroke="#e8590c" stroke-width="2" />
+<text x="26" y="544" font-size="10" fill="#e8590c" font-weight="800" text-anchor="start" letter-spacing="1.5">CAVEAT</text>
+<text x="26" y="562" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >Better recording of Indigenous status may</text>
+<text x="26" y="577" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >explain part of the rise. Counts alone hide</text>
+<text x="26" y="592" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >the gap because the population grew.</text>
+<text x="14" y="626" font-size="10.5" fill="#6b7280" font-weight="400" text-anchor="start" >Counts: 1,167 to 2,220 (+90%) vs 31,997 to 36,755 (+15%).</text>
+<rect x="14" y="640" width="372" height="40" rx="4" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="26" y="664" font-size="12" fill="#0a64d6" font-weight="700" text-anchor="start" >&gt; Show the numbers</text>
+<rect x="40" y="700" width="320" height="32" rx="12" fill="#fff" stroke="#e8590c" stroke-width="2" />
+<circle cx="60" cy="690" r="4" fill="#fff" stroke="#e8590c" stroke-width="2"/><circle cx="60.0" cy="695.0" r="6" fill="#fff" stroke="#e8590c" stroke-width="2"/>
+<text x="200.0" y="722" font-size="13" fill="#e8590c" font-weight="700" text-anchor="middle" font-style="italic">"Counts hid this. Per person it is clear."</text>
+</g><rect width="400" height="760" fill="none" stroke="#9a9892" stroke-width="3" rx="18"/></g>
+<rect x="20" y="800" width="400" height="232" rx="6" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<rect x="20" y="800" width="400" height="30" rx="6" fill="#222" stroke="none" stroke-width="1" />
+<rect x="20" y="820" width="400" height="10" rx="0" fill="#222" stroke="none" stroke-width="1" />
+<text x="34" y="821" font-size="12" fill="#fff" font-weight="800" text-anchor="start" letter-spacing="0.5">FRAME 7  |  Ch5 Index vs rate</text>
+<text x="34" y="852" font-size="9" fill="#e8590c" font-weight="800" text-anchor="start" letter-spacing="1">USER ACTION</text>
+<text x="150" y="852" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Toggles Hospitalisations (index) to Per</text>
+<text x="150" y="867" font-size="12" fill="#222" font-weight="400" text-anchor="start" >100,000 people on fig-5a.</text>
+<text x="34" y="899" font-size="9" fill="#0a64d6" font-weight="800" text-anchor="start" letter-spacing="1">SYSTEM RESPONSE</text>
+<text x="150" y="899" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Two lines separate (145 to 226 vs 149 to</text>
+<text x="150" y="914" font-size="12" fill="#222" font-weight="400" text-anchor="start" >149 per 100,000); a caveat box beside the</text>
+<text x="150" y="929" font-size="12" fill="#222" font-weight="400" text-anchor="start" >chart notes possible recording changes.</text>
+<text x="34" y="961" font-size="9" fill="#222" font-weight="800" text-anchor="start" letter-spacing="1">SAM LEARNS</text>
+<text x="150" y="961" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Counts hid a real gap: per person, First</text>
+<text x="150" y="976" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Nations Australians were hospitalised half</text>
+<text x="150" y="991" font-size="12" fill="#222" font-weight="400" text-anchor="start" >as often again by 2021, with a caveat.</text>
+</svg>

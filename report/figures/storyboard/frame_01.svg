@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="1052" viewBox="0 0 440 1052" font-family="-apple-system,'Helvetica Neue',Helvetica,Arial,sans-serif" role="img" aria-label="Storyboard frame 1: Open the link"><title>Storyboard frame 1: Open the link</title><rect width="440" height="1052" fill="#fff"/><clipPath id="ph1"><rect x="0" y="0" width="400" height="760"/></clipPath><g transform="translate(20,20)"><rect width="400" height="760" fill="#faf9f6" stroke="#9a9892" stroke-width="1.5" rx="18"/><g clip-path="url(#ph1)"><rect x="0" y="0" width="400" height="40" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="14" y="26" font-size="15" fill="#222" font-weight="800" text-anchor="start" >Beyond the Road Toll</text>
+<text x="386" y="25" font-size="10" fill="#6b7280" font-weight="700" text-anchor="end" letter-spacing="1">DATA INVESTIGATION</text>
+<rect x="0" y="40" width="400" height="44" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<rect x="10" y="48" width="99" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="59.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >1 Road toll</text>
+<rect x="116" y="48" width="71" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="151.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >2 Older</text>
+<rect x="194" y="48" width="92" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="240.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >3 Severity</text>
+<rect x="293" y="48" width="92" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="339.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >4 Lockdown</text>
+<rect x="392" y="48" width="78" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="431.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >5 Equity</text>
+<rect x="477" y="48" width="71" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="512.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >Methods</text>
+<text x="14" y="114" font-size="10" fill="#6b7280" font-weight="800" text-anchor="start" letter-spacing="1.5">ROAD SAFETY  |  DATA INVESTIGATION</text>
+<text x="14" y="152" font-size="30" fill="#222" font-weight="800" text-anchor="start" >Beyond the road toll</text>
+<text x="14" y="182" font-size="14" fill="#55544f" font-weight="400" text-anchor="start" >Fewer Australians are dying on the roads.</text>
+<text x="14" y="201" font-size="14" fill="#55544f" font-weight="400" text-anchor="start" >The number being seriously hurt hasn't fallen.</text>
+<text x="14" y="236" font-size="10.5" fill="#6b7280" font-weight="400" text-anchor="start" >By Shu  |  Published 23 November 2026</text>
+<text x="14" y="266" font-size="10" fill="#6b7280" font-weight="400" text-anchor="start" font-family="Menlo,monospace">fig-1b</text>
+<text x="386" y="266" font-size="10" fill="#6b7280" font-weight="400" text-anchor="end" font-family="Menlo,monospace">ch1_trend.csv</text>
+<text x="14" y="290" font-size="15" fill="#222" font-weight="800" text-anchor="start" >For every road death, 35 people were</text>
+<text x="14" y="309" font-size="15" fill="#222" font-weight="800" text-anchor="start" >admitted to hospital (2021)</text>
+<rect x="40" y="330" width="24" height="24" rx="3" fill="#222" stroke="none" stroke-width="1" />
+<rect x="70" y="330" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="100" y="330" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="130" y="330" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="160" y="330" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="190" y="330" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="40" y="360" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="70" y="360" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="100" y="360" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="130" y="360" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="160" y="360" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="190" y="360" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="40" y="390" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="70" y="390" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="100" y="390" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="130" y="390" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="160" y="390" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="190" y="390" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="40" y="420" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="70" y="420" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="100" y="420" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="130" y="420" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="160" y="420" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="190" y="420" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="40" y="450" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="70" y="450" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="100" y="450" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="130" y="450" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="160" y="450" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="190" y="450" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="40" y="480" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="70" y="480" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="100" y="480" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="130" y="480" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="160" y="480" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="190" y="480" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<line x1="256" y1="343" x2="282" y2="343" stroke="#55544f" stroke-width="1.2" />
+<text x="288" y="339" font-size="12" fill="#222" font-weight="800" text-anchor="start" >1 road death</text>
+<text x="288" y="355" font-size="11" fill="#55544f" font-weight="400" text-anchor="start" >(1,130 in 2021)</text>
+<line x1="256" y1="415" x2="282" y2="415" stroke="#55544f" stroke-width="1.2" />
+<text x="288" y="411" font-size="12" fill="#55544f" font-weight="800" text-anchor="start" >35 admitted</text>
+<text x="288" y="427" font-size="11" fill="#55544f" font-weight="400" text-anchor="start" >(39,505 in 2021)</text>
+<text x="14" y="555" font-size="10.5" fill="#6b7280" font-weight="400" text-anchor="start" >Notes: Hospitalisations are people discharged alive...</text>
+<rect x="14" y="570" width="372" height="40" rx="4" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="26" y="594" font-size="12" fill="#0a64d6" font-weight="700" text-anchor="start" >&gt; Show the numbers</text>
+<rect x="14" y="640" width="372" height="6" rx="2" fill="#cfcdc7" stroke="none" stroke-width="1" />
+<rect x="14" y="654" width="372" height="6" rx="2" fill="#cfcdc7" stroke="none" stroke-width="1" />
+<rect x="14" y="668" width="204.60000000000002" height="6" rx="2" fill="#cfcdc7" stroke="none" stroke-width="1" />
+<text x="200" y="700" font-size="11" fill="#9a9892" font-weight="500" text-anchor="middle" font-style="italic">scroll down to chapter 1</text>
+<line x1="318" y1="610" x2="318" y2="700" stroke="#e8590c" stroke-width="3" />
+<path d="M310,692 L318,704 L326,692" fill="none" stroke="#e8590c" stroke-width="3"/><circle cx="318" cy="640" r="22" fill="#e8590c" fill-opacity="0.18" stroke="#e8590c" stroke-width="2" stroke-dasharray="4 3"/>
+<circle cx="318" cy="640" r="9" fill="#e8590c"/>
+<path d="M322,644 L334,670 L340,664 L334,660 L346,656 L326,642 Z" fill="#fff" stroke="#e8590c" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="292" y="612" font-size="11" fill="#e8590c" font-weight="800" text-anchor="start" >swipe up</text>
+<rect x="60" y="516" width="250" height="32" rx="12" fill="#fff" stroke="#e8590c" stroke-width="2" />
+<circle cx="40" cy="508" r="4" fill="#fff" stroke="#e8590c" stroke-width="2"/><circle cx="60.0" cy="512.0" r="6" fill="#fff" stroke="#e8590c" stroke-width="2"/>
+<text x="185.0" y="538" font-size="13" fill="#e8590c" font-weight="700" text-anchor="middle" font-style="italic">"Is it getting safer?"</text>
+</g><rect width="400" height="760" fill="none" stroke="#9a9892" stroke-width="3" rx="18"/></g>
+<rect x="20" y="800" width="400" height="232" rx="6" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<rect x="20" y="800" width="400" height="30" rx="6" fill="#222" stroke="none" stroke-width="1" />
+<rect x="20" y="820" width="400" height="10" rx="0" fill="#222" stroke="none" stroke-width="1" />
+<text x="34" y="821" font-size="12" fill="#fff" font-weight="800" text-anchor="start" letter-spacing="0.5">FRAME 1  |  Open the link</text>
+<text x="34" y="852" font-size="9" fill="#e8590c" font-weight="800" text-anchor="start" letter-spacing="1">USER ACTION</text>
+<text x="150" y="852" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Opens the link on the phone and scrolls</text>
+<text x="150" y="867" font-size="12" fill="#222" font-weight="400" text-anchor="start" >past the masthead.</text>
+<text x="34" y="899" font-size="9" fill="#0a64d6" font-weight="800" text-anchor="start" letter-spacing="1">SYSTEM RESPONSE</text>
+<text x="150" y="899" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Headline, lede and unit chart: 1 dark</text>
+<text x="150" y="914" font-size="12" fill="#222" font-weight="400" text-anchor="start" >square for each road death, 35 grey for</text>
+<text x="150" y="929" font-size="12" fill="#222" font-weight="400" text-anchor="start" >those admitted (39,505 vs 1,130 in 2021).</text>
+<text x="34" y="961" font-size="9" fill="#222" font-weight="800" text-anchor="start" letter-spacing="1">SAM LEARNS</text>
+<text x="150" y="961" font-size="12" fill="#222" font-weight="400" text-anchor="start" >The question is bigger than deaths: for</text>
+<text x="150" y="976" font-size="12" fill="#222" font-weight="400" text-anchor="start" >each person who dies, about 35 are</text>
+<text x="150" y="991" font-size="12" fill="#222" font-weight="400" text-anchor="start" >hospitalised.</text>
+</svg>

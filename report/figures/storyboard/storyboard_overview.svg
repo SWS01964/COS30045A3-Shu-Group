@@ -1,0 +1,694 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2050" height="2274" viewBox="0 0 2050 2274" font-family="-apple-system,'Helvetica Neue',Helvetica,Arial,sans-serif" role="img" aria-label="Interaction storyboard overview: eight frames of Sam using the site"><title>Interaction storyboard overview</title><rect width="2050" height="2274" fill="#fff"/><text x="40" y="40" font-size="22" fill="#222" font-weight="800" text-anchor="start" >Interaction storyboard: Sam reads Beyond the Road Toll on a phone</text>
+<text x="40" y="62" font-size="12.5" fill="#55544f" font-weight="400" text-anchor="start" >Eight moments, 375px mobile view. Grey = structure, blue = controls, orange = Sam's touch and thoughts.</text>
+<g transform="translate(40,80)"><clipPath id="ph1"><rect x="0" y="0" width="400" height="760"/></clipPath><g transform="translate(20,20)"><rect width="400" height="760" fill="#faf9f6" stroke="#9a9892" stroke-width="1.5" rx="18"/><g clip-path="url(#ph1)"><rect x="0" y="0" width="400" height="40" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="14" y="26" font-size="15" fill="#222" font-weight="800" text-anchor="start" >Beyond the Road Toll</text>
+<text x="386" y="25" font-size="10" fill="#6b7280" font-weight="700" text-anchor="end" letter-spacing="1">DATA INVESTIGATION</text>
+<rect x="0" y="40" width="400" height="44" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<rect x="10" y="48" width="99" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="59.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >1 Road toll</text>
+<rect x="116" y="48" width="71" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="151.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >2 Older</text>
+<rect x="194" y="48" width="92" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="240.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >3 Severity</text>
+<rect x="293" y="48" width="92" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="339.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >4 Lockdown</text>
+<rect x="392" y="48" width="78" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="431.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >5 Equity</text>
+<rect x="477" y="48" width="71" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="512.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >Methods</text>
+<text x="14" y="114" font-size="10" fill="#6b7280" font-weight="800" text-anchor="start" letter-spacing="1.5">ROAD SAFETY  |  DATA INVESTIGATION</text>
+<text x="14" y="152" font-size="30" fill="#222" font-weight="800" text-anchor="start" >Beyond the road toll</text>
+<text x="14" y="182" font-size="14" fill="#55544f" font-weight="400" text-anchor="start" >Fewer Australians are dying on the roads.</text>
+<text x="14" y="201" font-size="14" fill="#55544f" font-weight="400" text-anchor="start" >The number being seriously hurt hasn't fallen.</text>
+<text x="14" y="236" font-size="10.5" fill="#6b7280" font-weight="400" text-anchor="start" >By Shu  |  Published 23 November 2026</text>
+<text x="14" y="266" font-size="10" fill="#6b7280" font-weight="400" text-anchor="start" font-family="Menlo,monospace">fig-1b</text>
+<text x="386" y="266" font-size="10" fill="#6b7280" font-weight="400" text-anchor="end" font-family="Menlo,monospace">ch1_trend.csv</text>
+<text x="14" y="290" font-size="15" fill="#222" font-weight="800" text-anchor="start" >For every road death, 35 people were</text>
+<text x="14" y="309" font-size="15" fill="#222" font-weight="800" text-anchor="start" >admitted to hospital (2021)</text>
+<rect x="40" y="330" width="24" height="24" rx="3" fill="#222" stroke="none" stroke-width="1" />
+<rect x="70" y="330" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="100" y="330" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="130" y="330" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="160" y="330" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="190" y="330" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="40" y="360" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="70" y="360" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="100" y="360" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="130" y="360" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="160" y="360" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="190" y="360" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="40" y="390" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="70" y="390" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="100" y="390" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="130" y="390" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="160" y="390" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="190" y="390" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="40" y="420" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="70" y="420" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="100" y="420" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="130" y="420" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="160" y="420" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="190" y="420" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="40" y="450" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="70" y="450" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="100" y="450" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="130" y="450" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="160" y="450" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="190" y="450" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="40" y="480" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="70" y="480" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="100" y="480" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="130" y="480" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="160" y="480" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="190" y="480" width="24" height="24" rx="3" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<line x1="256" y1="343" x2="282" y2="343" stroke="#55544f" stroke-width="1.2" />
+<text x="288" y="339" font-size="12" fill="#222" font-weight="800" text-anchor="start" >1 road death</text>
+<text x="288" y="355" font-size="11" fill="#55544f" font-weight="400" text-anchor="start" >(1,130 in 2021)</text>
+<line x1="256" y1="415" x2="282" y2="415" stroke="#55544f" stroke-width="1.2" />
+<text x="288" y="411" font-size="12" fill="#55544f" font-weight="800" text-anchor="start" >35 admitted</text>
+<text x="288" y="427" font-size="11" fill="#55544f" font-weight="400" text-anchor="start" >(39,505 in 2021)</text>
+<text x="14" y="555" font-size="10.5" fill="#6b7280" font-weight="400" text-anchor="start" >Notes: Hospitalisations are people discharged alive...</text>
+<rect x="14" y="570" width="372" height="40" rx="4" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="26" y="594" font-size="12" fill="#0a64d6" font-weight="700" text-anchor="start" >&gt; Show the numbers</text>
+<rect x="14" y="640" width="372" height="6" rx="2" fill="#cfcdc7" stroke="none" stroke-width="1" />
+<rect x="14" y="654" width="372" height="6" rx="2" fill="#cfcdc7" stroke="none" stroke-width="1" />
+<rect x="14" y="668" width="204.60000000000002" height="6" rx="2" fill="#cfcdc7" stroke="none" stroke-width="1" />
+<text x="200" y="700" font-size="11" fill="#9a9892" font-weight="500" text-anchor="middle" font-style="italic">scroll down to chapter 1</text>
+<line x1="318" y1="610" x2="318" y2="700" stroke="#e8590c" stroke-width="3" />
+<path d="M310,692 L318,704 L326,692" fill="none" stroke="#e8590c" stroke-width="3"/><circle cx="318" cy="640" r="22" fill="#e8590c" fill-opacity="0.18" stroke="#e8590c" stroke-width="2" stroke-dasharray="4 3"/>
+<circle cx="318" cy="640" r="9" fill="#e8590c"/>
+<path d="M322,644 L334,670 L340,664 L334,660 L346,656 L326,642 Z" fill="#fff" stroke="#e8590c" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="292" y="612" font-size="11" fill="#e8590c" font-weight="800" text-anchor="start" >swipe up</text>
+<rect x="60" y="516" width="250" height="32" rx="12" fill="#fff" stroke="#e8590c" stroke-width="2" />
+<circle cx="40" cy="508" r="4" fill="#fff" stroke="#e8590c" stroke-width="2"/><circle cx="60.0" cy="512.0" r="6" fill="#fff" stroke="#e8590c" stroke-width="2"/>
+<text x="185.0" y="538" font-size="13" fill="#e8590c" font-weight="700" text-anchor="middle" font-style="italic">"Is it getting safer?"</text>
+</g><rect width="400" height="760" fill="none" stroke="#9a9892" stroke-width="3" rx="18"/></g>
+<rect x="20" y="800" width="400" height="232" rx="6" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<rect x="20" y="800" width="400" height="30" rx="6" fill="#222" stroke="none" stroke-width="1" />
+<rect x="20" y="820" width="400" height="10" rx="0" fill="#222" stroke="none" stroke-width="1" />
+<text x="34" y="821" font-size="12" fill="#fff" font-weight="800" text-anchor="start" letter-spacing="0.5">FRAME 1  |  Open the link</text>
+<text x="34" y="852" font-size="9" fill="#e8590c" font-weight="800" text-anchor="start" letter-spacing="1">USER ACTION</text>
+<text x="150" y="852" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Opens the link on the phone and scrolls</text>
+<text x="150" y="867" font-size="12" fill="#222" font-weight="400" text-anchor="start" >past the masthead.</text>
+<text x="34" y="899" font-size="9" fill="#0a64d6" font-weight="800" text-anchor="start" letter-spacing="1">SYSTEM RESPONSE</text>
+<text x="150" y="899" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Headline, lede and unit chart: 1 dark</text>
+<text x="150" y="914" font-size="12" fill="#222" font-weight="400" text-anchor="start" >square for each road death, 35 grey for</text>
+<text x="150" y="929" font-size="12" fill="#222" font-weight="400" text-anchor="start" >those admitted (39,505 vs 1,130 in 2021).</text>
+<text x="34" y="961" font-size="9" fill="#222" font-weight="800" text-anchor="start" letter-spacing="1">SAM LEARNS</text>
+<text x="150" y="961" font-size="12" fill="#222" font-weight="400" text-anchor="start" >The question is bigger than deaths: for</text>
+<text x="150" y="976" font-size="12" fill="#222" font-weight="400" text-anchor="start" >each person who dies, about 35 are</text>
+<text x="150" y="991" font-size="12" fill="#222" font-weight="400" text-anchor="start" >hospitalised.</text>
+</g><g transform="translate(550,80)"><clipPath id="ph2"><rect x="0" y="0" width="400" height="760"/></clipPath><g transform="translate(20,20)"><rect width="400" height="760" fill="#faf9f6" stroke="#9a9892" stroke-width="1.5" rx="18"/><g clip-path="url(#ph2)"><rect x="0" y="0" width="400" height="40" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="14" y="26" font-size="15" fill="#222" font-weight="800" text-anchor="start" >Beyond the Road Toll</text>
+<text x="386" y="25" font-size="10" fill="#6b7280" font-weight="700" text-anchor="end" letter-spacing="1">DATA INVESTIGATION</text>
+<rect x="0" y="40" width="400" height="44" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<rect x="10" y="48" width="99" height="28" rx="14" fill="#0a64d6" stroke="#0a64d6" stroke-width="1.5" />
+<text x="59.5" y="67" font-size="12" fill="#fff" font-weight="600" text-anchor="middle" >1 Road toll</text>
+<rect x="116" y="48" width="71" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="151.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >2 Older</text>
+<rect x="194" y="48" width="92" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="240.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >3 Severity</text>
+<rect x="293" y="48" width="92" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="339.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >4 Lockdown</text>
+<rect x="392" y="48" width="78" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="431.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >5 Equity</text>
+<rect x="477" y="48" width="71" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="512.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >Methods</text>
+<text x="14" y="112" font-size="11" fill="#6b7280" font-weight="800" text-anchor="start" letter-spacing="2">CHAPTER 1</text>
+<text x="14" y="140" font-size="21" fill="#222" font-weight="800" text-anchor="start" >The road toll is falling.</text>
+<text x="14" y="165" font-size="21" fill="#222" font-weight="800" text-anchor="start" >The injury toll isn't.</text>
+<text x="14" y="190" font-size="10" fill="#6b7280" font-weight="400" text-anchor="start" font-family="Menlo,monospace">fig-1a</text>
+<text x="386" y="190" font-size="10" fill="#6b7280" font-weight="400" text-anchor="end" font-family="Menlo,monospace">ch1_trend.csv</text>
+<text x="14" y="214" font-size="11" fill="#6b7280" font-weight="700" text-anchor="start" >Show</text>
+<rect x="14.0" y="222" width="186.0" height="38" rx="0" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="107.0" y="246" font-size="12" fill="#0a64d6" font-weight="700" text-anchor="middle" >Counts</text>
+<rect x="200.0" y="222" width="186.0" height="38" rx="0" fill="#0a64d6" stroke="#0a64d6" stroke-width="1.5" />
+<text x="293.0" y="246" font-size="12" fill="#fff" font-weight="700" text-anchor="middle" >Per 100,000</text>
+<rect x="14" y="272" width="372" height="250" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="24" y="290" font-size="10" fill="#6b7280" font-weight="400" text-anchor="start" >2011 = 100</text>
+<line x1="40" y1="420" x2="380" y2="420" stroke="#cfcdc7" stroke-width="1" stroke-dasharray="3 3" />
+<path d="M50,420 L120,408 L200,395 L290,380 L370,360" fill="none" stroke="#cfcdc7" stroke-width="2" stroke-dasharray="5 4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="250" y="352" font-size="9.5" fill="#9a9892" font-weight="400" text-anchor="start" font-style="italic">counts (before tap)</text>
+<path d="M50,420 L120,418 L200,421 L290,420 L370,419" fill="none" stroke="#55544f" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="300" y="408" font-size="11" fill="#222" font-weight="800" text-anchor="end" >Hospitalised</text>
+<path d="M50,420 L120,426 L200,432 L290,436 L370,440" fill="none" stroke="#55544f" stroke-width="2" stroke-dasharray="6 4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="374" y="457" font-size="11" fill="#222" font-weight="800" text-anchor="end" >Road deaths</text>
+<text x="24" y="508" font-size="10" fill="#6b7280" font-weight="400" text-anchor="start" >2011</text>
+<text x="376" y="508" font-size="10" fill="#6b7280" font-weight="400" text-anchor="end" >2021</text>
+<rect x="14" y="540" width="372" height="70" rx="0" fill="#e7e6e1" stroke="none" stroke-width="1" />
+<rect x="14" y="540" width="4" height="70" rx="0" fill="#55544f" stroke="none" stroke-width="1" />
+<text x="28" y="562" font-size="10" fill="#55544f" font-weight="800" text-anchor="start" letter-spacing="1.5">READ-OUT</text>
+<text x="28" y="584" font-size="15" fill="#222" font-weight="800" text-anchor="start" >152.3 to 153.8 per 100,000</text>
+<text x="28" y="602" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" >Per person, the rate has barely moved.</text>
+<text x="14" y="640" font-size="10.5" fill="#6b7280" font-weight="400" text-anchor="start" >Notes: Per-person rates use ABS population at 30 June.</text>
+<rect x="14" y="656" width="372" height="40" rx="4" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="26" y="680" font-size="12" fill="#0a64d6" font-weight="700" text-anchor="start" >&gt; Show the numbers</text>
+<circle cx="300" cy="241" r="22" fill="#e8590c" fill-opacity="0.18" stroke="#e8590c" stroke-width="2" stroke-dasharray="4 3"/>
+<circle cx="300" cy="241" r="9" fill="#e8590c"/>
+<path d="M304,245 L316,271 L322,265 L316,261 L328,257 L308,243 Z" fill="#fff" stroke="#e8590c" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="274" y="213" font-size="11" fill="#e8590c" font-weight="800" text-anchor="start" >tap</text>
+<rect x="60" y="712" width="270" height="32" rx="12" fill="#fff" stroke="#e8590c" stroke-width="2" />
+<circle cx="40" cy="700" r="4" fill="#fff" stroke="#e8590c" stroke-width="2"/><circle cx="60.0" cy="706.0" r="6" fill="#fff" stroke="#e8590c" stroke-width="2"/>
+<text x="195.0" y="734" font-size="13" fill="#e8590c" font-weight="700" text-anchor="middle" font-style="italic">"So per person, not much changed?"</text>
+</g><rect width="400" height="760" fill="none" stroke="#9a9892" stroke-width="3" rx="18"/></g>
+<rect x="20" y="800" width="400" height="232" rx="6" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<rect x="20" y="800" width="400" height="30" rx="6" fill="#222" stroke="none" stroke-width="1" />
+<rect x="20" y="820" width="400" height="10" rx="0" fill="#222" stroke="none" stroke-width="1" />
+<text x="34" y="821" font-size="12" fill="#fff" font-weight="800" text-anchor="start" letter-spacing="0.5">FRAME 2  |  Ch1 Counts vs rates</text>
+<text x="34" y="852" font-size="9" fill="#e8590c" font-weight="800" text-anchor="start" letter-spacing="1">USER ACTION</text>
+<text x="150" y="852" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Taps 'Per 100,000' in the Counts / Per</text>
+<text x="150" y="867" font-size="12" fill="#222" font-weight="400" text-anchor="start" >100,000 toggle above fig-1a.</text>
+<text x="34" y="899" font-size="9" fill="#0a64d6" font-weight="800" text-anchor="start" letter-spacing="1">SYSTEM RESPONSE</text>
+<text x="150" y="899" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Lines re-index to 2011 = 100 per head; the</text>
+<text x="150" y="914" font-size="12" fill="#222" font-weight="400" text-anchor="start" >rising count line flattens and a read-out</text>
+<text x="150" y="929" font-size="12" fill="#222" font-weight="400" text-anchor="start" >says 152.3 to 153.8 per 100,000.</text>
+<text x="34" y="961" font-size="9" fill="#222" font-weight="800" text-anchor="start" letter-spacing="1">SAM LEARNS</text>
+<text x="150" y="961" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Deaths fell, but per person the injury</text>
+<text x="150" y="976" font-size="12" fill="#222" font-weight="400" text-anchor="start" >rate has barely moved: it is not getting</text>
+<text x="150" y="991" font-size="12" fill="#222" font-weight="400" text-anchor="start" >safer.</text>
+</g><g transform="translate(1060,80)"><clipPath id="ph3"><rect x="0" y="0" width="400" height="760"/></clipPath><g transform="translate(20,20)"><rect width="400" height="760" fill="#faf9f6" stroke="#9a9892" stroke-width="1.5" rx="18"/><g clip-path="url(#ph3)"><rect x="0" y="0" width="400" height="40" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="14" y="26" font-size="15" fill="#222" font-weight="800" text-anchor="start" >Beyond the Road Toll</text>
+<text x="386" y="25" font-size="10" fill="#6b7280" font-weight="700" text-anchor="end" letter-spacing="1">DATA INVESTIGATION</text>
+<rect x="0" y="40" width="400" height="44" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<rect x="10" y="48" width="99" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="59.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >1 Road toll</text>
+<rect x="116" y="48" width="71" height="28" rx="14" fill="#0a64d6" stroke="#0a64d6" stroke-width="1.5" />
+<text x="151.5" y="67" font-size="12" fill="#fff" font-weight="600" text-anchor="middle" >2 Older</text>
+<rect x="194" y="48" width="92" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="240.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >3 Severity</text>
+<rect x="293" y="48" width="92" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="339.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >4 Lockdown</text>
+<rect x="392" y="48" width="78" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="431.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >5 Equity</text>
+<rect x="477" y="48" width="71" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="512.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >Methods</text>
+<text x="14" y="108" font-size="11.5" fill="#222" font-weight="800" text-anchor="start" >Cycling injuries have more than doubled among over-65s.</text>
+<text x="14" y="126" font-size="10" fill="#6b7280" font-weight="400" text-anchor="start" font-family="Menlo,monospace">fig-2a</text>
+<text x="386" y="126" font-size="10" fill="#6b7280" font-weight="400" text-anchor="end" font-family="Menlo,monospace">ch2_age_roaduser.csv</text>
+<text x="14" y="144" font-size="11" fill="#6b7280" font-weight="700" text-anchor="start" >I travel by</text>
+<rect x="14" y="150" width="180" height="34" rx="4" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="24" y="172" font-size="12" fill="#222" font-weight="600" text-anchor="start" >Pedal cyclist</text>
+<text x="180" y="172" font-size="11" fill="#55544f" font-weight="700" text-anchor="middle" >v</text>
+<text x="206" y="144" font-size="11" fill="#6b7280" font-weight="700" text-anchor="start" >I'm aged</text>
+<rect x="206" y="150" width="100" height="34" rx="4" fill="#fff" stroke="#e8590c" stroke-width="2" />
+<text x="216" y="172" font-size="12" fill="#222" font-weight="600" text-anchor="start" >75+</text>
+<text x="292" y="172" font-size="11" fill="#55544f" font-weight="700" text-anchor="middle" >v</text>
+<text x="316" y="172" font-size="10" fill="#9a9892" font-weight="400" text-anchor="start" font-style="italic">was 40-64</text>
+<text x="14" y="214" font-size="11" fill="#6b7280" font-weight="700" text-anchor="start" >Show</text>
+<rect x="60.0" y="200" width="75.0" height="38" rx="0" fill="#0a64d6" stroke="#0a64d6" stroke-width="1.5" />
+<text x="97.5" y="224" font-size="12" fill="#fff" font-weight="700" text-anchor="middle" >Counts</text>
+<rect x="135.0" y="200" width="75.0" height="38" rx="0" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="172.5" y="224" font-size="12" fill="#0a64d6" font-weight="700" text-anchor="middle" >Per person</text>
+<text x="120.5" y="256" font-size="10" fill="#55544f" font-weight="600" text-anchor="middle" >0-7</text>
+<text x="161.5" y="256" font-size="10" fill="#55544f" font-weight="600" text-anchor="middle" >8-16</text>
+<text x="202.5" y="256" font-size="10" fill="#55544f" font-weight="600" text-anchor="middle" >17-25</text>
+<text x="243.5" y="256" font-size="10" fill="#55544f" font-weight="600" text-anchor="middle" >26-39</text>
+<text x="284.5" y="256" font-size="10" fill="#55544f" font-weight="600" text-anchor="middle" >40-64</text>
+<text x="325.5" y="256" font-size="10" fill="#55544f" font-weight="600" text-anchor="middle" >65-74</text>
+<text x="366.5" y="256" font-size="10" fill="#55544f" font-weight="600" text-anchor="middle" >75+</text>
+<text x="94" y="282.0" font-size="10" fill="#55544f" font-weight="600" text-anchor="end" >Car driver</text>
+<rect x="100" y="262" width="39" height="30" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<rect x="141" y="262" width="39" height="30" rx="0" fill="rgb(180,179,173)" stroke="none" stroke-width="1" />
+<rect x="182" y="262" width="39" height="30" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<rect x="223" y="262" width="39" height="30" rx="0" fill="rgb(180,179,173)" stroke="none" stroke-width="1" />
+<rect x="264" y="262" width="39" height="30" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<rect x="305" y="262" width="39" height="30" rx="0" fill="rgb(180,179,173)" stroke="none" stroke-width="1" />
+<rect x="346" y="262" width="39" height="30" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<text x="94" y="314.0" font-size="10" fill="#55544f" font-weight="600" text-anchor="end" >Car passenger</text>
+<rect x="100" y="294" width="39" height="30" rx="0" fill="rgb(163,162,156)" stroke="none" stroke-width="1" />
+<rect x="141" y="294" width="39" height="30" rx="0" fill="rgb(197,196,190)" stroke="none" stroke-width="1" />
+<rect x="182" y="294" width="39" height="30" rx="0" fill="rgb(163,162,156)" stroke="none" stroke-width="1" />
+<rect x="223" y="294" width="39" height="30" rx="0" fill="rgb(197,196,190)" stroke="none" stroke-width="1" />
+<rect x="264" y="294" width="39" height="30" rx="0" fill="rgb(163,162,156)" stroke="none" stroke-width="1" />
+<rect x="305" y="294" width="39" height="30" rx="0" fill="rgb(197,196,190)" stroke="none" stroke-width="1" />
+<rect x="346" y="294" width="39" height="30" rx="0" fill="rgb(163,162,156)" stroke="none" stroke-width="1" />
+<text x="94" y="346.0" font-size="10" fill="#55544f" font-weight="600" text-anchor="end" >Motorcyclist</text>
+<rect x="100" y="326" width="39" height="30" rx="0" fill="rgb(180,179,173)" stroke="none" stroke-width="1" />
+<rect x="141" y="326" width="39" height="30" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<rect x="182" y="326" width="39" height="30" rx="0" fill="rgb(180,179,173)" stroke="none" stroke-width="1" />
+<rect x="223" y="326" width="39" height="30" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<rect x="264" y="326" width="39" height="30" rx="0" fill="rgb(180,179,173)" stroke="none" stroke-width="1" />
+<rect x="305" y="326" width="39" height="30" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<rect x="346" y="326" width="39" height="30" rx="0" fill="rgb(180,179,173)" stroke="none" stroke-width="1" />
+<text x="94" y="378.0" font-size="10" fill="#55544f" font-weight="600" text-anchor="end" >Pedal cyclist</text>
+<rect x="100" y="358" width="39" height="30" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<rect x="141" y="358" width="39" height="30" rx="0" fill="rgb(197,196,190)" stroke="none" stroke-width="1" />
+<rect x="182" y="358" width="39" height="30" rx="0" fill="rgb(180,179,173)" stroke="none" stroke-width="1" />
+<rect x="223" y="358" width="39" height="30" rx="0" fill="rgb(163,162,156)" stroke="none" stroke-width="1" />
+<rect x="264" y="358" width="39" height="30" rx="0" fill="rgb(146,145,139)" stroke="none" stroke-width="1" />
+<rect x="305" y="358" width="39" height="30" rx="0" fill="rgb(130,129,123)" stroke="none" stroke-width="1" />
+<rect x="346" y="358" width="39" height="30" rx="0" fill="rgb(113,112,106)" stroke="none" stroke-width="1" />
+<text x="94" y="410.0" font-size="10" fill="#55544f" font-weight="600" text-anchor="end" >Pedestrian</text>
+<rect x="100" y="390" width="39" height="30" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<rect x="141" y="390" width="39" height="30" rx="0" fill="rgb(180,179,173)" stroke="none" stroke-width="1" />
+<rect x="182" y="390" width="39" height="30" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<rect x="223" y="390" width="39" height="30" rx="0" fill="rgb(180,179,173)" stroke="none" stroke-width="1" />
+<rect x="264" y="390" width="39" height="30" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<rect x="305" y="390" width="39" height="30" rx="0" fill="rgb(180,179,173)" stroke="none" stroke-width="1" />
+<rect x="346" y="390" width="39" height="30" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<rect x="262" y="356" width="43" height="34" rx="2" fill="none" stroke="#e8590c" stroke-width="2" stroke-dasharray="4 3"/>
+<rect x="344" y="356" width="43" height="34" rx="2" fill="none" stroke="#e8590c" stroke-width="3" />
+<text x="14" y="244" font-size="10" fill="#55544f" font-weight="500" text-anchor="start" >% change, 3-yr averages 2011-13 to 2019-21</text>
+<text x="14" y="450" font-size="10" fill="#e8590c" font-weight="600" text-anchor="start" >dashed = earlier pick (40-64)</text>
+<rect x="14" y="470" width="372" height="92" rx="0" fill="#e7e6e1" stroke="none" stroke-width="1" />
+<rect x="14" y="470" width="4" height="92" rx="0" fill="#e8590c" stroke="none" stroke-width="1" />
+<text x="28" y="492" font-size="10" fill="#55544f" font-weight="800" text-anchor="start" letter-spacing="1.5">YOUR CELL</text>
+<text x="28" y="514" font-size="13" fill="#222" font-weight="700" text-anchor="start" >Cyclists aged 75+: admissions up 142%</text>
+<text x="28" y="532" font-size="13" fill="#222" font-weight="700" text-anchor="start" >(3-year averages, 2011-13 to 2019-21).</text>
+<text x="28" y="552" font-size="11" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">Sentence rewrites itself for each pick.</text>
+<text x="14" y="590" font-size="10.5" fill="#6b7280" font-weight="400" text-anchor="start" >Low-count cells (avg under 30 a year) are hatched.</text>
+<rect x="14" y="606" width="372" height="40" rx="4" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="26" y="630" font-size="12" fill="#0a64d6" font-weight="700" text-anchor="start" >&gt; Show the numbers</text>
+<circle cx="250" cy="185" r="22" fill="#e8590c" fill-opacity="0.18" stroke="#e8590c" stroke-width="2" stroke-dasharray="4 3"/>
+<circle cx="250" cy="185" r="9" fill="#e8590c"/>
+<path d="M254,189 L266,215 L272,209 L266,205 L278,201 L258,187 Z" fill="#fff" stroke="#e8590c" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="224" y="157" font-size="11" fill="#e8590c" font-weight="800" text-anchor="start" >picks 75+</text>
+<rect x="40" y="672" width="320" height="32" rx="12" fill="#fff" stroke="#e8590c" stroke-width="2" />
+<circle cx="60" cy="660" r="4" fill="#fff" stroke="#e8590c" stroke-width="2"/><circle cx="60.0" cy="666.0" r="6" fill="#fff" stroke="#e8590c" stroke-width="2"/>
+<text x="200.0" y="694" font-size="13" fill="#e8590c" font-weight="700" text-anchor="middle" font-style="italic">"First me, 40-64. Now Mum and Dad: 75+."</text>
+</g><rect width="400" height="760" fill="none" stroke="#9a9892" stroke-width="3" rx="18"/></g>
+<rect x="20" y="800" width="400" height="232" rx="6" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<rect x="20" y="800" width="400" height="30" rx="6" fill="#222" stroke="none" stroke-width="1" />
+<rect x="20" y="820" width="400" height="10" rx="0" fill="#222" stroke="none" stroke-width="1" />
+<text x="34" y="821" font-size="12" fill="#fff" font-weight="800" text-anchor="start" letter-spacing="0.5">FRAME 3  |  Ch2 Find yourself</text>
+<text x="34" y="852" font-size="9" fill="#e8590c" font-weight="800" text-anchor="start" letter-spacing="1">USER ACTION</text>
+<text x="150" y="852" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Chooses 'I travel by: Pedal cyclist' and</text>
+<text x="150" y="867" font-size="12" fill="#222" font-weight="400" text-anchor="start" >'I'm aged: 40-64', then changes the age to</text>
+<text x="150" y="882" font-size="12" fill="#222" font-weight="400" text-anchor="start" >75+ for their parents.</text>
+<text x="34" y="914" font-size="9" fill="#0a64d6" font-weight="800" text-anchor="start" letter-spacing="1">SYSTEM RESPONSE</text>
+<text x="150" y="914" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Own heatmap cell is outlined and a</text>
+<text x="150" y="929" font-size="12" fill="#222" font-weight="400" text-anchor="start" >sentence under the chart rewrites itself;</text>
+<text x="150" y="944" font-size="12" fill="#222" font-weight="400" text-anchor="start" >the earlier pick stays as a dashed ghost.</text>
+<text x="34" y="976" font-size="9" fill="#222" font-weight="800" text-anchor="start" letter-spacing="1">SAM LEARNS</text>
+<text x="150" y="976" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Older riders are the fast-growing group:</text>
+<text x="150" y="991" font-size="12" fill="#222" font-weight="400" text-anchor="start" >cyclists aged 75+ up 142%, and Sam sees</text>
+<text x="150" y="1006" font-size="12" fill="#222" font-weight="400" text-anchor="start" >where they sit.</text>
+</g><g transform="translate(1570,80)"><clipPath id="ph4"><rect x="0" y="0" width="400" height="760"/></clipPath><g transform="translate(20,20)"><rect width="400" height="760" fill="#faf9f6" stroke="#9a9892" stroke-width="1.5" rx="18"/><g clip-path="url(#ph4)"><rect x="0" y="0" width="400" height="40" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="14" y="26" font-size="15" fill="#222" font-weight="800" text-anchor="start" >Beyond the Road Toll</text>
+<text x="386" y="25" font-size="10" fill="#6b7280" font-weight="700" text-anchor="end" letter-spacing="1">DATA INVESTIGATION</text>
+<rect x="0" y="40" width="400" height="44" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<rect x="10" y="48" width="99" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="59.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >1 Road toll</text>
+<rect x="116" y="48" width="71" height="28" rx="14" fill="#0a64d6" stroke="#0a64d6" stroke-width="1.5" />
+<text x="151.5" y="67" font-size="12" fill="#fff" font-weight="600" text-anchor="middle" >2 Older</text>
+<rect x="194" y="48" width="92" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="240.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >3 Severity</text>
+<rect x="293" y="48" width="92" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="339.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >4 Lockdown</text>
+<rect x="392" y="48" width="78" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="431.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >5 Equity</text>
+<rect x="477" y="48" width="71" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="512.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >Methods</text>
+<text x="14" y="106" font-size="10" fill="#6b7280" font-weight="400" text-anchor="start" font-family="Menlo,monospace">fig-2a</text>
+<text x="386" y="106" font-size="10" fill="#6b7280" font-weight="400" text-anchor="end" font-family="Menlo,monospace">ch2_age_roaduser.csv</text>
+<text x="120.5" y="134" font-size="10" fill="#55544f" font-weight="600" text-anchor="middle" >0-7</text>
+<text x="161.5" y="134" font-size="10" fill="#55544f" font-weight="600" text-anchor="middle" >8-16</text>
+<text x="202.5" y="134" font-size="10" fill="#55544f" font-weight="600" text-anchor="middle" >17-25</text>
+<text x="243.5" y="134" font-size="10" fill="#55544f" font-weight="600" text-anchor="middle" >26-39</text>
+<text x="284.5" y="134" font-size="10" fill="#55544f" font-weight="600" text-anchor="middle" >40-64</text>
+<text x="325.5" y="134" font-size="10" fill="#55544f" font-weight="600" text-anchor="middle" >65-74</text>
+<text x="366.5" y="134" font-size="10" fill="#55544f" font-weight="600" text-anchor="middle" >75+</text>
+<text x="94" y="157.0" font-size="10" fill="#55544f" font-weight="600" text-anchor="end" >Car driver</text>
+<rect x="100" y="140" width="39" height="24" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<rect x="141" y="140" width="39" height="24" rx="0" fill="rgb(180,179,173)" stroke="none" stroke-width="1" />
+<rect x="182" y="140" width="39" height="24" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<rect x="223" y="140" width="39" height="24" rx="0" fill="rgb(180,179,173)" stroke="none" stroke-width="1" />
+<rect x="264" y="140" width="39" height="24" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<rect x="305" y="140" width="39" height="24" rx="0" fill="rgb(180,179,173)" stroke="none" stroke-width="1" />
+<rect x="346" y="140" width="39" height="24" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<text x="94" y="183.0" font-size="10" fill="#55544f" font-weight="600" text-anchor="end" >Car passenger</text>
+<rect x="100" y="166" width="39" height="24" rx="0" fill="rgb(163,162,156)" stroke="none" stroke-width="1" />
+<rect x="141" y="166" width="39" height="24" rx="0" fill="rgb(197,196,190)" stroke="none" stroke-width="1" />
+<rect x="182" y="166" width="39" height="24" rx="0" fill="rgb(163,162,156)" stroke="none" stroke-width="1" />
+<rect x="223" y="166" width="39" height="24" rx="0" fill="rgb(197,196,190)" stroke="none" stroke-width="1" />
+<rect x="264" y="166" width="39" height="24" rx="0" fill="rgb(163,162,156)" stroke="none" stroke-width="1" />
+<rect x="305" y="166" width="39" height="24" rx="0" fill="rgb(197,196,190)" stroke="none" stroke-width="1" />
+<rect x="346" y="166" width="39" height="24" rx="0" fill="rgb(163,162,156)" stroke="none" stroke-width="1" />
+<text x="94" y="209.0" font-size="10" fill="#55544f" font-weight="600" text-anchor="end" >Motorcyclist</text>
+<rect x="100" y="192" width="39" height="24" rx="0" fill="rgb(180,179,173)" stroke="none" stroke-width="1" />
+<rect x="141" y="192" width="39" height="24" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<rect x="182" y="192" width="39" height="24" rx="0" fill="rgb(180,179,173)" stroke="none" stroke-width="1" />
+<rect x="223" y="192" width="39" height="24" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<rect x="264" y="192" width="39" height="24" rx="0" fill="rgb(180,179,173)" stroke="none" stroke-width="1" />
+<rect x="305" y="192" width="39" height="24" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<rect x="346" y="192" width="39" height="24" rx="0" fill="rgb(180,179,173)" stroke="none" stroke-width="1" />
+<text x="94" y="235.0" font-size="10" fill="#55544f" font-weight="600" text-anchor="end" >Pedal cyclist</text>
+<rect x="100" y="218" width="39" height="24" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<rect x="141" y="218" width="39" height="24" rx="0" fill="rgb(197,196,190)" stroke="none" stroke-width="1" />
+<rect x="182" y="218" width="39" height="24" rx="0" fill="rgb(180,179,173)" stroke="none" stroke-width="1" />
+<rect x="223" y="218" width="39" height="24" rx="0" fill="rgb(163,162,156)" stroke="none" stroke-width="1" />
+<rect x="264" y="218" width="39" height="24" rx="0" fill="rgb(146,145,139)" stroke="none" stroke-width="1" />
+<rect x="305" y="218" width="39" height="24" rx="0" fill="rgb(130,129,123)" stroke="none" stroke-width="1" />
+<rect x="346" y="218" width="39" height="24" rx="0" fill="rgb(113,112,106)" stroke="none" stroke-width="1" />
+<text x="94" y="261.0" font-size="10" fill="#55544f" font-weight="600" text-anchor="end" >Pedestrian</text>
+<rect x="100" y="244" width="39" height="24" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<rect x="141" y="244" width="39" height="24" rx="0" fill="rgb(180,179,173)" stroke="none" stroke-width="1" />
+<rect x="182" y="244" width="39" height="24" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<rect x="223" y="244" width="39" height="24" rx="0" fill="rgb(180,179,173)" stroke="none" stroke-width="1" />
+<rect x="264" y="244" width="39" height="24" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<rect x="305" y="244" width="39" height="24" rx="0" fill="rgb(180,179,173)" stroke="none" stroke-width="1" />
+<rect x="346" y="244" width="39" height="24" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<rect x="344" y="216" width="43" height="28" rx="2" fill="none" stroke="#e8590c" stroke-width="3" />
+<text x="14" y="124" font-size="10.5" fill="#55544f" font-weight="600" text-anchor="start" >Tap a cell to see its line</text>
+<circle cx="366" cy="231" r="22" fill="#e8590c" fill-opacity="0.18" stroke="#e8590c" stroke-width="2" stroke-dasharray="4 3"/>
+<circle cx="366" cy="231" r="9" fill="#e8590c"/>
+<path d="M370,235 L382,261 L388,255 L382,251 L394,247 L374,233 Z" fill="#fff" stroke="#e8590c" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="340" y="203" font-size="11" fill="#e8590c" font-weight="800" text-anchor="start" >tap cell</text>
+<line x1="200" y1="290" x2="200" y2="310" stroke="#e8590c" stroke-width="2" />
+<path d="M193,304 L200,314 L207,304" fill="none" stroke="#e8590c" stroke-width="2"/><rect x="14" y="322" width="372" height="250" rx="4" fill="#fff" stroke="#e8590c" stroke-width="2" />
+<text x="26" y="344" font-size="12.5" fill="#222" font-weight="800" text-anchor="start" >Cyclists aged 75+, admissions 2011-21</text>
+<line x1="44" y1="540" x2="370" y2="540" stroke="#cfcdc7" stroke-width="1" />
+<line x1="44" y1="380" x2="44" y2="540" stroke="#cfcdc7" stroke-width="1" />
+<path d="M44,520 L83,512 L122,500 L161,490 L200,470 L240,450 L279,430 L318,415 L357,400" fill="none" stroke="#222" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="44" y="556" font-size="10" fill="#6b7280" font-weight="400" text-anchor="start" >2011</text>
+<text x="370" y="556" font-size="10" fill="#6b7280" font-weight="400" text-anchor="end" >2021</text>
+<text x="354" y="392" font-size="11" fill="#222" font-weight="800" text-anchor="end" >Rising</text>
+<text x="26" y="566" font-size="10" fill="#222" font-weight="400" text-anchor="start" ></text>
+<rect x="14" y="588" width="372" height="56" rx="0" fill="#e7e6e1" stroke="none" stroke-width="1" />
+<rect x="14" y="588" width="4" height="56" rx="0" fill="#55544f" stroke="none" stroke-width="1" />
+<text x="28" y="610" font-size="12" fill="#222" font-weight="400" text-anchor="start" >The 3-year average hides the shape:</text>
+<text x="28" y="627" font-size="12" fill="#222" font-weight="400" text-anchor="start" >the line shows whether it climbed steadily.</text>
+<rect x="14" y="660" width="372" height="40" rx="4" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="26" y="684" font-size="12" fill="#0a64d6" font-weight="700" text-anchor="start" >&gt; Show the numbers</text>
+<rect x="60" y="712" width="270" height="32" rx="12" fill="#fff" stroke="#e8590c" stroke-width="2" />
+<circle cx="40" cy="700" r="4" fill="#fff" stroke="#e8590c" stroke-width="2"/><circle cx="60.0" cy="706.0" r="6" fill="#fff" stroke="#e8590c" stroke-width="2"/>
+<text x="195.0" y="734" font-size="13" fill="#e8590c" font-weight="700" text-anchor="middle" font-style="italic">"Is it a blip, or a trend?"</text>
+</g><rect width="400" height="760" fill="none" stroke="#9a9892" stroke-width="3" rx="18"/></g>
+<rect x="20" y="800" width="400" height="232" rx="6" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<rect x="20" y="800" width="400" height="30" rx="6" fill="#222" stroke="none" stroke-width="1" />
+<rect x="20" y="820" width="400" height="10" rx="0" fill="#222" stroke="none" stroke-width="1" />
+<text x="34" y="821" font-size="12" fill="#fff" font-weight="800" text-anchor="start" letter-spacing="0.5">FRAME 4  |  Ch2 Drill down</text>
+<text x="34" y="852" font-size="9" fill="#e8590c" font-weight="800" text-anchor="start" letter-spacing="1">USER ACTION</text>
+<text x="150" y="852" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Taps a heatmap cell (cyclists, 75+).</text>
+<text x="34" y="884" font-size="9" fill="#0a64d6" font-weight="800" text-anchor="start" letter-spacing="1">SYSTEM RESPONSE</text>
+<text x="150" y="884" font-size="12" fill="#222" font-weight="400" text-anchor="start" >The 2011-21 line for that cell appears</text>
+<text x="150" y="899" font-size="12" fill="#222" font-weight="400" text-anchor="start" >underneath the heatmap.</text>
+<text x="34" y="931" font-size="9" fill="#222" font-weight="800" text-anchor="start" letter-spacing="1">SAM LEARNS</text>
+<text x="150" y="931" font-size="12" fill="#222" font-weight="400" text-anchor="start" >The rise is a sustained trend across the</text>
+<text x="150" y="946" font-size="12" fill="#222" font-weight="400" text-anchor="start" >decade, not a blip in the 3-year averages.</text>
+</g><g transform="translate(40,1192)"><clipPath id="ph5"><rect x="0" y="0" width="400" height="760"/></clipPath><g transform="translate(20,20)"><rect width="400" height="760" fill="#faf9f6" stroke="#9a9892" stroke-width="1.5" rx="18"/><g clip-path="url(#ph5)"><rect x="0" y="0" width="400" height="40" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="14" y="26" font-size="15" fill="#222" font-weight="800" text-anchor="start" >Beyond the Road Toll</text>
+<text x="386" y="25" font-size="10" fill="#6b7280" font-weight="700" text-anchor="end" letter-spacing="1">DATA INVESTIGATION</text>
+<rect x="0" y="40" width="400" height="44" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<rect x="10" y="48" width="99" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="59.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >1 Road toll</text>
+<rect x="116" y="48" width="71" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="151.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >2 Older</text>
+<rect x="194" y="48" width="92" height="28" rx="14" fill="#0a64d6" stroke="#0a64d6" stroke-width="1.5" />
+<text x="240.0" y="67" font-size="12" fill="#fff" font-weight="600" text-anchor="middle" >3 Severity</text>
+<rect x="293" y="48" width="92" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="339.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >4 Lockdown</text>
+<rect x="392" y="48" width="78" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="431.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >5 Equity</text>
+<rect x="477" y="48" width="71" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="512.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >Methods</text>
+<text x="14" y="112" font-size="11" fill="#6b7280" font-weight="800" text-anchor="start" letter-spacing="2">CHAPTER 3</text>
+<text x="14" y="140" font-size="21" fill="#222" font-weight="800" text-anchor="start" >Pedestrians are 1 in 14 of the</text>
+<text x="14" y="165" font-size="21" fill="#222" font-weight="800" text-anchor="start" >injured, but 1 in 4 of those</text>
+<text x="14" y="190" font-size="21" fill="#222" font-weight="800" text-anchor="start" >who die in hospital</text>
+<text x="14" y="212" font-size="10" fill="#6b7280" font-weight="400" text-anchor="start" font-family="Menlo,monospace">fig-3a</text>
+<text x="386" y="212" font-size="10" fill="#6b7280" font-weight="400" text-anchor="end" font-family="Menlo,monospace">severity.csv</text>
+<text x="14" y="236" font-size="11" fill="#6b7280" font-weight="700" text-anchor="start" >Measure</text>
+<rect x="14.0" y="244" width="124.0" height="38" rx="0" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="76.0" y="268" font-size="12" fill="#0a64d6" font-weight="700" text-anchor="middle" >Admissions</text>
+<rect x="138.0" y="244" width="124.0" height="38" rx="0" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="200.0" y="268" font-size="12" fill="#0a64d6" font-weight="700" text-anchor="middle" >Bed days</text>
+<rect x="262.0" y="244" width="124.0" height="38" rx="0" fill="#0a64d6" stroke="#0a64d6" stroke-width="1.5" />
+<text x="324.0" y="268" font-size="12" fill="#fff" font-weight="700" text-anchor="middle" >Deaths</text>
+<circle cx="330" cy="263" r="22" fill="#e8590c" fill-opacity="0.18" stroke="#e8590c" stroke-width="2" stroke-dasharray="4 3"/>
+<circle cx="330" cy="263" r="9" fill="#e8590c"/>
+<path d="M334,267 L346,293 L352,287 L346,283 L358,279 L338,265 Z" fill="#fff" stroke="#e8590c" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="304" y="235" font-size="11" fill="#e8590c" font-weight="800" text-anchor="start" >tap</text>
+<text x="14" y="306" font-size="10.5" fill="#55544f" font-weight="600" text-anchor="start" >Pedestrian bar as Sam steps along:</text>
+<rect x="14" y="316" width="112" height="26" rx="4" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="70" y="334" font-size="10.5" fill="#55544f" font-weight="500" text-anchor="middle" >Admissions 6.5%</text>
+<line x1="128" y1="329" x2="136" y2="329" stroke="#55544f" stroke-width="1.5" />
+<rect x="138" y="316" width="112" height="26" rx="4" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="194" y="334" font-size="10.5" fill="#55544f" font-weight="500" text-anchor="middle" >Bed days 13.1%</text>
+<line x1="252" y1="329" x2="260" y2="329" stroke="#55544f" stroke-width="1.5" />
+<rect x="262" y="316" width="112" height="26" rx="4" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="318" y="334" font-size="10.5" fill="#222" font-weight="800" text-anchor="middle" >Deaths 26.4%</text>
+<rect x="14" y="356" width="372" height="270" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="24" y="390" font-size="11" fill="#222" font-weight="700" text-anchor="start" >Car driver</text>
+<rect x="110" y="376" width="225.0" height="13" rx="0" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="110" y="391" width="225.0" height="13" rx="0" fill="#55544f" stroke="none" stroke-width="1" />
+<text x="24" y="436" font-size="11" fill="#222" font-weight="700" text-anchor="start" >Motorcyclist</text>
+<rect x="110" y="422" width="142.5" height="13" rx="0" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="110" y="437" width="105.0" height="13" rx="0" fill="#55544f" stroke="none" stroke-width="1" />
+<text x="24" y="482" font-size="11" fill="#222" font-weight="700" text-anchor="start" >Cyclist</text>
+<rect x="110" y="468" width="90.0" height="13" rx="0" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="110" y="483" width="33.0" height="13" rx="0" fill="#55544f" stroke="none" stroke-width="1" />
+<text x="24" y="528" font-size="11" fill="#222" font-weight="700" text-anchor="start" >Car passenger</text>
+<rect x="110" y="514" width="82.5" height="13" rx="0" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="110" y="529" width="67.5" height="13" rx="0" fill="#55544f" stroke="none" stroke-width="1" />
+<text x="24" y="574" font-size="11" fill="#222" font-weight="700" text-anchor="start" >Pedestrian</text>
+<rect x="110" y="560" width="39.0" height="13" rx="0" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="110" y="575" width="142.5" height="13" rx="0" fill="#e8590c" stroke="none" stroke-width="1" />
+<text x="112" y="604" font-size="9" fill="#222" font-weight="400" text-anchor="start" ></text>
+<rect x="110" y="600" width="10" height="8" rx="0" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<text x="124" y="607" font-size="9.5" fill="#55544f" font-weight="400" text-anchor="start" >share of admissions</text>
+<rect x="240" y="600" width="10" height="8" rx="0" fill="#55544f" stroke="none" stroke-width="1" />
+<text x="254" y="607" font-size="9.5" fill="#55544f" font-weight="400" text-anchor="start" >share of deaths in hospital</text>
+<text x="250" y="558" font-size="10.5" fill="#e8590c" font-weight="800" text-anchor="start" >7.3% of admissions,</text>
+<text x="250" y="571" font-size="10.5" fill="#e8590c" font-weight="800" text-anchor="start" >26.4% of deaths</text>
+<text x="14" y="648" font-size="10.5" fill="#6b7280" font-weight="400" text-anchor="start" >Counts, not risk per trip: no data on how far people walk.</text>
+<rect x="14" y="660" width="372" height="34" rx="4" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="26" y="682" font-size="12" fill="#0a64d6" font-weight="700" text-anchor="start" >&gt; Show the numbers</text>
+<rect x="40" y="704" width="320" height="32" rx="12" fill="#fff" stroke="#e8590c" stroke-width="2" />
+<circle cx="70" cy="696" r="4" fill="#fff" stroke="#e8590c" stroke-width="2"/><circle cx="65.0" cy="700.0" r="6" fill="#fff" stroke="#e8590c" stroke-width="2"/>
+<text x="200.0" y="726" font-size="13" fill="#e8590c" font-weight="700" text-anchor="middle" font-style="italic">"Mum and Dad walk to the shops..."</text>
+</g><rect width="400" height="760" fill="none" stroke="#9a9892" stroke-width="3" rx="18"/></g>
+<rect x="20" y="800" width="400" height="232" rx="6" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<rect x="20" y="800" width="400" height="30" rx="6" fill="#222" stroke="none" stroke-width="1" />
+<rect x="20" y="820" width="400" height="10" rx="0" fill="#222" stroke="none" stroke-width="1" />
+<text x="34" y="821" font-size="12" fill="#fff" font-weight="800" text-anchor="start" letter-spacing="0.5">FRAME 5  |  Ch3 Measure stepper</text>
+<text x="34" y="852" font-size="9" fill="#e8590c" font-weight="800" text-anchor="start" letter-spacing="1">USER ACTION</text>
+<text x="150" y="852" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Steps the measure: Admissions, then Bed</text>
+<text x="150" y="867" font-size="12" fill="#222" font-weight="400" text-anchor="start" >days, then Deaths.</text>
+<text x="34" y="899" font-size="9" fill="#0a64d6" font-weight="800" text-anchor="start" letter-spacing="1">SYSTEM RESPONSE</text>
+<text x="150" y="899" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Bars switch to the chosen measure: the</text>
+<text x="150" y="914" font-size="12" fill="#222" font-weight="400" text-anchor="start" >pedestrian bar grows from 6.5% of</text>
+<text x="150" y="929" font-size="12" fill="#222" font-weight="400" text-anchor="start" >admissions to 13.1% of bed days to 26.4%</text>
+<text x="150" y="944" font-size="12" fill="#222" font-weight="400" text-anchor="start" >of deaths; the label sits on the bar.</text>
+<text x="34" y="976" font-size="9" fill="#222" font-weight="800" text-anchor="start" letter-spacing="1">SAM LEARNS</text>
+<text x="150" y="976" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Pedestrians are few of the injured but</text>
+<text x="150" y="991" font-size="12" fill="#222" font-weight="400" text-anchor="start" >many of those who die: the risk for Sam's</text>
+<text x="150" y="1006" font-size="12" fill="#222" font-weight="400" text-anchor="start" >walking parents is outcome, not frequency.</text>
+</g><g transform="translate(550,1192)"><clipPath id="ph6"><rect x="0" y="0" width="400" height="760"/></clipPath><g transform="translate(20,20)"><rect width="400" height="760" fill="#faf9f6" stroke="#9a9892" stroke-width="1.5" rx="18"/><g clip-path="url(#ph6)"><rect x="0" y="0" width="400" height="40" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="14" y="26" font-size="15" fill="#222" font-weight="800" text-anchor="start" >Beyond the Road Toll</text>
+<text x="386" y="25" font-size="10" fill="#6b7280" font-weight="700" text-anchor="end" letter-spacing="1">DATA INVESTIGATION</text>
+<rect x="0" y="40" width="400" height="44" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<rect x="10" y="48" width="99" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="59.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >1 Road toll</text>
+<rect x="116" y="48" width="71" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="151.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >2 Older</text>
+<rect x="194" y="48" width="92" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="240.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >3 Severity</text>
+<rect x="293" y="48" width="92" height="28" rx="14" fill="#0a64d6" stroke="#0a64d6" stroke-width="1.5" />
+<text x="339.0" y="67" font-size="12" fill="#fff" font-weight="600" text-anchor="middle" >4 Lockdown</text>
+<rect x="392" y="48" width="78" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="431.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >5 Equity</text>
+<rect x="477" y="48" width="71" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="512.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >Methods</text>
+<text x="14" y="112" font-size="11" fill="#6b7280" font-weight="800" text-anchor="start" letter-spacing="2">CHAPTER 4</text>
+<text x="14" y="140" font-size="21" fill="#222" font-weight="800" text-anchor="start" >In the month Australia locked</text>
+<text x="14" y="165" font-size="21" fill="#222" font-weight="800" text-anchor="start" >down, crash admissions fell by</text>
+<text x="14" y="190" font-size="21" fill="#222" font-weight="800" text-anchor="start" >a third. Cyclist admissions rose.</text>
+<text x="14" y="212" font-size="10" fill="#6b7280" font-weight="400" text-anchor="start" font-family="Menlo,monospace">fig-4a</text>
+<text x="386" y="212" font-size="10" fill="#6b7280" font-weight="400" text-anchor="end" font-family="Menlo,monospace">ch4_monthly.csv</text>
+<rect x="14.0" y="222" width="186.0" height="38" rx="0" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="107.0" y="246" font-size="12" fill="#0a64d6" font-weight="700" text-anchor="middle" >All road users</text>
+<rect x="200.0" y="222" width="186.0" height="38" rx="0" fill="#0a64d6" stroke="#0a64d6" stroke-width="1.5" />
+<text x="293.0" y="246" font-size="12" fill="#fff" font-weight="700" text-anchor="middle" >Cyclists</text>
+<circle cx="300" cy="241" r="22" fill="#e8590c" fill-opacity="0.18" stroke="#e8590c" stroke-width="2" stroke-dasharray="4 3"/>
+<circle cx="300" cy="241" r="9" fill="#e8590c"/>
+<path d="M304,245 L316,271 L322,265 L316,261 L328,257 L308,243 Z" fill="#fff" stroke="#e8590c" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="274" y="213" font-size="11" fill="#e8590c" font-weight="800" text-anchor="start" >tap</text>
+<text x="14" y="282" font-size="12" fill="#222" font-weight="800" text-anchor="start" >Cyclists: every month from April above the previous five years</text>
+<rect x="14" y="296" width="372" height="270" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<path d="M50,470 L100,468 L150,462 L200,452 L250,448 L300,455 L350,462 L350,490 L300,492 L250,495 L200,492 L150,496 L100,498 L50,498 Z" fill="#e0ded8" stroke="#e0ded8" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="60" y="516" font-size="10" fill="#55544f" font-weight="500" text-anchor="start" >grey band = 2015-19 range</text>
+<path d="M50,485 L100,483 L150,480 L200,472 L250,470 L300,474 L350,478" fill="none" stroke="#cfcdc7" stroke-width="2" stroke-dasharray="5 4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="354" y="470" font-size="10" fill="#55544f" font-weight="600" text-anchor="start" >2019</text>
+<path d="M50,482 L100,480 L150,470 L200,425 L250,395 L300,380 L350,360" fill="none" stroke="#e8590c" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="354" y="356" font-size="11" fill="#e8590c" font-weight="800" text-anchor="end" >2020</text>
+<line x1="200" y1="330" x2="200" y2="425" stroke="#55544f" stroke-width="1" stroke-dasharray="2 3" />
+<rect x="112" y="326" width="136" height="36" rx="3" fill="#fff" stroke="#55544f" stroke-width="1" />
+<text x="180" y="342" font-size="10.5" fill="#222" font-weight="700" text-anchor="middle" >June: 682, up from</text>
+<text x="180" y="356" font-size="10.5" fill="#222" font-weight="700" text-anchor="middle" >453 in June 2019</text>
+<text x="24" y="556" font-size="10" fill="#6b7280" font-weight="400" text-anchor="start" >Jan</text>
+<text x="376" y="556" font-size="10" fill="#6b7280" font-weight="400" text-anchor="end" >Dec</text>
+<text x="14" y="590" font-size="10.5" fill="#6b7280" font-weight="400" text-anchor="start" >The y-axis rescales between views, and the switch says so.</text>
+<rect x="14" y="606" width="372" height="40" rx="4" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="26" y="630" font-size="12" fill="#0a64d6" font-weight="700" text-anchor="start" >&gt; Show the numbers</text>
+<rect x="60" y="672" width="270" height="32" rx="12" fill="#fff" stroke="#e8590c" stroke-width="2" />
+<circle cx="40" cy="656" r="4" fill="#fff" stroke="#e8590c" stroke-width="2"/><circle cx="60.0" cy="664.0" r="6" fill="#fff" stroke="#e8590c" stroke-width="2"/>
+<text x="195.0" y="694" font-size="13" fill="#e8590c" font-weight="700" text-anchor="middle" font-style="italic">"That was me in 2020."</text>
+</g><rect width="400" height="760" fill="none" stroke="#9a9892" stroke-width="3" rx="18"/></g>
+<rect x="20" y="800" width="400" height="232" rx="6" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<rect x="20" y="800" width="400" height="30" rx="6" fill="#222" stroke="none" stroke-width="1" />
+<rect x="20" y="820" width="400" height="10" rx="0" fill="#222" stroke="none" stroke-width="1" />
+<text x="34" y="821" font-size="12" fill="#fff" font-weight="800" text-anchor="start" letter-spacing="0.5">FRAME 6  |  Ch4 Switch road user</text>
+<text x="34" y="852" font-size="9" fill="#e8590c" font-weight="800" text-anchor="start" letter-spacing="1">USER ACTION</text>
+<text x="150" y="852" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Switches All road users to Cyclists in the</text>
+<text x="150" y="867" font-size="12" fill="#222" font-weight="400" text-anchor="start" >fig-4a view switch.</text>
+<text x="34" y="899" font-size="9" fill="#0a64d6" font-weight="800" text-anchor="start" letter-spacing="1">SYSTEM RESPONSE</text>
+<text x="150" y="899" font-size="12" fill="#222" font-weight="400" text-anchor="start" >The y-axis rescales; the 2020 line climbs</text>
+<text x="150" y="914" font-size="12" fill="#222" font-weight="400" text-anchor="start" >above the grey 2015-19 band and an</text>
+<text x="150" y="929" font-size="12" fill="#222" font-weight="400" text-anchor="start" >annotation marks June (682 vs 453).</text>
+<text x="34" y="961" font-size="9" fill="#222" font-weight="800" text-anchor="start" letter-spacing="1">SAM LEARNS</text>
+<text x="150" y="961" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Cyclist admissions rose in 2020 while</text>
+<text x="150" y="976" font-size="12" fill="#222" font-weight="400" text-anchor="start" >everything else fell: Sam's first year of</text>
+<text x="150" y="991" font-size="12" fill="#222" font-weight="400" text-anchor="start" >riding was a high-risk one for riders.</text>
+</g><g transform="translate(1060,1192)"><clipPath id="ph7"><rect x="0" y="0" width="400" height="760"/></clipPath><g transform="translate(20,20)"><rect width="400" height="760" fill="#faf9f6" stroke="#9a9892" stroke-width="1.5" rx="18"/><g clip-path="url(#ph7)"><rect x="0" y="0" width="400" height="40" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="14" y="26" font-size="15" fill="#222" font-weight="800" text-anchor="start" >Beyond the Road Toll</text>
+<text x="386" y="25" font-size="10" fill="#6b7280" font-weight="700" text-anchor="end" letter-spacing="1">DATA INVESTIGATION</text>
+<rect x="0" y="40" width="400" height="44" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<rect x="10" y="48" width="99" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="59.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >1 Road toll</text>
+<rect x="116" y="48" width="71" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="151.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >2 Older</text>
+<rect x="194" y="48" width="92" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="240.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >3 Severity</text>
+<rect x="293" y="48" width="92" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="339.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >4 Lockdown</text>
+<rect x="392" y="48" width="78" height="28" rx="14" fill="#0a64d6" stroke="#0a64d6" stroke-width="1.5" />
+<text x="431.0" y="67" font-size="12" fill="#fff" font-weight="600" text-anchor="middle" >5 Equity</text>
+<rect x="477" y="48" width="71" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="512.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >Methods</text>
+<text x="14" y="112" font-size="11" fill="#6b7280" font-weight="800" text-anchor="start" letter-spacing="2">CHAPTER 5</text>
+<text x="14" y="140" font-size="21" fill="#222" font-weight="800" text-anchor="start" >In 2011 First Nations Australians</text>
+<text x="14" y="165" font-size="21" fill="#222" font-weight="800" text-anchor="start" >were hospitalised at about the same</text>
+<text x="14" y="190" font-size="21" fill="#222" font-weight="800" text-anchor="start" >rate. By 2021: half as high again.</text>
+<text x="14" y="216" font-size="10" fill="#6b7280" font-weight="400" text-anchor="start" font-family="Menlo,monospace">fig-5a</text>
+<text x="386" y="216" font-size="10" fill="#6b7280" font-weight="400" text-anchor="end" font-family="Menlo,monospace">ch5_*.csv</text>
+<rect x="14.0" y="226" width="186.0" height="38" rx="0" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="107.0" y="250" font-size="12" fill="#0a64d6" font-weight="700" text-anchor="middle" >Hospitalisations (2011=100)</text>
+<rect x="200.0" y="226" width="186.0" height="38" rx="0" fill="#0a64d6" stroke="#0a64d6" stroke-width="1.5" />
+<text x="293.0" y="250" font-size="12" fill="#fff" font-weight="700" text-anchor="middle" >Per 100,000 people</text>
+<circle cx="300" cy="245" r="22" fill="#e8590c" fill-opacity="0.18" stroke="#e8590c" stroke-width="2" stroke-dasharray="4 3"/>
+<circle cx="300" cy="245" r="9" fill="#e8590c"/>
+<path d="M304,249 L316,275 L322,269 L316,265 L328,261 L308,247 Z" fill="#fff" stroke="#e8590c" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="274" y="217" font-size="11" fill="#e8590c" font-weight="800" text-anchor="start" >tap</text>
+<rect x="14" y="278" width="372" height="230" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<path d="M50,440 L120,435 L200,420 L280,360 L350,320" fill="none" stroke="#222" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="340" y="300" font-size="11" fill="#222" font-weight="800" text-anchor="end" >First Nations 226</text>
+<path d="M50,442 L120,440 L200,441 L280,440 L350,441" fill="none" stroke="#55544f" stroke-width="2.5" stroke-dasharray="6 4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="356" y="462" font-size="11" fill="#55544f" font-weight="800" text-anchor="end" >Everyone else 149</text>
+<text x="50" y="430" font-size="11" fill="#222" font-weight="800" text-anchor="start" >145</text>
+<line x1="350" y1="324" x2="350" y2="438" stroke="#e8590c" stroke-width="2" />
+<text x="332" y="386" font-size="11" fill="#e8590c" font-weight="800" text-anchor="end" >the gap</text>
+<text x="24" y="498" font-size="10" fill="#6b7280" font-weight="400" text-anchor="start" >2011</text>
+<text x="376" y="498" font-size="10" fill="#6b7280" font-weight="400" text-anchor="end" >2021</text>
+<rect x="14" y="522" width="372" height="76" rx="4" fill="#fff" stroke="#e8590c" stroke-width="2" />
+<text x="26" y="544" font-size="10" fill="#e8590c" font-weight="800" text-anchor="start" letter-spacing="1.5">CAVEAT</text>
+<text x="26" y="562" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >Better recording of Indigenous status may</text>
+<text x="26" y="577" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >explain part of the rise. Counts alone hide</text>
+<text x="26" y="592" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >the gap because the population grew.</text>
+<text x="14" y="626" font-size="10.5" fill="#6b7280" font-weight="400" text-anchor="start" >Counts: 1,167 to 2,220 (+90%) vs 31,997 to 36,755 (+15%).</text>
+<rect x="14" y="640" width="372" height="40" rx="4" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="26" y="664" font-size="12" fill="#0a64d6" font-weight="700" text-anchor="start" >&gt; Show the numbers</text>
+<rect x="40" y="700" width="320" height="32" rx="12" fill="#fff" stroke="#e8590c" stroke-width="2" />
+<circle cx="60" cy="690" r="4" fill="#fff" stroke="#e8590c" stroke-width="2"/><circle cx="60.0" cy="695.0" r="6" fill="#fff" stroke="#e8590c" stroke-width="2"/>
+<text x="200.0" y="722" font-size="13" fill="#e8590c" font-weight="700" text-anchor="middle" font-style="italic">"Counts hid this. Per person it is clear."</text>
+</g><rect width="400" height="760" fill="none" stroke="#9a9892" stroke-width="3" rx="18"/></g>
+<rect x="20" y="800" width="400" height="232" rx="6" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<rect x="20" y="800" width="400" height="30" rx="6" fill="#222" stroke="none" stroke-width="1" />
+<rect x="20" y="820" width="400" height="10" rx="0" fill="#222" stroke="none" stroke-width="1" />
+<text x="34" y="821" font-size="12" fill="#fff" font-weight="800" text-anchor="start" letter-spacing="0.5">FRAME 7  |  Ch5 Index vs rate</text>
+<text x="34" y="852" font-size="9" fill="#e8590c" font-weight="800" text-anchor="start" letter-spacing="1">USER ACTION</text>
+<text x="150" y="852" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Toggles Hospitalisations (index) to Per</text>
+<text x="150" y="867" font-size="12" fill="#222" font-weight="400" text-anchor="start" >100,000 people on fig-5a.</text>
+<text x="34" y="899" font-size="9" fill="#0a64d6" font-weight="800" text-anchor="start" letter-spacing="1">SYSTEM RESPONSE</text>
+<text x="150" y="899" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Two lines separate (145 to 226 vs 149 to</text>
+<text x="150" y="914" font-size="12" fill="#222" font-weight="400" text-anchor="start" >149 per 100,000); a caveat box beside the</text>
+<text x="150" y="929" font-size="12" fill="#222" font-weight="400" text-anchor="start" >chart notes possible recording changes.</text>
+<text x="34" y="961" font-size="9" fill="#222" font-weight="800" text-anchor="start" letter-spacing="1">SAM LEARNS</text>
+<text x="150" y="961" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Counts hid a real gap: per person, First</text>
+<text x="150" y="976" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Nations Australians were hospitalised half</text>
+<text x="150" y="991" font-size="12" fill="#222" font-weight="400" text-anchor="start" >as often again by 2021, with a caveat.</text>
+</g><g transform="translate(1570,1192)"><clipPath id="ph8"><rect x="0" y="0" width="400" height="760"/></clipPath><g transform="translate(20,20)"><rect width="400" height="760" fill="#faf9f6" stroke="#9a9892" stroke-width="1.5" rx="18"/><g clip-path="url(#ph8)"><rect x="0" y="0" width="400" height="40" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="14" y="26" font-size="15" fill="#222" font-weight="800" text-anchor="start" >Beyond the Road Toll</text>
+<text x="386" y="25" font-size="10" fill="#6b7280" font-weight="700" text-anchor="end" letter-spacing="1">DATA INVESTIGATION</text>
+<rect x="0" y="40" width="400" height="44" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<rect x="10" y="48" width="99" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="59.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >1 Road toll</text>
+<rect x="116" y="48" width="71" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="151.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >2 Older</text>
+<rect x="194" y="48" width="92" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="240.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >3 Severity</text>
+<rect x="293" y="48" width="92" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="339.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >4 Lockdown</text>
+<rect x="392" y="48" width="78" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="431.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >5 Equity</text>
+<rect x="477" y="48" width="71" height="28" rx="14" fill="#0a64d6" stroke="#0a64d6" stroke-width="1.5" />
+<text x="512.5" y="67" font-size="12" fill="#fff" font-weight="600" text-anchor="middle" >Methods</text>
+<text x="14" y="114" font-size="21" fill="#222" font-weight="800" text-anchor="start" >What to take away</text>
+<text x="14" y="140" font-size="12.5" fill="#222" font-weight="700" text-anchor="start" >The road toll isn't the whole story.</text>
+<text x="14" y="159" font-size="12.5" fill="#222" font-weight="700" text-anchor="start" >If you ride, you're part of a growing group.</text>
+<text x="14" y="178" font-size="12.5" fill="#222" font-weight="700" text-anchor="start" >If your parents walk, it's what happens after.</text>
+<text x="14" y="197" font-size="12.5" fill="#222" font-weight="700" text-anchor="start" >The roads are not equally safe for everyone.</text>
+<text x="14" y="238" font-size="10" fill="#6b7280" font-weight="400" text-anchor="start" font-family="Menlo,monospace">fig-1a</text>
+<text x="386" y="238" font-size="10" fill="#6b7280" font-weight="400" text-anchor="end" font-family="Menlo,monospace">ch1_trend.csv</text>
+<rect x="14" y="248" width="372" height="170" rx="4" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="26" y="272" font-size="12.5" fill="#0a64d6" font-weight="700" text-anchor="start" >v Show the numbers</text>
+<text x="26" y="298" font-size="10.5" fill="#55544f" font-weight="800" text-anchor="start" >Year</text>
+<text x="100" y="298" font-size="10.5" fill="#55544f" font-weight="800" text-anchor="start" >Hospitalised</text>
+<text x="230" y="298" font-size="10.5" fill="#55544f" font-weight="800" text-anchor="start" >Road deaths</text>
+<line x1="26" y1="304" x2="374" y2="304" stroke="#cfcdc7" stroke-width="1" />
+<text x="26" y="322" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >2011</text>
+<text x="100" y="322" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >34,033</text>
+<text x="230" y="322" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >1,277</text>
+<text x="26" y="344" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >...</text>
+<text x="100" y="344" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >...</text>
+<text x="230" y="344" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >...</text>
+<text x="26" y="366" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >2021</text>
+<text x="100" y="366" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >39,505</text>
+<text x="230" y="366" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >1,130</text>
+<text x="26" y="396" font-size="10" fill="#6b7280" font-weight="400" text-anchor="start" font-style="italic">Scrolls sideways if wide; same data as the chart.</text>
+<circle cx="200" cy="262" r="22" fill="#e8590c" fill-opacity="0.18" stroke="#e8590c" stroke-width="2" stroke-dasharray="4 3"/>
+<circle cx="200" cy="262" r="9" fill="#e8590c"/>
+<path d="M204,266 L216,292 L222,286 L216,282 L228,278 L208,264 Z" fill="#fff" stroke="#e8590c" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="174" y="234" font-size="11" fill="#e8590c" font-weight="800" text-anchor="start" >tap</text>
+<rect x="14" y="438" width="372" height="230" rx="0" fill="#e7e6e1" stroke="none" stroke-width="1" />
+<rect x="14" y="438" width="372" height="2" rx="0" fill="#55544f" stroke="none" stroke-width="1" />
+<text x="26" y="462" font-size="14" fill="#222" font-weight="800" text-anchor="start" >Methods and limitations</text>
+<text x="26" y="486" font-size="9.5" fill="#55544f" font-weight="800" text-anchor="start" letter-spacing="1.5">SOURCES</text>
+<text x="26" y="504" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >BITRE hospitalised injury data (Sept 2023);</text>
+<text x="26" y="520" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >ABS estimated resident population;</text>
+<text x="26" y="536" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >BITRE Australian Road Deaths Database.</text>
+<text x="26" y="566" font-size="9.5" fill="#55544f" font-weight="800" text-anchor="start" letter-spacing="1.5">RULES</text>
+<text x="26" y="584" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >Counts are not rates.</text>
+<text x="26" y="600" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >Victoria (2012) and NSW (2017) counting</text>
+<text x="26" y="616" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >changes lower later counts.</text>
+<text x="26" y="632" font-size="11.5" fill="#222" font-weight="400" text-anchor="start" >No exposure data (trips, distance).</text>
+<circle cx="330" cy="454" r="22" fill="#e8590c" fill-opacity="0.18" stroke="#e8590c" stroke-width="2" stroke-dasharray="4 3"/>
+<circle cx="330" cy="454" r="9" fill="#e8590c"/>
+<path d="M334,458 L346,484 L352,478 L346,474 L358,470 L338,456 Z" fill="#fff" stroke="#e8590c" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="40" y="690" width="320" height="32" rx="12" fill="#fff" stroke="#e8590c" stroke-width="2" />
+<circle cx="70" cy="680" r="4" fill="#fff" stroke="#e8590c" stroke-width="2"/><circle cx="65.0" cy="685.0" r="6" fill="#fff" stroke="#e8590c" stroke-width="2"/>
+<text x="200.0" y="712" font-size="13" fill="#e8590c" font-weight="700" text-anchor="middle" font-style="italic">"Where does this come from? Let me check."</text>
+</g><rect width="400" height="760" fill="none" stroke="#9a9892" stroke-width="3" rx="18"/></g>
+<rect x="20" y="800" width="400" height="232" rx="6" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<rect x="20" y="800" width="400" height="30" rx="6" fill="#222" stroke="none" stroke-width="1" />
+<rect x="20" y="820" width="400" height="10" rx="0" fill="#222" stroke="none" stroke-width="1" />
+<text x="34" y="821" font-size="12" fill="#fff" font-weight="800" text-anchor="start" letter-spacing="0.5">FRAME 8  |  Close and verify</text>
+<text x="34" y="852" font-size="9" fill="#e8590c" font-weight="800" text-anchor="start" letter-spacing="1">USER ACTION</text>
+<text x="150" y="852" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Opens 'Show the numbers' under a figure,</text>
+<text x="150" y="867" font-size="12" fill="#222" font-weight="400" text-anchor="start" >then reads the Methods and limitations</text>
+<text x="150" y="882" font-size="12" fill="#222" font-weight="400" text-anchor="start" >box.</text>
+<text x="34" y="914" font-size="9" fill="#0a64d6" font-weight="800" text-anchor="start" letter-spacing="1">SYSTEM RESPONSE</text>
+<text x="150" y="914" font-size="12" fill="#222" font-weight="400" text-anchor="start" >A text table with the chart's data</text>
+<text x="150" y="929" font-size="12" fill="#222" font-weight="400" text-anchor="start" >expands; the methods panel lists sources,</text>
+<text x="150" y="944" font-size="12" fill="#222" font-weight="400" text-anchor="start" >rules and limitations.</text>
+<text x="34" y="976" font-size="9" fill="#222" font-weight="800" text-anchor="start" letter-spacing="1">SAM LEARNS</text>
+<text x="150" y="976" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Sam can check the source (BITRE, ABS) and</text>
+<text x="150" y="991" font-size="12" fill="#222" font-weight="400" text-anchor="start" >knows the limits before sharing the story.</text>
+</g><line x1="486" y1="480" x2="544" y2="480" stroke="#55544f" stroke-width="3" />
+<path d="M536,472 L550,480 L536,488" fill="none" stroke="#55544f" stroke-width="3"/><line x1="486" y1="1592" x2="544" y2="1592" stroke="#55544f" stroke-width="3" />
+<path d="M536,1584 L550,1592 L536,1600" fill="none" stroke="#55544f" stroke-width="3"/><line x1="996" y1="480" x2="1054" y2="480" stroke="#55544f" stroke-width="3" />
+<path d="M1046,472 L1060,480 L1046,488" fill="none" stroke="#55544f" stroke-width="3"/><line x1="996" y1="1592" x2="1054" y2="1592" stroke="#55544f" stroke-width="3" />
+<path d="M1046,1584 L1060,1592 L1046,1600" fill="none" stroke="#55544f" stroke-width="3"/><line x1="1506" y1="480" x2="1564" y2="480" stroke="#55544f" stroke-width="3" />
+<path d="M1556,472 L1570,480 L1556,488" fill="none" stroke="#55544f" stroke-width="3"/><line x1="1506" y1="1592" x2="1564" y2="1592" stroke="#55544f" stroke-width="3" />
+<path d="M1556,1584 L1570,1592 L1556,1600" fill="none" stroke="#55544f" stroke-width="3"/><path d="M1790,1134 L1790,1162 L260,1162 L260,1186" fill="none" stroke="#55544f" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M252,1176 L260,1188 L268,1176" fill="none" stroke="#55544f" stroke-width="3"/></svg>
