@@ -1,4 +1,4 @@
-/* ch3.css: owned by the Chapter 3 agent. Every rule scoped under #ch3 (#fig-3a / #fig-3b / #fig-3c). */
+/* ch3.css: owned by the Chapter 3 agent. Every rule is scoped under #ch3. */
 
 #ch3 {
   /* text colour on top of the grey (--context) bar: ink in light, dark paper in dark (contrast >= 4.5) */
@@ -8,71 +8,60 @@
   #ch3 { --c3-on-grey: var(--paper); }
 }
 
-/* ---- controls: equal-width one-row steppers on small screens ---- */
-#ch3 .fig-controls .seg { display: inline-flex; flex-wrap: nowrap; }
-#ch3 .fig-controls .seg button { line-height: 1.2; text-align: center; }
-#ch3 .c3-short { display: none; }
+/* ---- explore bar ---- */
+#ch3 .explore-controls .seg { flex-wrap: nowrap; }
+#ch3 .explore-controls .seg button { line-height: 1.2; text-align: center; white-space: nowrap; }
 @media (max-width: 599px) {
-  #ch3 .fig-controls { gap: 4px 12px; }
-  #ch3 .fig-controls .ctl-label { flex: 0 0 100%; }
-  #ch3 .fig-controls .seg { display: flex; width: 100%; }
-  #ch3 .fig-controls .seg button {
-    flex: 1 1 0;
-    min-width: 0;
-    padding: 6px 6px;
-  }
-  #ch3 .c3-long { display: none; }
-  #ch3 .c3-short { display: inline; }
+  #ch3 .explore-controls { gap: 8px 16px; }
+  #ch3 .explore-controls .ctl-group { display: flex; flex-wrap: wrap; width: 100%; gap: 4px 10px; }
+  #ch3 .explore-controls .seg { display: flex; width: 100%; }
+  #ch3 .explore-controls .seg button { flex: 1 1 0; min-width: 0; padding: 6px 8px; white-space: normal; }
 }
 
 /* ---- shared chart bits ---- */
-#ch3 .fig-chart svg text { font-family: var(--font-sans); }
+#ch3 .panel-chart svg text { font-family: var(--font-sans); }
 #ch3 .c3-hit { fill: transparent; stroke: none; }
-#ch3 .c3a-row, #ch3 .c3b-row, #ch3 .c3c-row { outline: none; cursor: default; }
+#ch3 .c3a-row, #ch3 .c3b-row { outline: none; }
+#ch3 .c3a-row { cursor: pointer; }
+#ch3 .c3b-row { cursor: default; }
 #ch3 .c3a-row:focus-visible .c3-hit,
-#ch3 .c3b-row:focus-visible .c3-hit,
-#ch3 .c3c-row:focus-visible .c3-hit { stroke: var(--focus); stroke-width: 3; rx: 4; }
+#ch3 .c3b-row:focus-visible .c3-hit { stroke: var(--focus); stroke-width: 3; rx: 4; }
 #ch3 .c3a-row:hover .c3-hit,
-#ch3 .c3b-row:hover .c3-hit,
-#ch3 .c3c-row:hover .c3-hit { fill: var(--surface); opacity: 0.55; }
+#ch3 .c3b-row:hover .c3-hit { fill: var(--band); opacity: 0.45; }
+#ch3 .c3-base { stroke: var(--ink); stroke-width: 1; }
+#ch3 .c3-grid { stroke: var(--rule); stroke-width: 1; }
+#ch3 .panel-chart text.c3-tick, #ch3 .panel-chart text.c3-axis-title { font-size: 12px; fill: var(--muted); }
 
-/* ---- fig-3a ---- */
-#fig-3a .c3a-name { fill: var(--ink); }
-#fig-3a .c3a-grey { fill: var(--context); }
-#fig-3a .c3a-harm { fill: var(--rise); }
-#fig-3a .c3a-gval, #fig-3a .c3a-hval { font-size: 13px; font-weight: 700; fill: var(--ink); font-variant-numeric: tabular-nums; }
-#fig-3a .c3a-ilab { font-size: 12px; font-weight: 700; pointer-events: none; }
-#fig-3a .c3a-ilab-grey { fill: var(--c3-on-grey); }
-#fig-3a .c3a-ilab-harm { fill: var(--paper); }
-#fig-3a .c3a-klab { font-size: 12px; font-weight: 600; fill: var(--ink); }
-#fig-3a .c3a-ann-text { font-size: 14px; font-weight: 700; fill: var(--ink); }
-@media (max-width: 639px) { #fig-3a .c3a-ann-text { font-size: 13px; } }
-#fig-3a .c3a-ann-rule { stroke: var(--rise); stroke-width: 3; }
+/* ---- panel A: paired bars ---- */
+#ch3 .c3a-sel { fill: none; stroke: none; pointer-events: none; }
+#ch3 .c3a-row.is-sel .c3a-sel { stroke: var(--rise); stroke-width: 1.5; }
+#ch3 .panel-chart text.c3a-name { fill: var(--ink); font-weight: 500; }
+#ch3 .panel-chart .c3a-row.is-sel text.c3a-name { font-weight: 800; }
+#ch3 .c3a-grey { fill: var(--context); }
+#ch3 .c3a-harm { fill: var(--rise); }
+#ch3 .panel-chart text.c3a-gval, #ch3 .panel-chart text.c3a-hval { font-size: 13px; font-weight: 700; fill: var(--ink); font-variant-numeric: tabular-nums; }
+#ch3 .panel-chart text.c3a-ilab { font-size: 12px; font-weight: 700; pointer-events: none; }
+#ch3 .panel-chart text.c3a-ilab-grey { fill: var(--c3-on-grey); }
+#ch3 .panel-chart text.c3a-ilab-harm { fill: var(--paper); }
+#ch3 .panel-chart text.c3a-klab { font-size: 12px; font-weight: 600; fill: var(--ink); }
+#ch3 .panel-chart text.c3a-ann-text { font-weight: 700; fill: var(--ink); }
+#ch3 .c3a-ann-rule { fill: var(--rise); }
 
-/* ---- fig-3b ---- */
-#fig-3b .c3b-guide { stroke: var(--rule); stroke-width: 1; stroke-dasharray: 2 4; }
-#fig-3b .c3b-open { fill: var(--paper); stroke: var(--context); stroke-width: 2.5; }
-#fig-3b .c3b-fill { fill: var(--rise); stroke: var(--paper); stroke-width: 1.5; }
-#fig-3b .c3b-whisker { stroke: var(--rise); stroke-width: 2; }
-#fig-3b .c3b-whisker-all { stroke: var(--context); stroke-width: 2; }
-#fig-3b .c3b-val { font-size: 12px; font-variant-numeric: tabular-nums; }
-#fig-3b .c3b-val-ped { font-weight: 700; fill: var(--ink); }
-#fig-3b .c3b-val-all { font-weight: 500; fill: var(--muted); }
-#fig-3b .c3b-np { font-size: 12px; font-style: italic; fill: var(--muted); }
-#fig-3b .c3b-ann-text { font-size: 13px; font-weight: 700; fill: var(--ink); }
-#fig-3b .c3b-ann-leader { stroke: var(--rise); stroke-width: 1.5; }
-#fig-3b .c3b-key text { fill: var(--ink); }
-#fig-3b .c3b-key .c3b-key-note { fill: var(--muted); font-weight: 400; }
-
-/* ---- fig-3c ---- */
-#fig-3c .c3c-name { fill: var(--ink); font-weight: 500; }
-#fig-3c .c3c-stem { stroke: var(--rule); stroke-width: 2; }
-#fig-3c .c3b-open { fill: var(--paper); stroke: var(--context); stroke-width: 2.5; }
-#fig-3c .c3b-fill { fill: var(--rise); stroke: var(--paper); stroke-width: 1.5; }
-#fig-3c .c3c-val { font-size: 13px; font-weight: 700; fill: var(--ink); font-variant-numeric: tabular-nums; }
-#fig-3c .c3c-note { font-size: 12px; fill: var(--muted); }
-#fig-3c .c3c-badge { fill: none; stroke: var(--ink); stroke-width: 1.5; }
-#fig-3c .c3c-badge-text { font-size: 12px; font-weight: 700; fill: var(--ink); }
+/* ---- panel B: dot plot by age ---- */
+#ch3 .c3b-guide { stroke: var(--rule); stroke-width: 1; stroke-dasharray: 2 4; }
+#ch3 .c3b-open { fill: var(--panel); stroke: var(--context); stroke-width: 2.5; }
+#ch3 .c3b-fill { fill: var(--rise); stroke: var(--panel); stroke-width: 1.5; }
+#ch3 .c3b-whisker { stroke: var(--rise); stroke-width: 2; }
+#ch3 .c3b-whisker-all { stroke: var(--context); stroke-width: 2; }
+#ch3 .panel-chart text.c3b-age { font-size: 13px; font-weight: 500; }
+#ch3 .panel-chart text.c3b-val { font-size: 12px; font-variant-numeric: tabular-nums; }
+#ch3 .panel-chart text.c3b-val-sel { font-weight: 700; fill: var(--ink); }
+#ch3 .panel-chart text.c3b-val-all { font-weight: 500; fill: var(--muted); }
+#ch3 .panel-chart text.c3b-np { font-size: 12px; font-style: italic; fill: var(--muted); }
+#ch3 .panel-chart text.c3b-ann-text { font-size: 13px; font-weight: 700; fill: var(--ink); }
+#ch3 .c3b-ann-leader { stroke: var(--rise); stroke-width: 1.5; }
+#ch3 .panel-chart .c3b-key text { fill: var(--ink); }
+#ch3 .panel-chart .c3b-key text.c3b-key-note { fill: var(--muted); }
 
 @media (prefers-reduced-motion: reduce) {
   #ch3 .c3-hit { transition: none; }
