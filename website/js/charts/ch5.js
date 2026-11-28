@@ -1,629 +1,646 @@
-/* ch5.js: Chapter 5 figures (fig-5a trend lines, fig-5b paired road-user bars, fig-5c area share / average stay).
+/* ch5.js: Chapter 5 board (A: two lines, First Nations vs non-Indigenous; B: paired horizontal bars of within-group shares).
    OWNED BY THE CHAPTER 5 AGENT.
-   Interface: window.Charts[id] = { init(el, data), update(state) }  (see ch1.js).
-   Data: ch5_first_nations_trend (year, status, hosp, bed_days, population, hosp_per_100k; population and rate
-         only for 2011, 2016, 2021) and ch5_first_nations_profile (view = road_user | remoteness).
-   Indexes (2011 = 100), within-group shares and the First Nations share by area are computed here, for presentation.
-   Colour: First Nations = --accent2, non-Indigenous = --context. Never the only cue: direct labels, solid vs
-   dashed lines, filled vs open dots, bar order. */
+   Interface: window.Charts['ch5'] = { init(boardEl, data) }
+   Data: ch5_first_nations_trend (year, status, hosp, bed_days, population, hosp_per_100k; the population and the rate exist
+         only for 2011, 2016 and 2021, blanks load as null) and ch5_first_nations_profile (view = road_user | remoteness, pooled 2016-21).
+   State: Viz.bus({ aView: 'rate' | 'index', bView: 'road_user' | 'remoteness', focus: null | FN | NI }).
+   Index (2011 = 100), within-group shares and the "All other" road-user row are computed here, for presentation.
+   Colour: First Nations = --accent2, non-Indigenous = --context. Colour is never the only cue: solid vs dashed lines,
+   filled vs open dots, direct labels, bar order (First Nations bar on top) and the named Highlight buttons.
+   Every number comes from the CSVs at runtime. The prose keys used by index.html are registered in facts.js. */
 (function () {
   'use strict';
   window.Charts = window.Charts || {};
 
   var FN = 'First Nations people', NI = 'Non-Indigenous';
+  var GK = {}; GK[FN] = 'fn'; GK[NI] = 'ni';
+  var GN = {}; GN[FN] = 'First Nations'; GN[NI] = 'Non-Indigenous';
+  var EN = '–';
   var MINUS = '−';
-  var N = function (v) { return Viz.fmt.int(v); };
-  var D1 = function (v) { return v == null ? '' : Viz.fmt.dp1(v); };
-  var P1 = function (v) { return Viz.fmt.pct(v, 1); };
 
-  /* ---------------------------------------------------------------- facts */
-  /* Extra prose numbers for Chapter 5, registered before main.js runs fillProse. */
-  (function registerFacts() {
-    var F = window.Facts;
-    if (!F || !F.register) return;
-    function row(d, year, status) {
-      var rows = d.ch5_first_nations_trend;
-      for (var i = 0; i < rows.length; i++) if (rows[i].year === year && rows[i].status === status) return rows[i];
-      throw new Error('no ch5_first_nations_trend row for ' + year + ' ' + status);
-    }
-    F.register('c5_fn_rate_2021_dp1', function (d) { return row(d, 2021, FN).hosp_per_100k.toFixed(1); });   /* 225.7 */
-    F.register('c5_ni_rate_2021_dp1', function (d) { return row(d, 2021, NI).hosp_per_100k.toFixed(1); });   /* 148.8 */
-    F.register('c5_ratio_2021', function (d) {                                                              /* 1.5 */
-      return (row(d, 2021, FN).hosp_per_100k / row(d, 2021, NI).hosp_per_100k).toFixed(1);
-    });
-  })();
+  var CAR = 'Car driver, passenger or unknown position';
+  var OTHER_CATS = ['Bus occupant', 'Heavy transport driver, passenger or unknown position', 'Pick-up truck or van occupant', 'Other or unknown'];
+  var ROAD_ITEMS = [
+    { key: 'car', label: 'Car occupant', cats: [CAR] },
+    { key: 'moto', label: 'Motorcyclist', cats: ['Motorcyclist'] },
+    { key: 'cyc', label: 'Cyclist', cats: ['Pedal cyclist'] },
+    { key: 'ped', label: 'Pedestrian', cats: ['Pedestrian'] },
+    { key: 'other', label: 'All other', cats: OTHER_CATS }
+  ];
+  var AREA_ITEMS = [
+    { key: 'Major Cities', label: 'Major Cities', cats: ['Major Cities'] },
+    { key: 'Regional', label: 'Regional', cats: ['Regional'] },
+    { key: 'Remote', label: 'Remote', cats: ['Remote'] }
+  ];
 
-  /* --------------------------------------------------------------- helpers */
-  function sel(el, q) { return el.querySelector(q); }
-  /* Show only the [data-mode] children that match (titles, notes). */
-  function showMode(el, mode) {
-    Array.prototype.forEach.call(el.querySelectorAll('[data-mode]'), function (n) { n.hidden = n.getAttribute('data-mode') !== mode; });
-  }
+  function int(v) { return Viz.fmt.int(v); }
+  function dp1(v) { return Viz.fmt.dp1(v); }
+  function dp0(v) { return Viz.fmt.dp(v, 0); }
+  function pct1(v) { return Viz.fmt.pct(v, 1); }
   function sgn(n) { return (n >= 0 ? '+' : MINUS) + Math.abs(Math.round(n)) + '%'; }
-  /* Wrap an svg <text> into tspans no wider than maxW (measures in the DOM). ch3.js has a different wrap():
-     it returns lines measured on a canvas, so the two are kept separate. */
-  function wrap(text, str, x, maxW, lineH, maxLines) {
-    text.text(null);
-    var words = String(str).split(/\s+/), line = [], lines = 0;
-    var tsp = text.append('tspan').attr('x', x).attr('dy', 0);
-    words.forEach(function (w) {
-      line.push(w);
-      tsp.text(line.join(' '));
-      if (tsp.node().getComputedTextLength() > maxW && line.length > 1 && (!maxLines || lines < maxLines - 1)) {
-        line.pop(); tsp.text(line.join(' '));
-        line = [w]; lines++;
-        tsp = text.append('tspan').attr('x', x).attr('dy', lineH).text(w);
-      }
+  function lowerFirst(s) { return s.charAt(0).toLowerCase() + s.slice(1); }
+
+  /* Text width via canvas, using the chart's own font family. */
+  function measurer(host) {
+    var ctx = document.createElement('canvas').getContext('2d');
+    var fam = getComputedStyle(host).fontFamily;
+    return function (text, size, weight) {
+      ctx.font = (weight || 400) + ' ' + size + 'px ' + fam;
+      return ctx.measureText(text).width;
+    };
+  }
+
+  /* One tab stop for a set of marks; arrow keys move between them. */
+  function roving(nodes, current) {
+    nodes.forEach(function (n, i) {
+      n.setAttribute('tabindex', i === (current || 0) ? '0' : '-1');
+      n.addEventListener('focus', function () {
+        nodes.forEach(function (m) { m.setAttribute('tabindex', m === n ? '0' : '-1'); });
+      });
+      n.addEventListener('keydown', function (e) {
+        var k = e.key, j = null;
+        if (k === 'ArrowDown' || k === 'ArrowRight') j = Math.min(nodes.length - 1, i + 1);
+        else if (k === 'ArrowUp' || k === 'ArrowLeft') j = Math.max(0, i - 1);
+        else if (k === 'Home') j = 0;
+        else if (k === 'End') j = nodes.length - 1;
+        if (j === null) return;
+        e.preventDefault();
+        if (j !== i) nodes[j].focus();
+      });
     });
-    return lines + 1;
   }
-  function fade(selection, animate) {
-    if (!animate || Viz.reducedMotion()) return;
-    selection.style('opacity', 0).transition().duration(Viz.dur(350)).style('opacity', 1);
-  }
-  function svgFor(host, cls, w, h) { return Viz.svg(host, w, h, { cls: cls, reuse: true, hidden: true }); }
 
-  /* =========================================================== fig-5a ===== */
-  window.Charts['fig-5a'] = {
-    init: function (el, data) {
-      var host = sel(el, '.fig-chart');
-      var all = data.ch5_first_nations_trend || [];
-      function rowsOf(status) { return all.filter(function (r) { return r.status === status; }).sort(function (a, b) { return a.year - b.year; }); }
-      var fnR = rowsOf(FN), niR = rowsOf(NI);
-      if (!host || !fnR.length || !niR.length) return;
-      var years = fnR.map(function (r) { return r.year; });
-      var y0 = years[0], y1 = years[years.length - 1];
-      var rateYears = fnR.filter(function (r) { return r.hosp_per_100k != null; }).map(function (r) { return r.year; });
-      function at(rows, yr) { return rows.filter(function (r) { return r.year === yr; })[0]; }
-      var fn0 = fnR[0], ni0 = niR[0], fnL = at(fnR, y1), niL = at(niR, y1);
+  window.Charts['ch5'] = {
+    init: function (board, data) {
+      var panelA = board.querySelector('#ch5-a'), panelB = board.querySelector('#ch5-b');
+      if (!panelA || !panelB) return;
+      var hostA = panelA.querySelector('.panel-chart'), hostB = panelB.querySelector('.panel-chart');
+      var titleElA = panelA.querySelector('.panel-title'), subElA = panelA.querySelector('.panel-sub');
+      var titleElB = panelB.querySelector('.panel-title'), subElB = panelB.querySelector('.panel-sub');
+      var chip = board.querySelector('.board-chip');
+      var ctlHost = board.querySelector('.explore-controls');
+      var trend = data.ch5_first_nations_trend || [];
+      var prof = data.ch5_first_nations_profile || [];
 
-      var state = { mode: 'index', year: null };
-      var width = 0, svg, x, y, innerW, innerH, g = {}, wide = true;
-      var m = { top: 38, right: 170, bottom: 32, left: 42 };
-
-      function ptsIndex(rows, base) {
-        return rows.map(function (r) { return { year: r.year, v: r.hosp / base.hosp * 100, row: r }; });
+      /* ============================================================ data prep: panel A */
+      function series(status) {
+        return trend.filter(function (r) { return r.status === status; }).sort(function (a, b) { return a.year - b.year; });
       }
-      function ptsRate(rows) {
-        return rows.filter(function (r) { return r.hosp_per_100k != null; }).map(function (r) { return { year: r.year, v: r.hosp_per_100k, row: r }; });
-      }
-      function pts(rows, base, mode) { return mode === 'index' ? ptsIndex(rows, base) : ptsRate(rows); }
-      function stepYears() { return state.mode === 'index' ? years : rateYears; }
+      var S = {}; S[FN] = series(FN); S[NI] = series(NI);
+      if (!S[FN].length || !S[NI].length || !prof.length) return;
+      var years = S[FN].map(function (r) { return r.year; });
+      var Y0 = years[0], Y1 = years[years.length - 1];
+      var rateYears = S[FN].filter(function (r) { return r.hosp_per_100k != null; }).map(function (r) { return r.year; });
+      function rowAt(st, yr) { return S[st].filter(function (r) { return r.year === yr; })[0]; }
+      var base = {}; base[FN] = S[FN][0]; base[NI] = S[NI][0];
+      var last = {}; last[FN] = S[FN][S[FN].length - 1]; last[NI] = S[NI][S[NI].length - 1];
+      function chg(st) { return (last[st].hosp / base[st].hosp - 1) * 100; }
+      var rate11 = {}, rate21 = {};
+      [FN, NI].forEach(function (st) { rate11[st] = rowAt(st, Y0).hosp_per_100k; rate21[st] = rowAt(st, Y1).hosp_per_100k; });
+      var ratio21 = rate21[FN] / rate21[NI];
+      /* the titles say "level" in 2011 and "half as high again" in 2021: warn (not fail) if the data stop supporting that */
+      if (Math.abs(rate11[FN] / rate11[NI] - 1) > 0.05) console.warn('[ch5] title says the 2011 rates were level but they differ by ' + ((rate11[FN] / rate11[NI] - 1) * 100).toFixed(1) + '%');
+      if (ratio21 < 1.4 || ratio21 > 1.6) console.warn('[ch5] title says half as high again but the 2021 ratio is ' + ratio21.toFixed(2));
+      if (chg(FN) < 80 || chg(FN) >= 100) console.warn('[ch5] title says "nearly doubled" but the First Nations change is ' + chg(FN).toFixed(0) + '%');
 
-      /* ---------- summary, table, tooltip ---------- */
-      function describe() {
-        var fc = (fnL.hosp / fn0.hosp - 1) * 100, nc = (niL.hosp / ni0.hosp - 1) * 100;
-        if (state.mode === 'index') {
-          return 'Two lines indexed to 2011 = 100, 2011 to 2021. First Nations hospitalisations rose ' + Viz.fmt.dp(fc, 0) + '% from ' +
-            N(fn0.hosp) + ' to ' + N(fnL.hosp) + '; non-Indigenous rose ' + Viz.fmt.dp(nc, 0) + '% from ' + N(ni0.hosp) + ' to ' + N(niL.hosp) + '.';
+      function pts(st, view) {
+        var rows = S[st];
+        if (view === 'rate') {
+          return rows.filter(function (r) { return r.hosp_per_100k != null; })
+            .map(function (r) { return { year: r.year, v: r.hosp_per_100k, row: r }; });
         }
-        var f0 = fn0.hosp_per_100k, n0 = ni0.hosp_per_100k, f1 = fnL.hosp_per_100k, n1 = niL.hosp_per_100k;
-        return 'Rates per 100,000 people for 2011, 2016 and 2021 only, the years with a First Nations population estimate. In 2011 the First Nations rate was ' +
-          Viz.fmt.dp1(f0) + ' and the non-Indigenous rate ' + Viz.fmt.dp1(n0) + '. In 2021 they were ' + Viz.fmt.dp1(f1) + ' and ' + Viz.fmt.dp1(n1) +
-          ', so the First Nations rate was about ' + Viz.fmt.dp(f1 / n1, 1) + ' times as high.';
+        return rows.map(function (r) { return { year: r.year, v: r.hosp / base[st].hosp * 100, row: r }; });
       }
-      function fillTable() {
-        var t = el.querySelector('.fig-data');
-        if (state.mode === 'index') {
-          var rows = years.map(function (yr) {
-            var a = at(fnR, yr), b = at(niR, yr);
-            return { year: yr, fn: a.hosp, fi: a.hosp / fn0.hosp * 100, ni: b.hosp, ni_i: b.hosp / ni0.hosp * 100 };
+      function stepYears(view) { return view === 'rate' ? rateYears : years; }
+
+      /* ============================================================ data prep: panel B */
+      function profRows(view, status) { return prof.filter(function (r) { return r.view === view && r.status === status; }); }
+      function aggregate(view, status, cats) {
+        var rows = profRows(view, status).filter(function (r) { return cats.indexOf(r.category) >= 0; });
+        var hosp = 0, bed = 0, np = 0;
+        rows.forEach(function (r) { hosp += r.hosp || 0; bed += r.bed_days || 0; np += r.np_cells || 0; });
+        var stay = rows.length === 1 && rows[0].avg_stay != null ? rows[0].avg_stay : (hosp ? bed / hosp : null);
+        return { hosp: hosp, bed: bed, np: np, stay: stay, n: rows.length };
+      }
+      function buildItems(view) {
+        var defs = view === 'road_user' ? ROAD_ITEMS : AREA_ITEMS;
+        var tot = {};
+        [FN, NI].forEach(function (st) {
+          tot[st] = profRows(view, st).reduce(function (a, r) { return a + (r.hosp || 0); }, 0);
+        });
+        var items = defs.map(function (d) {
+          var o = { key: d.key, label: d.label, cats: d.cats, g: {} };
+          [FN, NI].forEach(function (st) {
+            var a = aggregate(view, st, d.cats);
+            a.share = tot[st] ? a.hosp / tot[st] * 100 : 0;
+            o.g[st] = a;
           });
-          Viz.fillTable(t, rows, [
-            { key: 'year', label: 'Year' },
-            { key: 'fn', label: 'First Nations hospitalisations', format: N },
-            { key: 'fi', label: 'First Nations index (2011 = 100)', format: D1 },
-            { key: 'ni', label: 'Non-Indigenous hospitalisations', format: N },
-            { key: 'ni_i', label: 'Non-Indigenous index (2011 = 100)', format: D1 }
-          ], { caption: 'Hospitalisations and index (2011 = 100), all years' });
-        } else {
-          var rr = rateYears.map(function (yr) {
-            var a = at(fnR, yr), b = at(niR, yr);
-            return { year: yr, fn: a.hosp, fp: a.population, fr: a.hosp_per_100k, ni: b.hosp, np: b.population, nr: b.hosp_per_100k };
-          });
-          Viz.fillTable(t, rr, [
-            { key: 'year', label: 'Year' },
-            { key: 'fn', label: 'First Nations hospitalisations', format: N },
-            { key: 'fp', label: 'First Nations population (ABS)', format: N },
-            { key: 'fr', label: 'First Nations per 100,000', format: D1 },
-            { key: 'ni', label: 'Non-Indigenous hospitalisations', format: N },
-            { key: 'np', label: 'Non-Indigenous population', format: N },
-            { key: 'nr', label: 'Non-Indigenous per 100,000', format: D1 }
-          ], { caption: 'Rates per 100,000 people: only the years with an ABS First Nations population estimate' });
+          return o;
+        });
+        if (view === 'road_user') {
+          /* sort by the First Nations share, "All other" last */
+          var other = items.filter(function (o) { return o.key === 'other'; });
+          var main = items.filter(function (o) { return o.key !== 'other'; })
+            .sort(function (a, b) { return b.g[FN].share - a.g[FN].share; });
+          items = main.concat(other);
         }
+        return items;
       }
-      function tipHtml(yr) {
-        var a = at(fnR, yr), b = at(niR, yr);
+      var ITEMS = { road_user: buildItems('road_user'), remoteness: buildItems('remoteness') };
+      function itemBy(view, key) { return ITEMS[view].filter(function (o) { return o.key === key; })[0]; }
+      var HLKEY = { road_user: 'ped', remoteness: 'Remote' };
+      var pedI = itemBy('road_user', 'ped'), remI = itemBy('remoteness', 'Remote');
+      if (!pedI || !remI) return;
+      /* wording checks: "about one in four" and "fewer than one in fifty" */
+      if (remI.g[FN].share < 22 || remI.g[FN].share > 28) console.warn('[ch5] title says about one in four but the First Nations remote share is ' + remI.g[FN].share.toFixed(1) + '%');
+      if (remI.g[NI].share >= 2) console.warn('[ch5] title says fewer than one in fifty but the non-Indigenous remote share is ' + remI.g[NI].share.toFixed(1) + '%');
+
+      /* ============================================================ words */
+      function titleA(v) {
+        if (v === 'rate') return 'Per person, the First Nations rate went from level with everyone else to half as high again';
+        return 'First Nations hospitalisations nearly doubled; everyone else' + '’' + 's rose ' + dp0(chg(NI)) + '%';
+      }
+      function subA(v) {
+        if (v === 'rate') {
+          return 'Hospitalisations per 100,000 people · First Nations vs non-Indigenous · population estimates exist for ' +
+            rateYears.slice(0, -1).join(', ') + ' and ' + rateYears[rateYears.length - 1] + ' only';
+        }
+        return 'Annual hospitalisations indexed to ' + Y0 + ' = 100 · First Nations vs non-Indigenous · ' + Y0 + EN + Y1 +
+          ' · Vic (2012) and NSW (2017) counting changes lower later counts';
+      }
+      function titleB(v) {
+        if (v === 'road_user') {
+          return 'Pedestrians are ' + dp0(pedI.g[FN].share) + '% of First Nations hospitalisations, ' + dp0(pedI.g[NI].share) + '% of everyone else' + '’' + 's';
+        }
+        return 'About one in four First Nations patients lives in a remote area; fewer than one in fifty others do';
+      }
+      function subB(v) {
+        if (v === 'road_user') return 'Share of each group' + '’' + 's hospitalisations by road user, 2016' + EN + '21 pooled · published cells only (n.p. suppressed cells excluded)';
+        return 'Share of each group' + '’' + 's hospitalisations by where the person lives, 2016' + EN + '21 pooled';
+      }
+      function describeA(v) {
+        var f0 = base[FN], n0 = base[NI], fL = last[FN], nL = last[NI];
+        if (v === 'index') {
+          return 'Line chart, two lines indexed to ' + Y0 + ' = 100, ' + Y0 + ' to ' + Y1 + '. First Nations hospitalisations rose ' + dp0(chg(FN)) + '% from ' +
+            int(f0.hosp) + ' to ' + int(fL.hosp) + '; non-Indigenous rose ' + dp0(chg(NI)) + '% from ' + int(n0.hosp) + ' to ' + int(nL.hosp) + '.';
+        }
+        return 'Line chart of hospitalisations per 100,000 people for ' + rateYears.join(', ') + ' only, the years with a population estimate. In ' + Y0 +
+          ' the First Nations rate was ' + dp1(rate11[FN]) + ' and the non-Indigenous rate ' + dp1(rate11[NI]) + '. In ' + Y1 + ' they were ' + dp1(rate21[FN]) +
+          ' and ' + dp1(rate21[NI]) + ', so the First Nations rate was about ' + dp1(ratio21) + ' times as high.';
+      }
+      function rowLabel(it, view) {
+        var f = it.g[FN], n = it.g[NI];
+        return it.label + ': First Nations ' + pct1(f.share) + ' (' + int(f.hosp) + '), non-Indigenous ' + pct1(n.share) + ' (' + int(n.hosp) +
+          '); average stay ' + dp1(f.stay) + ' and ' + dp1(n.stay) + ' days' +
+          (view === 'road_user' ? '; ' + f.np + ' and ' + n.np + ' suppressed cells' : '') + '.';
+      }
+      function describeB(v) {
+        var items = ITEMS[v];
+        if (v === 'road_user') {
+          return 'Paired horizontal bars of each group' + '’' + 's hospitalisations by road user, as shares within the group, 2016 to 2021 pooled, published cells only. ' +
+            items.map(function (it) { return it.label + ' ' + pct1(it.g[FN].share) + ' of First Nations and ' + pct1(it.g[NI].share) + ' of non-Indigenous'; }).join('; ') + '.';
+        }
+        return 'Paired horizontal bars of each group' + '’' + 's hospitalisations by where the person lives, as shares within the group, 2016 to 2021 pooled. ' +
+          items.map(function (it) { return it.label + ' ' + pct1(it.g[FN].share) + ' of First Nations and ' + pct1(it.g[NI].share) + ' of non-Indigenous'; }).join('; ') + '.';
+      }
+      function viewWords(a, b) {
+        return (a === 'rate' ? 'per 100,000' : 'index (2011 = 100)') + ' · ' + (b === 'road_user' ? 'by road user' : 'by where they live');
+      }
+
+      var bus = Viz.bus({ aView: 'rate', bView: 'road_user', focus: null });
+      var pinned = null;           /* the group chosen with the Highlight buttons (sticky); hover focus is transient */
+      var animA = false, animB = false;
+
+      /* ============================================================ explore bar */
+      ctlHost.innerHTML = '';
+      var gA = document.createElement('div');
+      gA.className = 'ctl-group';
+      gA.innerHTML = '<span class="ctl-label" id="ch5-seg-a-label">Chart A</span>' +
+        '<div class="seg" role="group" aria-labelledby="ch5-seg-a-label">' +
+        '<button type="button" data-value="rate" aria-pressed="true">Per 100,000</button>' +
+        '<button type="button" data-value="index" aria-pressed="false">Index (2011 = 100)</button></div>';
+      ctlHost.appendChild(gA);
+      var gB = document.createElement('div');
+      gB.className = 'ctl-group';
+      gB.innerHTML = '<span class="ctl-label" id="ch5-seg-b-label">Chart B</span>' +
+        '<div class="seg" role="group" aria-labelledby="ch5-seg-b-label">' +
+        '<button type="button" data-value="road_user" aria-pressed="true">By road user</button>' +
+        '<button type="button" data-value="remoteness" aria-pressed="false">By where they live</button></div>';
+      ctlHost.appendChild(gB);
+      var segA = Viz.segmented(gA.querySelector('.seg'), { announce: false, onChange: function (v) { bus.set({ aView: v }, 'controls'); } });
+      var segB = Viz.segmented(gB.querySelector('.seg'), { announce: false, onChange: function (v) { bus.set({ bView: v }, 'controls'); } });
+
+      /* Highlight toggle pair: the keyboard (and touch) way to set the group focus; also panel B's colour key. */
+      var hl = document.createElement('div');
+      hl.className = 'ch5-hl';
+      hl.setAttribute('role', 'group');
+      hl.setAttribute('aria-label', 'Highlight one group in both charts');
+      hl.innerHTML = '<span class="ch5-hl-label" aria-hidden="true">Highlight</span>' +
+        [FN, NI].map(function (st) {
+          return '<button type="button" class="ch5-hl-btn" data-group="' + st + '" aria-pressed="false">' +
+            '<span class="ch5-sw is-' + GK[st] + '" aria-hidden="true"></span>' + GN[st] + '</button>';
+        }).join('');
+      panelB.insertBefore(hl, hostB);
+      var hlBtns = Array.prototype.slice.call(hl.querySelectorAll('button'));
+
+      /* ============================================================ link: group focus */
+      function setHover(group) { bus.set({ focus: group || pinned }, 'hover'); }
+      function pin(group) {
+        pinned = pinned === group ? null : group;
+        bus.set({ focus: pinned }, 'pin');
+      }
+      hlBtns.forEach(function (b) {
+        var st = b.getAttribute('data-group');
+        b.addEventListener('click', function () { pin(st); });
+        b.addEventListener('pointerenter', function (e) { if (e.pointerType !== 'touch') setHover(st); });
+        b.addEventListener('pointerleave', function (e) { if (e.pointerType !== 'touch') setHover(null); });
+      });
+      function hoverable(sel, st) {
+        sel.each(function () {
+          this.addEventListener('pointerenter', function (e) { if (e.pointerType !== 'touch') setHover(st); });
+          this.addEventListener('pointerleave', function (e) { if (e.pointerType !== 'touch') setHover(null); });
+        });
+      }
+      function syncFocus() {
+        var f = bus.get().focus;
+        board.setAttribute('data-focus', f ? GK[f] : '');
+        hlBtns.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-group') === pinned ? 'true' : 'false'); });
+      }
+      function setChip() {
+        var s = bus.get();
+        chip.textContent = 'Showing: ' + viewWords(s.aView, s.bView) + (pinned ? ' · highlighting ' + GN[pinned] : '');
+      }
+
+      /* ============================================================ panel A */
+      var A = null;   /* geometry of the current drawing: x, y, view, hit, guide, gdots, innerW, innerH */
+
+      function tipA(yr, view) {
+        var a = rowAt(FN, yr), b = rowAt(NI, yr);
         if (!a || !b) return '';
-        if (state.mode === 'index') {
-          return '<strong>' + yr + '</strong><br>First Nations: ' + N(a.hosp) + ' (index ' + Viz.fmt.dp1(a.hosp / fn0.hosp * 100) + ')' +
-            '<br>Non-Indigenous: ' + N(b.hosp) + ' (index ' + Viz.fmt.dp1(b.hosp / ni0.hosp * 100) + ')';
+        function pop(r) { return r.population != null ? '<br><span style="opacity:.85">population ' + int(r.population) + '</span>' : ''; }
+        if (view === 'index') {
+          return '<strong>' + yr + '</strong><br>First Nations: ' + int(a.hosp) + ' hospitalisations, index ' + dp1(a.hosp / base[FN].hosp * 100) + pop(a) +
+            '<br>Non-Indigenous: ' + int(b.hosp) + ' hospitalisations, index ' + dp1(b.hosp / base[NI].hosp * 100) + pop(b);
         }
-        return '<strong>' + yr + '</strong><br>First Nations: ' + Viz.fmt.dp1(a.hosp_per_100k) + ' per 100,000<br><span style="opacity:.85">' + N(a.hosp) + ' hospitalisations, population ' + N(a.population) + '</span>' +
-          '<br>Non-Indigenous: ' + Viz.fmt.dp1(b.hosp_per_100k) + ' per 100,000<br><span style="opacity:.85">' + N(b.hosp) + ' hospitalisations, population ' + N(b.population) + '</span>';
-      }
-      function refreshText() {
-        host.setAttribute('aria-label', describe());
-        showMode(el, state.mode);
-        fillTable();
+        return '<strong>' + yr + '</strong><br>First Nations: ' + dp1(a.hosp_per_100k) + ' per 100,000<br><span style="opacity:.85">' + int(a.hosp) +
+          ' hospitalisations, population ' + int(a.population) + '</span><br>Non-Indigenous: ' + dp1(b.hosp_per_100k) +
+          ' per 100,000<br><span style="opacity:.85">' + int(b.hosp) + ' hospitalisations, population ' + int(b.population) + '</span>';
       }
 
-      /* ---------- build (scales, frame) ---------- */
-      function build() {
-        wide = width >= 640;
-        var h = Viz.height(width, { ratio: 0.6, min: wide ? 320 : 360, max: 460 });
-        m.right = wide ? 176 : 106;
-        m.left = wide ? 46 : 38;
-        innerW = Math.max(120, width - m.left - m.right);
-        innerH = h - m.top - m.bottom;
-        x = d3.scaleLinear().domain([y0, y1]).range([0, innerW]);
-        svg = svgFor(host, 'ch5-svg', width, h);
-        var root = svg.selectAll('g.plot').data([0]).join('g').attr('class', 'plot').attr('transform', 'translate(' + m.left + ',' + m.top + ')');
-        g.dyn = root.selectAll('g.dyn').data([0]).join('g').attr('class', 'dyn');
-        g.hov = root.selectAll('g.hov').data([0]).join('g').attr('class', 'hov');
-        g.mark = root.selectAll('g.mark').data([0]).join('g').attr('class', 'mark');
-      }
+      function drawA(w) {
+        var animate = animA; animA = false;
+        var s = bus.get(), view = s.aView;
+        var measure = measurer(hostA);
+        var wide = w >= 480;
 
-      /* ---------- render (per mode) ---------- */
-      function render(animate) {
-        if (!x) return;
-        var mode = state.mode;
-        var dom = mode === 'index' ? [80, 220] : [0, 250];   /* index axis leaves room above the 2020 peak (196) */
-        y = d3.scaleLinear().domain(dom).range([innerH, 0]);
-        var ticks = mode === 'index' ? d3.range(80, 221, 20) : d3.range(0, 251, 50);
-        var dyn = g.dyn;
-        dyn.selectAll('*').remove();
-        dyn.style('opacity', 1);
-        var fnP = pts(fnR, fn0, mode), niP = pts(niR, ni0, mode);
+        /* end labels, computed first so the right margin fits the longest line */
+        var P = {}; P[FN] = pts(FN, view); P[NI] = pts(NI, view);
+        var labelLines = {};
+        [FN, NI].forEach(function (st) {
+          var e = P[st][P[st].length - 1];
+          labelLines[st] = view === 'index'
+            ? [GN[st], sgn(e.v - 100), int(base[st].hosp) + ' to ' + int(last[st].hosp)]
+            : [GN[st], dp0(e.v) + ' per 100,000'];
+        });
+        var longest = 0;
+        [FN, NI].forEach(function (st) {
+          labelLines[st].forEach(function (ln, k) { longest = Math.max(longest, measure(ln, k === 2 ? 12 : 13, k === 2 ? 400 : 700)); });
+        });
+        var m = { top: 40, right: Math.max(100, Math.ceil(longest) + 16), bottom: 34, left: wide ? 46 : 40 };
+        var h = Viz.height(w, { ratio: 0.7, min: wide ? 340 : 310, max: 430 });
+        var innerW = Math.max(120, w - m.left - m.right), innerH = h - m.top - m.bottom;
+        var x = d3.scaleLinear().domain([Y0, Y1]).range([0, innerW]);
+        var dom = view === 'index' ? [80, 220] : [0, 250];
+        var y = d3.scaleLinear().domain(dom).range([innerH, 0]);
+        var ticks = view === 'index' ? d3.range(80, 221, 20) : d3.range(0, 251, 50);
 
-        /* grid + axes */
+        var svg = Viz.svg(hostA, w, h);
+        var root = svg.append('g').attr('transform', 'translate(' + m.left + ',' + m.top + ')');
+        var dyn = root.append('g').attr('class', 'ch5-fade');
+
         dyn.selectAll('line.ch5-grid').data(ticks).join('line')
-          .attr('class', function (d) { return 'ch5-grid' + (mode === 'index' && d === 100 ? ' is-base' : ''); })
+          .attr('class', function (d) { return 'ch5-grid' + (view === 'index' && d === 100 ? ' is-base' : ''); })
           .attr('x1', 0).attr('x2', innerW).attr('y1', function (d) { return y(d); }).attr('y2', function (d) { return y(d); });
         dyn.selectAll('text.ch5-ytick').data(ticks).join('text').attr('class', 'ch5-tick ch5-ytick')
           .attr('x', -8).attr('y', function (d) { return y(d); }).attr('dy', '0.32em').attr('text-anchor', 'end').text(function (d) { return d; });
-        var xt = mode === 'rate' ? rateYears : (wide ? d3.range(y0, y1 + 1, 2) : [y0, 2016, y1]);
-        xt = xt.filter(function (t) { return t >= y0 && t <= y1; });
+        var xt = view === 'rate' ? rateYears : (innerW >= 300 ? d3.range(Y0, Y1 + 1, 2) : [Y0, 2016, Y1]);
+        xt = xt.filter(function (t) { return t >= Y0 && t <= Y1; });
         dyn.selectAll('text.ch5-xtick').data(xt).join('text').attr('class', 'ch5-tick ch5-xtick')
           .attr('x', function (d) { return x(d); }).attr('y', innerH + 22).attr('text-anchor', 'middle').text(function (d) { return d; });
-        dyn.append('text').attr('class', 'ch5-ytitle').attr('x', -m.left + 2).attr('y', -16)
-          .text(mode === 'index' ? 'Index, 2011 = 100' : 'Hospitalisations per 100,000 people');
-        if (mode === 'index') {
-          dyn.append('text').attr('class', 'ch5-basenote').attr('x', 4).attr('y', y(100) + 14).text('2011 level');
+        dyn.append('text').attr('class', 'ch5-ytitle').attr('x', -m.left + 2).attr('y', -18)
+          .text(view === 'index' ? 'Index, ' + Y0 + ' = 100' : 'Hospitalisations per 100,000 people');
+        if (view === 'index') {
+          dyn.append('text').attr('class', 'ch5-basenote').attr('x', 4).attr('y', y(100) + 15).text(Y0 + ' level');
         }
 
-        /* lines */
+        /* lines: non-Indigenous first so First Nations sits on top */
         var line = d3.line().x(function (d) { return x(d.year); }).y(function (d) { return y(d.v); });
-        dyn.append('path').attr('class', 'ch5-line is-ni ' + (mode === 'rate' ? 'is-thin' : '')).attr('d', line(niP));
-        dyn.append('path').attr('class', 'ch5-line is-fn ' + (mode === 'rate' ? 'is-thin' : '')).attr('d', line(fnP));
+        [NI, FN].forEach(function (st) {
+          dyn.append('path').attr('class', 'ch5-line is-' + GK[st] + ' ch5-g-' + GK[st] + (view === 'rate' ? ' is-dotted' : ''))
+            .attr('d', line(P[st]));
+        });
+        [NI, FN].forEach(function (st) {
+          var dots = view === 'rate' ? P[st] : [P[st][P[st].length - 1]];
+          dyn.selectAll('circle.ch5-dot.is-' + GK[st]).data(dots).join('circle')
+            .attr('class', 'ch5-dot is-' + GK[st] + ' ch5-g-' + GK[st]).attr('r', 5.5)
+            .attr('cx', function (d) { return x(d.year); }).attr('cy', function (d) { return y(d.v); });
+        });
 
-        /* dots: end dots in index view, all three points in rate view */
-        var dotsNI = mode === 'rate' ? niP : [niP[niP.length - 1]];
-        var dotsFN = mode === 'rate' ? fnP : [fnP[fnP.length - 1]];
-        dyn.selectAll('circle.ch5-dot.is-ni').data(dotsNI).join('circle').attr('class', 'ch5-dot is-ni').attr('r', 5.5)
-          .attr('cx', function (d) { return x(d.year); }).attr('cy', function (d) { return y(d.v); });
-        dyn.selectAll('circle.ch5-dot.is-fn').data(dotsFN).join('circle').attr('class', 'ch5-dot is-fn').attr('r', 5.5)
-          .attr('cx', function (d) { return x(d.year); }).attr('cy', function (d) { return y(d.v); });
-
-        /* direct labels at the right end */
-        var fe = fnP[fnP.length - 1], ne = niP[niP.length - 1];
-        var fnLines, niLines;
-        if (mode === 'index') {
-          fnLines = ['First Nations', sgn(fe.v - 100), N(fn0.hosp) + ' to ' + N(fnL.hosp)];
-          niLines = ['Non-Indigenous', sgn(ne.v - 100), N(ni0.hosp) + ' to ' + N(niL.hosp)];
-        } else {
-          fnLines = ['First Nations', Viz.fmt.dp(fe.v, 0) + ' per 100,000'];
-          niLines = ['Non-Indigenous', Viz.fmt.dp(ne.v, 0) + ' per 100,000'];
-        }
-        var labs = [
-          { cls: 'is-fn', lines: fnLines, y: y(fe.v) },
-          { cls: 'is-ni', lines: niLines, y: y(ne.v) }
-        ].sort(function (a, b) { return a.y - b.y; });
+        /* direct labels at the right end (no legend box); hovering a label focuses its group */
+        var labs = [FN, NI].map(function (st) {
+          var e = P[st][P[st].length - 1];
+          return { st: st, lines: labelLines[st], y: y(e.v) };
+        }).sort(function (a, b) { return a.y - b.y; });
         var lineH = 15;
         for (var i = 1; i < labs.length; i++) {
           var need = labs[i - 1].y + (labs[i - 1].lines.length + labs[i].lines.length) / 2 * lineH + 6;
           if (labs[i].y < need) labs[i].y = need;
         }
-        var tx = x(y1) + 12;
+        var tx = x(Y1) + 12;
         labs.forEach(function (l) {
-          var t = dyn.append('text').attr('class', 'ch5-label ' + l.cls).attr('x', tx).attr('y', l.y).attr('dominant-baseline', 'central');
+          var t = dyn.append('text').attr('class', 'ch5-label is-' + GK[l.st] + ' ch5-g-' + GK[l.st]).attr('x', tx).attr('y', l.y).attr('dominant-baseline', 'central');
           l.lines.forEach(function (ln, k) {
             t.append('tspan').attr('x', tx).attr('dy', k === 0 ? (-(l.lines.length - 1) * lineH / 2) + 'px' : lineH + 'px')
-              .style('font-weight', k === 0 ? 700 : (k === 1 ? 700 : 400)).style('font-size', !wide && k > 0 ? '12px' : null).text(ln);
+              .style('font-weight', k < 2 ? 700 : 400).style('font-size', k === 2 ? '12px' : null).text(ln);
           });
+          hoverable(t, l.st);
         });
 
-        /* annotations */
-        if (mode === 'rate') {
-          var f11 = at(fnR, y0).hosp_per_100k, n11 = at(niR, y0).hosp_per_100k;
-          var ay = wide ? y(215) : y(66);
-          dyn.append('text').attr('class', 'ch5-ann').attr('x', x(y0) + (wide ? 2 : 14)).attr('y', ay)
-            .text(Viz.fmt.dp(f11, 0) + ' vs ' + Viz.fmt.dp(n11, 0) + ' in ' + y0);
-          /* "close to level" is a claim in words: warn (as facts.js does) if the 2011 rates stop being within 5% of each other */
-          if (Math.abs(f11 / n11 - 1) > 0.05) console.warn('[ch5] fig-5a says the 2011 rates are "close to level" but they differ by ' + ((f11 / n11 - 1) * 100).toFixed(1) + '%');
-          dyn.append('text').attr('class', 'ch5-ann-sub').attr('x', x(y0) + (wide ? 2 : 14)).attr('y', ay + 15).text('close to level');
-          var f21 = fe.v, n21 = ne.v;
-          var bx = x(y1) - 14;
-          dyn.append('path').attr('class', 'ch5-bracket')
-            .attr('d', 'M' + (bx + 5) + ',' + y(f21) + 'H' + bx + 'V' + y(n21) + 'H' + (bx + 5));
-          var gt = dyn.append('text').attr('class', 'ch5-ann').attr('text-anchor', 'end').attr('x', bx - 8).attr('y', wide ? y((f21 + n21) / 2) - 8 : y(122));
-          gt.append('tspan').attr('x', bx - 8).text(Viz.fmt.dp(f21, 0) + ' vs ' + Viz.fmt.dp(n21, 0) + ' in ' + y1);
-          gt.append('tspan').attr('x', bx - 8).attr('dy', 15).style('font-weight', 400).text('about ' + Viz.fmt.dp(f21 / n21, 1) + ' times');
-        }
-        fade(dyn, animate);
-
-        /* "i" caveat marker on the First Nations line (counts view) */
-        g.mark.selectAll('*').remove();
-        if (mode === 'index') {
-          var mp = fnP.filter(function (p) { return p.year === 2015; })[0];
-          var mx = x(mp.year), my = y(mp.v) - 30;
-          var mg = g.mark.append('g').attr('class', 'ch5-imark').attr('role', 'img').attr('aria-label', 'Note: better recording of Indigenous status may explain part of the rise.');
-          mg.append('line').attr('class', 'ch5-ileader').attr('x1', mx).attr('x2', mx).attr('y1', my + 11).attr('y2', y(mp.v) - 5);
-          mg.append('circle').attr('cx', mx).attr('cy', my).attr('r', 11);
-          mg.append('text').attr('x', mx).attr('y', my).attr('dy', '0.35em').attr('text-anchor', 'middle').text('i');
-          mg.append('circle').attr('class', 'ch5-ihit').attr('cx', mx).attr('cy', my).attr('r', 18);
-          Viz.tooltip.bind(mg, function () { return 'Better recording of Indigenous status in hospital records may explain part of the rise.'; });
+        /* annotations (rate view): "2011: 145 vs 149" top left; "2021: 226 vs 149" under the non-Indigenous end, with a bracket */
+        if (view === 'rate') {
+          var ax = 2, ay = y(236);
+          dyn.append('text').attr('class', 'ch5-ann').attr('x', ax).attr('y', ay).text(Y0 + ': ' + dp0(rate11[FN]) + ' vs ' + dp0(rate11[NI]));
+          dyn.append('text').attr('class', 'ch5-ann-sub').attr('x', ax).attr('y', ay + 15).text('close to level');
+          var bx = x(Y1) - 14, fy = y(rate21[FN]), ny = y(rate21[NI]);
+          dyn.append('path').attr('class', 'ch5-bracket').attr('d', 'M' + (bx + 5) + ',' + fy + 'H' + bx + 'V' + ny + 'H' + (bx + 5));
+          var rx = x(Y1) + 4, ry = y(112);
+          var t2 = dyn.append('text').attr('class', 'ch5-ann').attr('text-anchor', 'end').attr('x', rx).attr('y', ry);
+          t2.append('tspan').attr('x', rx).text(Y1 + ': ' + dp0(rate21[FN]) + ' vs ' + dp0(rate21[NI]));
+          t2.append('tspan').attr('x', rx).attr('dy', 15).attr('class', 'ch5-ann-sub').text('about ' + dp1(ratio21) + ' times as high');
         }
 
-        buildHover();
-        refreshText();
-        if (state.year != null) showYear(nearest(state.year), false);
-      }
+        if (animate && !Viz.reducedMotion()) {
+          dyn.style('opacity', 0).transition().duration(Viz.dur(380)).style('opacity', 1);
+        }
 
-      /* ---------- hover / tap / keyboard ---------- */
-      var hit, guide, gdots;
-      function nearest(yr) {
-        var ys = stepYears();
-        return ys.reduce(function (b, c) { return Math.abs(c - yr) < Math.abs(b - yr) ? c : b; }, ys[0]);
-      }
-      function buildHover() {
-        guide = g.hov.selectAll('line.ch5-guide').data([0]).join('line').attr('class', 'ch5-guide')
-          .attr('y1', 0).attr('y2', innerH).style('opacity', 0);
-        gdots = g.hov.selectAll('circle.ch5-gdot').data(['is-ni', 'is-fn']).join('circle')
-          .attr('class', function (d) { return 'ch5-gdot ' + d; }).attr('r', 7).style('opacity', 0);
-        hit = g.hov.selectAll('rect.ch5-hit').data([0]).join('rect').attr('class', 'ch5-hit')
-          .attr('x', -10).attr('y', 0).attr('width', innerW + 20).attr('height', innerH)
-          .attr('tabindex', 0).attr('role', 'group')
-          .attr('aria-label', 'Year read-out. Use the left and right arrow keys to move between years.');
-        if (!hit.node().__ch5Wired) { hit.node().__ch5Wired = true; wireHover(hit.node()); }
-      }
-      function yearAt(clientX) {
-        var box = hit.node().getBoundingClientRect();
-        return nearest(x.invert(clientX - box.left - 10));
-      }
-      function showYear(yr, openTip, cx, cy) {
-        state.year = yr;
-        var gx = x(yr);
-        guide.attr('x1', gx).attr('x2', gx).style('opacity', 1);
-        var a = at(fnR, yr), b = at(niR, yr);
-        var vals = state.mode === 'index'
-          ? { 'is-fn': a.hosp / fn0.hosp * 100, 'is-ni': b.hosp / ni0.hosp * 100 }
-          : { 'is-fn': a.hosp_per_100k, 'is-ni': b.hosp_per_100k };
-        gdots.each(function (k) { d3.select(this).attr('cx', gx).attr('cy', y(vals[k])).style('opacity', 1); });
-        if (openTip) {
+        /* hover layer: one focusable plot area; arrow keys step through the points */
+        var hov = root.append('g').attr('class', 'ch5-hov');
+        var guide = hov.append('line').attr('class', 'ch5-guide').attr('y1', 0).attr('y2', innerH).style('opacity', 0);
+        var gdots = hov.selectAll('circle.ch5-gdot').data([NI, FN]).join('circle')
+          .attr('class', function (st) { return 'ch5-gdot is-' + GK[st]; }).attr('r', 7).style('opacity', 0);
+        var hit = hov.append('rect').attr('class', 'ch5-hit').attr('x', -10).attr('y', 0).attr('width', innerW + 20).attr('height', innerH)
+          .attr('tabindex', 0).attr('role', 'group');
+        var node = hit.node();
+        var yrs = stepYears(view);
+        var cur = null;
+        A = { view: view, x: x, y: y, hit: node };
+        node.setAttribute('aria-label', 'Chart A plot area. Left and right arrow keys move between ' + yrs.length + ' points: ' +
+          (view === 'rate' ? yrs.join(', ') : Y0 + ' to ' + Y1) + '. Home and End jump to the first and last.');
+
+        function nearest(yr) { return yrs.reduce(function (b, c) { return Math.abs(c - yr) < Math.abs(b - yr) ? c : b; }, yrs[0]); }
+        function valuesAt(yr) {
+          var o = {};
+          [FN, NI].forEach(function (st) { o[st] = P[st].filter(function (p) { return p.year === yr; })[0]; });
+          return o;
+        }
+        function showYear(yr, cx, cy) {
+          cur = yr;
+          var gx = x(yr), vals = valuesAt(yr);
+          guide.attr('x1', gx).attr('x2', gx).style('opacity', 1);
+          gdots.each(function (st) { d3.select(this).attr('cx', gx).attr('cy', y(vals[st].v)).style('opacity', 1); });
           if (cx == null) {
-            var box = hit.node().getBoundingClientRect();
+            var box = node.getBoundingClientRect();
             cx = box.left + 10 + gx; cy = box.top + innerH * 0.4;
           }
-          Viz.tooltip.show(tipHtml(yr), cx, cy, hit.node());
+          Viz.tooltip.show(tipA(yr, view), cx, cy, node);
         }
-      }
-      function clearYear() {
-        state.year = null;
-        if (guide) guide.style('opacity', 0);
-        if (gdots) gdots.style('opacity', 0);
-        Viz.tooltip.hide();
-      }
-      function wireHover(node) {
+        function clearYear() {
+          cur = null;
+          guide.style('opacity', 0); gdots.style('opacity', 0);
+          Viz.tooltip.hide();
+        }
+        /* group nearest the pointer (within 16px of its line), else null */
+        function groupNear(px, py) {
+          var best = null, bd = 16;
+          [FN, NI].forEach(function (st) {
+            var p = P[st], yv = null;
+            for (var k = 0; k < p.length - 1; k++) {
+              var xa = x(p[k].year), xb = x(p[k + 1].year);
+              if (px >= xa - 8 && px <= xb + 8) {
+                var tt = Math.max(0, Math.min(1, (px - xa) / (xb - xa)));
+                yv = y(p[k].v) + (y(p[k + 1].v) - y(p[k].v)) * tt;
+                break;
+              }
+            }
+            if (yv != null && Math.abs(py - yv) <= bd) { bd = Math.abs(py - yv); best = st; }
+          });
+          return best;
+        }
         node.addEventListener('pointermove', function (e) {
           if (e.pointerType === 'touch') return;
-          showYear(yearAt(e.clientX), true, e.clientX, e.clientY);
+          var box = node.getBoundingClientRect();
+          var px = e.clientX - box.left - 10, py = e.clientY - box.top;
+          showYear(nearest(x.invert(px)), e.clientX, e.clientY);
+          setHover(groupNear(px, py));
         });
         node.addEventListener('pointerleave', function (e) {
-          if (e.pointerType === 'touch' || document.activeElement === node) return;
-          clearYear();
+          if (e.pointerType === 'touch') return;
+          setHover(null);
+          if (document.activeElement !== node) clearYear();
         });
         node.addEventListener('pointerdown', function (e) {
           if (e.pointerType !== 'touch') return;
-          showYear(yearAt(e.clientX), true, e.clientX, e.clientY);
+          var box = node.getBoundingClientRect();
+          showYear(nearest(x.invert(e.clientX - box.left - 10)), e.clientX, e.clientY);
         });
-        node.addEventListener('focus', function () { showYear(state.year != null ? nearest(state.year) : y1, true); });
+        node.addEventListener('focus', function () { showYear(cur != null ? nearest(cur) : yrs[yrs.length - 1]); });
         node.addEventListener('blur', function () { clearYear(); });
         node.addEventListener('keydown', function (e) {
           var k = e.key;
           if (['ArrowRight', 'ArrowLeft', 'Home', 'End'].indexOf(k) < 0) return;
           e.preventDefault();
-          var ys = stepYears();
-          var i = ys.indexOf(state.year != null ? nearest(state.year) : y1);
-          if (k === 'ArrowRight') i = Math.min(ys.length - 1, i + 1);
+          var i = yrs.indexOf(cur != null ? nearest(cur) : yrs[yrs.length - 1]);
+          if (k === 'ArrowRight') i = Math.min(yrs.length - 1, i + 1);
           else if (k === 'ArrowLeft') i = Math.max(0, i - 1);
-          else if (k === 'Home') i = 0; else i = ys.length - 1;
-          showYear(ys[i], true);
-          Viz.announce(tipHtml(ys[i]).replace(/<br>/g, '. ').replace(/<[^>]+>/g, ''));
+          else if (k === 'Home') i = 0; else i = yrs.length - 1;
+          showYear(yrs[i]);
+          Viz.announce(Viz.plainText(tipA(yrs[i], view)));
         });
+        hostA.setAttribute('aria-label', describeA(view));
       }
 
-      /* ---------- wire up ---------- */
-      var ctl = sel(el, '.fig-controls');
-      if (ctl) {
-        Viz.segmented(ctl, { onChange: function (v) { state.mode = v; clearYear(); render(true); } });
-        var pressed = ctl.querySelector('button[aria-pressed="true"]');
-        if (pressed) state.mode = pressed.getAttribute('data-value');
-      }
-      Viz.responsive(host, function (w) { width = w; build(); render(false); });
-      host.__fig5a = { setMode: function (v) { state.mode = v; clearYear(); render(true); } };
-    },
-    update: function (state) {
-      var host = document.querySelector('#fig-5a .fig-chart');
-      if (state && state.mode && host && host.__fig5a) host.__fig5a.setMode(state.mode);
-    }
-  };
-
-  /* =========================================================== fig-5b ===== */
-  var SHORT = {
-    'Car driver, passenger or unknown position': 'Car occupants',
-    'Motorcyclist': 'Motorcyclists',
-    'Pedestrian': 'Pedestrians',
-    'Pedal cyclist': 'Cyclists',
-    'Pick-up truck or van occupant': 'Pick-up or van',
-    'Heavy transport driver, passenger or unknown position': 'Heavy transport',
-    'Bus occupant': 'Bus occupants',
-    'Other or unknown': 'Other or unknown'
-  };
-
-  window.Charts['fig-5b'] = {
-    init: function (el, data) {
-      var host = sel(el, '.fig-chart');
-      var prof = (data.ch5_first_nations_profile || []).filter(function (r) { return r.view === 'road_user'; });
-      if (!host || !prof.length) return;
-      var cats = Array.from(new Set(prof.map(function (r) { return r.category; })));
-      var tot = {};
-      [FN, NI].forEach(function (s) {
-        tot[s] = prof.filter(function (r) { return r.status === s; }).reduce(function (a, r) { return a + r.hosp; }, 0);
-      });
-      var items = cats.map(function (c) {
-        var f = prof.filter(function (r) { return r.status === FN && r.category === c; })[0];
-        var n = prof.filter(function (r) { return r.status === NI && r.category === c; })[0];
-        return {
-          cat: c, short: SHORT[c] || c,
-          fn: f.hosp, ni: n.hosp, fs: f.hosp / tot[FN] * 100, ns: n.hosp / tot[NI] * 100,
-          fnp: f.np_cells, nnp: n.np_cells, flag: f.np_cells > 0 || n.np_cells > 0
-        };
-      }).sort(function (a, b) { return b.fs - a.fs; });
-      function item(c) { return items.filter(function (d) { return d.cat === c; })[0]; }
-      var ped = item('Pedestrian'), cyc = item('Pedal cyclist'), car = item('Car driver, passenger or unknown position');
-
-      host.setAttribute('aria-label',
-        'Paired horizontal bars of the road-user mix within each group’s hospitalisations, pooled 2016 to 2021, sorted by the First Nations share. ' +
-        'Car occupants are ' + Viz.fmt.dp1(car.fs) + '% of First Nations and ' + Viz.fmt.dp1(car.ns) + '% of non-Indigenous hospitalisations; pedestrians ' +
-        Viz.fmt.dp1(ped.fs) + '% against ' + Viz.fmt.dp1(ped.ns) + '%; cyclists ' + Viz.fmt.dp1(cyc.fs) + '% against ' + Viz.fmt.dp1(cyc.ns) + '%.');
-
-      Viz.fillTable(sel(el, '.fig-data'), items, [
-        { key: 'short', label: 'Road user', text: true, format: function (v, r) { return r.cat + (r.flag ? ' *' : ''); } },
-        { key: 'fn', label: 'First Nations hospitalisations', format: N },
-        { key: 'fs', label: 'First Nations share', format: P1 },
-        { key: 'fnp', label: 'First Nations suppressed cells (n.p.)', format: N },
-        { key: 'ni', label: 'Non-Indigenous hospitalisations', format: N },
-        { key: 'ns', label: 'Non-Indigenous share', format: P1 },
-        { key: 'nnp', label: 'Non-Indigenous suppressed cells (n.p.)', format: N }
-      ], { caption: 'Road-user mix within each group, pooled 2016 to 2021. Shares are of published cells only; * = category includes suppressed cells' });
-
-      function tipHtml(d) {
-        var out = '<strong>' + d.cat + '</strong><br>First Nations: ' + Viz.fmt.dp1(d.fs) + '% (' + N(d.fn) + ' hospitalisations)' +
-          '<br>Non-Indigenous: ' + Viz.fmt.dp1(d.ns) + '% (' + N(d.ni) + ')';
-        if (d.flag) out += '<br><span style="opacity:.85">Includes ' + d.fnp + ' suppressed ' + (d.fnp === 1 ? 'cell' : 'cells') + ' (n.p.) for each group; the true share is slightly higher.</span>';
-        return out;
-      }
-
-      Viz.responsive(host, function (w) {
-        var wide = w >= 640;
-        var left = wide ? 150 : 116, right = 46;
-        var innerW = Math.max(120, w - left - right);
-        var rowH = 46, barH = 15, top = 30, foot = 26;
-        var h = top + items.length * rowH + foot;
-        var x = d3.scaleLinear().domain([0, 60]).range([0, innerW]);
-        var svg = svgFor(host, 'ch5-svg', w, h);
-        svg.selectAll('*').remove();
-        var gg = svg.append('g').attr('transform', 'translate(' + left + ',' + top + ')');
-
-        /* key (direct, top row) */
-        var key = svg.append('g').attr('class', 'ch5-key').attr('transform', 'translate(' + left + ',4)');
-        key.append('rect').attr('class', 'ch5-bar is-fn').attr('width', 14).attr('height', 12).attr('y', 0).attr('rx', 2);
-        key.append('text').attr('x', 20).attr('y', 6).attr('dy', '0.35em').style('font-weight', 700).text('First Nations');
-        var off = wide ? 120 : 108;
-        key.append('rect').attr('class', 'ch5-bar is-ni').attr('x', off).attr('width', 14).attr('height', 12).attr('rx', 2);
-        key.append('text').attr('x', off + 20).attr('y', 6).attr('dy', '0.35em').text('Non-Indigenous');
-
-        items.forEach(function (d, i) {
-          var ry = i * rowH, isPed = d === ped, isCyc = d === cyc;
-          var row = gg.append('g').attr('class', 'ch5-row' + (isPed ? ' is-hl' : ''));
-          if (isPed) row.append('rect').attr('class', 'ch5-hlband').attr('x', -left).attr('width', w).attr('y', ry + 1).attr('height', rowH - 4).attr('rx', 4);
-          row.append('text').attr('class', 'ch5-cat' + (isPed ? ' is-hl' : '')).attr('x', -10).attr('y', ry + 7 + barH).attr('dy', '0.05em')
-            .attr('text-anchor', 'end').text(d.short + (d.flag ? ' *' : ''));
-          row.append('rect').attr('class', 'ch5-bar is-fn').attr('x', 0).attr('y', ry + 6).attr('width', Math.max(1, x(d.fs))).attr('height', barH).attr('rx', 2);
-          row.append('rect').attr('class', 'ch5-bar is-ni').attr('x', 0).attr('y', ry + 6 + barH + 2).attr('width', Math.max(1, x(d.ns))).attr('height', barH).attr('rx', 2);
-          row.append('text').attr('class', 'ch5-val is-fn').attr('x', x(d.fs) + 6).attr('y', ry + 6 + barH / 2).attr('dy', '0.35em').text(Viz.fmt.dp1(d.fs) + '%');
-          row.append('text').attr('class', 'ch5-val is-ni').attr('x', x(d.ns) + 6).attr('y', ry + 6 + barH * 1.5 + 2).attr('dy', '0.35em').text(Viz.fmt.dp1(d.ns) + '%');
-          if (isPed || isCyc) {
-            var ax = x(Math.max(d.fs, d.ns)) + 62;
-            var txt = wide
-              ? Viz.fmt.dp1(d.fs) + '% of First Nations vs ' + Viz.fmt.dp1(d.ns) + '% of non-Indigenous'
-              : Viz.fmt.dp1(d.fs) + '% vs ' + Viz.fmt.dp1(d.ns) + '%';
-            var t = row.append('text').attr('class', 'ch5-ann').attr('x', ax).attr('y', ry + rowH / 2 - 2);
-            wrap(t, txt, ax, innerW + right - ax, 14, 2);
-            if (t.selectAll('tspan').size() > 1) t.attr('y', ry + rowH / 2 - 9);
-          }
-          var hit = row.append('rect').attr('class', 'ch5-rowhit').attr('x', -left).attr('width', w).attr('y', ry).attr('height', rowH)
-            .attr('aria-label', d.cat + ': ' + Viz.fmt.dp1(d.fs) + '% of First Nations and ' + Viz.fmt.dp1(d.ns) + '% of non-Indigenous hospitalisations' + (d.flag ? ' (includes suppressed cells)' : ''));
-          Viz.tooltip.bind(hit, function () { return tipHtml(d); });
-        });
-        /* zero line */
-        gg.append('line').attr('class', 'ch5-zero').attr('y1', 0).attr('y2', items.length * rowH);
-        var fn = svg.append('text').attr('class', 'ch5-foot').attr('x', 2).attr('y', h - 6);
-        wrap(fn, '* includes suppressed (n.p.) cells; true share slightly higher', 2, w - 4, 14, 2);
-        if (fn.selectAll('tspan').size() > 1) fn.attr('y', h - 18);
-      });
-    },
-    update: function () {}
-  };
-
-  /* =========================================================== fig-5c ===== */
-  var AREAS = ['Major Cities', 'Regional', 'Remote'];
-  var AREA_LABEL = { 'Major Cities': 'Major cities', 'Regional': 'Regional areas', 'Remote': 'Remote areas' };
-
-  window.Charts['fig-5c'] = {
-    init: function (el, data) {
-      var host = sel(el, '.fig-chart');
-      var prof = (data.ch5_first_nations_profile || []).filter(function (r) { return r.view === 'remoteness'; });
-      if (!host || !prof.length) return;
-      var rows = AREAS.map(function (a) {
-        var f = prof.filter(function (r) { return r.status === FN && r.category === a; })[0];
-        var n = prof.filter(function (r) { return r.status === NI && r.category === a; })[0];
-        return { area: a, fn: f.hosp, ni: n.hosp, share: f.hosp / (f.hosp + n.hosp) * 100, fs: f.avg_stay, ns: n.avg_stay, fb: f.bed_days, nb: n.bed_days };
-      });
-      var rem = rows[2], maj = rows[0], reg = rows[1];
-      var state = { mode: 'share' };
-      var width = 0;
-
-      function describe() {
-        if (state.mode === 'share') {
-          return 'Horizontal bars of the First Nations share of road-crash hospitalisations by area of residence, pooled 2016 to 2021: ' +
-            Viz.fmt.dp1(maj.share) + '% in major cities, ' + Viz.fmt.dp1(reg.share) + '% in regional areas and ' + Viz.fmt.dp1(rem.share) +
-            '% in remote areas (' + N(rem.fn) + ' of ' + N(rem.fn + rem.ni) + ').';
+      /* ============================================================ panel B */
+      function tipB(it, view) {
+        var f = it.g[FN], n = it.g[NI];
+        var t = '<strong>' + it.label + '</strong>' +
+          '<br>First Nations: ' + pct1(f.share) + ' (' + int(f.hosp) + ' hospitalisations), average stay ' + dp1(f.stay) + ' days' +
+          '<br>Non-Indigenous: ' + pct1(n.share) + ' (' + int(n.hosp) + '), average stay ' + dp1(n.stay) + ' days';
+        if (view === 'road_user') {
+          t += '<br><span style="opacity:.85">Suppressed (n.p.) cells left out: ' + f.np + ' First Nations, ' + n.np + ' non-Indigenous</span>';
         }
-        return 'Dumbbells of average hospital stay in days by area of residence, First Nations against non-Indigenous: major cities ' +
-          Viz.fmt.dp1(maj.fs) + ' and ' + Viz.fmt.dp1(maj.ns) + ', regional ' + Viz.fmt.dp1(reg.fs) + ' and ' + Viz.fmt.dp1(reg.ns) +
-          ', remote ' + Viz.fmt.dp1(rem.fs) + ' and ' + Viz.fmt.dp1(rem.ns) + '.';
-      }
-      function fillTable() {
-        var t = sel(el, '.fig-data');
-        if (state.mode === 'share') {
-          Viz.fillTable(t, rows, [
-            { key: 'area', label: 'Area of residence', text: true, format: function (v) { return AREA_LABEL[v]; } },
-            { key: 'fn', label: 'First Nations hospitalisations', format: N },
-            { key: 'ni', label: 'Non-Indigenous hospitalisations', format: N },
-            { key: 'share', label: 'First Nations share', format: P1 }
-          ], { caption: 'First Nations share of hospitalisations by area of residence, pooled 2016 to 2021' });
-        } else {
-          Viz.fillTable(t, rows, [
-            { key: 'area', label: 'Area of residence', text: true, format: function (v) { return AREA_LABEL[v]; } },
-            { key: 'fs', label: 'First Nations average stay (days)', format: Viz.fmt.dp1 },
-            { key: 'ns', label: 'Non-Indigenous average stay (days)', format: Viz.fmt.dp1 },
-            { key: 'fb', label: 'First Nations bed days', format: N },
-            { key: 'nb', label: 'Non-Indigenous bed days', format: N }
-          ], { caption: 'Average stay (bed days ÷ hospitalisations, survivors only) by area of residence, pooled 2016 to 2021' });
-        }
-      }
-      function tipHtml(d) {
-        if (state.mode === 'share') {
-          return '<strong>' + AREA_LABEL[d.area] + '</strong><br>' + Viz.fmt.dp1(d.share) + '% of those hospitalised were First Nations people<br><span style="opacity:.85">' +
-            N(d.fn) + ' First Nations, ' + N(d.ni) + ' non-Indigenous (area of residence)</span>';
-        }
-        return '<strong>' + AREA_LABEL[d.area] + '</strong><br>First Nations: ' + Viz.fmt.dp1(d.fs) + ' days<br>Non-Indigenous: ' + Viz.fmt.dp1(d.ns) +
-          ' days<br><span style="opacity:.85">Average stay, survivors only (area of residence)</span>';
-      }
-      function refresh() {
-        host.setAttribute('aria-label', describe());
-        showMode(el, state.mode);
-        fillTable();
+        return t;
       }
 
-      function draw(animate) {
-        if (!width) return;
-        var w = width, wide = w >= 640, share = state.mode === 'share';
-        var left = wide ? 130 : 96, right = wide ? 56 : 44;
-        var innerW = Math.max(120, w - left - right);
-        var rowH = wide ? 62 : (share ? 86 : 70), top = 34, bottom = 48;
-        var annLines = share ? 2 : 1;
-        var h = top + rows.length * rowH + bottom;
-        var svg = svgFor(host, 'ch5-svg', w, h);
-        svg.selectAll('*').remove();
-        var x = share ? d3.scaleLinear().domain([0, 100]).range([0, innerW]) : d3.scaleLinear().domain([0, 7]).range([0, innerW]);
-        var ticks = share ? [0, 25, 50, 75, 100] : d3.range(0, 8, 1);
-        var gg = svg.append('g').attr('class', 'ch5-c').attr('transform', 'translate(' + left + ',' + top + ')');
-        var plotH = rows.length * rowH;
+      function drawB(w) {
+        var animate = animB; animB = false;
+        var dur = animate ? Viz.dur(380) : 0;
+        var s = bus.get(), view = s.bView, items = ITEMS[view];
+        var measure = measurer(hostB);
+        var narrow = w < 440;
+        var left = narrow ? 92 : 106, right = narrow ? 52 : 58;
+        var pw = Math.max(100, w - left - right);
+        var n = items.length, targetH = narrow ? 280 : 320;
+        var rowH = Math.max(54, Math.min(92, Math.floor(targetH / n)));
+        var barH = Math.max(16, Math.min(24, Math.round(rowH * 0.3))), inner = 3;
+        var h = n * rowH + 8;
+        var smax = d3.max(items, function (it) { return Math.max(it.g[FN].share, it.g[NI].share); });
+        var xs = d3.scaleLinear().domain([0, smax]).range([0, pw]);   /* one shared scale per view */
+        var svg = Viz.svg(hostB, w, h);
+        var g = svg.append('g').attr('transform', 'translate(' + left + ',4)');
+        g.append('line').attr('class', 'ch5-zero').attr('x1', 0).attr('x2', 0).attr('y1', 0).attr('y2', n * rowH);
+        var hlKey = HLKEY[view];
 
-        /* axis */
-        gg.selectAll('line.ch5-grid').data(ticks).join('line').attr('class', 'ch5-grid')
-          .attr('x1', function (d) { return x(d); }).attr('x2', function (d) { return x(d); }).attr('y1', 0).attr('y2', plotH);
-        gg.selectAll('text.ch5-xtick').data(ticks).join('text').attr('class', 'ch5-tick ch5-xtick')
-          .attr('x', function (d) { return x(d); }).attr('y', plotH + 18).attr('text-anchor', 'middle')
-          .text(function (d) { return share ? d + '%' : d; });
-        svg.append('text').attr('class', 'ch5-ytitle').attr('x', wide ? left : 0).attr('y', 14)
-          .text(share ? 'First Nations share of hospitalisations, by area of residence' : '');
-        svg.append('text').attr('class', 'ch5-ytitle').attr('x', wide ? left : 0).attr('y', top + plotH + 38)
-          .text(share ? 'Area of residence, not where the crash happened' : (wide ? 'Average stay in days · area of residence, not where the crash happened' : 'Average stay in days · area of residence'));
-
-        if (!share) {
-          /* key row */
-          var key = svg.append('g').attr('class', 'ch5-key').attr('transform', 'translate(' + left + ',8)');
-          key.append('circle').attr('class', 'ch5-dot is-fn').attr('cx', 7).attr('cy', 7).attr('r', 6);
-          key.append('text').attr('x', 20).attr('y', 7).attr('dy', '0.35em').style('font-weight', 700).text('First Nations');
-          var off = wide ? 130 : 112;
-          key.append('circle').attr('class', 'ch5-dot is-ni').attr('cx', off + 7).attr('cy', 7).attr('r', 6);
-          key.append('text').attr('x', off + 20).attr('y', 7).attr('dy', '0.35em').text('Non-Indigenous');
-        }
-
-        rows.forEach(function (d, i) {
-          var ry = i * rowH, cy = ry + rowH / 2 - 6;
-          var isRem = d.area === 'Remote';
-          var row = gg.append('g').attr('class', 'ch5-row' + (isRem ? ' is-hl' : ''));
-          row.append('text').attr('class', 'ch5-cat' + (isRem ? ' is-hl' : '')).attr('x', -10).attr('y', cy).attr('dy', '0.35em')
-            .attr('text-anchor', 'end').text(AREA_LABEL[d.area]);
-          if (share) {
-            row.append('rect').attr('class', 'ch5-bar is-fn' + (isRem ? '' : ' is-soft')).attr('x', 0).attr('y', cy - 11)
-              .attr('width', Math.max(1, x(d.share))).attr('height', 22).attr('rx', 2);
-            row.append('text').attr('class', 'ch5-val is-fn').attr('x', x(d.share) + 7).attr('y', cy).attr('dy', '0.35em').text(Viz.fmt.dp1(d.share) + '%');
-            if (isRem) {
-              var ax = x(d.share) + 7 + 50;
-              var avail = innerW + right - ax;
-              var t = row.append('text').attr('class', 'ch5-ann').attr('x', ax).attr('y', cy - 7);
-              if (avail >= 200) {
-                wrap(t, 'of those hospitalised were First Nations people', ax, avail, 14, 3);
-              } else {
-                t.remove();
-                t = row.append('text').attr('class', 'ch5-ann').attr('x', 0).attr('y', cy + 24);
-                wrap(t, 'of those hospitalised were First Nations people', 0, innerW, 14, 2);
-              }
+        var rows = g.selectAll('g.ch5-row').data(items).join('g').attr('class', 'ch5-row')
+          .attr('transform', function (d, i) { return 'translate(0,' + (i * rowH) + ')'; });
+        rows.each(function (it) {
+          var row = d3.select(this), isHl = it.key === hlKey;
+          if (isHl) row.append('rect').attr('class', 'ch5-hlband').attr('x', -left).attr('width', w).attr('y', 2).attr('height', rowH - 4).attr('rx', 4);
+          row.append('rect').attr('class', 'ch5-rowhit').attr('x', -left).attr('width', w).attr('y', 0).attr('height', rowH);
+          row.append('text').attr('class', 'ch5-cat' + (isHl ? ' is-hl' : '')).attr('x', -10).attr('y', rowH / 2).attr('dy', '0.35em')
+            .attr('text-anchor', 'end').text(it.label);
+          var gy = (rowH - (2 * barH + inner)) / 2;
+          [FN, NI].forEach(function (st, k) {
+            var d = it.g[st], by = gy + k * (barH + inner);
+            var grp = row.append('g').attr('class', 'ch5-bargrp ch5-g-' + GK[st]);
+            var bar = grp.append('rect').attr('class', 'ch5-bar is-' + GK[st]).attr('x', 0).attr('y', by).attr('height', barH).attr('rx', 2)
+              .attr('width', dur ? 0 : Math.max(1, xs(d.share)));
+            var val = grp.append('text').attr('class', 'ch5-val is-' + GK[st]).attr('y', by + barH / 2).attr('dy', '0.35em')
+              .attr('x', dur ? 6 : xs(d.share) + 6).text(pct1(d.share));
+            if (dur) {
+              bar.transition().duration(dur).attr('width', Math.max(1, xs(d.share)));
+              val.attr('fill-opacity', 0).transition().duration(dur).attr('x', xs(d.share) + 6).attr('fill-opacity', 1);
             }
-          } else {
-            row.append('line').attr('class', 'ch5-dumb').attr('x1', x(Math.min(d.fs, d.ns))).attr('x2', x(Math.max(d.fs, d.ns))).attr('y1', cy).attr('y2', cy);
-            row.append('circle').attr('class', 'ch5-dot is-ni').attr('cx', x(d.ns)).attr('cy', cy).attr('r', 7);
-            row.append('circle').attr('class', 'ch5-dot is-fn').attr('cx', x(d.fs)).attr('cy', cy).attr('r', 7);
-            /* value labels: the higher dot's label above, the lower below */
-            var fnHigh = d.fs >= d.ns;
-            row.append('text').attr('class', 'ch5-val is-fn').attr('x', x(d.fs)).attr('y', cy + (fnHigh ? -14 : 22)).attr('text-anchor', 'middle').text(Viz.fmt.dp1(d.fs));
-            row.append('text').attr('class', 'ch5-val is-ni').attr('x', x(d.ns)).attr('y', cy + (fnHigh ? 22 : -14)).attr('text-anchor', 'middle').text(Viz.fmt.dp1(d.ns));
-            if (isRem) {
-              var gap = Math.abs(d.fs - d.ns);
-              var lowX = x(Math.min(d.fs, d.ns));
-              var annT = row.append('text').attr('class', 'ch5-ann').attr('y', cy).attr('dy', '0.35em');
-              if (wide) annT.attr('x', Math.max(x(d.fs), x(d.ns)) + 18); else annT.attr('x', lowX - 14).attr('text-anchor', 'end');
-              annT.text(Viz.fmt.dp1(d.fs) + ' vs ' + Viz.fmt.dp1(d.ns) + ' days');
-            }
+            hoverable(grp, st);
+          });
+          if (isHl) {
+            var f = it.g[FN], nn = it.g[NI];
+            var txt = pct1(f.share) + ' vs ' + pct1(nn.share);
+            var tw = measure(txt, 13, 700);
+            var vEnd = xs(Math.max(f.share, nn.share)) + 6 + measure(pct1(Math.max(f.share, nn.share)), 13, 700);
+            var axp = Math.min(vEnd + 14, pw + right - tw - 2);
+            axp = Math.max(axp, vEnd + 10);
+            var at = row.append('text').attr('class', 'ch5-ann').attr('x', axp).attr('y', rowH / 2).attr('dy', '0.35em').text(txt);
+            if (dur) at.attr('fill-opacity', 0).transition().delay(dur * 0.5).duration(dur).attr('fill-opacity', 1);
           }
-          var hit = row.append('rect').attr('class', 'ch5-rowhit').attr('x', -left).attr('width', w).attr('y', ry).attr('height', rowH)
-            .attr('aria-label', share
-              ? AREA_LABEL[d.area] + ': ' + Viz.fmt.dp1(d.share) + '% of those hospitalised were First Nations people'
-              : AREA_LABEL[d.area] + ': First Nations ' + Viz.fmt.dp1(d.fs) + ' days, non-Indigenous ' + Viz.fmt.dp1(d.ns) + ' days');
-          Viz.tooltip.bind(hit, function () { return tipHtml(d); });
         });
-        fade(gg, animate);
-        refresh();
+        /* tooltip + roving tab stop on the rows; the row label carries the data, so no aria-describedby */
+        rows.attr('role', 'img').attr('aria-label', function (it) { return rowLabel(it, view); });
+        Viz.tooltip.bind(rows, function (it) { return tipB(it, view); }, { roving: false });
+        rows.each(function () { this.__tipNamed = true; });
+        roving(rows.nodes());
+        hostB.setAttribute('aria-label', describeB(view));
       }
 
-      var ctl = sel(el, '.fig-controls');
-      if (ctl) {
-        Viz.segmented(ctl, { onChange: function (v) { state.mode = v; Viz.tooltip.hide(); draw(true); } });
-        var pressed = ctl.querySelector('button[aria-pressed="true"]');
-        if (pressed) state.mode = pressed.getAttribute('data-value');
+      /* ============================================================ tables */
+      var tabHost = board.querySelector('.board-tables');
+      var tabA = document.createElement('div'), tabB = document.createElement('div');
+      if (tabHost) { tabHost.appendChild(tabA); tabHost.appendChild(tabB); }
+      function buildTables() {
+        if (!tabHost) return;
+        var s = bus.get();
+        var yrs = stepYears(s.aView);
+        var rowsA = yrs.map(function (yr) {
+          var a = rowAt(FN, yr), b = rowAt(NI, yr);
+          return {
+            year: yr, fh: a.hosp, fp: a.population, fr: a.hosp_per_100k, fi: a.hosp / base[FN].hosp * 100,
+            nh: b.hosp, np: b.population, nr: b.hosp_per_100k, ni: b.hosp / base[NI].hosp * 100
+          };
+        });
+        var colsA = s.aView === 'rate' ? [
+          { key: 'year', label: 'Year' },
+          { key: 'fh', label: 'First Nations hospitalisations', format: int },
+          { key: 'fp', label: 'First Nations population (ABS)', format: int },
+          { key: 'fr', label: 'First Nations per 100,000', format: dp1 },
+          { key: 'nh', label: 'Non-Indigenous hospitalisations', format: int },
+          { key: 'np', label: 'Non-Indigenous population (ERP minus First Nations)', format: int },
+          { key: 'nr', label: 'Non-Indigenous per 100,000', format: dp1 }
+        ] : [
+          { key: 'year', label: 'Year' },
+          { key: 'fh', label: 'First Nations hospitalisations', format: int },
+          { key: 'fp', label: 'First Nations population (ABS, where available)', format: int },
+          { key: 'fi', label: 'First Nations index (' + Y0 + ' = 100)', format: dp1 },
+          { key: 'nh', label: 'Non-Indigenous hospitalisations', format: int },
+          { key: 'np', label: 'Non-Indigenous population (where available)', format: int },
+          { key: 'ni', label: 'Non-Indigenous index (' + Y0 + ' = 100)', format: dp1 }
+        ];
+        Viz.fillTable(tabA, rowsA, colsA, {
+          caption: s.aView === 'rate'
+            ? 'Chart A: hospitalisations per 100,000 people. Only ' + rateYears.join(', ') + ' have a population estimate, so only those years have a rate.'
+            : 'Chart A: annual hospitalisations indexed to ' + Y0 + ' = 100. Population estimates exist for ' + rateYears.join(', ') + ' only; other years show a dash.'
+        });
+
+        var items = ITEMS[s.bView], isRu = s.bView === 'road_user';
+        var rowsB = items.map(function (it) {
+          return { label: it.label, f: it.g[FN], n: it.g[NI] };
+        });
+        var colsB = [{ key: 'label', label: isRu ? 'Road user' : 'Where the person lives', text: true }];
+        colsB.push({ key: 'f1', label: 'First Nations hospitalisations', format: function (v, r) { return int(r.f.hosp); } });
+        colsB.push({ key: 'f2', label: 'First Nations share', format: function (v, r) { return pct1(r.f.share); } });
+        colsB.push({ key: 'f3', label: 'First Nations average stay (days)', format: function (v, r) { return dp1(r.f.stay); } });
+        if (isRu) colsB.push({ key: 'f4', label: 'First Nations n.p. cells', format: function (v, r) { return int(r.f.np); } });
+        colsB.push({ key: 'n1', label: 'Non-Indigenous hospitalisations', format: function (v, r) { return int(r.n.hosp); } });
+        colsB.push({ key: 'n2', label: 'Non-Indigenous share', format: function (v, r) { return pct1(r.n.share); } });
+        colsB.push({ key: 'n3', label: 'Non-Indigenous average stay (days)', format: function (v, r) { return dp1(r.n.stay); } });
+        if (isRu) colsB.push({ key: 'n4', label: 'Non-Indigenous n.p. cells', format: function (v, r) { return int(r.n.np); } });
+        Viz.fillTable(tabB, rowsB, colsB, {
+          caption: isRu
+            ? 'Chart B: share of each group' + '’' + 's hospitalisations by road user, 2016' + EN + '21 pooled. Share = row count divided by the group' + '’' + 's published total. All other = bus, heavy transport, pick-up or van and other or unknown. n.p. = suppressed cells, left out.'
+            : 'Chart B: share of each group' + '’' + 's hospitalisations by where the person lives, 2016' + EN + '21 pooled. Share = area count divided by the group' + '’' + 's total across the three areas.'
+        });
       }
-      Viz.responsive(host, function (w) { width = w; draw(false); });
-      host.__fig5c = { setMode: function (v) { state.mode = v; draw(true); } };
-    },
-    update: function (state) {
-      var host = document.querySelector('#fig-5c .fig-chart');
-      if (state && state.mode && host && host.__fig5c) host.__fig5c.setMode(state.mode);
+
+      /* ============================================================ text for the current state */
+      function updateTextA() {
+        var v = bus.get().aView;
+        titleElA.textContent = titleA(v);
+        subElA.textContent = subA(v);
+        hostA.setAttribute('aria-label', describeA(v));
+      }
+      function updateTextB() {
+        var v = bus.get().bView;
+        titleElB.textContent = titleB(v);
+        subElB.textContent = subB(v);
+        hostB.setAttribute('aria-label', describeB(v));
+      }
+
+      /* ============================================================ link */
+      var respA = null, respB = null;
+      bus.on(function (state, changed, source) {
+        var aC = changed.indexOf('aView') >= 0, bC = changed.indexOf('bView') >= 0, fC = changed.indexOf('focus') >= 0;
+        if (aC) segA.set(state.aView, true);
+        if (bC) segB.set(state.bView, true);
+        if (aC) { updateTextA(); animA = true; if (respA) respA.redraw(); }
+        if (bC) { updateTextB(); animB = true; Viz.tooltip.hide(); if (respB) respB.redraw(); }
+        if (aC || bC) buildTables();
+        if (fC) syncFocus();
+        setChip();
+        if (source === 'init') return;
+        if (aC) {
+          Viz.flash(panelA);
+          Viz.announce('Chart A shows ' + (state.aView === 'rate' ? 'hospitalisations per 100,000 people' : 'hospitalisations indexed to ' + Y0 + ' = 100') + '. ' + titleA(state.aView) + '.');
+        } else if (bC) {
+          Viz.flash(panelB);
+          Viz.announce('Chart B shows shares ' + (state.bView === 'road_user' ? 'by road user' : 'by where the person lives') + '. ' + titleB(state.bView) + '.');
+        } else if (fC && source === 'pin') {
+          Viz.flash(panelA);
+          Viz.announce(pinned ? 'Highlighting ' + GN[pinned] + ' in both charts. The other group is dimmed.' : 'Highlight cleared.');
+        }
+      });
+
+      /* first fill of text, tables, chip and focus state for the default view, then the charts */
+      updateTextA(); updateTextB(); buildTables(); setChip(); syncFocus();
+      respA = Viz.responsive(hostA, function (w) { drawA(w); });
+      respB = Viz.responsive(hostB, function (w) { drawB(w); });
     }
   };
 })();
