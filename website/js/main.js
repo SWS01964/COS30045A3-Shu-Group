@@ -1,18 +1,20 @@
 /* main.js: boot sequence. OWNED BY THE ORCHESTRATOR.
-   load data -> fillProse -> init every registered figure -> scroll-spy.
+   load data -> fillProse -> init every board -> scroll-spy.
    A chart that throws is logged and skipped; the rest of the page carries on. */
 (function () {
   'use strict';
 
-  function initFigures(data) {
+  /* Each section.board[id] is initialised by window.Charts[id].init(boardEl, data).
+     A module that throws is logged and the board is marked data-chart-error; the rest carry on. */
+  function initBoards(data) {
     var charts = window.Charts || {};
-    var figs = document.querySelectorAll('figure.fig[id]');
+    var boards = document.querySelectorAll('section.board[id]');
     var ok = 0;
-    Array.prototype.forEach.call(figs, function (el) {
+    Array.prototype.forEach.call(boards, function (el) {
       var mod = charts[el.id];
-      if (!mod) { console.warn('[main] no chart module registered for #' + el.id); return; }
+      if (!mod || typeof mod.init !== 'function') { console.warn('[main] no module registered for #' + el.id); return; }
       try { mod.init(el, data); ok++; }
-      catch (e) { console.error('[main] ' + el.id + ' failed to init', e); el.setAttribute('data-chart-error', 'true'); }
+      catch (e) { console.error('[main] #' + el.id + ' failed to init', e); el.setAttribute('data-chart-error', 'true'); }
     });
     return ok;
   }
@@ -75,8 +77,8 @@
       var report;
       try { report = Facts.fillProse(data); }
       catch (e) { console.error('[main] fillProse failed', e); }
-      var n = initFigures(data);
-      Array.prototype.forEach.call(document.querySelectorAll('.fig-chart, .c2a-line'), Viz.a11y.watch);
+      var n = initBoards(data);
+      Array.prototype.forEach.call(document.querySelectorAll('.panel-chart'), Viz.a11y.watch);
       window.siteData = data;
       var root = document.documentElement;
       root.setAttribute('data-ready', 'true');
@@ -85,7 +87,7 @@
         root.setAttribute('data-fill-mismatches', String(report.mismatches.length));
         root.setAttribute('data-fill-errors', String(report.errors.length));
         console.info('[main] prose numbers: ' + report.total + ' filled, ' + report.mismatches.length +
-          ' mismatches, ' + report.errors.length + ' errors; figures initialised: ' + n);
+          ' mismatches, ' + report.errors.length + ' errors; boards initialised: ' + n);
       }
     });
   }
