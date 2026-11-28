@@ -5,14 +5,13 @@ __pycache__/
 *.pyc
 .knimeLock
 
-# ---- Internal (keep local; the deliverable is website/ + report/ only) ----
+# ---- Internal (keep local; the deliverable is website/ + report/ + the analysis pipeline) ----
 /PROJECT_EXPLAINED.md
 /PERMISSION_TEST.md
 /requirement.md
 /CLAUDE_CONTEXT/
-/processing/
 /presentation/
 /Datas/
-/data/
+/data/supplementary/
 /BeyondTheRoadToll_DataPrep_v5/
 /Example Workflows/

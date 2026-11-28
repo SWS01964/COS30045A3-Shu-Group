@@ -1,0 +1,23 @@
+view,status,category,hosp,bed_days,np_cells,avg_stay
+road_user,First Nations people,Bus occupant,32,125,7,3.9
+road_user,First Nations people,"Car driver, passenger or unknown position",6341,33613,0,5.3
+road_user,First Nations people,"Heavy transport driver, passenger or unknown position",78,270,2,3.5
+road_user,First Nations people,Motorcyclist,2366,13479,0,5.7
+road_user,First Nations people,Other or unknown,204,1486,1,7.3
+road_user,First Nations people,Pedal cyclist,1267,3858,0,3.0
+road_user,First Nations people,Pedestrian,1277,10586,0,8.3
+road_user,First Nations people,Pick-up truck or van occupant,70,226,4,3.2
+road_user,Non-Indigenous,Bus occupant,502,2755,7,5.5
+road_user,Non-Indigenous,"Car driver, passenger or unknown position",105057,512986,0,4.9
+road_user,Non-Indigenous,"Heavy transport driver, passenger or unknown position",2415,15514,2,6.4
+road_user,Non-Indigenous,Motorcyclist,49389,289061,0,5.9
+road_user,Non-Indigenous,Other or unknown,3019,19908,1,6.6
+road_user,Non-Indigenous,Pedal cyclist,42928,131221,0,3.1
+road_user,Non-Indigenous,Pedestrian,13781,146165,0,10.6
+road_user,Non-Indigenous,Pick-up truck or van occupant,1097,7161,4,6.5
+remoteness,First Nations people,Major Cities,4123,21198,0,5.1
+remoteness,First Nations people,Regional,4649,24896,0,5.4
+remoteness,First Nations people,Remote,2767,16821,0,6.1
+remoteness,Non-Indigenous,Major Cities,150493,731574,0,4.9
+remoteness,Non-Indigenous,Regional,60787,361793,0,6.0
+remoteness,Non-Indigenous,Remote,3949,19357,0,4.9
