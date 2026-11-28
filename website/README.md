@@ -1,36 +1,75 @@
-# Beyond the road toll (website)
+# Beyond the Road Toll: website
 
-Static D3 v7 data story in a newspaper data-investigation layout. No build step. D3 7.9.0 is vendored; the only external request is the Google Fonts stylesheet (Source Serif 4, Inter, Newsreader), with system-font fallbacks.
+A static, single-page D3 v7 data story (COS30045). Plain HTML, CSS and JS: no build step, no CDN at runtime, all paths relative. Source of truth for layout is `report/LAYOUT_SPEC.md`; copy is `report/STORYBOARD.md` v2; numbers are traced in `data/processed/KEY_NUMBERS.md`.
+
+## Structure
+```
+index.html            every block in LAYOUT_SPEC order; every figure is the figure-block component
+css/tokens.css        :root tokens, light + dark (orchestrator)
+css/base.css          reset, typography, focus rings, reduced motion (orchestrator)
+css/layout.css        text column 680px, figure breakout 1040px at >= 960px, nav, hero, panels (orchestrator)
+css/components.css    figure block, controls (>= 44px), tooltip, details/table (orchestrator)
+css/ch1.css..ch5.css  one per chapter (chapter agents)
+js/vendor/d3.min.js   D3 7.9.0 (local copy)
+js/common.js          window.Viz: loader, formatters, tooltip, responsive, segmented, fillTable, tokens (orchestrator)
+js/facts.js           window.Facts: data-fill registry + fillProse() (orchestrator)
+js/main.js            boot: load data -> fillProse -> init figures -> scroll-spy (orchestrator)
+js/charts/ch1..ch5.js one module per chapter registering window.Charts['fig-..'] (chapter agents)
+data/*.csv            the 7 contract CSVs (copied by sync_data.sh)
+sync_data.sh          copies data/processed/*.csv (7 contract files only) into data/
+```
 
 ## Run locally
-    python3 -m http.server 8765 --directory website
-then open http://localhost:8765/. Opening index.html from disk will not work, because browsers block `fetch` of the CSVs.
+```
+cd website
+./sync_data.sh            # only after the CSVs change
+python3 -m http.server 8000
+# open http://localhost:8000/   (opening index.html as a file will not load the CSVs)
+```
 
-## Chapters
-- **Lede**: unit chart, people hospitalised per road death (2011 vs 2021).
-- **1 The hidden road toll**: indexed lines, counts vs per person (`lines.js`).
-- **2 Road injury is getting older**: change heatmap with "find yourself" and trend line (`heatmap.js`); severity by age (`severity.js`).
-- **3 Not every crash is equal**: 3A paired bars with stepper Admissions / Bed days / Deaths in hospital (`burden.js`); 3B age dot plot with 95% whiskers, died per 1,000 / average stay (`agedots.js`); 3.3 counterparty dot list, all road users and pedestrians (`counterparty.js`).
-- **4 The lockdown test**: 4A monthly line with 2015-19 band, All road users / Cyclists (`lockdown.js`); 4B diverging bars, April 2020 vs April 2019 (`diverging.js`); 4.3 cyclist trend with 95% prediction band (`trend.js`).
-- **What to take away**, then the **Methods and limitations** box (`#about`).
+## FILE OWNERSHIP RULES
+Chapter N (1 to 5) may edit **only**:
+- `js/charts/chN.js`
+- `css/chN.css` (scope every rule under `#chN`, or `#fig-Nx` for its figures)
+- the inside of `<section id="chN">` in `index.html` (body copy, figure blocks, controls markup, notes, titles, `data-fill` spans)
+- Chapter 1 also owns the inside of `<figure id="fig-1b">` in the hero.
 
-## File map
-- `index.html`: page, prose and figure furniture (title, subtitle, Source, Notes, hidden one-sentence summary per figure, "View the data" tables). Numbers marked `data-fill` are recomputed from the CSVs by `js/main.js`.
-- `css/style.css`: design tokens (light and `prefers-color-scheme: dark`), layout, sticky chapter bar, key-points box, pull stat, methods box.
-- `js/main.js`: loads the 16 CSVs, fills prose numbers, draws every chart (each wrapped so one failure shows a `.chart-error` note instead of breaking the page), redraws on resize and theme change.
-- `js/nav.js`: active chapter in the sticky bar, plus a reading-progress line (off under `prefers-reduced-motion`).
-- `js/charts/common.js`: shared helpers: colour tokens, formats, text wrap, hover/tap/keyboard tooltip, gridlines, annotations (moved below the chart as a numbered list under 600px), segmented controls, arrow-key chart reading, data tables.
-- `js/charts/*.js`: one module per chart: `unit`, `lines`, `heatmap`, `severity`, `burden`, `agedots`, `counterparty`, `lockdown`, `diverging`, `trend`.
-- `js/vendor/d3.min.js`: D3 7.9.0.
-- `data/`: the CSVs used. Refresh from `data/clean/` with `sh processing/sync_website_data.sh`.
+**Not editable by chapter agents (orchestrator-owned):** `js/common.js`, `js/facts.js`, `js/main.js`, `css/tokens.css`, `css/base.css`, `css/layout.css`, `css/components.css`, the head/masthead/nav/closing/methods/downloads/footer parts of `index.html`, `sync_data.sh`, `data/`. Need a helper, a formatter, a token, or a new `data-fill` key? Send the orchestrator a change request (what and why, with the exact code for facts.js if it is a number). Do not fork a shared helper into your chapter file. Never add external requests, frameworks or new vendor files.
 
-## Conventions
-- Rates in Chapter 3 use the `*_publish` columns only (blank where a rate is flagged low-count); raw rate columns are never plotted.
-- Every chart works by keyboard: Tab to the chart and use the arrow keys (Home/End also work); controls are buttons with `aria-pressed`, and arrow keys move between them.
-- Below 600px, line charts switch to a 4:3 aspect with fewer ticks. Text is at least 12px and controls are at least 44px tall.
+## Figure module interface
+```js
+window.Charts['fig-3a'] = {
+  init(el, data) { /* el = the <figure class="fig" id="fig-3a">; data = all 7 CSVs */ },
+  update(state) { /* optional: apply control state */ }
+};
+```
+- `data` keys are the file names without `.csv`: `ch1_trend`, `ch2_age_roaduser`, `ch4_monthly`, `ch4_state_cyclists`, `ch5_first_nations_trend`, `ch5_first_nations_profile`, `severity`. Values are coerced: numbers, `"TRUE"/"FALSE"` to booleans, blank to `null`. Year columns keep their string keys (`row[2020]` works).
+- Inside `el`: `.fig-title`, `.fig-controls` (buttons `data-value`, `aria-pressed`), `.fig-chart` (draw here; `role="img"` and its `aria-label` summary stay), `.fig-notes`, `details.fig-data` (fill with `Viz.fillTable`, rebuild when the view changes).
+- Remove the `Viz.placeholder(...)` call when drawing the real chart. Keep the `fillTable` call (update its rows with the view).
+- Size from the container: `Viz.responsive(el.querySelector('.fig-chart'), function (width) { ...draw... })`. It redraws on width change only (height-only changes are ignored), so do not set a CSS height on `.fig-chart`. `Viz.height(width, {ratio, min, max})` gives a height.
+- Colours: use CSS tokens in styles (`.style('fill', 'var(--rise)')`) so dark mode follows automatically. `Viz.colors()` / `Viz.css('--rise')` are for colour interpolation; re-read in `Viz.onThemeChange`.
+- Controls: `Viz.segmented(groupEl, { onChange(value) {} })` (aria-pressed, arrow keys). Selects: `change` listener.
+- Tooltip: `Viz.tooltip.bind(d3selection, d => 'html')` (hover, tap, focus, Esc). Mark focusable marks by calling bind on them. It gives each mark `role="img"` and, if unnamed, an `aria-label` made from the tooltip text, and puts all marks of one chart on a single tab stop (arrow keys / Home / End move between them; pass `{roving: false}` to opt out, as the heatmap does).
+- Accessibility plumbing (common.js): `.fig-chart` is `role="img"` while it has nothing focusable inside and is switched to `role="group"` (same `aria-label`) as soon as it holds focusable marks, by `Viz.a11y.watch` (started in main.js). Update the host's `aria-label` whenever the view changes. Announce user-driven changes with `Viz.announce(text)` (the page's single polite live region, `#viz-live`); `Viz.segmented` announces the chart's new label by itself (`announce: false` to opt out). Do not add `aria-live` nodes of your own.
+- Motion: use `Viz.dur()` for transition length (0 under reduced motion). Formatters: `Viz.fmt.int/dp1/pct/signedPct/age`. Constants: `Viz.MAIN_ROAD_USERS`, `Viz.AGE_BANDS`, `Viz.MONTHS`. Row filter: `Viz.where(rows, {view:'age'})`, `Viz.find(...)`.
+- One chart throwing is logged by `main.js` and does not stop the others.
+- Shares (e.g. Chapter 3) = road-user row divided by the "All road users" row with the same view and category, computed in D3.
+- Cited, not in the CSVs: First Nations population `Viz.CITED.fnPopulation` (2011, 2016, 2021).
 
-## Deploy to Swinburne Mercury
-Copy the whole `website/` folder (all files, keeping the structure) into your Mercury web directory. All paths are relative.
+## Prose numbers
+Every number in body copy, standfirsts and What-to-know boxes is `<span data-fill="key">fallback</span>`. `facts.js` holds `key -> function(data)`; on load `Facts.fillProse` replaces the text and `console.warn`s `[facts] MISMATCH ...` if it differs from the fallback. Mismatch count is on `<html data-fill-mismatches>`. Years, thresholds and cited figures stay plain text.
 
-## TODO
-Replace `[Team names]` and the GitHub placeholder URL (`YOUR-ORG/YOUR-REPO`) in `index.html`; confirm the BITRE licence version.
+## QA commands
+```
+# serve
+cd website && python3 -m http.server 8765 &
+# console + prose check (expect "0 mismatches, 0 errors; figures initialised: 14")
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --disable-gpu \
+  --enable-logging=stderr --v=0 --virtual-time-budget=6000 --dump-dom http://localhost:8765/ 2>&1 | grep -E "CONSOLE|data-fill-(total|mismatches|errors)"
+# screenshot (headless Chrome has a ~500px minimum window width, so check 375px by putting the page
+# in a 375px-wide iframe on a wrapper page, or use DevTools device mode)
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --hide-scrollbars \
+  --virtual-time-budget=6000 --window-size=1280,900 --screenshot=out.png http://localhost:8765/
+# no horizontal scroll: document.documentElement.scrollWidth must equal innerWidth at 375 and 1280
+```
+Also check by hand: keyboard-only through the controls (arrow keys move within a segmented control), Esc closes the tooltip, `prefers-reduced-motion`, dark mode, and the "Show the numbers" table of every figure.

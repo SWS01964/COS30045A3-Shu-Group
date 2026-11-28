@@ -1,0 +1,62 @@
+/* ch2.css: owned by the Chapter 2 agent. Every rule scoped under #ch2 (#fig-2a / #fig-2b). */
+
+/* "Show" label sits with the Counts / Per person toggle */
+#fig-2a .c2-show { display: inline-flex; align-items: center; gap: 8px; }
+
+/* the one-line sentence for the selected cell */
+#fig-2a .c2-sentence {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0 0 12px;
+  padding: 8px 12px;
+  border-left: 4px solid var(--rise);
+  background: var(--surface);
+  min-height: 3.4em;
+}
+@media (min-width: 600px) { #fig-2a .c2-sentence { min-height: 2.6em; } }
+
+/* heatmap cells */
+#fig-2a .c2-cell { cursor: pointer; outline: none; }
+#fig-2a .c2-cell .c2-fill { stroke: none; }
+#fig-2a .c2-cell:hover .c2-fill { stroke: var(--ink); stroke-width: 1.5; }
+#fig-2a .c2-val { pointer-events: none; font-variant-numeric: tabular-nums; }
+#fig-2a .c2-cols text { font-weight: 600; fill: var(--ink); }
+
+/* legend */
+#fig-2a .c2a-legend { margin-top: 12px; }
+#fig-2a .c2a-legend-title,
+#fig-2a .c2a-legend-note {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--muted);
+  margin: 0 0 4px;
+}
+#fig-2a .c2a-legend-title { color: var(--ink); font-weight: 600; }
+#fig-2a .c2a-scale { display: block; }
+#fig-2a .c2a-swatch {
+  display: inline-block;
+  width: 14px; height: 14px;
+  vertical-align: -2px;
+  border: 1px solid var(--muted);
+  background: repeating-linear-gradient(-45deg, transparent 0 3px, var(--muted) 3px 4.2px);
+}
+
+/* the 2011-21 line under the heatmap */
+#fig-2a .c2a-linewrap { margin-top: 24px; }
+#fig-2a .c2a-line-title {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+#fig-2a .c2a-line { position: relative; width: 100%; font-size: 13px; }
+#fig-2a .c2a-line svg { display: block; max-width: 100%; overflow: visible; }
+#fig-2a .c2a-line text { font-family: var(--font-sans); fill: var(--ink); }
+#fig-2a .c2a-line .axis text { font-size: 12px; fill: var(--muted); }
+
+/* fig-2b: hit rows are focusable; draw the ring inside the row */
+#fig-2b .c2b-hit { cursor: default; }
+#fig-2b .c2b-hit:focus-visible { outline: 3px solid var(--focus); outline-offset: -3px; }
