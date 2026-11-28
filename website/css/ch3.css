@@ -1,0 +1,79 @@
+/* ch3.css: owned by the Chapter 3 agent. Every rule scoped under #ch3 (#fig-3a / #fig-3b / #fig-3c). */
+
+#ch3 {
+  /* text colour on top of the grey (--context) bar: ink in light, dark paper in dark (contrast >= 4.5) */
+  --c3-on-grey: var(--ink);
+}
+@media (prefers-color-scheme: dark) {
+  #ch3 { --c3-on-grey: var(--paper); }
+}
+
+/* ---- controls: equal-width one-row steppers on small screens ---- */
+#ch3 .fig-controls .seg { display: inline-flex; flex-wrap: nowrap; }
+#ch3 .fig-controls .seg button { line-height: 1.2; text-align: center; }
+#ch3 .c3-short { display: none; }
+@media (max-width: 599px) {
+  #ch3 .fig-controls { gap: 4px 12px; }
+  #ch3 .fig-controls .ctl-label { flex: 0 0 100%; }
+  #ch3 .fig-controls .seg { display: flex; width: 100%; }
+  #ch3 .fig-controls .seg button {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 6px 6px;
+  }
+  #ch3 .c3-long { display: none; }
+  #ch3 .c3-short { display: inline; }
+}
+
+/* ---- shared chart bits ---- */
+#ch3 .fig-chart svg text { font-family: var(--font-sans); }
+#ch3 .c3-hit { fill: transparent; stroke: none; }
+#ch3 .c3a-row, #ch3 .c3b-row, #ch3 .c3c-row { outline: none; cursor: default; }
+#ch3 .c3a-row:focus-visible .c3-hit,
+#ch3 .c3b-row:focus-visible .c3-hit,
+#ch3 .c3c-row:focus-visible .c3-hit { stroke: var(--focus); stroke-width: 3; rx: 4; }
+#ch3 .c3a-row:hover .c3-hit,
+#ch3 .c3b-row:hover .c3-hit,
+#ch3 .c3c-row:hover .c3-hit { fill: var(--surface); opacity: 0.55; }
+
+/* ---- fig-3a ---- */
+#fig-3a .c3a-name { fill: var(--ink); }
+#fig-3a .c3a-grey { fill: var(--context); }
+#fig-3a .c3a-harm { fill: var(--rise); }
+#fig-3a .c3a-gval, #fig-3a .c3a-hval { font-size: 13px; font-weight: 700; fill: var(--ink); font-variant-numeric: tabular-nums; }
+#fig-3a .c3a-ilab { font-size: 12px; font-weight: 700; pointer-events: none; }
+#fig-3a .c3a-ilab-grey { fill: var(--c3-on-grey); }
+#fig-3a .c3a-ilab-harm { fill: var(--paper); }
+#fig-3a .c3a-klab { font-size: 12px; font-weight: 600; fill: var(--ink); }
+#fig-3a .c3a-ann-text { font-size: 14px; font-weight: 700; fill: var(--ink); }
+@media (max-width: 639px) { #fig-3a .c3a-ann-text { font-size: 13px; } }
+#fig-3a .c3a-ann-rule { stroke: var(--rise); stroke-width: 3; }
+
+/* ---- fig-3b ---- */
+#fig-3b .c3b-guide { stroke: var(--rule); stroke-width: 1; stroke-dasharray: 2 4; }
+#fig-3b .c3b-open { fill: var(--paper); stroke: var(--context); stroke-width: 2.5; }
+#fig-3b .c3b-fill { fill: var(--rise); stroke: var(--paper); stroke-width: 1.5; }
+#fig-3b .c3b-whisker { stroke: var(--rise); stroke-width: 2; }
+#fig-3b .c3b-whisker-all { stroke: var(--context); stroke-width: 2; }
+#fig-3b .c3b-val { font-size: 12px; font-variant-numeric: tabular-nums; }
+#fig-3b .c3b-val-ped { font-weight: 700; fill: var(--ink); }
+#fig-3b .c3b-val-all { font-weight: 500; fill: var(--muted); }
+#fig-3b .c3b-np { font-size: 12px; font-style: italic; fill: var(--muted); }
+#fig-3b .c3b-ann-text { font-size: 13px; font-weight: 700; fill: var(--ink); }
+#fig-3b .c3b-ann-leader { stroke: var(--rise); stroke-width: 1.5; }
+#fig-3b .c3b-key text { fill: var(--ink); }
+#fig-3b .c3b-key .c3b-key-note { fill: var(--muted); font-weight: 400; }
+
+/* ---- fig-3c ---- */
+#fig-3c .c3c-name { fill: var(--ink); font-weight: 500; }
+#fig-3c .c3c-stem { stroke: var(--rule); stroke-width: 2; }
+#fig-3c .c3b-open { fill: var(--paper); stroke: var(--context); stroke-width: 2.5; }
+#fig-3c .c3b-fill { fill: var(--rise); stroke: var(--paper); stroke-width: 1.5; }
+#fig-3c .c3c-val { font-size: 13px; font-weight: 700; fill: var(--ink); font-variant-numeric: tabular-nums; }
+#fig-3c .c3c-note { font-size: 12px; fill: var(--muted); }
+#fig-3c .c3c-badge { fill: none; stroke: var(--ink); stroke-width: 1.5; }
+#fig-3c .c3c-badge-text { font-size: 12px; font-weight: 700; fill: var(--ink); }
+
+@media (prefers-reduced-motion: reduce) {
+  #ch3 .c3-hit { transition: none; }
+}

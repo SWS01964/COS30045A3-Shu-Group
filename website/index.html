@@ -3,444 +3,321 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Beyond the road toll</title>
-<meta name="description" content="Fewer Australians are dying on the roads, but the number being seriously hurt hasn't fallen. A data investigation of a decade of hospital records, built with D3.">
+<title>Beyond the Road Toll</title>
+<meta name="description" content="A data investigation of hospitalised injuries from road crashes in Australia, 2011 to 2021: who is being hurt, and how badly.">
 <meta name="color-scheme" content="light dark">
-<link rel="icon" href="data:,">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,600;6..72,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap">
-<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%23b3261e'/%3E%3Cpath d='M3 11l3-4 3 2 4-5' fill='none' stroke='%23fff' stroke-width='1.8'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/ch1.css">
+<link rel="stylesheet" href="css/ch2.css">
+<link rel="stylesheet" href="css/ch3.css">
+<link rel="stylesheet" href="css/ch4.css">
+<link rel="stylesheet" href="css/ch5.css">
 </head>
 <body>
-<a class="skip" href="#ch1">Skip to the story</a>
-
-<div class="flag">
-  <div class="wide"><span class="flag-name">COS30045 Data Stories</span><span>Road safety &middot; Data investigation</span></div>
-</div>
-
-<nav class="chapbar" aria-label="Chapters">
-  <div class="wide">
-    <a class="chapbar-title" href="#top">Beyond the road toll</a>
-    <ol>
-      <li><a class="ch" href="#ch1" aria-label="Chapter 1: The hidden road toll"><span class="num">1</span><span class="lbl">Hidden toll</span></a></li>
-      <li><a class="ch" href="#ch2" aria-label="Chapter 2: Road injury is getting older"><span class="num">2</span><span class="lbl">Getting older</span></a></li>
-      <li><a class="ch" href="#ch3" aria-label="Chapter 3: Not every crash is equal"><span class="num">3</span><span class="lbl">Not every crash</span></a></li>
-      <li><a class="ch" href="#ch4" aria-label="Chapter 4: The lockdown test"><span class="num">4</span><span class="lbl">Lockdown test</span></a></li>
-      <li><a class="ch" href="#takeaway" aria-label="What to take away"><span class="num" aria-hidden="true">&#10003;</span><span class="lbl">Takeaways</span></a></li>
-    </ol>
-  </div>
-  <div class="progress" aria-hidden="true"><span></span></div>
+<a class="skip-link" href="#main">Skip to the story</a>
+<header class="masthead"><div class="col">
+<span class="site-name">Beyond the Road Toll</span>
+<span class="site-kicker">Data investigation</span>
+</div></header>
+<nav class="chapnav" aria-label="Chapters">
+<ul>
+<li><a href="#ch1"><span class="num">1</span>Road toll</a></li>
+<li><a href="#ch2"><span class="num">2</span>Older</a></li>
+<li><a href="#ch3"><span class="num">3</span>Severity</a></li>
+<li><a href="#ch4"><span class="num">4</span>Lockdown</a></li>
+<li><a href="#ch5"><span class="num">5</span>Equity</a></li>
+<li><a href="#methods">Methods</a></li>
+</ul>
 </nav>
+<div id="load-error" class="load-error" role="alert" hidden></div>
+<main id="main">
 
-<header class="headline" id="top">
-  <div class="wrap">
-    <p class="kicker">Road safety &middot; Data investigation</p>
-    <h1>Beyond the road toll</h1>
-    <p class="standfirst">Fewer Australians are dying on the roads. The number being seriously hurt hasn&rsquo;t fallen. We went through a decade of hospital records to find out who is being hurt, and how badly.</p>
-    <p class="byline"><span>By <strong>Shu</strong></span><span>Published <time datetime="2026-11-23">23 November 2026</time></span></p>
-  </div>
-  <div class="wide">
-    <figure class="fig" aria-labelledby="f1b-title" aria-describedby="f1b-desc">
-      <div class="fig-head">
-        <h2 class="fig-title" id="f1b-title">For every road death in 2021, <span data-fill="ratio21">35</span> people were admitted to hospital</h2>
-        <p class="fig-sub">People hospitalised after a road crash for each person killed on the roads, 2011 and 2021. One dot is one person.</p>
-      </div>
-      <p class="sr-only" id="f1b-desc">In 2011, <span data-fill="ratio11">27</span> people were hospitalised for every road death; by 2021 it was <span data-fill="ratio21">35</span>.</p>
-      <div class="chart" id="chart-unit"></div>
-      <div class="fig-foot">
-        <p class="fig-source"><b>Source:</b> BITRE hospitalised injury data (hospitalisations); BITRE Australian Road Deaths Database (deaths).</p>
-        <p class="fig-notes"><b>Notes:</b> Ratios of <span data-fill="ratio11x">26.7</span> and <span data-fill="ratio21x">35.0</span> are rounded to whole people. Hospitalisation counts exclude people who died in hospital.</p>
-      </div>
-      <details class="data"><summary>View the data</summary><div class="table-scroll"><table id="tbl-unit"></table></div></details>
-    </figure>
-  </div>
+<header class="hero col" id="top">
+<p class="kicker">Road safety &middot; Data investigation</p>
+<h1>Beyond the road toll</h1>
+<p class="standfirst">Fewer Australians are dying on the roads. The number being seriously hurt hasn&rsquo;t fallen. We went through a decade of hospital records to find out who is being hurt, and how badly.</p>
+<p class="byline">By Shu &middot; Published 23 November 2026</p>
+
+<figure class="fig" id="fig-1b">
+  <h2 class="fig-title">For every road death in 2021, <span data-fill="per_death_2021">35</span> people were admitted to hospital</h2>
+  
+  <div class="fig-chart" role="img" aria-label="Unit chart: for every road death in 2021, 35 people were admitted to hospital."></div>
+  <p class="fig-caption">Each square is one person: one road death (solid) and <span data-fill="per_death_2021">35</span> people admitted to hospital (outlined), 2021. In 2011 it was <span data-fill="c1_per_death_2011">27</span>.</p>
+  <p class="fig-notes">Hospitalisations are people discharged alive, as in BITRE Table 1 (<span data-fill="hosp_2021">39,505</span> in 2021); road deaths (<span data-fill="deaths_2021">1,130</span>) are from the BITRE Australian Road Deaths Database. Source: BITRE, 2021.</p>
+  <details class="fig-data"><summary>Show the numbers</summary><div class="table-wrap"><table></table></div></details>
+</figure>
+
 </header>
 
-<main>
-<!-- CHAPTER 1 -->
-<section class="chapter" id="ch1" aria-labelledby="ch1-h">
-  <div class="wrap chapter-head">
-    <p class="chapter-no">Chapter 1 &middot; The hidden road toll</p>
-    <h2 id="ch1-h">The road toll is falling. The injury toll isn&rsquo;t.</h2>
-    <p class="reader-q"><b>The question:</b> Is it getting safer out there?</p>
-    <aside class="keypoints" aria-label="What to know, chapter 1">
-      <h3>What to know</h3>
-      <ul>
-        <li><span class="n" data-fill="hosp21">39,505</span> people were admitted to hospital after road crashes in 2021, about <span class="n" data-fill="perDay">108</span> a day.</li>
-        <li>Since 2011, road deaths are down <span class="n" data-fill="deathsPct">11.5</span>% and hospital admissions are up <span class="n" data-fill="hospPct">16</span>%.</li>
-        <li>Per person, the hospitalisation rate barely moved: about <span data-fill="rate11">152</span> to <span data-fill="rate21">154</span> per 100,000.</li>
-      </ul>
-    </aside>
-    <p>Each year Australia publishes its road toll. In 2021 it was <strong class="n" data-fill="deaths21">1,130</strong> deaths, down from <strong class="n" data-fill="deaths11">1,277</strong> in 2011. But deaths are only the visible part. In 2021, <strong class="n" data-fill="hosp21">39,505</strong> people were admitted to hospital with injuries from a road crash. That is about <strong class="n" data-fill="perDay">108</strong> people every day.</p>
-    <p>Deaths and hospitalisations are very different sizes, so they cannot share one axis. The chart below sets both to 100 in 2011, so the <em>gap between the lines</em> is the story.</p>
-  </div>
+<section id="ch1" class="chapter" aria-labelledby="ch1-h">
+<div class="col">
+<p class="chapter-label">Chapter 1: The hidden road toll</p>
+<h2 id="ch1-h">The road toll is falling. The injury toll isn&rsquo;t.</h2>
+<p class="standfirst">Deaths are down <span data-fill="deaths_chg">11.5%</span> since 2011, admissions are up <span data-fill="hosp_chg">16%</span>, and per person the rate has barely moved.</p>
+<div class="wtk" role="group" aria-labelledby="ch1-wtk"><h3 class="wtk-title" id="ch1-wtk">What to know</h3><ul><li><strong><span data-fill="hosp_2021">39,505</span></strong> people were admitted to hospital after road crashes in 2021, about <strong><span data-fill="per_day_2021">108</span></strong> a day.</li><li>Road deaths are down <strong><span data-fill="deaths_chg">11.5%</span></strong> since 2011. Admissions are up <strong><span data-fill="hosp_chg">16%</span></strong>.</li><li>Per 100,000 people the hospitalisation rate barely moved: <strong><span data-fill="rate_2011">152.3</span></strong> in 2011 and <strong><span data-fill="rate_2021">153.8</span></strong> in 2021.</li></ul></div>
+<p>Every year Australia publishes its road toll. In 2021 it was <strong><span data-fill="deaths_2021">1,130</span></strong> deaths, down from <span data-fill="c1_deaths_2011">1,277</span> in 2011, which is <span data-fill="c1_deaths_fall_n">147</span> fewer. But deaths are only the visible part. In 2021, <strong><span data-fill="hosp_2021">39,505</span></strong> people were admitted to hospital after a road crash. That is about <span data-fill="per_day_2021">108</span> a day, or <span data-fill="per_death_2021">35</span> for every death.</p>
+<p>Deaths and admissions are very different sizes, so they cannot share one axis. The chart below sets each to 100 in 2011, so the gap between the lines is the story: deaths down <span data-fill="deaths_chg">11.5%</span>, admissions up <span data-fill="hosp_chg">16%</span>.</p>
 
-  <div class="wide">
-    <figure class="fig" aria-labelledby="f1a-title" aria-describedby="f1a-desc">
-      <div class="fig-head">
-        <h3 class="fig-title" id="f1a-title">Road deaths fell; hospital admissions per person did not</h3>
-        <p class="fig-sub" id="lines-sub">Index, 2011 = 100. Number of people hospitalised, road deaths and population, 2011&ndash;2021</p>
-      </div>
-      <p class="sr-only" id="f1a-desc">By 2021 hospitalisations were up <span data-fill="hospPct">16</span>% and road deaths down <span data-fill="deathsPct">11.5</span>% on 2011; per person, the hospitalisation rate was flat while the death rate fell by about a quarter.</p>
-      <div class="controls" role="group" aria-label="Choose how to measure">
-        <div class="seg">
-          <button type="button" data-lines-mode="counts" aria-pressed="true">Counts</button>
-          <button type="button" data-lines-mode="rate" aria-pressed="false">Per person</button>
-        </div>
-        <span class="ctrl-note">Hover, tap, or focus the chart and use the arrow keys.</span>
-      </div>
-      <div class="chart" id="chart-lines"></div>
-      <div class="fig-foot">
-        <p class="fig-source"><b>Source:</b> BITRE hospitalised injury data; ABS Estimated Resident Population (30 June); BITRE Australian Road Deaths Database.</p>
-        <p class="fig-notes"><b>Notes:</b> &ldquo;Per person&rdquo; is per 100,000 residents. Hospitalisation counts exclude people who died in hospital. Victoria (2012) and NSW (mid-2017) changed how cases are counted; both changes lower the counts.</p>
-      </div>
-      <details class="data"><summary>View the data</summary><div class="table-scroll"><table id="tbl-lines"></table></div></details>
-    </figure>
-  </div>
+<figure class="fig" id="fig-1a">
+  <h3 class="fig-title">The road toll is falling. The injury toll isn&rsquo;t.</h3>
+  <div class="fig-controls" role="group" aria-label="Show counts or rates per 100,000 people"><div class="seg"><button type="button" data-value="counts" aria-pressed="true">Counts</button><button type="button" data-value="per100k" aria-pressed="false">Per 100,000</button></div></div>
+  <div class="fig-chart" role="img" aria-label="Indexed lines, 2011 = 100: road deaths fall, hospitalisations rise, population grows faster than both; per 100,000 people the hospitalisation rate is nearly flat."></div>
+  <p class="fig-notes">Hospitalisations are people discharged alive, as in BITRE Table 1. Victoria (2012) and NSW (2017) stopped counting emergency-only cases, which lowers later counts. Per-person rates use ABS population at 30 June. <span class="ch1-modenote">Each line is divided by its 2011 value, then multiplied by 100.</span> Source: BITRE hospitalised injury data, ABS, 2011&ndash;2021.</p>
+  <details class="fig-data"><summary>Show the numbers</summary><div class="table-wrap"><table></table></div></details>
+</figure>
 
-  <div class="wrap">
-    <p>Counts alone are not a fair test: Australia has <strong class="n" data-fill="popPct">15</strong>% more people than in 2011, so more of everything is expected. Switch to <strong>Per person</strong> and the picture is clear. The death rate fell from <span data-fill="dr11">5.72</span> to <span data-fill="dr21">4.40</span> per 100,000 people, a fall of almost a quarter (<strong class="n">&minus;<span data-fill="deathRateFall">23</span>%</strong>). The hospitalisation rate did not move: <span data-fill="rate11">152</span> per 100,000 in 2011 and <span data-fill="rate21">154</span> in 2021.</p>
-    <div class="pullstat">
-      <p class="pullstat-n"><span data-fill="perDay">108</span></p>
-      <p class="pullstat-c">people a day were admitted to hospital after a road crash in 2021, for about three road deaths a day.</p>
-    </div>
-    <p>Fewer people are dying on our roads. The same number of people, per head, are still being badly hurt. The true rise may be larger than shown: New South Wales and Victoria changed how they count cases (see <a href="#about">Methods and limitations</a>), and both changes lower the counts.</p>
-  </div>
+<p>Counts alone are not a fair test. Australia has <span data-fill="c1_pop_chg">15%</span> more people than in 2011, so more of everything is expected. Switch to Per 100,000 and the picture is plain. The hospitalisation rate barely moved: <span data-fill="rate_2011">152.3</span> per 100,000 people in 2011 and <span data-fill="rate_2021">153.8</span> in 2021. The death rate fell from <span data-fill="c1_death_rate_2011">5.72</span> to <span data-fill="c1_death_rate_2021">4.40</span>, down <span data-fill="c1_death_rate_chg">23%</span>. Per person, fewer people are dying, but about as many are being hurt.</p>
+<p>One caution. The real rise in injuries is probably larger than these lines show. Victoria (2012) and New South Wales (2017) stopped counting emergency-only cases in their hospital data, and that lowers every count after the change. We cannot add those cases back, so we show the figures as published and shade the year before the Victorian change and the years after the NSW one in grey.</p>
+
+</div>
 </section>
 
-<!-- CHAPTER 2 -->
-<section class="chapter" id="ch2" aria-labelledby="ch2-h">
-  <div class="wrap chapter-head">
-    <p class="chapter-no">Chapter 2 &middot; Road injury is getting older</p>
-    <h2 id="ch2-h">Older riders, longer stays: cycling injuries have more than doubled among over-65s.</h2>
-    <p class="reader-q"><b>The question:</b> Are people like me more at risk than I think?</p>
-    <aside class="keypoints" aria-label="What to know, chapter 2">
-      <h3>What to know</h3>
-      <ul>
-        <li>Cyclist admissions rose <span class="n" data-fill="cyc6574">138</span>% among 65&ndash;74 year-olds and <span class="n" data-fill="cyc75">142</span>% among those aged 75 and over (3-year averages).</li>
-        <li>Allowing for population growth, the rises are still <span class="n" data-fill="cycpp6574">78</span>% and <span class="n" data-fill="cycpp75">92</span>% per person.</li>
-        <li>People aged 75 and over stay <span data-fill="stay75">11.1</span> days in hospital on average, against <span data-fill="stay2639">4.3</span> for 26&ndash;39 year-olds.</li>
-      </ul>
-    </aside>
-    <p>The national total hides who is being hurt. The chart below compares the first three years of data (2011&ndash;13) with the last three (2019&ndash;21), by road user and age. Using three-year averages keeps one unusual year from skewing the result. Orange cells are rises, blue cells are falls.</p>
-  </div>
+<section id="ch2" class="chapter" aria-labelledby="ch2-h">
+<div class="col">
+<p class="chapter-label">Chapter 2: Road injury is getting older</p>
+<h2 id="ch2-h">Cycling injuries have more than doubled among over-65s.</h2>
+<p class="standfirst">The group growing fastest among the injured is older riders.</p>
+<div class="wtk" role="group" aria-labelledby="ch2-wtk"><h3 class="wtk-title" id="ch2-wtk">What to know</h3><ul><li>Cyclists aged 65&ndash;74 were admitted <strong><span data-fill="cyc_65_74">138%</span></strong> more often in 2019&ndash;21 than in 2011&ndash;13, and those aged 75 and over <strong><span data-fill="cyc_75">142%</span></strong> more (3-year averages).</li><li>Per person, allowing for population growth, the rises are <strong><span data-fill="cyc_65_74_pp">78%</span></strong> and <strong><span data-fill="cyc_75_pp">92%</span></strong>.</li></ul></div>
+<p>Start with cyclists. Between 2011&ndash;13 and 2019&ndash;21, the number of cyclists aged 65 to 74 admitted to hospital each year went from <span data-fill="c2_cyc65_a0">281</span> to <span data-fill="c2_cyc65_a1">669</span>: up <span data-fill="cyc_65_74">138%</span>. For those aged 75 and over it went from <span data-fill="c2_cyc75_a0">99</span> to <span data-fill="c2_cyc75_a1">239</span>: up <span data-fill="cyc_75">142%</span>. We compare three-year averages so that one unusual year does not decide the answer.</p>
+<p>It is not only cyclists. Motorcyclists aged 65 to 74 are up <span data-fill="c2_moto65">119%</span> and those 75 and over <span data-fill="c2_moto75">105%</span>, and cyclists aged 40 to 64 are up <span data-fill="c2_cyc4064">45%</span>. Car drivers over 65 are up <span data-fill="c2_cd65">31%</span> and <span data-fill="c2_cd75">35%</span>, while pedestrians mostly fell and car passengers barely moved. Use the pickers to find your own group, or click any cell.</p>
 
-  <div class="wide">
-    <figure class="fig" aria-labelledby="f2a-title" aria-describedby="f2a-desc">
-      <div class="fig-head">
-        <h3 class="fig-title" id="f2a-title">The biggest rises are among cyclists and motorcyclists over 65; pedestrian injuries mostly fell</h3>
-        <p class="fig-sub">% change in hospitalisations by road user and age, 2011&ndash;13 average to 2019&ndash;21 average</p>
-      </div>
-      <p class="sr-only" id="f2a-desc">A grid of road users by age group: the largest rises are for pedal cyclists aged 65&ndash;74 (+<span data-fill="cyc6574">138</span>%) and 75 and over (+<span data-fill="cyc75">142</span>%), while most pedestrian cells fell.</p>
-      <div class="controls" role="group" aria-label="Choose how to measure">
-        <div class="seg">
-          <button type="button" data-hm-mode="count" aria-pressed="true">Change in number</button>
-          <button type="button" data-hm-mode="person" aria-pressed="false">Change per person</button>
-        </div>
-      </div>
-      <p class="hm-note" id="hm-note"></p>
-      <div class="finder">
-        <p class="finder-title">Find yourself <span>(optional)</span></p>
-        <div><label for="sel-user">I mostly travel as a&hellip;</label><select id="sel-user"></select></div>
-        <div><label for="sel-age">My age group&hellip;</label><select id="sel-age"></select></div>
-      </div>
-      <p class="sentence" id="hm-sentence" aria-live="polite"></p>
-      <div class="chart" id="chart-heat"></div>
-      <div class="legend-scale" id="hm-legend"></div>
-      <div class="trend">
-        <h4 id="trend-title"></h4>
-        <p class="note" id="trend-note"></p>
-        <div class="chart" id="chart-trend"></div>
-      </div>
-      <div class="fig-foot">
-        <p class="fig-source"><b>Source:</b> BITRE hospitalised injury data (hospitalisations, traffic injuries); ABS Estimated Resident Population (age-group growth, 3-year averages).</p>
-        <p class="fig-notes"><b>Notes:</b> Per person = (1 + change in number) / (1 + population change) &minus; 1. Hatched cells have too few cases for a reliable change. Click or tap a cell, or use the selectors, to see that group&rsquo;s yearly trend.</p>
-      </div>
-      <details class="data"><summary>View the data</summary><div class="table-scroll"><table id="tbl-heat"></table></div>
-        <div class="table-scroll"><table id="tbl-trend"></table></div></details>
-    </figure>
-  </div>
+<figure class="fig" id="fig-2a">
+  <h3 class="fig-title">Cyclists over 65 show the biggest rise, even per person</h3>
+  <div class="fig-controls" role="group" aria-label="Find yourself and choose counts or per person"><span class="ctl-field"><label for="sel-roaduser" class="ctl-label">I travel by</label><select id="sel-roaduser"><option value="">Choose&hellip;</option><option>Car driver</option><option>Car passenger</option><option>Motorcyclist</option><option>Pedal cyclist</option><option>Pedestrian</option></select></span><span class="ctl-field"><label for="sel-age" class="ctl-label">I&rsquo;m aged</label><select id="sel-age"><option value="">Choose&hellip;</option><option value="0-7">0&ndash;7</option><option value="8-16">8&ndash;16</option><option value="17-25">17&ndash;25</option><option value="26-39">26&ndash;39</option><option value="40-64">40&ndash;64</option><option value="65-74">65&ndash;74</option><option value="75+">75+</option></select></span><span class="c2-show"><span class="ctl-label" id="c2-show-label">Show</span><div class="seg" role="group" aria-labelledby="c2-show-label"><button type="button" data-value="counts" aria-pressed="true">Counts</button><button type="button" data-value="perperson" aria-pressed="false">Per person</button></div></span></div>
+  <p class="c2-sentence">Cyclists aged 65&ndash;74: +138% since 2011&ndash;13 (per person +78%).</p>
+  <div class="fig-chart" role="img" aria-label="Heatmap of the change in admissions between 2011&ndash;13 and 2019&ndash;21 by road user and age band; the largest rises are for cyclists aged 65 and over."></div>
+  <div class="c2a-linewrap"><p class="c2a-line-title"></p><div class="c2a-line" role="img" aria-label="Line of admissions per year, 2011 to 2021, for the selected group."></div></div>
+  <p class="fig-notes">Change in 3-year averages, 2011&ndash;13 to 2019&ndash;21 (counts of admissions); &ldquo;per person&rdquo; divides by ABS population for each age band. Hatched cells average under 30 admissions a year. These are injury counts, not risk per trip: the data do not say how much people ride, walk or drive. Source: BITRE hospitalised injury data, ABS.</p>
+  <details class="fig-data"><summary>Show the numbers</summary><div class="table-wrap"><table></table></div></details>
+</figure>
 
-  <div class="wrap">
-    <p>Take pedal cyclists aged 65&ndash;74. Their hospitalisations rose <strong class="n"><span data-fill="cyc6574">138</span>%</strong>, and for those aged 75 and over, <strong class="n"><span data-fill="cyc75">142</span>%</strong>. Part of this is because there are more older Australians: the 65&ndash;74 group grew <span data-fill="pop6574">33</span>% and the 75+ group <span data-fill="pop75">26</span>%. Even per person, the rises are <span data-fill="cycpp6574">78</span>% and <span data-fill="cycpp75">92</span>%. Cyclists aged 40&ndash;64, a much bigger group, rose <span data-fill="cyc4064">45</span>%.</p>
-    <div class="pullstat">
-      <p class="pullstat-n">+<span data-fill="cyc75">142</span>%</p>
-      <p class="pullstat-c">rise in cyclists aged 75 and over admitted to hospital, 2011&ndash;13 to 2019&ndash;21 (3-year averages).</p>
-    </div>
-    <p>One caution: the data has no measure of how much people ride. More older Australians may be cycling more, which would raise injuries without making cycling riskier per trip.</p>
-    <p>When older people are hurt, the consequences are heavier. They are admitted less often than younger adults, but they stay in hospital longer and are far more likely to die there.</p>
-  </div>
+<p>Counts can rise just because there are more people. Between the two windows the population aged 65 to 74 grew by <span data-fill="c2_pop65">33%</span> and the population aged 75 and over by <span data-fill="c2_pop75">26%</span>. Allow for that and the rises for cyclists are <span data-fill="cyc_65_74_pp">78%</span> and <span data-fill="cyc_75_pp">92%</span>: smaller, but still among the steepest on the grid. What neither view can tell us is exposure. The records count injuries, not trips or kilometres, so we cannot say whether older people are riding more, riding differently or simply being hurt more often when they ride.</p>
+<p>What we can see is what happens after they are admitted. Older patients stay longer, and more of them die. People aged 75 and over who left hospital alive stayed an average of <span data-fill="c2_75_stay">11.1</span> days, against <span data-fill="c2_all_stay">5.2</span> across all ages. For every 1,000 admitted at that age, <span data-fill="c2_75_died">28.1</span> died in hospital, against <span data-fill="c2_all_died">6.1</span> across all ages.</p>
 
-  <div class="wide">
-    <figure class="fig" aria-labelledby="f2b-title" aria-describedby="f2b-desc">
-      <div class="fig-head">
-        <h3 class="fig-title" id="f2b-title">People over 75 stay <span data-fill="stayX">2.6</span> times longer in hospital than 26&ndash;39 year-olds, and are <span data-fill="diedX">8</span> times as likely to die there</h3>
-        <p class="fig-sub">Hospitalisations and average stay, 2016&ndash;2021; deaths in hospital per 1,000 cases, 2011&ndash;2019; by age group</p>
-      </div>
-      <p class="sr-only" id="f2b-desc">People aged 75 and over are admitted less often than younger adults but stay <span data-fill="stay75">11.1</span> days on average and <span data-fill="died75">28.1</span> in 1,000 die in hospital, against <span data-fill="stay2639">4.3</span> days and <span data-fill="died2639">3.5</span> in 1,000 for ages 26&ndash;39.</p>
-      <div class="chart" id="chart-sev"></div>
-      <div class="fig-foot">
-        <p class="fig-source"><b>Source:</b> BITRE hospitalised injury data, traffic injuries.</p>
-        <p class="fig-notes"><b>Notes:</b> Days in hospital exclude people who died in hospital and cover 2016&ndash;21 only (bed-day counting changed in 2015). Deaths in hospital cover 2011&ndash;19 only (2020&ndash;21 records are incomplete).</p>
-      </div>
-      <details class="data"><summary>View the data</summary><div class="table-scroll"><table id="tbl-sev"></table></div></details>
-    </figure>
-  </div>
+<figure class="fig" id="fig-2b">
+  <h3 class="fig-title">Older patients stay longer and are more likely to die</h3>
+  <div class="fig-chart" role="img" aria-label="Three aligned panels by age band for all road users: admissions, average stay in days, and deaths in hospital per 1,000 admitted; stay and death rate rise with age."></div>
+  <p class="fig-notes">All road users, by age band. Admissions and average stay (days per person who left hospital alive) are for 2016&ndash;2021; bed days were counted differently before July 2015. Deaths in hospital per 1,000 people admitted are for 2011&ndash;2019 and are not a rate per head of population. Admissions are counts: we cannot measure exposure. Source: BITRE hospitalised injury data.</p>
+  <details class="fig-data"><summary>Show the numbers</summary><div class="table-wrap"><table></table></div></details>
+</figure>
+
+</div>
 </section>
 
-<!-- CHAPTER 3 -->
-<section class="chapter" id="ch3" aria-labelledby="ch3-h">
-  <div class="wrap chapter-head">
-    <p class="chapter-no">Chapter 3 &middot; Not every crash is equal</p>
-    <h2 id="ch3-h">Pedestrians are 1 in <span data-fill="pedOneIn">14</span> of the injured, but 1 in <span data-fill="pedDeathOneIn">4</span> of those who die in hospital</h2>
-    <p class="chapter-dek">Counting admissions treats a sprained wrist and a fractured skull the same. Look at what happens after admission and a different road user comes to the top of the list.</p>
-    <p class="reader-q"><b>The question:</b> Are my parents more at risk than I think?</p>
-    <aside class="keypoints" aria-label="What to know, chapter 3">
-      <h3>What to know</h3>
-      <ul>
-        <li>Pedestrians were <span class="n" data-fill="pedShare1119">7.3</span>% of road-crash admissions, but <span class="n" data-fill="pedDeathShare">26.4</span>% of the people who died in hospital (2011&ndash;2019).</li>
-        <li>Of every 1,000 pedestrians admitted, about <span class="n" data-fill="pedDied">22</span> died in hospital. For car drivers it was about <span class="n" data-fill="driverDied">6</span>, and for cyclists about <span class="n" data-fill="cycDied">2</span>.</li>
-        <li>For pedestrians aged 75 and over it was <span class="n" data-fill="ped75Died">61</span> in 1,000, and survivors stayed in hospital for an average of <span class="n" data-fill="ped75Stay">19</span> days.</li>
-      </ul>
-    </aside>
-    <p>If you only count admissions, car drivers and motorcyclists dominate the picture, and cyclists are now the third-largest group. Pedestrians barely register: about one admission in <span data-fill="pedCasesOneIn">15</span>.</p>
-  </div>
+<section id="ch3" class="chapter" aria-labelledby="ch3-h">
+<div class="col">
+<p class="chapter-label">Chapter 3: Not every crash is equal</p>
+<h2 id="ch3-h">Pedestrians are 1 in <span data-fill="ped_one_in_adm">14</span> of the injured, but 1 in <span data-fill="ped_one_in_died">4</span> of those who die in hospital</h2>
+<p class="standfirst">Counting admissions treats a sprained wrist and a fractured skull the same. Look at what happens after admission and a different road user comes to the top of the list.</p>
+<div class="wtk" role="group" aria-labelledby="ch3-wtk"><h3 class="wtk-title" id="ch3-wtk">What to know</h3><ul><li>Pedestrians were <strong><span data-fill="ped_adm_share_1119">7.3%</span></strong> of road-crash admissions, but <strong><span data-fill="ped_died_share_1119">26.4%</span></strong> of the people who died in hospital (2011&ndash;2019).</li><li>Of every 1,000 pedestrians admitted, about <strong><span data-fill="ped_died_per1000">22</span></strong> died in hospital. For car drivers it was about <strong><span data-fill="cardriver_died_per1000">6</span></strong>, and for cyclists about <strong><span data-fill="cyclist_died_per1000">2</span></strong>.</li><li>For pedestrians aged 75 and over it was <strong><span data-fill="ped75_died_per1000">61</span></strong> in 1,000, and survivors stayed in hospital for an average of <strong><span data-fill="ped75_stay">19</span></strong> days.</li></ul></div>
+<h3 class="beat-title">Two rankings, two different answers</h3>
+<p>If you only count admissions, car drivers and motorcyclists dominate the picture, and cyclists are now the third-largest group. Pedestrians barely register: about one in <span data-fill="ped_one_in_adm_1621">fifteen</span> of those discharged alive in 2016&ndash;21.</p>
+<p>Count the days people spend in hospital and the order shifts. Between 2016 and 2021 pedestrians made up <span data-fill="ped_adm_share_1621">6.5%</span> of admissions but <span data-fill="ped_beds_share_1621">13.1%</span> of bed days. Count the people who did not survive their stay and the gap widens again. From 2011 to 2019, pedestrians were <span data-fill="ped_adm_share_1119">7.3%</span> of admissions and <span data-fill="ped_died_share_1119">26.4%</span> of in-hospital deaths: <span data-fill="ped_died_n">538</span> of <span data-fill="all_died_n">2,041</span>.</p>
+<figure class="fig" id="fig-3a">
+  <h3 class="fig-title">Pedestrians take up twice their share of hospital beds</h3>
+  <div class="fig-controls" role="group" aria-label="Measure of harm"><span class="ctl-label">Measure</span><div class="seg"><button type="button" data-value="admissions" aria-pressed="false" aria-label="Admissions"><span aria-hidden="true">Admissions</span></button><button type="button" data-value="beds" aria-pressed="true" aria-label="Bed days"><span aria-hidden="true">Bed days</span></button><button type="button" data-value="deaths" aria-pressed="false" aria-label="Deaths in hospital"><span class="c3-long" aria-hidden="true">Deaths in hospital</span><span class="c3-short" aria-hidden="true">Deaths</span></button></div></div>
+  <div class="fig-chart" role="img" aria-label="Paired horizontal bars for the five main road users comparing share of admissions with share of the chosen harm measure; pedestrians are about 6.5% of admissions but 13.1% of bed days and 26.4% of in-hospital deaths."></div>
+  <p class="fig-notes">Share of admissions and bed days, 2016&ndash;2021; deaths in hospital, 2011&ndash;2019. Admissions and bed days both count people who left hospital alive, so the two shares are like for like; the deaths step counts everyone admitted. Shares are of all road users, so the five bars do not sum to 100%. Bed days were counted differently before July 2015, and death records for 2020&ndash;21 are incomplete. These are counts, not risk per trip: we have no data on how far people walk, ride or drive.</p>
+  <details class="fig-data"><summary>Show the numbers</summary><div class="table-wrap"><table></table></div></details>
+</figure>
 
-  <div class="wide">
-    <figure class="fig" aria-labelledby="burden-title" aria-describedby="burden-desc">
-      <div class="fig-head">
-        <h3 class="fig-title" id="burden-title">Pedestrians take up twice their share of hospital beds</h3>
-        <p class="fig-sub"><span id="burden-sub">Share of people admitted and share of days spent in hospital, 2016&ndash;2021 (%)</span>. <span class="key key-ctx"><span class="dot"></span>Grey</span> = admissions, <span class="key key-hl"><span class="dot"></span>orange</span> = the harm measure.</p>
-      </div>
-      <p class="sr-only" id="burden-desc">Pedestrians are <span data-fill="pedCases">6.6</span>% of admissions but <span data-fill="pedBed">13.1</span>% of hospital bed days, and <span data-fill="pedDeathShare">26.4</span>% of deaths in hospital.</p>
-      <div class="controls">
-        <div class="seg stepper" id="burden-step" role="group" aria-label="Choose what to count">
-          <button type="button" data-value="cases" aria-pressed="false"><span class="step-n" aria-hidden="true">1</span>Admissions</button>
-          <button type="button" data-value="bed" aria-pressed="true"><span class="step-n" aria-hidden="true">2</span>Bed days</button>
-          <button type="button" data-value="deaths" aria-pressed="false"><span class="step-n" aria-hidden="true">3</span>Deaths<span class="xl"> in hospital</span></button>
-        </div>
-      </div>
-      <div class="chart" id="chart-burden"></div>
-      <div class="fig-foot">
-        <p class="fig-source"><b>Source:</b> BITRE hospitalised injury data, traffic injuries; analysis by the authors.</p>
-        <p class="fig-notes"><b>Notes:</b> Share of cases and bed days, 2016&ndash;2021; deaths in hospital, 2011&ndash;2019. Bed days were counted differently before July 2015, and death records for 2020&ndash;21 are incomplete. These are counts, not risk per trip: we have no data on how far people walk, ride or drive. Shares are of all road users; the five groups shown do not add to 100%.</p>
-      </div>
-      <details class="data"><summary>View the data</summary><div class="table-scroll"><table id="tbl-burden"></table></div></details>
-    </figure>
-  </div>
+<h3 class="beat-title">Age turns a bad crash into a fatal one</h3>
+<p>This is where Sam&rsquo;s parents come in. Older pedestrians are not being admitted more often than they were a decade ago. Our per-person figures for people aged 75 and over drift down, though part of that comes from a change in how New South Wales counts cases in 2017. What changes is the outcome.</p>
+<p>A pedestrian aged 75 or over who is admitted after being hit dies in hospital about <span data-fill="ped75_died_per1000">61</span> times in every 1,000. Across all road users of that age it is <span data-fill="all75_died_per1000">28</span>. Those who survive stay an average of <span data-fill="ped75_stay">19</span> days, against <span data-fill="all75_stay">11</span> for older road users generally. Pedestrians aged 65 and over make up fewer than a quarter of injured pedestrians (<span data-fill="ped65_adm_share">23%</span>), but more than half of the pedestrians who die in hospital (<span data-fill="ped65_died_share">52%</span>).</p>
+<figure class="fig" id="fig-3b">
+  <h3 class="fig-title">For pedestrians over 75, one admission in <span data-fill="ped75_one_in">16</span> ends in death</h3>
+  <div class="fig-controls" role="group" aria-label="Measure"><span class="ctl-label">Show</span><div class="seg"><button type="button" data-value="died" aria-pressed="true">Died in hospital per 1,000</button><button type="button" data-value="stay" aria-pressed="false">Average stay (days)</button></div></div>
+  <div class="fig-chart" role="img" aria-label="Dot plot by age band with 95% intervals comparing pedestrians with all road users; the death rate for pedestrians aged 75 and over is 61 per 1,000 admitted."></div>
+  <p class="fig-notes">Per 1,000 people admitted, not per head of population. Deaths within hospital stays, 2011&ndash;2019; average stay (days per person who left hospital alive), 2016&ndash;2021. Whiskers show 95% intervals for the death rate; no intervals are drawn for average stay. A value that is not published because of too few cases is labelled as such, never drawn as zero.</p>
+  <details class="fig-data"><summary>Show the numbers</summary><div class="table-wrap"><table></table></div></details>
+</figure>
 
-  <div class="wrap">
-    <p>Count the days people spend in hospital and the order shifts. Between 2016 and 2021 pedestrians made up <span data-fill="pedCases">6.6</span>% of admissions but <span data-fill="pedBed">13.1</span>% of bed days. Count the people who did not survive their stay and the gap widens again. From 2011 to 2019, pedestrians were <span data-fill="pedShare1119">7.3</span>% of admissions and <span data-fill="pedDeathShare">26.4</span>% of in-hospital deaths: <span data-fill="pedDeaths">538</span> of <span data-fill="allDeaths">2,041</span>.</p>
-    <p>This is where many readersThis is where Sam&rsquo;s parents come in.rsquo; parents come in. Older pedestrians are not being admitted more often than they were a decade ago. Our per-person figures for people aged 75 and over drift down, though part of that comes from a change in how New South Wales counts cases in 2017. What changes is the outcome.</p>
-  </div>
+<h3 class="beat-title">What hits you matters</h3>
+<p>Among the things people were hit by in numbers big enough to measure, a heavy vehicle or bus carried the highest death rate for each of the five main road users: <span data-fill="hv_cyclist">25.5</span> per 1,000 admitted for cyclists, <span data-fill="hv_carpass">18.9</span> for car passengers, <span data-fill="hv_cardriver">16.5</span> for car drivers and <span data-fill="hv_moto">15.2</span> for motorcyclists. For pedestrians it was about <span data-fill="hv_ped">53</span>. Collisions with trains were worse again, but so rare that the figure rests on <span data-fill="train_ped_deaths">14</span> deaths for pedestrians and <span data-fill="train_all_deaths">17</span> in all.</p>
+<figure class="fig" id="fig-3c">
+  <h3 class="fig-title">Apart from rare train collisions, a heavy vehicle or bus is the deadliest thing to be hit by</h3>
+  <div class="fig-controls" role="group" aria-label="Whose death rate"><span class="ctl-label">Show</span><div class="seg"><button type="button" data-value="all" aria-pressed="true">All road users</button><button type="button" data-value="ped" aria-pressed="false">Pedestrians</button></div></div>
+  <div class="fig-chart" role="img" aria-label="Sorted dot list of deaths in hospital per 1,000 admitted by what the person was hit by; train collisions are highest but rare, then heavy vehicles or buses."></div>
+  <p class="fig-notes">Rates shown only where there are at least 100 cases and 10 deaths, 2011&ndash;2019. Train collisions are higher still but rest on very few deaths: <span data-fill="train_all_deaths">17</span> in nine years across all road users, <span data-fill="train_ped_deaths">14</span> of them pedestrians.</p>
+  <details class="fig-data"><summary>Show the numbers</summary><div class="table-wrap"><table></table></div></details>
+</figure>
 
-  <div class="wide">
-    <figure class="fig" aria-labelledby="agedots-title" aria-describedby="agedots-desc">
-      <div class="fig-head">
-        <h3 class="fig-title" id="agedots-title">For pedestrians over 75, one admission in 16 ends in death</h3>
-        <p class="fig-sub"><span id="agedots-sub-text">Died in hospital per 1,000 people admitted, by age, 2011&ndash;2019</span>: <span class="key key-hl"><span class="dot"></span>pedestrians</span> and <span class="key key-ctx"><span class="dot"></span>all road users</span></p>
-      </div>
-      <p class="sr-only" id="agedots-desc">At every age pedestrians are more likely than road users in general to die once admitted, and the gap widens with age: <span data-fill="ped75Died">61</span> in 1,000 at 75 and over, against <span data-fill="all75Died">28</span>.</p>
-      <div class="controls">
-        <div class="seg" id="agedots-mode" role="group" aria-label="Choose the measure">
-          <button type="button" data-value="died" aria-pressed="true">Died<span class="xl"> in hospital</span> per 1,000</button>
-          <button type="button" data-value="stay" aria-pressed="false">Average stay<span class="xl"> (days)</span></button>
-        </div>
-      </div>
-      <div class="chart" id="chart-agedots"></div>
-      <div class="fig-foot">
-        <p class="fig-source"><b>Source:</b> BITRE hospitalised injury data, traffic injuries; analysis by the authors.</p>
-        <p class="fig-notes"><b>Notes:</b> Per 1,000 people admitted, not per head of population. Deaths within hospital stays, 2011&ndash;2019; average stay, 2016&ndash;2021, for people who survived. Whiskers show 95% intervals for the death rate; the data has no interval for average stay. Older people are more frail, so the same impact does more harm.</p>
-      </div>
-      <details class="data"><summary>View the data</summary><div class="table-scroll"><table id="tbl-agedots"></table></div></details>
-    </figure>
-  </div>
-
-  <div class="wrap">
-    <p>A pedestrian aged 75 or over who is admitted after being hit dies in hospital about <span data-fill="ped75Died">61</span> times in every 1,000. Across all road users of that age it is <span data-fill="all75Died">28</span>. Those who survive stay an average of <span data-fill="ped75Stay">19</span> days, against <span data-fill="all75Stay">11</span> for older road users generally. Pedestrians aged 65 and over make up fewer than a quarter of injured pedestrians, but more than half of the pedestrians who die in hospital.</p>
-    <div class="pullstat">
-      <p class="pullstat-n"><span data-fill="ped75Died">61</span> in 1,000</p>
-      <p class="pullstat-c">pedestrians aged 75 and over admitted after being hit died in hospital, 2011&ndash;2019.</p>
-    </div>
-    <p>For every group of road users we could measure reliably, being hit by a heavy vehicle or bus carried the highest death rate. For pedestrians it was about <span data-fill="pedHeavy">53</span> per 1,000 admitted. Collisions with trains were worse again, but so rare that the figure rests on <span data-fill="trainDeaths">17</span> deaths.</p>
-  </div>
-
-  <div class="wide">
-    <figure class="fig" aria-labelledby="cp-title" aria-describedby="cp-desc">
-      <div class="fig-head">
-        <h3 class="fig-title" id="cp-title">Apart from rare train collisions, being hit by a truck or bus is the worst outcome for every road user</h3>
-        <p class="fig-sub">Died in hospital per 1,000 people admitted, by what they collided with, 2011&ndash;2019</p>
-      </div>
-      <p class="sr-only" id="cp-desc">For all road users and for pedestrians, collisions with a heavy vehicle or bus have the highest death rate of any road vehicle; train collisions rate higher but are very rare.</p>
-      <div class="chart" id="chart-cp"></div>
-      <p class="hidden-list" id="cp-hidden"></p>
-      <div class="fig-foot">
-        <p class="fig-source"><b>Source:</b> BITRE hospitalised injury data, traffic injuries; analysis by the authors.</p>
-        <p class="fig-notes"><b>Notes:</b> Rates shown only where there are at least 100 cases and 10 deaths. Train collisions are rarer still: <span data-fill="trainCases">297</span> cases and <span data-fill="trainDeaths">17</span> deaths in nine years. Hollow dots mark train collisions.</p>
-      </div>
-      <details class="data"><summary>View the data</summary><div class="table-scroll"><table id="tbl-cp"></table></div></details>
-    </figure>
-  </div>
-
-  <div class="wrap">
-    <p class="caveat"><b>A caution on this chapter.</b> These figures describe what happens to people once they reach hospital. Most road deaths happen at the scene and never appear in this data.</p>
-  </div>
+<p class="chapter-caveat">These figures describe what happens to people once they reach hospital. Most road deaths happen at the scene and never appear in this data.</p>
+</div>
 </section>
 
-<!-- CHAPTER 4 -->
-<section class="chapter" id="ch4" aria-labelledby="ch4-h">
-  <div class="wrap chapter-head">
-    <p class="chapter-no">Chapter 4 &middot; The lockdown test</p>
-    <h2 id="ch4-h">In the month Australia locked down, crash admissions fell by a third. Cyclist admissions rose.</h2>
-    <p class="chapter-dek">In 2020 Australians travelled less, worked from home and bought bikes. Hospital records show how that played out on the roads.</p>
-    <p class="reader-q"><b>The question:</b> I started riding in 2020. What happened to people like me?</p>
-    <aside class="keypoints" aria-label="What to know, chapter 4">
-      <h3>What to know</h3>
-      <ul>
-        <li>April 2020 had <span class="n" data-fill="apr20">2,357</span> road-crash admissions, <span class="n" data-fill="aprPct">32</span>% fewer than April 2019 and the lowest month of the decade.</li>
-        <li>In that month admissions fell for every main road user except cyclists, which rose <span class="n" data-fill="cycApr">16</span>%.</li>
-        <li>From April to December 2020, cyclist admissions beat every same month of the previous five years.</li>
-      </ul>
-    </aside>
-    <p>Australia&rsquo;s first national restrictions came in late March 2020. In April, <span data-fill="apr20">2,357</span> people were admitted to hospital after road crashes. That&rsquo;s <span data-fill="aprFewer">1,131</span> fewer than in April 2019, and the lowest monthly figure in the 11 years of data.</p>
-  </div>
+<section id="ch4" class="chapter" aria-labelledby="ch4-h">
+<div class="col">
+<p class="chapter-label">Chapter 4: The lockdown test</p>
+<h2 id="ch4-h">In the month Australia locked down, crash admissions fell by a third. Cyclist admissions rose.</h2>
+<p class="standfirst">In 2020 Australians travelled less, worked from home and bought bikes. Hospital records show how that played out on the roads.</p>
+<div class="wtk" role="group" aria-labelledby="ch4-wtk"><h3 class="wtk-title" id="ch4-wtk">What to know</h3><ul><li>April 2020 had <strong><span data-fill="apr_2020">2,357</span></strong> road-crash admissions, <strong><span data-fill="apr_fewer_pct">32%</span></strong> fewer than April 2019 and the lowest month of the decade.</li><li>In that month admissions fell for every main road user except cyclists, which rose <strong><span data-fill="apr_cyclist">16%</span></strong>.</li><li>From April to December 2020, cyclist admissions beat every same month of the previous five years: <strong><span data-fill="cyc_months_above">9</span></strong> months out of <strong><span data-fill="cyc_months_total">9</span></strong>.</li></ul></div>
+<h3 class="beat-title">The trough</h3>
+<p>Australia&rsquo;s first national restrictions came in late March 2020. In April, <span data-fill="apr_2020">2,357</span> people were admitted to hospital after road crashes. That&rsquo;s <span data-fill="apr_fewer_n">1,131</span> fewer than in April 2019, and the lowest monthly figure in the 11 years of data.</p>
+<p>The fall was steepest for people on foot. Pedestrian admissions fell by <span data-fill="apr_ped">60%</span>, car passengers by <span data-fill="apr_carpass">53%</span>, drivers by <span data-fill="apr_cardriver">43%</span> and motorcyclists by <span data-fill="apr_moto">38%</span>. One line went the other way.</p>
+<figure class="fig" id="fig-4a">
+  <h3 class="fig-title">April 2020: a third fewer crash admissions</h3>
+  <div class="fig-controls" role="group" aria-label="Road users shown"><div class="seg"><button type="button" data-value="all" aria-pressed="true">All road users</button><button type="button" data-value="cyc" aria-pressed="false">Cyclists</button></div></div>
+  <p class="c4-scale"><strong>Scale changes between views:</strong> cyclists are about 1 in <span data-fill="c4_cyc_one_in">5</span> admissions. <span class="c4-axis"></span></p>
+  <div class="fig-chart" role="img" aria-label="Monthly line chart of road-crash admissions, 2020 against 2019 and the 2015&ndash;19 range; April 2020 is the lowest month. For cyclists, every month from April is above the previous five years."></div>
+  <p class="fig-notes">Grey band = range of 2015&ndash;2019. Lockdown dates and length differed by state (Victoria&rsquo;s was longest); national monthly data can&rsquo;t be split by state.</p>
+  <details class="fig-data"><summary>Show the numbers</summary><div class="table-wrap"><table></table></div></details>
+</figure>
 
-  <div class="wide">
-    <figure class="fig" aria-labelledby="lockdown-title" aria-describedby="lockdown-desc">
-      <div class="fig-head">
-        <h3 class="fig-title" id="lockdown-title" aria-live="polite">April 2020: a third fewer crash admissions</h3>
-        <p class="fig-sub"><span id="lockdown-sub-text">Road-crash hospital admissions per month, all road users</span>: <span class="key key-hl">2020</span>, <span class="key key-ctx">2019</span> and the 2015&ndash;2019 average and range</p>
-      </div>
-      <p class="sr-only" id="lockdown-desc">All road-crash admissions dropped far below the usual range in April 2020, while cyclist admissions stayed above the 2015&ndash;2019 range in every month from April to December.</p>
-      <div class="controls">
-        <div class="seg" id="lockdown-view" role="group" aria-label="Choose road users">
-          <button type="button" data-value="all" aria-pressed="true">All road users</button>
-          <button type="button" data-value="cyc" aria-pressed="false">Cyclists</button>
-        </div>
-        <span class="ctrl-note" id="lockdown-scale-note" aria-live="polite">The vertical scale changes between views: 2,200 to 3,800 a month.</span>
-      </div>
-      <div class="chart" id="chart-lockdown"></div>
-      <div class="fig-foot">
-        <p class="fig-source"><b>Source:</b> BITRE hospitalised injury data, traffic injuries (monthly); analysis by the authors.</p>
-        <p class="fig-notes"><b>Notes:</b> Grey band = range of 2015&ndash;2019. Lockdown dates and length differed by state (Victoria&rsquo;s was longest); national monthly data can&rsquo;t be split by state.</p>
-      </div>
-      <details class="data"><summary>View the data</summary><div class="table-scroll"><table id="tbl-lockdown"></table></div></details>
-    </figure>
-  </div>
+<h3 class="beat-title">The exception</h3>
+<p>Cyclist admissions rose <span data-fill="apr_cyclist">16%</span> in April and kept climbing. June 2020 had <span data-fill="cyc_jun_2020">682</span>, half as many again as June 2019. Over the whole year, cyclist admissions went from <span data-fill="cyc_year_2019">7,302</span> to <span data-fill="cyc_year_2020">8,332</span>, up <span data-fill="cyc_year_pct">14%</span>, while pedestrian admissions fell <span data-fill="ped_year_pct">22%</span> and car drivers <span data-fill="cardriver_year_pct">9%</span>.</p>
+<p>Children were a big part of it. Riders aged 8 to 16 made up one in <span data-fill="kids_one_in_word">seven</span> injured cyclists in 2019 but nearly <span data-fill="kids_inc_pct">30%</span> of the 2020 increase: <span data-fill="kids_inc_n">307</span> of the <span data-fill="cyc_inc_n">1,030</span> extra cyclist admissions.</p>
+<figure class="fig" id="fig-4b">
+  <h3 class="fig-title">Every road user went to hospital less in April 2020, except cyclists</h3>
+  
+  <div class="fig-chart" role="img" aria-label="Diverging horizontal bars of the percentage change in admissions, April 2020 against April 2019: pedestrians, car passengers, drivers and motorcyclists fell; cyclists rose 16%."></div>
+  <p class="fig-notes">Percentage change in admissions, April 2020 against April 2019, for the five main road users. The dashed bar is all road users, for reference. Source: BITRE national hospitalised injury data.</p>
+  <details class="fig-data"><summary>Show the numbers</summary><div class="table-wrap"><table></table></div></details>
+</figure>
 
-  <div class="wrap">
-    <p>The fall was steepest for people on foot. Pedestrian admissions fell by <span data-fill="pedApr">60</span>%, car passengers by <span data-fill="passApr">53</span>%, drivers by <span data-fill="drvApr">43</span>% and motorcyclists by <span data-fill="motoApr">38</span>%. One line went the other way.</p>
-  </div>
+<h3 class="beat-title">Was it lockdown, or the trend?</h3>
+<p>Cycling injuries had been rising for years, so not all of 2020&rsquo;s increase is a lockdown effect. From 2011 to 2019 cyclist admissions grew by about <span data-fill="cyc_trend_rate">3.9%</span> a year. Carry that growth forward one more year and 2020 would have had about <span data-fill="cyc_trend_2020">7,584</span> admissions; the real figure was <span data-fill="cyc_year_2020">8,332</span>. That&rsquo;s about <span data-fill="cyc_above_trend_n">750</span> more than the trend, or roughly <span data-fill="cyc_above_trend_pct">10%</span> above it. A single trend line is a rough yardstick and we haven&rsquo;t put an error margin on it, so we don&rsquo;t claim that all <span data-fill="cyc_above_trend_n">750</span> is lockdown. Month by month the signal is clearer: from April to December 2020, every month was above the highest that month reached in 2015&ndash;2019 (<span data-fill="cyc_months_above">9</span> of <span data-fill="cyc_months_total">9</span>).</p>
+<p>We can&rsquo;t say how many more people were riding, because there is no national count of trips or kilometres. The likeliest explanation is more riders on the road, not riding becoming more dangerous, but this data cannot prove it.</p>
+<figure class="fig" id="fig-4c">
+  <h3 class="fig-title">Cyclist injuries were already rising. 2020 added to it.</h3>
+  
+  <div class="fig-chart" role="img" aria-label="Annual cyclist admissions 2011&ndash;2021 as dots on a line, with the 2011&ndash;2019 growth trend carried forward as a dashed line to 2020: 8,332 real against about 7,584 on trend."></div>
+  <p class="fig-notes">The trend assumes the 2011&ndash;2019 yearly growth rate (about <span data-fill="cyc_trend_rate">3.9%</span> a year) simply continued. It is a rough yardstick with no error margin attached.</p>
+  <details class="fig-data"><summary>Show the numbers</summary><div class="table-wrap"><table></table></div></details>
+</figure>
 
-  <div class="wide">
-    <figure class="fig" aria-labelledby="div-title" aria-describedby="div-desc">
-      <div class="fig-head">
-        <h3 class="fig-title" id="div-title">Every road user went to hospital less in April 2020, except cyclists</h3>
-        <p class="fig-sub">% change in hospital admissions, April 2020 vs April 2019: <span class="key key-fall">falls</span> and <span class="key key-hl">rises</span></p>
-      </div>
-      <p class="sr-only" id="div-desc">Admissions fell for pedestrians, car passengers, car drivers and motorcyclists in April 2020, and for road users overall; cyclist admissions rose <span data-fill="cycApr">16</span>%.</p>
-      <div class="chart" id="chart-div"></div>
-      <div class="fig-foot">
-        <p class="fig-source"><b>Source:</b> BITRE hospitalised injury data, traffic injuries; analysis by the authors.</p>
-        <p class="fig-notes"><b>Notes:</b> &ldquo;All road users&rdquo; also includes bus, truck and other road users not shown separately.</p>
-      </div>
-      <details class="data"><summary>View the data</summary><div class="table-scroll"><table id="tbl-div"></table></div></details>
-    </figure>
-  </div>
+<p class="chapter-caveat">Restrictions differed by state. Among the states, Victoria had the largest rise in cyclist admissions in July&ndash;December 2020: <span data-fill="vic_jd_2020">1,419</span> against <span data-fill="vic_jd_2019">1,010</span> in 2019, which is <span data-fill="vic_jd_more">409</span> more (+<span data-fill="vic_jd_pct">40.5%</span>). That fits the timing of Victoria&rsquo;s second lockdown, but six-monthly state data cannot show cause and effect. Tasmania&rsquo;s percentage rise is a shade higher (+<span data-fill="tas_jd_pct">40.7%</span>) but rests on a tiny base: <span data-fill="tas_jd_2019">54</span> admissions rose to <span data-fill="tas_jd_2020">76</span>.</p>
+<figure class="fig" id="fig-4d">
+  <h3 class="fig-title">Cyclist admissions by state, July&ndash;December 2020 against 2019</h3>
+  <div class="fig-controls" role="group" aria-label="Half of 2020 shown"><div class="seg"><button type="button" data-value="Jul-Dec" aria-pressed="true">July&ndash;December</button><button type="button" data-value="Jan-Jun" aria-pressed="false">January&ndash;June</button></div></div>
+  <div class="fig-chart" role="img" aria-label="Small table with bars of cyclist admissions by state, July to December 2020 against 2019; Victoria has the largest absolute rise, Tasmania the largest percentage rise on a small base."></div>
+  <p class="fig-notes">State is where the patient lives, not where the crash happened. State counts exclude deaths, as in the BITRE state file. Each half of 2020 against the same months of 2019; both halves use the same scale. * Tasmania&rsquo;s +<span data-fill="tas_jd_pct">40.7%</span> is on a tiny base (<span data-fill="tas_jd_2019">54</span> to <span data-fill="tas_jd_2020">76</span>). &dagger; NSW changed how it counts admissions in 2017; both 2019 and 2020 are after the change.</p>
+  <details class="fig-data"><summary>Show the numbers</summary><div class="table-wrap"><table></table></div></details>
+</figure>
 
-  <div class="wrap">
-    <p>Cyclist admissions rose <span data-fill="cycApr">16</span>% in April and kept climbing. June 2020 had <span data-fill="cycJun20">682</span>, half as many again as June 2019. Over the whole year, cyclist admissions went from <span data-fill="cyc19">7,302</span> to <span data-fill="cyc20">8,332</span>, up <span data-fill="cycYrPct">14</span>%, while pedestrian admissions fell <span data-fill="pedYrPct">22</span>% and car drivers <span data-fill="drvYrPct">9</span>%.</p>
-    <p>Children were a big part of it. Riders aged 8 to 16 made up one in <span data-fill="kidsShare19">7</span> injured cyclists in 2019 but almost a third of the 2020 increase.</p>
-    <div class="pullstat">
-      <p class="pullstat-n">+<span data-fill="cycApr">16</span>%</p>
-      <p class="pullstat-c">change in cyclist admissions, April 2020 on April 2019, in a month when every other main road user fell by at least a third.</p>
-    </div>
-    <p>Cycling injuries had been rising for years, so not all of 2020&rsquo;s increase is a lockdown effect. Projecting the 2011&ndash;2019 trend forward gives about <span data-fill="trendExp">7,670</span> admissions for 2020; the real figure was <span data-fill="cyc20">8,332</span>. That&rsquo;s <span data-fill="trendExcess">662</span> more than the trend, within the normal year-to-year swing on its own. Month by month the signal is clearer: from April to December, every month came in above what the trend predicted.</p>
-  </div>
-
-  <div class="wrap">
-    <figure class="fig inset" aria-labelledby="trend4-title" aria-describedby="trend4-desc">
-      <div class="fig-head">
-        <h3 class="fig-title" id="trend4-title">Cyclist injuries were already rising. 2020 added to it.</h3>
-        <p class="fig-sub">Pedal cyclists admitted to hospital each year, with the 2011&ndash;2019 trend line and 95% prediction band</p>
-      </div>
-      <p class="sr-only" id="trend4-desc">Cyclist admissions rose steadily from 2011 to 2019; the 2020 figure of <span data-fill="cyc20">8,332</span> sits <span data-fill="trendExcess">662</span> above the trend but inside its 95% prediction band.</p>
-      <div class="chart" id="chart-trend4"></div>
-      <div class="fig-foot">
-        <p class="fig-source"><b>Source:</b> BITRE hospitalised injury data, traffic injuries; analysis by the authors.</p>
-        <p class="fig-notes"><b>Notes:</b> The trend line is a straight-line fit to 2011&ndash;2019, dashed where projected. The annual 2020 value sits above the line but within normal year-to-year variation; the monthly pattern after March is the stronger signal.</p>
-      </div>
-      <details class="data"><summary>View the data</summary><div class="table-scroll"><table id="tbl-trend4"></table></div></details>
-    </figure>
-  </div>
-
-  <div class="wrap">
-    <p>We can&rsquo;t say how many more people were riding, because there is no national count of trips or kilometres. The likeliest explanation is more riders on the road, not riding becoming more dangerous, but this data cannot prove it.</p>
-    <p class="caveat"><b>A caution on this chapter.</b> Restrictions differed by state. Victoria&rsquo;s second lockdown fits the timing of the biggest state rise in cyclist admissions (July&ndash;December 2020, +<span data-fill="vicJulDec">40.5</span>%), but six-monthly state data cannot show cause and effect.</p>
-  </div>
+</div>
 </section>
 
-<!-- CLOSING -->
-<section class="closing" id="takeaway" aria-labelledby="takeaway-h">
-  <div class="wrap">
-    <p class="kicker">What to take away</p>
-    <h2 id="takeaway-h">Three things to remember</h2>
-    <p><b>The road toll isn&rsquo;t the whole story.</b> Deaths have fallen, but the number of Australians seriously hurt has stayed the same per person: more than 100 admissions a day in 2021.</p>
-    <p><b>If you ride, you&rsquo;re part of a growing group.</b> Cycling admissions rose faster than any other group&rsquo;s over the decade, more than doubled among people over 65, and rose again when the country locked down. None of this shows that riding got more dangerous per trip. It does show that more riders are ending up in hospital, and that older riders are a growing share of them.</p>
-    <p><b>If your parents walk, the danger isn&rsquo;t how often they&rsquo;re hit but what happens when they are.</b> Older pedestrians aren&rsquo;t admitted more often than they were, but when they are, about one in <span data-fill="ped75OneIn">16</span> of those aged 75 and over doesn&rsquo;t come home.</p>
-  </div>
+<section id="ch5" class="chapter" aria-labelledby="ch5-h">
+<div class="col">
+<p class="chapter-label">Chapter 5: Are the roads equally safe for everyone?</p>
+<h2 id="ch5-h">In 2011 First Nations Australians were hospitalised after road crashes at about the same rate as everyone else. By 2021 the rate was half as high again.</h2>
+<p class="standfirst">Counts alone hide this, because the population grew. Per person, the picture changes. Part of the rise may be better recording of Indigenous status in hospital records, and these records cannot say why the rate moved.</p>
+<div class="wtk" role="group" aria-labelledby="ch5-wtk"><h3 class="wtk-title" id="ch5-wtk">What to know</h3><ul><li>First Nations hospitalisations rose from <strong><span data-fill="fn_2011">1,167</span></strong> in 2011 to <strong><span data-fill="fn_2021">2,220</span></strong> in 2021 (+<strong><span data-fill="fn_chg">90%</span></strong>). For non-Indigenous Australians: <strong><span data-fill="ni_2011">31,997</span></strong> to <strong><span data-fill="ni_2021">36,755</span></strong> (+<strong><span data-fill="ni_chg">15%</span></strong>).</li><li>Per 100,000 people, First Nations rose from about <strong><span data-fill="fn_rate_2011">145</span></strong> to <strong><span data-fill="fn_rate_2021">226</span></strong> (+<strong><span data-fill="fn_rate_chg">56%</span></strong>); non-Indigenous stayed at about <strong><span data-fill="ni_rate_2011">149</span></strong>.</li><li>Pedestrians were <strong><span data-fill="fn_ped_share">11.0%</span></strong> of First Nations hospitalisations and <strong><span data-fill="ni_ped_share">6.3%</span></strong> of non-Indigenous ones (2016&ndash;2021).</li><li>First Nations people were <strong><span data-fill="fn_remote_share">41.2%</span></strong> of everyone hospitalised in remote areas (2016&ndash;2021).</li><li>Part of the rise may be better recording of Indigenous status. Records with status not stated are left out.</li></ul></div>
+<h3 class="beat-title">Same starting line, different 2021</h3>
+<p>In 2011, <span data-fill="fn_2011">1,167</span> First Nations people were hospitalised after road crashes. In 2021 it was <span data-fill="fn_2021">2,220</span>, up <span data-fill="fn_chg">90%</span>. Over the same decade the count for everyone else rose <span data-fill="ni_chg">15%</span>. But the population changed too, and counts are not rates.</p>
+<p>Per 100,000 people, First Nations Australians were hospitalised about <span data-fill="fn_rate_2011">145</span> times in 2011, against about <span data-fill="ni_rate_2011">149</span> for everyone else: close to level. By 2021 the First Nations figure was about <span data-fill="fn_rate_2021">226</span>, while the rest of Australia&rsquo;s was still about <span data-fill="ni_rate_2021">149</span>. That is a rise of <span data-fill="fn_rate_chg">56%</span> per person for First Nations people, and almost none for everyone else. First Nations people were <span data-fill="fn_pop_share_2021">3.8%</span> of the population in 2021 but <span data-fill="fn_hosp_share_2021">5.6%</span> of that year&rsquo;s road-crash hospitalisations.</p>
+<p>Part of the rise may be better recording. Hospital records may now identify Indigenous status more completely: the shortfall between the national total and the two groups combined (mostly records with status not stated) fell from <span data-fill="gap_2011">869</span> to <span data-fill="gap_2021">530</span>. That is a sign, but a small one next to a rise of <span data-fill="fn_rise_n">1,053</span> First Nations hospitalisations, and we can&rsquo;t say how much of the change is recording and how much is real.</p>
+<figure class="fig" id="fig-5a">
+  <h3 class="fig-title"><span data-mode="index">First Nations hospitalisations nearly doubled; everyone else&rsquo;s rose <span data-fill="ni_chg">15%</span></span><span data-mode="rate" hidden>Per person, the First Nations rate went from level with everyone else to half as high again</span></h3>
+  <div class="fig-controls" role="group" aria-label="Show hospitalisation counts indexed to 2011 or rates per 100,000 people"><div class="seg"><button type="button" data-value="index" aria-pressed="true">Hospitalisations (2011 = 100)</button><button type="button" data-value="rate" aria-pressed="false">Per 100,000 people</button></div></div>
+  <div class="fig-chart" role="img" aria-label="Two lines, 2011 to 2021: First Nations hospitalisations rise 90% while non-Indigenous rise 15%; per 100,000 people the First Nations rate goes from level with everyone else to half as high again."></div>
+  <p class="ch5-caveat"><span class="ch5-i" aria-hidden="true">i</span><span>Better recording of Indigenous status may explain part of the rise.</span></p>
+  <p class="fig-notes ch5-modenote"><span data-mode="index">Each count is divided by that group&rsquo;s 2011 count, then multiplied by 100, so a line at 190 means 90% more hospitalisations than in 2011. Counts do not allow for population growth.</span><span data-mode="rate" hidden>Rates are shown for 2011, 2016 and 2021 only, the years with an ABS First Nations population estimate. The thin dashed segments just join the three points; they are not estimates for the years in between, and we have not interpolated. In 2021 the rates were <span data-fill="c5_fn_rate_2021_dp1">225.7</span> and <span data-fill="c5_ni_rate_2021_dp1">148.8</span> per 100,000, about <span data-fill="c5_ratio_2021">1.5</span> times as high for First Nations people.</span></p>
+  <p class="fig-notes">Per 100,000 = hospitalisations &divide; population &times; 100,000. Non-Indigenous population = ABS estimated resident population (<span data-fill="pop_2011">22,340,024</span> in 2011, <span data-fill="pop_2021">25,685,412</span> in 2021) minus the ABS First Nations estimate, so it also contains people whose status is unknown. Population figures are ABS estimates, back-cast after the 2021 Census (CC BY 4.0). Hospital records with Indigenous status not stated are excluded: together the two groups fall short of the national total by <span data-fill="gap_2011">869</span> in 2011 and <span data-fill="gap_2021">530</span> in 2021.</p>
+  <details class="fig-data"><summary>Show the numbers</summary><div class="table-wrap"><table></table></div></details>
+</figure>
+
+<h3 class="beat-title">Who is hurt on the road</h3>
+<p>The mix of people hurt looks different too. Pedestrians were <span data-fill="fn_ped_share">11.0%</span> of First Nations hospitalisations over 2016&ndash;2021, against <span data-fill="ni_ped_share">6.3%</span> for everyone else. Cyclists were a smaller share (<span data-fill="fn_cyc_share">10.9%</span> against <span data-fill="ni_cyc_share">19.7%</span>), and car occupants a slightly bigger one (<span data-fill="fn_car_share">54.5%</span> against <span data-fill="ni_car_share">48.1%</span>).</p>
+<p>This is the make-up of those hospitalised, not the risk of any one way of travelling. The data has no count of how far or how often each group walks, rides or drives, so it can&rsquo;t say who faces more danger per trip.</p>
+<figure class="fig" id="fig-5b">
+  <h3 class="fig-title">Pedestrians are a bigger share of First Nations road-crash hospitalisations: <span data-fill="fn_ped_share0">11%</span> against <span data-fill="ni_ped_share0">6%</span></h3>
+  
+  <div class="fig-chart" role="img" aria-label="Paired horizontal bars of the road-user mix within each group&rsquo;s hospitalisations, 2016&ndash;2021; pedestrians are 11.0% of First Nations and 6.3% of non-Indigenous hospitalisations, cyclists 10.9% against 19.7%."></div>
+  <p class="fig-notes">Shares of each group&rsquo;s hospitalisations, pooled 2016&ndash;2021; not rates, and no data on how much each group walks, rides or drives. BITRE suppresses small cells (n.p.): <span data-fill="np_cells_each">14</span> half-year cells for each group, all in bus occupants, heavy transport, pick-up or van occupants and &lsquo;other&rsquo;. Those cells are excluded, so shares are of published cells only. Car, motorcycle, cycling and pedestrian counts have none.</p>
+  <details class="fig-data"><summary>Show the numbers</summary><div class="table-wrap"><table></table></div></details>
+</figure>
+
+<h3 class="beat-title">Where people live</h3>
+<p>Where people live matters. In remote areas, First Nations people were <span data-fill="fn_remote_share">41.2%</span> of everyone hospitalised after road crashes, against <span data-fill="fn_regional_share">7.1%</span> in regional areas and <span data-fill="fn_major_share">2.7%</span> in the major cities. In the same remote areas, First Nations patients stayed <span data-fill="fn_stay_remote">6.1</span> days on average, compared with <span data-fill="ni_stay_remote">4.9</span> days for non-Indigenous patients. In the major cities the figures were <span data-fill="fn_stay_major">5.1</span> and <span data-fill="ni_stay_major">4.9</span> days.</p>
+<p>Longer stays can reflect how badly someone was hurt, transfers between hospitals or the distance to care. The data cannot separate these. Nor does it say where the crash happened, only where the person lives.</p>
+<figure class="fig" id="fig-5c">
+  <h3 class="fig-title"><span data-mode="share">In remote areas, First Nations people are <span data-fill="fn_remote_share0">41%</span> of those hospitalised after road crashes</span><span data-mode="stay" hidden>In remote areas, First Nations patients stay <span data-fill="fn_stay_remote">6.1</span> days on average; others stay <span data-fill="ni_stay_remote">4.9</span></span></h3>
+  <div class="fig-controls" role="group" aria-label="Show First Nations share by area or average stay"><div class="seg"><button type="button" data-value="share" aria-pressed="true">First Nations share</button><button type="button" data-value="stay" aria-pressed="false">Average stay</button></div></div>
+  <div class="fig-chart" role="img" aria-label="Horizontal bars of the First Nations share of road-crash hospitalisations by area of residence: 2.7% in major cities, 7.1% in regional areas and 41.2% in remote areas; the other view compares average stay by group."></div>
+  <p class="fig-notes">Remoteness is where people usually live, not where the crash happened. We have no population by remoteness in this data, so we can&rsquo;t say whether <span data-fill="fn_remote_share0">41%</span> is high or low relative to the share of residents. Average stay = bed days &divide; hospitalisations for each group and area, counting survivors only (people who died within 30 days of admission are excluded from both), the same basis and the same 2016&ndash;2021 window as the stays in Chapter 3; it comes from a different BITRE table (the First Nations file). Pooled 2016&ndash;2021. The remoteness table counts <span data-fill="fn_rem_total">11,539</span> First Nations hospitalisations and the road-user table <span data-fill="fn_road_total">11,635</span>, a difference of <span data-fill="fn_total_diff">96</span>: the remoteness table has no &ldquo;unknown remoteness&rdquo; category (those records are excluded), while the road-user table includes them and leaves out the suppressed n.p. cells.</p>
+  <details class="fig-data"><summary>Show the numbers</summary><div class="table-wrap"><table></table></div></details>
+</figure>
+
+<p class="chapter-caveat">This chapter describes hospital records. It is not about blame or choices, and it cannot say why rates differ. It cannot tell us how much of the rise is better recording, how much each group travels by foot, bike or car, or where the crashes happened. Records with Indigenous status not stated are excluded, and BITRE suppresses small cells (n.p.). Population figures are ABS estimates (Estimates of Aboriginal and Torres Strait Islander Australians, back-cast after the 2021 Census). We use BITRE&rsquo;s terms, &ldquo;First Nations people&rdquo; and &ldquo;non-Indigenous&rdquo;. Questions about why belong with First Nations communities and the people who work on road safety alongside them.</p>
+</div>
 </section>
 
-<!-- METHODS -->
-<section class="methods" id="about" aria-labelledby="about-h">
-  <div class="wrap">
-    <div class="methods-box">
-      <h2 id="about-h">Methods and limitations</h2>
-      <p>This story uses open government data on people admitted to hospital after a road crash in Australia, 2011&ndash;2021. Keep these rules in mind when reading it.</p>
-      <h3>Sources</h3>
-      <ul>
-        <li><a href="https://www.bitre.gov.au/publications/ongoing/hospitalised-injury">BITRE, Hospitalised injury data (September 2023 release)</a>. Licence: Creative Commons Attribution (CC BY).</li>
-        <li><a href="https://www.abs.gov.au/statistics/people/population/national-state-and-territory-population">ABS, Estimated Resident Population</a>. Licence: CC BY 4.0.</li>
-        <li><a href="https://data.gov.au/data/dataset/australian-road-deaths-database">BITRE, Australian Road Deaths Database</a>. Licence: CC BY 3.0 AU.</li>
-      </ul>
-      <h3>Rules we followed</h3>
-      <ul>
-        <li><strong>Counts are not rates.</strong> Counts rise when a population grows. Per-person figures divide by ABS population (per 100,000 residents in Chapter 1; by each age group&rsquo;s growth in Chapter 2). Chapter 3&rsquo;s &ldquo;per 1,000&rdquo; figures are per 1,000 people admitted, not per head of population.</li>
-        <li><strong>Deaths in hospital: 2011&ndash;2019 only.</strong> Records for 2020 and 2021 look incomplete. Hospitalisation counts exclude people who died in hospital; road deaths come from a separate database.</li>
-        <li><strong>Bed days: 2016&ndash;2021 only.</strong> The counting method changed in July 2015. Average stay excludes people who died in hospital.</li>
-        <li><strong>Two counting changes lower the counts.</strong> From 2012 Victoria stopped including cases that only visited an emergency department; from June 2017 New South Wales made a similar change. The national rise is probably understated, and the NSW dip after 2017 is a counting effect, not a safety gain.</li>
-        <li><strong>Residence, not crash location.</strong> State and remoteness refer to the patient&rsquo;s usual home.</li>
-        <li><strong>No exposure data.</strong> The data does not say how much people drive, ride or walk, so a rise in injuries could reflect more travel, more risk, or both.</li>
-        <li><strong>Small numbers.</strong> Changes based on fewer than about 30 cases are greyed out. Death rates are published only where there are at least 100 cases and 10 deaths; average stays only where there are at least 100 cases.</li>
-      </ul>
-      <h3>Processing</h3>
-      <p>Raw BITRE tables are cleaned and aggregated by a KNIME workflow (v5) into the 16 data files this page reads; the same figures are reproduced in Python and the two agree. Code and validation notes are in the project&rsquo;s <code>processing</code> folder.</p>
-      <h3>What we left out</h3>
-      <p>A chapter on equity (First Nations people and remoteness) is planned but not published. The First Nations tables don&rsquo;t add up to the national totals by more than suppressed cells can explain, and we won&rsquo;t publish findings we can&rsquo;t reconcile.</p>
-      <p class="updated">Published <time datetime="2026-11-23">23 November 2026</time>.</p>
-    </div>
-  </div>
+<section id="closing" aria-labelledby="closing-h">
+<div class="col">
+<h2 id="closing-h">What to take away</h2>
+<p><strong>The road toll isn&rsquo;t the whole story.</strong> Deaths have fallen, but the number of Australians seriously hurt has stayed the same per person: more than 100 admissions a day in 2021.</p>
+<p><strong>If you ride, you&rsquo;re part of a growing group.</strong> Cycling admissions rose faster than any other road user&rsquo;s over the decade, more than doubled among people over 65, and rose again when the country locked down. None of this shows that riding got more dangerous per trip. It does show that more riders are ending up in hospital, and that older riders are a growing share of them.</p>
+<p><strong>If your parents walk, the danger isn&rsquo;t how often they&rsquo;re hit but what happens when they are.</strong> Older pedestrians aren&rsquo;t admitted more often than they were, but when they are, about one in <span data-fill="ped75_one_in_word">sixteen</span> of those aged 75 and over doesn&rsquo;t come home.</p>
+<p><strong>The roads are not equally safe for everyone, and counts alone hide it.</strong> Per person, First Nations Australians were hospitalised after road crashes at about the same rate as everyone else in 2011 (<span data-fill="fn_rate_2011">145</span> and <span data-fill="ni_rate_2011">149</span> per 100,000) and at a rate half as high again in 2021 (<span data-fill="fn_rate_2021">226</span> and <span data-fill="ni_rate_2021">149</span>). Better recording explains part of that, and we can&rsquo;t say how much. The records also show more pedestrians among First Nations patients and longer stays in remote areas. What they can&rsquo;t tell us is why.</p>
+</div>
 </section>
+
+<section id="methods" aria-labelledby="methods-h">
+<div class="col">
+<div class="panel">
+<h2 id="methods-h">Methods and limitations</h2>
+<h3>Sources</h3>
+<p>BITRE hospitalised injury data (September 2023 release: national, state and First Nations files, and the data dictionary); ABS estimated resident population (CC BY 4.0); BITRE Australian Road Deaths Database (ARDD fatalities, October 2023); ABS Estimates of Aboriginal and Torres Strait Islander Australians, June 2021, and the ABS estimates and projections back-cast for 2011 and 2016 (CC BY 4.0): <a href="https://www.abs.gov.au/statistics/people/aboriginal-and-torres-strait-islander-peoples/estimates-aboriginal-and-torres-strait-islander-australians/30-june-2021" rel="noopener">June 2021 estimates</a> and <a href="https://www.abs.gov.au/statistics/people/aboriginal-and-torres-strait-islander-peoples/estimates-and-projections-aboriginal-and-torres-strait-islander-australians/latest-release" rel="noopener">back-cast estimates and projections</a>. The BITRE and ARDD licences are still to be confirmed.</p>
+<p>The First Nations population figures (806,090 in 2011; 898,515 in 2016; 983,709 in 2021) come from the ABS back-cast estimates and are not in our CSV files.</p>
+<h3>Rules</h3>
+<ul>
+<li>Counts are not rates. Per-person figures use ABS population.</li>
+<li>Headline counts are hospitalisations (people discharged alive), as in BITRE Table 1. Death rates use everyone admitted.</li>
+<li>Deaths in hospital: 2011&ndash;2019 only (2020&ndash;21 records are incomplete). Bed days: 2016&ndash;2021 only (counting changed in July 2015). Average stay is days per person who left hospital alive.</li>
+<li>Rates are shown only where there are at least 100 cases and 10 deaths. Suppressed cells (n.p.) are treated as missing, never as zero.</li>
+<li>Victorian (2012) and NSW (2017) counting changes lower later counts.</li>
+<li>First Nations figures leave out records with Indigenous status not stated, and recording may have improved over the decade.</li>
+<li>Remoteness and state are where the patient lives, not where the crash happened.</li>
+<li>No exposure data (trips, distance): we cannot say which way of travelling is riskier per trip.</li>
+</ul>
+<h3>Processing</h3>
+<p>KNIME workflow <code>BeyondTheRoadToll</code>, 102 nodes in 6 sections, validated against an independent Python implementation and BITRE Table 1. Links to the repository and the KNIME workflow: to be added.</p>
+<h3>Reconciliation note</h3>
+<p>The First Nations totals were reconciled with the national totals: the shortfall is records with Indigenous status not stated, plus whole cells BITRE suppressed (n.p.).</p>
+</div>
+</div>
+</section>
+
+<section id="data-download" aria-labelledby="dl-h">
+<div class="col">
+<div class="panel">
+<h2 id="dl-h">Download the data</h2>
+<p>The seven files behind every chart. Plain CSV, one header row.</p>
+<ul class="downloads">
+<li><a href="data/ch1_trend.csv" download>ch1_trend.csv</a><span>Hospitalisations, road deaths and population by year, 2011&ndash;2021.</span></li>
+<li><a href="data/ch2_age_roaduser.csv" download>ch2_age_roaduser.csv</a><span>Admissions by road user and age band, with 3-year averages and per-person change.</span></li>
+<li><a href="data/severity.csv" download>severity.csv</a><span>Deaths in hospital, average stay and bed days by road user, age, counterparty and remoteness.</span></li>
+<li><a href="data/ch4_monthly.csv" download>ch4_monthly.csv</a><span>Monthly admissions by road user, 2011&ndash;2021, with the 2015&ndash;19 baseline and trend.</span></li>
+<li><a href="data/ch4_state_cyclists.csv" download>ch4_state_cyclists.csv</a><span>Cyclist admissions by state and half-year, 2019 against 2020.</span></li>
+<li><a href="data/ch5_first_nations_trend.csv" download>ch5_first_nations_trend.csv</a><span>First Nations and non-Indigenous hospitalisations and bed days by year.</span></li>
+<li><a href="data/ch5_first_nations_profile.csv" download>ch5_first_nations_profile.csv</a><span>Road-user mix and remoteness for each group, pooled 2016&ndash;2021.</span></li>
+</ul>
+</div>
+</div>
+</section>
+
+
 </main>
-
-<footer>
-  <div class="wrap">COS30045 Data Visualisation &middot; By Shu &middot; Charts built with D3</div>
+<footer class="site-footer">
+<div class="col">
+<p>Team Shu &middot; COS30045 Data Visualisation &middot; Swinburne University of Technology &middot; 2026</p>
+<p>Data: BITRE hospitalised injury data and Australian Road Deaths Database (ARDD); ABS population estimates.</p>
+</div>
 </footer>
-
 <script src="js/vendor/d3.min.js"></script>
-<script src="js/charts/common.js"></script>
-<script src="js/charts/unit.js"></script>
-<script src="js/charts/lines.js"></script>
-<script src="js/charts/heatmap.js"></script>
-<script src="js/charts/severity.js"></script>
-<script src="js/charts/burden.js"></script>
-<script src="js/charts/agedots.js"></script>
-<script src="js/charts/counterparty.js"></script>
-<script src="js/charts/lockdown.js"></script>
-<script src="js/charts/diverging.js"></script>
-<script src="js/charts/trend.js"></script>
-<script src="js/nav.js"></script>
+<script src="js/common.js"></script>
+<script src="js/facts.js"></script>
+<script src="js/charts/ch1.js"></script>
+<script src="js/charts/ch2.js"></script>
+<script src="js/charts/ch3.js"></script>
+<script src="js/charts/ch4.js"></script>
+<script src="js/charts/ch5.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
