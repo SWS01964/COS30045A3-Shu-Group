@@ -1,62 +1,69 @@
-/* ch2.css: owned by the Chapter 2 agent. Every rule scoped under #ch2 (#fig-2a / #fig-2b). */
+/* ch2.css: owned by the Chapter 2 agent. Every rule scoped under #ch2. */
 
-/* "Show" label sits with the Counts / Per person toggle */
-#fig-2a .c2-show { display: inline-flex; align-items: center; gap: 8px; }
+/* ---- Explore bar ---- */
+#ch2 .explore-controls { gap: 8px 20px; }
+#ch2 .explore-controls select { min-width: 150px; }
+@media (max-width: 599px) {
+  #ch2 .explore-controls .ctl-field { flex: 1 1 100%; }
+  #ch2 .explore-controls select { flex: 1 1 auto; }
+}
 
-/* the one-line sentence for the selected cell */
-#fig-2a .c2-sentence {
-  font-family: var(--font-sans);
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1.35;
-  margin: 0 0 12px;
-  padding: 8px 12px;
+/* ---- panel A: sentence, heatmap, legend ---- */
+#ch2 .c2-sentence {
+  font-size: 15px; font-weight: 600; line-height: 1.35;
+  margin: 0 0 12px; padding: 8px 12px;
   border-left: 4px solid var(--rise);
   background: var(--surface);
   min-height: 3.4em;
 }
-@media (min-width: 600px) { #fig-2a .c2-sentence { min-height: 2.6em; } }
-
-/* heatmap cells */
-#fig-2a .c2-cell { cursor: pointer; outline: none; }
-#fig-2a .c2-cell .c2-fill { stroke: none; }
-#fig-2a .c2-cell:hover .c2-fill { stroke: var(--ink); stroke-width: 1.5; }
-#fig-2a .c2-val { pointer-events: none; font-variant-numeric: tabular-nums; }
-#fig-2a .c2-cols text { font-weight: 600; fill: var(--ink); }
-
-/* legend */
-#fig-2a .c2a-legend { margin-top: 12px; }
-#fig-2a .c2a-legend-title,
-#fig-2a .c2a-legend-note {
-  font-family: var(--font-sans);
-  font-size: 13px;
-  line-height: 1.45;
-  color: var(--muted);
-  margin: 0 0 4px;
-}
-#fig-2a .c2a-legend-title { color: var(--ink); font-weight: 600; }
-#fig-2a .c2a-scale { display: block; }
-#fig-2a .c2a-swatch {
-  display: inline-block;
-  width: 14px; height: 14px;
-  vertical-align: -2px;
+@media (min-width: 600px) { #ch2 .c2-sentence { min-height: 2.8em; } }
+#ch2 #ch2-a .panel-chart svg.c2-heat { display: block; max-width: 100%; overflow: visible; }
+#ch2 .c2-cell { cursor: pointer; outline: none; }
+#ch2 .c2-cell .c2-fill { stroke: none; }
+#ch2 .c2-cell:hover .c2-fill { stroke: var(--ink); stroke-width: 1.5; }
+#ch2 .c2-hatch { pointer-events: none; }
+#ch2 .c2-hatchline { stroke: var(--ink); stroke-width: 1.4; opacity: 0.5; }
+#ch2 .c2-val { pointer-events: none; font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums;
+  paint-order: stroke; stroke-linejoin: round; }
+#ch2 .c2-cols text { font-size: 12px; font-weight: 600; fill: var(--ink); }
+#ch2 .c2-rows text { font-size: 12px; fill: var(--ink); }
+#ch2 .c2-top { pointer-events: none; }
+#ch2 .c2-sel-halo { stroke: var(--panel); stroke-width: 6; }
+#ch2 .c2-sel { stroke: var(--ink); stroke-width: 3; }
+#ch2 .c2-focus { stroke: var(--focus); stroke-width: 3; stroke-dasharray: 5 3; }
+#ch2 .c2-legend { margin-top: 12px; }
+#ch2 .c2-legend-title, #ch2 .c2-legend-note { font-size: 13px; line-height: 1.45; color: var(--muted); margin: 0 0 4px; }
+#ch2 .c2-legend-title { color: var(--ink); font-weight: 600; }
+#ch2 .c2-scale { display: block; }
+#ch2 .c2-bar { stroke: var(--muted); stroke-width: 1; }
+#ch2 .c2-tick { stroke: var(--muted); }
+#ch2 .c2-ticklab { font-size: 12px; fill: var(--muted); }
+#ch2 .c2-swatch {
+  display: inline-block; width: 14px; height: 14px; vertical-align: -2px;
   border: 1px solid var(--muted);
   background: repeating-linear-gradient(-45deg, transparent 0 3px, var(--muted) 3px 4.2px);
 }
 
-/* the 2011-21 line under the heatmap */
-#fig-2a .c2a-linewrap { margin-top: 24px; }
-#fig-2a .c2a-line-title {
-  font-family: var(--font-sans);
-  font-size: 14px;
-  font-weight: 700;
-  margin: 0 0 4px;
+/* ---- panel B: line ---- */
+#ch2 #ch2-b .panel-chart svg { display: block; max-width: 100%; overflow: visible; }
+#ch2 .c2-win { fill: var(--band); opacity: 0.75; }
+#ch2 .c2-grid { stroke: var(--rule); stroke-width: 1; }
+#ch2 .c2-zero { stroke: var(--rule); stroke-width: 1.5; }
+#ch2 .c2-ylab { font-size: 12px; fill: var(--muted); }
+#ch2 .c2-wlab { font-size: 12px; fill: var(--ink); }
+#ch2 .c2-wyears { font-weight: 700; }
+#ch2 .c2-avg { stroke: var(--ink); stroke-width: 1.5; stroke-dasharray: 4 3; }
+#ch2 .c2-line { fill: none; stroke: var(--ink); stroke-width: 2.5; stroke-linejoin: round; }
+#ch2 .c2-dot { fill: var(--panel); stroke: var(--ink); stroke-width: 2; }
+#ch2 .c2-endlab { font-size: 12px; font-weight: 700; fill: var(--ink); paint-order: stroke; stroke: var(--panel); stroke-width: 3px; }
+#ch2 .c2-hit { fill: transparent; }
+#ch2 .c2-lownote {
+  margin: 8px 0 0; padding: 6px 10px; font-size: 13px; font-weight: 600; line-height: 1.4;
+  color: var(--ink); background: var(--surface); border-left: 4px solid var(--muted);
 }
-#fig-2a .c2a-line { position: relative; width: 100%; font-size: 13px; }
-#fig-2a .c2a-line svg { display: block; max-width: 100%; overflow: visible; }
-#fig-2a .c2a-line text { font-family: var(--font-sans); fill: var(--ink); }
-#fig-2a .c2a-line .axis text { font-size: 12px; fill: var(--muted); }
 
-/* fig-2b: hit rows are focusable; draw the ring inside the row */
-#fig-2b .c2b-hit { cursor: default; }
-#fig-2b .c2b-hit:focus-visible { outline: 3px solid var(--focus); outline-offset: -3px; }
+/* ---- tables ---- */
+#ch2 .c2-tbl { min-width: 0; }
+@media (min-width: 900px) {
+  #ch2 .board-tables { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); align-items: start; }
+}
