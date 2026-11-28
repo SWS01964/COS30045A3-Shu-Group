@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="1052" viewBox="0 0 440 1052" font-family="-apple-system,'Helvetica Neue',Helvetica,Arial,sans-serif" role="img" aria-label="Storyboard frame 5: Ch3 Measure stepper"><title>Storyboard frame 5: Ch3 Measure stepper</title><rect width="440" height="1052" fill="#fff"/><clipPath id="ph5"><rect x="0" y="0" width="400" height="760"/></clipPath><g transform="translate(20,20)"><rect width="400" height="760" fill="#faf9f6" stroke="#9a9892" stroke-width="1.5" rx="18"/><g clip-path="url(#ph5)"><rect x="0" y="0" width="400" height="40" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="14" y="26" font-size="15" fill="#222" font-weight="800" text-anchor="start" >Beyond the Road Toll</text>
+<text x="386" y="25" font-size="10" fill="#6b7280" font-weight="700" text-anchor="end" letter-spacing="1">DATA INVESTIGATION</text>
+<rect x="0" y="40" width="400" height="44" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<rect x="10" y="48" width="99" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="59.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >1 Road toll</text>
+<rect x="116" y="48" width="71" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="151.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >2 Older</text>
+<rect x="194" y="48" width="92" height="28" rx="14" fill="#0a64d6" stroke="#0a64d6" stroke-width="1.5" />
+<text x="240.0" y="67" font-size="12" fill="#fff" font-weight="600" text-anchor="middle" >3 Severity</text>
+<rect x="293" y="48" width="92" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="339.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >4 Lockdown</text>
+<rect x="392" y="48" width="78" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="431.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >5 Equity</text>
+<rect x="477" y="48" width="71" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="512.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >Methods</text>
+<text x="14" y="112" font-size="11" fill="#6b7280" font-weight="800" text-anchor="start" letter-spacing="2">CHAPTER 3</text>
+<text x="14" y="140" font-size="21" fill="#222" font-weight="800" text-anchor="start" >Pedestrians are 1 in 14 of the</text>
+<text x="14" y="165" font-size="21" fill="#222" font-weight="800" text-anchor="start" >injured, but 1 in 4 of those</text>
+<text x="14" y="190" font-size="21" fill="#222" font-weight="800" text-anchor="start" >who die in hospital</text>
+<text x="14" y="212" font-size="10" fill="#6b7280" font-weight="400" text-anchor="start" font-family="Menlo,monospace">fig-3a</text>
+<text x="386" y="212" font-size="10" fill="#6b7280" font-weight="400" text-anchor="end" font-family="Menlo,monospace">severity.csv</text>
+<text x="14" y="236" font-size="11" fill="#6b7280" font-weight="700" text-anchor="start" >Measure</text>
+<rect x="14.0" y="244" width="124.0" height="38" rx="0" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="76.0" y="268" font-size="12" fill="#0a64d6" font-weight="700" text-anchor="middle" >Admissions</text>
+<rect x="138.0" y="244" width="124.0" height="38" rx="0" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="200.0" y="268" font-size="12" fill="#0a64d6" font-weight="700" text-anchor="middle" >Bed days</text>
+<rect x="262.0" y="244" width="124.0" height="38" rx="0" fill="#0a64d6" stroke="#0a64d6" stroke-width="1.5" />
+<text x="324.0" y="268" font-size="12" fill="#fff" font-weight="700" text-anchor="middle" >Deaths</text>
+<circle cx="330" cy="263" r="22" fill="#e8590c" fill-opacity="0.18" stroke="#e8590c" stroke-width="2" stroke-dasharray="4 3"/>
+<circle cx="330" cy="263" r="9" fill="#e8590c"/>
+<path d="M334,267 L346,293 L352,287 L346,283 L358,279 L338,265 Z" fill="#fff" stroke="#e8590c" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="304" y="235" font-size="11" fill="#e8590c" font-weight="800" text-anchor="start" >tap</text>
+<text x="14" y="306" font-size="10.5" fill="#55544f" font-weight="600" text-anchor="start" >Pedestrian bar as Sam steps along:</text>
+<rect x="14" y="316" width="112" height="26" rx="4" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="70" y="334" font-size="10.5" fill="#55544f" font-weight="500" text-anchor="middle" >Admissions 6.5%</text>
+<line x1="128" y1="329" x2="136" y2="329" stroke="#55544f" stroke-width="1.5" />
+<rect x="138" y="316" width="112" height="26" rx="4" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="194" y="334" font-size="10.5" fill="#55544f" font-weight="500" text-anchor="middle" >Bed days 13.1%</text>
+<line x1="252" y1="329" x2="260" y2="329" stroke="#55544f" stroke-width="1.5" />
+<rect x="262" y="316" width="112" height="26" rx="4" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="318" y="334" font-size="10.5" fill="#222" font-weight="800" text-anchor="middle" >Deaths 26.4%</text>
+<rect x="14" y="356" width="372" height="270" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="24" y="390" font-size="11" fill="#222" font-weight="700" text-anchor="start" >Car driver</text>
+<rect x="110" y="376" width="225.0" height="13" rx="0" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="110" y="391" width="225.0" height="13" rx="0" fill="#55544f" stroke="none" stroke-width="1" />
+<text x="24" y="436" font-size="11" fill="#222" font-weight="700" text-anchor="start" >Motorcyclist</text>
+<rect x="110" y="422" width="142.5" height="13" rx="0" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="110" y="437" width="105.0" height="13" rx="0" fill="#55544f" stroke="none" stroke-width="1" />
+<text x="24" y="482" font-size="11" fill="#222" font-weight="700" text-anchor="start" >Cyclist</text>
+<rect x="110" y="468" width="90.0" height="13" rx="0" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="110" y="483" width="33.0" height="13" rx="0" fill="#55544f" stroke="none" stroke-width="1" />
+<text x="24" y="528" font-size="11" fill="#222" font-weight="700" text-anchor="start" >Car passenger</text>
+<rect x="110" y="514" width="82.5" height="13" rx="0" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="110" y="529" width="67.5" height="13" rx="0" fill="#55544f" stroke="none" stroke-width="1" />
+<text x="24" y="574" font-size="11" fill="#222" font-weight="700" text-anchor="start" >Pedestrian</text>
+<rect x="110" y="560" width="39.0" height="13" rx="0" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<rect x="110" y="575" width="142.5" height="13" rx="0" fill="#e8590c" stroke="none" stroke-width="1" />
+<text x="112" y="604" font-size="9" fill="#222" font-weight="400" text-anchor="start" ></text>
+<rect x="110" y="600" width="10" height="8" rx="0" fill="#bdbbb4" stroke="none" stroke-width="1" />
+<text x="124" y="607" font-size="9.5" fill="#55544f" font-weight="400" text-anchor="start" >share of admissions</text>
+<rect x="240" y="600" width="10" height="8" rx="0" fill="#55544f" stroke="none" stroke-width="1" />
+<text x="254" y="607" font-size="9.5" fill="#55544f" font-weight="400" text-anchor="start" >share of deaths in hospital</text>
+<text x="250" y="558" font-size="10.5" fill="#e8590c" font-weight="800" text-anchor="start" >7.3% of admissions,</text>
+<text x="250" y="571" font-size="10.5" fill="#e8590c" font-weight="800" text-anchor="start" >26.4% of deaths</text>
+<text x="14" y="648" font-size="10.5" fill="#6b7280" font-weight="400" text-anchor="start" >Counts, not risk per trip: no data on how far people walk.</text>
+<rect x="14" y="660" width="372" height="34" rx="4" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="26" y="682" font-size="12" fill="#0a64d6" font-weight="700" text-anchor="start" >&gt; Show the numbers</text>
+<rect x="40" y="704" width="320" height="32" rx="12" fill="#fff" stroke="#e8590c" stroke-width="2" />
+<circle cx="70" cy="696" r="4" fill="#fff" stroke="#e8590c" stroke-width="2"/><circle cx="65.0" cy="700.0" r="6" fill="#fff" stroke="#e8590c" stroke-width="2"/>
+<text x="200.0" y="726" font-size="13" fill="#e8590c" font-weight="700" text-anchor="middle" font-style="italic">"Mum and Dad walk to the shops..."</text>
+</g><rect width="400" height="760" fill="none" stroke="#9a9892" stroke-width="3" rx="18"/></g>
+<rect x="20" y="800" width="400" height="232" rx="6" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<rect x="20" y="800" width="400" height="30" rx="6" fill="#222" stroke="none" stroke-width="1" />
+<rect x="20" y="820" width="400" height="10" rx="0" fill="#222" stroke="none" stroke-width="1" />
+<text x="34" y="821" font-size="12" fill="#fff" font-weight="800" text-anchor="start" letter-spacing="0.5">FRAME 5  |  Ch3 Measure stepper</text>
+<text x="34" y="852" font-size="9" fill="#e8590c" font-weight="800" text-anchor="start" letter-spacing="1">USER ACTION</text>
+<text x="150" y="852" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Steps the measure: Admissions, then Bed</text>
+<text x="150" y="867" font-size="12" fill="#222" font-weight="400" text-anchor="start" >days, then Deaths.</text>
+<text x="34" y="899" font-size="9" fill="#0a64d6" font-weight="800" text-anchor="start" letter-spacing="1">SYSTEM RESPONSE</text>
+<text x="150" y="899" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Bars switch to the chosen measure: the</text>
+<text x="150" y="914" font-size="12" fill="#222" font-weight="400" text-anchor="start" >pedestrian bar grows from 6.5% of</text>
+<text x="150" y="929" font-size="12" fill="#222" font-weight="400" text-anchor="start" >admissions to 13.1% of bed days to 26.4%</text>
+<text x="150" y="944" font-size="12" fill="#222" font-weight="400" text-anchor="start" >of deaths; the label sits on the bar.</text>
+<text x="34" y="976" font-size="9" fill="#222" font-weight="800" text-anchor="start" letter-spacing="1">SAM LEARNS</text>
+<text x="150" y="976" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Pedestrians are few of the injured but</text>
+<text x="150" y="991" font-size="12" fill="#222" font-weight="400" text-anchor="start" >many of those who die: the risk for Sam's</text>
+<text x="150" y="1006" font-size="12" fill="#222" font-weight="400" text-anchor="start" >walking parents is outcome, not frequency.</text>
+</svg>

@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1450" viewBox="0 0 1280 1450" font-family="-apple-system,'Helvetica Neue',Helvetica,Arial,sans-serif" role="img" aria-label="Wireframe chapter 1 (desktop 1280px): The road toll is falling. The injury toll isn't."><title>Wireframe chapter 1 (desktop 1280px): The road toll is falling. The injury toll isn't.</title><defs><marker id="ar" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto-start-reverse"><path d="M1,1 L7,4 L1,7" fill="none" stroke="#55544f" stroke-width="1.2"/></marker><pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#55544f" stroke-width="1.4"/></pattern><clipPath id="ph"><rect x="0" y="0" width="1280" height="1449.94"/></clipPath></defs><rect width="1280" height="1449.94" fill="#fff"/><rect x="0" y="0" width="1280" height="1449.94" fill="#faf9f6" stroke="#9a9892"/><line x1="300" y1="0" x2="300" y2="1449.94" stroke="#bcd" stroke-width="1" stroke-dasharray="3 5"/><line x1="980" y1="0" x2="980" y2="1449.94" stroke="#bcd" stroke-width="1" stroke-dasharray="3 5"/><line x1="120" y1="0" x2="120" y2="1449.94" stroke="#dcd" stroke-width="1" stroke-dasharray="1 6"/><line x1="1160" y1="0" x2="1160" y2="1449.94" stroke="#dcd" stroke-width="1" stroke-dasharray="1 6"/><g clip-path="url(#ph)"><rect x="0.0" y="0.0" width="1280.0" height="44.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="300.0" y="28.0" font-size="16" fill="#222" font-weight="800" text-anchor="start">Beyond the Road Toll</text>
+<text x="980.0" y="28.0" font-size="11" fill="#6b7280" font-weight="700" text-anchor="end" letter-spacing="1">DATA INVESTIGATION</text>
+<rect x="0.0" y="44.0" width="1280.0" height="40.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="300.0" y="69.0" font-size="14" fill="#0a64d6" font-weight="700" text-anchor="start">1 Road toll</text>
+<rect x="300.0" y="77.0" width="83.6" height="3.0" rx="0" fill="#0a64d6" />
+<text x="393.6" y="69.0" font-size="14" fill="#6b7280" font-weight="400" text-anchor="start">·</text>
+<text x="411.6" y="69.0" font-size="14" fill="#0a64d6" font-weight="500" text-anchor="start">2 Older</text>
+<text x="474.8" y="69.0" font-size="14" fill="#6b7280" font-weight="400" text-anchor="start">·</text>
+<text x="492.8" y="69.0" font-size="14" fill="#0a64d6" font-weight="500" text-anchor="start">3 Severity</text>
+<text x="578.8" y="69.0" font-size="14" fill="#6b7280" font-weight="400" text-anchor="start">·</text>
+<text x="596.8" y="69.0" font-size="14" fill="#0a64d6" font-weight="500" text-anchor="start">4 Lockdown</text>
+<text x="682.8" y="69.0" font-size="14" fill="#6b7280" font-weight="400" text-anchor="start">·</text>
+<text x="700.8" y="69.0" font-size="14" fill="#0a64d6" font-weight="500" text-anchor="start">5 Equity</text>
+<text x="771.6" y="69.0" font-size="14" fill="#6b7280" font-weight="400" text-anchor="start">·</text>
+<text x="789.6" y="69.0" font-size="14" fill="#0a64d6" font-weight="500" text-anchor="start">Methods</text>
+<rect x="300.0" y="100.0" width="680.0" height="0.0" rx="0" fill="none" />
+<text x="640.0" y="106.0" font-size="11" fill="#9a9892" font-weight="500" text-anchor="middle" font-style="italic">... hero and earlier chapters above ...</text>
+<text x="300.0" y="142.0" font-size="12" fill="#6b7280" font-weight="800" text-anchor="start" letter-spacing="2">CHAPTER 1</text>
+<text x="300.0" y="192.0" font-size="34" fill="#222" font-weight="800" text-anchor="start">The road toll is falling. The</text>
+<text x="300.0" y="232.1" font-size="34" fill="#222" font-weight="800" text-anchor="start">injury toll isn't.</text>
+<text x="300.0" y="271.2" font-size="19" fill="#55544f" font-weight="400" text-anchor="start">Deaths are down 11.5% since 2011, admissions are up 16%, and per</text>
+<text x="300.0" y="297.8" font-size="19" fill="#55544f" font-weight="400" text-anchor="start">person the rate has barely moved.</text>
+<rect x="300.0" y="321.4" width="680.0" height="115.0" rx="0" fill="#e7e6e1" />
+<rect x="300.0" y="321.4" width="4.0" height="115.0" rx="0" fill="#55544f" />
+<text x="316.0" y="343.4" font-size="11" fill="#55544f" font-weight="800" text-anchor="start" letter-spacing="1.5">WHAT TO KNOW</text>
+<circle cx="318.0" cy="363.1" r="2.5" fill="#55544f"/>
+<text x="330.0" y="369.4" font-size="14" fill="#222" xml:space="preserve"><tspan font-weight="700">39,505</tspan> people were admitted to hospital after road crashes in <tspan font-weight="700">2021,</tspan> about <tspan font-weight="700">108</tspan> a day.</text>
+<circle cx="318.0" cy="390.1" r="2.5" fill="#55544f"/>
+<text x="330.0" y="396.4" font-size="14" fill="#222" xml:space="preserve">Road deaths are down <tspan font-weight="700">11.5%</tspan> and admissions are up <tspan font-weight="700">16%</tspan> since <tspan font-weight="700">2011.</tspan></text>
+<circle cx="318.0" cy="417.1" r="2.5" fill="#55544f"/>
+<text x="330.0" y="423.4" font-size="14" fill="#222" xml:space="preserve">Per person, the hospitalisation rate barely moved: about <tspan font-weight="700">152</tspan> to <tspan font-weight="700">154</tspan> per <tspan font-weight="700">100,000.</tspan></text>
+<rect x="300.0" y="460.4" width="680.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="477.4" width="680.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="494.4" width="680.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="511.4" width="374.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="536.4" width="680.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="553.4" width="680.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="570.4" width="680.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="595.4" width="680.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="612.4" width="680.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="629.4" width="680.0" height="7.0" rx="2" fill="#cfcdc7" />
+<line x1="120.0" y1="680.4" x2="1160.0" y2="680.4" stroke="#55544f" stroke-width="1" marker-start="url(#ar)" marker-end="url(#ar)"/>
+<rect x="550.3" y="671.4" width="179.4" height="18.0" rx="0" fill="#faf9f6" />
+<text x="640.0" y="684.4" font-size="11" fill="#55544f" font-weight="600" text-anchor="middle">figure breaks out to 1040px</text>
+<rect x="114.0" y="688.4" width="1052.0" height="10.0" rx="0" fill="none" />
+<text x="120.0" y="702.4" font-size="11" fill="#6b7280" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">fig-1a</text>
+<text x="1160.0" y="702.4" font-size="11" fill="#6b7280" font-weight="400" text-anchor="end" font-family="ui-monospace,Menlo,monospace">ch1_trend.csv</text>
+<text x="120.0" y="738.4" font-size="22" fill="#222" font-weight="700" text-anchor="start">The road toll is falling. The injury toll isn't.</text>
+<text x="120.0" y="776.9" font-size="12" fill="#6b7280" font-weight="400" text-anchor="start">Show</text>
+<rect x="158.4" y="755.9" width="175.8" height="32.0" rx="5" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<rect x="158.4" y="755.9" width="69.7" height="32.0" rx="5" fill="#0a64d6" stroke="#0a64d6" stroke-width="1.5" />
+<text x="193.2" y="776.9" font-size="13" fill="#fff" font-weight="600" text-anchor="middle">Counts</text>
+<line x1="228.1" y1="755.9" x2="228.1" y2="787.9" stroke="#0a64d6" stroke-width="1" />
+<text x="281.1" y="776.9" font-size="13" fill="#0a64d6" font-weight="600" text-anchor="middle">Per 100,000</text>
+<rect x="120.0" y="799.9" width="1040.0" height="320.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="128.0" y="811.9" font-size="9.5" fill="#9a9892" font-weight="500" text-anchor="start" font-family="ui-monospace,Menlo,monospace">div.fig-chart  role="img"  aria-label = one-sentence summary</text>
+<line x1="166.0" y1="829.9" x2="1028.0" y2="829.9" stroke="#e7e6e1" stroke-width="1" />
+<line x1="166.0" y1="959.9" x2="1028.0" y2="959.9" stroke="#e7e6e1" stroke-width="1" />
+<line x1="166.0" y1="1089.9" x2="1028.0" y2="1089.9" stroke="#e7e6e1" stroke-width="1" />
+<rect x="252.2" y="829.9" width="47.4" height="260.0" rx="0" fill="#ddd9cc" />
+<rect x="683.2" y="829.9" width="47.4" height="260.0" rx="0" fill="#ddd9cc" />
+<text x="252.2" y="839.9" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">2012 Vic</text>
+<text x="683.2" y="839.9" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">2017 NSW</text>
+<polyline points="166.0,974.4 252.2,962.8 338.4,974.4 424.6,968.6 510.8,957.1 597.0,939.7 683.2,928.2 769.4,905.1 855.6,905.1 941.8,881.9 1028.0,881.9" fill="none" stroke="#55544f" stroke-width="3" stroke-linejoin="round"/>
+<polyline points="166.0,974.4 252.2,985.9 338.4,1003.3 424.6,997.5 510.8,1014.8 597.0,1020.6 683.2,1020.6 769.4,1026.4 855.6,1014.8 941.8,1037.9 1028.0,1040.8" fill="none" stroke="#444" stroke-width="2.5" stroke-dasharray="6 3" stroke-linejoin="round"/>
+<polyline points="166.0,974.4 252.2,968.6 338.4,959.9 424.6,951.3 510.8,942.6 597.0,933.9 683.2,925.3 769.4,916.6 855.6,907.9 941.8,899.3 1028.0,890.6" fill="none" stroke="#9a9892" stroke-width="2" stroke-dasharray="1 4" stroke-linejoin="round"/>
+<text x="1034.0" y="885.9" font-size="11" fill="#55544f" font-weight="600" text-anchor="start">Hospitalised +16%</text>
+<text x="1034.0" y="898.9" font-size="11" fill="#55544f" font-weight="600" text-anchor="start">Population</text>
+<text x="1034.0" y="1044.8" font-size="11" fill="#55544f" font-weight="600" text-anchor="start">Road deaths -11.5%</text>
+<text x="132.0" y="833.9" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">100</text>
+<text x="132.0" y="1089.9" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">80</text>
+<text x="166.0" y="1105.9" font-size="10" fill="#6b7280" font-weight="400" text-anchor="start">2011</text>
+<text x="1028.0" y="1105.9" font-size="10" fill="#6b7280" font-weight="400" text-anchor="end">2021</text>
+<text x="120.0" y="1141.9" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">Notes: Hospitalisations are people discharged alive, as in BITRE Table 1. Victoria (2012) and NSW (2017) stopped counting emergency-only cases, which lowers later</text>
+<text x="120.0" y="1157.4" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">counts. ...</text>
+<rect x="120.0" y="1168.9" width="1040.0" height="36.0" rx="4" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="134.0" y="1191.9" font-size="13.5" fill="#0a64d6" font-weight="600" text-anchor="start">▸  Show the numbers</text>
+<text x="1148.0" y="1190.9" font-size="10" fill="#9a9892" font-weight="500" text-anchor="end" font-family="ui-monospace,Menlo,monospace">details &gt; table</text>
+<rect x="300.0" y="1244.9" width="680.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="1261.9" width="680.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="1278.9" width="680.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="1295.9" width="374.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="1320.9" width="680.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="1337.9" width="680.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="300.0" y="1354.9" width="680.0" height="7.0" rx="2" fill="#cfcdc7" />
+<text x="640.0" y="1387.9" font-size="11" fill="#9a9892" font-weight="500" text-anchor="middle" font-style="italic">... end of chapter 1; next chapter follows ...</text></g>
+<line x1="282.0" y1="15.0" x2="296.0" y2="15.0" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="282" cy="15.0" r="2" fill="#444"/>
+<text x="24.0" y="21.0" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Masthead: small site name + "Data</text>
+<text x="24.0" y="37.0" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">investigation" kicker.</text>
+<line x1="282.0" y1="55.0" x2="296.0" y2="55.0" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="282" cy="55.0" r="2" fill="#444"/>
+<text x="24.0" y="61.0" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Sticky chapter nav (stays pinned on</text>
+<text x="24.0" y="77.0" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">scroll); current chapter underlined.</text>
+<text x="24.0" y="93.0" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Links jump to section#ch1..ch5 and</text>
+<text x="24.0" y="109.0" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Methods.</text>
+<line x1="282.0" y1="127.0" x2="296.0" y2="127.0" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="282" cy="127.0" r="2" fill="#444"/>
+<text x="24.0" y="133.0" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">&lt;section id="ch1"&gt; starts here.</text>
+<line x1="282.0" y1="165.0" x2="296.0" y2="165.0" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="282" cy="165.0" r="2" fill="#444"/>
+<text x="24.0" y="171.0" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Chapter headline states the finding</text>
+<text x="24.0" y="187.0" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">(heavy sans 34px).</text>
+<line x1="282.0" y1="259.2" x2="296.0" y2="259.2" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="282" cy="259.2" r="2" fill="#444"/>
+<text x="24.0" y="265.2" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Standfirst: one sentence that sets</text>
+<text x="24.0" y="281.2" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">up the question.</text>
+<line x1="984.0" y1="328.4" x2="998.0" y2="328.4" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="998" cy="328.4" r="2" fill="#444"/>
+<text x="1006.0" y="334.4" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">What-to-know box: 2-3 bullets,</text>
+<text x="1006.0" y="350.4" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">numbers bold. A reader who stops</text>
+<text x="1006.0" y="366.4" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">here still gets the finding.</text>
+<line x1="282.0" y1="467.4" x2="296.0" y2="467.4" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="282" cy="467.4" r="2" fill="#444"/>
+<text x="24.0" y="473.4" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Text column 680px, centred; serif</text>
+<text x="24.0" y="489.4" font-size="13" fill="#444" font-weight="500" text-anchor="start" font-style="italic">18px / 1.55.</text>
+<line x1="112.0" y1="762.9" x2="119.0" y2="762.9" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="112" cy="762.9" r="2" fill="#444"/>
+<text x="10.0" y="766.9" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Counts / per</text>
+<text x="10.0" y="780.9" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">100,000 toggle</text>
+<text x="10.0" y="794.9" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">changes the chart</text>
+<text x="10.0" y="808.9" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">just below it.</text>
+<line x1="1161.0" y1="806.9" x2="1168.0" y2="806.9" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="1168" cy="806.9" r="2" fill="#444"/>
+<text x="1170.0" y="810.9" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Indexed lines</text>
+<text x="1170.0" y="824.9" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">(2011 = 100) so</text>
+<text x="1170.0" y="838.9" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">three different</text>
+<text x="1170.0" y="852.9" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">scales can be</text>
+<text x="1170.0" y="866.9" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">compared; grey</text>
+<text x="1170.0" y="880.9" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">bands mark series</text>
+<text x="1170.0" y="894.9" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">breaks.</text>
+<line x1="1161.0" y1="1136.9" x2="1168.0" y2="1136.9" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="1168" cy="1136.9" r="2" fill="#444"/>
+<text x="1170.0" y="1140.9" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Notes line</text>
+<text x="1170.0" y="1154.9" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">directly under</text>
+<text x="1170.0" y="1168.9" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">the chart: caveat</text>
+<text x="1170.0" y="1182.9" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">+ source +</text>
+<text x="1170.0" y="1196.9" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">period.</text>
+<line x1="112.0" y1="1175.9" x2="119.0" y2="1175.9" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="112" cy="1175.9" r="2" fill="#444"/>
+<text x="10.0" y="1179.9" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Every figure has</text>
+<text x="10.0" y="1193.9" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">a data table in</text>
+<text x="10.0" y="1207.9" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">&lt;details&gt; as a</text>
+<text x="10.0" y="1221.9" font-size="11" fill="#444" font-weight="500" text-anchor="start" font-style="italic">text alternative.</text><text x="12" y="1435.94" font-size="11" fill="#6b7280" font-style="italic">Low-fidelity wireframe: chart shapes are illustrative, not data.</text></svg>

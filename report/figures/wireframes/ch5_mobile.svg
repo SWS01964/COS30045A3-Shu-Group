@@ -1,0 +1,300 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="660" height="3671" viewBox="0 0 660 3671" font-family="-apple-system,'Helvetica Neue',Helvetica,Arial,sans-serif" role="img" aria-label="Wireframe chapter 5 (mobile 375px): In 2011 First Nations Australians were hospitalised after road crashes at about the same rate as everyone else. By 2021 the rate was half as high again."><title>Wireframe chapter 5 (mobile 375px): In 2011 First Nations Australians were hospitalised after road crashes at about the same rate as everyone else. By 2021 the rate was half as high again.</title><defs><marker id="ar" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto-start-reverse"><path d="M1,1 L7,4 L1,7" fill="none" stroke="#55544f" stroke-width="1.2"/></marker><pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#55544f" stroke-width="1.4"/></pattern><clipPath id="ph"><rect x="20" y="0" width="375" height="3671.1499999999996"/></clipPath></defs><rect width="660" height="3671.1499999999996" fill="#fff"/><rect x="20" y="0" width="375" height="3671.1499999999996" fill="#faf9f6" stroke="#9a9892"/><g clip-path="url(#ph)"><rect x="20.0" y="0.0" width="375.0" height="44.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="36.0" y="28.0" font-size="16" fill="#222" font-weight="800" text-anchor="start">Beyond the Road Toll</text>
+<text x="379.0" y="28.0" font-size="11" fill="#6b7280" font-weight="700" text-anchor="end" letter-spacing="1">DATA INVESTIGATION</text>
+<rect x="20.0" y="44.0" width="375.0" height="52.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<rect x="32.0" y="54.0" width="105.4" height="32.0" rx="16" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="84.7" y="75.0" font-size="13" fill="#0a64d6" font-weight="600" text-anchor="middle">1 Road toll</text>
+<rect x="145.4" y="54.0" width="75.8" height="32.0" rx="16" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="183.3" y="75.0" font-size="13" fill="#0a64d6" font-weight="600" text-anchor="middle">2 Older</text>
+<rect x="229.2" y="54.0" width="98.0" height="32.0" rx="16" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="278.2" y="75.0" font-size="13" fill="#0a64d6" font-weight="600" text-anchor="middle">3 Severity</text>
+<rect x="335.2" y="54.0" width="98.0" height="32.0" rx="16" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="384.2" y="75.0" font-size="13" fill="#0a64d6" font-weight="600" text-anchor="middle">4 Lockdown</text>
+<rect x="441.2" y="54.0" width="83.2" height="32.0" rx="16" fill="#0a64d6" stroke="#0a64d6" stroke-width="1.5" />
+<text x="482.8" y="75.0" font-size="13" fill="#fff" font-weight="600" text-anchor="middle">5 Equity</text>
+<rect x="532.4" y="54.0" width="75.8" height="32.0" rx="16" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="570.3" y="75.0" font-size="13" fill="#0a64d6" font-weight="600" text-anchor="middle">Methods</text>
+<rect x="36.0" y="112.0" width="343.0" height="0.0" rx="0" fill="none" />
+<text x="207.5" y="118.0" font-size="11" fill="#9a9892" font-weight="500" text-anchor="middle" font-style="italic">... hero and earlier chapters above ...</text>
+<text x="36.0" y="154.0" font-size="12" fill="#6b7280" font-weight="800" text-anchor="start" letter-spacing="2">CHAPTER 5</text>
+<text x="36.0" y="195.0" font-size="25" fill="#222" font-weight="800" text-anchor="start">In 2011 First Nations</text>
+<text x="36.0" y="224.5" font-size="25" fill="#222" font-weight="800" text-anchor="start">Australians were</text>
+<text x="36.0" y="254.0" font-size="25" fill="#222" font-weight="800" text-anchor="start">hospitalised after road</text>
+<text x="36.0" y="283.5" font-size="25" fill="#222" font-weight="800" text-anchor="start">crashes at about the</text>
+<text x="36.0" y="313.0" font-size="25" fill="#222" font-weight="800" text-anchor="start">same rate as everyone</text>
+<text x="36.0" y="342.5" font-size="25" fill="#222" font-weight="800" text-anchor="start">else. By 2021 the rate</text>
+<text x="36.0" y="372.0" font-size="25" fill="#222" font-weight="800" text-anchor="start">was half as high again.</text>
+<text x="36.0" y="406.5" font-size="16" fill="#55544f" font-weight="400" text-anchor="start">Counts alone hide this, because the</text>
+<text x="36.0" y="428.9" font-size="16" fill="#55544f" font-weight="400" text-anchor="start">population grew. Per person, the picture</text>
+<text x="36.0" y="451.3" font-size="16" fill="#55544f" font-weight="400" text-anchor="start">changes. Part of the rise may be better</text>
+<text x="36.0" y="473.7" font-size="16" fill="#55544f" font-weight="400" text-anchor="start">recording of Indigenous status in</text>
+<text x="36.0" y="496.1" font-size="16" fill="#55544f" font-weight="400" text-anchor="start">hospital records, and these records</text>
+<text x="36.0" y="518.5" font-size="16" fill="#55544f" font-weight="400" text-anchor="start">cannot say why the rate moved.</text>
+<rect x="36.0" y="540.9" width="343.0" height="238.0" rx="0" fill="#e7e6e1" />
+<rect x="36.0" y="540.9" width="4.0" height="238.0" rx="0" fill="#55544f" />
+<text x="52.0" y="562.9" font-size="11" fill="#55544f" font-weight="800" text-anchor="start" letter-spacing="1.5">WHAT TO KNOW</text>
+<circle cx="54.0" cy="582.0" r="2.5" fill="#55544f"/>
+<text x="66.0" y="587.9" font-size="13" fill="#222" xml:space="preserve">First Nations hospitalisations rose from</text>
+<text x="66.0" y="605.9" font-size="13" fill="#222" xml:space="preserve"><tspan font-weight="700">1,167</tspan> in <tspan font-weight="700">2011</tspan> to <tspan font-weight="700">2,220</tspan> in <tspan font-weight="700">2021</tspan> (+<tspan font-weight="700">90%</tspan>). For</text>
+<text x="66.0" y="623.9" font-size="13" fill="#222" xml:space="preserve">non-Indigenous Australians: <tspan font-weight="700">31,997</tspan> to</text>
+<text x="66.0" y="641.9" font-size="13" fill="#222" xml:space="preserve"><tspan font-weight="700">36,755</tspan> (+<tspan font-weight="700">15%</tspan>).</text>
+<circle cx="54.0" cy="662.0" r="2.5" fill="#55544f"/>
+<text x="66.0" y="667.9" font-size="13" fill="#222" xml:space="preserve">Per <tspan font-weight="700">100,000</tspan> people, First Nations rose from</text>
+<text x="66.0" y="685.9" font-size="13" fill="#222" xml:space="preserve">about <tspan font-weight="700">145</tspan> to <tspan font-weight="700">226</tspan> (+<tspan font-weight="700">56%</tspan>); non-Indigenous</text>
+<text x="66.0" y="703.9" font-size="13" fill="#222" xml:space="preserve">stayed at about <tspan font-weight="700">149.</tspan></text>
+<circle cx="54.0" cy="724.0" r="2.5" fill="#55544f"/>
+<text x="66.0" y="729.9" font-size="13" fill="#222" xml:space="preserve">Part of the rise may be better recording of</text>
+<text x="66.0" y="747.9" font-size="13" fill="#222" xml:space="preserve">Indigenous status. Records with status not</text>
+<text x="66.0" y="765.9" font-size="13" fill="#222" xml:space="preserve">stated are left out.</text>
+<rect x="36.0" y="802.9" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="819.9" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="836.9" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="853.9" width="188.7" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="878.9" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="895.9" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="912.9" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="937.9" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="954.9" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="971.9" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="30.0" y="1030.9" width="355.0" height="10.0" rx="0" fill="none" />
+<text x="36.0" y="1044.9" font-size="11" fill="#6b7280" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">fig-5a</text>
+<text x="379.0" y="1044.9" font-size="11" fill="#6b7280" font-weight="400" text-anchor="end" font-family="ui-monospace,Menlo,monospace">ch5_first_nations_trend.csv</text>
+<text x="36.0" y="1075.9" font-size="17" fill="#222" font-weight="700" text-anchor="start">First Nations hospitalisations</text>
+<text x="36.0" y="1097.1" font-size="17" fill="#222" font-weight="700" text-anchor="start">nearly doubled; everyone else's</text>
+<text x="36.0" y="1118.4" font-size="17" fill="#222" font-weight="700" text-anchor="start">rose 15%</text>
+<text x="36.0" y="1145.6" font-size="12" fill="#6b7280" font-weight="400" text-anchor="start">Show</text>
+<rect x="36.0" y="1150.6" width="343.0" height="44.0" rx="6" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<rect x="36.0" y="1150.6" width="196.6" height="44.0" rx="6" fill="#0a64d6" stroke="#0a64d6" stroke-width="1.5" />
+<text x="134.3" y="1177.6" font-size="12.5" fill="#fff" font-weight="600" text-anchor="middle">Index 2011 = 100</text>
+<line x1="232.6" y1="1150.6" x2="232.6" y2="1194.6" stroke="#0a64d6" stroke-width="1" />
+<text x="305.8" y="1177.6" font-size="12.5" fill="#0a64d6" font-weight="600" text-anchor="middle">Per 100,000</text>
+<rect x="36.0" y="1214.6" width="343.0" height="270.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="44.0" y="1226.6" font-size="9.5" fill="#9a9892" font-weight="500" text-anchor="start" font-family="ui-monospace,Menlo,monospace">div.fig-chart  role="img"  aria-label = one-sentence summary</text>
+<line x1="82.0" y1="1246.6" x2="297.0" y2="1246.6" stroke="#e7e6e1" stroke-width="1" />
+<line x1="82.0" y1="1351.6" x2="297.0" y2="1351.6" stroke="#e7e6e1" stroke-width="1" />
+<line x1="82.0" y1="1456.6" x2="297.0" y2="1456.6" stroke="#e7e6e1" stroke-width="1" />
+<polyline points="82.0,1424.3 103.5,1411.4 125.0,1392.0 146.5,1367.8 168.0,1346.8 189.5,1327.4 211.0,1314.5 232.5,1303.2 254.0,1295.1 275.5,1282.2 297.0,1279.0" fill="none" stroke="#55544f" stroke-width="3.2" stroke-linejoin="round"/>
+<polyline points="82.0,1424.3 103.5,1422.7 125.0,1421.1 146.5,1419.5 168.0,1417.9 189.5,1416.3 211.0,1413.0 232.5,1409.8 254.0,1406.6 275.5,1403.3 297.0,1400.1" fill="none" stroke="#9a9892" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="303.0" y="1283.0" font-size="11" fill="#55544f" font-weight="700" text-anchor="start">First Nations</text>
+<text x="303.0" y="1404.1" font-size="11" fill="#9a9892" font-weight="700" text-anchor="start">Non-Indigenous</text>
+<circle cx="189.5" cy="1309.4" r="8" fill="#fff" stroke="#55544f" stroke-width="1.5"/>
+<text x="189.5" y="1312.9" font-size="10" fill="#55544f" font-weight="700" text-anchor="middle">i</text>
+<text x="82.0" y="1471.6" font-size="10" fill="#6b7280" font-weight="400" text-anchor="start">2011</text>
+<text x="297.0" y="1471.6" font-size="10" fill="#6b7280" font-weight="400" text-anchor="end">2021</text>
+<text x="36.0" y="1506.6" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">Notes: Per 100,000 = hospitalisations / population x</text>
+<text x="36.0" y="1522.1" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">100,000. Population figures are ABS estimates, back-</text>
+<text x="36.0" y="1537.6" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">cast after the 2021 Census (CC BY 4.0). Hospital</text>
+<text x="36.0" y="1553.1" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">records with Indigenous ...</text>
+<rect x="36.0" y="1564.6" width="343.0" height="44.0" rx="4" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="50.0" y="1591.6" font-size="13.5" fill="#0a64d6" font-weight="600" text-anchor="start">▸  Show the numbers</text>
+<text x="367.0" y="1590.6" font-size="10" fill="#9a9892" font-weight="500" text-anchor="end" font-family="ui-monospace,Menlo,monospace">details &gt; table</text>
+<rect x="36.0" y="1648.6" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="1665.6" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="1682.6" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="1699.6" width="188.7" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="1724.6" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="1741.6" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="1758.6" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="1783.6" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="1800.6" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="1817.6" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="30.0" y="1876.6" width="355.0" height="10.0" rx="0" fill="none" />
+<text x="36.0" y="1890.6" font-size="11" fill="#6b7280" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">fig-5b</text>
+<text x="379.0" y="1890.6" font-size="11" fill="#6b7280" font-weight="400" text-anchor="end" font-family="ui-monospace,Menlo,monospace">ch5_first_nations_profile.csv</text>
+<text x="36.0" y="1921.6" font-size="17" fill="#222" font-weight="700" text-anchor="start">Pedestrians are a bigger share of</text>
+<text x="36.0" y="1942.9" font-size="17" fill="#222" font-weight="700" text-anchor="start">First Nations road-crash</text>
+<text x="36.0" y="1964.1" font-size="17" fill="#222" font-weight="700" text-anchor="start">hospitalisations: 11% against 6%</text>
+<rect x="36.0" y="1980.4" width="343.0" height="320.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="44.0" y="1992.4" font-size="9.5" fill="#9a9892" font-weight="500" text-anchor="start" font-family="ui-monospace,Menlo,monospace">div.fig-chart  role="img"  aria-label = one-sentence summary</text>
+<text x="120.0" y="2024.5" font-size="10.5" fill="#55544f" font-weight="400" text-anchor="end">Car</text>
+<rect x="126.0" y="2007.9" width="201.0" height="11.6" rx="0" fill="#cfcdc7" />
+<rect x="126.0" y="2021.5" width="201.0" height="11.6" rx="0" fill="#55544f" />
+<text x="331.0" y="2018.5" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="331.0" y="2033.1" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="132.0" y="2014.5" font-size="9" fill="#55544f" font-weight="600" text-anchor="start">First Nations</text>
+<text x="132.0" y="2033.1" font-size="9" fill="#fff" font-weight="600" text-anchor="start">Non-Indigenous</text>
+<text x="120.0" y="2060.8" font-size="10.5" fill="#55544f" font-weight="400" text-anchor="end">Motorcycle</text>
+<rect x="126.0" y="2044.2" width="56.3" height="11.6" rx="0" fill="#cfcdc7" />
+<rect x="126.0" y="2057.8" width="60.3" height="11.6" rx="0" fill="#55544f" />
+<text x="186.3" y="2054.8" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="190.3" y="2069.4" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="120.0" y="2097.0" font-size="10.5" fill="#55544f" font-weight="400" text-anchor="end">Pedestrian</text>
+<rect x="126.0" y="2080.4" width="40.2" height="11.6" rx="0" fill="#cfcdc7" />
+<rect x="126.0" y="2094.0" width="44.2" height="11.6" rx="0" fill="#55544f" />
+<text x="170.2" y="2091.0" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="174.2" y="2105.6" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="120.0" y="2133.3" font-size="10.5" fill="#55544f" font-weight="400" text-anchor="end">Pedal cyclist</text>
+<rect x="126.0" y="2116.7" width="72.4" height="11.6" rx="0" fill="#cfcdc7" />
+<rect x="126.0" y="2130.3" width="40.2" height="11.6" rx="0" fill="#55544f" />
+<text x="202.4" y="2127.3" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="170.2" y="2141.9" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="120.0" y="2169.5" font-size="10.5" fill="#55544f" font-weight="400" text-anchor="end">Pick-up or van</text>
+<rect x="126.0" y="2152.9" width="24.1" height="11.6" rx="0" fill="#cfcdc7" />
+<rect x="126.0" y="2166.5" width="28.1" height="11.6" rx="0" fill="#55544f" />
+<text x="154.1" y="2163.5" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="158.1" y="2178.1" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="120.0" y="2205.8" font-size="10.5" fill="#55544f" font-weight="400" text-anchor="end">Heavy transport</text>
+<rect x="126.0" y="2189.2" width="16.1" height="11.6" rx="0" fill="#cfcdc7" />
+<rect x="126.0" y="2202.8" width="20.1" height="11.6" rx="0" fill="#55544f" />
+<text x="146.1" y="2199.8" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="150.1" y="2214.4" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="120.0" y="2242.0" font-size="10.5" fill="#55544f" font-weight="400" text-anchor="end">Bus</text>
+<rect x="126.0" y="2225.4" width="8.0" height="11.6" rx="0" fill="#cfcdc7" />
+<rect x="126.0" y="2239.0" width="10.1" height="11.6" rx="0" fill="#55544f" />
+<text x="138.0" y="2236.0" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="140.1" y="2250.6" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="120.0" y="2278.3" font-size="10.5" fill="#55544f" font-weight="400" text-anchor="end">Other</text>
+<rect x="126.0" y="2261.7" width="12.1" height="11.6" rx="0" fill="#cfcdc7" />
+<rect x="126.0" y="2275.3" width="16.1" height="11.6" rx="0" fill="#55544f" />
+<text x="142.1" y="2272.3" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="146.1" y="2286.9" font-size="9" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<line x1="126.0" y1="2002.4" x2="126.0" y2="2292.4" stroke="#9a9892" stroke-width="1" />
+<text x="363.0" y="2081.0" font-size="10.5" fill="#222" font-weight="600" text-anchor="end" font-style="italic">11.0% vs 6.3%</text>
+<text x="36.0" y="2322.4" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">Notes: Shares of each group's hospitalisations,</text>
+<text x="36.0" y="2337.9" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">pooled 2016-2021; not rates, and no data on how much</text>
+<text x="36.0" y="2353.4" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">each group walks, rides or drives. BITRE suppresses</text>
+<text x="36.0" y="2368.9" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">small cells (n.p.), which ...</text>
+<rect x="36.0" y="2380.4" width="343.0" height="44.0" rx="4" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="50.0" y="2407.4" font-size="13.5" fill="#0a64d6" font-weight="600" text-anchor="start">▸  Show the numbers</text>
+<text x="367.0" y="2406.4" font-size="10" fill="#9a9892" font-weight="500" text-anchor="end" font-family="ui-monospace,Menlo,monospace">details &gt; table</text>
+<rect x="36.0" y="2464.4" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="2481.4" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="2498.4" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="2515.4" width="188.7" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="2540.4" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="2557.4" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="2574.4" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="30.0" y="2633.4" width="355.0" height="10.0" rx="0" fill="none" />
+<text x="36.0" y="2647.4" font-size="11" fill="#6b7280" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">fig-5c</text>
+<text x="379.0" y="2647.4" font-size="11" fill="#6b7280" font-weight="400" text-anchor="end" font-family="ui-monospace,Menlo,monospace">ch5_first_nations_profile.csv</text>
+<text x="36.0" y="2678.4" font-size="17" fill="#222" font-weight="700" text-anchor="start">In remote areas, First Nations</text>
+<text x="36.0" y="2699.6" font-size="17" fill="#222" font-weight="700" text-anchor="start">people are 41% of those</text>
+<text x="36.0" y="2720.9" font-size="17" fill="#222" font-weight="700" text-anchor="start">hospitalised after road crashes</text>
+<text x="36.0" y="2748.1" font-size="12" fill="#6b7280" font-weight="400" text-anchor="start">Show</text>
+<rect x="36.0" y="2753.1" width="343.0" height="44.0" rx="6" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<rect x="36.0" y="2753.1" width="121.8" height="44.0" rx="6" fill="#0a64d6" stroke="#0a64d6" stroke-width="1.5" />
+<text x="96.9" y="2780.1" font-size="12.5" fill="#fff" font-weight="600" text-anchor="middle">Share</text>
+<line x1="157.8" y1="2753.1" x2="157.8" y2="2797.1" stroke="#0a64d6" stroke-width="1" />
+<text x="268.4" y="2780.1" font-size="12.5" fill="#0a64d6" font-weight="600" text-anchor="middle">Average stay</text>
+<rect x="36.0" y="2817.1" width="343.0" height="330.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="44.0" y="2829.1" font-size="9.5" fill="#9a9892" font-weight="500" text-anchor="start" font-family="ui-monospace,Menlo,monospace">div.fig-chart  role="img"  aria-label = one-sentence summary</text>
+<text x="48.0" y="2849.1" font-size="10" fill="#6b7280" font-weight="600" text-anchor="start">view A: share (default)</text>
+<text x="112.0" y="2882.1" font-size="11" fill="#55544f" font-weight="400" text-anchor="end">Major Cities</text>
+<rect x="118.0" y="2869.7" width="12.5" height="16.8" rx="0" fill="#cfcdc7" />
+<text x="134.5" y="2882.1" font-size="9.5" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="112.0" y="2924.1" font-size="11" fill="#55544f" font-weight="400" text-anchor="end">Regional</text>
+<rect x="118.0" y="2911.7" width="29.3" height="16.8" rx="0" fill="#cfcdc7" />
+<text x="151.3" y="2924.1" font-size="9.5" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="112.0" y="2966.1" font-size="11" fill="#55544f" font-weight="400" text-anchor="end">Remote</text>
+<rect x="118.0" y="2953.7" width="171.4" height="16.8" rx="0" fill="#55544f" />
+<text x="293.4" y="2966.1" font-size="9.5" fill="#6b7280" font-weight="400" text-anchor="start">xx%</text>
+<text x="48.0" y="3005.1" font-size="10" fill="#6b7280" font-weight="600" text-anchor="start">view B: average stay (after toggle)</text>
+<text x="112.0" y="3038.1" font-size="11" fill="#55544f" font-weight="400" text-anchor="end">Major Cities</text>
+<line x1="118.0" y1="3034.1" x2="347.0" y2="3034.1" stroke="#cfcdc7" stroke-width="1.5" />
+<circle cx="227.5" cy="3034.1" r="5" fill="#fff" stroke="#9a9892" stroke-width="2"/>
+<circle cx="227.5" cy="3034.1" r="5.5" fill="#55544f"/>
+<text x="112.0" y="3080.1" font-size="11" fill="#55544f" font-weight="400" text-anchor="end">Regional</text>
+<line x1="118.0" y1="3076.1" x2="347.0" y2="3076.1" stroke="#cfcdc7" stroke-width="1.5" />
+<circle cx="227.5" cy="3076.1" r="5" fill="#fff" stroke="#9a9892" stroke-width="2"/>
+<circle cx="231.9" cy="3076.1" r="5.5" fill="#55544f"/>
+<text x="112.0" y="3122.1" font-size="11" fill="#55544f" font-weight="400" text-anchor="end">Remote</text>
+<line x1="118.0" y1="3118.1" x2="347.0" y2="3118.1" stroke="#cfcdc7" stroke-width="1.5" />
+<circle cx="231.9" cy="3118.1" r="5" fill="#fff" stroke="#9a9892" stroke-width="2"/>
+<circle cx="262.5" cy="3118.1" r="5.5" fill="#55544f"/>
+<text x="36.0" y="3169.1" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">Notes: Remoteness is where people usually live, not</text>
+<text x="36.0" y="3184.6" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">where the crash happened. We have no population by</text>
+<text x="36.0" y="3200.1" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">remoteness in this data, so we can't say whether 41%</text>
+<text x="36.0" y="3215.6" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">is high or low ...</text>
+<rect x="36.0" y="3227.1" width="343.0" height="44.0" rx="4" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="50.0" y="3254.1" font-size="13.5" fill="#0a64d6" font-weight="600" text-anchor="start">▸  Show the numbers</text>
+<text x="367.0" y="3253.1" font-size="10" fill="#9a9892" font-weight="500" text-anchor="end" font-family="ui-monospace,Menlo,monospace">details &gt; table</text>
+<rect x="36.0" y="3311.1" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="3328.1" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="3345.1" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="3362.1" width="188.7" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="3387.1" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="3404.1" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="3421.1" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="3446.1" width="343.0" height="135.0" rx="0" fill="none" stroke="#9a9892" stroke-width="1" stroke-dasharray="4 3" />
+<text x="50.0" y="3463.1" font-size="9.5" fill="#6b7280" font-weight="800" text-anchor="start" letter-spacing="1">CHAPTER CAVEAT</text>
+<text x="50.0" y="3481.1" font-size="13" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">This chapter describes hospital records. It</text>
+<text x="50.0" y="3498.6" font-size="13" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">is not about blame or choices, and it cannot</text>
+<text x="50.0" y="3516.1" font-size="13" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">say why rates differ. It cannot tell us how</text>
+<text x="50.0" y="3533.6" font-size="13" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">much of the rise is better recording, how</text>
+<text x="50.0" y="3551.1" font-size="13" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">much each group travels by foot, bike or car,</text>
+<text x="50.0" y="3568.6" font-size="13" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">or where the crashes happened.</text>
+<text x="207.5" y="3609.1" font-size="11" fill="#9a9892" font-weight="500" text-anchor="middle" font-style="italic">... end of chapter 5; next chapter follows ...</text></g>
+<line x1="396.0" y1="15.0" x2="410.0" y2="15.0" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="15.0" r="2" fill="#444"/>
+<text x="415.0" y="20.0" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Masthead: site name + kicker; 44px</text>
+<text x="415.0" y="35.0" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">bar.</text>
+<line x1="396.0" y1="55.0" x2="410.0" y2="55.0" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="55.0" r="2" fill="#444"/>
+<text x="415.0" y="60.0" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Sticky pill-bar nav scrolls</text>
+<text x="415.0" y="75.0" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">sideways (finger swipe); current</text>
+<text x="415.0" y="90.0" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">chapter is highlighted while</text>
+<text x="415.0" y="105.0" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">reading.</text>
+<line x1="396.0" y1="123.0" x2="410.0" y2="123.0" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="123.0" r="2" fill="#444"/>
+<text x="415.0" y="128.0" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">&lt;section id="ch5"&gt; starts here.</text>
+<line x1="396.0" y1="177.0" x2="410.0" y2="177.0" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="177.0" r="2" fill="#444"/>
+<text x="415.0" y="182.0" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Chapter headline states the finding</text>
+<text x="415.0" y="197.0" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">(heavy sans 25px).</text>
+<line x1="396.0" y1="397.5" x2="410.0" y2="397.5" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="397.5" r="2" fill="#444"/>
+<text x="415.0" y="402.5" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Standfirst: one sentence that sets</text>
+<text x="415.0" y="417.5" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">up the question.</text>
+<line x1="396.0" y1="547.9" x2="410.0" y2="547.9" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="547.9" r="2" fill="#444"/>
+<text x="415.0" y="552.9" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">What-to-know box: 2-3 bullets,</text>
+<text x="415.0" y="567.9" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">numbers bold. A reader who stops</text>
+<text x="415.0" y="582.9" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">here still gets the finding.</text>
+<line x1="396.0" y1="809.9" x2="410.0" y2="809.9" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="809.9" r="2" fill="#444"/>
+<text x="415.0" y="814.9" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Text column = full width minus 16px</text>
+<text x="415.0" y="829.9" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">gutters; serif 17px / 1.55.</text>
+<line x1="396.0" y1="1065.9" x2="410.0" y2="1065.9" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="1065.9" r="2" fill="#444"/>
+<text x="415.0" y="1070.9" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Fig title (h3, bold 17px) states</text>
+<text x="415.0" y="1085.9" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">the finding.</text>
+<line x1="396.0" y1="1141.6" x2="410.0" y2="1141.6" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="1141.6" r="2" fill="#444"/>
+<text x="415.0" y="1146.6" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Title changes with the view (per-</text>
+<text x="415.0" y="1161.6" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">person: "...went from level with</text>
+<text x="415.0" y="1176.6" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">everyone else to half as high</text>
+<text x="415.0" y="1191.6" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">again").</text>
+<line x1="396.0" y1="1221.6" x2="410.0" y2="1221.6" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="1221.6" r="2" fill="#444"/>
+<text x="415.0" y="1226.6" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Two lines, values written at line</text>
+<text x="415.0" y="1241.6" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">ends. "i" marker carries the</text>
+<text x="415.0" y="1256.6" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">recording caveat (open by default</text>
+<text x="415.0" y="1271.6" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">on mobile).</text>
+<line x1="396.0" y1="1501.6" x2="410.0" y2="1501.6" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="1501.6" r="2" fill="#444"/>
+<text x="415.0" y="1506.6" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Notes line directly under the</text>
+<text x="415.0" y="1521.6" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">chart: caveat + source + period.</text>
+<line x1="396.0" y1="1571.6" x2="410.0" y2="1571.6" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="1571.6" r="2" fill="#444"/>
+<text x="415.0" y="1576.6" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Every figure has a data table in</text>
+<text x="415.0" y="1591.6" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">&lt;details&gt; as a text alternative.</text>
+<line x1="396.0" y1="1987.4" x2="410.0" y2="1987.4" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="1987.4" r="2" fill="#444"/>
+<text x="415.0" y="1992.4" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Pedestrian pair highlighted; other</text>
+<text x="415.0" y="2007.4" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">labels muted. Hover or tap gives</text>
+<text x="415.0" y="2022.4" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">the count and suppressed cells.</text>
+<line x1="396.0" y1="2744.1" x2="410.0" y2="2744.1" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="2744.1" r="2" fill="#444"/>
+<text x="415.0" y="2749.1" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Title changes with the view:</text>
+<text x="415.0" y="2764.1" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">"...stay 6.1 days on average;</text>
+<text x="415.0" y="2779.1" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">others stay 4.9".</text>
+<line x1="396.0" y1="2824.1" x2="410.0" y2="2824.1" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="2824.1" r="2" fill="#444"/>
+<text x="415.0" y="2829.1" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Both toggle states are sketched:</text>
+<text x="415.0" y="2844.1" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">share bars (default), then</text>
+<text x="415.0" y="2859.1" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">dumbbells.</text>
+<line x1="396.0" y1="3453.1" x2="410.0" y2="3453.1" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="3453.1" r="2" fill="#444"/>
+<text x="415.0" y="3458.1" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Chapter caveat printed once, under</text>
+<text x="415.0" y="3473.1" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">the chapter (where the storyboard</text>
+<text x="415.0" y="3488.1" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">has one).</text><text x="415" y="3657.1499999999996" font-size="11" fill="#6b7280" font-style="italic">Low-fidelity wireframe: chart shapes are illustrative, not data.</text></svg>

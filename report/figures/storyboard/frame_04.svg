@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="1052" viewBox="0 0 440 1052" font-family="-apple-system,'Helvetica Neue',Helvetica,Arial,sans-serif" role="img" aria-label="Storyboard frame 4: Ch2 Drill down"><title>Storyboard frame 4: Ch2 Drill down</title><rect width="440" height="1052" fill="#fff"/><clipPath id="ph4"><rect x="0" y="0" width="400" height="760"/></clipPath><g transform="translate(20,20)"><rect width="400" height="760" fill="#faf9f6" stroke="#9a9892" stroke-width="1.5" rx="18"/><g clip-path="url(#ph4)"><rect x="0" y="0" width="400" height="40" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="14" y="26" font-size="15" fill="#222" font-weight="800" text-anchor="start" >Beyond the Road Toll</text>
+<text x="386" y="25" font-size="10" fill="#6b7280" font-weight="700" text-anchor="end" letter-spacing="1">DATA INVESTIGATION</text>
+<rect x="0" y="40" width="400" height="44" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<rect x="10" y="48" width="99" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="59.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >1 Road toll</text>
+<rect x="116" y="48" width="71" height="28" rx="14" fill="#0a64d6" stroke="#0a64d6" stroke-width="1.5" />
+<text x="151.5" y="67" font-size="12" fill="#fff" font-weight="600" text-anchor="middle" >2 Older</text>
+<rect x="194" y="48" width="92" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="240.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >3 Severity</text>
+<rect x="293" y="48" width="92" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="339.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >4 Lockdown</text>
+<rect x="392" y="48" width="78" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="431.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >5 Equity</text>
+<rect x="477" y="48" width="71" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="512.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >Methods</text>
+<text x="14" y="106" font-size="10" fill="#6b7280" font-weight="400" text-anchor="start" font-family="Menlo,monospace">fig-2a</text>
+<text x="386" y="106" font-size="10" fill="#6b7280" font-weight="400" text-anchor="end" font-family="Menlo,monospace">ch2_age_roaduser.csv</text>
+<text x="120.5" y="134" font-size="10" fill="#55544f" font-weight="600" text-anchor="middle" >0-7</text>
+<text x="161.5" y="134" font-size="10" fill="#55544f" font-weight="600" text-anchor="middle" >8-16</text>
+<text x="202.5" y="134" font-size="10" fill="#55544f" font-weight="600" text-anchor="middle" >17-25</text>
+<text x="243.5" y="134" font-size="10" fill="#55544f" font-weight="600" text-anchor="middle" >26-39</text>
+<text x="284.5" y="134" font-size="10" fill="#55544f" font-weight="600" text-anchor="middle" >40-64</text>
+<text x="325.5" y="134" font-size="10" fill="#55544f" font-weight="600" text-anchor="middle" >65-74</text>
+<text x="366.5" y="134" font-size="10" fill="#55544f" font-weight="600" text-anchor="middle" >75+</text>
+<text x="94" y="157.0" font-size="10" fill="#55544f" font-weight="600" text-anchor="end" >Car driver</text>
+<rect x="100" y="140" width="39" height="24" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<rect x="141" y="140" width="39" height="24" rx="0" fill="rgb(180,179,173)" stroke="none" stroke-width="1" />
+<rect x="182" y="140" width="39" height="24" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<rect x="223" y="140" width="39" height="24" rx="0" fill="rgb(180,179,173)" stroke="none" stroke-width="1" />
+<rect x="264" y="140" width="39" height="24" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<rect x="305" y="140" width="39" height="24" rx="0" fill="rgb(180,179,173)" stroke="none" stroke-width="1" />
+<rect x="346" y="140" width="39" height="24" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<text x="94" y="183.0" font-size="10" fill="#55544f" font-weight="600" text-anchor="end" >Car passenger</text>
+<rect x="100" y="166" width="39" height="24" rx="0" fill="rgb(163,162,156)" stroke="none" stroke-width="1" />
+<rect x="141" y="166" width="39" height="24" rx="0" fill="rgb(197,196,190)" stroke="none" stroke-width="1" />
+<rect x="182" y="166" width="39" height="24" rx="0" fill="rgb(163,162,156)" stroke="none" stroke-width="1" />
+<rect x="223" y="166" width="39" height="24" rx="0" fill="rgb(197,196,190)" stroke="none" stroke-width="1" />
+<rect x="264" y="166" width="39" height="24" rx="0" fill="rgb(163,162,156)" stroke="none" stroke-width="1" />
+<rect x="305" y="166" width="39" height="24" rx="0" fill="rgb(197,196,190)" stroke="none" stroke-width="1" />
+<rect x="346" y="166" width="39" height="24" rx="0" fill="rgb(163,162,156)" stroke="none" stroke-width="1" />
+<text x="94" y="209.0" font-size="10" fill="#55544f" font-weight="600" text-anchor="end" >Motorcyclist</text>
+<rect x="100" y="192" width="39" height="24" rx="0" fill="rgb(180,179,173)" stroke="none" stroke-width="1" />
+<rect x="141" y="192" width="39" height="24" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<rect x="182" y="192" width="39" height="24" rx="0" fill="rgb(180,179,173)" stroke="none" stroke-width="1" />
+<rect x="223" y="192" width="39" height="24" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<rect x="264" y="192" width="39" height="24" rx="0" fill="rgb(180,179,173)" stroke="none" stroke-width="1" />
+<rect x="305" y="192" width="39" height="24" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<rect x="346" y="192" width="39" height="24" rx="0" fill="rgb(180,179,173)" stroke="none" stroke-width="1" />
+<text x="94" y="235.0" font-size="10" fill="#55544f" font-weight="600" text-anchor="end" >Pedal cyclist</text>
+<rect x="100" y="218" width="39" height="24" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<rect x="141" y="218" width="39" height="24" rx="0" fill="rgb(197,196,190)" stroke="none" stroke-width="1" />
+<rect x="182" y="218" width="39" height="24" rx="0" fill="rgb(180,179,173)" stroke="none" stroke-width="1" />
+<rect x="223" y="218" width="39" height="24" rx="0" fill="rgb(163,162,156)" stroke="none" stroke-width="1" />
+<rect x="264" y="218" width="39" height="24" rx="0" fill="rgb(146,145,139)" stroke="none" stroke-width="1" />
+<rect x="305" y="218" width="39" height="24" rx="0" fill="rgb(130,129,123)" stroke="none" stroke-width="1" />
+<rect x="346" y="218" width="39" height="24" rx="0" fill="rgb(113,112,106)" stroke="none" stroke-width="1" />
+<text x="94" y="261.0" font-size="10" fill="#55544f" font-weight="600" text-anchor="end" >Pedestrian</text>
+<rect x="100" y="244" width="39" height="24" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<rect x="141" y="244" width="39" height="24" rx="0" fill="rgb(180,179,173)" stroke="none" stroke-width="1" />
+<rect x="182" y="244" width="39" height="24" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<rect x="223" y="244" width="39" height="24" rx="0" fill="rgb(180,179,173)" stroke="none" stroke-width="1" />
+<rect x="264" y="244" width="39" height="24" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<rect x="305" y="244" width="39" height="24" rx="0" fill="rgb(180,179,173)" stroke="none" stroke-width="1" />
+<rect x="346" y="244" width="39" height="24" rx="0" fill="rgb(214,213,207)" stroke="none" stroke-width="1" />
+<rect x="344" y="216" width="43" height="28" rx="2" fill="none" stroke="#e8590c" stroke-width="3" />
+<text x="14" y="124" font-size="10.5" fill="#55544f" font-weight="600" text-anchor="start" >Tap a cell to see its line</text>
+<circle cx="366" cy="231" r="22" fill="#e8590c" fill-opacity="0.18" stroke="#e8590c" stroke-width="2" stroke-dasharray="4 3"/>
+<circle cx="366" cy="231" r="9" fill="#e8590c"/>
+<path d="M370,235 L382,261 L388,255 L382,251 L394,247 L374,233 Z" fill="#fff" stroke="#e8590c" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="340" y="203" font-size="11" fill="#e8590c" font-weight="800" text-anchor="start" >tap cell</text>
+<line x1="200" y1="290" x2="200" y2="310" stroke="#e8590c" stroke-width="2" />
+<path d="M193,304 L200,314 L207,304" fill="none" stroke="#e8590c" stroke-width="2"/><rect x="14" y="322" width="372" height="250" rx="4" fill="#fff" stroke="#e8590c" stroke-width="2" />
+<text x="26" y="344" font-size="12.5" fill="#222" font-weight="800" text-anchor="start" >Cyclists aged 75+, admissions 2011-21</text>
+<line x1="44" y1="540" x2="370" y2="540" stroke="#cfcdc7" stroke-width="1" />
+<line x1="44" y1="380" x2="44" y2="540" stroke="#cfcdc7" stroke-width="1" />
+<path d="M44,520 L83,512 L122,500 L161,490 L200,470 L240,450 L279,430 L318,415 L357,400" fill="none" stroke="#222" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="44" y="556" font-size="10" fill="#6b7280" font-weight="400" text-anchor="start" >2011</text>
+<text x="370" y="556" font-size="10" fill="#6b7280" font-weight="400" text-anchor="end" >2021</text>
+<text x="354" y="392" font-size="11" fill="#222" font-weight="800" text-anchor="end" >Rising</text>
+<text x="26" y="566" font-size="10" fill="#222" font-weight="400" text-anchor="start" ></text>
+<rect x="14" y="588" width="372" height="56" rx="0" fill="#e7e6e1" stroke="none" stroke-width="1" />
+<rect x="14" y="588" width="4" height="56" rx="0" fill="#55544f" stroke="none" stroke-width="1" />
+<text x="28" y="610" font-size="12" fill="#222" font-weight="400" text-anchor="start" >The 3-year average hides the shape:</text>
+<text x="28" y="627" font-size="12" fill="#222" font-weight="400" text-anchor="start" >the line shows whether it climbed steadily.</text>
+<rect x="14" y="660" width="372" height="40" rx="4" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="26" y="684" font-size="12" fill="#0a64d6" font-weight="700" text-anchor="start" >&gt; Show the numbers</text>
+<rect x="60" y="712" width="270" height="32" rx="12" fill="#fff" stroke="#e8590c" stroke-width="2" />
+<circle cx="40" cy="700" r="4" fill="#fff" stroke="#e8590c" stroke-width="2"/><circle cx="60.0" cy="706.0" r="6" fill="#fff" stroke="#e8590c" stroke-width="2"/>
+<text x="195.0" y="734" font-size="13" fill="#e8590c" font-weight="700" text-anchor="middle" font-style="italic">"Is it a blip, or a trend?"</text>
+</g><rect width="400" height="760" fill="none" stroke="#9a9892" stroke-width="3" rx="18"/></g>
+<rect x="20" y="800" width="400" height="232" rx="6" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<rect x="20" y="800" width="400" height="30" rx="6" fill="#222" stroke="none" stroke-width="1" />
+<rect x="20" y="820" width="400" height="10" rx="0" fill="#222" stroke="none" stroke-width="1" />
+<text x="34" y="821" font-size="12" fill="#fff" font-weight="800" text-anchor="start" letter-spacing="0.5">FRAME 4  |  Ch2 Drill down</text>
+<text x="34" y="852" font-size="9" fill="#e8590c" font-weight="800" text-anchor="start" letter-spacing="1">USER ACTION</text>
+<text x="150" y="852" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Taps a heatmap cell (cyclists, 75+).</text>
+<text x="34" y="884" font-size="9" fill="#0a64d6" font-weight="800" text-anchor="start" letter-spacing="1">SYSTEM RESPONSE</text>
+<text x="150" y="884" font-size="12" fill="#222" font-weight="400" text-anchor="start" >The 2011-21 line for that cell appears</text>
+<text x="150" y="899" font-size="12" fill="#222" font-weight="400" text-anchor="start" >underneath the heatmap.</text>
+<text x="34" y="931" font-size="9" fill="#222" font-weight="800" text-anchor="start" letter-spacing="1">SAM LEARNS</text>
+<text x="150" y="931" font-size="12" fill="#222" font-weight="400" text-anchor="start" >The rise is a sustained trend across the</text>
+<text x="150" y="946" font-size="12" fill="#222" font-weight="400" text-anchor="start" >decade, not a blip in the 3-year averages.</text>
+</svg>
