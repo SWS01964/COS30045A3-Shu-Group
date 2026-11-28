@@ -1,0 +1,111 @@
+/* ch4.css: owned by the Chapter 4 agent. Every rule scoped under #ch4 (#fig-4a..4d). */
+
+/* ---- shared: key rows, grid, zero lines, labels ---- */
+#ch4 .c4-key {
+  display: flex; flex-wrap: wrap; gap: 6px 18px;
+  font-family: var(--font-sans); font-size: 13px; line-height: 1.3; color: var(--ink);
+  margin: 0 0 8px;
+}
+#ch4 .c4-k { display: inline-flex; align-items: center; gap: 7px; }
+#ch4 .c4-key i { display: inline-block; width: 26px; flex: none; }
+#ch4 .k-line { height: 0; border-top: 2px solid var(--ink); }
+#ch4 .k-2020 { border-top: 3.5px solid var(--c4-accent, var(--fall)); }
+#ch4 .k-2019 { border-top: 2px solid var(--muted); }
+#ch4 .k-mean { border-top: 2px dotted var(--muted); }
+#ch4 .k-band { height: 12px; background: var(--band); border: 1px solid var(--context); }
+#ch4 .k-act { border-top: 3px solid var(--ink); }
+#ch4 .k-trend { border-top: 3px dashed var(--muted); }
+
+#ch4 .c4-grid { stroke: var(--rule); stroke-width: 1; opacity: 0.8; }
+#ch4 .c4-zero { stroke: var(--ink); stroke-width: 1.5; opacity: 0.85; }
+#ch4 .fig-chart svg .axis line.c4-grid, #ch4 .fig-chart svg .axis line.c4-zero { stroke-linecap: butt; }
+#ch4 .c4-ylab { font-size: 12px; fill: var(--muted); }
+#ch4 .c4-hint { font-size: 12px; fill: var(--muted); }
+#ch4 .c4-halo { paint-order: stroke; stroke: var(--paper); stroke-width: 4px; stroke-linejoin: round; }
+#ch4 .c4-ann-b { font-size: 13px; font-weight: 700; }
+#ch4 .c4-ann-t { font-size: 12px; font-weight: 400; }
+#ch4 .c4-val { font-size: 13px; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+/* ---- fig-4a ---- */
+#fig-4a .c4-scale {
+  font-family: var(--font-sans); font-size: 13px; line-height: 1.4; color: var(--ink);
+  margin: -4px 0 12px; padding: 6px 10px;
+  border-left: 3px solid var(--context); background: var(--surface);
+}
+#fig-4a .c4-band { fill: var(--band); stroke: var(--context); stroke-width: 1; }
+#fig-4a .c4-mean { fill: none; stroke: var(--muted); stroke-width: 1.5; stroke-dasharray: 1.5 4; stroke-linecap: round; }
+#fig-4a .c4-l19 { fill: none; stroke: var(--muted); stroke-width: 2; }
+#fig-4a .c4-l20 { fill: none; stroke-width: 3.5; stroke-linejoin: round; }
+#fig-4a .c4-pt { stroke: var(--paper); stroke-width: 1; }
+#fig-4a .c4-end { font-size: 13px; font-weight: 700; }
+#fig-4a .c4-end19 { fill: var(--muted); font-weight: 600; }
+#fig-4a .c4-ring { fill: none; stroke: var(--ink); stroke-width: 1.5; }
+#fig-4a .c4-lead { stroke: var(--ink); stroke-width: 1; stroke-dasharray: 2 2; }
+#fig-4a .c4-guide line { stroke: var(--ink); stroke-width: 1; opacity: 0.45; }
+#fig-4a .c4-d19 { fill: var(--muted); stroke: var(--paper); stroke-width: 2; }
+#fig-4a .c4-d20 { stroke: var(--paper); stroke-width: 2; }
+#fig-4a .c4-hit { fill: transparent; cursor: crosshair; touch-action: pan-y; }
+#fig-4a .c4-xaxis text.is-sel { fill: var(--ink); font-weight: 700; }
+
+#fig-4a .c4-readout {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 4px 20px;
+  margin: 10px 0 0; font-family: var(--font-sans); font-size: 14px;
+}
+#fig-4a .c4-slider { display: inline-flex; align-items: center; gap: 10px; min-height: var(--tap); color: var(--muted); }
+#fig-4a .c4-slider input { width: 168px; max-width: 46vw; accent-color: var(--ink); height: var(--tap); margin: 0; }
+#fig-4a .c4-readout-text {
+  margin: 0; flex: 1 1 280px; display: flex; flex-wrap: wrap; gap: 2px 14px;
+  line-height: 1.35; min-height: 3.2em; align-content: center; font-variant-numeric: tabular-nums;
+}
+#fig-4a .c4-r-month { font-size: 15px; }
+#fig-4a .c4-r-k { color: var(--muted); }
+
+/* ---- fig-4b ---- */
+#fig-4b .c4-cat { font-size: 13px; font-weight: 600; fill: var(--ink); }
+#fig-4b .is-ref .c4-cat { font-weight: 500; fill: var(--muted); font-style: italic; }
+#fig-4b .c4-rowrule { stroke: var(--rule); stroke-width: 1; }
+#fig-4b .c4-ref { fill: none; stroke: var(--muted); stroke-width: 1.5; stroke-dasharray: 5 3; }
+#fig-4b .is-ref .c4-val { fill: var(--muted); }
+#fig-4b .c4-row { outline: none; }
+/* the --fall bars are almost the focus colour, so a stroke alone is invisible: ring the whole row */
+#fig-4b .c4-row:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+#fig-4b .c4-row:focus-visible .c4-bar { stroke: var(--paper); stroke-width: 2; }
+#fig-4b .c4-row:hover .c4-bar:not(.c4-ref) { opacity: 0.85; }
+
+/* ---- fig-4c ---- */
+#fig-4c .c4-act { fill: none; stroke: var(--ink); stroke-width: 2.5; stroke-linejoin: round; }
+#fig-4c .c4-trend { stroke: var(--muted); stroke-width: 2.5; stroke-dasharray: 6 4; }
+#fig-4c .c4-gap { stroke: var(--rise); stroke-width: 2.5; }
+#fig-4c .c4-tdot { fill: var(--paper); stroke: var(--muted); stroke-width: 2; }
+#fig-4c .c4-dot { fill: var(--ink); stroke: var(--paper); stroke-width: 1.5; }
+#fig-4c .c4-dot.is-2020 { fill: var(--rise); }
+#fig-4c .c4-hitdot { fill: transparent; cursor: pointer; }
+#fig-4c .c4-hitdot:focus-visible { stroke: var(--focus); stroke-width: 3; fill: transparent; }
+
+/* ---- fig-4d: bars as a compact grid ---- */
+#fig-4d .c4d { font-family: var(--font-sans); font-size: 14px; }
+#fig-4d .c4d-row {
+  display: grid; grid-template-columns: 52px minmax(80px, 1fr) 62px 104px; align-items: center; gap: 0 10px;
+  min-height: 44px; border-bottom: 1px solid var(--rule); outline-offset: -2px;
+}
+#fig-4d .c4d-head { min-height: 30px; color: var(--muted); font-size: 12px; }
+#fig-4d .c4d-row > span { line-height: 1.25; }
+#fig-4d .c4d-st { font-weight: 600; }
+#fig-4d .c4d-val { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; }
+#fig-4d .c4d-cnt { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+#fig-4d .c4d-head .c4d-val, #fig-4d .c4d-head .c4d-cnt { font-weight: 600; }
+#fig-4d .c4d-track { position: relative; display: block; height: 22px; }
+#fig-4d .c4d-head .c4d-track { height: auto; }
+#fig-4d .c4d-zero { position: absolute; top: -8px; bottom: -8px; width: 0; border-left: 1.5px solid var(--ink); opacity: 0.8; }
+#fig-4d .c4d-bar { position: absolute; top: 2px; bottom: 2px; background: var(--context); border-radius: 2px; }
+#fig-4d .c4d-bar.is-neg { background: var(--context); background-image: repeating-linear-gradient(135deg, transparent 0 4px, var(--paper) 4px 5.5px); }
+#fig-4d .is-vic .c4d-bar { background: var(--rise); }
+#fig-4d .is-vic .c4d-st, #fig-4d .is-vic .c4d-val { color: var(--rise); }
+#fig-4d .is-vic .c4d-cnt { color: var(--ink); font-weight: 700; }
+#fig-4d .c4d-row:not(.c4d-head):hover { background: var(--surface); }
+
+@media (max-width: 479px) {
+  #fig-4d .c4d-row { grid-template-columns: 44px minmax(60px, 1fr) 56px 88px; gap: 0 6px; }
+  #fig-4d .c4d { font-size: 13px; }
+  #fig-4d .c4d-head { font-size: 12px; }
+}

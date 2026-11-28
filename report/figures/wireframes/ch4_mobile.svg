@@ -1,0 +1,302 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="660" height="3717" viewBox="0 0 660 3717" font-family="-apple-system,'Helvetica Neue',Helvetica,Arial,sans-serif" role="img" aria-label="Wireframe chapter 4 (mobile 375px): In the month Australia locked down, crash admissions fell by a third. Cyclist admissions rose."><title>Wireframe chapter 4 (mobile 375px): In the month Australia locked down, crash admissions fell by a third. Cyclist admissions rose.</title><defs><marker id="ar" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto-start-reverse"><path d="M1,1 L7,4 L1,7" fill="none" stroke="#55544f" stroke-width="1.2"/></marker><pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#55544f" stroke-width="1.4"/></pattern><clipPath id="ph"><rect x="20" y="0" width="375" height="3716.6"/></clipPath></defs><rect width="660" height="3716.6" fill="#fff"/><rect x="20" y="0" width="375" height="3716.6" fill="#faf9f6" stroke="#9a9892"/><g clip-path="url(#ph)"><rect x="20.0" y="0.0" width="375.0" height="44.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="36.0" y="28.0" font-size="16" fill="#222" font-weight="800" text-anchor="start">Beyond the Road Toll</text>
+<text x="379.0" y="28.0" font-size="11" fill="#6b7280" font-weight="700" text-anchor="end" letter-spacing="1">DATA INVESTIGATION</text>
+<rect x="20.0" y="44.0" width="375.0" height="52.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<rect x="32.0" y="54.0" width="105.4" height="32.0" rx="16" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="84.7" y="75.0" font-size="13" fill="#0a64d6" font-weight="600" text-anchor="middle">1 Road toll</text>
+<rect x="145.4" y="54.0" width="75.8" height="32.0" rx="16" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="183.3" y="75.0" font-size="13" fill="#0a64d6" font-weight="600" text-anchor="middle">2 Older</text>
+<rect x="229.2" y="54.0" width="98.0" height="32.0" rx="16" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="278.2" y="75.0" font-size="13" fill="#0a64d6" font-weight="600" text-anchor="middle">3 Severity</text>
+<rect x="335.2" y="54.0" width="98.0" height="32.0" rx="16" fill="#0a64d6" stroke="#0a64d6" stroke-width="1.5" />
+<text x="384.2" y="75.0" font-size="13" fill="#fff" font-weight="600" text-anchor="middle">4 Lockdown</text>
+<rect x="441.2" y="54.0" width="83.2" height="32.0" rx="16" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="482.8" y="75.0" font-size="13" fill="#0a64d6" font-weight="600" text-anchor="middle">5 Equity</text>
+<rect x="532.4" y="54.0" width="75.8" height="32.0" rx="16" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="570.3" y="75.0" font-size="13" fill="#0a64d6" font-weight="600" text-anchor="middle">Methods</text>
+<rect x="36.0" y="112.0" width="343.0" height="0.0" rx="0" fill="none" />
+<text x="207.5" y="118.0" font-size="11" fill="#9a9892" font-weight="500" text-anchor="middle" font-style="italic">... hero and earlier chapters above ...</text>
+<text x="36.0" y="154.0" font-size="12" fill="#6b7280" font-weight="800" text-anchor="start" letter-spacing="2">CHAPTER 4</text>
+<text x="36.0" y="195.0" font-size="25" fill="#222" font-weight="800" text-anchor="start">In the month Australia</text>
+<text x="36.0" y="224.5" font-size="25" fill="#222" font-weight="800" text-anchor="start">locked down, crash</text>
+<text x="36.0" y="254.0" font-size="25" fill="#222" font-weight="800" text-anchor="start">admissions fell by a</text>
+<text x="36.0" y="283.5" font-size="25" fill="#222" font-weight="800" text-anchor="start">third. Cyclist</text>
+<text x="36.0" y="313.0" font-size="25" fill="#222" font-weight="800" text-anchor="start">admissions rose.</text>
+<text x="36.0" y="347.5" font-size="16" fill="#55544f" font-weight="400" text-anchor="start">In 2020 Australians travelled less,</text>
+<text x="36.0" y="369.9" font-size="16" fill="#55544f" font-weight="400" text-anchor="start">worked from home and bought bikes.</text>
+<text x="36.0" y="392.3" font-size="16" fill="#55544f" font-weight="400" text-anchor="start">Hospital records show how that played</text>
+<text x="36.0" y="414.7" font-size="16" fill="#55544f" font-weight="400" text-anchor="start">out on the roads.</text>
+<rect x="36.0" y="437.1" width="343.0" height="220.0" rx="0" fill="#e7e6e1" />
+<rect x="36.0" y="437.1" width="4.0" height="220.0" rx="0" fill="#55544f" />
+<text x="52.0" y="459.1" font-size="11" fill="#55544f" font-weight="800" text-anchor="start" letter-spacing="1.5">WHAT TO KNOW</text>
+<circle cx="54.0" cy="478.2" r="2.5" fill="#55544f"/>
+<text x="66.0" y="484.1" font-size="13" fill="#222" xml:space="preserve">April <tspan font-weight="700">2020</tspan> had <tspan font-weight="700">2,357</tspan> road-crash admissions,</text>
+<text x="66.0" y="502.1" font-size="13" fill="#222" xml:space="preserve"><tspan font-weight="700">32%</tspan> fewer than April <tspan font-weight="700">2019</tspan> and the lowest</text>
+<text x="66.0" y="520.1" font-size="13" fill="#222" xml:space="preserve">month of the decade.</text>
+<circle cx="54.0" cy="540.2" r="2.5" fill="#55544f"/>
+<text x="66.0" y="546.1" font-size="13" fill="#222" xml:space="preserve">In that month admissions fell for every</text>
+<text x="66.0" y="564.1" font-size="13" fill="#222" xml:space="preserve">main road user except cyclists, which rose</text>
+<text x="66.0" y="582.1" font-size="13" fill="#222" xml:space="preserve"><tspan font-weight="700">16%</tspan>.</text>
+<circle cx="54.0" cy="602.2" r="2.5" fill="#55544f"/>
+<text x="66.0" y="608.1" font-size="13" fill="#222" xml:space="preserve">From April to December <tspan font-weight="700">2020,</tspan> cyclist</text>
+<text x="66.0" y="626.1" font-size="13" fill="#222" xml:space="preserve">admissions beat every same month of the</text>
+<text x="66.0" y="644.1" font-size="13" fill="#222" xml:space="preserve">previous five years: <tspan font-weight="700">9</tspan> months out of <tspan font-weight="700">9.</tspan></text>
+<rect x="36.0" y="681.1" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="698.1" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="715.1" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="732.1" width="188.7" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="757.1" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="774.1" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="791.1" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="30.0" y="850.1" width="355.0" height="10.0" rx="0" fill="none" />
+<text x="36.0" y="864.1" font-size="11" fill="#6b7280" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">fig-4a</text>
+<text x="379.0" y="864.1" font-size="11" fill="#6b7280" font-weight="400" text-anchor="end" font-family="ui-monospace,Menlo,monospace">ch4_monthly.csv</text>
+<text x="36.0" y="895.1" font-size="17" fill="#222" font-weight="700" text-anchor="start">April 2020: a third fewer crash</text>
+<text x="36.0" y="916.3" font-size="17" fill="#222" font-weight="700" text-anchor="start">admissions</text>
+<text x="36.0" y="943.6" font-size="12" fill="#6b7280" font-weight="400" text-anchor="start">Show</text>
+<rect x="36.0" y="948.6" width="343.0" height="44.0" rx="6" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<rect x="36.0" y="948.6" width="206.8" height="44.0" rx="6" fill="#0a64d6" stroke="#0a64d6" stroke-width="1.5" />
+<text x="139.4" y="975.6" font-size="12.5" fill="#fff" font-weight="600" text-anchor="middle">All road users</text>
+<line x1="242.8" y1="948.6" x2="242.8" y2="992.6" stroke="#0a64d6" stroke-width="1" />
+<text x="310.9" y="975.6" font-size="12.5" fill="#0a64d6" font-weight="600" text-anchor="middle">Cyclists</text>
+<rect x="36.0" y="1012.6" width="343.0" height="270.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="44.0" y="1024.6" font-size="9.5" fill="#9a9892" font-weight="500" text-anchor="start" font-family="ui-monospace,Menlo,monospace">div.fig-chart  role="img"  aria-label = one-sentence summary</text>
+<line x1="78.0" y1="1042.6" x2="297.0" y2="1042.6" stroke="#e7e6e1" stroke-width="1" />
+<line x1="78.0" y1="1147.6" x2="297.0" y2="1147.6" stroke="#e7e6e1" stroke-width="1" />
+<line x1="78.0" y1="1252.6" x2="297.0" y2="1252.6" stroke="#e7e6e1" stroke-width="1" />
+<polygon points="78.0,1089.8 97.9,1095.1 117.8,1084.6 137.7,1089.8 157.6,1095.1 177.5,1100.3 197.5,1095.1 217.4,1089.8 237.3,1089.8 257.2,1084.6 277.1,1089.8 297.0,1079.3 297.0,1137.1 277.1,1147.6 257.2,1142.3 237.3,1147.6 217.4,1147.6 197.5,1152.8 177.5,1158.1 157.6,1152.8 137.7,1147.6 117.8,1142.3 97.9,1152.8 78.0,1147.6" fill="#e1ddcf" stroke="none"/>
+<polyline points="78.0,1118.7 97.9,1124.0 117.8,1113.5 137.7,1118.7 157.6,1124.0 177.5,1129.2 197.5,1124.0 217.4,1118.7 237.3,1118.7 257.2,1113.5 277.1,1118.7 297.0,1108.2" fill="none" stroke="#9a9892" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="78.0,1116.1 97.9,1121.3 117.8,1116.1 137.7,1110.8 157.6,1116.1 177.5,1121.3 197.5,1116.1 217.4,1113.5 237.3,1110.8 257.2,1108.2 277.1,1113.5 297.0,1105.6" fill="none" stroke="#cfcdc7" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="78.0,1121.3 97.9,1116.1 117.8,1147.6 137.7,1189.6 157.6,1158.1 177.5,1126.6 197.5,1089.8 217.4,1084.6 237.3,1079.3 257.2,1074.1 277.1,1084.6 297.0,1079.3" fill="none" stroke="#222" stroke-width="3.2" stroke-linejoin="round"/>
+<circle cx="137.7" cy="1189.6" r="4.5" fill="#222"/>
+<text x="78.0" y="1267.6" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">J</text>
+<text x="97.9" y="1267.6" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">F</text>
+<text x="117.8" y="1267.6" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">M</text>
+<text x="137.7" y="1267.6" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">A</text>
+<text x="157.6" y="1267.6" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">M</text>
+<text x="177.5" y="1267.6" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">J</text>
+<text x="197.5" y="1267.6" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">J</text>
+<text x="217.4" y="1267.6" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">A</text>
+<text x="237.3" y="1267.6" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">S</text>
+<text x="257.2" y="1267.6" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">O</text>
+<text x="277.1" y="1267.6" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">N</text>
+<text x="297.0" y="1267.6" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">D</text>
+<text x="145.7" y="1203.6" font-size="10.5" fill="#222" font-weight="600" text-anchor="start" font-style="italic">2,357: lowest month, 2011-21</text>
+<text x="303.0" y="1083.3" font-size="11" fill="#222" font-weight="700" text-anchor="start">2020</text>
+<text x="303.0" y="1109.6" font-size="11" fill="#9a9892" font-weight="600" text-anchor="start">2019</text>
+<text x="303.0" y="1145.8" font-size="10" fill="#6b7280" font-weight="400" text-anchor="start">2015-19 band</text>
+<text x="36.0" y="1304.6" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">Notes: Grey band = range of 2015-2019. Lockdown dates</text>
+<text x="36.0" y="1320.1" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">and length differed by state (Victoria's was</text>
+<text x="36.0" y="1335.6" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">longest); national monthly data can't be split by</text>
+<text x="36.0" y="1351.1" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">state.</text>
+<rect x="36.0" y="1362.6" width="343.0" height="44.0" rx="4" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="50.0" y="1389.6" font-size="13.5" fill="#0a64d6" font-weight="600" text-anchor="start">▸  Show the numbers</text>
+<text x="367.0" y="1388.6" font-size="10" fill="#9a9892" font-weight="500" text-anchor="end" font-family="ui-monospace,Menlo,monospace">details &gt; table</text>
+<rect x="36.0" y="1446.6" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="1463.6" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="1480.6" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="1497.6" width="188.7" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="1522.6" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="1539.6" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="1556.6" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="30.0" y="1615.6" width="355.0" height="10.0" rx="0" fill="none" />
+<text x="36.0" y="1629.6" font-size="11" fill="#6b7280" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">fig-4b</text>
+<text x="379.0" y="1629.6" font-size="11" fill="#6b7280" font-weight="400" text-anchor="end" font-family="ui-monospace,Menlo,monospace">ch4_monthly.csv</text>
+<text x="36.0" y="1660.6" font-size="17" fill="#222" font-weight="700" text-anchor="start">Every road user went to hospital</text>
+<text x="36.0" y="1681.8" font-size="17" fill="#222" font-weight="700" text-anchor="start">less in April 2020, except</text>
+<text x="36.0" y="1703.1" font-size="17" fill="#222" font-weight="700" text-anchor="start">cyclists</text>
+<rect x="36.0" y="1719.3" width="343.0" height="240.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="44.0" y="1731.3" font-size="9.5" fill="#9a9892" font-weight="500" text-anchor="start" font-family="ui-monospace,Menlo,monospace">div.fig-chart  role="img"  aria-label = one-sentence summary</text>
+<line x1="290.5" y1="1741.3" x2="290.5" y2="1951.3" stroke="#55544f" stroke-width="1.5" />
+<text x="122.0" y="1762.8" font-size="10.5" fill="#55544f" font-weight="400" text-anchor="end">Pedestrian</text>
+<rect x="201.6" y="1748.3" width="88.9" height="21.0" rx="0" fill="#cfcdc7" />
+<text x="197.6" y="1762.8" font-size="10" fill="#55544f" font-weight="600" text-anchor="end">-60%</text>
+<text x="122.0" y="1797.8" font-size="10.5" fill="#55544f" font-weight="400" text-anchor="end">Car passenger</text>
+<rect x="212.0" y="1783.3" width="78.5" height="21.0" rx="0" fill="#cfcdc7" />
+<text x="208.0" y="1797.8" font-size="10" fill="#55544f" font-weight="600" text-anchor="end">-53%</text>
+<text x="122.0" y="1832.8" font-size="10.5" fill="#55544f" font-weight="400" text-anchor="end">Car driver</text>
+<rect x="226.8" y="1818.3" width="63.7" height="21.0" rx="0" fill="#cfcdc7" />
+<text x="222.8" y="1832.8" font-size="10" fill="#55544f" font-weight="600" text-anchor="end">-43%</text>
+<text x="122.0" y="1867.8" font-size="10.5" fill="#55544f" font-weight="400" text-anchor="end">Motorcyclist</text>
+<rect x="234.2" y="1853.3" width="56.3" height="21.0" rx="0" fill="#cfcdc7" />
+<text x="230.2" y="1867.8" font-size="10" fill="#55544f" font-weight="600" text-anchor="end">-38%</text>
+<text x="122.0" y="1902.8" font-size="10.5" fill="#55544f" font-weight="400" text-anchor="end">Pedal cyclist</text>
+<rect x="290.5" y="1888.3" width="23.7" height="21.0" rx="0" fill="#55544f" />
+<text x="318.2" y="1902.8" font-size="10" fill="#55544f" font-weight="600" text-anchor="start">+16%</text>
+<text x="122.0" y="1937.8" font-size="10.5" fill="#55544f" font-weight="400" text-anchor="end">All road users</text>
+<rect x="243.1" y="1923.3" width="47.4" height="21.0" rx="0" fill="#fff" stroke="#55544f" stroke-width="1.2" stroke-dasharray="4 3" />
+<text x="239.1" y="1937.8" font-size="10" fill="#55544f" font-weight="600" text-anchor="end">-32%</text>
+<text x="286.5" y="1953.3" font-size="9" fill="#222" font-weight="400" text-anchor="start"></text>
+<text x="36.0" y="1981.3" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">Notes: April 2020 vs April 2019, % change by road</text>
+<text x="36.0" y="1996.8" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">user. Source: BITRE hospitalised injury data.</text>
+<rect x="36.0" y="2008.3" width="343.0" height="44.0" rx="4" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="50.0" y="2035.3" font-size="13.5" fill="#0a64d6" font-weight="600" text-anchor="start">▸  Show the numbers</text>
+<text x="367.0" y="2034.3" font-size="10" fill="#9a9892" font-weight="500" text-anchor="end" font-family="ui-monospace,Menlo,monospace">details &gt; table</text>
+<rect x="36.0" y="2092.3" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="2109.3" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="2126.3" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="2143.3" width="188.7" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="2168.3" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="2185.3" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="2202.3" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="2227.3" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="2244.3" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="2261.3" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="30.0" y="2320.3" width="355.0" height="10.0" rx="0" fill="none" />
+<text x="36.0" y="2334.3" font-size="11" fill="#6b7280" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">fig-4c</text>
+<text x="379.0" y="2334.3" font-size="11" fill="#6b7280" font-weight="400" text-anchor="end" font-family="ui-monospace,Menlo,monospace">ch4_monthly.csv</text>
+<text x="36.0" y="2365.3" font-size="17" fill="#222" font-weight="700" text-anchor="start">Cyclist injuries were already</text>
+<text x="36.0" y="2386.6" font-size="17" fill="#222" font-weight="700" text-anchor="start">rising. 2020 added to it.</text>
+<rect x="36.0" y="2402.8" width="343.0" height="250.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="44.0" y="2414.8" font-size="9.5" fill="#9a9892" font-weight="500" text-anchor="start" font-family="ui-monospace,Menlo,monospace">div.fig-chart  role="img"  aria-label = one-sentence summary</text>
+<line x1="82.0" y1="2446.8" x2="357.0" y2="2446.8" stroke="#e7e6e1" stroke-width="1" />
+<line x1="82.0" y1="2534.8" x2="357.0" y2="2534.8" stroke="#e7e6e1" stroke-width="1" />
+<line x1="82.0" y1="2622.8" x2="357.0" y2="2622.8" stroke="#e7e6e1" stroke-width="1" />
+<polyline points="82.0,2597.7 109.5,2589.3 137.0,2580.9 164.5,2572.6 192.0,2560.0 219.5,2551.6 247.0,2539.0 274.5,2526.5 302.0,2526.5 329.5,2484.6 357.0,2472.0" fill="none" stroke="#55544f" stroke-width="2" stroke-linejoin="round"/>
+<circle cx="82.0" cy="2597.7" r="3.5" fill="#55544f"/>
+<circle cx="109.5" cy="2589.3" r="3.5" fill="#55544f"/>
+<circle cx="137.0" cy="2580.9" r="3.5" fill="#55544f"/>
+<circle cx="164.5" cy="2572.6" r="3.5" fill="#55544f"/>
+<circle cx="192.0" cy="2560.0" r="3.5" fill="#55544f"/>
+<circle cx="219.5" cy="2551.6" r="3.5" fill="#55544f"/>
+<circle cx="247.0" cy="2539.0" r="3.5" fill="#55544f"/>
+<circle cx="274.5" cy="2526.5" r="3.5" fill="#55544f"/>
+<circle cx="302.0" cy="2526.5" r="3.5" fill="#55544f"/>
+<circle cx="329.5" cy="2484.6" r="3.5" fill="#222"/>
+<circle cx="357.0" cy="2472.0" r="3.5" fill="#55544f"/>
+<polyline points="302.0,2526.5 329.5,2514.7" fill="none" stroke="#55544f" stroke-width="2" stroke-dasharray="5 3" stroke-linejoin="round"/>
+<text x="323.5" y="2472.6" font-size="10.5" fill="#222" font-weight="600" text-anchor="end" font-style="italic">8,332 real vs 7,584 trend: about 750 above</text>
+<text x="82.0" y="2637.8" font-size="10" fill="#6b7280" font-weight="400" text-anchor="start">2011</text>
+<text x="357.0" y="2637.8" font-size="10" fill="#6b7280" font-weight="400" text-anchor="end">2021</text>
+<text x="302.0" y="2544.5" font-size="9.5" fill="#6b7280" font-weight="400" text-anchor="middle">dashed = trend to 2020</text>
+<text x="36.0" y="2674.8" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">Notes: The trend assumes the 2011-2019 yearly growth</text>
+<text x="36.0" y="2690.3" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">rate (about 3.9% a year) simply continued. It is a</text>
+<text x="36.0" y="2705.8" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">rough yardstick with no error margin attached.</text>
+<rect x="36.0" y="2717.3" width="343.0" height="44.0" rx="4" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="50.0" y="2744.3" font-size="13.5" fill="#0a64d6" font-weight="600" text-anchor="start">▸  Show the numbers</text>
+<text x="367.0" y="2743.3" font-size="10" fill="#9a9892" font-weight="500" text-anchor="end" font-family="ui-monospace,Menlo,monospace">details &gt; table</text>
+<rect x="36.0" y="2801.3" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="2818.3" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="2835.3" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="2852.3" width="188.7" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="2877.3" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="2894.3" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="2911.3" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="2936.3" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="2953.3" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="2970.3" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="2995.3" width="343.0" height="135.0" rx="0" fill="none" stroke="#9a9892" stroke-width="1" stroke-dasharray="4 3" />
+<text x="50.0" y="3012.3" font-size="9.5" fill="#6b7280" font-weight="800" text-anchor="start" letter-spacing="1">CHAPTER CAVEAT</text>
+<text x="50.0" y="3030.3" font-size="13" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">Restrictions differed by state. Victoria had</text>
+<text x="50.0" y="3047.8" font-size="13" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">the largest rise in cyclist admissions in</text>
+<text x="50.0" y="3065.3" font-size="13" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">July-December 2020: 1,419 against 1,010 in</text>
+<text x="50.0" y="3082.8" font-size="13" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">2019 (+40.5%). That fits the timing of its</text>
+<text x="50.0" y="3100.3" font-size="13" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">second lockdown, but six-monthly state data</text>
+<text x="50.0" y="3117.8" font-size="13" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">cannot show cause and effect.</text>
+<rect x="30.0" y="3184.3" width="355.0" height="10.0" rx="0" fill="none" />
+<text x="36.0" y="3198.3" font-size="11" fill="#6b7280" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">fig-4d   (title: working)</text>
+<text x="379.0" y="3198.3" font-size="11" fill="#6b7280" font-weight="400" text-anchor="end" font-family="ui-monospace,Menlo,monospace">ch4_state_cyclists.csv</text>
+<text x="36.0" y="3229.3" font-size="17" fill="#222" font-weight="700" text-anchor="start">Victoria had the largest rise in</text>
+<text x="36.0" y="3250.6" font-size="17" fill="#222" font-weight="700" text-anchor="start">cyclist admissions in July-</text>
+<text x="36.0" y="3271.8" font-size="17" fill="#222" font-weight="700" text-anchor="start">December 2020</text>
+<rect x="36.0" y="3288.1" width="343.0" height="210.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="44.0" y="3300.1" font-size="9.5" fill="#9a9892" font-weight="500" text-anchor="start" font-family="ui-monospace,Menlo,monospace">div.fig-chart  role="img"  aria-label = one-sentence summary</text>
+<text x="54.0" y="3322.1" font-size="10" fill="#55544f" font-weight="600" text-anchor="start">State</text>
+<text x="118.0" y="3322.1" font-size="10" fill="#55544f" font-weight="600" text-anchor="start">Jul-Dec 2019 | 2020 | change</text>
+<line x1="48.0" y1="3330.1" x2="367.0" y2="3330.1" stroke="#e7e6e1" stroke-width="1" />
+<text x="54.0" y="3347.4" font-size="11" fill="#55544f" font-weight="600" text-anchor="start">Vic</text>
+<rect x="118.0" y="3338.1" width="183.2" height="10.7" rx="0" fill="#55544f" />
+<line x1="48.0" y1="3356.8" x2="367.0" y2="3356.8" stroke="#e7e6e1" stroke-width="1" />
+<text x="54.0" y="3374.1" font-size="11" fill="#55544f" font-weight="400" text-anchor="start">NSW</text>
+<rect x="118.0" y="3364.8" width="73.3" height="10.7" rx="0" fill="#cfcdc7" />
+<line x1="48.0" y1="3383.4" x2="367.0" y2="3383.4" stroke="#e7e6e1" stroke-width="1" />
+<text x="54.0" y="3400.8" font-size="11" fill="#55544f" font-weight="400" text-anchor="start">Qld</text>
+<rect x="118.0" y="3391.4" width="64.1" height="10.7" rx="0" fill="#cfcdc7" />
+<line x1="48.0" y1="3410.1" x2="367.0" y2="3410.1" stroke="#e7e6e1" stroke-width="1" />
+<text x="54.0" y="3427.4" font-size="11" fill="#55544f" font-weight="400" text-anchor="start">WA</text>
+<rect x="118.0" y="3418.1" width="40.3" height="10.7" rx="0" fill="#cfcdc7" />
+<line x1="48.0" y1="3436.8" x2="367.0" y2="3436.8" stroke="#e7e6e1" stroke-width="1" />
+<text x="54.0" y="3454.1" font-size="11" fill="#55544f" font-weight="400" text-anchor="start">SA</text>
+<rect x="118.0" y="3444.8" width="25.6" height="10.7" rx="0" fill="#cfcdc7" />
+<line x1="48.0" y1="3463.4" x2="367.0" y2="3463.4" stroke="#e7e6e1" stroke-width="1" />
+<text x="54.0" y="3480.8" font-size="11" fill="#55544f" font-weight="400" text-anchor="start">Tas</text>
+<rect x="118.0" y="3471.4" width="11.0" height="10.7" rx="0" fill="#cfcdc7" />
+<text x="363.0" y="3374.1" font-size="10.5" fill="#222" font-weight="600" text-anchor="end" font-style="italic">Vic: 1,419 vs 1,010 (+409)</text>
+<text x="36.0" y="3520.1" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">Notes: Working note: state counts exclude deaths, as</text>
+<text x="36.0" y="3535.6" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">in the BITRE state file. Six-monthly data cannot show</text>
+<text x="36.0" y="3551.1" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">cause and effect.</text>
+<rect x="36.0" y="3562.6" width="343.0" height="44.0" rx="4" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="50.0" y="3589.6" font-size="13.5" fill="#0a64d6" font-weight="600" text-anchor="start">▸  Show the numbers</text>
+<text x="367.0" y="3588.6" font-size="10" fill="#9a9892" font-weight="500" text-anchor="end" font-family="ui-monospace,Menlo,monospace">details &gt; table</text>
+<text x="207.5" y="3654.6" font-size="11" fill="#9a9892" font-weight="500" text-anchor="middle" font-style="italic">... end of chapter 4; next chapter follows ...</text></g>
+<line x1="396.0" y1="15.0" x2="410.0" y2="15.0" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="15.0" r="2" fill="#444"/>
+<text x="415.0" y="20.0" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Masthead: site name + kicker; 44px</text>
+<text x="415.0" y="35.0" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">bar.</text>
+<line x1="396.0" y1="55.0" x2="410.0" y2="55.0" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="55.0" r="2" fill="#444"/>
+<text x="415.0" y="60.0" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Sticky pill-bar nav scrolls</text>
+<text x="415.0" y="75.0" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">sideways (finger swipe); current</text>
+<text x="415.0" y="90.0" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">chapter is highlighted while</text>
+<text x="415.0" y="105.0" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">reading.</text>
+<line x1="396.0" y1="123.0" x2="410.0" y2="123.0" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="123.0" r="2" fill="#444"/>
+<text x="415.0" y="128.0" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">&lt;section id="ch4"&gt; starts here.</text>
+<line x1="396.0" y1="177.0" x2="410.0" y2="177.0" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="177.0" r="2" fill="#444"/>
+<text x="415.0" y="182.0" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Chapter headline states the finding</text>
+<text x="415.0" y="197.0" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">(heavy sans 25px).</text>
+<line x1="396.0" y1="338.5" x2="410.0" y2="338.5" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="338.5" r="2" fill="#444"/>
+<text x="415.0" y="343.5" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Standfirst: one sentence that sets</text>
+<text x="415.0" y="358.5" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">up the question.</text>
+<line x1="396.0" y1="444.1" x2="410.0" y2="444.1" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="444.1" r="2" fill="#444"/>
+<text x="415.0" y="449.1" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">What-to-know box: 2-3 bullets,</text>
+<text x="415.0" y="464.1" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">numbers bold. A reader who stops</text>
+<text x="415.0" y="479.1" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">here still gets the finding.</text>
+<line x1="396.0" y1="688.1" x2="410.0" y2="688.1" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="688.1" r="2" fill="#444"/>
+<text x="415.0" y="693.1" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Text column = full width minus 16px</text>
+<text x="415.0" y="708.1" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">gutters; serif 17px / 1.55.</text>
+<line x1="396.0" y1="885.1" x2="410.0" y2="885.1" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="885.1" r="2" fill="#444"/>
+<text x="415.0" y="890.1" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Fig title (h3, bold 17px) states</text>
+<text x="415.0" y="905.1" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">the finding.</text>
+<line x1="396.0" y1="939.6" x2="410.0" y2="939.6" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="939.6" r="2" fill="#444"/>
+<text x="415.0" y="944.6" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Two-step switch between All road</text>
+<text x="415.0" y="959.6" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">users and Cyclists.</text>
+<line x1="396.0" y1="1019.6" x2="410.0" y2="1019.6" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="1019.6" r="2" fill="#444"/>
+<text x="415.0" y="1024.6" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Title changes with the view:</text>
+<text x="415.0" y="1039.6" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Cyclists = "Cyclists: every month</text>
+<text x="415.0" y="1054.6" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">from April above the previous five</text>
+<text x="415.0" y="1069.6" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">years". Y-axis rescales between</text>
+<text x="415.0" y="1084.6" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">views and the switch says so.</text>
+<line x1="396.0" y1="1299.6" x2="410.0" y2="1299.6" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="1299.6" r="2" fill="#444"/>
+<text x="415.0" y="1304.6" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Notes line directly under the</text>
+<text x="415.0" y="1319.6" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">chart: caveat + source + period.</text>
+<line x1="396.0" y1="1369.6" x2="410.0" y2="1369.6" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="1369.6" r="2" fill="#444"/>
+<text x="415.0" y="1374.6" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Every figure has a data table in</text>
+<text x="415.0" y="1389.6" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">&lt;details&gt; as a text alternative.</text>
+<line x1="396.0" y1="1726.3" x2="410.0" y2="1726.3" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="1726.3" r="2" fill="#444"/>
+<text x="415.0" y="1731.3" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Diverging bars: values written at</text>
+<text x="415.0" y="1746.3" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">bar ends, one bar goes the other</text>
+<text x="415.0" y="1761.3" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">way.</text>
+<line x1="396.0" y1="2409.8" x2="410.0" y2="2409.8" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="2409.8" r="2" fill="#444"/>
+<text x="415.0" y="2414.8" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Dots on a line; dashed trend</text>
+<text x="415.0" y="2429.8" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">carried one year forward to 2020.</text>
+<line x1="396.0" y1="3002.3" x2="410.0" y2="3002.3" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="3002.3" r="2" fill="#444"/>
+<text x="415.0" y="3007.3" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Chapter caveat printed once, under</text>
+<text x="415.0" y="3022.3" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">the chapter (where the storyboard</text>
+<text x="415.0" y="3037.3" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">has one).</text>
+<line x1="396.0" y1="3295.1" x2="410.0" y2="3295.1" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="3295.1" r="2" fill="#444"/>
+<text x="415.0" y="3300.1" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Small optional inset under the</text>
+<text x="415.0" y="3315.1" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">chapter caveat.</text><text x="415" y="3702.6" font-size="11" fill="#6b7280" font-style="italic">Low-fidelity wireframe: chart shapes are illustrative, not data.</text></svg>

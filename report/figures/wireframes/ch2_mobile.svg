@@ -1,0 +1,245 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="660" height="2461" viewBox="0 0 660 2461" font-family="-apple-system,'Helvetica Neue',Helvetica,Arial,sans-serif" role="img" aria-label="Wireframe chapter 2 (mobile 375px): Cycling injuries have more than doubled among over-65s."><title>Wireframe chapter 2 (mobile 375px): Cycling injuries have more than doubled among over-65s.</title><defs><marker id="ar" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto-start-reverse"><path d="M1,1 L7,4 L1,7" fill="none" stroke="#55544f" stroke-width="1.2"/></marker><pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#55544f" stroke-width="1.4"/></pattern><clipPath id="ph"><rect x="20" y="0" width="375" height="2460.55"/></clipPath></defs><rect width="660" height="2460.55" fill="#fff"/><rect x="20" y="0" width="375" height="2460.55" fill="#faf9f6" stroke="#9a9892"/><g clip-path="url(#ph)"><rect x="20.0" y="0.0" width="375.0" height="44.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="36.0" y="28.0" font-size="16" fill="#222" font-weight="800" text-anchor="start">Beyond the Road Toll</text>
+<text x="379.0" y="28.0" font-size="11" fill="#6b7280" font-weight="700" text-anchor="end" letter-spacing="1">DATA INVESTIGATION</text>
+<rect x="20.0" y="44.0" width="375.0" height="52.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<rect x="32.0" y="54.0" width="105.4" height="32.0" rx="16" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="84.7" y="75.0" font-size="13" fill="#0a64d6" font-weight="600" text-anchor="middle">1 Road toll</text>
+<rect x="145.4" y="54.0" width="75.8" height="32.0" rx="16" fill="#0a64d6" stroke="#0a64d6" stroke-width="1.5" />
+<text x="183.3" y="75.0" font-size="13" fill="#fff" font-weight="600" text-anchor="middle">2 Older</text>
+<rect x="229.2" y="54.0" width="98.0" height="32.0" rx="16" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="278.2" y="75.0" font-size="13" fill="#0a64d6" font-weight="600" text-anchor="middle">3 Severity</text>
+<rect x="335.2" y="54.0" width="98.0" height="32.0" rx="16" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="384.2" y="75.0" font-size="13" fill="#0a64d6" font-weight="600" text-anchor="middle">4 Lockdown</text>
+<rect x="441.2" y="54.0" width="83.2" height="32.0" rx="16" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="482.8" y="75.0" font-size="13" fill="#0a64d6" font-weight="600" text-anchor="middle">5 Equity</text>
+<rect x="532.4" y="54.0" width="75.8" height="32.0" rx="16" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="570.3" y="75.0" font-size="13" fill="#0a64d6" font-weight="600" text-anchor="middle">Methods</text>
+<rect x="36.0" y="112.0" width="343.0" height="0.0" rx="0" fill="none" />
+<text x="207.5" y="118.0" font-size="11" fill="#9a9892" font-weight="500" text-anchor="middle" font-style="italic">... hero and earlier chapters above ...</text>
+<text x="36.0" y="154.0" font-size="12" fill="#6b7280" font-weight="800" text-anchor="start" letter-spacing="2">CHAPTER 2</text>
+<text x="36.0" y="195.0" font-size="25" fill="#222" font-weight="800" text-anchor="start">Cycling injuries have</text>
+<text x="36.0" y="224.5" font-size="25" fill="#222" font-weight="800" text-anchor="start">more than doubled among</text>
+<text x="36.0" y="254.0" font-size="25" fill="#222" font-weight="800" text-anchor="start">over-65s.</text>
+<text x="36.0" y="288.5" font-size="16" fill="#55544f" font-weight="400" text-anchor="start">The group growing fastest among the</text>
+<text x="36.0" y="310.9" font-size="16" fill="#55544f" font-weight="400" text-anchor="start">injured is older riders.</text>
+<rect x="36.0" y="333.3" width="343.0" height="122.0" rx="0" fill="#e7e6e1" />
+<rect x="36.0" y="333.3" width="4.0" height="122.0" rx="0" fill="#55544f" />
+<text x="52.0" y="355.3" font-size="11" fill="#55544f" font-weight="800" text-anchor="start" letter-spacing="1.5">WHAT TO KNOW</text>
+<circle cx="54.0" cy="374.4" r="2.5" fill="#55544f"/>
+<text x="66.0" y="380.3" font-size="13" fill="#222" xml:space="preserve">Cyclists aged <tspan font-weight="700">65</tspan>-<tspan font-weight="700">74</tspan> rose <tspan font-weight="700">138%</tspan> and those</text>
+<text x="66.0" y="398.3" font-size="13" fill="#222" xml:space="preserve">aged <tspan font-weight="700">75</tspan> and over rose <tspan font-weight="700">142%</tspan> (<tspan font-weight="700">3</tspan>-year</text>
+<text x="66.0" y="416.3" font-size="13" fill="#222" xml:space="preserve">averages, <tspan font-weight="700">2011</tspan>-<tspan font-weight="700">13</tspan> to <tspan font-weight="700">2019</tspan>-<tspan font-weight="700">21</tspan>).</text>
+<circle cx="54.0" cy="436.4" r="2.5" fill="#55544f"/>
+<text x="66.0" y="442.3" font-size="13" fill="#222" xml:space="preserve">Per person, the rises were <tspan font-weight="700">78%</tspan> and <tspan font-weight="700">92%</tspan>.</text>
+<rect x="36.0" y="479.3" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="496.3" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="513.3" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="530.3" width="188.7" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="555.3" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="572.3" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="589.3" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="614.3" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="631.3" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="648.3" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="30.0" y="707.3" width="355.0" height="10.0" rx="0" fill="none" />
+<text x="36.0" y="721.3" font-size="11" fill="#6b7280" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">fig-2a   (title: working)</text>
+<text x="379.0" y="721.3" font-size="11" fill="#6b7280" font-weight="400" text-anchor="end" font-family="ui-monospace,Menlo,monospace">ch2_age_roaduser.csv</text>
+<text x="36.0" y="752.3" font-size="17" fill="#222" font-weight="700" text-anchor="start">Cyclists aged 65 and over: the</text>
+<text x="36.0" y="773.5" font-size="17" fill="#222" font-weight="700" text-anchor="start">biggest rise of any group</text>
+<text x="36.0" y="800.8" font-size="12" fill="#6b7280" font-weight="400" text-anchor="start">I travel by</text>
+<rect x="36.0" y="805.8" width="343.0" height="44.0" rx="6" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="48.0" y="832.8" font-size="14" fill="#0a64d6" font-weight="600" text-anchor="start">Pedal cyclist</text>
+<text x="359.0" y="832.8" font-size="14" fill="#0a64d6" font-weight="600" text-anchor="middle">▾</text>
+<text x="36.0" y="868.8" font-size="12" fill="#6b7280" font-weight="400" text-anchor="start">I'm aged</text>
+<rect x="36.0" y="873.8" width="343.0" height="44.0" rx="6" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="48.0" y="900.8" font-size="14" fill="#0a64d6" font-weight="600" text-anchor="start">65-74</text>
+<text x="359.0" y="900.8" font-size="14" fill="#0a64d6" font-weight="600" text-anchor="middle">▾</text>
+<text x="36.0" y="936.8" font-size="12" fill="#6b7280" font-weight="400" text-anchor="start">Show</text>
+<rect x="36.0" y="941.8" width="343.0" height="44.0" rx="6" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<rect x="36.0" y="941.8" width="141.9" height="44.0" rx="6" fill="#0a64d6" stroke="#0a64d6" stroke-width="1.5" />
+<text x="106.9" y="968.8" font-size="12.5" fill="#fff" font-weight="600" text-anchor="middle">Counts</text>
+<line x1="177.9" y1="941.8" x2="177.9" y2="985.8" stroke="#0a64d6" stroke-width="1" />
+<text x="278.4" y="968.8" font-size="12.5" fill="#0a64d6" font-weight="600" text-anchor="middle">Per person</text>
+<rect x="36.0" y="1005.8" width="343.0" height="420.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="44.0" y="1017.8" font-size="9.5" fill="#9a9892" font-weight="500" text-anchor="start" font-family="ui-monospace,Menlo,monospace">div.fig-chart  role="img"  aria-label = one-sentence summary</text>
+<text x="139.5" y="1038.8" font-size="9" fill="#6b7280" font-weight="400" text-anchor="middle">0-7</text>
+<text x="174.5" y="1038.8" font-size="9" fill="#6b7280" font-weight="400" text-anchor="middle">8-16</text>
+<text x="209.5" y="1038.8" font-size="9" fill="#6b7280" font-weight="400" text-anchor="middle">17-25</text>
+<text x="244.5" y="1038.8" font-size="9" fill="#6b7280" font-weight="400" text-anchor="middle">26-39</text>
+<text x="279.5" y="1038.8" font-size="9" fill="#6b7280" font-weight="400" text-anchor="middle">40-64</text>
+<text x="314.5" y="1038.8" font-size="9" fill="#6b7280" font-weight="400" text-anchor="middle">65-74</text>
+<text x="349.5" y="1038.8" font-size="9" fill="#6b7280" font-weight="400" text-anchor="middle">75+</text>
+<text x="116.0" y="1061.8" font-size="10" fill="#55544f" font-weight="400" text-anchor="end">Pedestrian</text>
+<rect x="123.0" y="1044.8" width="33.0" height="26.0" rx="0" fill="#eeeee9" />
+<rect x="123.0" y="1044.8" width="33.0" height="26.0" rx="0" fill="url(#hatch)" opacity="0.35"/>
+<rect x="158.0" y="1044.8" width="33.0" height="26.0" rx="0" fill="#eeeee9" />
+<rect x="158.0" y="1044.8" width="33.0" height="26.0" rx="0" fill="url(#hatch)" opacity="0.35"/>
+<rect x="193.0" y="1044.8" width="33.0" height="26.0" rx="0" fill="#dddcd6" />
+<rect x="228.0" y="1044.8" width="33.0" height="26.0" rx="0" fill="#dddcd6" />
+<rect x="263.0" y="1044.8" width="33.0" height="26.0" rx="0" fill="#dddcd6" />
+<rect x="298.0" y="1044.8" width="33.0" height="26.0" rx="0" fill="#c4c2bb" />
+<rect x="333.0" y="1044.8" width="33.0" height="26.0" rx="0" fill="#c4c2bb" />
+<text x="116.0" y="1089.8" font-size="10" fill="#55544f" font-weight="400" text-anchor="end">Pedal cyclist</text>
+<rect x="123.0" y="1072.8" width="33.0" height="26.0" rx="0" fill="#dddcd6" />
+<rect x="123.0" y="1072.8" width="33.0" height="26.0" rx="0" fill="url(#hatch)" opacity="0.35"/>
+<rect x="158.0" y="1072.8" width="33.0" height="26.0" rx="0" fill="#c4c2bb" />
+<rect x="193.0" y="1072.8" width="33.0" height="26.0" rx="0" fill="#dddcd6" />
+<rect x="228.0" y="1072.8" width="33.0" height="26.0" rx="0" fill="#c4c2bb" />
+<rect x="263.0" y="1072.8" width="33.0" height="26.0" rx="0" fill="#c4c2bb" />
+<rect x="298.0" y="1072.8" width="33.0" height="26.0" rx="0" fill="#6c6b66" />
+<rect x="333.0" y="1072.8" width="33.0" height="26.0" rx="0" fill="#6c6b66" />
+<text x="116.0" y="1117.8" font-size="10" fill="#55544f" font-weight="400" text-anchor="end">Motorcyclist</text>
+<rect x="123.0" y="1100.8" width="33.0" height="26.0" rx="0" fill="#eeeee9" />
+<rect x="123.0" y="1100.8" width="33.0" height="26.0" rx="0" fill="url(#hatch)" opacity="0.35"/>
+<rect x="158.0" y="1100.8" width="33.0" height="26.0" rx="0" fill="#eeeee9" />
+<rect x="193.0" y="1100.8" width="33.0" height="26.0" rx="0" fill="#dddcd6" />
+<rect x="228.0" y="1100.8" width="33.0" height="26.0" rx="0" fill="#dddcd6" />
+<rect x="263.0" y="1100.8" width="33.0" height="26.0" rx="0" fill="#dddcd6" />
+<rect x="298.0" y="1100.8" width="33.0" height="26.0" rx="0" fill="#c4c2bb" />
+<rect x="333.0" y="1100.8" width="33.0" height="26.0" rx="0" fill="#c4c2bb" />
+<text x="116.0" y="1145.8" font-size="10" fill="#55544f" font-weight="400" text-anchor="end">Car driver</text>
+<rect x="123.0" y="1128.8" width="33.0" height="26.0" rx="0" fill="#eeeee9" />
+<rect x="158.0" y="1128.8" width="33.0" height="26.0" rx="0" fill="#eeeee9" />
+<rect x="193.0" y="1128.8" width="33.0" height="26.0" rx="0" fill="#eeeee9" />
+<rect x="228.0" y="1128.8" width="33.0" height="26.0" rx="0" fill="#eeeee9" />
+<rect x="263.0" y="1128.8" width="33.0" height="26.0" rx="0" fill="#dddcd6" />
+<rect x="298.0" y="1128.8" width="33.0" height="26.0" rx="0" fill="#dddcd6" />
+<rect x="333.0" y="1128.8" width="33.0" height="26.0" rx="0" fill="#c4c2bb" />
+<text x="116.0" y="1173.8" font-size="10" fill="#55544f" font-weight="400" text-anchor="end">Car passenger</text>
+<rect x="123.0" y="1156.8" width="33.0" height="26.0" rx="0" fill="#eeeee9" />
+<rect x="123.0" y="1156.8" width="33.0" height="26.0" rx="0" fill="url(#hatch)" opacity="0.35"/>
+<rect x="158.0" y="1156.8" width="33.0" height="26.0" rx="0" fill="#eeeee9" />
+<rect x="193.0" y="1156.8" width="33.0" height="26.0" rx="0" fill="#eeeee9" />
+<rect x="228.0" y="1156.8" width="33.0" height="26.0" rx="0" fill="#eeeee9" />
+<rect x="263.0" y="1156.8" width="33.0" height="26.0" rx="0" fill="#eeeee9" />
+<rect x="298.0" y="1156.8" width="33.0" height="26.0" rx="0" fill="#dddcd6" />
+<rect x="333.0" y="1156.8" width="33.0" height="26.0" rx="0" fill="#dddcd6" />
+<rect x="297.0" y="1071.8" width="35.0" height="28.0" rx="0" fill="none" stroke="#222" stroke-width="2.5" />
+<text x="314.5" y="1195.8" font-size="10" fill="#222" font-weight="600" text-anchor="end">selected cell (cyclists 65-74)</text>
+<rect x="122.0" y="1205.8" width="245.0" height="192.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" stroke-dasharray="3 3" />
+<polyline points="136.0,1372.4 157.7,1368.5 179.4,1360.5 201.1,1349.6 222.8,1336.3 244.5,1320.7 266.2,1303.2 287.9,1283.9 309.6,1262.8 331.3,1240.1 353.0,1215.8" fill="none" stroke="#55544f" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="130.0" y="1218.8" font-size="10" fill="#6b7280" font-weight="400" text-anchor="start" font-style="italic">Click a cell: its 2011-21 line opens here</text>
+<text x="122.0" y="1410.8" font-size="9.5" fill="#6b7280" font-weight="400" text-anchor="start">darker = bigger % rise; hatched = low count (&lt; 30 a year)</text>
+<text x="36.0" y="1447.8" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">Notes: Working note: % change on 3-year averages,</text>
+<text x="36.0" y="1463.3" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">2011-13 to 2019-21. Cells with an average under 30 a</text>
+<text x="36.0" y="1478.8" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">year are hatched as low counts. Source: BITRE.</text>
+<rect x="36.0" y="1490.3" width="343.0" height="44.0" rx="4" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="50.0" y="1517.3" font-size="13.5" fill="#0a64d6" font-weight="600" text-anchor="start">▸  Show the numbers</text>
+<text x="367.0" y="1516.3" font-size="10" fill="#9a9892" font-weight="500" text-anchor="end" font-family="ui-monospace,Menlo,monospace">details &gt; table</text>
+<rect x="36.0" y="1574.3" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="1591.3" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="1608.3" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="1625.3" width="188.7" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="1650.3" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="1667.3" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="1684.3" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="30.0" y="1743.3" width="355.0" height="10.0" rx="0" fill="none" />
+<text x="36.0" y="1757.3" font-size="11" fill="#6b7280" font-weight="600" text-anchor="start" font-family="ui-monospace,Menlo,monospace">fig-2b   (title: working)</text>
+<text x="379.0" y="1757.3" font-size="11" fill="#6b7280" font-weight="400" text-anchor="end" font-family="ui-monospace,Menlo,monospace">severity.csv</text>
+<text x="36.0" y="1788.3" font-size="17" fill="#222" font-weight="700" text-anchor="start">Older patients stay longer in</text>
+<text x="36.0" y="1809.5" font-size="17" fill="#222" font-weight="700" text-anchor="start">hospital and are more likely to</text>
+<text x="36.0" y="1830.8" font-size="17" fill="#222" font-weight="700" text-anchor="start">die</text>
+<rect x="36.0" y="1847.0" width="343.0" height="260.0" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="44.0" y="1859.0" font-size="9.5" fill="#9a9892" font-weight="500" text-anchor="start" font-family="ui-monospace,Menlo,monospace">div.fig-chart  role="img"  aria-label = one-sentence summary</text>
+<text x="82.0" y="1879.0" font-size="10" fill="#55544f" font-weight="600" text-anchor="start">Admissions</text>
+<text x="179.7" y="1879.0" font-size="10" fill="#55544f" font-weight="600" text-anchor="start">Avg stay (days)</text>
+<text x="277.3" y="1879.0" font-size="10" fill="#55544f" font-weight="600" text-anchor="start">Died per 1,000</text>
+<text x="77.0" y="1909.9" font-size="10" fill="#55544f" font-weight="400" text-anchor="end">0-7</text>
+<rect x="82.0" y="1897.0" width="17.9" height="17.8" rx="0" fill="#9a9892" />
+<rect x="179.7" y="1897.0" width="26.9" height="17.8" rx="0" fill="#9a9892" />
+<rect x="277.3" y="1897.0" width="3.6" height="17.8" rx="0" fill="#55544f" />
+<text x="77.0" y="1939.6" font-size="10" fill="#55544f" font-weight="400" text-anchor="end">8-16</text>
+<rect x="82.0" y="1926.7" width="40.4" height="17.8" rx="0" fill="#9a9892" />
+<rect x="179.7" y="1926.7" width="34.1" height="17.8" rx="0" fill="#9a9892" />
+<rect x="277.3" y="1926.7" width="5.4" height="17.8" rx="0" fill="#55544f" />
+<text x="77.0" y="1969.3" font-size="10" fill="#55544f" font-weight="400" text-anchor="end">17-25</text>
+<rect x="82.0" y="1956.4" width="62.8" height="17.8" rx="0" fill="#9a9892" />
+<rect x="179.7" y="1956.4" width="40.4" height="17.8" rx="0" fill="#9a9892" />
+<rect x="277.3" y="1956.4" width="9.0" height="17.8" rx="0" fill="#55544f" />
+<text x="77.0" y="1999.0" font-size="10" fill="#55544f" font-weight="400" text-anchor="end">26-39</text>
+<rect x="82.0" y="1986.1" width="76.2" height="17.8" rx="0" fill="#9a9892" />
+<rect x="179.7" y="1986.1" width="44.8" height="17.8" rx="0" fill="#9a9892" />
+<rect x="277.3" y="1986.1" width="12.6" height="17.8" rx="0" fill="#55544f" />
+<text x="77.0" y="2028.8" font-size="10" fill="#55544f" font-weight="400" text-anchor="end">40-64</text>
+<rect x="82.0" y="2015.8" width="89.7" height="17.8" rx="0" fill="#9a9892" />
+<rect x="179.7" y="2015.8" width="52.0" height="17.8" rx="0" fill="#9a9892" />
+<rect x="277.3" y="2015.8" width="21.5" height="17.8" rx="0" fill="#55544f" />
+<text x="77.0" y="2058.5" font-size="10" fill="#55544f" font-weight="400" text-anchor="end">65-74</text>
+<rect x="82.0" y="2045.6" width="49.3" height="17.8" rx="0" fill="#9a9892" />
+<rect x="179.7" y="2045.6" width="67.2" height="17.8" rx="0" fill="#9a9892" />
+<rect x="277.3" y="2045.6" width="49.3" height="17.8" rx="0" fill="#55544f" />
+<text x="77.0" y="2088.2" font-size="10" fill="#55544f" font-weight="400" text-anchor="end">75+</text>
+<rect x="82.0" y="2075.3" width="35.9" height="17.8" rx="0" fill="#9a9892" />
+<rect x="179.7" y="2075.3" width="89.7" height="17.8" rx="0" fill="#9a9892" />
+<rect x="277.3" y="2075.3" width="89.7" height="17.8" rx="0" fill="#55544f" />
+<line x1="82.0" y1="1887.0" x2="82.0" y2="2099.1" stroke="#9a9892" stroke-width="1" />
+<text x="36.0" y="2129.1" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">Notes: Working note: all road users, by age band.</text>
+<text x="36.0" y="2144.6" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">Admissions and stay 2016-21; deaths in hospital</text>
+<text x="36.0" y="2160.1" font-size="12" fill="#55544f" font-weight="400" text-anchor="start" font-style="italic">2011-19. Source: BITRE.</text>
+<rect x="36.0" y="2171.6" width="343.0" height="44.0" rx="4" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="50.0" y="2198.6" font-size="13.5" fill="#0a64d6" font-weight="600" text-anchor="start">▸  Show the numbers</text>
+<text x="367.0" y="2197.6" font-size="10" fill="#9a9892" font-weight="500" text-anchor="end" font-family="ui-monospace,Menlo,monospace">details &gt; table</text>
+<rect x="36.0" y="2255.6" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="2272.6" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="2289.6" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="2306.6" width="188.7" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="2331.6" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="2348.6" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<rect x="36.0" y="2365.6" width="343.0" height="7.0" rx="2" fill="#cfcdc7" />
+<text x="207.5" y="2398.6" font-size="11" fill="#9a9892" font-weight="500" text-anchor="middle" font-style="italic">... end of chapter 2; next chapter follows ...</text></g>
+<line x1="396.0" y1="15.0" x2="410.0" y2="15.0" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="15.0" r="2" fill="#444"/>
+<text x="415.0" y="20.0" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Masthead: site name + kicker; 44px</text>
+<text x="415.0" y="35.0" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">bar.</text>
+<line x1="396.0" y1="55.0" x2="410.0" y2="55.0" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="55.0" r="2" fill="#444"/>
+<text x="415.0" y="60.0" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Sticky pill-bar nav scrolls</text>
+<text x="415.0" y="75.0" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">sideways (finger swipe); current</text>
+<text x="415.0" y="90.0" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">chapter is highlighted while</text>
+<text x="415.0" y="105.0" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">reading.</text>
+<line x1="396.0" y1="123.0" x2="410.0" y2="123.0" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="123.0" r="2" fill="#444"/>
+<text x="415.0" y="128.0" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">&lt;section id="ch2"&gt; starts here.</text>
+<line x1="396.0" y1="177.0" x2="410.0" y2="177.0" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="177.0" r="2" fill="#444"/>
+<text x="415.0" y="182.0" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Chapter headline states the finding</text>
+<text x="415.0" y="197.0" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">(heavy sans 25px).</text>
+<line x1="396.0" y1="279.5" x2="410.0" y2="279.5" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="279.5" r="2" fill="#444"/>
+<text x="415.0" y="284.5" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Standfirst: one sentence that sets</text>
+<text x="415.0" y="299.5" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">up the question.</text>
+<line x1="396.0" y1="340.3" x2="410.0" y2="340.3" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="340.3" r="2" fill="#444"/>
+<text x="415.0" y="345.3" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">What-to-know box: 2-3 bullets,</text>
+<text x="415.0" y="360.3" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">numbers bold. A reader who stops</text>
+<text x="415.0" y="375.3" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">here still gets the finding.</text>
+<line x1="396.0" y1="486.3" x2="410.0" y2="486.3" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="486.3" r="2" fill="#444"/>
+<text x="415.0" y="491.3" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Text column = full width minus 16px</text>
+<text x="415.0" y="506.3" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">gutters; serif 17px / 1.55.</text>
+<line x1="396.0" y1="742.3" x2="410.0" y2="742.3" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="742.3" r="2" fill="#444"/>
+<text x="415.0" y="747.3" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Fig title (h3, bold 17px) states</text>
+<text x="415.0" y="762.3" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">the finding.</text>
+<line x1="396.0" y1="796.8" x2="410.0" y2="796.8" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="796.8" r="2" fill="#444"/>
+<text x="415.0" y="801.8" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">"Find yourself" pickers sit with</text>
+<text x="415.0" y="816.8" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">the toggle, above the heatmap they</text>
+<text x="415.0" y="831.8" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">highlight.</text>
+<line x1="396.0" y1="1012.8" x2="410.0" y2="1012.8" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="1012.8" r="2" fill="#444"/>
+<text x="415.0" y="1017.8" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Heatmap: road user by age; cell</text>
+<text x="415.0" y="1032.8" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">tint = % change. Clicking a cell</text>
+<text x="415.0" y="1047.8" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">opens its 2011-21 line below.</text>
+<line x1="396.0" y1="1442.8" x2="410.0" y2="1442.8" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="1442.8" r="2" fill="#444"/>
+<text x="415.0" y="1447.8" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Notes line directly under the</text>
+<text x="415.0" y="1462.8" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">chart: caveat + source + period.</text>
+<line x1="396.0" y1="1497.3" x2="410.0" y2="1497.3" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="1497.3" r="2" fill="#444"/>
+<text x="415.0" y="1502.3" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Every figure has a data table in</text>
+<text x="415.0" y="1517.3" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">&lt;details&gt; as a text alternative.</text>
+<line x1="396.0" y1="1854.0" x2="410.0" y2="1854.0" stroke="#444" stroke-width="1" stroke-dasharray="2 2" />
+<circle cx="410" cy="1854.0" r="2" fill="#444"/>
+<text x="415.0" y="1859.0" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">Three panels share one age axis so</text>
+<text x="415.0" y="1874.0" font-size="12" fill="#444" font-weight="500" text-anchor="start" font-style="italic">the eye reads across.</text><text x="415" y="2446.55" font-size="11" fill="#6b7280" font-style="italic">Low-fidelity wireframe: chart shapes are illustrative, not data.</text></svg>

@@ -1,0 +1,90 @@
+/* base.css (orchestrator-owned): reset, typography, focus rings, reduced motion. */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-padding-top: calc(var(--nav-h) + 16px); /* focused elements are never hidden under the sticky chapter nav (WCAG 2.4.11) */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  background: var(--paper);
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  overflow-wrap: break-word;
+  font-kerning: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  margin: 0;
+  text-wrap: balance;
+}
+
+p { margin: 0 0 1em; }
+a { color: var(--fall); text-underline-offset: 0.18em; }
+a:hover { text-decoration-thickness: 2px; }
+strong { font-weight: 700; }
+img, svg { max-width: 100%; }
+ul { margin: 0 0 1em; padding-left: 1.2em; }
+li { margin: 0 0 0.4em; }
+
+/* numbers filled from the data (see js/facts.js) */
+[data-fill] { font-variant-numeric: tabular-nums lining-nums; }
+
+/* focus ring: visible everywhere, never removed */
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+:focus:not(:focus-visible) { outline: none; }
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--gutter);
+  top: -100px;
+  z-index: 100;
+  background: var(--ink);
+  color: var(--paper);
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+  padding: 0 14px;
+  font-family: var(--font-sans);
+  font-size: var(--fs-ui);
+}
+.skip-link:focus { top: 8px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

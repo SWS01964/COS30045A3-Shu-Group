@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="1052" viewBox="0 0 440 1052" font-family="-apple-system,'Helvetica Neue',Helvetica,Arial,sans-serif" role="img" aria-label="Storyboard frame 6: Ch4 Switch road user"><title>Storyboard frame 6: Ch4 Switch road user</title><rect width="440" height="1052" fill="#fff"/><clipPath id="ph6"><rect x="0" y="0" width="400" height="760"/></clipPath><g transform="translate(20,20)"><rect width="400" height="760" fill="#faf9f6" stroke="#9a9892" stroke-width="1.5" rx="18"/><g clip-path="url(#ph6)"><rect x="0" y="0" width="400" height="40" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="14" y="26" font-size="15" fill="#222" font-weight="800" text-anchor="start" >Beyond the Road Toll</text>
+<text x="386" y="25" font-size="10" fill="#6b7280" font-weight="700" text-anchor="end" letter-spacing="1">DATA INVESTIGATION</text>
+<rect x="0" y="40" width="400" height="44" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<rect x="10" y="48" width="99" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="59.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >1 Road toll</text>
+<rect x="116" y="48" width="71" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="151.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >2 Older</text>
+<rect x="194" y="48" width="92" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="240.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >3 Severity</text>
+<rect x="293" y="48" width="92" height="28" rx="14" fill="#0a64d6" stroke="#0a64d6" stroke-width="1.5" />
+<text x="339.0" y="67" font-size="12" fill="#fff" font-weight="600" text-anchor="middle" >4 Lockdown</text>
+<rect x="392" y="48" width="78" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="431.0" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >5 Equity</text>
+<rect x="477" y="48" width="71" height="28" rx="14" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="512.5" y="67" font-size="12" fill="#0a64d6" font-weight="600" text-anchor="middle" >Methods</text>
+<text x="14" y="112" font-size="11" fill="#6b7280" font-weight="800" text-anchor="start" letter-spacing="2">CHAPTER 4</text>
+<text x="14" y="140" font-size="21" fill="#222" font-weight="800" text-anchor="start" >In the month Australia locked</text>
+<text x="14" y="165" font-size="21" fill="#222" font-weight="800" text-anchor="start" >down, crash admissions fell by</text>
+<text x="14" y="190" font-size="21" fill="#222" font-weight="800" text-anchor="start" >a third. Cyclist admissions rose.</text>
+<text x="14" y="212" font-size="10" fill="#6b7280" font-weight="400" text-anchor="start" font-family="Menlo,monospace">fig-4a</text>
+<text x="386" y="212" font-size="10" fill="#6b7280" font-weight="400" text-anchor="end" font-family="Menlo,monospace">ch4_monthly.csv</text>
+<rect x="14.0" y="222" width="186.0" height="38" rx="0" fill="#fff" stroke="#0a64d6" stroke-width="1.5" />
+<text x="107.0" y="246" font-size="12" fill="#0a64d6" font-weight="700" text-anchor="middle" >All road users</text>
+<rect x="200.0" y="222" width="186.0" height="38" rx="0" fill="#0a64d6" stroke="#0a64d6" stroke-width="1.5" />
+<text x="293.0" y="246" font-size="12" fill="#fff" font-weight="700" text-anchor="middle" >Cyclists</text>
+<circle cx="300" cy="241" r="22" fill="#e8590c" fill-opacity="0.18" stroke="#e8590c" stroke-width="2" stroke-dasharray="4 3"/>
+<circle cx="300" cy="241" r="9" fill="#e8590c"/>
+<path d="M304,245 L316,271 L322,265 L316,261 L328,257 L308,243 Z" fill="#fff" stroke="#e8590c" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="274" y="213" font-size="11" fill="#e8590c" font-weight="800" text-anchor="start" >tap</text>
+<text x="14" y="282" font-size="12" fill="#222" font-weight="800" text-anchor="start" >Cyclists: every month from April above the previous five years</text>
+<rect x="14" y="296" width="372" height="270" rx="0" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<path d="M50,470 L100,468 L150,462 L200,452 L250,448 L300,455 L350,462 L350,490 L300,492 L250,495 L200,492 L150,496 L100,498 L50,498 Z" fill="#e0ded8" stroke="#e0ded8" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="60" y="516" font-size="10" fill="#55544f" font-weight="500" text-anchor="start" >grey band = 2015-19 range</text>
+<path d="M50,485 L100,483 L150,480 L200,472 L250,470 L300,474 L350,478" fill="none" stroke="#cfcdc7" stroke-width="2" stroke-dasharray="5 4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="354" y="470" font-size="10" fill="#55544f" font-weight="600" text-anchor="start" >2019</text>
+<path d="M50,482 L100,480 L150,470 L200,425 L250,395 L300,380 L350,360" fill="none" stroke="#e8590c" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="354" y="356" font-size="11" fill="#e8590c" font-weight="800" text-anchor="end" >2020</text>
+<line x1="200" y1="330" x2="200" y2="425" stroke="#55544f" stroke-width="1" stroke-dasharray="2 3" />
+<rect x="112" y="326" width="136" height="36" rx="3" fill="#fff" stroke="#55544f" stroke-width="1" />
+<text x="180" y="342" font-size="10.5" fill="#222" font-weight="700" text-anchor="middle" >June: 682, up from</text>
+<text x="180" y="356" font-size="10.5" fill="#222" font-weight="700" text-anchor="middle" >453 in June 2019</text>
+<text x="24" y="556" font-size="10" fill="#6b7280" font-weight="400" text-anchor="start" >Jan</text>
+<text x="376" y="556" font-size="10" fill="#6b7280" font-weight="400" text-anchor="end" >Dec</text>
+<text x="14" y="590" font-size="10.5" fill="#6b7280" font-weight="400" text-anchor="start" >The y-axis rescales between views, and the switch says so.</text>
+<rect x="14" y="606" width="372" height="40" rx="4" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<text x="26" y="630" font-size="12" fill="#0a64d6" font-weight="700" text-anchor="start" >&gt; Show the numbers</text>
+<rect x="60" y="672" width="270" height="32" rx="12" fill="#fff" stroke="#e8590c" stroke-width="2" />
+<circle cx="40" cy="656" r="4" fill="#fff" stroke="#e8590c" stroke-width="2"/><circle cx="60.0" cy="664.0" r="6" fill="#fff" stroke="#e8590c" stroke-width="2"/>
+<text x="195.0" y="694" font-size="13" fill="#e8590c" font-weight="700" text-anchor="middle" font-style="italic">"That was me in 2020."</text>
+</g><rect width="400" height="760" fill="none" stroke="#9a9892" stroke-width="3" rx="18"/></g>
+<rect x="20" y="800" width="400" height="232" rx="6" fill="#fff" stroke="#cfcdc7" stroke-width="1" />
+<rect x="20" y="800" width="400" height="30" rx="6" fill="#222" stroke="none" stroke-width="1" />
+<rect x="20" y="820" width="400" height="10" rx="0" fill="#222" stroke="none" stroke-width="1" />
+<text x="34" y="821" font-size="12" fill="#fff" font-weight="800" text-anchor="start" letter-spacing="0.5">FRAME 6  |  Ch4 Switch road user</text>
+<text x="34" y="852" font-size="9" fill="#e8590c" font-weight="800" text-anchor="start" letter-spacing="1">USER ACTION</text>
+<text x="150" y="852" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Switches All road users to Cyclists in the</text>
+<text x="150" y="867" font-size="12" fill="#222" font-weight="400" text-anchor="start" >fig-4a view switch.</text>
+<text x="34" y="899" font-size="9" fill="#0a64d6" font-weight="800" text-anchor="start" letter-spacing="1">SYSTEM RESPONSE</text>
+<text x="150" y="899" font-size="12" fill="#222" font-weight="400" text-anchor="start" >The y-axis rescales; the 2020 line climbs</text>
+<text x="150" y="914" font-size="12" fill="#222" font-weight="400" text-anchor="start" >above the grey 2015-19 band and an</text>
+<text x="150" y="929" font-size="12" fill="#222" font-weight="400" text-anchor="start" >annotation marks June (682 vs 453).</text>
+<text x="34" y="961" font-size="9" fill="#222" font-weight="800" text-anchor="start" letter-spacing="1">SAM LEARNS</text>
+<text x="150" y="961" font-size="12" fill="#222" font-weight="400" text-anchor="start" >Cyclist admissions rose in 2020 while</text>
+<text x="150" y="976" font-size="12" fill="#222" font-weight="400" text-anchor="start" >everything else fell: Sam's first year of</text>
+<text x="150" y="991" font-size="12" fill="#222" font-weight="400" text-anchor="start" >riding was a high-risk one for riders.</text>
+</svg>
