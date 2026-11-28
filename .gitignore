@@ -12,6 +12,12 @@ __pycache__/
 /CLAUDE_CONTEXT/
 /presentation/
 /Datas/
-/data/supplementary/
+/data/supplementary/*
+!/data/supplementary/SOURCES.md
+!/data/supplementary/raw/
+/data/supplementary/raw/*
+# ABS files are CC BY 4.0 (verified); ARDD and BITRE raw stay local until their licences are confirmed
+!/data/supplementary/raw/ABS_ERP_Q_AUS_persons_2011Q2-2021Q2.csv
+!/data/supplementary/raw/abs_first_nations_population.csv
 /BeyondTheRoadToll_DataPrep_v5/
 /Example Workflows/
