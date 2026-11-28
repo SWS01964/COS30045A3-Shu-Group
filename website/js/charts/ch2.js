@@ -1,178 +1,191 @@
-/* ch2.js: Chapter 2 figures (fig-2a heatmap + 2011-21 line, fig-2b three aligned panels).
-   OWNED BY THE CHAPTER 2 AGENT. Interface: Charts['fig-x'] = { init(el, data), update(state) }.
-   Also registers this chapter's data-fill keys (c2_*) on window.Facts at script load. */
+/* ch2.js: Chapter 2 board, "Road injury is getting older". OWNED BY THE CHAPTER 2 AGENT.
+   Two linked panels share one state { roadUser, age, mode } through Viz.bus:
+     A  #ch2-a  heatmap, road user x age band, % change on 3-year averages (Counts or Per person),
+                low counts hatched. Click, tap or arrow keys + Enter select a cell.
+     B  #ch2-b  yearly line 2011-2021 (counts) for the selected cell, both 3-year windows shaded
+                with their averages (per 100,000 people in Per person mode).
+   The Explore bar (two selects, Counts | Per person) and the chip stay in sync.
+   Data: data.ch2_age_roaduser. Every number is read from the CSV at runtime.
+   The prose keys (cyc_65_74, c2_cyc65_2011, ...) are registered in facts.js. */
 (function () {
   'use strict';
   window.Charts = window.Charts || {};
 
-  var MINUS = '−', EN = '–';
-
-  /* ------------------------------------------------------------------ facts */
-  var dp = Viz.fmt.dp;                                              /* true minus, thousands commas */
-  function pctMag(n, d) { return Viz.fmt.pct(Math.abs(n), d); }
-  var find = Viz.find;
-  function c2(d, ru, age) { return find(d.ch2_age_roaduser, { road_user: ru, age_group: age }); }
-  function sevAll(d, cat) { return find(d.severity, { view: 'age', road_user: 'All road users', category: cat }); }
-  function popGrowth(r) { return (r.pop_2019_21 / r.pop_2011_13 - 1) * 100; }
-
-  if (window.Facts && Facts.register) {
-    var reg = Facts.register;
-    reg('c2_cyc65_a0', function (d) { return dp(c2(d, 'Pedal cyclist', '65-74').avg_2011_13, 0); });   /* 281 */
-    reg('c2_cyc65_a1', function (d) { return dp(c2(d, 'Pedal cyclist', '65-74').avg_2019_21, 0); });   /* 669 */
-    reg('c2_cyc75_a0', function (d) { return dp(c2(d, 'Pedal cyclist', '75+').avg_2011_13, 0); });     /* 99 */
-    reg('c2_cyc75_a1', function (d) { return dp(c2(d, 'Pedal cyclist', '75+').avg_2019_21, 0); });     /* 239 */
-    reg('c2_cyc4064', function (d) { return pctMag(c2(d, 'Pedal cyclist', '40-64').pct_change_3yr); }); /* 45% */
-    reg('c2_moto65', function (d) { return pctMag(c2(d, 'Motorcyclist', '65-74').pct_change_3yr); });   /* 119% */
-    reg('c2_moto75', function (d) { return pctMag(c2(d, 'Motorcyclist', '75+').pct_change_3yr); });     /* 105% */
-    reg('c2_cd65', function (d) { return pctMag(c2(d, 'Car driver', '65-74').pct_change_3yr); });         /* 31% */
-    reg('c2_cd75', function (d) { return pctMag(c2(d, 'Car driver', '75+').pct_change_3yr); });           /* 35% */
-    reg('c2_pop65', function (d) { return pctMag(popGrowth(c2(d, 'Pedal cyclist', '65-74'))); });       /* 33% */
-    reg('c2_pop75', function (d) { return pctMag(popGrowth(c2(d, 'Pedal cyclist', '75+'))); });         /* 26% */
-    reg('c2_75_stay', function (d) { return dp(sevAll(d, '75+').avg_stay, 1); });                      /* 11.1 */
-    reg('c2_75_died', function (d) { return dp(sevAll(d, '75+').died_per_1000, 1); });                 /* 28.1 */
-    reg('c2_all_stay', function (d) { return dp(sevAll(d, 'All ages').avg_stay, 1); });                /* 5.2 */
-    reg('c2_all_died', function (d) { return dp(sevAll(d, 'All ages').died_per_1000, 1); });           /* 6.1 */
-  }
-
-  /* ---------------------------------------------------------------- helpers */
   var fmt = Viz.fmt;
+  var EN = '–', MINUS = '−', NB = '⁠';
   var AGES = Viz.AGE_BANDS;
   var ROWS = ['Pedestrian', 'Pedal cyclist', 'Motorcyclist', 'Car driver', 'Car passenger'];
   var PLURAL = { 'Pedestrian': 'Pedestrians', 'Pedal cyclist': 'Cyclists', 'Motorcyclist': 'Motorcyclists',
     'Car driver': 'Car drivers', 'Car passenger': 'Car passengers' };
+  var LOWER = { 'Pedestrian': 'pedestrians', 'Pedal cyclist': 'cyclists', 'Motorcyclist': 'motorcyclists',
+    'Car driver': 'car drivers', 'Car passenger': 'car passengers' };
   var SHORT = { 'Pedestrian': 'Pedestrian', 'Pedal cyclist': 'Cyclist', 'Motorcyclist': 'Motorcyclist',
     'Car driver': 'Driver', 'Car passenger': 'Passenger' };
-  var CAP_LO = -50, CAP_HI = 100; /* colour stops here; bigger changes are printed, not darker */
+  var YEARS = d3.range(2011, 2022);
+  var CAP_LO = -50, CAP_HI = 100;   /* colour stops here; bigger changes are printed, not drawn darker */
 
-  function sp(v) { return fmt.minus(fmt.signedPct(v, 0)); }       /* "+138%" / "−28%" */
-  function el(tag, cls) { var e = document.createElement(tag); if (cls) e.className = cls; return e; }
+  function sp(v) { return fmt.minus(fmt.signedPct(v, 0)); }                 /* "+138%" / "−28%" */
+  function mk(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+  function ageLabel(a) { return a === '75+' ? '75+' : fmt.age(a); }
+  function ageWords(a) { return a === '75+' ? 'aged 75 and over' : 'aged ' + fmt.age(a); }
   function lum(c) {
     var k = d3.rgb(c), f = function (v) { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); };
     return 0.2126 * f(k.r) + 0.7152 * f(k.g) + 0.0722 * f(k.b);
   }
   function contrast(a, b) { var x = lum(a), y = lum(b); return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05); }
-  function ageLabel(a) { return a === '75+' ? '75+' : fmt.age(a); }
 
-  /* ------------------------------------------------------------------ fig-2a */
-  window.Charts['fig-2a'] = {
-    init: function (fig, data) {
-      var host = fig.querySelector('.fig-chart');
-      var lineWrap = fig.querySelector('.c2a-linewrap');
-      var lineHost = fig.querySelector('.c2a-line');
-      var lineTitle = fig.querySelector('.c2a-line-title');
-      var sentenceEl = fig.querySelector('.c2-sentence');
-      var selRU = fig.querySelector('#sel-roaduser');
-      var selAge = fig.querySelector('#sel-age');
-      var YEARS = d3.range(2011, 2022);
-
-      /* ---- cell model ---- */
-      var cells = {};
+  window.Charts['ch2'] = {
+    init: function (board, data) {
+      /* ---------------------------------------------------- cell model */
+      var cells = {}, cellList = [];
       data.ch2_age_roaduser.forEach(function (r) {
         var a0 = r.avg_2011_13, a1 = r.avg_2019_21;
-        cells[r.road_user + '|' + r.age_group] = {
+        var c = {
           ru: r.road_user, age: r.age_group, a0: a0, a1: a1,
           pct: r.pct_change_3yr,
           pp: ((a1 / r.pop_2019_21) / (a0 / r.pop_2011_13) - 1) * 100,
+          r0: a0 / r.pop_2011_13 * 1e5, r1: a1 / r.pop_2019_21 * 1e5,
           low: r.low_count === true,
-          y11: r[2011], y21: r[2021],
           series: YEARS.map(function (y) { return r[y]; })
         };
+        cells[r.road_user + '|' + r.age_group] = c;
+        cellList.push(c);
       });
-      var cellList = Object.keys(cells).map(function (k) { return cells[k]; });
       function cellAt(ru, age) { return cells[ru + '|' + age]; }
 
-      var ready = false; /* announce only user-driven changes, not the first paint */
-      var state = { mode: 'counts', ru: 'Pedal cyclist', age: '65-74' };
-      var C = {}, g = null, lastW = 0, geom = null, cellEls = [];
+      var bus = Viz.bus({ roadUser: 'Pedal cyclist', age: '65-74', mode: 'counts' });
 
-      function val(c) { return state.mode === 'counts' ? c.pct : c.pp; }
+      var panelA = board.querySelector('#ch2-a'), panelB = board.querySelector('#ch2-b');
+      var chartA = panelA.querySelector('.panel-chart'), chartB = panelB.querySelector('.panel-chart');
+      var titleB = panelB.querySelector('.panel-title');
+      var subA = panelA.querySelector('.panel-sub'), subB = panelB.querySelector('.panel-sub');
+      var chip = board.querySelector('output.board-chip');
+      var tablesHost = board.querySelector('.board-tables');
+
+      var sentenceEl = mk('p', 'c2-sentence');
+      panelA.insertBefore(sentenceEl, chartA);
+      var lowNote = mk('p', 'c2-lownote', 'Few cases (average under 30 a year): read with care');
+      lowNote.hidden = true;
+      panelB.appendChild(lowNote);
+
+      /* ------------------------------------------------------ controls */
+      var ctl = board.querySelector('.explore-controls');
+      ctl.innerHTML = '';
+      function field(labelText, id, options, cur) {
+        var wrap = mk('div', 'ctl-field');
+        var lab = mk('label', 'ctl-label', labelText); lab.setAttribute('for', id);
+        var sel = mk('select'); sel.id = id;
+        options.forEach(function (o) { var op = mk('option', null, o[1]); op.value = o[0]; sel.appendChild(op); });
+        sel.value = cur;
+        wrap.appendChild(lab); wrap.appendChild(sel);
+        ctl.appendChild(wrap);
+        return sel;
+      }
+      var st0 = bus.get();
+      var selRU = field('I travel by', 'c2-roaduser', ROWS.map(function (r) { return [r, r]; }), st0.roadUser);
+      var selAge = field('I’m aged', 'c2-age', AGES.map(function (a) { return [a, ageLabel(a)]; }), st0.age);
+      var modeWrap = mk('div', 'ctl-field');
+      var modeLab = mk('span', 'ctl-label', 'Show'); modeLab.id = 'c2-mode-label';
+      var segEl = mk('div', 'seg c2-seg'); segEl.setAttribute('role', 'group'); segEl.setAttribute('aria-labelledby', 'c2-mode-label');
+      [['counts', 'Counts'], ['pp', 'Per person']].forEach(function (m) {
+        var b = mk('button', null, m[1]); b.type = 'button'; b.setAttribute('data-value', m[0]);
+        b.setAttribute('aria-pressed', m[0] === st0.mode ? 'true' : 'false');
+        segEl.appendChild(b);
+      });
+      modeWrap.appendChild(modeLab); modeWrap.appendChild(segEl); ctl.appendChild(modeWrap);
+      var seg = Viz.segmented(segEl, { announce: false, onChange: function (v) { bus.set({ mode: v }, 'controls'); } });
+      selRU.addEventListener('change', function () { bus.set({ roadUser: selRU.value }, 'controls'); });
+      selAge.addEventListener('change', function () { bus.set({ age: selAge.value }, 'controls'); });
+
+      /* ---------------------------------------------------- phrases */
+      function sel() { var s = bus.get(); return cellAt(s.roadUser, s.age); }
+      function who(c) { return PLURAL[c.ru] + ' ' + ageWords(c.age); }
+      function val(c, mode) { return (mode || bus.get().mode) === 'pp' ? c.pp : c.pct; }
+      function sentence(c, mode) {
+        var s = mode === 'pp'
+          ? who(c) + ': ' + sp(c.pp) + ' per person since 2011' + NB + EN + NB + '13 (admissions ' + sp(c.pct) + ')'
+          : who(c) + ': ' + sp(c.pct) + ' since 2011' + NB + EN + NB + '13 (per person ' + sp(c.pp) + ')';
+        return s;
+      }
+      function per100(v) { return fmt.dp(v, 1); }
+
+      /* ================================================================ A */
+      var C = {}, A = null, lastWA = 0;
       function tval(v) { return Math.max(-1, Math.min(1, Math.log(Math.max(1 + v / 100, 1e-4)) / Math.LN2)); }
       function fillFor(v) {
         var t = tval(v);
         return d3.interpolateRgb(C.band, t >= 0 ? C.rise : C.fall)(Math.pow(Math.abs(t), 0.85));
       }
-      /* ink or paper, whichever reads better; mid-tone cells (dark mode) fall back to pure black/white so text stays >= 4.5:1 */
+      /* ink or paper, whichever reads better; mid-tones fall back to pure black/white so text stays >= 4.5:1 */
       function inkFor(fill) {
         var best = contrast(fill, C.ink) >= contrast(fill, C.paper) ? C.ink : C.paper;
         if (contrast(fill, best) >= 4.5) return best;
         return contrast(fill, '#000000') >= contrast(fill, '#ffffff') ? '#000000' : '#ffffff';
       }
-
-      /* ---- tooltip ---- */
-      function tipHtml(c) {
-        var h = '<strong>' + PLURAL[c.ru] + ' aged ' + ageLabel(c.age) + '</strong><br>' +
-          '2011' + EN + '13 average: ' + fmt.dp1(c.a0) + ' a year<br>' +
-          '2019' + EN + '21 average: ' + fmt.dp1(c.a1) + ' a year<br>' +
-          'Change: ' + sp(c.pct) + ' &middot; per person ' + sp(c.pp) + '<br>' +
-          '2011: ' + fmt.int(c.y11) + ' &middot; 2021: ' + fmt.int(c.y21);
+      function tipA(c) {
+        var h = '<strong>' + who(c) + '</strong><br>' +
+          '2011' + EN + '13 average: ' + fmt.dp(c.a0, 1) + ' a year<br>' +
+          '2019' + EN + '21 average: ' + fmt.dp(c.a1, 1) + ' a year<br>' +
+          'Change: ' + sp(c.pct) + ' · per person ' + sp(c.pp) + '<br>' +
+          '2011: ' + fmt.int(c.series[0]) + ' · 2021: ' + fmt.int(c.series[10]) +
+          '<br><em>Select to show it in chart B</em>';
         if (c.low) h += '<br><em>Few cases (under 30 a year): treat with care.</em>';
         return h;
       }
-      function cellAria(c) {
-        return PLURAL[c.ru] + ' aged ' + ageLabel(c.age) + ': ' + sp(val(c)) +
-          (state.mode === 'counts' ? ' in admissions' : ' per person') + (c.low ? ', few cases' : '');
+      function cellAria(c, mode) {
+        return who(c) + ': ' + sp(val(c, mode)) + (mode === 'pp' ? ' per person' : ' in admissions') + (c.low ? ', few cases' : '');
       }
 
-      /* ---- heatmap ---- */
-      function drawHeat(w) {
+      function buildA(w) {
         C = Viz.colors();
-        lastW = w;
+        lastWA = w;
         var narrow = w < 520;
-        geom = { narrow: narrow, labelW: narrow ? 68 : 128, headH: narrow ? 24 : 30, cellH: narrow ? 40 : 46 };
+        var geom = { narrow: narrow, labelW: narrow ? 66 : 124, headH: narrow ? 42 : 30, cellH: narrow ? 42 : 48 };
         geom.cellW = (w - geom.labelW) / AGES.length;
         var H = geom.headH + ROWS.length * geom.cellH + 4;
-
-        var svg = d3.select(host).selectAll('svg.c2-heat').data([0]).join('svg')
-          .attr('class', 'c2-heat').attr('width', w).attr('height', H).attr('viewBox', '0 0 ' + w + ' ' + H);
-        svg.selectAll('*').remove();
-
+        var svg = Viz.svg(chartA, w, H, { cls: 'c2-heat', reuse: true, clear: true });
         var defs = svg.append('defs');
         var pat = defs.append('pattern').attr('id', 'c2-hatch').attr('width', 6).attr('height', 6)
           .attr('patternUnits', 'userSpaceOnUse').attr('patternTransform', 'rotate(45)');
-        pat.append('line').attr('x1', 0).attr('y1', 0).attr('x2', 0).attr('y2', 6)
-          .style('stroke', 'var(--ink)').style('stroke-width', 1.4).style('opacity', 0.5);
+        pat.append('line').attr('x1', 0).attr('y1', 0).attr('x2', 0).attr('y2', 6).attr('class', 'c2-hatchline');
 
-        /* column + row labels */
         svg.append('g').attr('class', 'axis c2-cols').selectAll('text').data(AGES).join('text')
           .attr('x', function (a, i) { return geom.labelW + (i + 0.5) * geom.cellW; })
-          .attr('y', geom.headH - 8).attr('text-anchor', 'middle')
-          .style('font-weight', narrow ? 500 : 600).text(ageLabel);
+          .attr('y', function (a, i) { return geom.headH - 9 - (narrow && i % 2 ? 15 : 0); }).attr('text-anchor', 'middle').text(ageLabel);
         svg.append('g').attr('class', 'axis c2-rows').selectAll('text').data(ROWS).join('text')
           .attr('x', geom.labelW - 8).attr('y', function (r, i) { return geom.headH + (i + 0.5) * geom.cellH; })
           .attr('text-anchor', 'end').attr('dominant-baseline', 'central')
-          .style('font-size', '12px')
           .text(function (r) { return narrow ? SHORT[r] : r; });
 
-        /* cells */
-        var layer = svg.append('g').attr('class', 'c2-cells');
-        cellEls = ROWS.map(function () { return []; });
-        var items = [];
+        var items = [], els = ROWS.map(function () { return []; });
         ROWS.forEach(function (ru, ri) {
           AGES.forEach(function (age, ai) { var c = cellAt(ru, age); c.ri = ri; c.ai = ai; items.push(c); });
         });
-        var gs = layer.selectAll('g.c2-cell').data(items).join('g').attr('class', 'c2-cell')
+        var gs = svg.append('g').attr('class', 'c2-cells').selectAll('g.c2-cell').data(items).join('g').attr('class', 'c2-cell')
           .attr('transform', function (c) { return 'translate(' + (geom.labelW + c.ai * geom.cellW) + ',' + (geom.headH + c.ri * geom.cellH) + ')'; })
           .attr('role', 'button').attr('tabindex', -1);
         gs.append('rect').attr('class', 'c2-fill').attr('x', 1).attr('y', 1)
           .attr('width', Math.max(1, geom.cellW - 2)).attr('height', geom.cellH - 2).attr('rx', 2);
         gs.filter(function (c) { return c.low; }).append('rect').attr('class', 'c2-hatch').attr('x', 1).attr('y', 1)
           .attr('width', Math.max(1, geom.cellW - 2)).attr('height', geom.cellH - 2).attr('rx', 2)
-          .attr('fill', 'url(#c2-hatch)').style('pointer-events', 'none');
+          .attr('fill', 'url(#c2-hatch)');
         gs.append('text').attr('class', 'c2-val').attr('x', geom.cellW / 2).attr('y', geom.cellH / 2)
           .attr('text-anchor', 'middle').attr('dominant-baseline', 'central');
-        gs.each(function (c) { cellEls[c.ri][c.ai] = this; });
+        gs.each(function (c) { els[c.ri][c.ai] = this; });
 
-        /* selection + focus markers, drawn above all cells */
-        var top = svg.append('g').attr('class', 'c2-top').style('pointer-events', 'none');
-        top.append('rect').attr('class', 'c2-sel-halo').attr('fill', 'none').style('stroke', 'var(--paper)').style('stroke-width', 6);
-        top.append('rect').attr('class', 'c2-sel').attr('fill', 'none').style('stroke', 'var(--ink)').style('stroke-width', 3);
-        top.append('rect').attr('class', 'c2-focus').attr('fill', 'none').style('stroke', 'var(--focus)')
-          .style('stroke-width', 3).style('stroke-dasharray', '5 3').style('display', 'none');
-        g = { svg: svg, gs: gs, top: top };
+        var top = svg.append('g').attr('class', 'c2-top');
+        top.append('rect').attr('class', 'c2-sel-halo').attr('fill', 'none');
+        top.append('rect').attr('class', 'c2-sel').attr('fill', 'none');
+        top.append('rect').attr('class', 'c2-focus').attr('fill', 'none').style('display', 'none');
+        A = { svg: svg, gs: gs, top: top, geom: geom, els: els, w: w };
 
-        Viz.tooltip.bind(gs, function (c) { return tipHtml(c); }, { roving: false }); /* the heatmap has its own 2-D roving */
-        gs.attr('tabindex', -1);
-        gs.on('click.sel', function (ev, c) { choose(c.ru, c.age); });
+        Viz.tooltip.bind(gs, function (c) { return tipA(c); }, { roving: false });
+        gs.on('click.sel', function (ev, c) { bus.set({ roadUser: c.ru, age: c.age }, 'panel-a'); });
         gs.on('keydown.nav', function (ev, c) { onKey(ev, c); });
         gs.on('focus.mark', function (ev, c) {
           gs.attr('tabindex', -1); d3.select(this).attr('tabindex', 0);
@@ -183,47 +196,39 @@
         paintCells(false);
         paintSelection();
         drawLegend(w);
-        updateAria();
       }
-
       function placeRect(rect, c, inset) {
-        var x = geom.labelW + c.ai * geom.cellW, y = geom.headH + c.ri * geom.cellH;
+        var g = A.geom, x = g.labelW + c.ai * g.cellW, y = g.headH + c.ri * g.cellH;
         return rect.attr('x', x + inset - 1).attr('y', y + inset - 1)
-          .attr('width', geom.cellW - 2 * inset + 2).attr('height', geom.cellH - 2 * inset + 2).attr('rx', 3);
+          .attr('width', g.cellW - 2 * inset + 2).attr('height', g.cellH - 2 * inset + 2).attr('rx', 3);
       }
-
       function paintCells(animate) {
-        if (!g) return;
-        var dur = animate ? Viz.dur(400) : 0;
-        g.gs.each(function (c) {
-          var f = fillFor(val(c)), node = d3.select(this);
-          var r = node.select('rect.c2-fill');
+        if (!A) return;
+        var mode = bus.get().mode, dur = animate ? Viz.dur(400) : 0, narrow = A.geom.narrow;
+        A.gs.each(function (c) {
+          var v = val(c, mode), f = fillFor(v), node = d3.select(this), r = node.select('rect.c2-fill');
           (dur ? r.transition().duration(dur) : r).style('fill', f);
-          node.select('text.c2-val').text(geom.narrow ? sp(val(c)).replace('%', '') : sp(val(c)))
-            .style('fill', inkFor(f)).style('font-weight', 600).style('font-size', '12px')
-            .style('paint-order', c.low ? 'stroke' : null)
-            .style('stroke', c.low ? f : null).style('stroke-width', c.low ? 3 : null)
-            .style('stroke-linejoin', 'round');
-          node.attr('aria-label', cellAria(c));
+          node.select('text.c2-val').text(narrow ? sp(v).replace('%', '') : sp(v))
+            .style('fill', inkFor(f))
+            .style('stroke', c.low ? f : null).style('stroke-width', c.low ? 3 : null);
+          node.attr('aria-label', cellAria(c, mode));
         });
       }
-
       function paintSelection() {
-        if (!g) return;
-        var c = cellAt(state.ru, state.age);
-        placeRect(g.top.select('.c2-sel-halo'), c, 2);
-        placeRect(g.top.select('.c2-sel'), c, 2);
-        g.gs.attr('aria-pressed', function (d) { return d === c ? 'true' : 'false'; });
-        /* roving tabindex rests on the selected cell unless focus is inside the grid */
-        if (!g.svg.node().contains(document.activeElement)) {
-          g.gs.attr('tabindex', -1);
-          d3.select(cellEls[c.ri][c.ai]).attr('tabindex', 0);
+        if (!A) return;
+        var c = sel();
+        placeRect(A.top.select('.c2-sel-halo'), c, 2);
+        placeRect(A.top.select('.c2-sel'), c, 2);
+        A.gs.attr('aria-pressed', function (d) { return d === c ? 'true' : 'false'; });
+        if (!A.svg.node().contains(document.activeElement)) {
+          A.gs.attr('tabindex', -1);
+          d3.select(A.els[c.ri][c.ai]).attr('tabindex', 0);
         }
       }
-
+      /* arrow keys move focus AND the selection; each move sets the state */
       function onKey(ev, c) {
         var ri = c.ri, ai = c.ai, k = ev.key;
-        if (k === 'Enter' || k === ' ' || k === 'Spacebar') { ev.preventDefault(); choose(c.ru, c.age); return; }
+        if (k === 'Enter' || k === ' ' || k === 'Spacebar') { ev.preventDefault(); bus.set({ roadUser: c.ru, age: c.age }, 'panel-a'); return; }
         if (k === 'ArrowRight') ai = Math.min(AGES.length - 1, ai + 1);
         else if (k === 'ArrowLeft') ai = Math.max(0, ai - 1);
         else if (k === 'ArrowDown') ri = Math.min(ROWS.length - 1, ri + 1);
@@ -232,281 +237,210 @@
         else if (k === 'End') ai = AGES.length - 1;
         else return;
         ev.preventDefault();
-        cellEls[ri][ai].focus();
+        var n = cellAt(ROWS[ri], AGES[ai]);
+        A.els[ri][ai].focus();
+        bus.set({ roadUser: n.ru, age: n.age }, 'panel-a');
       }
 
-      /* ---- legend (HTML + one small svg) ---- */
       function drawLegend(w) {
-        var lg = host.querySelector('.c2a-legend');
-        if (!lg) { lg = el('div', 'c2a-legend'); host.appendChild(lg); }
+        var lg = chartA.querySelector('.c2-legend');
+        if (!lg) { lg = mk('div', 'c2-legend'); chartA.appendChild(lg); }
         lg.innerHTML = '';
-        var title = el('p', 'c2a-legend-title');
-        title.textContent = state.mode === 'counts'
-          ? 'Colour and numbers = % change in admissions, 3\u2011year averages'
-          : 'Colour and numbers = % change per person (admissions ÷ ABS population)';
-        lg.appendChild(title);
-        var barW = Math.min(260, w - 8), pos = function (pct) { return (tval(pct) + 1) / 2 * barW; };
-        var svg = d3.select(lg).append('svg').attr('class', 'c2a-scale').attr('width', barW + 8).attr('height', 46)
-          .attr('viewBox', '0 0 ' + (barW + 8) + ' 46');
+        var mode = bus.get().mode;
+        lg.appendChild(mk('p', 'c2-legend-title', mode === 'pp'
+          ? 'Colour and numbers: % change per person (admissions ÷ ABS population)'
+          : 'Colour and numbers: % change in admissions, 3‑year averages'));
+        var barW = Math.min(280, w - 8), pos = function (pct) { return (tval(pct) + 1) / 2 * barW; };
+        var svg = d3.select(lg).append('svg').attr('class', 'c2-scale').attr('aria-hidden', 'true').attr('focusable', 'false')
+          .attr('width', barW + 8).attr('height', 40).attr('viewBox', '0 0 ' + (barW + 8) + ' 40');
         var grad = svg.append('defs').append('linearGradient').attr('id', 'c2-grad');
         d3.range(0, 1.001, 0.1).forEach(function (u) {
           grad.append('stop').attr('offset', u).attr('stop-color', fillFor((Math.pow(2, u * 2 - 1) - 1) * 100));
         });
         var s = svg.append('g').attr('transform', 'translate(4,2)');
-        s.append('rect').attr('width', barW).attr('height', 12).attr('rx', 2).attr('fill', 'url(#c2-grad)')
-          .style('stroke', 'var(--muted)').style('stroke-width', 1);
-        [-50, -25, 0, 25, 100].forEach(function (p) {
-          s.append('line').attr('x1', pos(p)).attr('x2', pos(p)).attr('y1', 12).attr('y2', 17).style('stroke', 'var(--muted)');
-          s.append('text').attr('x', pos(p)).attr('y', 31).attr('text-anchor', p === -50 ? 'start' : p === 100 ? 'end' : 'middle')
-            .style('font-size', '12px').style('fill', 'var(--muted)')
+        s.append('rect').attr('class', 'c2-bar').attr('width', barW).attr('height', 12).attr('rx', 2).attr('fill', 'url(#c2-grad)');
+        [CAP_LO, -25, 0, 25, CAP_HI].forEach(function (p) {
+          s.append('line').attr('class', 'c2-tick').attr('x1', pos(p)).attr('x2', pos(p)).attr('y1', 12).attr('y2', 17);
+          s.append('text').attr('class', 'c2-ticklab').attr('x', pos(p)).attr('y', 31)
+            .attr('text-anchor', p === CAP_LO ? 'start' : p === CAP_HI ? 'end' : 'middle')
             .text(p === 0 ? '0%' : (p < 0 ? MINUS : '+') + Math.abs(p) + '%');
         });
-        var note = el('p', 'c2a-legend-note');
-        note.innerHTML = 'Colours stop at ' + MINUS + '50% and +100%: bigger changes are printed in the cell but not drawn darker. ' +
-          '<span class="c2a-swatch" aria-hidden="true"></span> Hatched = few cases (average under 30 a year).';
+        var note = mk('p', 'c2-legend-note');
+        note.innerHTML = 'Colours stop at ' + MINUS + '50% and +100%: bigger changes are printed but not drawn darker. ' +
+          '<span class="c2-swatch" aria-hidden="true"></span> Hatched = few cases (average under 30 a year).';
         lg.appendChild(note);
       }
 
-      /* ---- the 2011-21 line for the selected cell ---- */
-      function drawLine(w) {
-        var c = cellAt(state.ru, state.age);
-        var narrow = w < 520;
-        var m = { l: narrow ? 38 : 46, r: 12, t: 40, b: 26 };
-        var h = narrow ? 200 : 230, iw = w - m.l - m.r, ih = h - m.t - m.b;
-        var max = d3.max(c.series), yMax = Math.max(1, max) * 1.12;
-        var x = d3.scaleLinear().domain([2011, 2021]).range([0, iw]);
-        var y = d3.scaleLinear().domain([0, yMax]).nice(4).range([ih, 0]);
-        var step = iw / 10;
-
-        lineTitle.textContent = PLURAL[c.ru] + ' aged ' + ageLabel(c.age) + ': admissions a year, 2011\u2060' + EN + '\u20602021';
-
-        var svg = d3.select(lineHost).selectAll('svg').data([0]).join('svg')
-          .attr('width', w).attr('height', h).attr('viewBox', '0 0 ' + w + ' ' + h);
-        svg.selectAll('*').remove();
-        var gg = svg.append('g').attr('transform', 'translate(' + m.l + ',' + m.t + ')');
-
-        /* gridlines + y axis */
-        var ticks = y.ticks(4);
-        gg.append('g').attr('class', 'axis').selectAll('g').data(ticks).join('g')
-          .attr('transform', function (t) { return 'translate(0,' + y(t) + ')'; })
-          .each(function (t) {
-            var n = d3.select(this);
-            n.append('line').attr('x2', iw).style('stroke', 'var(--rule)').style('stroke-width', t === 0 ? 1.5 : 1);
-            n.append('text').attr('x', -8).attr('dy', '0.32em').attr('text-anchor', 'end').text(fmt.int(t));
-          });
-        /* x axis */
-        gg.append('g').attr('class', 'axis').selectAll('text').data(YEARS.filter(function (yr) { return !narrow || yr % 2 === 1; }))
-          .join('text').attr('x', x).attr('y', ih + 18).attr('text-anchor', 'middle').text(function (yr) { return yr; });
-
-        /* the two 3-year windows, shaded, with their averages */
-        [{ a: 2011, b: 2013, avg: c.a0 }, { a: 2019, b: 2021, avg: c.a1 }].forEach(function (b) {
-          var x0 = x(b.a) - step / 2, x1 = x(b.b) + step / 2;
-          x0 = Math.max(x0, -2); x1 = Math.min(x1, iw + 4);
-          gg.append('rect').attr('x', x0).attr('y', -m.t + 6).attr('width', x1 - x0).attr('height', ih + m.t - 6)
-            .style('fill', 'var(--band)').style('opacity', 0.75);
-          gg.append('text').attr('x', (x0 + x1) / 2).attr('y', -m.t + 20).attr('text-anchor', 'middle')
-            .style('font-size', '12px').style('font-weight', 700).text(b.a + EN + String(b.b).slice(2));
-          gg.append('text').attr('x', (x0 + x1) / 2).attr('y', -m.t + 34).attr('text-anchor', 'middle')
-            .style('font-size', '12px').text('avg ' + fmt.int(b.avg));
-          gg.append('line').attr('x1', x0).attr('x2', x1).attr('y1', y(b.avg)).attr('y2', y(b.avg))
-            .style('stroke', 'var(--ink)').style('stroke-width', 1.5).style('stroke-dasharray', '4 3');
-        });
-
-        /* the series */
-        var pts = YEARS.map(function (yr, i) { return [x(yr), y(c.series[i])]; });
-        gg.append('path').attr('d', d3.line()(pts)).attr('fill', 'none')
-          .style('stroke', 'var(--ink)').style('stroke-width', 2.5).style('stroke-linejoin', 'round');
-        gg.selectAll('circle').data(pts).join('circle').attr('cx', function (p) { return p[0]; }).attr('cy', function (p) { return p[1]; })
-          .attr('r', 3.2).style('fill', 'var(--paper)').style('stroke', 'var(--ink)').style('stroke-width', 2);
-        /* end labels: first, last */
-        [[0, 'start'], [YEARS.length - 1, 'end']].forEach(function (e) {
-          var i = e[0], p = pts[i];
-          gg.append('text').attr('x', p[0]).attr('y', p[1] - 9).attr('text-anchor', e[1])
-            .style('font-weight', 700).style('font-size', '12px').style('paint-order', 'stroke')
-            .style('stroke', 'var(--paper)').style('stroke-width', 3).text(fmt.int(c.series[i]));
-        });
-
-        lineHost.setAttribute('aria-label',
-          PLURAL[c.ru] + ' aged ' + ageLabel(c.age) + ': admissions a year ' +
-          (c.series[10] > c.series[0] ? 'rose' : c.series[10] < c.series[0] ? 'fell' : 'were level') + ' from ' + fmt.int(c.series[0]) + ' in 2011 to ' +
-          fmt.int(c.series[10]) + ' in 2021. The 2011' + EN + '13 average was ' + fmt.dp1(c.a0) + ' and the 2019' + EN + '21 average ' + fmt.dp1(c.a1) + '.');
-      }
-
-      /* ---- sentence, aria ---- */
-      function paintSentence() {
-        var c = cellAt(state.ru, state.age);
-        var who = PLURAL[c.ru] + ' aged ' + ageLabel(c.age), NB = '\u2060';
-        var s = state.mode === 'counts'
-          ? who + ': ' + sp(c.pct) + ' since 2011' + NB + EN + NB + '13 (per person ' + sp(c.pp) + ')'
-          : who + ': ' + sp(c.pp) + ' per person since 2011' + NB + EN + NB + '13 (admissions ' + sp(c.pct) + ')';
-        if (c.low) s += '. Few cases: under 30 a year, so treat with care';
-        sentenceEl.textContent = s + '.';
-        if (ready) Viz.announce(sentenceEl.textContent);
-      }
-      function updateAria() {
-        var ok = cellList.filter(function (c) { return !c.low; }).sort(function (a, b) { return val(b) - val(a); });
-        var up = ok.slice(0, 3).map(function (c) { return PLURAL[c.ru] + ' ' + ageLabel(c.age) + ' (' + sp(val(c)) + ')'; });
+      function textA() {
+        var mode = bus.get().mode, c = sel();
+        subA.textContent = mode === 'pp'
+          ? '% change in admissions per 100,000 people of that age, 2011–13 to 2019–21'
+          : '% change in yearly admissions, 2011–13 to 2019–21 averages';
+        sentenceEl.textContent = sentence(c, mode) + (c.low ? '. Few cases: under 30 a year, so treat with care' : '') + '.';
+        var ok = cellList.filter(function (x) { return !x.low; }).sort(function (a, b) { return val(b, mode) - val(a, mode); });
+        var up = ok.slice(0, 3).map(function (x) { return PLURAL[x.ru] + ' ' + ageLabel(x.age) + ' (' + sp(val(x, mode)) + ')'; });
         var dn = ok[ok.length - 1];
-        host.setAttribute('aria-label',
-          'Heatmap of the change in ' + (state.mode === 'counts' ? 'admissions' : 'admissions per person') +
+        chartA.setAttribute('aria-label',
+          'Heatmap of the change in ' + (mode === 'pp' ? 'admissions per person' : 'admissions') +
           ' between 2011' + EN + '13 and 2019' + EN + '21 by road user and age band. Largest rises: ' + up.join(', ') +
-          '. Largest fall: ' + PLURAL[dn.ru] + ' ' + ageLabel(dn.age) + ' (' + sp(val(dn)) + '). ' +
-          sentenceEl.textContent + ' Use the pickers or the cells to choose another group.');
+          '. Largest fall: ' + PLURAL[dn.ru] + ' ' + ageLabel(dn.age) + ' (' + sp(val(dn, mode)) + '). ' +
+          sentenceEl.textContent + ' Use the pickers above, or the arrow keys on the grid, to choose another group.');
       }
 
-      /* ---- state changes ---- */
-      function choose(ru, age) {
-        state.ru = ru; state.age = age;
-        selRU.value = ru; selAge.value = age;
-        paintSelection(); paintSentence(); drawLine(lastW); updateAria();
-      }
-      selRU.value = state.ru; selAge.value = state.age;
-      selRU.addEventListener('change', function () { if (!selRU.value) { selRU.value = state.ru; return; } choose(selRU.value, state.age); });
-      selAge.addEventListener('change', function () { if (!selAge.value) { selAge.value = state.age; return; } choose(state.ru, selAge.value); });
+      /* ================================================================ B */
+      var B = null, lastWB = 0, lastYMax = 0;
 
-      var seg = fig.querySelector('.fig-controls .seg');
-      Viz.segmented(seg, { announce: false, onChange: function (v) { Charts['fig-2a'].update({ mode: v }); } });
+      function buildB(w) {
+        lastWB = w;
+        var narrow = w < 440;
+        var m = { l: narrow ? 52 : 58, r: narrow ? 10 : 14, t: 64, b: 28 };
+        var h = Math.round(Math.max(narrow ? 270 : 300, Math.min(380, w * 0.7)));
+        var iw = w - m.l - m.r, ih = h - m.t - m.b;
+        var x = d3.scaleLinear().domain([2011, 2021]).range([0, iw]);
+        var y = d3.scaleLinear().range([ih, 0]);
+        var svg = Viz.svg(chartB, w, h, { hidden: true });
+        var g = svg.append('g').attr('transform', 'translate(' + m.l + ',' + m.t + ')');
+        B = { w: w, h: h, m: m, iw: iw, ih: ih, x: x, y: y, narrow: narrow, step: iw / 10 };
 
-      this._set = function (st) {
-        if (st.mode && st.mode !== state.mode) {
-          state.mode = st.mode;
-          paintCells(true); drawLegend(lastW); paintSentence(); updateAria();
-        }
-      };
-
-      paintSentence();
-      var resp = Viz.responsive(host, function (w) { drawHeat(w); drawLine(w); });
-      ready = true;
-      Viz.onThemeChange(function () { resp.redraw(); });
-
-      /* ---- "Show the numbers" ---- */
-      var order = [];
-      ROWS.slice().sort(function (a, b) { return Viz.MAIN_ROAD_USERS.indexOf(a) - Viz.MAIN_ROAD_USERS.indexOf(b); })
-        .forEach(function (ru) { AGES.forEach(function (a) { order.push(cellAt(ru, a)); }); });
-      Viz.fillTable(fig.querySelector('.fig-data'), order, [
-        { key: 'ru', label: 'Road user', text: true },
-        { key: 'age', label: 'Age', text: true, format: ageLabel },
-        { key: 'a0', label: 'Avg 2011' + EN + '13', format: fmt.dp1 },
-        { key: 'a1', label: 'Avg 2019' + EN + '21', format: fmt.dp1 },
-        { key: 'pct', label: 'Change', format: function (v) { return fmt.minus(fmt.signedPct(v, 1)); } },
-        { key: 'pp', label: 'Per-person change', format: function (v) { return fmt.minus(fmt.signedPct(v, 1)); } },
-        { key: 'y11', label: '2011', format: fmt.int },
-        { key: 'y21', label: '2021', format: fmt.int },
-        { key: 'low', label: 'Few cases', format: function (v) { return v ? 'yes' : 'no'; } }
-      ], { caption: 'Admissions by road user and age band (change = 2019' + EN + '21 average against 2011' + EN + '13 average).' });
-    },
-    update: function (st) { if (this._set) this._set(st || {}); }
-  };
-
-  /* ------------------------------------------------------------------ fig-2b */
-  window.Charts['fig-2b'] = {
-    init: function (fig, data) {
-      var host = fig.querySelector('.fig-chart');
-      var rows = Viz.where(data.severity, { view: 'age', road_user: 'All road users' })
-        .filter(function (r) { return AGES.indexOf(r.category) >= 0; })
-        .sort(function (a, b) { return AGES.indexOf(a.category) - AGES.indexOf(b.category); });
-      /* pub = the publish flag that must be TRUE before a value is drawn or used for an axis maximum */
-      var PANELS = [
-        { key: 'hosp_1621', title: 'Admissions', narrowTitle: 'Admissions', sub: '2016' + EN + '21', f: fmt.int,
-          fn: function (v) { return v >= 10000 ? Math.round(v / 1000) + 'k' : (v / 1000).toFixed(1) + 'k'; } },
-        { key: 'avg_stay', pub: 'publish_stay', title: 'Average stay (days)', narrowTitle: 'Stay (days)', sub: '2016' + EN + '21', f: fmt.dp1, fn: fmt.dp1 },
-        { key: 'died_per_1000', pub: 'publish_rate', title: 'Died per 1,000', narrowTitle: 'Died per 1,000', sub: '2011' + EN + '19', f: fmt.dp1, fn: fmt.dp1 }
-      ];
-      var NP = 'not published';
-      /* the value to draw, or null when the row's publish flag is not TRUE */
-      function pv(r, p) { return (p.pub && !r[p.pub]) || r[p.key] == null ? null : r[p.key]; }
-      function stay(r) { return r.publish_stay ? fmt.dp1(r.avg_stay) : NP; }
-      function rate(r) { return r.publish_rate ? fmt.dp1(r.died_per_1000) : NP; }
-
-      function tipHtml(r) {
-        return '<strong>Age ' + ageLabel(r.category) + '</strong><br>' +
-          'Admissions 2016' + EN + '21: ' + fmt.int(r.hosp_1621) + '<br>' +
-          'Average stay: ' + (r.publish_stay ? fmt.dp1(r.avg_stay) + ' days' : NP) + '<br>' +
-          'Died in hospital per 1,000 admitted (2011' + EN + '19): ' + rate(r) +
-          (r.publish_rate ? ' (95% interval ' + fmt.dp1(r.ci_low) + EN + fmt.dp1(r.ci_high) + ')' : '');
-      }
-
-      function draw(w) {
-        var narrow = w < 520;
-        var labelW = narrow ? 42 : 60, gap = narrow ? 10 : 28, headH = narrow ? 40 : 42, rowH = narrow ? 32 : 36;
-        var barH = narrow ? 18 : 20;
-        var panelW = (w - labelW - 2 * gap) / 3;
-        var H = headH + rows.length * rowH + 4;
-
-        var svg = d3.select(host).selectAll('svg').data([0]).join('svg')
-          .attr('width', w).attr('height', H).attr('viewBox', '0 0 ' + w + ' ' + H);
-        svg.selectAll('*').remove();
-
-        /* 75+ highlight band behind all panels (plus bold label: not colour alone) */
-        rows.forEach(function (r, i) {
-          if (r.category !== '75+') return;
-          svg.append('rect').attr('x', 0).attr('y', headH + i * rowH).attr('width', w).attr('height', rowH)
-            .attr('rx', 4).style('fill', 'var(--band)');
+        B.wins = [{ a: 2011, b: 2013, k: 'a0', r: 'r0' }, { a: 2019, b: 2021, k: 'a1', r: 'r1' }].map(function (win) {
+          var x0 = Math.max(x(win.a) - B.step / 2, -2), x1 = Math.min(x(win.b) + B.step / 2, iw + 4);
+          var o = { def: win, x0: x0, x1: x1, cx: (x0 + x1) / 2 };
+          g.append('rect').attr('class', 'c2-win').attr('x', x0).attr('y', -m.t + 6).attr('width', x1 - x0).attr('height', ih + m.t - 6);
+          return o;
         });
-
-        /* age labels */
-        svg.append('g').selectAll('text').data(rows).join('text')
-          .attr('x', labelW - 8).attr('y', function (r, i) { return headH + (i + 0.5) * rowH; })
-          .attr('text-anchor', 'end').attr('dominant-baseline', 'central')
-          .style('font-size', '12px').style('font-weight', function (r) { return r.category === '75+' ? 800 : 500; })
-          .text(function (r) { return ageLabel(r.category); });
-
-        PANELS.forEach(function (p, pi) {
-          var x0 = labelW + pi * (panelW + gap);
-          var labels = rows.map(function (r) { var v = pv(r, p); return v == null ? 'n.p.' : (narrow ? p.fn(v) : p.f(v)); });
-          var reserve = Math.max.apply(null, labels.map(function (s) { return s.length; })) * 7.4 + 8;
-          var sc = d3.scaleLinear().domain([0, d3.max(rows, function (r) { var v = pv(r, p); return v == null ? 0 : v; }) || 1])
-            .range([0, Math.max(10, panelW - reserve)]);
-
-          svg.append('text').attr('x', x0).attr('y', 14).style('font-size', '12px').style('font-weight', 700)
-            .text(narrow ? p.narrowTitle : p.title);
-          svg.append('text').attr('x', x0).attr('y', 29).style('font-size', '12px').style('fill', 'var(--muted)').text(p.sub);
-
-          rows.forEach(function (r, i) {
-            var hi = r.category === '75+', y0 = headH + i * rowH + (rowH - barH) / 2, v = pv(r, p);
-            if (v != null) {
-              svg.append('rect').attr('x', x0).attr('y', y0).attr('height', barH)
-                .attr('width', Math.max(1, sc(v))).attr('rx', 1)
-                .style('fill', hi ? 'var(--rise)' : 'var(--context)');
-            }
-            svg.append('text').attr('x', x0 + (v == null ? 0 : sc(v)) + 5).attr('y', y0 + barH / 2).attr('dominant-baseline', 'central')
-              .style('font-size', '12px').style('font-weight', hi ? 800 : 500).style('font-variant-numeric', 'tabular-nums')
-              .text(labels[i]);
-          });
-          svg.append('line').attr('x1', x0 + 0.5).attr('x2', x0 + 0.5).attr('y1', headH).attr('y2', H - 4)
-            .style('stroke', 'var(--ink)').style('stroke-width', 1);
+        B.grid = g.append('g').attr('class', 'axis');
+        g.append('text').attr('class', 'c2-ylab').attr('transform', 'rotate(-90)')
+          .attr('x', -ih / 2).attr('y', -m.l + 14).attr('text-anchor', 'middle').text('Admissions a year');
+        g.append('g').attr('class', 'axis').selectAll('text').data(YEARS.filter(function (yr) { return !narrow || yr % 2 === 1; }))
+          .join('text').attr('x', x).attr('y', ih + 19).attr('text-anchor', 'middle').text(function (yr) { return yr; });
+        B.wins.forEach(function (o) {
+          var d = o.def, cx = o.cx;
+          g.append('text').attr('class', 'c2-wlab c2-wyears').attr('x', cx).attr('y', -m.t + 22).attr('text-anchor', 'middle')
+            .text(d.a + EN + String(d.b).slice(2));
+          o.l1 = g.append('text').attr('class', 'c2-wlab').attr('x', cx).attr('y', -m.t + 37).attr('text-anchor', 'middle');
+          o.l2 = g.append('text').attr('class', 'c2-wlab').attr('x', cx).attr('y', -m.t + 51).attr('text-anchor', 'middle');
+          o.avg = g.append('line').attr('class', 'c2-avg').attr('x1', o.x0).attr('x2', o.x1);
         });
-
-        /* one focusable hit row per age band carries the tooltip */
-        var hits = svg.append('g').selectAll('rect').data(rows).join('rect')
-          .attr('class', 'c2b-hit').attr('x', 0).attr('y', function (r, i) { return headH + i * rowH; })
-          .attr('width', w).attr('height', rowH).style('fill', 'transparent')
-          .attr('role', 'img').attr('aria-label', function (r) {
-            return 'Age ' + ageLabel(r.category) + ': ' + fmt.int(r.hosp_1621) + ' admissions, average stay ' +
-              (r.publish_stay ? fmt.dp1(r.avg_stay) + ' days' : NP) + ', ' + (r.publish_rate ? fmt.dp1(r.died_per_1000) + ' died per 1,000' : 'death rate ' + NP);
-          });
-        Viz.tooltip.bind(hits, tipHtml);
+        B.path = g.append('path').attr('class', 'c2-line');
+        B.dots = g.append('g').selectAll('circle').data(YEARS).join('circle').attr('class', 'c2-dot').attr('cx', x).attr('r', 3.2);
+        B.first = g.append('text').attr('class', 'c2-endlab').attr('x', x(2011) + 5).attr('text-anchor', 'start');
+        B.last = g.append('text').attr('class', 'c2-endlab').attr('x', x(2021)).attr('text-anchor', 'end');
+        /* invisible per-year hit targets carry the tooltip */
+        B.hits = g.append('g').selectAll('rect').data(YEARS).join('rect').attr('class', 'c2-hit')
+          .attr('x', function (yr) { return x(yr) - B.step / 2; }).attr('width', B.step).attr('y', 0).attr('height', ih);
+        Viz.tooltip.bind(B.hits, function (yr) {
+          var c = sel(), i = yr - 2011;
+          return '<strong>' + who(c) + '</strong><br>' + yr + ': ' + fmt.int(c.series[i]) + ' admitted';
+        }, { roving: false });
+        B.hits.attr('tabindex', null);
       }
 
-      var lo = rows.filter(function (r) { return r.category === '8-16'; })[0], hi = rows.filter(function (r) { return r.category === '75+'; })[0];
-      var peak = rows.slice().sort(function (a, b) { return b.hosp_1621 - a.hosp_1621; })[0];
-      host.setAttribute('aria-label',
-        'Three aligned panels by age band for all road users. Admissions peak at ages ' + ageLabel(peak.category) + ' (' + fmt.int(peak.hosp_1621) +
-        '). Average stay rises from ' + stay(lo) + ' days at 8' + EN + '16 to ' + stay(hi) +
-        ' days at 75 and over. Deaths in hospital per 1,000 admitted rise from ' + rate(lo) + ' to ' + rate(hi) + '.');
+      function updateB(animate) {
+        if (!B) return;
+        var st = bus.get(), c = sel(), mode = st.mode, y = B.y, x = B.x;
+        var dur = animate ? Viz.dur(400) : 0;
+        function T(s) { return dur ? s.transition().duration(dur) : s; }
+        y.domain([0, Math.max(1, d3.max(c.series)) * 1.12]).nice(4);
+        lastYMax = y.domain()[1];
 
-      var resp = Viz.responsive(host, draw);
-      Viz.onThemeChange(function () { resp.redraw(); });
+        var ticks = y.ticks(4);
+        var s = B.grid.selectAll('g.tk').data(ticks, function (d) { return d; });
+        s.exit().transition().duration(dur).style('opacity', 0).remove();
+        var en = s.enter().append('g').attr('class', 'tk')
+          .attr('transform', function (d) { return 'translate(0,' + y(d) + ')'; }).style('opacity', dur ? 0 : 1);
+        en.append('line').attr('class', function (d) { return d === 0 ? 'c2-zero' : 'c2-grid'; }).attr('x2', B.iw);
+        en.append('text').attr('x', -8).attr('dy', '0.32em').attr('text-anchor', 'end').text(function (d) { return fmt.int(d); });
+        T(en.merge(s)).attr('transform', function (d) { return 'translate(0,' + y(d) + ')'; }).style('opacity', 1);
 
-      Viz.fillTable(fig.querySelector('.fig-data'), rows, [
-        { key: 'category', label: 'Age', text: true, format: ageLabel },
-        { key: 'hosp_1621', label: 'Admissions 2016' + EN + '21', format: fmt.int },
-        { key: 'avg_stay', label: 'Average stay (days)', format: function (v, r) { return stay(r); } },
-        { key: 'died_per_1000', label: 'Died per 1,000 (2011' + EN + '19)', format: function (v, r) { return rate(r); } },
-        { key: 'ci_low', label: '95% low', format: function (v, r) { return r.publish_rate ? fmt.dp1(v) : ''; } },
-        { key: 'ci_high', label: '95% high', format: function (v, r) { return r.publish_rate ? fmt.dp1(v) : ''; } }
-      ]);
-    },
-    update: function () {}
+        B.wins.forEach(function (o) {
+          var d = o.def;
+          if (mode === 'pp') { o.l1.text(per100(c[d.r])); o.l2.text('per 100,000').style('display', null); }
+          else { o.l1.text('avg ' + fmt.int(c[d.k])); o.l2.text('').style('display', 'none'); }
+          T(o.avg).attr('y1', y(c[d.k])).attr('y2', y(c[d.k]));
+        });
+        T(B.path).attr('d', d3.line().x(function (yr) { return x(yr); }).y(function (yr) { return y(c.series[yr - 2011]); })(YEARS));
+        T(B.dots).attr('cy', function (yr) { return y(c.series[yr - 2011]); });
+        B.first.text(fmt.int(c.series[0])); B.last.text(fmt.int(c.series[10]));
+        T(B.first).attr('y', y(c.series[0]) - 9);
+        T(B.last).attr('y', y(c.series[10]) - 9);
+
+        subB.textContent = 'Yearly admissions for the selected road user and age band · 2011–2021' +
+          (mode === 'pp' ? '. Per-person figures exist only for the two 3-year windows (population by year is not in this file)' : '');
+        lowNote.hidden = !c.low;
+        var trend = c.series[10] > c.series[0] ? 'rose' : c.series[10] < c.series[0] ? 'fell' : 'was level';
+        chartB.setAttribute('aria-label',
+          'Line chart of yearly admissions, ' + who(c) + ', 2011 to 2021: ' + trend + ' from ' + fmt.int(c.series[0]) +
+          ' in 2011 to ' + fmt.int(c.series[10]) + ' in 2021. The 2011' + EN + '13 average was ' + fmt.dp(c.a0, 1) +
+          ' a year and the 2019' + EN + '21 average ' + fmt.dp(c.a1, 1) + '.' +
+          (mode === 'pp' ? ' Per 100,000 people of that age: ' + per100(c.r0) + ' then ' + per100(c.r1) + '.' : '') +
+          (c.low ? ' Few cases: average under 30 a year, read with care.' : ''));
+      }
+      function textB() {
+        var c = sel();
+        titleB.textContent = who(c) + ': ' + fmt.int(c.series[0]) + ' admitted in 2011, ' + fmt.int(c.series[10]) + ' in 2021';
+      }
+
+      /* =============================================================== tables */
+      var tblA = mk('div', 'c2-tbl'), tblB = mk('div', 'c2-tbl');
+      tablesHost.innerHTML = '';
+      tablesHost.appendChild(tblA); tablesHost.appendChild(tblB);
+      function tableA() {
+        var mode = bus.get().mode;
+        var rows = ROWS.map(function (ru) {
+          var o = { ru: PLURAL[ru] };
+          AGES.forEach(function (a) { var c = cellAt(ru, a); o[a] = sp(val(c, mode)) + (c.low ? ' (few cases)' : ''); });
+          return o;
+        });
+        var cols = [{ key: 'ru', label: 'Road user', text: true }];
+        AGES.forEach(function (a) { cols.push({ key: a, label: ageLabel(a) }); });
+        Viz.fillTable(tblA, rows, cols, { caption: 'Chart A: % change ' + (mode === 'pp' ? 'per person' : 'in yearly admissions') +
+          ', 2011' + EN + '13 to 2019' + EN + '21, by road user (rows) and age band (columns). “Few cases” = average under 30 a year.' });
+      }
+      function tableB() {
+        var c = sel();
+        var rows = YEARS.map(function (yr) { return { p: String(yr), n: fmt.int(c.series[yr - 2011]), r: '' }; });
+        rows.push({ p: 'Average 2011' + EN + '13', n: fmt.dp(c.a0, 1), r: per100(c.r0) });
+        rows.push({ p: 'Average 2019' + EN + '21', n: fmt.dp(c.a1, 1), r: per100(c.r1) });
+        Viz.fillTable(tblB, rows, [
+          { key: 'p', label: 'Year', text: true },
+          { key: 'n', label: 'Admissions' },
+          { key: 'r', label: 'Per 100,000 of that age' }
+        ], { caption: 'Chart B: yearly admissions, ' + who(c) + ', with the two 3-year averages' + (c.low ? ' (few cases)' : '') });
+      }
+
+      /* ================================================================ link */
+      function setChip(st) {
+        var c = cellAt(st.roadUser, st.age);
+        chip.textContent = 'Showing: ' + LOWER[c.ru] + ' ' + ageWords(c.age).replace('aged ', 'aged ') + ' · ' + (st.mode === 'pp' ? 'per person' : 'counts');
+        chip.hidden = false;
+      }
+      function sync(st) {
+        selRU.value = st.roadUser; selAge.value = st.age; seg.set(st.mode, true);
+      }
+
+      bus.on(function (st, changed, source) {
+        var cellChanged = changed.indexOf('roadUser') >= 0 || changed.indexOf('age') >= 0;
+        var modeChanged = changed.indexOf('mode') >= 0;
+        sync(st); setChip(st);
+        textA();
+        if (modeChanged) { paintCells(true); drawLegend(lastWA); }
+        if (cellChanged) { paintSelection(); textB(); updateB(true); tableB(); }
+        else updateB(false);
+        if (modeChanged) tableA();
+        /* the receiving panel flashes */
+        if (cellChanged) { if (source !== 'panel-a') Viz.flash(panelA); if (source === 'panel-a' || source === 'controls') Viz.flash(panelB); }
+        if (modeChanged) { Viz.flash(panelA); Viz.flash(panelB); }
+        var c = cellAt(st.roadUser, st.age);
+        Viz.announce(who(c) + ': ' + (st.mode === 'pp'
+          ? sp(c.pp) + ' per person (admissions ' + sp(c.pct) + ')'
+          : sp(c.pct) + ' (per person ' + sp(c.pp) + ')') + (c.low ? '. Few cases, read with care' : '') + '.');
+      });
+
+      /* ============================================================== initial */
+      Viz.responsive(chartA, function (w) { buildA(w); });
+      Viz.responsive(chartB, function (w) { buildB(w); updateB(false); });
+      Viz.onThemeChange(function () { if (lastWA) { buildA(lastWA); } });
+      setChip(st0); textA(); tableA(); tableB();
+    }
   };
 })();
