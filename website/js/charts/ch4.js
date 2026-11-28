@@ -1,16 +1,26 @@
-/* ch4.js: Chapter 4 figures (fig-4a, fig-4b, fig-4c, fig-4d). OWNED BY THE CHAPTER 4 AGENT.
-   fig-4a  monthly line, 2020 vs 2019 vs 2015-19 band; All road users <-> Cyclists; month read-out
-   fig-4b  diverging bars, April 2020 vs April 2019 by road user
-   fig-4c  annual cyclist admissions with the 2011-19 compound-growth trend carried to 2020
-   fig-4d  cyclists by state, Jul-Dec (or Jan-Jun) 2020 vs 2019
-   New data-fill key (registered below): c4_cyc_one_in. */
+/* ch4.js: Chapter 4 board, "The lockdown test". OWNED BY THE CHAPTER 4 AGENT.
+   Two linked panels share one state { roadUser, month } through Viz.bus:
+     A  #ch4-a  monthly line, January to December, for the selected road user
+                (2020 and 2019 against the 2015-19 band). Click, tap or arrow keys set the month.
+     B  #ch4-b  diverging bars, % change 2020 vs 2019 for the selected month, by road user.
+                Click, tap or Enter on a bar (or the All road users reference) sets the road user.
+   The Explore bar (road user, month) and the chip stay in sync with clicks on the marks.
+   Data: data.ch4_monthly. Every number is read from the CSV at runtime. */
 (function () {
   'use strict';
   window.Charts = window.Charts || {};
   var fmt = Viz.fmt;
-  var MINUS = '−';
+
+  var USERS = ['All road users', 'Car driver', 'Car passenger', 'Motorcyclist', 'Pedal cyclist', 'Pedestrian'];
+  var MAIN = Viz.MAIN_ROAD_USERS;
+  var SHORT = { 'Pedal cyclist': 'Cyclists' };
+  var PLURAL = {
+    'All road users': 'all road users', 'Car driver': 'car drivers', 'Car passenger': 'car passengers',
+    'Motorcyclist': 'motorcyclists', 'Pedal cyclist': 'cyclists', 'Pedestrian': 'pedestrians'
+  };
   var MON3 = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
+  function lab(u) { return SHORT[u] || u; }
   function N(v) { return fmt.int(v); }
   function sp(v, dp) { return fmt.minus(fmt.signedPct(v, dp || 0)); }   /* "+16%" / "−32%" */
   function mk(tag, cls, text) {
@@ -19,544 +29,505 @@
     if (text != null) e.textContent = text;
     return e;
   }
-  var find = Viz.find;
-  function monthly(data, user) {
-    return data.ch4_monthly.filter(function (r) { return r.road_user === user && r.month !== 'Year'; })
-      .sort(function (a, b) { return a.month_num - b.month_num; });
-  }
-  function svgIn(host, w, h) { return Viz.svg(host, w, h, { reuse: true, hidden: true, clear: true }); }
-  function fadeIn(sel, on) {
-    if (!on || !Viz.dur()) return;
-    sel.style('opacity', 0).transition().duration(Viz.dur()).style('opacity', 1);
-  }
 
-  /* ---------------------------------------------------------- prose numbers */
-  if (window.Facts && Facts.register) {
-    /* cyclists as a share of all admissions over 2011-21 -> "1 in N" */
-    Facts.register('c4_cyc_one_in', function (d) {
-      var all = 0, cyc = 0;
-      d.ch4_monthly.forEach(function (r) {
-        if (r.month === 'Year') return;
-        var s = 0;
-        for (var y = 2011; y <= 2021; y++) s += r[y];
-        if (r.road_user === 'All road users') all += s;
-        else if (r.road_user === 'Pedal cyclist') cyc += s;
+  window.Charts['ch4'] = {
+    init: function (board, data) {
+      var rowsBy = {};
+      USERS.forEach(function (u) {
+        rowsBy[u] = data.ch4_monthly
+          .filter(function (r) { return r.road_user === u && r.month !== 'Year'; })
+          .sort(function (a, b) { return a.month_num - b.month_num; });
       });
-      return String(Math.round(all / cyc));
-    });
-  }
+      function rowFor(u, m) { return rowsBy[u][Viz.MONTHS.indexOf(m)]; }
 
-  /* =================================================================== 4A */
-  window.Charts['fig-4a'] = {
-    init: function (el, data) {
-      var chart = el.querySelector('.fig-chart');
-      var titleEl = el.querySelector('.fig-title');
-      var segEl = el.querySelector('.fig-controls');
-      var axisNote = el.querySelector('.c4-axis');
-      var VIEWS = {
-        all: {
-          user: 'All road users', accent: 'var(--fall)', ymax: 4000, ystep: 1000, def: 4,
-          title: 'April 2020: a third fewer crash admissions',
-          yLabel: 'Admissions a month'
-        },
-        cyc: {
-          user: 'Pedal cyclist', accent: 'var(--rise)', ymax: 1000, ystep: 200, def: 6,
-          title: 'Cyclists: every month from April above the previous five years',
-          yLabel: 'Cyclist admissions a month'
+      /* fixed x-domain for B across all 12 months and all six road users */
+      var pcts = [];
+      USERS.forEach(function (u) { rowsBy[u].forEach(function (r) { pcts.push(r.pct_2020_vs_2019); }); });
+      var pctDom = [Math.min(0, d3.min(pcts)), Math.max(0, d3.max(pcts))];
+      /* B's row order is fixed (by the April change) so bars stay comparable as the month changes */
+      var order = MAIN.slice().sort(function (a, b) {
+        return rowFor(a, 'April').pct_2020_vs_2019 - rowFor(b, 'April').pct_2020_vs_2019;
+      });
+
+      /* claims used in titles and annotations, checked against the data */
+      var allRows = rowsBy['All road users'];
+      var allLow = d3.min(allRows, function (r) { return d3.min([2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021], function (y) { return r[y]; }); });
+      var aprAll = rowFor('All road users', 'April');
+      var aprAllLowest = aprAll[2020] === allLow;
+      var aprFrac = -aprAll.pct_2020_vs_2019 / 100;
+      var thirdFewer = aprFrac >= 0.30 && aprFrac <= 0.36;
+      var cycAbove = rowsBy['Pedal cyclist'].filter(function (r) { return r.month_num >= 4; })
+        .every(function (r) { return r[2020] > r.base_max; });
+      var aprOthersFell = MAIN.filter(function (u) { return u !== 'Pedal cyclist'; })
+        .every(function (u) { return rowFor(u, 'April').pct_2020_vs_2019 < 0; }) &&
+        rowFor('Pedal cyclist', 'April').pct_2020_vs_2019 > 0;
+      if (!aprAllLowest) console.warn('[ch4] April 2020 is no longer the lowest month of 2011-2021');
+      if (!thirdFewer) console.warn('[ch4] title says "a third fewer" but April 2020 is ' + (aprFrac * 100).toFixed(1) + '% below April 2019');
+      if (!cycAbove) console.warn('[ch4] cyclist title says every month from April is above the previous five years, but it is not');
+      if (!aprOthersFell) console.warn('[ch4] April title says every road user fell except cyclists, but the data disagrees');
+
+      var bus = Viz.bus({ roadUser: 'All road users', month: 'April' });
+
+      var panelA = board.querySelector('#ch4-a'), panelB = board.querySelector('#ch4-b');
+      var chartA = panelA.querySelector('.panel-chart'), chartB = panelB.querySelector('.panel-chart');
+      var titleA = panelA.querySelector('.panel-title'), subA = panelA.querySelector('.panel-sub');
+      var titleB = panelB.querySelector('.panel-title'), subB = panelB.querySelector('.panel-sub');
+      var chip = board.querySelector('output.board-chip');
+      var tablesHost = board.querySelector('.board-tables');
+
+      /* ------------------------------------------------------- phrases */
+      function dirPhrase(r, m) {
+        var p = r.pct_2020_vs_2019, a = Math.round(Math.abs(p));
+        if (a === 0) return m + ' 2020 level with ' + m + ' 2019';
+        return m + ' 2020 ' + (p > 0 ? 'up ' : 'down ') + a + '% on ' + m + ' 2019';
+      }
+
+      /* =========================================================== controls */
+      var ctl = board.querySelector('.explore-controls');
+      ctl.innerHTML = '';
+      var userWrap = mk('div', 'ctl-field c4-user');
+      var userLab = mk('label', 'ctl-label', 'Road user');
+      userLab.id = 'c4-user-label';
+      userLab.setAttribute('for', 'c4-user-select');
+      var userSel = mk('select', 'c4-user-select');
+      userSel.id = 'c4-user-select';
+      var segEl = mk('div', 'seg c4-seg');
+      segEl.setAttribute('role', 'group');
+      segEl.setAttribute('aria-labelledby', 'c4-user-label');
+      USERS.forEach(function (u) {
+        var o = mk('option', null, lab(u)); o.value = u; userSel.appendChild(o);
+        var b = mk('button', null, lab(u)); b.type = 'button'; b.setAttribute('data-value', u);
+        b.setAttribute('aria-pressed', u === bus.get().roadUser ? 'true' : 'false');
+        segEl.appendChild(b);
+      });
+      userWrap.appendChild(userLab); userWrap.appendChild(segEl); userWrap.appendChild(userSel);
+      var monWrap = mk('div', 'ctl-field c4-month');
+      var monLab = mk('label', 'ctl-label', 'Month');
+      monLab.setAttribute('for', 'c4-month-select');
+      var monSel = mk('select', 'c4-month-select');
+      monSel.id = 'c4-month-select';
+      Viz.MONTHS.forEach(function (m) { var o = mk('option', null, m); o.value = m; monSel.appendChild(o); });
+      monWrap.appendChild(monLab); monWrap.appendChild(monSel);
+      ctl.appendChild(userWrap); ctl.appendChild(monWrap);
+      userSel.value = bus.get().roadUser; monSel.value = bus.get().month;
+
+      var seg = Viz.segmented(segEl, {
+        announce: false,
+        onChange: function (v) { bus.set({ roadUser: v }, 'controls'); }
+      });
+      userSel.addEventListener('change', function () { bus.set({ roadUser: userSel.value }, 'controls'); });
+      monSel.addEventListener('change', function () { bus.set({ month: monSel.value }, 'controls'); });
+
+      function syncControls(st) {
+        seg.set(st.roadUser, true);
+        userSel.value = st.roadUser;
+        monSel.value = st.month;
+      }
+      function setChip(st) {
+        chip.textContent = 'Showing: ' + lab(st.roadUser) + ' · ' + st.month;
+        chip.hidden = false;
+      }
+
+      /* ================================================================ A */
+      var A = {};   /* drawing refs, rebuilt on resize */
+
+      function textA(st) {
+        var u = st.roadUser, m = st.month, rows = rowsBy[u], r = rowFor(u, m);
+        var title;
+        if (u === 'All road users' && thirdFewer) title = 'April 2020: a third fewer crash admissions';
+        else if (u === 'Pedal cyclist' && cycAbove) title = 'Cyclists: every month from April above the previous five years';
+        else title = lab(u) + ': 2020 against 2019 and the 2015–19 range';
+        titleA.textContent = title;
+        subA.textContent = 'Monthly admissions, ' + PLURAL[u] + ' · 2020 and 2019 against the 2015–19 range (dotted line: its average)';
+
+        var s = 'Monthly line chart of ' + (u === 'All road users' ? 'all road-crash admissions' : PLURAL[u] + ' admissions') +
+          ' in 2020 against 2019 and the 2015 to 2019 range, on its own scale. ';
+        if (u === 'All road users') {
+          var apr = rows[3];
+          s += 'April 2020 had ' + N(apr[2020]) + ' admissions, ' + fmt.dp(Math.abs(apr.pct_2020_vs_2019), 0) +
+            ' per cent ' + (apr.pct_2020_vs_2019 < 0 ? 'fewer' : 'more') + ' than April 2019' +
+            (apr[2020] === allLow ? ' and the lowest month of 2011 to 2021' : '') + '. ';
+        } else if (u === 'Pedal cyclist') {
+          var n = 0, tot = 0;
+          rows.forEach(function (x) { if (x.month_num >= 4) { tot++; if (x[2020] > x.base_max) n++; } });
+          s += 'In ' + n + ' of ' + tot + ' months from April to December 2020, admissions were above the highest month of 2015 to 2019. ';
         }
-      };
-      /* the title/annotation claim "a third fewer" and "lowest month of 2011-2021"; warn (as facts.js does) if the data stops saying so */
-      (function () {
-        var all = data.ch4_monthly.filter(function (r) { return r.road_user === 'All road users' && r.month !== 'Year'; });
-        var apr = find(all, { month: 'April' });
-        var low = d3.min(all, function (r) { var m = Infinity; for (var y = 2011; y <= 2021; y++) m = Math.min(m, r[y]); return m; });
-        if (!apr || apr[2020] !== low) console.warn('[ch4] fig-4a says April 2020 is the lowest month of 2011-2021, but the data disagrees');
-        var f = apr ? -apr.pct_2020_vs_2019 / 100 : 0;
-        if (!(f >= 0.30 && f <= 0.36)) console.warn('[ch4] fig-4a title says "a third fewer" but April 2020 is ' + (f * 100).toFixed(1) + '% below April 2019');
-        var cyc = monthly(data, 'Pedal cyclist').filter(function (r) { return r.month_num >= 4; });
-        if (!cyc.every(function (r) { return r[2020] > r.base_max; })) console.warn('[ch4] fig-4a cyclist title says every month from April is above the previous five years, but it is not');
-      })();
-      var view = 'all', sel = null, hover = null, animate = false;
-      var ui = {};
-
-      /* ---- legend (HTML, above the chart) ---- */
-      var key = mk('div', 'c4-key');
-      key.setAttribute('aria-hidden', 'true');
-      key.innerHTML =
-        '<span class="c4-k"><i class="k-line k-2020"></i>2020</span>' +
-        '<span class="c4-k"><i class="k-line k-2019"></i>2019</span>' +
-        '<span class="c4-k"><i class="k-line k-mean"></i>2015–19 average</span>' +
-        '<span class="c4-k"><i class="k-band"></i>2015–19 range</span>';
-      chart.parentNode.insertBefore(key, chart);
-
-      /* ---- month read-out + slider (below the chart) ---- */
-      var panel = mk('div', 'c4-readout');
-      var lab = mk('label', 'c4-slider');
-      lab.appendChild(mk('span', 'c4-slider-l', 'Month'));
-      var slider = mk('input');
-      slider.type = 'range'; slider.min = 1; slider.max = 12; slider.step = 1; slider.value = 4;
-      slider.setAttribute('aria-label', 'Choose a month to read its figures');
-      lab.appendChild(slider);
-      var readout = mk('p', 'c4-readout-text');
-      panel.appendChild(lab);
-      panel.appendChild(readout);
-      chart.parentNode.insertBefore(panel, chart.nextSibling);
-
-      function current() { return hover != null ? hover : (sel != null ? sel : VIEWS[view].def); }
-
-      function readoutHtml(m) {
-        var r = ui.rows[m - 1];
-        var pct = r.pct_2020_vs_2019;
-        return '<strong class="c4-r-month">' + Viz.MONTHS[m - 1] + '</strong>' +
-          '<span class="c4-r-item"><span class="c4-r-k">2020</span> <strong>' + N(r[2020]) + '</strong></span>' +
-          '<span class="c4-r-item"><span class="c4-r-k">2019</span> ' + N(r[2019]) + '</span>' +
-          '<span class="c4-r-item"><span class="c4-r-k">2015–19 range</span> ' + N(r.base_min) + '–' + N(r.base_max) +
-          ' (average ' + N(r.base_mean) + ')</span>' +
-          '<span class="c4-r-item"><span class="c4-r-k">2020 vs 2019</span> ' + sp(pct, 1) + '</span>';
-      }
-      function readoutText(m) {
-        var r = ui.rows[m - 1];
-        return Viz.MONTHS[m - 1] + ': 2020 ' + N(r[2020]) + '; 2019 ' + N(r[2019]) + '; 2015 to 2019 range ' +
-          N(r.base_min) + ' to ' + N(r.base_max) + ', average ' + N(r.base_mean) + '.';
-      }
-      function setMonth() {
-        var m = current();
-        if (!ui.x) return;
-        var r = ui.rows[m - 1], cx = ui.x(m);
-        ui.guide.attr('transform', 'translate(' + cx + ',0)');
-        ui.dot20.attr('cy', ui.y(r[2020]));
-        ui.dot19.attr('cy', ui.y(r[2019]));
-        ui.ticks.classed('is-sel', function (d) { return d === m; });
-        readout.innerHTML = readoutHtml(m);
-        slider.value = m;
-        slider.setAttribute('aria-valuetext', readoutText(m));
+        s += 'Selected month, ' + m + ': 2020 ' + N(r[2020]) + ', 2019 ' + N(r[2019]) + ', 2015 to 2019 range ' +
+          N(r.base_min) + ' to ' + N(r.base_max) + '. Click or use the arrow keys to choose another month.';
+        chartA.setAttribute('aria-label', s);
       }
 
-      function table() {
-        var u = VIEWS[view].user;
-        Viz.fillTable(el.querySelector('.fig-data'), monthly(data, u), [
-          { key: 'month', label: 'Month', text: true },
-          { key: '2019', label: '2019', format: N },
-          { key: '2020', label: '2020', format: N },
-          { key: 'pct_2020_vs_2019', label: '2020 vs 2019', format: function (v) { return sp(v, 1); } },
-          { key: 'base_min', label: '2015–19 min', format: N },
-          { key: 'base_mean', label: '2015–19 average', format: Viz.fmt.dp1 },
-          { key: 'base_max', label: '2015–19 max', format: N }
-        ], { caption: u === 'Pedal cyclist' ? 'Cyclist admissions by month' : 'All road users: admissions by month' });
+      function tipA(i) {
+        var r = rowsBy[bus.get().roadUser][i];
+        return '<strong>' + r.month + '</strong><br>2020: ' + N(r[2020]) + '<br>2019: ' + N(r[2019]) +
+          '<br>2015–19 range: ' + N(r.base_min) + '–' + N(r.base_max) + ' (average ' + N(r.base_mean) + ')<br>2020 vs 2019: ' + sp(r.pct_2020_vs_2019, 1);
+      }
+      function valueTextA(i) {
+        var r = rowsBy[bus.get().roadUser][i];
+        return r.month + ': 2020 ' + N(r[2020]) + '; 2019 ' + N(r[2019]) + '; 2015 to 2019 range ' + N(r.base_min) + ' to ' + N(r.base_max);
       }
 
-      function summary() {
-        var rows = monthly(data, VIEWS[view].user), u = view;
-        var apr = rows[3], jun = rows[5], dec = rows[11];
-        if (u === 'all') {
-          var low = d3.min(data.ch4_monthly.filter(function (r) { return r.road_user === 'All road users' && r.month !== 'Year'; }),
-            function (r) { var m = Infinity; for (var y = 2011; y <= 2021; y++) m = Math.min(m, r[y]); return m; });
-          return 'Monthly line chart of all road-crash admissions in 2020 against 2019 and the 2015 to 2019 range. April 2020 had ' +
-            N(apr[2020]) + ' admissions, ' + fmt.dp(Math.abs(apr.pct_2020_vs_2019), 0) + ' per cent fewer than April 2019' +
-            (apr[2020] === low ? ' and the lowest month of 2011 to 2021' : '') + '. By December 2020 admissions were ' +
-            (dec[2020] > dec[2019] ? 'above' : 'below') + ' December 2019 (' + N(dec[2020]) + ' against ' + N(dec[2019]) + ').';
-        }
-        var n = 0, tot = 0;
-        rows.forEach(function (r) { if (r.month_num >= 4) { tot++; if (r[2020] > r.base_max) n++; } });
-        return 'Monthly line chart of cyclist admissions in 2020 against 2019 and the 2015 to 2019 range, on its own scale. ' +
-          'In ' + n + ' of ' + tot + ' months from April to December 2020, admissions were above the highest of 2015 to 2019. June 2020 had ' +
-          N(jun[2020]) + ' against ' + N(jun[2019]) + ' in June 2019.';
-      }
-
-      function draw(w) {
-        var V = VIEWS[view];
-        var rows = monthly(data, V.user);
+      function buildA(w) {
         var narrow = w < 480;
-        var m = { top: 26, right: narrow ? 40 : 52, bottom: 28, left: narrow ? 44 : 50 };
-        var h = Viz.height(w, { ratio: 0.5, min: 280, max: 420 });
+        var m = { top: 46, right: narrow ? 40 : 46, bottom: 28, left: narrow ? 42 : 48 };
+        var h = Viz.height(w, { ratio: 0.58, min: 300, max: 400 });
         var iw = w - m.left - m.right, ih = h - m.top - m.bottom;
         var x = d3.scalePoint().domain(d3.range(1, 13)).range([0, iw]).padding(0.3);
-        var y = d3.scaleLinear().domain([0, V.ymax]).range([ih, 0]);
-        var svg = svgIn(chart, w, h);
-        fadeIn(svg, animate);
+        var y = d3.scaleLinear().range([ih, 0]);
+        var svg = Viz.svg(chartA, w, h, { hidden: true });
         var g = svg.append('g').attr('transform', 'translate(' + m.left + ',' + m.top + ')');
+        A = { w: w, iw: iw, ih: ih, m: m, x: x, y: y, step: x.step(), narrow: narrow, hover: null };
 
-        /* y axis (from zero) */
-        var yt = d3.range(0, V.ymax + 1, V.ystep);
-        var gy = g.append('g').attr('class', 'axis');
-        yt.forEach(function (t) {
-          gy.append('line').attr('x1', 0).attr('x2', iw).attr('y1', y(t)).attr('y2', y(t))
-            .attr('class', t === 0 ? 'c4-zero' : 'c4-grid');
-          gy.append('text').attr('x', -8).attr('y', y(t)).attr('dy', '0.32em').attr('text-anchor', 'end').text(N(t));
-        });
-        g.append('text').attr('class', 'c4-ylab').attr('x', -m.left + 2).attr('y', -12).text(V.yLabel);
+        A.grid = g.append('g').attr('class', 'axis');
+        g.append('text').attr('class', 'c4-ylab').attr('x', -m.left + 2).attr('y', -30).text('Admissions a month');
 
-        /* x axis */
-        var step = x.step();
-        var every = step >= 36 ? 1 : 2;
+        /* x axis (month labels; every second month when tight) */
+        var every = A.step >= 36 ? 1 : 2;
         var xt = g.append('g').attr('class', 'axis c4-xaxis');
-        ui.ticks = xt.selectAll('text').data(d3.range(1, 13)).join('text')
+        A.every = every;
+        A.ticks = xt.selectAll('text').data(d3.range(1, 13)).join('text')
           .attr('x', function (d) { return x(d); }).attr('y', ih + 20).attr('text-anchor', 'middle')
-          .style('display', function (d) { return (d - 1) % every === 0 || d === current() ? null : 'none'; })
           .text(function (d) { return MON3[d - 1]; });
-        if (every > 1) ui.ticks.style('display', function (d) { return (d - 1) % every === 0 ? null : 'none'; });
         xt.selectAll('line.tk').data(d3.range(1, 13)).join('line').attr('class', 'tk')
           .attr('x1', function (d) { return x(d); }).attr('x2', function (d) { return x(d); })
           .attr('y1', ih).attr('y2', ih + 4);
 
-        /* 2015-19 band + average */
-        g.append('path').attr('class', 'c4-band')
-          .attr('d', d3.area().x(function (r) { return x(r.month_num); })
-            .y0(function (r) { return y(r.base_min); }).y1(function (r) { return y(r.base_max); })(rows));
-        var line = function (k) { return d3.line().x(function (r) { return x(r.month_num); }).y(function (r) { return y(r[k]); })(rows); };
-        g.append('path').attr('class', 'c4-mean').attr('d', line('base_mean'));
-        g.append('path').attr('class', 'c4-l19').attr('d', line(2019));
-        g.append('path').attr('class', 'c4-l20').attr('d', line(2020)).style('stroke', V.accent);
-        g.selectAll('circle.c4-pt').data(rows).join('circle').attr('class', 'c4-pt')
-          .attr('cx', function (r) { return x(r.month_num); }).attr('cy', function (r) { return y(r[2020]); })
-          .attr('r', 2.5).style('fill', V.accent);
+        A.band = g.append('path').attr('class', 'c4-band');
+        A.bandLab = g.append('text').attr('class', 'c4-halo c4-bandlab').text('2015–19 range');
+        A.mean = g.append('path').attr('class', 'c4-mean');
+        A.l19 = g.append('path').attr('class', 'c4-l19');
+        A.l20 = g.append('path').attr('class', 'c4-l20');
+        A.pts = g.append('g');
+        A.end20 = g.append('text').attr('class', 'c4-end c4-end20').attr('x', iw + 8).attr('dy', '0.32em').text('2020');
+        A.end19 = g.append('text').attr('class', 'c4-end c4-end19').attr('x', iw + 8).attr('dy', '0.32em').text('2019');
+        A.ann = g.append('g').attr('class', 'c4-ann');
 
-        /* end labels */
-        var dec = rows[11];
-        var y20 = y(dec[2020]), y19 = y(dec[2019]);
+        A.hoverRule = g.append('line').attr('class', 'c4-hover').attr('y1', 0).attr('y2', ih).style('display', 'none');
+        A.guide = g.append('g').attr('class', 'c4-guide');
+        A.guide.append('line').attr('y1', 0).attr('y2', ih);
+        A.dot19 = A.guide.append('circle').attr('r', 4.5).attr('class', 'c4-d19');
+        A.dot20 = A.guide.append('circle').attr('r', 5.5).attr('class', 'c4-d20');
+
+        /* one focusable plot area: arrow keys move the month */
+        function monthAt(e) {
+          var px = d3.pointer(e, A.hit.node())[0];
+          return Math.max(0, Math.min(11, Math.round((px - x(1)) / A.step)));
+        }
+        A.hit = g.append('rect').attr('class', 'c4-hit').attr('x', -4).attr('y', -4)
+          .attr('width', iw + 8).attr('height', ih + 8)
+          .attr('tabindex', 0).attr('role', 'slider').attr('aria-orientation', 'horizontal')
+          .attr('aria-label', 'Month, chart A')
+          .attr('aria-valuemin', 1).attr('aria-valuemax', 12)
+          .on('pointermove', function (e) {
+            if (e.pointerType === 'touch') return;
+            var i = monthAt(e);
+            A.hover = i;
+            A.hoverRule.style('display', null).attr('transform', 'translate(' + x(i + 1) + ',0)');
+            Viz.tooltip.show(tipA(i), e.clientX, e.clientY, A.hit.node());
+          })
+          .on('pointerleave', function () {
+            A.hover = null; A.hoverRule.style('display', 'none');
+            if (document.activeElement !== A.hit.node()) Viz.tooltip.hide();
+          })
+          .on('pointerdown', function (e) {
+            var i = monthAt(e);
+            bus.set({ month: Viz.MONTHS[i] }, 'panel-a');
+            if (e.pointerType === 'touch') Viz.tooltip.show(tipA(i), e.clientX, e.clientY, A.hit.node());
+          })
+          .on('keydown', function (e) {
+            var i = Viz.MONTHS.indexOf(bus.get().month), j = null;
+            if (e.key === 'ArrowRight' || e.key === 'ArrowUp') j = Math.min(11, i + 1);
+            else if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') j = Math.max(0, i - 1);
+            else if (e.key === 'Home') j = 0;
+            else if (e.key === 'End') j = 11;
+            if (j === null) return;
+            e.preventDefault();
+            if (j !== i) bus.set({ month: Viz.MONTHS[j] }, 'panel-a');
+          })
+          .on('blur', function () { Viz.tooltip.hide(); });
+      }
+
+      /* where the "2015–19 range" label sits: above the band, away from the lines */
+      function bandLabelPos(rows) {
+        var y = A.y, span = Math.ceil(96 / A.step) + 1, first = null, pass, i, j;
+        for (pass = 0; pass < 2; pass++) {            /* 0: above the band, 1: below it */
+          for (i = 0; i + span <= 11; i++) {
+            var edge = pass ? 0 : Infinity, clash = false;
+            for (j = i; j <= i + span; j++) edge = pass ? Math.max(edge, y(rows[j].base_min)) : Math.min(edge, y(rows[j].base_max));
+            var base = pass ? edge + 16 : edge - 6;
+            if (base < 12 || base > A.ih - 2) clash = true;
+            for (j = i; j <= i + span && !clash; j++) {
+              [y(rows[j][2019]), y(rows[j][2020])].forEach(function (ly) { if (ly > base - 16 && ly < base + 5) clash = true; });
+            }
+            if (!first) first = { i: i, base: base };
+            if (!clash) return { i: i, base: base };
+          }
+        }
+        return first || { i: 0, base: y(rows[0].base_max) - 6 };
+      }
+
+      function updateA(animate) {
+        if (!A.y) return;
+        var st = bus.get(), u = st.roadUser, rows = rowsBy[u];
+        var x = A.x, y = A.y, iw = A.iw;
+        var dur = animate ? Viz.dur() : 0;
+        function T(sel) { return dur ? sel.transition().duration(dur) : sel; }
+        var maxv = d3.max(rows, function (r) { return Math.max(r[2019], r[2020], r.base_max); });
+        y.domain([0, maxv]).nice(5);
+        A.ymax = y.domain()[1];
+
+        /* y axis: keyed ticks that fade in and out as the scale changes */
+        var ticks = y.ticks(5);
+        var sel = A.grid.selectAll('g.tk').data(ticks, function (d) { return d; });
+        sel.exit().transition().duration(dur).style('opacity', 0).remove();
+        var en = sel.enter().append('g').attr('class', 'tk')
+          .attr('transform', function (d) { return 'translate(0,' + y(d) + ')'; })
+          .style('opacity', dur ? 0 : 1);
+        en.append('line').attr('class', function (d) { return d === 0 ? 'c4-zero' : 'c4-grid'; }).attr('x2', iw);
+        en.append('text').attr('x', -8).attr('dy', '0.32em').attr('text-anchor', 'end').text(function (d) { return N(d); });
+        var all = en.merge(sel);
+        T(all).attr('transform', function (d) { return 'translate(0,' + y(d) + ')'; }).style('opacity', 1);
+
+        function line(k) { return d3.line().x(function (r) { return x(r.month_num); }).y(function (r) { return y(r[k]); })(rows); }
+        T(A.band).attr('d', d3.area().x(function (r) { return x(r.month_num); })
+          .y0(function (r) { return y(r.base_min); }).y1(function (r) { return y(r.base_max); })(rows));
+        T(A.mean).attr('d', line('base_mean'));
+        T(A.l19).attr('d', line(2019));
+        T(A.l20).attr('d', line(2020));
+        var pts = A.pts.selectAll('circle').data(rows).join('circle').attr('class', 'c4-pt')
+          .attr('cx', function (r) { return x(r.month_num); }).attr('r', 2.5);
+        T(pts).attr('cy', function (r) { return y(r[2020]); });
+
+        /* end labels, nudged apart when the lines finish close together */
+        var dec = rows[11], y20 = y(dec[2020]), y19 = y(dec[2019]);
         if (Math.abs(y20 - y19) < 15) {
           var mid = (y20 + y19) / 2, up = y20 < y19;
           y20 = mid + (up ? -8 : 8); y19 = mid + (up ? 8 : -8);
         }
-        g.append('text').attr('class', 'c4-end c4-end20').attr('x', iw + 8).attr('y', y20).attr('dy', '0.32em')
-          .style('fill', V.accent).text('2020');
-        g.append('text').attr('class', 'c4-end c4-end19').attr('x', iw + 8).attr('y', y19).attr('dy', '0.32em').text('2019');
+        T(A.end20).attr('y', y20);
+        T(A.end19).attr('y', y19);
 
-        /* annotation */
-        var ann = g.append('g').attr('class', 'c4-ann');
-        if (view === 'all') {
+        /* band label */
+        var bp = bandLabelPos(rows);
+        A.bandLab.attr('x', x(bp.i + 1) - 4).attr('y', bp.base);
+        if (dur) A.bandLab.style('opacity', 0).transition().delay(dur).duration(150).style('opacity', 1);
+        else A.bandLab.style('opacity', 1);
+
+        /* annotations: only where they apply, values from the data */
+        A.ann.selectAll('*').remove();
+        if (u === 'All road users') {
           var a = rows[3], ax = x(4), ay = y(a[2020]);
-          ann.append('circle').attr('cx', ax).attr('cy', ay).attr('r', 6).attr('class', 'c4-ring');
-          var t1 = ann.append('text').attr('class', 'c4-halo c4-ann-b').attr('x', ax - 4).attr('y', ay + 26);
-          t1.text(N(a[2020]) + ': lowest month');
-          ann.append('text').attr('class', 'c4-halo c4-ann-t').attr('x', ax - 4).attr('y', ay + 41).text('of 2011–2021');
-        } else {
+          A.ann.append('circle').attr('cx', ax).attr('cy', ay).attr('r', 6).attr('class', 'c4-ring');
+          if (aprAllLowest) {
+            A.ann.append('text').attr('class', 'c4-halo c4-ann-b').attr('x', ax + 12).attr('y', ay + 22)
+              .text(N(a[2020]) + ': lowest month');
+            A.ann.append('text').attr('class', 'c4-halo c4-ann-t').attr('x', ax + 12).attr('y', ay + 37).text('of 2011–2021');
+          } else {
+            A.ann.append('text').attr('class', 'c4-halo c4-ann-b').attr('x', ax + 12).attr('y', ay + 22)
+              .text(N(a[2020]) + ' in April 2020');
+          }
+        } else if (u === 'Pedal cyclist') {
           var j = rows[5], jx = x(6), jy = y(j[2020]);
-          ann.append('line').attr('class', 'c4-lead').attr('x1', jx).attr('x2', jx).attr('y1', 30).attr('y2', jy - 7);
-          ann.append('circle').attr('cx', jx).attr('cy', jy).attr('r', 6).attr('class', 'c4-ring');
-          ann.append('text').attr('class', 'c4-halo c4-ann-b').attr('text-anchor', 'middle').attr('x', jx).attr('y', 10)
-            .text(N(j[2020]) + ', up from ' + N(j[2019]));
-          ann.append('text').attr('class', 'c4-halo c4-ann-t').attr('text-anchor', 'middle').attr('x', jx).attr('y', 25)
-            .text('in June 2019');
+          if (j[2020] > j[2019]) {
+            A.ann.append('line').attr('class', 'c4-lead').attr('x1', jx).attr('x2', jx).attr('y1', -8).attr('y2', jy - 7);
+            A.ann.append('circle').attr('cx', jx).attr('cy', jy).attr('r', 6).attr('class', 'c4-ring');
+            var t = A.ann.append('text').attr('class', 'c4-halo c4-ann-b').attr('text-anchor', 'middle')
+              .attr('x', jx).attr('y', -12).text(N(j[2020]) + ', up from ' + N(j[2019]) + ' in June 2019');
+            var tw = t.node().getComputedTextLength ? t.node().getComputedTextLength() : 180;
+            var cx = Math.max(-A.m.left + 2 + tw / 2, Math.min(A.w - A.m.left - 2 - tw / 2, jx));
+            t.attr('x', cx);
+          }
         }
+        if (dur) A.ann.style('opacity', 0).transition().delay(dur * 0.6).duration(dur * 0.6).style('opacity', 1);
 
-        /* selected-month guide */
-        ui.rows = rows; ui.x = x; ui.y = y;
-        ui.guide = g.append('g').attr('class', 'c4-guide');
-        ui.guide.append('line').attr('y1', 0).attr('y2', ih);
-        ui.dot19 = ui.guide.append('circle').attr('r', 4.5).attr('class', 'c4-d19');
-        ui.dot20 = ui.guide.append('circle').attr('r', 5.5).attr('class', 'c4-d20').style('fill', V.accent);
-
-        /* pointer layer */
-        g.append('rect').attr('class', 'c4-hit').attr('x', -4).attr('y', -4).attr('width', iw + 8).attr('height', ih + 8)
-          .on('pointermove', function (e) {
-            var px = d3.pointer(e, this)[0];
-            var i = Math.max(0, Math.min(11, Math.round((px - x(1)) / step)));
-            if (hover !== i + 1) { hover = i + 1; setMonth(); }
-          })
-          .on('pointerdown', function (e) {
-            var px = d3.pointer(e, this)[0];
-            var i = Math.max(0, Math.min(11, Math.round((px - x(1)) / step)));
-            sel = i + 1; hover = null; setMonth();
-          })
-          .on('pointerleave', function () { hover = null; setMonth(); });
-
-        setMonth();
-        animate = false;
+        moveGuide();
       }
 
-      /* ---- wiring ---- */
-      var rz = Viz.responsive(chart, draw);
-      function applyView() {
-        var V = VIEWS[view];
-        titleEl.textContent = V.title;
-        el.style.setProperty('--c4-accent', V.accent);
-        if (axisNote) axisNote.textContent = 'Axis now 0 to ' + N(V.ymax) + ' a month.';
-        sel = null; hover = null; animate = true;
-        rz.redraw();
-        chart.setAttribute('aria-label', summary());
-        table();
-      }
-      slider.addEventListener('input', function () { sel = +slider.value; hover = null; setMonth(); });
-      if (segEl) {
-        Viz.segmented(segEl, { onChange: function (v) { view = v; applyView(); } });
-      }
-      if (Viz.onThemeChange) Viz.onThemeChange(function () { rz.redraw(); });
-      el.style.setProperty('--c4-accent', VIEWS.all.accent);
-      if (axisNote) axisNote.textContent = 'Axis now 0 to ' + N(VIEWS.all.ymax) + ' a month.';
-      chart.setAttribute('aria-label', summary());
-      table();
-    },
-    update: function () {}
-  };
-
-  /* =================================================================== 4B */
-  window.Charts['fig-4b'] = {
-    init: function (el, data) {
-      var chart = el.querySelector('.fig-chart');
-      var April = data.ch4_monthly.filter(function (r) { return r.month === 'April'; });
-      var rows = April.filter(function (r) { return Viz.MAIN_ROAD_USERS.indexOf(r.road_user) >= 0; })
-        .sort(function (a, b) { return a.pct_2020_vs_2019 - b.pct_2020_vs_2019; });
-      var ref = find(April, { road_user: 'All road users' });
-      var all = rows.concat([ref]);
-
-      function tipHtml(r) {
-        return '<strong>' + r.road_user + '</strong><br>April 2019: ' + N(r[2019]) + '<br>April 2020: ' + N(r[2020]) +
-          '<br>Change: ' + sp(r.pct_2020_vs_2019, 1);
+      function moveGuide() {
+        if (!A.y || !A.guide) return;
+        var st = bus.get(), rows = rowsBy[st.roadUser], mi = Viz.MONTHS.indexOf(st.month), r = rows[mi];
+        A.guide.attr('transform', 'translate(' + A.x(mi + 1) + ',0)');
+        A.dot20.attr('cy', A.y(r[2020]));
+        A.dot19.attr('cy', A.y(r[2019]));
+        A.ticks.style('display', function (d) {
+          if (A.every === 1 || d === mi + 1) return null;
+          return (d - 1) % A.every === 0 && Math.abs(d - (mi + 1)) > 1 ? null : 'none';
+        })
+          .classed('is-sel', function (d) { return d === mi + 1; });
+        A.hit.attr('aria-valuenow', mi + 1).attr('aria-valuetext', valueTextA(mi));
       }
 
-      function draw(w) {
-        var narrow = w < 480;
-        var labW = narrow ? 94 : 124;
-        var top = 36, rowH = 44, gap = 16, bottom = 30;   /* 44 px rows: a full-size tap target */
-        var h = top + rowH * rows.length + gap + rowH + bottom;
-        var rs = labW + 46, re = w - 54;
-        var x = d3.scaleLinear().domain([-60, 20]).range([rs, re]);
-        var x0 = x(0);
-        var svg = svgIn(chart, w, h);
-        function yRow(i) { return top + i * rowH + (i >= rows.length ? gap : 0); }
+      /* ================================================================ B */
+      var B = {};
 
-        /* vertical gridlines + bottom axis */
+      function monthNow() { return bus.get().month; }
+      function tipB(u) {
+        var m = monthNow(), r = rowFor(u, m);
+        return '<strong>' + lab(u) + '</strong><br>' + m + ' 2019: ' + N(r[2019]) + '<br>' + m + ' 2020: ' + N(r[2020]) +
+          '<br>Change: ' + sp(r.pct_2020_vs_2019, 1) + '<br><em>Select to show it in chart A</em>';
+      }
+      function rowLabelB(u) {
+        var m = monthNow(), r = rowFor(u, m);
+        return lab(u) + ': ' + dirPhrase(r, m) + ' (' + N(r[2019]) + ' to ' + N(r[2020]) + '). Show it in chart A.';
+      }
+
+      function buildB(w) {
+        var rowH = 58, top = 44, bottom = 48;
+        var h = top + rowH * order.length + bottom;
+        var svg = Viz.svg(chartB, w, h, { hidden: true });
+        var padL = 50, padR = 52;
+        var x = d3.scaleLinear().domain(pctDom).range([padL, w - padR]);
+        B = { w: w, h: h, x: x, top: top, rowH: rowH, bottom: bottom };
+
+        /* gridlines + bottom axis */
         var ax = svg.append('g').attr('class', 'axis');
-        [-60, -40, -20, 0, 20].forEach(function (t) {
-          ax.append('line').attr('x1', x(t)).attr('x2', x(t)).attr('y1', top - 6).attr('y2', h - bottom)
+        var tk = x.ticks(6).filter(function (t) { return t >= pctDom[0] - 1e-6 && t <= pctDom[1] + 1e-6 && (w >= 400 || t % 40 === 0); });
+        tk.forEach(function (t) {
+          ax.append('line').attr('x1', x(t)).attr('x2', x(t)).attr('y1', top - 4).attr('y2', h - bottom)
             .attr('class', t === 0 ? 'c4-zero' : 'c4-grid');
-          if (!narrow || t !== -40)
-            ax.append('text').attr('x', x(t)).attr('y', h - bottom + 18).attr('text-anchor', 'middle')
-              .text(t === 0 ? '0' : sp(t, 0));
+          ax.append('text').attr('x', x(t)).attr('y', h - bottom + 18).attr('text-anchor', 'middle')
+            .text(t === 0 ? '0' : sp(t, 0));
         });
-        /* direction hints */
-        svg.append('text').attr('class', 'c4-hint').attr('x', x0 - 6).attr('y', 12).attr('text-anchor', 'end')
-          .text(narrow ? '← fewer' : '← fewer admissions than April 2019');
-        svg.append('text').attr('class', 'c4-hint').attr('x', x0 + 6).attr('y', 12).attr('text-anchor', 'start')
-          .text(narrow ? 'more →' : 'more →');
+        svg.append('text').attr('class', 'c4-hint').attr('x', x(0) - 6).attr('y', h - 6).attr('text-anchor', 'end').text('← fewer admissions');
+        svg.append('text').attr('class', 'c4-hint').attr('x', x(0) + 6).attr('y', h - 6).attr('text-anchor', 'start').text('more →');
 
-        var barH = 22;
-        all.forEach(function (r, i) {
-          var isRef = i === rows.length;
-          var cy = yRow(i) + rowH / 2;
-          var v = r.pct_2020_vs_2019;
-          var rowG = svg.append('g').attr('class', 'c4-row' + (isRef ? ' is-ref' : ''));
-          /* invisible hit area: the whole row, so a tap anywhere on it opens the tooltip */
-          rowG.append('rect').attr('class', 'c4-rowhit').attr('x', 0).attr('y', yRow(i)).attr('width', w).attr('height', rowH)
-            .style('fill', 'transparent');
-          rowG.append('line').attr('class', 'c4-rowrule').attr('x1', 0).attr('x2', w)
-            .attr('y1', yRow(i) + rowH).attr('y2', yRow(i) + rowH).style('display', i === rows.length - 1 || isRef ? 'none' : null);
-          rowG.append('text').attr('class', 'c4-cat').attr('x', 0).attr('y', cy).attr('dy', '0.32em')
-            .text(r.road_user);
-          var bx = v < 0 ? x(v) : x0, bw = Math.abs(x(v) - x0);
-          var bar = rowG.append('rect').attr('class', 'c4-bar').attr('x', bx).attr('y', cy - barH / 2)
-            .attr('width', bw).attr('height', barH).attr('rx', 2);
-          if (isRef) bar.attr('class', 'c4-bar c4-ref');
-          else bar.style('fill', v < 0 ? 'var(--fall)' : 'var(--rise)');
-          var lbl = rowG.append('text').attr('class', 'c4-val').attr('y', cy).attr('dy', '0.32em')
-            .text(sp(v, 0));
-          if (v < 0) lbl.attr('x', bx - 6).attr('text-anchor', 'end');
-          else lbl.attr('x', bx + bw + 6).attr('text-anchor', 'start');
-          Viz.tooltip.bind(rowG, function () { return tipHtml(r); });
-          rowG.attr('role', 'img').attr('aria-label', r.road_user + ': ' + sp(v, 1) + ' (April 2019 ' + N(r[2019]) + ', April 2020 ' + N(r[2020]) + ')');
-        });
-        svg.attr('aria-hidden', null);
-        /* rows are tooltip targets; keep the svg itself out of the reading order (the figure has its own label) */
-        svg.attr('role', 'presentation');
-      }
-      Viz.responsive(chart, draw);
-      Viz.fillTable(el.querySelector('.fig-data'), all, [
-        { key: 'road_user', label: 'Road user', text: true },
-        { key: '2019', label: 'April 2019', format: N },
-        { key: '2020', label: 'April 2020', format: N },
-        { key: 'pct_2020_vs_2019', label: 'Change', format: function (v) { return sp(v, 1); } }
-      ]);
-      var cyc = find(April, { road_user: 'Pedal cyclist' });
-      chart.setAttribute('aria-label', 'Diverging horizontal bars of the percentage change in admissions, April 2020 against April 2019: ' +
-        rows.filter(function (r) { return r.pct_2020_vs_2019 < 0; }).map(function (r) {
-          return r.road_user.toLowerCase().replace('pedal ', '') + ' ' + fmt.dp(Math.abs(r.pct_2020_vs_2019), 0) + ' per cent fewer';
-        }).join(', ') + '; cyclists ' + fmt.dp(cyc.pct_2020_vs_2019, 0) + ' per cent more. All road users, shown for reference: ' +
-        fmt.dp(Math.abs(ref.pct_2020_vs_2019), 0) + ' per cent fewer.');
-    },
-    update: function () {}
-  };
-
-  /* =================================================================== 4C */
-  window.Charts['fig-4c'] = {
-    init: function (el, data) {
-      var chart = el.querySelector('.fig-chart');
-      var r = find(data.ch4_monthly, { road_user: 'Pedal cyclist', month: 'Year' });
-      var years = d3.range(2011, 2022);
-      var pts = years.map(function (y) { return { year: y, v: r[y] }; });
-      var rate = Math.pow(r[2019] / r[2011], 1 / 8) - 1;
-      var gap = r[2020] - r.trend_2020;
-
-      var key = mk('div', 'c4-key');
-      key.setAttribute('aria-hidden', 'true');
-      key.innerHTML =
-        '<span class="c4-k"><i class="k-line k-act"></i>Actual admissions</span>' +
-        '<span class="c4-k"><i class="k-line k-trend"></i>Trend: 2011–19 growth (' + fmt.dp(rate * 100, 1) + '% a year) carried to 2020</span>';
-      chart.parentNode.insertBefore(key, chart);
-
-      function tipHtml(p) {
-        var s = '<strong>' + p.year + '</strong><br>Cyclist admissions: ' + N(p.v);
-        if (p.year === 2020) s += '<br>On the 2011–19 trend: ' + N(r.trend_2020) + '<br>Above trend: about ' + N(Math.round(gap / 50) * 50);
-        return s;
-      }
-
-      function draw(w) {
-        var narrow = w < 480;
-        var m = { top: 18, right: narrow ? 30 : 44, bottom: 30, left: narrow ? 44 : 50 };
-        var h = Viz.height(w, { ratio: 0.5, min: 290, max: 420 });
-        var iw = w - m.left - m.right, ih = h - m.top - m.bottom;
-        var x = d3.scalePoint().domain(years).range([0, iw]).padding(0.25);
-        var y = d3.scaleLinear().domain([0, 10000]).range([ih, 0]);
-        var svg = svgIn(chart, w, h);
-        var g = svg.append('g').attr('transform', 'translate(' + m.left + ',' + m.top + ')');
-
-        var gy = g.append('g').attr('class', 'axis');
-        d3.range(0, 10001, 2000).forEach(function (t) {
-          gy.append('line').attr('x1', 0).attr('x2', iw).attr('y1', y(t)).attr('y2', y(t)).attr('class', t === 0 ? 'c4-zero' : 'c4-grid');
-          gy.append('text').attr('x', -8).attr('y', y(t)).attr('dy', '0.32em').attr('text-anchor', 'end').text(N(t));
-        });
-        var every = x.step() >= 40 ? 1 : 2;
-        var gx = g.append('g').attr('class', 'axis');
-        years.forEach(function (yr, i) {
-          gx.append('line').attr('x1', x(yr)).attr('x2', x(yr)).attr('y1', ih).attr('y2', ih + 4);
-          if (i % every === 0) gx.append('text').attr('x', x(yr)).attr('y', ih + 20).attr('text-anchor', 'middle').text(yr);
-        });
-
-        /* actuals */
-        g.append('path').attr('class', 'c4-act')
-          .attr('d', d3.line().x(function (p) { return x(p.year); }).y(function (p) { return y(p.v); })(pts));
-        /* trend: dashed, 2019 -> 2020 */
-        g.append('line').attr('class', 'c4-trend')
-          .attr('x1', x(2019)).attr('y1', y(r[2019])).attr('x2', x(2020)).attr('y2', y(r.trend_2020));
-        /* the gap */
-        g.append('line').attr('class', 'c4-gap').attr('x1', x(2020)).attr('x2', x(2020))
-          .attr('y1', y(r.trend_2020) - 5).attr('y2', y(r[2020]) + 6);
-        g.append('circle').attr('class', 'c4-tdot').attr('cx', x(2020)).attr('cy', y(r.trend_2020)).attr('r', 4.5);
-
-        var dots = g.selectAll('circle.c4-dot').data(pts).join('circle').attr('class', function (p) { return 'c4-dot' + (p.year === 2020 ? ' is-2020' : ''); })
-          .attr('cx', function (p) { return x(p.year); }).attr('cy', function (p) { return y(p.v); })
-          .attr('r', function (p) { return p.year === 2020 ? 5.5 : 3.5; });
-        /* larger invisible targets for hover / tap / keyboard */
-        var hits = g.selectAll('circle.c4-hitdot').data(pts).join('circle').attr('class', 'c4-hitdot')
-          .attr('cx', function (p) { return x(p.year); }).attr('cy', function (p) { return y(p.v); }).attr('r', 13)
-          .attr('role', 'img').attr('aria-label', function (p) { return p.year + ': ' + N(p.v) + ' cyclist admissions'; });
-        Viz.tooltip.bind(hits, tipHtml);
-
-        /* value labels */
-        function lab(p, dx, dy, anchor) {
-          g.append('text').attr('class', 'c4-val c4-halo').attr('x', x(p.year) + dx).attr('y', y(p.v) + dy)
-            .attr('text-anchor', anchor).text(N(p.v));
+        function activate(u) { bus.set({ roadUser: u }, 'panel-b'); }
+        function onKey(u) {
+          return function (e) {
+            if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') { e.preventDefault(); activate(u); }
+          };
         }
-        lab(pts[0], 0, 20, 'middle');
-        lab(pts[8], 0, 22, 'middle');
-        lab(pts[10], 6, -11, 'middle');
 
-        /* the 2020 annotation */
-        var ax = x(2020) - 12, ay = y(r[2020]);
-        var a = g.append('g').attr('class', 'c4-ann');
-        a.append('text').attr('class', 'c4-halo c4-ann-b').attr('text-anchor', 'end').attr('x', ax).attr('y', ay - 14)
-          .text(narrow ? N(r[2020]) + ' actual vs about' : N(r[2020]) + ' actual vs about ' + N(r.trend_2020) + ' on trend:');
-        a.append('text').attr('class', 'c4-halo c4-ann-b').attr('text-anchor', 'end').attr('x', ax).attr('y', ay + 1)
-          .text(narrow ? N(r.trend_2020) + ' on trend: ~' + N(Math.round(gap / 50) * 50) + ' more'
-            : '~' + N(Math.round(gap / 50) * 50) + ' more');
+        /* the reference: All road users as a dashed vertical line, labelled at the top */
+        B.ref = svg.append('g').attr('class', 'c4-refg').attr('role', 'button').attr('tabindex', 0)
+          .on('click', function () { activate('All road users'); })
+          .on('keydown', onKey('All road users'));
+        B.refLine = B.ref.append('line').attr('class', 'c4-ref').attr('y1', top - 6).attr('y2', h - bottom);
+        B.refHit = B.ref.append('rect').attr('class', 'c4-refhit').attr('height', 30).attr('y', 2).attr('rx', 4);
+        B.refFocus = B.ref.append('rect').attr('class', 'c4-focus').attr('height', 30).attr('y', 2).attr('rx', 4);
+        B.refText = B.ref.append('text').attr('class', 'c4-halo c4-reflab').attr('y', 22).attr('text-anchor', 'middle');
+        Viz.tooltip.bind(B.ref, function () { return tipB('All road users'); }, { roving: false });
+
+        B.rows = svg.selectAll('g.c4-row').data(order).join('g').attr('class', 'c4-row')
+          .attr('transform', function (d, i) { return 'translate(0,' + (top + i * rowH) + ')'; })
+          .attr('role', 'button').attr('tabindex', 0)
+          .on('click', function (e, d) { activate(d); })
+          .on('keydown', function (e, d) { onKey(d)(e); });
+        B.rows.append('rect').attr('class', 'c4-rowbg').attr('x', 0).attr('y', 0).attr('width', w).attr('height', rowH - 4).attr('rx', 4);
+        B.rows.append('text').attr('class', 'c4-cat').attr('x', 4).attr('y', 18).text(function (d) { return lab(d); });
+        B.rows.append('rect').attr('class', 'c4-bar').attr('y', 24).attr('height', 26);
+        B.rows.append('text').attr('class', 'c4-halo c4-val').attr('y', 38).attr('dy', '0.35em');
+        B.rows.append('rect').attr('class', 'c4-focus').attr('x', 0).attr('y', 0).attr('width', w).attr('height', rowH - 4).attr('rx', 4);
+        Viz.tooltip.bind(B.rows, function (d) { return tipB(d); }, { roving: false });
       }
-      Viz.responsive(chart, draw);
-      var rows = pts.map(function (p) {
-        return { year: p.year, v: p.v, trend: p.year === 2020 ? r.trend_2020 : null,
-          gap: p.year === 2020 ? gap : null };
+
+      function updateB(animate) {
+        if (!B.x) return;
+        var st = bus.get(), m = st.month, u = st.roadUser, x = B.x, x0 = x(0);
+        var dur = animate ? Viz.dur() : 0;
+        function T(sel) { return dur ? sel.transition().duration(dur) : sel; }
+
+        B.rows.classed('is-sel', function (d) { return d === u; })
+          .attr('aria-pressed', function (d) { return d === u ? 'true' : 'false'; })
+          .attr('aria-label', function (d) { return rowLabelB(d); });
+        function pct(d) { return rowFor(d, m).pct_2020_vs_2019; }
+        T(B.rows.select('rect.c4-bar'))
+          .attr('x', function (d) { return Math.min(x0, x(pct(d))); })
+          .attr('width', function (d) { return Math.max(1.5, Math.abs(x(pct(d)) - x0)); });
+        B.rows.select('rect.c4-bar').classed('is-up', function (d) { return pct(d) > 0; })
+          .classed('is-down', function (d) { return pct(d) <= 0; });
+        B.rows.select('text.c4-val').text(function (d) { return sp(pct(d), 0); })
+          .attr('text-anchor', function (d) { return pct(d) < 0 ? 'end' : 'start'; });
+        T(B.rows.select('text.c4-val'))
+          .attr('x', function (d) { return pct(d) < 0 ? x(pct(d)) - 6 : x(pct(d)) + 6; });
+
+        /* reference line */
+        var refP = rowFor('All road users', m).pct_2020_vs_2019, rx = x(refP);
+        var refSel = u === 'All road users';
+        B.ref.classed('is-sel', refSel)
+          .attr('aria-pressed', refSel ? 'true' : 'false')
+          .attr('aria-label', rowLabelB('All road users'));
+        T(B.refLine).attr('x1', rx).attr('x2', rx);
+        B.refText.text('All road users ' + sp(refP, 0));
+        var tw = B.refText.node().getComputedTextLength ? B.refText.node().getComputedTextLength() : 120;
+        var cx = Math.max(tw / 2 + 4, Math.min(B.w - tw / 2 - 4, rx));
+        T(B.refText).attr('x', cx);
+        [B.refHit, B.refFocus].forEach(function (r) {
+          T(r).attr('x', cx - tw / 2 - 6).attr('width', tw + 12);
+        });
+
+        /* title, subtitle, summary */
+        var mm = m;
+        if (m === 'April' && aprOthersFell) {
+          titleB.textContent = 'In April 2020 every road user fell except cyclists (' + sp(pct('Pedal cyclist'), 0) + ')';
+        } else {
+          titleB.textContent = mm + ' 2020 against ' + mm + ' 2019, by road user';
+        }
+        subB.textContent = 'Change in admissions, ' + mm + ' 2020 vs ' + mm + ' 2019 · by road user';
+        var parts = order.map(function (d) { return lab(d) + ' ' + sp(pct(d), 0).replace(fmt.minusChar, 'minus '); });
+        chartB.setAttribute('aria-label', 'Diverging bars of the change in admissions between ' + mm + ' 2019 and ' + mm +
+          ' 2020 by road user: ' + parts.join(', ') + '. All road users ' + sp(refP, 0).replace(fmt.minusChar, 'minus ') +
+          ', shown as a dashed reference line. Select a bar to show that road user in chart A.');
+      }
+
+      /* =============================================================== tables */
+      var tblA = mk('div', 'c4-tbl'), tblB = mk('div', 'c4-tbl');
+      tablesHost.innerHTML = '';
+      tablesHost.appendChild(tblA); tablesHost.appendChild(tblB);
+      function tableA() {
+        var u = bus.get().roadUser;
+        Viz.fillTable(tblA, rowsBy[u], [
+          { key: 'month', label: 'Month', text: true },
+          { key: '2019', label: '2019', format: N },
+          { key: '2020', label: '2020', format: N },
+          { key: 'base_min', label: '2015–19 min', format: N },
+          { key: 'base_mean', label: '2015–19 mean', format: fmt.dp1 },
+          { key: 'base_max', label: '2015–19 max', format: N }
+        ], { caption: 'Chart A: monthly admissions, ' + PLURAL[u] + ', 2019, 2020 and the 2015–19 range' });
+      }
+      function tableB() {
+        var m = monthNow();
+        var rows = USERS.map(function (u) {
+          var r = rowFor(u, m);
+          return { road_user: lab(u), a2019: r[2019], a2020: r[2020], pct: r.pct_2020_vs_2019 };
+        });
+        Viz.fillTable(tblB, rows, [
+          { key: 'road_user', label: 'Road user', text: true },
+          { key: 'a2019', label: m + ' 2019', format: N },
+          { key: 'a2020', label: m + ' 2020', format: N },
+          { key: 'pct', label: 'Change', format: function (v) { return sp(v, 1); } }
+        ], { caption: 'Chart B: ' + m + ' 2020 against ' + m + ' 2019 by road user' });
+      }
+
+      /* ================================================================ link */
+      bus.on(function (st, changed, source) {
+        var userChanged = changed.indexOf('roadUser') >= 0, monthChanged = changed.indexOf('month') >= 0;
+        var prevMax = A.ymax;
+        syncControls(st);
+        setChip(st);
+        if (userChanged) { textA(st); updateA(true); tableA(); }
+        if (monthChanged) { textA(st); moveGuide(); tableB(); }
+        updateB(monthChanged);
+
+        if (source !== 'panel-a') Viz.flash(panelA);
+        if (source !== 'panel-b') Viz.flash(panelB);
+
+        var r = rowFor(st.roadUser, st.month), msg;
+        if (userChanged) {
+          msg = lab(st.roadUser) + ' selected: ' + dirPhrase(r, st.month) + '.';
+          if (A.ymax !== prevMax) msg += ' Chart A scale is now 0 to ' + N(A.ymax) + ' admissions a month.';
+        } else {
+          msg = st.month + ' selected: ' + lab(st.roadUser) + ', ' + dirPhrase(r, st.month) + '.';
+        }
+        Viz.announce(msg);
       });
-      Viz.fillTable(el.querySelector('.fig-data'), rows, [
-        { key: 'year', label: 'Year' },
-        { key: 'v', label: 'Cyclist admissions', format: N },
-        { key: 'trend', label: 'On the 2011–19 trend', format: function (v) { return v == null ? '' : N(v); } },
-        { key: 'gap', label: 'Above trend', format: function (v) { return v == null ? '' : N(v); } }
-      ], { caption: 'Trend = 2019 × (2019 ÷ 2011)^(1/8), about ' + fmt.dp(rate * 100, 1) + '% a year' });
-      chart.setAttribute('aria-label', 'Annual cyclist admissions 2011 to 2021 as dots on a line, rising from ' + N(r[2011]) + ' to ' + N(r[2019]) +
-        ' in 2019, with the 2011 to 2019 growth trend of about ' + fmt.dp(rate * 100, 1) + ' per cent a year carried forward as a dashed line to 2020: ' +
-        N(r[2020]) + ' actual against about ' + N(r.trend_2020) + ' on trend, roughly ' + N(Math.round(gap / 50) * 50) + ' more. 2021 had ' + N(r[2021]) + '.');
-    },
-    update: function () {}
-  };
 
-  /* =================================================================== 4D */
-  window.Charts['fig-4d'] = {
-    init: function (el, data) {
-      var chart = el.querySelector('.fig-chart');
-      var titleEl = el.querySelector('.fig-title');
-      var segEl = el.querySelector('.fig-controls');
-      var NAMES = { ACT: 'Australian Capital Territory', NSW: 'New South Wales', NT: 'Northern Territory', Qld: 'Queensland',
-        SA: 'South Australia', Tas: 'Tasmania', Vic: 'Victoria', WA: 'Western Australia' };
-      var MARK = { Tas: '*', NSW: '†' };
-      var HALF = {
-        'Jul-Dec': { title: 'Cyclist admissions by state, July–December 2020 against 2019', name: 'July to December' },
-        'Jan-Jun': { title: 'Cyclist admissions by state, January–June 2020 against 2019', name: 'January to June' }
-      };
-      var half = 'Jul-Dec';
-      /* one scale for both halves, so the two views can be compared */
-      var lo = -20, hi = 45;
-
-      function rowsFor(hf) {
-        return Viz.where(data.ch4_state_cyclists, { half: hf }).sort(function (a, b) { return b.pct_change - a.pct_change; });
-      }
-      function render() {
-        var rows = rowsFor(half);
-        var span = hi - lo, z = (0 - lo) / span * 100;
-        chart.innerHTML = '';
-        var grid = mk('div', 'c4d');
-        var head = mk('div', 'c4d-row c4d-head');
-        head.setAttribute('aria-hidden', 'true');
-        head.appendChild(mk('span', 'c4d-st', 'State'));
-        head.appendChild(mk('span', 'c4d-track', 'Change from 2019'));
-        head.appendChild(mk('span', 'c4d-val', '%'));
-        head.appendChild(mk('span', 'c4d-cnt', '2019 → 2020'));
-        grid.appendChild(head);
-        rows.forEach(function (r) {
-          var isVic = r.state === 'Vic';
-          var row = mk('div', 'c4d-row' + (isVic ? ' is-vic' : ''));
-          row.setAttribute('role', 'img');
-          row.setAttribute('aria-label', NAMES[r.state] + ': ' + N(r[2019]) + ' in 2019, ' + N(r[2020]) + ' in 2020, ' + sp(r.pct_change, 1));
-          var st = mk('span', 'c4d-st', r.state + (MARK[r.state] || ''));
-          var tr = mk('span', 'c4d-track');
-          var zero = mk('i', 'c4d-zero'); zero.style.left = z + '%';
-          var v = r.pct_change;
-          var a = Math.min(0, v), b = Math.max(0, v);
-          var bar = mk('b', 'c4d-bar' + (v < 0 ? ' is-neg' : ''));
-          bar.style.left = ((a - lo) / span * 100) + '%';
-          bar.style.width = ((b - a) / span * 100) + '%';
-          tr.appendChild(zero); tr.appendChild(bar);
-          var val = mk('span', 'c4d-val', sp(v, 1));
-          var cnt = mk('span', 'c4d-cnt', N(r[2019]) + ' → ' + N(r[2020]));
-          row.appendChild(st); row.appendChild(tr); row.appendChild(val); row.appendChild(cnt);
-          grid.appendChild(row);
-          row.__r = r;
-        });
-        chart.appendChild(grid);
-        /* bound after the grid is in the page so the rows share one tab stop (arrow keys move between them) */
-        Viz.tooltip.bind(d3.select(grid).selectAll('.c4d-row:not(.c4d-head)'), function () {
-          var r = this.__r, d = r[2020] - r[2019];
-          return '<strong>' + NAMES[r.state] + '</strong><br>' + HALF[half].name + ' 2019: ' + N(r[2019]) +
-            '<br>' + HALF[half].name + ' 2020: ' + N(r[2020]) + '<br>Change: ' + fmt.minus(d3.format('+,d')(d)) + ' (' + sp(r.pct_change, 1) + ')';
-        });
-        var top = rows[0], vic = find(rows, { state: 'Vic' });
-        var abs = rows.slice().sort(function (p, q) { return (q[2020] - q[2019]) - (p[2020] - p[2019]); })[0];
-        chart.setAttribute('aria-label', 'Table with bars of cyclist admissions by state, ' + HALF[half].name + ' 2020 against 2019. ' +
-          NAMES[abs.state] + ' had the largest rise in admissions (' + N(abs[2019]) + ' to ' + N(abs[2020]) + ', ' + sp(abs.pct_change, 1) +
-          '); ' + NAMES[top.state] + ' had the largest percentage rise' +
-          (top.state === 'Tas' ? ', on a small base' : '') + '.');
-        titleEl.textContent = HALF[half].title;
-        /* a copy with the computed column, so the shared rows are never mutated */
-        var tableRows = rows.map(function (r) { return Object.assign({}, r, { diff: r[2020] - r[2019] }); });
-        Viz.fillTable(el.querySelector('.fig-data'), tableRows, [
-          { key: 'state', label: 'State', text: true },
-          { key: '2019', label: HALF[half].name + ' 2019', format: N },
-          { key: '2020', label: HALF[half].name + ' 2020', format: N },
-          { key: 'diff', label: 'Change in admissions', format: function (v) { return fmt.minus(d3.format('+,d')(v)); } },
-          { key: 'pct_change', label: 'Change', format: function (v) { return sp(v, 1); } }
-        ], { caption: 'Cyclist admissions by state (state of residence; excludes deaths)' });
-      }
-      if (segEl) Viz.segmented(segEl, { onChange: function (v) { half = v; render(); } });
-      render();
-    },
-    update: function () {}
+      /* ============================================================== initial */
+      Viz.responsive(chartA, function (w) { buildA(w); updateA(false); });
+      Viz.responsive(chartB, function (w) { buildB(w); updateB(false); });
+      var st0 = bus.get();
+      textA(st0); setChip(st0); tableA(); tableB();
+      updateB(false);
+    }
   };
 })();
